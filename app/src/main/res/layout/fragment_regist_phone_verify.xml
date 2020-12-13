@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="88dp"
+    android:layout_height="match_parent"
+    tools:context=".ui.user.LoginFragment">
+
+    <TextView
+        android:id="@+id/countryCode"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:gravity="center"
+        android:drawablePadding="4dp"
+        android:layout_marginLeft="16dp"
+        android:drawableRight="@drawable/ic_arror_down"
+        android:text="+86"
+        android:textColor="@color/whilte"
+        android:textSize="@dimen/font_12" />
+
+    <EditText
+        android:id="@+id/etPhone"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="24dp"
+        android:background="@null"
+        android:layout_toRightOf="@+id/countryCode"
+        android:hint="请输入手机号"
+        android:textColor="@color/whilte"
+        android:textColorHint="@color/whilte"
+        android:textSize="@dimen/font_15" />
+
+    <View
+        android:id="@+id/linePhone"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/countryCode"
+        android:background="#88FFFFFF" />
+
+    <View
+        android:id="@+id/lineVerifyCode"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/verifyCode"
+        android:background="#88FFFFFF" />
+
+
+    <EditText
+        android:id="@+id/verifyCode"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="28dp"
+        android:background="@null"
+        android:layout_below="@+id/linePhone"
+        android:layout_toRightOf="@+id/countryCode"
+        android:hint="请输入密码"
+        android:inputType="textPassword"
+        android:textColor="@color/whilte"
+        android:textColorHint="@color/whilte"
+        android:textSize="@dimen/font_15" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/next"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/lineVerifyCode"
+        android:layout_marginTop="88dp"
+        android:background="@drawable/bg_blue_gradient"
+        android:text="下一步"
+        android:textColor="@color/whilte"
+        android:textSize="@dimen/font_18" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_below="@+id/next"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="88dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="已有账号？去"
+            android:textColor="@color/whilte"
+            android:textSize="@dimen/font_15"/>
+
+        <TextView
+            android:id="@+id/toLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginLeft="8dp"
+            android:text="登录>>"
+            android:textColor="@color/whilte"
+            android:textSize="@dimen/font_15" />
+
+    </LinearLayout>
+
+</RelativeLayout>
+
+</layout>

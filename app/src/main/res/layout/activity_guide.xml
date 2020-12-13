@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.welcom.WelcomActivity">
+
+        <LinearLayout
+            android:id="@+id/layout_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="6dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="24dp">
+
+            <View
+                android:id="@+id/indicator1"
+                android:layout_width="6dp"
+                android:layout_height="6dp"
+                android:background="@{indicatorIndex==0 ? @drawable/bg_indicator_dot_select : @drawable/bg_indicator_dot_unselect}" />
+
+            <View
+                android:id="@+id/indicator2"
+                android:layout_width="6dp"
+                android:layout_height="6dp"
+                android:layout_marginLeft="8dp"
+                android:background="@{indicatorIndex==1 ? @drawable/bg_indicator_dot_select : @drawable/bg_indicator_dot_unselect}" />
+            />
+
+            <View
+                android:id="@+id/indicator3"
+                android:layout_width="6dp"
+                android:layout_height="6dp"
+                android:layout_marginLeft="8dp"
+                android:background="@{indicatorIndex==2 ? @drawable/bg_indicator_dot_select : @drawable/bg_indicator_dot_unselect}" />
+            />
+
+        </LinearLayout>
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </RelativeLayout>
+
+    <data>
+
+        <variable
+            name="indicatorIndex"
+            type="int" />
+
+    </data>
+
+</layout>

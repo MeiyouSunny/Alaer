@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="86dp">
+
+        <ImageView
+            android:id="@+id/pic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/welcom_3" />
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pic"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="24dp"
+            android:lineSpacingExtra="10dp"
+            android:text="人人参与阿拉尔\n人人投资阿拉尔\n人人共享阿拉尔"
+            android:textColor="@color/font_brown"
+            android:textSize="@dimen/font_18"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/btn_start"
+        android:layout_width="240dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="60dp"
+        android:letterSpacing="0.2"
+        android:background="@drawable/bg_btn_green_round_corner"
+        android:gravity="center"
+        android:text="探索阿拉尔"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_16"
+        android:textStyle="bold" />
+
+</RelativeLayout>
