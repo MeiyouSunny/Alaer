@@ -9,7 +9,7 @@ import com.meiyou.mvp.MvpBinder;
 
 @MvpBinder(
 )
-public class LoginFragment extends BaseBindFragment<FragmentLoginBinding> implements View.OnClickListener {
+public class LoginFragment extends BaseBindFragment<FragmentLoginBinding> {
 
     @Override
     public int initLayoutResId() {
@@ -17,22 +17,11 @@ public class LoginFragment extends BaseBindFragment<FragmentLoginBinding> implem
     }
 
     @Override
-    public void onViewCreated() {
-        super.onViewCreated();
-        setListener();
-    }
-
-    private void setListener() {
-        bindRoot.regist.setOnClickListener(this);
-    }
-
-    @Override
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.regist:
-                navigate(R.id.action_to_regist_phone_verify);
-                setTitleText(R.string.regist);
-                break;
+    public void click(View view) {
+        if (view.getId() == R.id.toRegist) {
+            navigate(R.id.action_to_regist_phone_verify);
+            setTitleText(R.string.regist);
         }
     }
+
 }
