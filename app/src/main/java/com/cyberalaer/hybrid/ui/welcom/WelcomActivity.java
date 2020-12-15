@@ -2,33 +2,30 @@ package com.cyberalaer.hybrid.ui.welcom;
 
 import android.media.MediaPlayer;
 import android.net.Uri;
-import android.os.Bundle;
 
 import com.cyberalaer.hybrid.R;
+import com.cyberalaer.hybrid.base.BaseViewBindActivity;
 import com.cyberalaer.hybrid.databinding.ActivityWelcomBinding;
 import com.cyberalaer.hybrid.util.ViewUtil;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-
-public class WelcomActivity extends AppCompatActivity implements MediaPlayer.OnCompletionListener {
-
-    ActivityWelcomBinding mViewRoot;
+public class WelcomActivity extends BaseViewBindActivity<ActivityWelcomBinding> implements MediaPlayer.OnCompletionListener {
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        mViewRoot = DataBindingUtil.setContentView(this, R.layout.activity_welcom);
+    public void onViewCreated() {
         showWelcomeVideo();
+    }
+
+    @Override
+    protected int layoutId() {
+        return R.layout.activity_welcom;
     }
 
     private void showWelcomeVideo() {
         final Uri uriVideo = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.start);
-        mViewRoot.videoView.setVideoURI(uriVideo);
-        mViewRoot.videoView.start();
+        bindRoot.videoView.setVideoURI(uriVideo);
+        bindRoot.videoView.start();
 
-        mViewRoot.videoView.setOnCompletionListener(this);
+        bindRoot.videoView.setOnCompletionListener(this);
     }
 
     @Override

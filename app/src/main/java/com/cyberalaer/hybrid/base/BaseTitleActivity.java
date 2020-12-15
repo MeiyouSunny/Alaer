@@ -10,7 +10,7 @@ import com.cyberalaer.hybrid.R;
 import androidx.annotation.Nullable;
 import androidx.databinding.ViewDataBinding;
 
-public abstract class BaseTitleActivity<T extends ViewDataBinding> extends BaseViewBindActivity implements View.OnClickListener, TitleControl {
+public abstract class BaseTitleActivity<T extends ViewDataBinding> extends BaseViewBindActivity<T> implements View.OnClickListener, TitleControl {
 
     private TextView title;
     private ImageView titleLeft, titleRight;

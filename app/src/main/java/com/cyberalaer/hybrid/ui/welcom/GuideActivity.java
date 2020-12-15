@@ -1,11 +1,11 @@
 package com.cyberalaer.hybrid.ui.welcom;
 
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.cyberalaer.hybrid.R;
+import com.cyberalaer.hybrid.base.BaseViewBindActivity;
 import com.cyberalaer.hybrid.databinding.ActivityGuideBinding;
 import com.cyberalaer.hybrid.ui.home.HomeActivity;
 import com.cyberalaer.hybrid.util.ViewUtil;
@@ -13,20 +13,18 @@ import com.cyberalaer.hybrid.util.ViewUtil;
 import java.util.ArrayList;
 import java.util.List;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-public class GuideActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener, View.OnClickListener {
-
-    ActivityGuideBinding mViewRoot;
+public class GuideActivity extends BaseViewBindActivity<ActivityGuideBinding> implements ViewPager.OnPageChangeListener, View.OnClickListener {
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        mViewRoot = DataBindingUtil.setContentView(this, R.layout.activity_guide);
+    protected int layoutId() {
+        return R.layout.activity_guide;
+    }
+
+    @Override
+    public void onViewCreated() {
         setGuideView();
     }
 
@@ -39,9 +37,9 @@ public class GuideActivity extends AppCompatActivity implements ViewPager.OnPage
         views.add(guideView1);
         views.add(guideView2);
         views.add(guideView3);
-        mViewRoot.viewPager.setAdapter(new GuideAdapter(views));
+        bindRoot.viewPager.setAdapter(new GuideAdapter(views));
 
-        mViewRoot.viewPager.setOnPageChangeListener(this);
+        bindRoot.viewPager.setOnPageChangeListener(this);
         guideView3.findViewById(R.id.btn_start).setOnClickListener(this);
     }
 
@@ -87,7 +85,7 @@ public class GuideActivity extends AppCompatActivity implements ViewPager.OnPage
 
     @Override
     public void onPageSelected(int position) {
-        mViewRoot.setIndicatorIndex(position);
+        bindRoot.setIndicatorIndex(position);
     }
 
     @Override

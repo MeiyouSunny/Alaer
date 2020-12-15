@@ -7,7 +7,7 @@ android {
     buildToolsVersion "30.0.2"
 
     defaultConfig {
-        applicationId "com.cyberalaer.hybrid"
+        applicationId "com.cyberalaer.hybrid_"
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
@@ -50,7 +50,7 @@ dependencies {
     annotationProcessor deps.lifecycle.compiler
     implementation deps.room.runtime
     annotationProcessor deps.room.compiler
-    implementation 'com.hmcx:mvp:2.0.0'
+    implementation 'com.hmcx:mvp:2.0.2'
 
     implementation 'androidx.navigation:navigation-fragment:2.2.2'
     implementation 'androidx.navigation:navigation-ui:2.2.2'
