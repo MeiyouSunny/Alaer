@@ -1,0 +1,166 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="step"
+            type="int" />
+
+        <variable
+            name="bgPics"
+            type="int[]" />
+
+        <variable
+            name="stepHandler"
+            type="com.cyberalaer.hybrid.ui.produce.ProductionHallActivity.ProduceStep" />
+
+    </data>
+
+    <FrameLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        app:drawableRes="@{bgPics[step]}"
+        tools:context=".ui.produce.ProductionHallActivity">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <include layout="@layout/layout_title_bar" />
+
+            <TextView
+                android:id="@+id/toBase"
+                android:clickable="true"
+                android:layout_width="140dp"
+                android:layout_height="48dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="-8dp"
+                android:layout_marginTop="140dp"
+                android:textSize="@dimen/font_15"
+                android:textColor="#1DA04E"
+                android:background="@drawable/bg_to_produce_base"
+                android:drawableLeft="@drawable/ic_produce_fruit"
+                android:drawablePadding="-8dp"
+                android:gravity="center"
+                android:paddingLeft="16dp"
+                android:text="@string/produce_base_with_arrow" />
+
+
+            <LinearLayout
+                android:paddingLeft="28dp"
+                android:paddingRight="28dp"
+                android:orientation="horizontal"
+                android:layout_alignParentBottom="true"
+                android:layout_width="match_parent"
+                android:layout_height="78dp">
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="@{() -> stepHandler.onStep(0)}"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/ic_produce_fertilize" />
+
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="26dp"
+                        android:background="@drawable/ic_btn_produce_step"
+                        android:gravity="center"
+                        android:text="@string/fertilize"
+                        android:textColor="#784832"
+                        android:textSize="@dimen/font_12" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="@{() -> stepHandler.onStep(1)}"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/ic_produce_water" />
+
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="26dp"
+                        android:background="@drawable/ic_btn_produce_step"
+                        android:gravity="center"
+                        android:text="@string/water"
+                        android:textColor="#784832"
+                        android:textSize="@dimen/font_12" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:onClick="@{() -> stepHandler.onStep(2)}"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/ic_produce_disinsection" />
+
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="26dp"
+                        android:background="@drawable/ic_btn_produce_step"
+                        android:gravity="center"
+                        android:text="@string/disinsection"
+                        android:textColor="#784832"
+                        android:textSize="@dimen/font_12" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:onClick="@{() -> stepHandler.onStep(3)}"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/ic_produce_reap" />
+
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="26dp"
+                        android:background="@drawable/ic_btn_produce_step"
+                        android:gravity="center"
+                        android:text="@string/reap"
+                        android:textColor="#784832"
+                        android:textSize="@dimen/font_12" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+
+        </RelativeLayout>
+
+
+
+    </FrameLayout>
+
+</layout>

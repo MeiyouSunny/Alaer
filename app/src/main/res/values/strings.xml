@@ -8,5 +8,12 @@
     <string name="login">登录</string>
 
     <string name="produce_base">生产基地</string>
+    <string name="produce_hall">生产大厅</string>
+    <string name="produce_base_with_arrow">生产基地></string>
+    <string name="fertilize">施肥</string>
+    <string name="water">浇水</string>
+    <string name="disinsection">除虫</string>
+    <string name="reap">收获</string>
+    <string name="speed_up">加速</string>
 
 </resources>
