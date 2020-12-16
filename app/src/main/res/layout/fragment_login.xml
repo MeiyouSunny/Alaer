@@ -25,7 +25,7 @@
         android:layout_marginLeft="16dp"
         android:drawableRight="@drawable/ic_arror_down"
         android:text="+86"
-        android:textColor="@color/whilte"
+        android:textColor="@color/white"
         android:textSize="@dimen/font_12" />
 
     <EditText
@@ -36,8 +36,8 @@
         android:background="@null"
         android:layout_toRightOf="@+id/countryCode"
         android:hint="请输入手机号"
-        android:textColor="@color/whilte"
-        android:textColorHint="@color/whilte"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:textSize="@dimen/font_15" />
 
     <View
@@ -65,8 +65,8 @@
         android:layout_toRightOf="@+id/countryCode"
         android:hint="请输入密码"
         android:inputType="textPassword"
-        android:textColor="@color/whilte"
-        android:textColorHint="@color/whilte"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:textSize="@dimen/font_15" />
 
     <androidx.appcompat.widget.AppCompatButton
@@ -78,7 +78,7 @@
         android:layout_marginTop="88dp"
         android:background="@drawable/bg_blue_gradient"
         android:text="@string/login"
-        android:textColor="@color/whilte"
+        android:textColor="@color/white"
         android:textSize="@dimen/font_18" />
 
     <TextView
@@ -87,7 +87,7 @@
         android:layout_marginTop="18dp"
         android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
-        android:textColor="@color/whilte"
+        android:textColor="@color/white"
         android:textSize="@dimen/font_12"
         android:text="3D视界用户可直接账号登录"
         android:layout_height="wrap_content"/>
@@ -106,7 +106,7 @@
             android:layout_height="40dp"
             android:text="注册>>"
             android:onClick="@{handler.click}"
-            android:textColor="@color/whilte"
+            android:textColor="@color/white"
             android:textSize="@dimen/font_15"/>
 
         <TextView
@@ -115,7 +115,7 @@
             android:layout_height="40dp"
             android:layout_marginLeft="48dp"
             android:text="忘记密码？"
-            android:textColor="@color/whilte"
+            android:textColor="@color/white"
             android:textSize="@dimen/font_15" />
 
     </LinearLayout>

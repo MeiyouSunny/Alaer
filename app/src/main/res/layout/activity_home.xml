@@ -41,7 +41,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="48dp"
                     android:text="点击登录"
-                    android:textColor="@color/whilte"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/font_15" />
 
             </RelativeLayout>
@@ -57,7 +57,7 @@
                 android:paddingLeft="12dp"
                 android:paddingRight="12dp"
                 android:text="今日活跃度: 0"
-                android:textColor="@color/whilte"
+                android:textColor="@color/white"
                 android:textSize="@dimen/font_11" />
 
             <TextView
@@ -71,7 +71,7 @@
                 android:gravity="center_vertical"
                 android:paddingLeft="12dp"
                 android:text="公告：恭喜鲁班同学拿到五杀！"
-                android:textColor="@color/whilte"
+                android:textColor="@color/white"
                 android:textSize="@dimen/font_12" />
             
             <RelativeLayout
@@ -100,7 +100,7 @@
                     android:drawableTop="@drawable/ic_notice"
                     android:gravity="center"
                     android:text="公告"
-                    android:textColor="@color/whilte"
+                    android:textColor="@color/white"
                     android:textSize="13sp" />
 
                 <TextView
@@ -114,7 +114,7 @@
                     android:drawableTop="@drawable/ic_discover"
                     android:gravity="center"
                     android:text="发现"
-                    android:textColor="@color/whilte"
+                    android:textColor="@color/white"
                     android:textSize="13sp" />
 
                 <TextView
@@ -129,7 +129,7 @@
                     android:drawableTop="@drawable/ic_daily_sign"
                     android:gravity="center"
                     android:text="每日签到"
-                    android:textColor="@color/whilte"
+                    android:textColor="@color/white"
                     android:textSize="13sp" />
 
             </RelativeLayout>
@@ -159,7 +159,7 @@
                     android:drawableTop="@drawable/ic_production_base"
                     android:gravity="center"
                     android:text="生产基地"
-                    android:textColor="@color/whilte"
+                    android:textColor="@color/white"
                     android:textSize="13sp" />
 
                 <TextView
@@ -174,7 +174,7 @@
                     android:drawableTop="@drawable/ic_daily_task"
                     android:gravity="center"
                     android:text="每日任务"
-                    android:textColor="@color/whilte"
+                    android:textColor="@color/white"
                     android:textSize="13sp" />
 
             </RelativeLayout>

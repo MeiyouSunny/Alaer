@@ -5,7 +5,6 @@ import com.cyberalaer.hybrid.base.BaseTitleActivity;
 import com.cyberalaer.hybrid.databinding.ActivityProductionHallBinding;
 import com.cyberalaer.hybrid.util.ViewUtil;
 import com.meiyou.mvp.MvpBinder;
-import com.meiyou.mvp.View;
 
 /**
  * 生产大厅
@@ -25,7 +24,8 @@ public class ProductionHallActivity extends BaseTitleActivity<ActivityProduction
 
     @Override
     public void onViewCreated() {
-        int[] bgResIds = new int[]{R.drawable.bg_produce_step1, R.drawable.bg_produce_step2, R.drawable.bg_produce_step3, R.drawable.bg_produce_step4};
+        int[] bgResIds = new int[]{R.drawable.bg_produce_step1, R.drawable.bg_produce_step2,
+                R.drawable.bg_produce_step3, R.drawable.bg_produce_step4, R.drawable.bg_produce_step1};
         bindRoot.setBgPics(bgResIds);
         bindRoot.setStep(0);
         bindRoot.setStepHandler(mProduceStepHandler);
@@ -42,8 +42,11 @@ public class ProductionHallActivity extends BaseTitleActivity<ActivityProduction
         void onStep(int step);
     }
 
-    public void toProduceBase(View view) {
-        ViewUtil.gotoActivity(this, ProductionBaseActivity.class);
+    @Override
+    public void click(android.view.View view) {
+        if(view.getId() == R.id.toBase) {
+            ViewUtil.gotoActivity(this, ProductionBaseActivity.class);
+        }
     }
 
 }

@@ -4,6 +4,10 @@
     <data>
 
         <variable
+            name="handler"
+            type="com.cyberalaer.hybrid.base.BindClickListener" />
+
+        <variable
             name="step"
             type="int" />
 
@@ -38,6 +42,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="-8dp"
                 android:layout_marginTop="140dp"
+                android:onClick="@{handler.click}"
                 android:textSize="@dimen/font_15"
                 android:textColor="#1DA04E"
                 android:background="@drawable/bg_to_produce_base"
@@ -49,19 +54,21 @@
 
 
             <LinearLayout
-                android:paddingLeft="28dp"
-                android:paddingRight="28dp"
-                android:orientation="horizontal"
-                android:layout_alignParentBottom="true"
                 android:layout_width="match_parent"
-                android:layout_height="78dp">
+                android:layout_height="78dp"
+                android:layout_above="@+id/layoutBottom"
+                android:orientation="horizontal"
+                android:paddingLeft="28dp"
+                android:paddingRight="28dp">
 
                 <LinearLayout
                     android:gravity="center"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:onClick="@{() -> stepHandler.onStep(0)}"
+                    android:alpha="@{step >= 0 ? 1F : 0.5F}"
+                    android:clickable="@{step >= 0 ? true : false}"
+                    android:onClick="@{() -> stepHandler.onStep(1)}"
                     android:orientation="vertical">
 
                     <ImageView
@@ -85,7 +92,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:onClick="@{() -> stepHandler.onStep(1)}"
+                    android:alpha="@{step >= 1 ? 1F : 0.5F}"
+                    android:clickable="@{step >= 1 ? true : false}"
+                    android:onClick="@{() -> stepHandler.onStep(2)}"
                     android:orientation="vertical">
 
                     <ImageView
@@ -107,9 +116,11 @@
                 <LinearLayout
                     android:gravity="center"
                     android:layout_width="0dp"
-                    android:onClick="@{() -> stepHandler.onStep(2)}"
+                    android:onClick="@{() -> stepHandler.onStep(3)}"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:alpha="@{step >= 2 ? 1F : 0.5F}"
+                    android:clickable="@{step >= 2 ? true : false}"
                     android:orientation="vertical">
 
                     <ImageView
@@ -131,9 +142,11 @@
                 <LinearLayout
                     android:gravity="center"
                     android:layout_width="0dp"
-                    android:onClick="@{() -> stepHandler.onStep(3)}"
+                    android:onClick="@{() -> stepHandler.onStep(0)}"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:alpha="@{step >= 3 ? 1F : 0.5F}"
+                    android:clickable="@{step >= 3 ? true : false}"
                     android:orientation="vertical">
 
                     <ImageView
@@ -155,7 +168,40 @@
 
             </LinearLayout>
 
+            <LinearLayout
+                android:id="@+id/layoutBottom"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="60dp"
+                android:layout_marginTop="12dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="32dp"
+                android:paddingRight="32dp">
 
+                <com.cyberalaer.hybrid.view.TextProgressBar
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="18dp"
+                    android:progress="40"
+                    android:layout_weight="1"
+                    android:progressDrawable="@drawable/bg_progress"
+                    app:text="剩余 12:01:59"
+                    app:textColor="@color/white"
+                    app:textSize="9sp" />
+                
+                <TextView
+                    android:layout_width="50dp"
+                    android:textColor="@color/white"
+                    android:text="@string/speed_up"
+                    android:gravity="center"
+                    android:textSize="@dimen/font_12"
+                    android:background="@drawable/bg_btn_speed_up"
+                    android:layout_marginLeft="12dp"
+                    android:layout_height="28dp"/>
+
+            </LinearLayout>
 
         </RelativeLayout>
 
