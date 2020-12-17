@@ -33,4 +33,26 @@
     <string name="education_video">教育视频</string>
     <string name="career_traning">职业培训</string>
 
+    <string name="people_hospital">人民医院</string>
+    <string name="appointment">预约挂号</string>
+    <string name="appointment_without_queuing">在线预约不排队</string>
+    <string name="fill_case_history">病例史档案填写</string>
+    <string name="upload_case_history">病例史档案上传</string>
+
+    <string name="digital_mall">数字商城</string>
+    <string name="online_well_goods">线上优质商品上架</string>
+    <string name="go_exchange_goods">前往兑换</string>
+    <string name="goods_exchange">商品兑换</string>
+
+    <string name="government_hall">政务大厅</string>
+    <string name="real_name_auth">实名认证</string>
+    <string name="make_sure_security_warning">为保证您的账号安全，提升服务品质，请前往</string>
+
+    <string name="travel_hall">旅游大厅</string>
+    <string name="alaer_travel_video">阿拉尔旅游宣传片</string>
+    <string name="travel_ticket">旅游景点购票</string>
+
+    <string name="alipay_auth">支付宝认证</string>
+    <string name="card_auth">卡认证</string>
+
 </resources>

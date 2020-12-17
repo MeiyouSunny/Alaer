@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="handler"
+            type="com.cyberalaer.hybrid.base.BindClickListener" />
+    </data>
+
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical"
+        tools:context=".ui.leisure.LeisureHallActivity">
+
+        <include layout="@layout/layout_title_bar_black" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="158dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/img_government_hall_top" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="18dp"
+            android:paddingTop="20dp"
+            android:paddingRight="18dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="38dp"
+                android:text="@string/real_name_auth"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_19" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="38dp"
+                android:layout_marginTop="6dp"
+                android:text="@string/make_sure_security_warning"
+                android:textColor="@color/font_7E"
+                android:textSize="@dimen/font_12" />
+
+            <com.cyberalaer.hybrid.view.ItemLayoutView
+                android:id="@+id/realNameAuth"
+                style="@style/ItemLayout"
+                android:onClick="@{handler.click}"
+                app:icon="@drawable/ic_real_name_auth"
+                app:title="@string/real_name_auth" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

@@ -51,6 +51,7 @@ dependencies {
     implementation deps.room.runtime
     annotationProcessor deps.room.compiler
     implementation 'com.hmcx:mvp:2.0.2'
+    implementation 'com.hmcx:dollar:1.0.1'
 
     implementation 'androidx.navigation:navigation-fragment:2.2.2'
     implementation 'androidx.navigation:navigation-ui:2.2.2'

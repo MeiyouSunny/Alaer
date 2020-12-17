@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="com.cyberalaer.hybrid"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.cyberalaer.hybrid">
 
     <application
+        android:name=".ui.App"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
@@ -14,15 +15,18 @@
         <activity
             android:name=".ui.welcom.WelcomActivity"
             android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".ui.produce.ProductionHallActivity"
-            android:screenOrientation="portrait">
-        </activity>
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".ui.welcom.GuideActivity"
-            android:screenOrientation="portrait" >
-        </activity>
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".ui.home.HomeActivity"
             android:screenOrientation="portrait"></activity>
@@ -32,23 +36,36 @@
 
         <activity
             android:name=".ui.leisure.LeisureHallActivity"
-            android:screenOrientation="portrait" >
-        </activity>
+            android:screenOrientation="portrait"></activity>
 
         <activity
             android:name=".ui.game.GameHallActivity"
-            android:screenOrientation="portrait" >
-        </activity>
+            android:screenOrientation="portrait"></activity>
 
         <activity
             android:name=".ui.education.EducationHallActivity"
-            android:screenOrientation="portrait" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:screenOrientation="portrait"></activity>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity
+            android:name=".ui.hospital.HospitalActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name=".ui.shopping.DigitalMallActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name=".ui.government.GovernmentHallActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name=".ui.government.RealNameAuthActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name=".ui.travel.TravelHallActivity"
+            android:screenOrientation="portrait"></activity>
+
     </application>
 
 </manifest>

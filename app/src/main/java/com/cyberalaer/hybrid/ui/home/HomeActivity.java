@@ -1,12 +1,21 @@
 package com.cyberalaer.hybrid.ui.home;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
 import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseViewBindActivity;
 import com.cyberalaer.hybrid.databinding.ActivityHomeBinding;
+import com.cyberalaer.hybrid.ui.education.EducationHallActivity;
+import com.cyberalaer.hybrid.ui.game.GameHallActivity;
+import com.cyberalaer.hybrid.ui.government.GovernmentHallActivity;
+import com.cyberalaer.hybrid.ui.hospital.HospitalActivity;
+import com.cyberalaer.hybrid.ui.leisure.LeisureHallActivity;
+import com.cyberalaer.hybrid.ui.produce.ProductionHallActivity;
+import com.cyberalaer.hybrid.ui.shopping.DigitalMallActivity;
+import com.cyberalaer.hybrid.ui.travel.TravelHallActivity;
+import com.cyberalaer.hybrid.util.ViewUtil;
 import com.cyberalaer.hybrid.view.mapview.MapContainer;
 import com.cyberalaer.hybrid.view.mapview.Marker;
 import com.meiyou.mvp.MvpBinder;
@@ -50,9 +59,12 @@ public class HomeActivity extends BaseViewBindActivity<ActivityHomeBinding> impl
         bindRoot.map.setOnMarkerClickListner(this);
     }
 
+    private Class<? extends Activity>[] mPageClasses = new Class[]{EducationHallActivity.class, DigitalMallActivity.class, GovernmentHallActivity.class,
+            TravelHallActivity.class, GameHallActivity.class, HospitalActivity.class, LeisureHallActivity.class, ProductionHallActivity.class};
+
     @Override
     public void onClick(View view, int position) {
-        Toast.makeText(this, "点击了第" + position + "个", Toast.LENGTH_SHORT).show();
+        ViewUtil.gotoActivity(this, mPageClasses[position]);
     }
 
 }

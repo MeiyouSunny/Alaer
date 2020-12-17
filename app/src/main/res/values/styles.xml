@@ -1,9 +1,10 @@
 <resources>
 
-    <declare-styleable name="TextProgressBar">
-        <attr name="text" format="string" />
-        <attr name="textSize" format="dimension" />
-        <attr name="textColor" format="color" />
-    </declare-styleable>
+    <style name="ItemLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">84dp</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:clickable">true</item>
+    </style>
 
 </resources>
