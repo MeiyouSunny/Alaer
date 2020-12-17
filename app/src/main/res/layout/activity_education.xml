@@ -9,7 +9,7 @@
         android:background="@color/white"
         android:fitsSystemWindows="true"
         android:orientation="vertical"
-        tools:context=".ui.leisure.LeisureHallActivity">
+        tools:context=".ui.education.EducationHallActivity">
 
         <include layout="@layout/layout_title_bar_black" />
 
@@ -21,7 +21,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="168dp"
                 android:layout_alignParentBottom="true"
-                android:background="@drawable/img_leisure_bottom" />
+                android:background="@drawable/img_education_bottom" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -36,32 +36,32 @@
                     android:layout_width="match_parent"
                     android:layout_height="84dp"
                     android:layout_marginTop="14dp"
-                    app:icon="@drawable/ic_music"
-                    app:title="@string/music" />
+                    app:icon="@drawable/ic_compulsory_education"
+                    app:title="@string/compulsory_education" />
 
                 <com.cyberalaer.hybrid.view.ItemLayoutView
                     android:id="@+id/shortVideo"
                     android:layout_width="match_parent"
                     android:layout_height="84dp"
                     android:layout_marginTop="14dp"
-                    app:icon="@drawable/ic_shot_video"
-                    app:title="@string/shot_video" />
+                    app:icon="@drawable/ic_online_education"
+                    app:title="@string/online_education" />
 
                 <com.cyberalaer.hybrid.view.ItemLayoutView
                     android:id="@+id/film"
                     android:layout_width="match_parent"
                     android:layout_height="84dp"
                     android:layout_marginTop="14dp"
-                    app:icon="@drawable/ic_film"
-                    app:title="@string/film" />
+                    app:icon="@drawable/ic_education_video"
+                    app:title="@string/education_video" />
 
                 <com.cyberalaer.hybrid.view.ItemLayoutView
                     android:id="@+id/novel"
                     android:layout_width="match_parent"
                     android:layout_height="84dp"
                     android:layout_marginTop="14dp"
-                    app:icon="@drawable/ic_novel"
-                    app:title="@string/novel" />
+                    app:icon="@drawable/ic_career_traning"
+                    app:title="@string/career_traning" />
 
             </LinearLayout>
 

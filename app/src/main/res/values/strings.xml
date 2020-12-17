@@ -27,4 +27,10 @@
     <string name="h5_game">H5小游戏</string>
     <string name="more">更多</string>
 
+    <string name="education_hall">教育大厅</string>
+    <string name="compulsory_education">义务教育</string>
+    <string name="online_education">在线教育</string>
+    <string name="education_video">教育视频</string>
+    <string name="career_traning">职业培训</string>
+
 </resources>

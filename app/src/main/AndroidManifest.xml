@@ -38,6 +38,11 @@
         <activity
             android:name=".ui.game.GameHallActivity"
             android:screenOrientation="portrait" >
+        </activity>
+
+        <activity
+            android:name=".ui.education.EducationHallActivity"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
