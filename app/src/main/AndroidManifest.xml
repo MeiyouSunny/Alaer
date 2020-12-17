@@ -18,21 +18,32 @@
         <activity
             android:name=".ui.produce.ProductionHallActivity"
             android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".ui.welcom.GuideActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait" >
+        </activity>
         <activity
             android:name=".ui.home.HomeActivity"
             android:screenOrientation="portrait"></activity>
         <activity
             android:name=".ui.user.LoginActivity"
             android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name=".ui.leisure.LeisureHallActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <activity
+            android:name=".ui.game.GameHallActivity"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

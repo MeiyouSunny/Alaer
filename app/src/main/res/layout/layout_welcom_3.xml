@@ -42,6 +42,8 @@
         android:background="@drawable/bg_btn_green_round_corner"
         android:gravity="center"
         android:text="探索阿拉尔"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
         android:textColor="@color/black"
         android:textSize="@dimen/font_16"
         android:textStyle="bold" />

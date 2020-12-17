@@ -16,4 +16,15 @@
     <string name="reap">收获</string>
     <string name="speed_up">加速</string>
 
+    <string name="leisure_hall">休闲大厅</string>
+    <string name="music">音乐</string>
+    <string name="shot_video">短视频</string>
+    <string name="film">电影</string>
+    <string name="novel">小说</string>
+
+    <string name="game_hall">游戏大厅</string>
+    <string name="classic_game">经典游戏</string>
+    <string name="h5_game">H5小游戏</string>
+    <string name="more">更多</string>
+
 </resources>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical"
+        tools:context=".ui.leisure.LeisureHallActivity">
+
+        <include layout="@layout/layout_title_bar_black" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="168dp"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/img_leisure_bottown" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="18dp"
+                android:paddingTop="18dp"
+                android:paddingRight="18dp">
+
+                <com.cyberalaer.hybrid.view.ItemLayoutView
+                    android:id="@+id/music"
+                    android:layout_width="match_parent"
+                    android:layout_height="84dp"
+                    android:layout_marginTop="14dp"
+                    app:icon="@drawable/ic_music"
+                    app:title="@string/music" />
+
+                <com.cyberalaer.hybrid.view.ItemLayoutView
+                    android:id="@+id/shortVideo"
+                    android:layout_width="match_parent"
+                    android:layout_height="84dp"
+                    android:layout_marginTop="14dp"
+                    app:icon="@drawable/ic_shot_video"
+                    app:title="@string/shot_video" />
+
+                <com.cyberalaer.hybrid.view.ItemLayoutView
+                    android:id="@+id/film"
+                    android:layout_width="match_parent"
+                    android:layout_height="84dp"
+                    android:layout_marginTop="14dp"
+                    app:icon="@drawable/ic_film"
+                    app:title="@string/film" />
+
+                <com.cyberalaer.hybrid.view.ItemLayoutView
+                    android:id="@+id/novel"
+                    android:layout_width="match_parent"
+                    android:layout_height="84dp"
+                    android:layout_marginTop="14dp"
+                    app:icon="@drawable/ic_novel"
+                    app:title="@string/novel" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</layout>
