@@ -15,11 +15,7 @@
         <activity
             android:name=".ui.welcom.WelcomActivity"
             android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".ui.produce.ProductionHallActivity"
@@ -65,6 +61,16 @@
         <activity
             android:name=".ui.travel.TravelHallActivity"
             android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name=".ui.user.UserInfoActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
     </application>
 

@@ -55,4 +55,19 @@
     <string name="alipay_auth">支付宝认证</string>
     <string name="card_auth">卡认证</string>
 
+    <string name="mine">我的</string>
+    <string name="total_assets">总资产:(元)</string>
+    <string name="fruit">果实</string>
+    <string name="build_integral">建设工分</string>
+    <string name="sapling_activity">树苗活跃度</string>
+    <string name="share_activity">分享活跃度</string>
+    <string name="my_share">我的分享</string>
+    <string name="my_partner">我的伙伴</string>
+    <string name="invitation_code">邀请码</string>
+    <string name="wechat">微信</string>
+    <string name="security_center">安全中心</string>
+    <string name="customer_service">客服</string>
+    <string name="about">关于</string>
+
+
 </resources>

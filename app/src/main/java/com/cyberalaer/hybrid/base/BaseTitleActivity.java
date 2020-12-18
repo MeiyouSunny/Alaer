@@ -18,7 +18,12 @@ public abstract class BaseTitleActivity<T extends ViewDataBinding> extends BaseV
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        initView();
+        initTitleBar();
+        onViewCreated();
+    }
 
+    private void initTitleBar() {
         title = bindRoot.getRoot().findViewById(R.id.title);
         titleLeft = bindRoot.getRoot().findViewById(R.id.title_left);
         titleRight = bindRoot.getRoot().findViewById(R.id.title_right);

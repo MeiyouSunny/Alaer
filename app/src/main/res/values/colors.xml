@@ -6,10 +6,13 @@
 
     <color name="black">#000000</color>
     <color name="white">#FFFFFF</color>
+    <color name="bg_gray">#F5F6F7</color>
 
     <!-- 字体 -->
     <color name="font_brown">#552107</color>
     <color name="font_36">#363636</color>
     <color name="font_7E">#7E7E7E</color>
+    <color name="font_41">#414141</color>
+    <color name="font_99">#999999</color>
 
 </resources>

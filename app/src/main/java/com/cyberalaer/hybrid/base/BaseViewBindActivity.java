@@ -21,11 +21,14 @@ public abstract class BaseViewBindActivity<T extends ViewDataBinding> extends Ba
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        initView();
+        onViewCreated();
+    }
+
+    protected void initView() {
         setStatusBar();
         bindRoot = (T) DataBindingUtil.setContentView(this, layoutId());
         setEventHandler();
-
-        onViewCreated();
     }
 
     @Override
