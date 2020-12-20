@@ -71,7 +71,7 @@ public class TextProgressBar extends ProgressBar {
         int y = (getHeight() / 2) - rect.centerY();
 
         canvas.drawText(mTextShow,
-                x,
+                80,
                 y,
                 mTextPaint);
     }

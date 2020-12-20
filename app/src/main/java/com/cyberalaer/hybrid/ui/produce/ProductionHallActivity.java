@@ -24,8 +24,8 @@ public class ProductionHallActivity extends BaseTitleActivity<ActivityProduction
 
     @Override
     public void onViewCreated() {
-        int[] bgResIds = new int[]{R.drawable.bg_produce_step1, R.drawable.bg_produce_step2,
-                R.drawable.bg_produce_step3, R.drawable.bg_produce_step4, R.drawable.bg_produce_step1};
+        int[] bgResIds = new int[]{R.drawable.img_produce_step1, R.drawable.img_produce_step2,
+                R.drawable.img_produce_step3, R.drawable.img_produce_step4, R.drawable.img_produce_step1};
         bindRoot.setBgPics(bgResIds);
         bindRoot.setStep(0);
         bindRoot.setStepHandler(mProduceStepHandler);

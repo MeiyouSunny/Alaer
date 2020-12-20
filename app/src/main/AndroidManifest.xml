@@ -19,7 +19,13 @@
         </activity>
         <activity
             android:name=".ui.produce.ProductionHallActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".ui.welcom.GuideActivity"
             android:screenOrientation="portrait"></activity>
@@ -28,13 +34,7 @@
             android:screenOrientation="portrait"></activity>
         <activity
             android:name=".ui.user.LoginActivity"
-            android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:screenOrientation="portrait"></activity>
 
         <activity
             android:name=".ui.leisure.LeisureHallActivity"
@@ -98,8 +98,7 @@
 
         <activity
             android:name=".ui.user.WechatNoSetActivity"
-            android:screenOrientation="portrait">
-        </activity>
+            android:screenOrientation="portrait"></activity>
 
     </application>
 

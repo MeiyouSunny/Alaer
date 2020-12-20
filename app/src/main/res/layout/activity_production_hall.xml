@@ -24,8 +24,8 @@
     <FrameLayout xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/bg_produce"
         android:fitsSystemWindows="true"
-        app:drawableRes="@{bgPics[step]}"
         tools:context=".ui.produce.ProductionHallActivity">
 
         <RelativeLayout
@@ -34,40 +34,49 @@
 
             <include layout="@layout/layout_title_bar" />
 
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/layoutStep"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="16dp"
+                app:drawableRes="@{bgPics[step]}" />
+
             <TextView
                 android:id="@+id/toBase"
-                android:clickable="true"
                 android:layout_width="140dp"
                 android:layout_height="48dp"
                 android:layout_alignParentRight="true"
-                android:layout_marginRight="-8dp"
                 android:layout_marginTop="140dp"
-                android:onClick="@{handler.click}"
-                android:textSize="@dimen/font_15"
-                android:textColor="#1DA04E"
+                android:layout_marginRight="-8dp"
                 android:background="@drawable/bg_to_produce_base"
-                android:drawableLeft="@drawable/ic_produce_fruit"
-                android:drawablePadding="-8dp"
+                android:clickable="true"
                 android:gravity="center"
+                android:onClick="@{handler.click}"
                 android:paddingLeft="16dp"
-                android:text="@string/produce_base_with_arrow" />
+                android:text="@string/seed_store"
+                android:textColor="#A35720"
+                android:textSize="@dimen/font_17"
+                android:textStyle="bold" />
 
 
             <LinearLayout
+                android:id="@+id/layoutStep"
                 android:layout_width="match_parent"
                 android:layout_height="78dp"
                 android:layout_above="@+id/layoutBottom"
                 android:orientation="horizontal"
-                android:paddingLeft="28dp"
-                android:paddingRight="28dp">
+                android:paddingLeft="4dp"
+                android:paddingRight="4dp">
 
                 <LinearLayout
-                    android:gravity="center"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:alpha="@{step >= 0 ? 1F : 0.5F}"
                     android:clickable="@{step >= 0 ? true : false}"
+                    android:gravity="center"
                     android:onClick="@{() -> stepHandler.onStep(1)}"
                     android:orientation="vertical">
 
@@ -77,23 +86,25 @@
                         android:background="@drawable/ic_produce_fertilize" />
 
                     <TextView
-                        android:layout_width="50dp"
-                        android:layout_height="26dp"
-                        android:background="@drawable/ic_btn_produce_step"
+                        android:layout_width="60dp"
+                        android:layout_height="24dp"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/bg_green_produce_step"
                         android:gravity="center"
                         android:text="@string/fertilize"
-                        android:textColor="#784832"
-                        android:textSize="@dimen/font_12" />
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_17"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
                 <LinearLayout
-                    android:gravity="center"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:alpha="@{step >= 1 ? 1F : 0.5F}"
                     android:clickable="@{step >= 1 ? true : false}"
+                    android:gravity="center"
                     android:onClick="@{() -> stepHandler.onStep(2)}"
                     android:orientation="vertical">
 
@@ -103,24 +114,26 @@
                         android:background="@drawable/ic_produce_water" />
 
                     <TextView
-                        android:layout_width="50dp"
-                        android:layout_height="26dp"
-                        android:background="@drawable/ic_btn_produce_step"
+                        android:layout_width="60dp"
+                        android:layout_height="24dp"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/bg_green_produce_step"
                         android:gravity="center"
                         android:text="@string/water"
-                        android:textColor="#784832"
-                        android:textSize="@dimen/font_12" />
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_17"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
                 <LinearLayout
-                    android:gravity="center"
                     android:layout_width="0dp"
-                    android:onClick="@{() -> stepHandler.onStep(3)}"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:alpha="@{step >= 2 ? 1F : 0.5F}"
                     android:clickable="@{step >= 2 ? true : false}"
+                    android:gravity="center"
+                    android:onClick="@{() -> stepHandler.onStep(3)}"
                     android:orientation="vertical">
 
                     <ImageView
@@ -129,24 +142,26 @@
                         android:background="@drawable/ic_produce_disinsection" />
 
                     <TextView
-                        android:layout_width="50dp"
-                        android:layout_height="26dp"
-                        android:background="@drawable/ic_btn_produce_step"
+                        android:layout_width="60dp"
+                        android:layout_height="24dp"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/bg_green_produce_step"
                         android:gravity="center"
                         android:text="@string/disinsection"
-                        android:textColor="#784832"
-                        android:textSize="@dimen/font_12" />
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_17"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
                 <LinearLayout
-                    android:gravity="center"
                     android:layout_width="0dp"
-                    android:onClick="@{() -> stepHandler.onStep(0)}"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:alpha="@{step >= 3 ? 1F : 0.5F}"
                     android:clickable="@{step >= 3 ? true : false}"
+                    android:gravity="center"
+                    android:onClick="@{() -> stepHandler.onStep(0)}"
                     android:orientation="vertical">
 
                     <ImageView
@@ -155,13 +170,15 @@
                         android:background="@drawable/ic_produce_reap" />
 
                     <TextView
-                        android:layout_width="50dp"
-                        android:layout_height="26dp"
-                        android:background="@drawable/ic_btn_produce_step"
+                        android:layout_width="60dp"
+                        android:layout_height="24dp"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/bg_green_produce_step"
                         android:gravity="center"
                         android:text="@string/reap"
-                        android:textColor="#784832"
-                        android:textSize="@dimen/font_12" />
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_17"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
@@ -173,38 +190,38 @@
                 android:layout_width="match_parent"
                 android:layout_height="32dp"
                 android:layout_alignParentBottom="true"
-                android:layout_marginBottom="60dp"
                 android:layout_marginTop="12dp"
+                android:layout_marginBottom="36dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:paddingLeft="32dp"
-                android:paddingRight="32dp">
+                android:paddingLeft="36dp"
+                android:paddingRight="36dp">
 
                 <com.cyberalaer.hybrid.view.TextProgressBar
                     style="@style/Widget.AppCompat.ProgressBar.Horizontal"
                     android:layout_width="0dp"
-                    android:layout_height="18dp"
-                    android:progress="40"
+                    android:layout_height="22dp"
                     android:layout_weight="1"
+                    android:progress="40"
                     android:progressDrawable="@drawable/bg_progress"
                     app:text="剩余 12:01:59"
                     app:textColor="@color/white"
-                    app:textSize="9sp" />
-                
+                    app:textSize="11sp" />
+
                 <TextView
-                    android:layout_width="50dp"
-                    android:textColor="@color/white"
-                    android:text="@string/speed_up"
-                    android:gravity="center"
-                    android:textSize="@dimen/font_12"
+                    android:layout_width="64dp"
+                    android:layout_height="28dp"
+                    android:layout_marginLeft="14dp"
                     android:background="@drawable/bg_btn_speed_up"
-                    android:layout_marginLeft="12dp"
-                    android:layout_height="28dp"/>
+                    android:gravity="center"
+                    android:text="@string/speed_up"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_14"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
         </RelativeLayout>
-
 
 
     </FrameLayout>
