@@ -19,49 +19,23 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="58dp"
-            android:background="@drawable/ic_regist_step1" />
+            android:background="@drawable/ic_regist_step2" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="47dp"
             android:layout_marginTop="132dp"
-            android:text="@string/phone_no"
+            android:text="@string/input_pwd"
             android:textColor="@color/font_41"
             android:textSize="@dimen/font_17" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="28dp"
+        <EditText
+            style="@style/AccountEditText"
             android:layout_marginLeft="47dp"
-            android:layout_marginTop="163dp"
-            android:layout_marginRight="48dp"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:drawableRight="@drawable/ic_arrow_down"
-                android:drawablePadding="4dp"
-                android:text="+86"
-                android:textColor="@color/font_41"
-                android:textSize="@dimen/font_16" />
-
-            <View
-                android:layout_width="1dp"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="12dp"
-                android:layout_marginTop="4dp"
-                android:layout_marginBottom="6dp"
-                android:background="#D8D8D8" />
-
-            <EditText
-                style="@style/AccountEditText"
-                android:layout_marginLeft="16dp"
-                android:hint="@string/pls_input_pwd" />
-
-        </LinearLayout>
+            android:layout_marginTop="153dp"
+            android:layout_marginRight="47dp"
+            android:hint="@string/pls_input_pwd" />
 
         <View
             style="@style/LineAccountGray"
@@ -73,44 +47,50 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="47dp"
-            android:layout_marginTop="217dp"
-            android:text="@string/vierify_code"
+            android:layout_marginTop="205dp"
+            android:text="@string/confirm_pwd"
             android:textColor="@color/font_41"
             android:textSize="@dimen/font_17" />
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="28dp"
+        <EditText
+            style="@style/AccountEditText"
             android:layout_marginLeft="47dp"
-            android:layout_marginTop="246dp"
-            android:layout_marginRight="48dp">
-
-            <EditText
-                style="@style/AccountEditText"
-                android:hint="@string/pls_input_verify_code" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                style="@style/BtnGreen"
-                android:layout_width="61dp"
-                android:layout_height="match_parent"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="0dp"
-                android:text="@string/send" />
-
-        </RelativeLayout>
+            android:layout_marginTop="236dp"
+            android:layout_marginRight="47dp"
+            android:hint="@string/pls_input_pwd" />
 
         <View
             style="@style/LineAccountGray"
             android:layout_marginLeft="47dp"
-            android:layout_marginTop="277dp"
+            android:layout_marginTop="265dp"
+            android:layout_marginRight="47dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="47dp"
+            android:layout_marginTop="289dp"
+            android:text="@string/invitation_code"
+            android:textColor="@color/font_41"
+            android:textSize="@dimen/font_17" />
+
+        <EditText
+            style="@style/AccountEditText"
+            android:layout_marginLeft="47dp"
+            android:layout_marginTop="320dp"
+            android:layout_marginRight="47dp"
+            android:hint="@string/pls_input_invitate_code" />
+
+        <View
+            style="@style/LineAccountGray"
+            android:layout_marginLeft="47dp"
+            android:layout_marginTop="349dp"
             android:layout_marginRight="47dp" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/next"
             style="@style/BtnGreen"
-            android:onClick="@{handler.click}"
             android:layout_marginLeft="38dp"
-            android:layout_marginTop="314dp"
+            android:layout_marginTop="386dp"
             android:layout_marginRight="38dp"
             android:text="@string/next_step" />
 
@@ -118,7 +98,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="388dp"
+            android:layout_marginTop="460dp"
             android:orientation="horizontal">
 
             <TextView

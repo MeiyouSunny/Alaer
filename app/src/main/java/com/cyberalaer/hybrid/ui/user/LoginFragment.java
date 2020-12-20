@@ -17,10 +17,21 @@ public class LoginFragment extends BaseBindFragment<FragmentLoginBinding> {
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+        setTopLeftIcon(R.drawable.ic_back_black);
+        setTitleText(R.string.enter);
+    }
+
+    @Override
     public void click(View view) {
-        if (view.getId() == R.id.toRegist) {
-            navigate(R.id.action_to_regist_phone_verify);
-            setTitleText(R.string.regist);
+        switch (view.getId()) {
+            case R.id.toRegist:
+                navigate(R.id.action_to_regisPhoneVerify);
+                break;
+            case R.id.forgetPwd:
+                navigate(R.id.action_to_restPwdFragment);
+                break;
         }
     }
 

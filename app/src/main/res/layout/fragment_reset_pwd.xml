@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="handler"
+            type="com.cyberalaer.hybrid.base.BindClickListener" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.user.LoginFragment">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="47dp"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/phone_no"
+                    android:textColor="@color/font_41"
+                    android:textSize="@dimen/font_17" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="28dp"
+                    android:layout_marginLeft="47dp"
+                    android:layout_marginTop="57dp"
+                    android:layout_marginRight="48dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:drawableRight="@drawable/ic_arrow_down"
+                        android:drawablePadding="4dp"
+                        android:text="+86"
+                        android:textColor="@color/font_41"
+                        android:textSize="@dimen/font_16" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="6dp"
+                        android:background="#D8D8D8" />
+
+                    <EditText
+                        style="@style/AccountEditText"
+                        android:layout_marginLeft="16dp"
+                        android:hint="@string/pls_input_pwd" />
+
+                </LinearLayout>
+
+                <View
+                    style="@style/LineAccountGray"
+                    android:layout_marginLeft="47dp"
+                    android:layout_marginTop="85dp"
+                    android:layout_marginRight="47dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="47dp"
+                    android:layout_marginTop="103dp"
+                    android:text="@string/vierify_code"
+                    android:textColor="@color/font_41"
+                    android:textSize="@dimen/font_17" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="28dp"
+                    android:layout_marginLeft="47dp"
+                    android:layout_marginTop="134dp"
+                    android:layout_marginRight="48dp">
+
+                    <EditText
+                        style="@style/AccountEditText"
+                        android:hint="@string/pls_input_verify_code" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        style="@style/BtnGreen"
+                        android:layout_width="61dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="0dp"
+                        android:text="@string/send" />
+
+                </RelativeLayout>
+
+                <View
+                    style="@style/LineAccountGray"
+                    android:layout_marginLeft="47dp"
+                    android:layout_marginTop="163dp"
+                    android:layout_marginRight="47dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="47dp"
+                    android:layout_marginTop="181dp"
+                    android:text="@string/mail"
+                    android:textColor="@color/font_41"
+                    android:textSize="@dimen/font_17" />
+
+                <EditText
+                    style="@style/AccountEditText"
+                    android:layout_marginLeft="47dp"
+                    android:layout_marginTop="212dp"
+                    android:layout_marginRight="47dp"
+                    android:hint="@string/pls_input_mail" />
+
+                <View
+                    style="@style/LineAccountGray"
+                    android:layout_marginLeft="47dp"
+                    android:layout_marginTop="241dp"
+                    android:layout_marginRight="47dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="47dp"
+                    android:layout_marginTop="259dp"
+                    android:text="@string/mail_verify_code"
+                    android:textColor="@color/font_41"
+                    android:textSize="@dimen/font_17" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="28dp"
+                    android:layout_marginLeft="47dp"
+                    android:layout_marginTop="290dp"
+                    android:layout_marginRight="48dp">
+
+                    <EditText
+                        style="@style/AccountEditText"
+                        android:hint="@string/pls_input_mail_verify_code" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        style="@style/BtnGreen"
+                        android:layout_width="61dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="0dp"
+                        android:text="@string/send" />
+
+                </RelativeLayout>
+
+                <View
+                    style="@style/LineAccountGray"
+                    android:layout_marginLeft="47dp"
+                    android:layout_marginTop="319dp"
+                    android:layout_marginRight="47dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="47dp"
+                    android:layout_marginTop="337dp"
+                    android:text="@string/input_pwd"
+                    android:textColor="@color/font_41"
+                    android:textSize="@dimen/font_17" />
+
+                <EditText
+                    style="@style/AccountEditText"
+                    android:layout_marginLeft="47dp"
+                    android:layout_marginTop="368dp"
+                    android:layout_marginRight="47dp"
+                    android:hint="@string/pls_input_pwd" />
+
+                <View
+                    style="@style/LineAccountGray"
+                    android:layout_marginLeft="47dp"
+                    android:layout_marginTop="397dp"
+                    android:layout_marginRight="47dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="47dp"
+                    android:layout_marginTop="415dp"
+                    android:text="@string/confirm_pwd"
+                    android:textColor="@color/font_41"
+                    android:textSize="@dimen/font_17" />
+
+                <EditText
+                    style="@style/AccountEditText"
+                    android:layout_marginLeft="47dp"
+                    android:layout_marginTop="446dp"
+                    android:layout_marginRight="47dp"
+                    android:hint="@string/pls_input_pwd" />
+
+                <View
+                    style="@style/LineAccountGray"
+                    android:layout_marginLeft="47dp"
+                    android:layout_marginTop="475dp"
+                    android:layout_marginRight="47dp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    style="@style/BtnGreen"
+                    android:layout_marginLeft="38dp"
+                    android:layout_marginTop="503dp"
+                    android:layout_marginRight="38dp"
+                    android:onClick="@{handler.click}"
+                    android:text="@string/confirm" />
+
+            </RelativeLayout>
+        </ScrollView>
+
+    </RelativeLayout>
+
+</layout>

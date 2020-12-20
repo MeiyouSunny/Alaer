@@ -9,6 +9,8 @@ public interface TitleControl {
 
     void setTitleText(String text);
 
+    void setTitleLeftIcon(@DrawableRes int icon);
+
     void setTitleRightIcon(@DrawableRes int icon);
 
     void setTitleRightVisible(boolean visible);

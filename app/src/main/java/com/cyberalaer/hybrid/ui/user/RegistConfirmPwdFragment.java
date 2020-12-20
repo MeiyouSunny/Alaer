@@ -4,16 +4,16 @@ import android.view.View;
 
 import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseBindFragment;
-import com.cyberalaer.hybrid.databinding.FragmentRegistPhoneVerifyBinding;
+import com.cyberalaer.hybrid.databinding.FragmentRegistConfirmPwdBinding;
 import com.meiyou.mvp.MvpBinder;
 
 @MvpBinder(
 )
-public class RegistPhoneVerifyFragment extends BaseBindFragment<FragmentRegistPhoneVerifyBinding> {
+public class RegistConfirmPwdFragment extends BaseBindFragment<FragmentRegistConfirmPwdBinding> {
 
     @Override
     public int initLayoutResId() {
-        return R.layout.fragment_regist_phone_verify;
+        return R.layout.fragment_regist_confirm_pwd;
     }
 
     @Override
@@ -28,9 +28,6 @@ public class RegistPhoneVerifyFragment extends BaseBindFragment<FragmentRegistPh
         switch (view.getId()) {
             case R.id.toLogin:
                 navigate(R.id.action_to_login);
-                break;
-            case R.id.next:
-                navigate(R.id.action_to_registConfirmPwd);
                 break;
         }
     }

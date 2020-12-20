@@ -6,6 +6,31 @@
 
     <string name="regist">注册</string>
     <string name="login">登录</string>
+    <string name="enter">进入</string>
+    <string name="welcome_to_digital_alaer">欢迎来到数字阿拉尔</string>
+    <string name="account_3D_login_directly">3D视觉用户可直接账号登录</string>
+    <string name="phone_no">手机号码</string>
+    <string name="pls_input_phone">请输入手机号</string>
+    <string name="password">密码</string>
+    <string name="pls_input_pwd">请输入6位数字密码</string>
+    <string name="regist_account">注册账号</string>
+    <string name="forget_pwd">忘记密码</string>
+    <string name="apply">申请</string>
+    <string name="pls_input_verify_code">请输入验证码</string>
+    <string name="send">发送</string>
+    <string name="next_step">下一步</string>
+    <string name="has_account">已有账号?</string>
+    <string name="login_now">立即登录</string>
+    <string name="input_pwd">输入密码</string>
+    <string name="confirm_pwd">确认密码</string>
+    <string name="pls_input_invitate_code">请输入8位数邀请码</string>
+    <string name="reset_pwd">重置密码</string>
+    <string name="mail">邮箱</string>
+    <string name="pls_input_mail">请输入邮箱</string>
+    <string name="mail_verify_code">邮箱验证码</string>
+    <string name="pls_input_mail_verify_code">请输入邮箱验证码</string>
+    <string name="confirm">确定</string>
+    <string name="vierify_code">验证码</string>
 
     <string name="produce_base">生产基地</string>
     <string name="produce_hall">生产大厅</string>
@@ -47,6 +72,8 @@
     <string name="government_hall">政务大厅</string>
     <string name="real_name_auth">实名认证</string>
     <string name="make_sure_security_warning">为保证您的账号安全，提升服务品质，请前往</string>
+    <string name="auth_success">恭喜你完成身份认证!</string>
+    <string name="share_now">立即分享</string>
 
     <string name="travel_hall">旅游大厅</string>
     <string name="alaer_travel_video">阿拉尔旅游宣传片</string>
@@ -68,6 +95,31 @@
     <string name="security_center">安全中心</string>
     <string name="customer_service">客服</string>
     <string name="about">关于</string>
+
+    <string name="discover">发现</string>
+    <string name="beginner_guide">新手指南</string>
+    <string name="my_team">我的团队</string>
+    <string name="invitate_friend">邀请好友</string>
+
+    <string name="build_guide">建设指南</string>
+    <string name="promotion_guide">推广指南</string>
+    <string name="invitees">邀请人</string>
+    <string name="operation_guide">操作引导</string>
+    <string name="common_problem">常见问题</string>
+
+    <string name="level_rule">等级规则</string>
+
+    <string name="user_info">用户信息</string>
+    <string name="uid">UID</string>
+    <string name="nike">昵称</string>
+    <string name="wechat_no">微信号</string>
+    <string name="not_bind">未绑定</string>
+
+    <string name="wechat_no_set">微信号设置</string>
+    <string name="wechat_no_set_warning">微信号设置后，将公开给上下级用户查看</string>
+    <string name="pls_input_wechat_no">请输入微信号</string>
+    <string name="wechat_no_modify_warning">修改微信号将消耗10积分，请谨慎设置</string>
+    <string name="submit">提交</string>
 
 
 </resources>

@@ -28,7 +28,13 @@
             android:screenOrientation="portrait"></activity>
         <activity
             android:name=".ui.user.LoginActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <activity
             android:name=".ui.leisure.LeisureHallActivity"
@@ -63,13 +69,36 @@
             android:screenOrientation="portrait"></activity>
 
         <activity
-            android:name=".ui.user.UserInfoActivity"
-            android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:name=".ui.user.UserMineActivity"
+            android:screenOrientation="portrait"></activity>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        <activity
+            android:name=".ui.discover.DiscoverActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name=".ui.discover.BeginnerGuideActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name=".ui.government.RealNameAuthSuccessActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name=".ui.government.AuthShareActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name=".ui.user.LevelRuleActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name=".ui.user.UserInfoActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name=".ui.user.WechatNoSetActivity"
+            android:screenOrientation="portrait">
         </activity>
 
     </application>

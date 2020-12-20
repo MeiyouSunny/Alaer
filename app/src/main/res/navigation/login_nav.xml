@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<navigation android:id="@+id/login_nav.xml"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login_nav.xml"
     app:startDestination="@id/loginFragment">
 
     <fragment
@@ -11,8 +11,11 @@
         android:label="fragment_login"
         tools:layout="@layout/fragment_login">
         <action
-            android:id="@+id/action_to_regist_phone_verify"
+            android:id="@+id/action_to_regisPhoneVerify"
             app:destination="@id/registPhoneVerifyFragment" />
+        <action
+            android:id="@+id/action_to_restPwdFragment"
+            app:destination="@id/restPwdFragment" />
     </fragment>
 
     <fragment
@@ -24,6 +27,23 @@
             app:destination="@id/loginFragment"
             app:popUpTo="@id/loginFragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_to_registConfirmPwd"
+            app:destination="@id/registConfirmPwdFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/registConfirmPwdFragment"
+        android:name="com.cyberalaer.hybrid.ui.user.RegistConfirmPwdFragment"
+        android:label="RegistConfirmPwdFragment">
+        <action
+            android:id="@+id/action_to_login"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/restPwdFragment"
+        android:name="com.cyberalaer.hybrid.ui.user.RestPwdFragment"
+        android:label="RestPwdFragment" />
 
 </navigation>

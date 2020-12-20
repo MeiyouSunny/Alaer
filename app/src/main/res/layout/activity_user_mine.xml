@@ -16,7 +16,7 @@
         android:background="@color/white"
         android:fitsSystemWindows="true"
         android:orientation="vertical"
-        tools:context=".ui.user.UserInfoActivity">
+        tools:context=".ui.user.UserMineActivity">
 
         <RelativeLayout
             android:layout_width="match_parent"

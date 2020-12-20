@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="handler"
+            type="com.cyberalaer.hybrid.base.BindClickListener" />
+    </data>
+
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical"
+        tools:context=".ui.user.UserInfoActivity">
+
+        <include layout="@layout/layout_title_bar_black" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="@color/bg_gray" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="36dp"
+                android:layout_height="31dp"
+                android:layout_marginLeft="39dp"
+                android:layout_marginTop="34dp"
+                android:background="@drawable/ic_wechat" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="87dp"
+                android:layout_marginTop="28dp"
+                android:text="@string/wechat_no_set"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_17" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="87dp"
+                android:layout_marginTop="54dp"
+                android:text="@string/wechat_no_set_warning"
+                android:textColor="@color/font_7E"
+                android:textSize="@dimen/font_12" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginLeft="28dp"
+                android:layout_marginTop="93dp"
+                android:layout_marginRight="28dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="@color/bg_gray"
+                app:cardCornerRadius="8dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="24dp"
+                    android:paddingRight="29dp">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="48dp"
+                        android:layout_toLeftOf="@+id/icClear"
+                        android:background="@null"
+                        android:hint="@string/pls_input_wechat_no"
+                        android:textColorHint="@color/font_B3"
+                        android:textSize="@dimen/font_17" />
+
+                    <ImageView
+                        android:id="@+id/icClear"
+                        android:layout_width="20dp"
+                        android:src="@drawable/ic_input_clear"
+                        android:layout_height="20dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/submit"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="18dp"
+                android:text="@string/wechat_no_modify_warning"
+                android:textColor="@color/font_green" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/submit"
+                style="@style/BtnGreen"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="86dp"
+                android:text="@string/submit" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</layout>

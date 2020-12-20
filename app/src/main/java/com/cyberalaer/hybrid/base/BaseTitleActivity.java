@@ -57,6 +57,11 @@ public abstract class BaseTitleActivity<T extends ViewDataBinding> extends BaseV
     }
 
     @Override
+    public void setTitleLeftIcon(int icon) {
+        titleLeft.setImageResource(icon);
+    }
+
+    @Override
     public void setTitleRightVisible(boolean visible) {
         titleRight.setVisibility(View.VISIBLE);
     }

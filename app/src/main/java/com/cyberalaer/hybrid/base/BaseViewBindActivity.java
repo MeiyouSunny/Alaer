@@ -21,8 +21,8 @@ public abstract class BaseViewBindActivity<T extends ViewDataBinding> extends Ba
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        initView();
-        onViewCreated();
+//        initView();
+//        onViewCreated();
     }
 
     protected void initView() {

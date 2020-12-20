@@ -3,123 +3,131 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="handler"
             type="com.cyberalaer.hybrid.base.BindClickListener" />
     </data>
 
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp"
-    android:paddingTop="88dp"
-    android:layout_height="match_parent"
-    tools:context=".ui.user.LoginFragment">
-
-    <TextView
-        android:id="@+id/countryCode"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:gravity="center"
-        android:drawablePadding="4dp"
-        android:layout_marginLeft="16dp"
-        android:drawableRight="@drawable/ic_arror_down"
-        android:text="+86"
-        android:textColor="@color/white"
-        android:textSize="@dimen/font_12" />
-
-    <EditText
-        android:id="@+id/etPhone"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginLeft="24dp"
-        android:background="@null"
-        android:layout_toRightOf="@+id/countryCode"
-        android:hint="请输入手机号"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:textSize="@dimen/font_15" />
+        android:layout_height="match_parent"
+        tools:context=".ui.user.LoginFragment">
 
-    <View
-        android:id="@+id/linePhone"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_below="@+id/countryCode"
-        android:background="#88FFFFFF" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="47dp"
+            android:layout_marginTop="43dp"
+            android:text="@string/welcome_to_digital_alaer"
+            android:textColor="@color/font_41"
+            android:textSize="@dimen/font_20" />
 
-    <View
-        android:id="@+id/linePwd"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_below="@+id/etPwd"
-        android:background="#88FFFFFF" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="47dp"
+            android:layout_marginTop="78dp"
+            android:text="@string/account_3D_login_directly"
+            android:textColor="@color/font_7E"
+            android:textSize="@dimen/font_12" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="47dp"
+            android:layout_marginTop="132dp"
+            android:text="@string/phone_no"
+            android:textColor="@color/font_41"
+            android:textSize="@dimen/font_17" />
 
-    <EditText
-        android:id="@+id/etPwd"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginLeft="28dp"
-        android:background="@null"
-        android:layout_below="@+id/linePhone"
-        android:layout_toRightOf="@+id/countryCode"
-        android:hint="请输入密码"
-        android:inputType="textPassword"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:textSize="@dimen/font_15" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            android:layout_marginLeft="47dp"
+            android:layout_marginTop="163dp"
+            android:layout_marginRight="48dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnLogin"
-        android:layout_width="200dp"
-        android:layout_height="40dp"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/etPwd"
-        android:layout_marginTop="88dp"
-        android:background="@drawable/bg_blue_gradient"
-        android:text="@string/login"
-        android:textColor="@color/white"
-        android:textSize="@dimen/font_18" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:drawableRight="@drawable/ic_arrow_down"
+                android:drawablePadding="4dp"
+                android:text="+86"
+                android:textColor="@color/font_41"
+                android:textSize="@dimen/font_16" />
 
-    <TextView
-        android:id="@+id/tvAccountHint"
-        android:layout_below="@id/btnLogin"
-        android:layout_marginTop="18dp"
-        android:layout_centerHorizontal="true"
-        android:layout_width="wrap_content"
-        android:textColor="@color/white"
-        android:textSize="@dimen/font_12"
-        android:text="3D视界用户可直接账号登录"
-        android:layout_height="wrap_content"/>
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="6dp"
+                android:background="#D8D8D8" />
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_below="@+id/tvAccountHint"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="88dp"
-        android:orientation="horizontal">
+            <EditText
+                style="@style/AccountEditText"
+                android:layout_marginLeft="16dp"
+                android:hint="@string/pls_input_pwd" />
+
+        </LinearLayout>
+
+        <View
+            style="@style/LineAccountGray"
+            android:layout_marginLeft="47dp"
+            android:layout_marginTop="191dp"
+            android:layout_marginRight="47dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="47dp"
+            android:layout_marginTop="217dp"
+            android:text="@string/password"
+            android:textColor="@color/font_41"
+            android:textSize="@dimen/font_17" />
+
+        <EditText
+            style="@style/AccountEditText"
+            android:layout_marginLeft="47dp"
+            android:layout_marginTop="248dp"
+            android:layout_marginRight="47dp"
+            android:hint="@string/pls_input_pwd" />
+
+        <View
+            style="@style/LineAccountGray"
+            android:layout_marginLeft="47dp"
+            android:layout_marginTop="277dp"
+            android:layout_marginRight="47dp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnLogin"
+            style="@style/BtnGreen"
+            android:layout_marginLeft="38dp"
+            android:layout_marginTop="314dp"
+            android:layout_marginRight="38dp"
+            android:text="@string/enter" />
 
         <TextView
             android:id="@+id/toRegist"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:text="注册>>"
+            style="@style/AccountGreenText"
+            android:layout_marginLeft="87dp"
+            android:layout_marginTop="388dp"
+            android:clickable="true"
             android:onClick="@{handler.click}"
-            android:textColor="@color/white"
-            android:textSize="@dimen/font_15"/>
+            android:text="@string/regist_account" />
 
         <TextView
             android:id="@+id/forgetPwd"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:layout_marginLeft="48dp"
-            android:text="忘记密码？"
-            android:textColor="@color/white"
-            android:textSize="@dimen/font_15" />
+            style="@style/AccountGreenText"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="388dp"
+            android:layout_marginRight="87dp"
+            android:onClick="@{handler.click}"
+            android:text="@string/forget_pwd" />
 
-    </LinearLayout>
-
-</RelativeLayout>
+    </RelativeLayout>
 
 </layout>

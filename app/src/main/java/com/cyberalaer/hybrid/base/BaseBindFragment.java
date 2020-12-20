@@ -7,6 +7,7 @@ import com.meiyou.mvp.BaseFragment;
 
 import java.lang.reflect.Method;
 
+import androidx.annotation.DrawableRes;
 import androidx.annotation.StringRes;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
@@ -25,6 +26,12 @@ public abstract class BaseBindFragment<T extends ViewDataBinding> extends BaseFr
     protected void setTitleText(@StringRes int text) {
         if (getActivity() instanceof TitleControl) {
             ((TitleControl) getActivity()).setTitleText(text);
+        }
+    }
+
+    protected void setTopLeftIcon(@DrawableRes int drawableRes) {
+        if (getActivity() instanceof TitleControl) {
+            ((TitleControl) getActivity()).setTitleLeftIcon(drawableRes);
         }
     }
 

@@ -5,18 +5,18 @@ import com.cyberalaer.hybrid.base.BaseTitleActivity;
 import com.cyberalaer.hybrid.databinding.ActivityUserMineBinding;
 
 /**
- * 用户信息
+ * 微信号设置
  */
-public class UserInfoActivity extends BaseTitleActivity<ActivityUserMineBinding> {
+public class WechatNoSetActivity extends BaseTitleActivity<ActivityUserMineBinding> {
 
     @Override
     protected int titleResId() {
-        return R.string.user_info;
+        return R.string.wechat_no_set;
     }
 
     @Override
     protected int layoutId() {
-        return R.layout.activity_user_info;
+        return R.layout.activity_wechat_no_set;
     }
 
 }
