@@ -57,9 +57,10 @@
                 android:background="#D8D8D8" />
 
             <EditText
+                android:id="@+id/etPhone"
                 style="@style/AccountEditText"
                 android:layout_marginLeft="16dp"
-                android:hint="@string/pls_input_pwd" />
+                android:hint="@string/pls_input_phone" />
 
         </LinearLayout>
 
@@ -90,11 +91,13 @@
                 android:hint="@string/pls_input_verify_code" />
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnSend"
                 style="@style/BtnGreen"
                 android:layout_width="61dp"
                 android:layout_height="match_parent"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="0dp"
+                android:onClick="@{handler.click}"
                 android:text="@string/send" />
 
         </RelativeLayout>
@@ -108,10 +111,10 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/next"
             style="@style/BtnGreen"
-            android:onClick="@{handler.click}"
             android:layout_marginLeft="38dp"
             android:layout_marginTop="314dp"
             android:layout_marginRight="38dp"
+            android:onClick="@{handler.click}"
             android:text="@string/next_step" />
 
         <LinearLayout

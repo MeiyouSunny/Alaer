@@ -6,6 +6,7 @@ import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseBindFragment;
 import com.cyberalaer.hybrid.data.entity.Produce;
 import com.cyberalaer.hybrid.databinding.FragmentProduceListBinding;
+import com.cyberalaer.hybrid.ui.user.ActiveDetailAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,7 +47,9 @@ public class ProduceListFragment extends BaseBindFragment<FragmentProduceListBin
         produceList.add(new Produce());
         produceList.add(new Produce());
         produceList.add(new Produce());
-        ProduceAdapter produceAdapter = new ProduceAdapter(produceList);
+        produceList.add(new Produce());
+        produceList.add(new Produce());
+        ActiveDetailAdapter produceAdapter = new ActiveDetailAdapter(produceList);
         bindRoot.produceList.setAdapter(produceAdapter);
     }
 }

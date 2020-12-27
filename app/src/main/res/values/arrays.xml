@@ -6,4 +6,24 @@
         <item>过期项目</item>
     </string-array>
 
+    <string-array name="active_detail_tabs">
+        <item>@string/all</item>
+        <item>@string/share</item>
+        <item>@string/exchange</item>
+        <item>@string/give_away</item>
+    </string-array>
+
+    <string-array name="fruit_bill_tabs">
+        <item>@string/all</item>
+        <item>@string/income</item>
+        <item>@string/outcome</item>
+    </string-array>
+
+    <string-array name="my_team_tabs">
+        <item>@string/patner_active</item>
+        <item>@string/partner_persons</item>
+        <item>@string/star_team</item>
+        <item>@string/regist_time</item>
+    </string-array>
+
 </resources>

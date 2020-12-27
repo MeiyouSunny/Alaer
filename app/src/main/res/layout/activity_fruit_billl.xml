@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="handler"
+            type="com.cyberalaer.hybrid.base.BindClickListener" />
+    </data>
+
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical"
+        tools:context=".ui.user.UserMineActivity">
+
+        <include layout="@layout/layout_title_bar_black" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="124dp"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginRight="13dp"
+            app:cardBackgroundColor="#52c883"
+            app:cardCornerRadius="15dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="52dp"
+                    android:layout_toLeftOf="@+id/dividerLine"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="487380"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_20" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:drawableLeft="@drawable/ic_fruit_bill_total"
+                        android:drawablePadding="8dp"
+                        android:text="@string/total"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_17" />
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/dividerLine"
+                    android:layout_width="1dp"
+                    android:layout_height="40dp"
+                    android:layout_centerInParent="true"
+                    android:background="@color/white" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="52dp"
+                    android:layout_toRightOf="@+id/dividerLine"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="94839"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_20" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:drawableLeft="@drawable/ic_fruit_bill_available"
+                        android:drawablePadding="8dp"
+                        android:text="@string/available"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_17" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="36dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginRight="36dp"
+            app:tabIndicatorColor="#52C883"
+            app:tabIndicatorFullWidth="false"
+            app:tabIndicatorHeight="2dp"
+            app:tabMode="fixed"
+            app:tabRippleColor="@android:color/transparent"
+            app:tabTextAppearance="@style/TabText" />
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+</layout>

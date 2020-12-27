@@ -4,6 +4,7 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
 
     <!-- 字体大小 -->
+    <dimen name="font_10">10sp</dimen>
     <dimen name="font_11">11sp</dimen>
     <dimen name="font_12">12sp</dimen>
     <dimen name="font_13">13sp</dimen>

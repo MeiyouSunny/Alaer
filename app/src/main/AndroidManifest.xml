@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.cyberalaer.hybrid">
+
+    <uses-sdk tools:overrideLibrary="com.alaer.lib" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".ui.App"
@@ -19,13 +24,7 @@
         </activity>
         <activity
             android:name=".ui.produce.ProductionHallActivity"
-            android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".ui.welcom.GuideActivity"
             android:screenOrientation="portrait"></activity>
@@ -34,7 +33,13 @@
             android:screenOrientation="portrait"></activity>
         <activity
             android:name=".ui.user.LoginActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <activity
             android:name=".ui.leisure.LeisureHallActivity"
@@ -99,6 +104,19 @@
         <activity
             android:name=".ui.user.WechatNoSetActivity"
             android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name=".ui.user.ActiveDetailActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name=".ui.user.FruitBIllActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name=".ui.user.MyTeamActivity"
+            android:screenOrientation="portrait">
+        </activity>
 
     </application>
 

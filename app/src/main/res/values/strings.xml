@@ -113,7 +113,7 @@
     <string name="user_info">用户信息</string>
     <string name="uid">UID</string>
     <string name="nike">昵称</string>
-    <string name="wechat_no">微信号</string>
+    <string name="wechat_no">微信号</string>a
     <string name="not_bind">未绑定</string>
 
     <string name="wechat_no_set">微信号设置</string>
@@ -121,6 +121,27 @@
     <string name="pls_input_wechat_no">请输入微信号</string>
     <string name="wechat_no_modify_warning">修改微信号将消耗10积分，请谨慎设置</string>
     <string name="submit">提交</string>
+
+    <string name="active_detail">活跃度明显</string>
+    <string name="sapling">树苗</string>
+    <string name="share">分享</string>
+    <string name="all">全部</string>
+    <string name="exchange">兑换</string>
+    <string name="give_away">赠送</string>
+
+    <string name="fruit_bill">果实支出</string>
+    <string name="total">总计</string>
+    <string name="available">可用</string>
+    <string name="income">收入</string>
+    <string name="outcome">支出</string>
+
+    <string name="my_invitater">我的邀请人</string>
+    <string name="share_persons">分享人数</string>
+    <string name="active_real_auth">活跃实名</string>
+    <string name="partner_persons">伙伴人数</string>
+    <string name="patner_active">伙伴活跃度</string>
+    <string name="star_team">团队星级</string>
+    <string name="regist_time">注册时间</string>
 
 
 </resources>

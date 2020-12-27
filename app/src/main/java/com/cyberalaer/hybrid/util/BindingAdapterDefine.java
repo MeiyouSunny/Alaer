@@ -8,7 +8,7 @@ public class BindingAdapterDefine {
 
     @BindingAdapter({"app:drawableRes"})
     public static void
-     getTransImageView(View view, int res) {
+    getTransImageView(View view, int res) {
         view.setBackgroundResource(res);
     }
 

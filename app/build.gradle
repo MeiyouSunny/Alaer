@@ -30,6 +30,17 @@ android {
     dataBinding {
         enabled = true
     }
+
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+
+
+    lintOptions {
+        disable 'ExtraTranslation'
+    }
 }
 
 dependencies {
@@ -47,14 +58,18 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
     implementation 'androidx.preference:preference:1.1.1'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.navigation:navigation-fragment:2.2.2'
+    implementation 'androidx.navigation:navigation-ui:2.2.2'
     annotationProcessor deps.lifecycle.compiler
     implementation deps.room.runtime
     annotationProcessor deps.room.compiler
+
+    implementation project(path: ':lib')
+    implementation(name: 'captcha-release_v3.0.0', ext: 'aar')
+
     implementation 'com.hmcx:mvp:2.0.2'
     implementation 'com.hmcx:dollar:1.0.1'
+    implementation 'com.hmcx:rxandroid:1.0.6'
 
-    implementation 'androidx.navigation:navigation-fragment:2.2.2'
-    implementation 'androidx.navigation:navigation-ui:2.2.2'
 
-//    implementation project(path: ':lib')
 }

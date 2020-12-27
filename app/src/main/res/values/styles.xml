@@ -24,6 +24,12 @@
         <item name="android:layout_height">1dp</item>
     </style>
 
+    <style name="LineGrayE8">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">#E8E8E8</item>
+        <item name="android:layout_height">1dp</item>
+    </style>
+
     <style name="AccountGreenText">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -38,6 +44,11 @@
         <item name="android:textColor">@color/font_41</item>
         <item name="android:textColorHint">@color/font_B3</item>
         <item name="android:textSize">@dimen/font_16</item>
+    </style>
+
+    <style name="TabText">
+        <item name="android:textSize">@dimen/font_17</item>
+        <item name="android:textColor">@color/font_41</item>
     </style>
 
 </resources>
