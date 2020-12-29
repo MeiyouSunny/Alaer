@@ -68,6 +68,8 @@
                 android:background="#D8D8D8" />
 
             <EditText
+                android:id="@+id/etPhone"
+                android:text="33330301"
                 style="@style/AccountEditText"
                 android:layout_marginLeft="16dp"
                 android:hint="@string/pls_input_pwd" />
@@ -90,7 +92,10 @@
             android:textSize="@dimen/font_17" />
 
         <EditText
+            android:id="@+id/etPwd"
             style="@style/AccountEditText"
+            android:inputType="textPassword"
+            android:text="asdfgh123"
             android:layout_marginLeft="47dp"
             android:layout_marginTop="248dp"
             android:layout_marginRight="47dp"
@@ -105,10 +110,10 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnLogin"
             style="@style/BtnGreen"
-            android:onClick="@{handler.click}"
             android:layout_marginLeft="38dp"
             android:layout_marginTop="314dp"
             android:layout_marginRight="38dp"
+            android:onClick="@{handler.click}"
             android:text="@string/enter" />
 
         <TextView

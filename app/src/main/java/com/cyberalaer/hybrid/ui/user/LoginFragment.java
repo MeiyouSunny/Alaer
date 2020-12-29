@@ -1,7 +1,6 @@
 package com.cyberalaer.hybrid.ui.user;
 
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 
 import com.alaer.lib.api.ApiUtil;
@@ -13,15 +12,21 @@ import com.alaer.lib.data.UserDataUtil;
 import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseBindFragment;
 import com.cyberalaer.hybrid.databinding.FragmentLoginBinding;
+import com.cyberalaer.hybrid.util.SimpleTextWatcher;
 import com.cyberalaer.hybrid.util.StringUtil;
+import com.cyberalaer.hybrid.util.ViewUtil;
 import com.meiyou.mvp.MvpBinder;
 import com.netease.nis.captcha.Captcha;
 import com.netease.nis.captcha.CaptchaConfiguration;
 import com.netease.nis.captcha.CaptchaListener;
 
+import likly.dollar.$;
+
 @MvpBinder(
 )
 public class LoginFragment extends BaseBindFragment<FragmentLoginBinding> {
+
+    private String mPhone, mPwd;
 
     @Override
     public int initLayoutResId() {
@@ -50,18 +55,40 @@ public class LoginFragment extends BaseBindFragment<FragmentLoginBinding> {
         }
     }
 
+    @Override
+    public void onViewCreated() {
+        super.onViewCreated();
+        bindRoot.etPhone.addTextChangedListener(new SimpleTextWatcher() {
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                onInputChange();
+            }
+        });
+        bindRoot.etPwd.addTextChangedListener(new SimpleTextWatcher() {
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                onInputChange();
+            }
+        });
+    }
+
+    private void onInputChange() {
+        mPhone = ViewUtil.getText(bindRoot.etPhone);
+        mPwd = ViewUtil.getText(bindRoot.etPwd);
+        boolean hasInput = !TextUtils.isEmpty(mPhone) && !TextUtils.isEmpty(mPwd);
+        bindRoot.btnLogin.setEnabled(hasInput);
+    }
+
     private void verifyCode() {
         final CaptchaConfiguration configuration = new CaptchaConfiguration.Builder()
                 .captchaId(AppConfig.VERIFY_ID)
                 .listener(new CaptchaListener() {
                     @Override
                     public void onReady() {
-                        Log.e("Captcha", "onReady");
                     }
 
                     @Override
                     public void onValidate(String result, String validate, String msg) {
-                        Log.e("Captcha", "result:" + result + "\nvalidate:" + validate + "\nmsg:" + msg);
                         if (!TextUtils.isEmpty(validate)) {
                             login(validate);
                         }
@@ -69,12 +96,10 @@ public class LoginFragment extends BaseBindFragment<FragmentLoginBinding> {
 
                     @Override
                     public void onError(String s) {
-                        Log.e("Captcha", "onError " + s);
                     }
 
                     @Override
                     public void onCancel() {
-                        Log.e("Captcha", "onCancel");
                     }
                 })
                 .build(getContext());
@@ -84,11 +109,13 @@ public class LoginFragment extends BaseBindFragment<FragmentLoginBinding> {
     }
 
     private void login(String validate) {
-        ApiUtil.apiService().login("33330301", StringUtil.toMD5("asdfgh123" + AppConfig.MD5_KEY_TEMP), validate, "2",
-//        ApiUtil.apiService().login("33330301", "asdfgh123", validate, "2",
+        mPhone = ViewUtil.getText(bindRoot.etPhone);
+        mPwd = ViewUtil.getText(bindRoot.etPwd);
+        ApiUtil.apiService().login(mPhone, StringUtil.toMD5(mPwd + AppConfig.MD5_KEY_TEMP), validate, "2",
                 new Callback<UserData>() {
                     @Override
                     public void onResponse(UserData userData) {
+                        $.toast().text(userData.phone).show();
                         UserDataUtil.instance().setUserData(userData);
 
                         ApiUtil.apiService().getTeamDetailInfo(userData.uuid, String.valueOf(userData.uid), userData.token, "174",
@@ -97,7 +124,7 @@ public class LoginFragment extends BaseBindFragment<FragmentLoginBinding> {
                                     public void onResponse(TeamDetail teamDetail) {
                                         UserDataUtil.instance().setTeamDetail(teamDetail);
 
-                                        ApiUtil.apiService().getUserInfo(userData.uid, "", userData.token,
+                                        ApiUtil.apiService().getUserInfo(userData.uid, userData.uuid, userData.token,
                                                 new Callback<String>() {
                                                     @Override
                                                     public void onResponse(String response) {
@@ -106,7 +133,6 @@ public class LoginFragment extends BaseBindFragment<FragmentLoginBinding> {
                                                 });
                                     }
                                 });
-
 
                     }
                 });
