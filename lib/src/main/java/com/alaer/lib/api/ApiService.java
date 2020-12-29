@@ -1,5 +1,7 @@
 package com.alaer.lib.api;
 
+import com.alaer.lib.api.bean.UserData;
+
 import likly.reverse.Call;
 import likly.reverse.annotation.BaseUrl;
 import likly.reverse.annotation.CallExecuteListener;
@@ -30,15 +32,30 @@ public interface ApiService {
      */
     @FormBody
     @POST("/user/signin")
-    Call<String> login(@Part("phone") String phone, @Part("password") String password, @Part("validate") String validate, @Part("source") String source,
-                       Callback<String> callback);
+    Call<UserData> login(@Part("phone") String phone, @Part("password") String password, @Part("validate") String validate, @Part("source") String source,
+                         Callback<UserData> callback);
 
     /**
      * 获取验证码
      */
     @GET("/user/vcode")
     Call<String> getVCode(@Query("diallingCode") String diallingCode, @Query("email") String email, @Query("captchaId") String captchaId,
-                         @Query("validate") String validate, @Query("type") String type,
-                         Callback<String> callback);
+                          @Query("validate") String validate, @Query("type") String type,
+                          Callback<String> callback);
+
+    /**
+     * 获取用户信息
+     */
+    @GET("/mining/team/userinfo")
+    Call<String> getUserInfo(@Query("uid") int uid, @Query("token") String token,
+                             Callback<String> callback);
+
+    /**
+     * 获取团队信息
+     */
+    @GET("/mining/team/profile")
+    Call<String> getTeamInfo(@Query("uuid") String uuid, @Query("uid") int uid,
+                             @Query("token") String token, @Query("diamondCurrency") int diamondCurrency,
+                             Callback<String> callback);
 
 }

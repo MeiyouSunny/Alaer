@@ -11,4 +11,7 @@ public class AppConfig {
     public static final String DIALLING_CODE_DEFAULT = "86";
 
     public static final String AES_KEY = "Ale202012274321=";
+
+    public static final String MD5_KEY_TEMP = "dig?F*ckDang5PaSsWOrd&%(polarisex0160630).";
+
 }

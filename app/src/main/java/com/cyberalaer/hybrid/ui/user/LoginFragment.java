@@ -4,13 +4,15 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 
-import com.alaer.lib.api.AesUtil;
 import com.alaer.lib.api.ApiUtil;
 import com.alaer.lib.api.AppConfig;
 import com.alaer.lib.api.Callback;
+import com.alaer.lib.api.bean.UserData;
 import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseBindFragment;
+import com.cyberalaer.hybrid.data.UserDataUtil;
 import com.cyberalaer.hybrid.databinding.FragmentLoginBinding;
+import com.cyberalaer.hybrid.util.StringUtil;
 import com.meiyou.mvp.MvpBinder;
 import com.netease.nis.captcha.Captcha;
 import com.netease.nis.captcha.CaptchaConfiguration;
@@ -81,12 +83,28 @@ public class LoginFragment extends BaseBindFragment<FragmentLoginBinding> {
     }
 
     private void login(String validate) {
-        ApiUtil.apiService().login("33330301", AesUtil.encrypt("asdfgh123"), validate, "2",
+        ApiUtil.apiService().login("33330301", StringUtil.toMD5("asdfgh123" + AppConfig.MD5_KEY_TEMP), validate, "2",
 //        ApiUtil.apiService().login("33330301", "asdfgh123", validate, "2",
-                new Callback<String>() {
+                new Callback<UserData>() {
                     @Override
-                    public void onResponse(String response) {
-                        super.onResponse(response);
+                    public void onResponse(UserData userData) {
+                        UserDataUtil.instance().setUserData(userData);
+
+//                        ApiUtil.apiService().getTeamInfo(userData.uuid, userData.uid, userData.token, 174,
+//                                new Callback<String>() {
+//                                    @Override
+//                                    public void onResponse(String response) {
+//                                        super.onResponse(response);
+//                                    }
+//                                });
+
+                        ApiUtil.apiService().getUserInfo(userData.uid, userData.token,
+                                new Callback<String>() {
+                                    @Override
+                                    public void onResponse(String response) {
+                                        super.onResponse(response);
+                                    }
+                                });
                     }
                 });
     }
