@@ -14,4 +14,7 @@ public class AppConfig {
 
     public static final String MD5_KEY_TEMP = "dig?F*ckDang5PaSsWOrd&%(polarisex0160630).";
 
+    /* mining请求模块加密本地key */
+    public static final String CLIENT_SALT = "v5hcqfseCUUnKAMzmxLe";
+
 }

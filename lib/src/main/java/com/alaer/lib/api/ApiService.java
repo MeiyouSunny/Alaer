@@ -1,5 +1,6 @@
 package com.alaer.lib.api;
 
+import com.alaer.lib.api.bean.TeamDetail;
 import com.alaer.lib.api.bean.UserData;
 
 import likly.reverse.Call;
@@ -47,15 +48,23 @@ public interface ApiService {
      * 获取用户信息
      */
     @GET("/mining/team/userinfo")
-    Call<String> getUserInfo(@Query("uid") int uid, @Query("token") String token,
+    Call<String> getUserInfo(@Query("uid") int uid, @Query("teamUuid") String teamUuid, @Query("token") String token,
                              Callback<String> callback);
 
     /**
-     * 获取团队信息
+     * 获取用户信息
      */
-    @GET("/mining/team/profile")
-    Call<String> getTeamInfo(@Query("uuid") String uuid, @Query("uid") int uid,
-                             @Query("token") String token, @Query("diamondCurrency") int diamondCurrency,
-                             Callback<String> callback);
+    @GET("/mining/team/details")
+    Call<TeamDetail> getTeamDetailInfo(@Query("uuid") String uuid, @Query("uid") String uid,
+                                       @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
+                                       Callback<TeamDetail> callback);
+
+//    /**
+//     * 获取团队信息
+//     */
+//    @GET("/mining/team/details")
+//    Call<String> getTeamInfo(@Query("uuid") String uuid, @Query("uid") String uid,
+//                             @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
+//                             Callback<String> callback);
 
 }

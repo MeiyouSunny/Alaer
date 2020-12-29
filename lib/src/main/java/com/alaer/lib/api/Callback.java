@@ -1,23 +1,28 @@
 package com.alaer.lib.api;
 
 import android.text.TextUtils;
+import android.util.Log;
 
 public abstract class Callback<T> implements likly.reverse.Callback<T> {
 
     @Override
     public void onStart() {
+        Log.e("Callback", "");
     }
 
     @Override
     public void onCancel() {
+        Log.e("Callback", "");
     }
 
     @Override
     public void onFinish() {
+        Log.e("Callback", "");
     }
 
     @Override
     public void onResponse(T response) {
+        Log.e("Callback", "");
     }
 
     public void onError(int code, String msg) {

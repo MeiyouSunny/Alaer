@@ -7,10 +7,11 @@ import android.view.View;
 import com.alaer.lib.api.ApiUtil;
 import com.alaer.lib.api.AppConfig;
 import com.alaer.lib.api.Callback;
+import com.alaer.lib.api.bean.TeamDetail;
 import com.alaer.lib.api.bean.UserData;
+import com.alaer.lib.data.UserDataUtil;
 import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseBindFragment;
-import com.cyberalaer.hybrid.data.UserDataUtil;
 import com.cyberalaer.hybrid.databinding.FragmentLoginBinding;
 import com.cyberalaer.hybrid.util.StringUtil;
 import com.meiyou.mvp.MvpBinder;
@@ -90,21 +91,23 @@ public class LoginFragment extends BaseBindFragment<FragmentLoginBinding> {
                     public void onResponse(UserData userData) {
                         UserDataUtil.instance().setUserData(userData);
 
-//                        ApiUtil.apiService().getTeamInfo(userData.uuid, userData.uid, userData.token, 174,
-//                                new Callback<String>() {
-//                                    @Override
-//                                    public void onResponse(String response) {
-//                                        super.onResponse(response);
-//                                    }
-//                                });
-
-                        ApiUtil.apiService().getUserInfo(userData.uid, userData.token,
-                                new Callback<String>() {
+                        ApiUtil.apiService().getTeamDetailInfo(userData.uuid, String.valueOf(userData.uid), userData.token, "174",
+                                new Callback<TeamDetail>() {
                                     @Override
-                                    public void onResponse(String response) {
-                                        super.onResponse(response);
+                                    public void onResponse(TeamDetail teamDetail) {
+                                        UserDataUtil.instance().setTeamDetail(teamDetail);
+
+                                        ApiUtil.apiService().getUserInfo(userData.uid, "", userData.token,
+                                                new Callback<String>() {
+                                                    @Override
+                                                    public void onResponse(String response) {
+                                                        super.onResponse(response);
+                                                    }
+                                                });
                                     }
                                 });
+
+
                     }
                 });
     }
