@@ -259,13 +259,13 @@ public class ProductionHallActivity extends BaseTitleActivity<ActivityProduction
         bindRoot.setStep(step);
 
         // animation
+        stopAllAnim();
         if ((step == 0 && mTeamInfo.virtualMiner.todayStatus == 0) || mProgressComplete) {
             startAnim(mStepImages[step]);
         }
     }
 
     private void startAnim(ImageView view) {
-        stopAllAnim();
         Animator anim = AnimatorInflater.loadAnimator(this, R.animator.anima_scale);
         anim.setTarget(view);
         anim.start();
