@@ -12,6 +12,7 @@
     <!-- 字体 -->
     <color name="font_brown">#552107</color>
     <color name="font_green">#52C883</color>
+    <color name="font_green_produce_step">#217D4F</color>
     <color name="font_36">#363636</color>
     <color name="font_7E">#7E7E7E</color>
     <color name="font_41">#414141</color>

@@ -1,15 +1,34 @@
 package com.cyberalaer.hybrid.ui.user;
 
+import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.View;
 
+import com.alaer.lib.api.ApiUtil;
+import com.alaer.lib.api.AppConfig;
+import com.alaer.lib.api.Callback;
+import com.alaer.lib.api.bean.TeamDetail;
+import com.alaer.lib.api.bean.UserData;
+import com.alaer.lib.data.UserDataUtil;
 import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseBindFragment;
 import com.cyberalaer.hybrid.databinding.FragmentRegistConfirmPwdBinding;
+import com.cyberalaer.hybrid.ui.home.HomeActivity;
+import com.cyberalaer.hybrid.util.SimpleTextWatcher;
+import com.cyberalaer.hybrid.util.StringUtil;
+import com.cyberalaer.hybrid.util.ViewUtil;
 import com.meiyou.mvp.MvpBinder;
+import com.netease.nis.captcha.Captcha;
+import com.netease.nis.captcha.CaptchaConfiguration;
+import com.netease.nis.captcha.CaptchaListener;
+
+import likly.dollar.$;
 
 @MvpBinder(
 )
 public class RegistConfirmPwdFragment extends BaseBindFragment<FragmentRegistConfirmPwdBinding> {
+
+    private String mPhone, mVerifyCode;
 
     @Override
     public int initLayoutResId() {
@@ -21,15 +40,100 @@ public class RegistConfirmPwdFragment extends BaseBindFragment<FragmentRegistCon
         super.onResume();
         setTopLeftIcon(R.drawable.ic_back_close);
         setTitleText(R.string.apply);
+
+        TextWatcher textWatcher = new SimpleTextWatcher() {
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                onInputChanged();
+            }
+        };
+        bindRoot.etPwd.addTextChangedListener(textWatcher);
+        bindRoot.etPwdConfirm.addTextChangedListener(textWatcher);
+    }
+
+    private void onInputChanged() {
+        String pwd = ViewUtil.getText(bindRoot.etPwd);
+        String pwdConfirm = ViewUtil.getText(bindRoot.etPwdConfirm);
+        final boolean hasInput = !TextUtils.isEmpty(pwd) && !TextUtils.isEmpty(pwdConfirm)
+                && pwd.length() >= 8 && pwdConfirm.length() >= 8;
+        bindRoot.next.setEnabled(hasInput);
+    }
+
+    @Override
+    public void onViewCreated() {
+        super.onViewCreated();
+        mPhone = getArguments().getString("phone");
+        mVerifyCode = getArguments().getString("verifyCode");
+        System.out.println("");
     }
 
     @Override
     public void click(View view) {
         switch (view.getId()) {
-            case R.id.toLogin:
-                navigate(R.id.action_to_login);
+            case R.id.next:
+                if (!TextUtils.equals(ViewUtil.getText(bindRoot.etPwd), ViewUtil.getText(bindRoot.etPwdConfirm))) {
+                    $.toast().text(R.string.pwd_not_same).show();
+                    return;
+                }
+                captcha();
                 break;
         }
+    }
+
+    private void regist(String validate) {
+        ApiUtil.apiService().regist(mPhone, mVerifyCode,
+                StringUtil.toMD5(ViewUtil.getText(bindRoot.etPwd) + AppConfig.MD5_KEY_TEMP),
+                ViewUtil.getText(bindRoot.etInvitateCode),
+                validate, AppConfig.VERIFY_ID, AppConfig.DIALLING_CODE_DEFAULT,
+                new Callback<UserData>() {
+                    @Override
+                    public void onResponse(UserData userInfo) {
+                        $.toast().text(R.string.regist_success).show();
+                        UserDataUtil.instance().setUserData(userInfo);
+
+                        ApiUtil.apiService().getTeamDetailInfo(userInfo.uuid, String.valueOf(userInfo.uid), userInfo.token, AppConfig.DIAMOND_CURRENCY,
+                                new Callback<TeamDetail>() {
+                                    @Override
+                                    public void onResponse(TeamDetail teamDetail) {
+                                        UserDataUtil.instance().setTeamDetail(teamDetail);
+                                        ViewUtil.gotoActivity(getContext(), HomeActivity.class);
+                                    }
+                                });
+                    }
+
+                    @Override
+                    public void onError(int code, String msg) {
+                        $.toast().text(msg).show();
+                    }
+                });
+    }
+
+    private void captcha() {
+        final CaptchaConfiguration configuration = new CaptchaConfiguration.Builder()
+                .captchaId(AppConfig.VERIFY_ID)
+                .listener(new CaptchaListener() {
+                    @Override
+                    public void onReady() {
+                    }
+
+                    @Override
+                    public void onValidate(String result, String validate, String msg) {
+                        if (!TextUtils.isEmpty(validate)) {
+                            regist(validate);
+                        }
+                    }
+
+                    @Override
+                    public void onError(String s) {
+                    }
+
+                    @Override
+                    public void onCancel() {
+                    }
+                })
+                .build(getContext());
+        final Captcha captcha = Captcha.getInstance().init(configuration);
+        captcha.validate();
     }
 
 }

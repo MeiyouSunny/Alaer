@@ -1,13 +1,11 @@
 package com.cyberalaer.hybrid.base;
 
-import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.cyberalaer.hybrid.R;
 
-import androidx.annotation.Nullable;
 import androidx.databinding.ViewDataBinding;
 
 public abstract class BaseTitleActivity<T extends ViewDataBinding> extends BaseViewBindActivity<T> implements View.OnClickListener, TitleControl {
@@ -16,11 +14,8 @@ public abstract class BaseTitleActivity<T extends ViewDataBinding> extends BaseV
     private ImageView titleLeft, titleRight;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        initView();
+    public void onViewCreated() {
         initTitleBar();
-        onViewCreated();
     }
 
     private void initTitleBar() {
@@ -28,7 +23,8 @@ public abstract class BaseTitleActivity<T extends ViewDataBinding> extends BaseV
         titleLeft = bindRoot.getRoot().findViewById(R.id.title_left);
         titleRight = bindRoot.getRoot().findViewById(R.id.title_right);
 
-        title.setText(titleResId());
+        if (titleResId() != -1)
+            title.setText(titleResId());
         titleLeft.setOnClickListener(this);
     }
 

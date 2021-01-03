@@ -60,9 +60,9 @@
                 android:layout_marginLeft="28dp"
                 android:layout_marginTop="93dp"
                 android:layout_marginRight="28dp"
-                app:cardElevation="0dp"
                 app:cardBackgroundColor="@color/bg_gray"
-                app:cardCornerRadius="8dp">
+                app:cardCornerRadius="8dp"
+                app:cardElevation="0dp">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -71,6 +71,7 @@
                     android:paddingRight="29dp">
 
                     <EditText
+                        android:id="@+id/etWechat"
                         android:layout_width="match_parent"
                         android:layout_height="42dp"
                         android:layout_centerVertical="true"
@@ -78,16 +79,17 @@
                         android:layout_toLeftOf="@+id/icClear"
                         android:background="@null"
                         android:hint="@string/pls_input_wechat_no"
+                        android:singleLine="true"
                         android:textColorHint="@color/font_B3"
                         android:textSize="@dimen/font_17" />
 
                     <ImageView
                         android:id="@+id/icClear"
                         android:layout_width="20dp"
-                        android:src="@drawable/ic_input_clear"
                         android:layout_height="20dp"
                         android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true" />
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_input_clear" />
 
                 </RelativeLayout>
 
@@ -107,6 +109,7 @@
                 style="@style/BtnGreen"
                 android:layout_alignParentBottom="true"
                 android:layout_marginBottom="86dp"
+                android:onClick="@{handler.click"
                 android:text="@string/submit" />
 
         </RelativeLayout>

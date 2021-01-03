@@ -87,6 +87,7 @@
             android:layout_marginRight="48dp">
 
             <EditText
+                android:id="@+id/etCode"
                 style="@style/AccountEditText"
                 android:hint="@string/pls_input_verify_code" />
 
@@ -97,6 +98,7 @@
                 android:layout_height="match_parent"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="0dp"
+                android:enabled="false"
                 android:onClick="@{handler.click}"
                 android:text="@string/send" />
 
@@ -114,6 +116,7 @@
             android:layout_marginLeft="38dp"
             android:layout_marginTop="314dp"
             android:layout_marginRight="38dp"
+            android:enabled="false"
             android:onClick="@{handler.click}"
             android:text="@string/next_step" />
 

@@ -44,6 +44,12 @@
     <fragment
         android:id="@+id/restPwdFragment"
         android:name="com.cyberalaer.hybrid.ui.user.RestPwdFragment"
-        android:label="RestPwdFragment" />
+        android:label="RestPwdFragment" >
+        <action
+            android:id="@+id/action_to_login"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
 
 </navigation>

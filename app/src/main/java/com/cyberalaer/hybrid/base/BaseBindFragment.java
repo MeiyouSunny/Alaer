@@ -1,5 +1,6 @@
 package com.cyberalaer.hybrid.base;
 
+import android.os.Bundle;
 import android.view.View;
 
 import com.cyberalaer.hybrid.util.NavigateUtil;
@@ -37,6 +38,10 @@ public abstract class BaseBindFragment<T extends ViewDataBinding> extends BaseFr
 
     protected void navigate(int actionId) {
         NavigateUtil.navigate(this, actionId);
+    }
+
+    protected void navigate(int actionId, Bundle bundle) {
+        NavigateUtil.navigate(this, actionId, bundle);
     }
 
     private void setEventHandler() {

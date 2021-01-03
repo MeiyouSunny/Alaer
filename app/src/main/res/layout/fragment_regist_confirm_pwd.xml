@@ -31,11 +31,14 @@
             android:textSize="@dimen/font_17" />
 
         <EditText
+            android:id="@+id/etPwd"
             style="@style/AccountEditText"
             android:layout_marginLeft="47dp"
             android:layout_marginTop="153dp"
             android:layout_marginRight="47dp"
-            android:hint="@string/pls_input_pwd" />
+            android:hint="@string/pls_input_pwd"
+            android:inputType="textPassword"
+            android:maxLength="20" />
 
         <View
             style="@style/LineAccountGray"
@@ -53,11 +56,14 @@
             android:textSize="@dimen/font_17" />
 
         <EditText
+            android:id="@+id/etPwdConfirm"
             style="@style/AccountEditText"
             android:layout_marginLeft="47dp"
             android:layout_marginTop="236dp"
             android:layout_marginRight="47dp"
-            android:hint="@string/pls_input_pwd" />
+            android:hint="@string/pls_input_pwd"
+            android:inputType="textPassword"
+            android:maxLength="20" />
 
         <View
             style="@style/LineAccountGray"
@@ -75,6 +81,7 @@
             android:textSize="@dimen/font_17" />
 
         <EditText
+            android:id="@+id/etInvitateCode"
             style="@style/AccountEditText"
             android:layout_marginLeft="47dp"
             android:layout_marginTop="320dp"
@@ -88,10 +95,13 @@
             android:layout_marginRight="47dp" />
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/next"
             style="@style/BtnGreen"
             android:layout_marginLeft="38dp"
             android:layout_marginTop="386dp"
             android:layout_marginRight="38dp"
+            android:enabled="false"
+            android:onClick="@{handler.click}"
             android:text="@string/next_step" />
 
         <LinearLayout

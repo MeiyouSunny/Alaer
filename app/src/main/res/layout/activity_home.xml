@@ -1,9 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <FrameLayout xmlns:tools="http://schemas.android.com/tools"
+    <data>
+
+        <variable
+            name="handler"
+            type="com.cyberalaer.hybrid.base.BindClickListener" />
+
+        <variable
+            name="user"
+            type="com.alaer.lib.api.bean.TeamDetail" />
+
+        <variable
+            name="balance"
+            type="com.alaer.lib.api.bean.Balance" />
+    </data>
+
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
@@ -19,21 +34,23 @@
             android:layout_height="wrap_content">
 
             <RelativeLayout
-                android:id="@+id/layout_user"
-                android:clickable="true"
+                android:id="@+id/layoutUser"
                 android:layout_width="150dp"
-                android:layout_height="36dp"
+                android:layout_height="52dp"
                 android:layout_below="@+id/notice"
                 android:layout_marginLeft="18dp"
                 android:layout_marginTop="18dp"
                 android:background="@drawable/bg_gray_round_corner2"
+                android:clickable="true"
+                android:onClick="@{handler.click}"
                 android:paddingLeft="8dp">
 
                 <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:id="@+id/icHead"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:layout_centerVertical="true"
-                    android:src="@drawable/ic_user_head" />
+                    android:src="@drawable/ic_head_default_boy" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -42,14 +59,57 @@
                     android:layout_marginLeft="48dp"
                     android:text="点击登录"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/font_15" />
+                    android:textSize="@dimen/font_15"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/nameLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="46dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/nike_name"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_11" />
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_toRightOf="@+id/nameLabel"
+                    android:text="@{user.name}"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_11"
+                    tools:text="0" />
+
+                <TextView
+                    android:id="@+id/buildScoreLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="46dp"
+                    android:layout_marginTop="26dp"
+                    android:text="@string/good_cityer"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_11" />
+
+                <TextView
+                    android:id="@+id/buildScore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="26dp"
+                    android:layout_toRightOf="@+id/buildScoreLabel"
+                    android:text="@{String.valueOf(balance.money.amount)}"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_11"
+                    tools:text="0" />
 
             </RelativeLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="16dp"
-                android:layout_below="@+id/layout_user"
+                android:layout_below="@+id/layoutUser"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="48dp"
                 android:layout_marginTop="8dp"
@@ -65,21 +125,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
                 android:layout_marginLeft="48dp"
-                android:layout_marginRight="48dp"
                 android:layout_marginTop="16dp"
+                android:layout_marginRight="48dp"
                 android:background="@drawable/bg_gray_round_corner"
                 android:gravity="center_vertical"
                 android:paddingLeft="12dp"
                 android:text="公告：恭喜鲁班同学拿到五杀！"
                 android:textColor="@color/white"
                 android:textSize="@dimen/font_12" />
-            
+
             <RelativeLayout
                 android:id="@+id/layout_fun1"
-                android:layout_alignParentRight="true"
-                android:layout_marginTop="44dp"
                 android:layout_width="154dp"
-                android:layout_height="62dp">
+                android:layout_height="62dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="44dp">
 
                 <View
                     android:layout_width="match_parent"
@@ -93,11 +153,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
-                    android:layout_marginBottom="6dp"
                     android:layout_marginLeft="24dp"
+                    android:layout_marginBottom="6dp"
                     android:layout_toLeftOf="@+id/discover"
-                    android:drawablePadding="-4dp"
                     android:drawableTop="@drawable/ic_notice"
+                    android:drawablePadding="-4dp"
                     android:gravity="center"
                     android:text="公告"
                     android:textColor="@color/white"
@@ -110,8 +170,8 @@
                     android:layout_alignParentBottom="true"
                     android:layout_marginBottom="6dp"
                     android:layout_toLeftOf="@+id/daily_sign"
-                    android:drawablePadding="-4dp"
                     android:drawableTop="@drawable/ic_discover"
+                    android:drawablePadding="-4dp"
                     android:gravity="center"
                     android:text="发现"
                     android:textColor="@color/white"
@@ -121,12 +181,12 @@
                     android:id="@+id/daily_sign"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
                     android:layout_alignParentRight="true"
-                    android:layout_marginBottom="6dp"
+                    android:layout_alignParentBottom="true"
                     android:layout_marginRight="8dp"
-                    android:drawablePadding="-4dp"
+                    android:layout_marginBottom="6dp"
                     android:drawableTop="@drawable/ic_daily_sign"
+                    android:drawablePadding="-4dp"
                     android:gravity="center"
                     android:text="每日签到"
                     android:textColor="@color/white"
@@ -136,10 +196,10 @@
 
             <RelativeLayout
                 android:id="@+id/layout_fun2"
-                android:layout_alignParentRight="true"
-                android:layout_below="@id/layout_fun1"
                 android:layout_width="134dp"
-                android:layout_height="62dp">
+                android:layout_height="62dp"
+                android:layout_below="@id/layout_fun1"
+                android:layout_alignParentRight="true">
 
                 <View
                     android:layout_width="match_parent"
@@ -152,11 +212,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
+                    android:layout_marginRight="4dp"
                     android:layout_marginBottom="6dp"
                     android:layout_toLeftOf="@+id/daily_task"
-                    android:drawablePadding="-4dp"
-                    android:layout_marginRight="4dp"
                     android:drawableTop="@drawable/ic_production_base"
+                    android:drawablePadding="-4dp"
                     android:gravity="center"
                     android:text="生产基地"
                     android:textColor="@color/white"
@@ -166,12 +226,12 @@
                     android:id="@+id/daily_task"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
                     android:layout_alignParentRight="true"
-                    android:layout_marginBottom="6dp"
+                    android:layout_alignParentBottom="true"
                     android:layout_marginRight="8dp"
-                    android:drawablePadding="-4dp"
+                    android:layout_marginBottom="6dp"
                     android:drawableTop="@drawable/ic_daily_task"
+                    android:drawablePadding="-4dp"
                     android:gravity="center"
                     android:text="每日任务"
                     android:textColor="@color/white"

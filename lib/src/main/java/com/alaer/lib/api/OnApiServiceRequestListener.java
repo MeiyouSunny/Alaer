@@ -26,6 +26,7 @@ public class OnApiServiceRequestListener implements OnServiceInvokeListener {
         // 这里处于发送请求前,可以对请求Url,参数,Header作处理
 
         if (requestHolder.url() != null && requestHolder.url().contains("mining")) {
+            Log.e("Http", "mining");
             doSignForMiningModule(requestHolder);
         }
 
@@ -43,8 +44,10 @@ public class OnApiServiceRequestListener implements OnServiceInvokeListener {
 //                }
 //            }
         } else {
+            params = requestHolder.headers();
             if (body != null && body instanceof Map) {
-                params = (Map<String, String>) body;
+//                params = (Map<String, String>) body;
+//                params.putAll((Map<String, String>) body);
             } else {
                 params = new HashMap<>();
             }
@@ -74,19 +77,19 @@ public class OnApiServiceRequestListener implements OnServiceInvokeListener {
 
         if (requestHolder.method() == HttpMethod.GET || requestHolder.method() == HttpMethod.PUT) {
             requestHolder.headers(params);
+            requestHolder.headers().put("Content-Type", "application/json; charset=UTF-8");
         } else {
+//            params.putAll(requestHolder.headers());
+            requestHolder.headers(params);
             if (body != null && body instanceof Map) {
                 // body中是键值对参数
-                requestHolder.body(params);
-            } else {
-                params.putAll(requestHolder.headers());
-                requestHolder.headers(params);
+//                requestHolder.body(params);
             }
-            requestHolder.headers().put("Content-Type", "application/json; charset=UTF-8");
+            requestHolder.headers().put("Content-Type", "application/x-www-form-urlencoded");
         }
 
         String url = requestHolder.url();
-        Log.e("Http", "Url: " + requestHolder.url());
+        Log.e("Http", "Url: " + requestHolder.toString());
 
         return requestHolder;
     }

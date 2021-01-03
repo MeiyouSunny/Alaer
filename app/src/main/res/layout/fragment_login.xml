@@ -69,10 +69,10 @@
 
             <EditText
                 android:id="@+id/etPhone"
-                android:text="33330301"
                 style="@style/AccountEditText"
                 android:layout_marginLeft="16dp"
-                android:hint="@string/pls_input_pwd" />
+                android:hint="@string/pls_input_pwd"
+                android:text="11180980860" />
 
         </LinearLayout>
 
@@ -94,12 +94,13 @@
         <EditText
             android:id="@+id/etPwd"
             style="@style/AccountEditText"
-            android:inputType="textPassword"
-            android:text="asdfgh123"
             android:layout_marginLeft="47dp"
             android:layout_marginTop="248dp"
             android:layout_marginRight="47dp"
-            android:hint="@string/pls_input_pwd" />
+            android:hint="@string/pls_input_pwd"
+            android:inputType="textPassword"
+            android:maxLength="20"
+            android:text="admin123" />
 
         <View
             style="@style/LineAccountGray"

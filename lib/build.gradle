@@ -26,6 +26,12 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
 }
 
 dependencies {
@@ -35,4 +41,7 @@ dependencies {
     implementation 'com.hmcx:dialogger:1.0.2'
     implementation 'com.hmcx:repeatview:1.0.9'
     implementation 'com.hmcx:dollar:1.0.1'
+    implementation 'io.reactivex:rxjava:1.2.7'
+    implementation 'io.reactivex:rxandroid:1.2.1'
+    implementation 'com.squareup.okhttp3:okhttp:3.6.0'
 }

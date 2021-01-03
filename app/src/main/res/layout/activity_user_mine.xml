@@ -25,33 +25,51 @@
 
             <include layout="@layout/layout_title_bar_black" />
 
-            <ImageView
+
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/icHead"
                 android:layout_width="66dp"
                 android:layout_height="66dp"
                 android:layout_alignParentBottom="true"
                 android:layout_marginLeft="27dp"
-                android:layout_marginBottom="21dp" />
+                android:layout_marginBottom="21dp"
+                android:src="@drawable/ic_head_default_boy"
+                app:civ_border_color="#CB9D3A"
+                app:civ_border_width="1dp" />
 
             <TextView
+                android:id="@+id/level"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_marginLeft="106dp"
                 android:layout_marginBottom="31dp"
-                android:text="临时工 高效制: 10"
                 android:textColor="@color/font_99"
-                android:textSize="@dimen/font_13" />
+                android:textSize="@dimen/font_13"
+                tools:text="临时工" />
 
             <TextView
+                android:id="@+id/contribution"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="12dp"
+                android:layout_marginBottom="31dp"
+                android:layout_toRightOf="@+id/level"
+                android:textColor="@color/font_99"
+                android:textSize="@dimen/font_13"
+                tools:text="贡献值: 10" />
+
+            <TextView
+                android:id="@+id/name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_marginLeft="106dp"
                 android:layout_marginBottom="52dp"
-                android:text="09****89"
                 android:textColor="@color/font_36"
-                android:textSize="@dimen/font_18" />
+                android:textSize="@dimen/font_18"
+                tools:text="09****89" />
 
         </RelativeLayout>
 
@@ -72,6 +90,7 @@
 
                 <!--  -->
                 <androidx.cardview.widget.CardView
+                    android:visibility="gone"
                     android:layout_width="match_parent"
                     android:layout_height="90dp"
                     android:clickable="true"
@@ -153,9 +172,9 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="16dp"
-                                    android:text="5620"
                                     android:textColor="@color/font_41"
-                                    android:textSize="@dimen/font_20" />
+                                    android:textSize="@dimen/font_20"
+                                    tools:text="5620" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
@@ -196,9 +215,9 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="16dp"
-                                    android:text="1500"
                                     android:textColor="@color/font_41"
-                                    android:textSize="@dimen/font_20" />
+                                    android:textSize="@dimen/font_20"
+                                    tools:text="1500" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
@@ -246,9 +265,9 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="16dp"
-                                    android:text="3308"
                                     android:textColor="@color/font_41"
-                                    android:textSize="@dimen/font_20" />
+                                    android:textSize="@dimen/font_20"
+                                    tools:text="3308" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
@@ -289,9 +308,9 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="16dp"
-                                    android:text="1039"
                                     android:textColor="@color/font_41"
-                                    android:textSize="@dimen/font_20" />
+                                    android:textSize="@dimen/font_20"
+                                    tools:text="1039" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
@@ -346,6 +365,7 @@
                             android:drawableTop="@drawable/ic_my_partner"
                             android:drawablePadding="6dp"
                             android:gravity="center"
+                            android:onClick="@{handler.click}"
                             android:text="@string/my_partner"
                             android:textColor="@color/font_36"
                             android:textSize="@dimen/font_15" />
@@ -360,6 +380,7 @@
                             android:drawableTop="@drawable/ic_invitation_code"
                             android:drawablePadding="6dp"
                             android:gravity="center"
+                            android:onClick="@{handler.click}"
                             android:text="@string/invitation_code"
                             android:textColor="@color/font_36"
                             android:textSize="@dimen/font_15" />
@@ -374,6 +395,7 @@
                             android:drawableTop="@drawable/ic_wechat"
                             android:drawablePadding="6dp"
                             android:gravity="center"
+                            android:onClick="@{handler.click}"
                             android:text="@string/wechat"
                             android:textColor="@color/font_36"
                             android:textSize="@dimen/font_15" />

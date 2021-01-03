@@ -1,5 +1,6 @@
 package com.cyberalaer.hybrid.ui.user;
 
+import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 
@@ -9,11 +10,14 @@ import com.alaer.lib.api.Callback;
 import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseBindFragment;
 import com.cyberalaer.hybrid.databinding.FragmentRegistPhoneVerifyBinding;
+import com.cyberalaer.hybrid.util.SimpleTextWatcher;
 import com.cyberalaer.hybrid.util.ViewUtil;
 import com.meiyou.mvp.MvpBinder;
 import com.netease.nis.captcha.Captcha;
 import com.netease.nis.captcha.CaptchaConfiguration;
 import com.netease.nis.captcha.CaptchaListener;
+
+import likly.dollar.$;
 
 @MvpBinder(
 )
@@ -29,6 +33,13 @@ public class RegistPhoneVerifyFragment extends BaseBindFragment<FragmentRegistPh
         super.onResume();
         setTopLeftIcon(R.drawable.ic_back_close);
         setTitleText(R.string.apply);
+
+        bindRoot.etPhone.addTextChangedListener(new SimpleTextWatcher() {
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                bindRoot.btnSend.setEnabled(!TextUtils.isEmpty(ViewUtil.getText(bindRoot.etPhone)));
+            }
+        });
     }
 
     @Override
@@ -41,7 +52,10 @@ public class RegistPhoneVerifyFragment extends BaseBindFragment<FragmentRegistPh
                 navigate(R.id.action_to_login);
                 break;
             case R.id.next:
-                navigate(R.id.action_to_registConfirmPwd);
+                Bundle bundle = new Bundle();
+                bundle.putString("phone", ViewUtil.getText(bindRoot.etPhone));
+                bundle.putString("verifyCode", ViewUtil.getText(bindRoot.etCode));
+                navigate(R.id.action_to_registConfirmPwd, bundle);
                 break;
         }
     }
@@ -72,7 +86,6 @@ public class RegistPhoneVerifyFragment extends BaseBindFragment<FragmentRegistPh
                 .build(getContext());
         final Captcha captcha = Captcha.getInstance().init(configuration);
         captcha.validate();
-
     }
 
     private void getVerifyCode(String validate) {
@@ -81,7 +94,8 @@ public class RegistPhoneVerifyFragment extends BaseBindFragment<FragmentRegistPh
                 new Callback<String>() {
                     @Override
                     public void onResponse(String response) {
-                        super.onResponse(response);
+                        bindRoot.next.setEnabled(true);
+                        $.toast().text(R.string.verify_code_send_ok).show();
                     }
                 });
     }

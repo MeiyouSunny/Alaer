@@ -43,6 +43,16 @@
                     android:foreground="?android:attr/selectableItemBackground"
                     app:cardCornerRadius="8dp"
                     app:cardElevation="0dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/icHead"
+                        android:layout_width="66dp"
+                        android:layout_height="66dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_head_default_boy"
+                        app:civ_border_color="#CB9D3A"
+                        app:civ_border_width="1dp" />
+
                 </androidx.cardview.widget.CardView>
 
                 <!--  -->
@@ -79,12 +89,13 @@
                             android:textSize="@dimen/font_16" />
 
                         <TextView
+                            android:id="@+id/uid"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
                             android:layout_marginRight="10dp"
                             android:layout_toLeftOf="@+id/ic_next_uid"
-                            android:text="83790"
+                            tools:text="83790"
                             android:textColor="@color/font_7E"
                             android:textSize="@dimen/font_15" />
 
@@ -133,12 +144,13 @@
                             android:textSize="@dimen/font_16" />
 
                         <TextView
+                            android:id="@+id/name"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
                             android:layout_marginRight="10dp"
                             android:layout_toLeftOf="@+id/ic_next_nike"
-                            android:text="11*283"
+                            tools:text="11*283"
                             android:textColor="@color/font_7E"
                             android:textSize="@dimen/font_15" />
 
@@ -187,12 +199,13 @@
                             android:textSize="@dimen/font_16" />
 
                         <TextView
+                            android:id="@+id/invateCode"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
                             android:layout_marginRight="10dp"
                             android:layout_toLeftOf="@+id/ic_next_invitate_code"
-                            android:text="S8HU09"
+                            tools:text="S8HU09"
                             android:textColor="@color/font_7E"
                             android:textSize="@dimen/font_15" />
 
@@ -218,6 +231,9 @@
                     app:cardElevation="0dp">
 
                     <RelativeLayout
+                        android:id="@+id/setWechat"
+                        android:clickable="true"
+                        android:onClick="@{handler.click}"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:paddingLeft="29dp"
@@ -241,6 +257,7 @@
                             android:textSize="@dimen/font_16" />
 
                         <TextView
+                            android:id="@+id/wechatNo"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
@@ -295,12 +312,13 @@
                             android:textSize="@dimen/font_16" />
 
                         <TextView
+                            android:id="@+id/invatePerson"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
                             android:layout_marginRight="10dp"
                             android:layout_toLeftOf="@+id/ic_next_invitate_add"
-                            android:text="Michle"
+                            tools:text="Michle"
                             android:textColor="@color/font_7E"
                             android:textSize="@dimen/font_15" />
 

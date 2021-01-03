@@ -10,7 +10,7 @@ public class TeamDetail {
     public Object wechat;
     public String name;
     public Object uname;
-    public Object avatar;
+    public String avatar;
     public String code;
     public String refCode;
     public int refUid;

@@ -1,9 +1,15 @@
 package com.cyberalaer.hybrid.ui.home;
 
 import android.app.Activity;
-import android.os.Bundle;
 import android.view.View;
 
+import com.alaer.lib.api.ApiUtil;
+import com.alaer.lib.api.AppConfig;
+import com.alaer.lib.api.Callback;
+import com.alaer.lib.api.bean.Balance;
+import com.alaer.lib.api.bean.TeamDetail;
+import com.alaer.lib.api.bean.UserData;
+import com.alaer.lib.data.UserDataUtil;
 import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseViewBindActivity;
 import com.cyberalaer.hybrid.databinding.ActivityHomeBinding;
@@ -15,6 +21,7 @@ import com.cyberalaer.hybrid.ui.leisure.LeisureHallActivity;
 import com.cyberalaer.hybrid.ui.produce.ProductionHallActivity;
 import com.cyberalaer.hybrid.ui.shopping.DigitalMallActivity;
 import com.cyberalaer.hybrid.ui.travel.TravelHallActivity;
+import com.cyberalaer.hybrid.ui.user.UserMineActivity;
 import com.cyberalaer.hybrid.util.ViewUtil;
 import com.cyberalaer.hybrid.view.mapview.MapContainer;
 import com.cyberalaer.hybrid.view.mapview.Marker;
@@ -29,19 +36,19 @@ import java.util.List;
 public class HomeActivity extends BaseViewBindActivity<ActivityHomeBinding> implements HomeView, MapContainer.OnMarkerClickListner {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        initMapView();
-    }
-
-    @Override
     protected int layoutId() {
         return R.layout.activity_home;
     }
 
     @Override
     public void showError(String content) {
+    }
+
+    @Override
+    public void onViewCreated() {
+        super.onViewCreated();
+        initMapView();
+        initData();
     }
 
     private void initMapView() {
@@ -65,6 +72,35 @@ public class HomeActivity extends BaseViewBindActivity<ActivityHomeBinding> impl
     @Override
     public void onClick(View view, int position) {
         ViewUtil.gotoActivity(this, mPageClasses[position]);
+    }
+
+    @Override
+    public void click(View view) {
+        switch (view.getId()) {
+            case R.id.layoutUser:
+                ViewUtil.gotoActivity(this, UserMineActivity.class);
+                break;
+        }
+    }
+
+    private void initData() {
+        TeamDetail teamDetail = UserDataUtil.instance().getTeamDetail();
+        if (teamDetail != null) {
+            bindRoot.setUser(teamDetail);
+            ViewUtil.showImage(getApplicationContext(), bindRoot.icHead, teamDetail.avatar);
+        }
+
+        UserData userData = UserDataUtil.instance().getUserData();
+        if (userData == null)
+            return;
+
+        ApiUtil.apiService().getBalance(userData.uuid, String.valueOf(userData.uid), userData.token, AppConfig.DIAMOND_CURRENCY,
+                new Callback<Balance>() {
+                    @Override
+                    public void onResponse(Balance balance) {
+                        bindRoot.setBalance(balance);
+                    }
+                });
     }
 
 }

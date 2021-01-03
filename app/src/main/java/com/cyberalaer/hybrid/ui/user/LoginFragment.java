@@ -12,6 +12,7 @@ import com.alaer.lib.data.UserDataUtil;
 import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseBindFragment;
 import com.cyberalaer.hybrid.databinding.FragmentLoginBinding;
+import com.cyberalaer.hybrid.ui.home.HomeActivity;
 import com.cyberalaer.hybrid.util.SimpleTextWatcher;
 import com.cyberalaer.hybrid.util.StringUtil;
 import com.cyberalaer.hybrid.util.ViewUtil;
@@ -111,29 +112,33 @@ public class LoginFragment extends BaseBindFragment<FragmentLoginBinding> {
     private void login(String validate) {
         mPhone = ViewUtil.getText(bindRoot.etPhone);
         mPwd = ViewUtil.getText(bindRoot.etPwd);
-        ApiUtil.apiService().login(mPhone, StringUtil.toMD5(mPwd + AppConfig.MD5_KEY_TEMP), validate, "2",
+        ApiUtil.apiService().login(mPhone, StringUtil.toMD5(mPwd + AppConfig.MD5_KEY_TEMP), validate, AppConfig.VERIFY_ID, "2",
                 new Callback<UserData>() {
                     @Override
                     public void onResponse(UserData userData) {
-                        $.toast().text(userData.phone).show();
                         UserDataUtil.instance().setUserData(userData);
 
-                        ApiUtil.apiService().getTeamDetailInfo(userData.uuid, String.valueOf(userData.uid), userData.token, "174",
+                        ApiUtil.apiService().getTeamDetailInfo(userData.uuid, String.valueOf(userData.uid), userData.token, AppConfig.DIAMOND_CURRENCY,
                                 new Callback<TeamDetail>() {
                                     @Override
                                     public void onResponse(TeamDetail teamDetail) {
                                         UserDataUtil.instance().setTeamDetail(teamDetail);
-
-                                        ApiUtil.apiService().getUserInfo(userData.uid, userData.uuid, userData.token,
-                                                new Callback<String>() {
-                                                    @Override
-                                                    public void onResponse(String response) {
-                                                        super.onResponse(response);
-                                                    }
-                                                });
+                                        ViewUtil.gotoActivity(getContext(), HomeActivity.class);
                                     }
                                 });
 
+//                        ApiUtil.apiService().info(userData.uuid, String.valueOf(userData.uid), userData.token, AppConfig.DIAMOND_CURRENCY,
+//                                new Callback<TeamInfo>() {
+//                                    @Override
+//                                    public void onResponse(TeamInfo response) {
+//                                        super.onResponse(response);
+//                                    }
+//                                });
+                    }
+
+                    @Override
+                    public void onError(int code, String msg) {
+                        $.toast().text(msg).show();
                     }
                 });
     }

@@ -26,4 +26,11 @@
         <item>@string/regist_time</item>
     </string-array>
 
+    <string-array name="person_level">
+        <item>未实名认证</item>
+        <item>一级市民</item>
+        <item>二级市民</item>
+        <item>三级市民</item>
+    </string-array>
+
 </resources>

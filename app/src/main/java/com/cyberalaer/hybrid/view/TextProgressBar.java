@@ -6,11 +6,17 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
+import android.os.Handler;
+import android.os.Message;
 import android.text.TextPaint;
+import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.widget.ProgressBar;
 
 import com.cyberalaer.hybrid.R;
+import com.cyberalaer.hybrid.util.TimeUtil;
+
+import androidx.annotation.NonNull;
 
 public class TextProgressBar extends ProgressBar {
     private String mTextShow;
@@ -20,6 +26,11 @@ public class TextProgressBar extends ProgressBar {
     private TextPaint mTextPaint;
     private float mTextWidth;
     private float mTextHeight;
+
+    // 当前阶段的开始时间/结束时间/当前时间 毫秒值
+    private long timeStart, timeEnd, timeNow;
+
+    private ProgressChange mListener;
 
     public TextProgressBar(Context context) {
         super(context);
@@ -45,26 +56,79 @@ public class TextProgressBar extends ProgressBar {
         mTextSize = a.getDimension(R.styleable.TextProgressBar_textSize, mTextSize);
 
         a.recycle();
+        initPaint();
+        invalidateTextPaintAndMeasurements();
+    }
 
+    private void initPaint() {
         mTextPaint = new TextPaint();
         mTextPaint.setFlags(Paint.ANTI_ALIAS_FLAG);
         mTextPaint.setTextAlign(Paint.Align.LEFT);
         mTextPaint.setColor(mTextColor);
         mTextPaint.setTextSize(mTextSize);
-
-        invalidateTextPaintAndMeasurements();
     }
 
     private void invalidateTextPaintAndMeasurements() {
+        if (TextUtils.isEmpty(mTextShow))
+            return;
         mTextWidth = mTextPaint.measureText(mTextShow);
         Paint.FontMetrics fontMetrics = mTextPaint.getFontMetrics();
         mTextHeight = fontMetrics.bottom;
     }
 
+    public void setTimes(long timeStart, long timeEnd, long timeNow) {
+        this.timeStart = timeStart;
+        this.timeEnd = timeEnd;
+        this.timeNow = timeNow;
+
+        showProgressAndTime();
+    }
+
+    private void showProgressAndTime() {
+        if (timeNow >= timeEnd) {
+            // 如果时间已经结束
+            setProgress(100);
+            String timeText = getResources().getString(R.string.time_remain, "00:00:00");
+            setTextShow(timeText);
+
+            if (mListener != null)
+                mListener.onProgressComplete();
+            return;
+        }
+
+        long timeRemain = timeEnd - timeNow;
+        String timeText = getResources().getString(R.string.time_remain, TimeUtil.parseMillesToTimeString(timeRemain));
+        setTextShow(timeText);
+
+        int progress = (int) (((timeNow - timeStart) / (float) (timeEnd - timeStart)) * 100);
+        setProgress(progress);
+
+        invalidate();
+        // 倒计时
+        handler.sendEmptyMessageDelayed(MSG_TYPE_PROGRESS, 1000);
+    }
+
+    private final static int MSG_TYPE_PROGRESS = 1;
+    Handler handler = new Handler() {
+        @Override
+        public void handleMessage(@NonNull Message msg) {
+            if (msg.what == MSG_TYPE_PROGRESS) {
+                timeNow += 1000L;
+                showProgressAndTime();
+            }
+
+        }
+    };
+
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
+        if (TextUtils.isEmpty(mTextShow))
+            return;
+        if (mTextPaint == null) {
+            initPaint();
+        }
         Rect rect = new Rect();
         mTextPaint.getTextBounds(mTextShow, 0, mTextShow.length(), rect);
         int x = (getWidth() / 2) - rect.centerX();
@@ -79,6 +143,23 @@ public class TextProgressBar extends ProgressBar {
     public void setTextShow(String textShow) {
         mTextShow = textShow;
         invalidateTextPaintAndMeasurements();
+    }
+
+    @Override
+    protected void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        if (handler != null && handler.hasMessages(MSG_TYPE_PROGRESS)) {
+            handler.removeMessages(MSG_TYPE_PROGRESS);
+            handler = null;
+        }
+    }
+
+    public void setProgressListener(ProgressChange listener) {
+        mListener = listener;
+    }
+
+    public interface ProgressChange {
+        void onProgressComplete();
     }
 
 }

@@ -1,6 +1,8 @@
 package com.alaer.lib.api;
 
+import com.alaer.lib.api.bean.Balance;
 import com.alaer.lib.api.bean.TeamDetail;
+import com.alaer.lib.api.bean.TeamInfo;
 import com.alaer.lib.api.bean.UserData;
 
 import likly.reverse.Call;
@@ -9,6 +11,7 @@ import likly.reverse.annotation.CallExecuteListener;
 import likly.reverse.annotation.FormBody;
 import likly.reverse.annotation.GET;
 import likly.reverse.annotation.POST;
+import likly.reverse.annotation.PUT;
 import likly.reverse.annotation.Part;
 import likly.reverse.annotation.Query;
 import likly.reverse.annotation.ServiceInvokeListener;
@@ -33,7 +36,8 @@ public interface ApiService {
      */
     @FormBody
     @POST("/user/signin")
-    Call<UserData> login(@Part("phone") String phone, @Part("password") String password, @Part("validate") String validate, @Part("source") String source,
+    Call<UserData> login(@Part("phone") String phone, @Part("password") String password, @Part("validate") String validate,
+                         @Part("captchaId") String captchaId, @Part("source") String source,
                          Callback<UserData> callback);
 
     /**
@@ -43,6 +47,24 @@ public interface ApiService {
     Call<String> getVCode(@Query("diallingCode") String diallingCode, @Query("email") String email, @Query("captchaId") String captchaId,
                           @Query("validate") String validate, @Query("type") String type,
                           Callback<String> callback);
+
+    /**
+     * 注册
+     */
+    @FormBody
+    @POST("/user/signup")
+    Call<UserData> regist(@Part("phone") String phone, @Part("vcode") String vcode, @Part("password") String password, @Part("inviteCode") String inviteCode,
+                            @Part("validate") String validate, @Part("captchaId") String captchaId, @Part("diallingCode") String diallingCode,
+                            Callback<UserData> callback);
+
+    /**
+     * 重置密码
+     */
+    @FormBody
+    @POST("/user/reset")
+    Call<String> resetPwd(@Part("phone") String phone, @Part("phoneCode") String phoneCode, @Part("password") String password,
+                        @Part("validate") String validate, @Part("captchaId") String captchaId,
+                        Callback<String> callback);
 
     /**
      * 获取用户信息
@@ -59,12 +81,53 @@ public interface ApiService {
                                        @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
                                        Callback<TeamDetail> callback);
 
-//    /**
-//     * 获取团队信息
-//     */
-//    @GET("/mining/team/details")
-//    Call<String> getTeamInfo(@Query("uuid") String uuid, @Query("uid") String uid,
-//                             @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
-//                             Callback<String> callback);
+    /**
+     * 邀请人信息
+     */
+    @GET("/mining/team/info/follow")
+    Call<TeamDetail> getFollowInfo(@Query("uuid") String uuid, @Query("uid") String uid,
+                                   @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
+                                   Callback<TeamDetail> callback);
+
+    @GET("/mining/info")
+    Call<TeamInfo> info(@Query("uuid") String uuid, @Query("uid") String uid,
+                        @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
+                        Callback<TeamInfo> callback);
+
+    /**
+     * 邀请人信息
+     */
+    @GET("/mining/diamond/balance")
+    Call<Balance> getBalance(@Query("uuid") String uuid, @Query("uid") String uid,
+                             @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
+                             Callback<Balance> callback);
+
+    /**
+     * 开始种植
+     */
+    @FormBody
+    @POST("/mining/start/all")
+    Call<String> produceStart(@Part("uuid") String uuid, @Part("uid") String uid,
+                              @Part("token") String token, @Part("diamondCurrency") String diamondCurrency,
+                              Callback<String> callback);
+
+    /**
+     * 更新步骤
+     */
+    @FormBody
+    @PUT("/mining/step")
+    Call<String> updateProduceStep(@Query("uuid") String uuid, @Query("uid") String uid,
+                                   @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
+                                   Callback<String> callback);
+
+    /**
+     * 收获
+     */
+    @FormBody
+    @POST("/mining/stop/all")
+    Call<String> produceFinish(@Part("uuid") String uuid, @Part("uid") String uid,
+                               @Part("token") String token, @Part("diamondCurrency") String diamondCurrency,
+                               @Part("captchaId") String captchaId, @Part("validate") String validate,
+                               Callback<String> callback);
 
 }

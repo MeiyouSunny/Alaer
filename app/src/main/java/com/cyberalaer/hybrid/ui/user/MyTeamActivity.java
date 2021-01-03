@@ -23,6 +23,7 @@ public class MyTeamActivity extends BaseTitleActivity<ActivityMyTeamBinding> {
 
     @Override
     public void onViewCreated() {
+        super.onViewCreated();
         TabActiveDetailAdapter sectionsPagerAdapter = new TabActiveDetailAdapter(this, getSupportFragmentManager(),
                 getResources().getStringArray(R.array.my_team_tabs));
         ViewPager viewPager = findViewById(R.id.view_pager);

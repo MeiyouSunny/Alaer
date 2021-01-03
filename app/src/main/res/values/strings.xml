@@ -4,6 +4,10 @@
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
 
+
+    <string name="nike_name">昵称：</string>
+    <string name="good_cityer">好市民：</string>
+
     <string name="regist">注册</string>
     <string name="login">登录</string>
     <string name="enter">进入</string>
@@ -12,7 +16,7 @@
     <string name="phone_no">手机号码</string>
     <string name="pls_input_phone">请输入手机号</string>
     <string name="password">密码</string>
-    <string name="pls_input_pwd">请输入6位数字密码</string>
+    <string name="pls_input_pwd">请输入8-20位数字加字母密码</string>
     <string name="regist_account">注册账号</string>
     <string name="forget_pwd">忘记密码</string>
     <string name="apply">申请</string>
@@ -31,6 +35,10 @@
     <string name="pls_input_mail_verify_code">请输入邮箱验证码</string>
     <string name="confirm">确定</string>
     <string name="vierify_code">验证码</string>
+    <string name="pwd_not_same">两次输入的密码不一致!</string>
+    <string name="verify_code_send_ok">验证码已发送!</string>
+    <string name="regist_success">恭喜你,注册成功!</string>
+    <string name="reset_pwd_success">密码修改成功!</string>
 
     <string name="produce_base">生产基地</string>
     <string name="produce_hall">生产大厅</string>
@@ -41,6 +49,7 @@
     <string name="reap">收获</string>
     <string name="speed_up">加速</string>
     <string name="seed_store">种子商店</string>
+    <string name="time_remain">剩余 %s</string>
 
     <string name="leisure_hall">休闲大厅</string>
     <string name="music">音乐</string>
@@ -84,6 +93,7 @@
     <string name="card_auth">卡认证</string>
 
     <string name="mine">我的</string>
+    <string name="contribution_value">贡献值：%s</string>
     <string name="total_assets">总资产:(元)</string>
     <string name="fruit">果实</string>
     <string name="build_integral">建设工分</string>

@@ -17,4 +17,6 @@ public class AppConfig {
     /* mining请求模块加密本地key */
     public static final String CLIENT_SALT = "v5hcqfseCUUnKAMzmxLe";
 
+    public static final String DIAMOND_CURRENCY = "174";
+
 }

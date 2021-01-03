@@ -59,9 +59,10 @@
                         android:background="#D8D8D8" />
 
                     <EditText
+                        android:id="@+id/etPhone"
                         style="@style/AccountEditText"
                         android:layout_marginLeft="16dp"
-                        android:hint="@string/pls_input_pwd" />
+                        android:hint="@string/pls_input_phone" />
 
                 </LinearLayout>
 
@@ -88,15 +89,20 @@
                     android:layout_marginRight="48dp">
 
                     <EditText
+                        android:id="@+id/etCode"
                         style="@style/AccountEditText"
-                        android:hint="@string/pls_input_verify_code" />
+                        android:hint="@string/pls_input_verify_code"
+                        android:inputType="number" />
 
                     <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnSend"
                         style="@style/BtnGreen"
                         android:layout_width="61dp"
                         android:layout_height="match_parent"
                         android:layout_alignParentRight="true"
                         android:layout_marginRight="0dp"
+                        android:enabled="false"
+                        android:onClick="@{handler.click}"
                         android:text="@string/send" />
 
                 </RelativeLayout>
@@ -114,36 +120,41 @@
                     android:layout_marginTop="181dp"
                     android:text="@string/mail"
                     android:textColor="@color/font_41"
-                    android:textSize="@dimen/font_17" />
+                    android:textSize="@dimen/font_17"
+                    android:visibility="gone" />
 
                 <EditText
                     style="@style/AccountEditText"
                     android:layout_marginLeft="47dp"
                     android:layout_marginTop="212dp"
                     android:layout_marginRight="47dp"
-                    android:hint="@string/pls_input_mail" />
+                    android:hint="@string/pls_input_mail"
+                    android:visibility="gone" />
 
                 <View
                     style="@style/LineAccountGray"
                     android:layout_marginLeft="47dp"
                     android:layout_marginTop="241dp"
-                    android:layout_marginRight="47dp" />
+                    android:layout_marginRight="47dp"
+                    android:visibility="gone" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="47dp"
-                    android:layout_marginTop="259dp"
+                    android:layout_marginTop="181dp"
                     android:text="@string/mail_verify_code"
                     android:textColor="@color/font_41"
-                    android:textSize="@dimen/font_17" />
+                    android:textSize="@dimen/font_17"
+                    android:visibility="gone" />
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="28dp"
                     android:layout_marginLeft="47dp"
-                    android:layout_marginTop="290dp"
-                    android:layout_marginRight="48dp">
+                    android:layout_marginTop="212dp"
+                    android:layout_marginRight="48dp"
+                    android:visibility="gone">
 
                     <EditText
                         style="@style/AccountEditText"
@@ -162,58 +173,67 @@
                 <View
                     style="@style/LineAccountGray"
                     android:layout_marginLeft="47dp"
-                    android:layout_marginTop="319dp"
-                    android:layout_marginRight="47dp" />
+                    android:layout_marginTop="241dp"
+                    android:layout_marginRight="47dp"
+                    android:visibility="gone" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="47dp"
-                    android:layout_marginTop="337dp"
+                    android:layout_marginTop="181dp"
                     android:text="@string/input_pwd"
                     android:textColor="@color/font_41"
                     android:textSize="@dimen/font_17" />
 
                 <EditText
+                    android:id="@+id/etPwd"
                     style="@style/AccountEditText"
                     android:layout_marginLeft="47dp"
-                    android:layout_marginTop="368dp"
+                    android:layout_marginTop="212dp"
                     android:layout_marginRight="47dp"
-                    android:hint="@string/pls_input_pwd" />
+                    android:hint="@string/pls_input_pwd"
+                    android:inputType="textPassword"
+                    android:maxLength="20" />
 
                 <View
                     style="@style/LineAccountGray"
                     android:layout_marginLeft="47dp"
-                    android:layout_marginTop="397dp"
+                    android:layout_marginTop="241dp"
                     android:layout_marginRight="47dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="47dp"
-                    android:layout_marginTop="415dp"
+                    android:layout_marginTop="259dp"
                     android:text="@string/confirm_pwd"
                     android:textColor="@color/font_41"
                     android:textSize="@dimen/font_17" />
 
                 <EditText
+                    android:id="@+id/etPwdConfirm"
                     style="@style/AccountEditText"
                     android:layout_marginLeft="47dp"
-                    android:layout_marginTop="446dp"
+                    android:layout_marginTop="290dp"
                     android:layout_marginRight="47dp"
-                    android:hint="@string/pls_input_pwd" />
+                    android:hint="@string/pls_input_pwd"
+                    android:inputType="textPassword"
+                    android:maxLength="20" />
 
                 <View
                     style="@style/LineAccountGray"
                     android:layout_marginLeft="47dp"
-                    android:layout_marginTop="475dp"
+                    android:layout_marginTop="319dp"
                     android:layout_marginRight="47dp" />
 
                 <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/confirm"
                     style="@style/BtnGreen"
                     android:layout_marginLeft="38dp"
-                    android:layout_marginTop="503dp"
+                    android:layout_marginTop="347dp"
                     android:layout_marginRight="38dp"
+                    android:enabled="false"
                     android:onClick="@{handler.click}"
                     android:text="@string/confirm" />
 
