@@ -1,9 +1,12 @@
 package com.alaer.lib.api;
 
+import com.alaer.lib.api.bean.AdTask;
 import com.alaer.lib.api.bean.Balance;
 import com.alaer.lib.api.bean.TeamDetail;
 import com.alaer.lib.api.bean.TeamInfo;
 import com.alaer.lib.api.bean.UserData;
+
+import java.util.List;
 
 import likly.reverse.Call;
 import likly.reverse.annotation.BaseUrl;
@@ -54,8 +57,8 @@ public interface ApiService {
     @FormBody
     @POST("/user/signup")
     Call<UserData> regist(@Part("phone") String phone, @Part("vcode") String vcode, @Part("password") String password, @Part("inviteCode") String inviteCode,
-                            @Part("validate") String validate, @Part("captchaId") String captchaId, @Part("diallingCode") String diallingCode,
-                            Callback<UserData> callback);
+                          @Part("validate") String validate, @Part("captchaId") String captchaId, @Part("diallingCode") String diallingCode,
+                          Callback<UserData> callback);
 
     /**
      * 重置密码
@@ -63,8 +66,8 @@ public interface ApiService {
     @FormBody
     @POST("/user/reset")
     Call<String> resetPwd(@Part("phone") String phone, @Part("phoneCode") String phoneCode, @Part("password") String password,
-                        @Part("validate") String validate, @Part("captchaId") String captchaId,
-                        Callback<String> callback);
+                          @Part("validate") String validate, @Part("captchaId") String captchaId,
+                          Callback<String> callback);
 
     /**
      * 获取用户信息
@@ -119,6 +122,24 @@ public interface ApiService {
     Call<String> updateProduceStep(@Query("uuid") String uuid, @Query("uid") String uid,
                                    @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
                                    Callback<String> callback);
+
+    /**
+     * 拉取任务列表(Action:2)
+     */
+    @GET("/mining/ad/tasks")
+    Call<List<AdTask>> adTasks(@Query("uuid") String uuid, @Query("uid") String uid,
+                               @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
+                               @Query("action") String action,
+                               Callback<List<AdTask>> callback);
+
+    /**
+     * 完成任务
+     */
+    @FormBody
+    @POST("/mining/ad/task/complete")
+    Call<String> completeTask(@Part("uuid") String uuid, @Part("uid") String uid, @Part("token") String token,
+                              @Part("diamondCurrency") String diamondCurrency, @Part("taskId") String taskId,
+                              Callback<String> callback);
 
     /**
      * 收获

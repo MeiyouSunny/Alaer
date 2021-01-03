@@ -73,12 +73,15 @@
                     app:textColor="#2E7446"
                     app:textSize="11sp" />
 
-                <TextView
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/speedUp"
                     android:layout_width="60dp"
                     android:layout_height="26dp"
                     android:layout_marginLeft="14dp"
                     android:background="@drawable/bg_white_produce_step"
+                    android:clickable="true"
                     android:gravity="center"
+                    android:onClick="@{handler.click}"
                     android:text="@string/speed_up"
                     android:textColor="#4CA261"
                     android:textSize="@dimen/font_14"

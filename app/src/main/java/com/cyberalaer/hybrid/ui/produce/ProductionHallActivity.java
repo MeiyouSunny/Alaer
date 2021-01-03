@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import com.alaer.lib.api.ApiUtil;
 import com.alaer.lib.api.AppConfig;
 import com.alaer.lib.api.Callback;
+import com.alaer.lib.api.bean.AdTask;
 import com.alaer.lib.api.bean.TeamInfo;
 import com.alaer.lib.api.bean.UserData;
 import com.alaer.lib.data.UserDataUtil;
@@ -21,6 +22,8 @@ import com.meiyou.mvp.MvpBinder;
 import com.netease.nis.captcha.Captcha;
 import com.netease.nis.captcha.CaptchaConfiguration;
 import com.netease.nis.captcha.CaptchaListener;
+
+import java.util.List;
 
 import likly.dollar.$;
 
@@ -60,6 +63,36 @@ public class ProductionHallActivity extends BaseTitleActivity<ActivityProduction
 
         mUserData = UserDataUtil.instance().getUserData();
         queryCurrentInfos();
+    }
+
+    // 获取任务列表
+    private void getAdTasks() {
+        ApiUtil.apiService().adTasks(mUserData.uuid, String.valueOf(mUserData.uid), mUserData.token, AppConfig.DIAMOND_CURRENCY, "2",
+                new Callback<List<AdTask>>() {
+                    @Override
+                    public void onResponse(List<AdTask> tasks) {
+                        if (tasks != null && tasks.size() > 0) {
+                            speedUp(tasks.get(0).id);
+                        }
+                    }
+                });
+
+    }
+
+    // 加速
+    private void speedUp(int taskId) {
+        ApiUtil.apiService().completeTask(mUserData.uuid, String.valueOf(mUserData.uid), mUserData.token, AppConfig.DIAMOND_CURRENCY, String.valueOf(taskId),
+                new Callback<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        super.onResponse(response);
+                    }
+
+                    @Override
+                    public void onError(int code, String msg) {
+                        super.onError(code, msg);
+                    }
+                });
     }
 
     private ProduceStep mProduceStepHandler = new ProduceStep() {
@@ -107,6 +140,9 @@ public class ProductionHallActivity extends BaseTitleActivity<ActivityProduction
         switch (view.getId()) {
             case R.id.toBase:
                 ViewUtil.gotoActivity(this, ProductionBaseActivity.class);
+                break;
+            case R.id.speedUp:
+                getAdTasks();
                 break;
         }
     }
