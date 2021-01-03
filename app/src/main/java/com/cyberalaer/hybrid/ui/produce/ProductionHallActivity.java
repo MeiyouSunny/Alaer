@@ -229,11 +229,17 @@ public class ProductionHallActivity extends BaseTitleActivity<ActivityProduction
     }
 
     private void startAnim(ImageView view) {
-        if (view.getAnimation() != null)
-            view.getAnimation().cancel();
+        stopAllAnim();
         Animator anim = AnimatorInflater.loadAnimator(this, R.animator.anima_scale);
         anim.setTarget(view);
         anim.start();
+    }
+
+    private void stopAllAnim() {
+        for (ImageView view : mStepImages) {
+            if (view.getAnimation() != null)
+                view.getAnimation().cancel();
+        }
     }
 
 }

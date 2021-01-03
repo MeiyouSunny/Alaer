@@ -12,6 +12,7 @@ import java.net.URLEncoder;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 
 import likly.reverse.HttpMethod;
 import likly.reverse.OnServiceInvokeListener;
@@ -99,11 +100,13 @@ public class OnApiServiceRequestListener implements OnServiceInvokeListener {
         if (body == null || !(body instanceof Map)) {
             return;
         }
-        Map<String, Object> params = (Map<String, Object>) body;
+        Map<String, Object> params = new HashMap<>();
+        params.putAll((Map<String, Object>) body);
+        int nonce = new Random().nextInt(10000);
         // 添加 Timestamp 和 Nonce
         long timestamp = System.currentTimeMillis();
         params.put("Timestamp", System.currentTimeMillis());
-        params.put("Nonce", 123456);
+        params.put("Nonce", nonce);
         // 排序
         Object[] keys = params.keySet().toArray();
         Arrays.sort(keys);
@@ -143,7 +146,7 @@ public class OnApiServiceRequestListener implements OnServiceInvokeListener {
         if (headers == null)
             headers = new HashMap<>();
         headers.put("Timestamp", String.valueOf(timestamp));
-        headers.put("Nonce", String.valueOf(123456));
+        headers.put("Nonce", String.valueOf(nonce));
         headers.put("Authorization", signFromString);
 
         requestHolder.headers(headers);
