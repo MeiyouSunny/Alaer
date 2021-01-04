@@ -11,16 +11,18 @@ public class TabPagerAdapter extends FragmentPagerAdapter {
 
     private final Context mContext;
     private String[] mTitles;
+    private Fragment[] mFragments;
 
     public TabPagerAdapter(Context context, FragmentManager fm, String[] titles) {
         super(fm);
         mContext = context;
         mTitles = titles;
+        mFragments = new Fragment[]{SeedMineFragment.newInstance(), SeedStoreFragment.newInstance(), SeedExpiredFragment.newInstance()};
     }
 
     @Override
     public Fragment getItem(int position) {
-        return ProduceListFragment.newInstance(position + 1);
+        return mFragments[position];
     }
 
     @Nullable

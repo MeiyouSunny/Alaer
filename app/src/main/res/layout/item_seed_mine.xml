@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="util"
+            type="com.cyberalaer.hybrid.data.SeedDataUtil" />
+
+        <variable
+            name="seed"
+            type="com.alaer.lib.api.bean.SeedMine" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="16dp">
+
+        <RelativeLayout
+            android:id="@+id/imgSeed"
+            android:layout_width="176dp"
+            android:layout_height="242dp"
+            app:drawableRes="@{util.getSeedImage(seed.type)}">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="4dp"
+                android:text="@{util.getSeedName(seed.type)}"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_15" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="39dp"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/bg_gray_bottom_corner" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="8dp"
+                android:text="@{util.parseGrowDays(seed.minedNum)}"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_14"
+                tools:text="" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="176dp"
+            android:layout_height="88dp"
+            android:layout_below="@+id/imgSeed"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/bg_seed_round_corner_1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="7dp"
+                android:text="@{util.parseYield(seed.product)}"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_12" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="26dp"
+                android:text="@{util.parseStartTime(seed.startTime)}"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_12" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="45dp"
+                android:text="@{util.parseEndTime(seed.endTime)}"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_12" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="64dp"
+                android:text="@{util.parseRemainDays(seed.remainNum)}"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_12" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</layout>

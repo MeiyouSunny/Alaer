@@ -19,4 +19,6 @@ public class AppConfig {
 
     public static final String DIAMOND_CURRENCY = "174";
 
+    public static final int PAGE_SIZE_DEFAULT = 20;
+
 }

@@ -2,6 +2,8 @@ package com.alaer.lib.api;
 
 import com.alaer.lib.api.bean.AdTask;
 import com.alaer.lib.api.bean.Balance;
+import com.alaer.lib.api.bean.SeedMine;
+import com.alaer.lib.api.bean.SeedStoreList;
 import com.alaer.lib.api.bean.TeamDetail;
 import com.alaer.lib.api.bean.TeamInfo;
 import com.alaer.lib.api.bean.UserData;
@@ -133,6 +135,15 @@ public interface ApiService {
                                Callback<List<AdTask>> callback);
 
     /**
+     * 开始任务
+     */
+    @FormBody
+    @POST("/mining/ad/task/start")
+    Call<String> startTask(@Part("uuid") String uuid, @Part("uid") String uid, @Part("token") String token,
+                           @Part("diamondCurrency") String diamondCurrency, @Part("taskId") String taskId,
+                           Callback<String> callback);
+
+    /**
      * 完成任务
      */
     @FormBody
@@ -150,5 +161,24 @@ public interface ApiService {
                                @Part("token") String token, @Part("diamondCurrency") String diamondCurrency,
                                @Part("captchaId") String captchaId, @Part("validate") String validate,
                                Callback<String> callback);
+
+    /**
+     * 用户的树苗
+     * status：1.正常；-1.过期
+     */
+    @GET("/mining/user/miner/query")
+    Call<List<SeedMine>> mySeeds(@Query("uuid") String uuid, @Query("uid") String uid,
+                                 @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
+                                 @Query("status") int status, @Query("pageIndex") int pageIndex, @Query("pageSize") int pageSize,
+                                 Callback<List<SeedMine>> callback);
+
+    /**
+     * 种子商店
+     */
+    @GET("/mining/miner/query/publish")
+    Call<SeedStoreList> seedStore(@Query("uuid") String uuid, @Query("uid") String uid,
+                                  @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
+                                  @Query("pageIndex") int pageIndex, @Query("pageSize") int pageSize,
+                                  Callback<SeedStoreList> callback);
 
 }

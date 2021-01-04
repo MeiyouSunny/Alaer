@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="util"
+            type="com.cyberalaer.hybrid.data.SeedDataUtil" />
+
+        <variable
+            name="seed"
+            type="com.alaer.lib.api.bean.SeedStore" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="16dp">
+
+        <RelativeLayout
+            android:id="@+id/imgSeed"
+            android:layout_width="176dp"
+            android:layout_height="242dp"
+            app:drawableRes="@{util.getSeedImage(seed.type)}">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="4dp"
+                android:text="@{util.getSeedName(seed.type)}"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_15" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="39dp"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/bg_gray_bottom_corner" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{util.parsePrice(seed.price)}"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="8dp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_14" />
+
+            <TextView
+                android:layout_width="77dp"
+                android:layout_height="29dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/bg_gray_round_corner3"
+                android:gravity="center"
+                android:text="@string/exchanged_full"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_15"
+                android:visibility="@{seed.buyNum == seed.buyMax ? View.VISIBLE : View.GONE}" />
+
+            <TextView
+                android:layout_width="77dp"
+                android:layout_height="29dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/bg_gray_round_corner3"
+                android:gravity="center"
+                android:text="@string/exchanged_full"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_15"
+                android:visibility="@{seed.buyNum == seed.buyMax ? View.VISIBLE : View.GONE}" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="176dp"
+            android:layout_height="106dp"
+            android:layout_below="@+id/imgSeed"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/bg_seed_round_corner_1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="7dp"
+                android:text="@{util.parseRewardActivity(seed.activeness)}"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_12" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="26dp"
+                android:text="@{util.parseYield(seed.product)}"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_12" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="45dp"
+                android:text="@{util.parseCultivationTime(seed.duration)}"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_12" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="64dp"
+                android:text="@{util.parseCultivationDays(seed.cycle)}"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_12" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="81dp"
+                android:text="@{util.parseHasExchanged(seed.buyNum, seed.buyMax)}"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_12" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</layout>

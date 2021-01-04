@@ -72,7 +72,7 @@ public class ProductionHallActivity extends BaseTitleActivity<ActivityProduction
                     @Override
                     public void onResponse(List<AdTask> tasks) {
                         if (tasks != null && tasks.size() > 0) {
-                            speedUp(tasks.get(0).id);
+                            startTask(tasks.get(0).id);
                         }
                     }
                 });
@@ -95,9 +95,29 @@ public class ProductionHallActivity extends BaseTitleActivity<ActivityProduction
                 });
     }
 
+    private void startTask(int taskId) {
+        ApiUtil.apiService().startTask(mUserData.uuid, String.valueOf(mUserData.uid), mUserData.token, AppConfig.DIAMOND_CURRENCY, String.valueOf(taskId),
+                new Callback<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        super.onResponse(response);
+                        speedUp(taskId);
+                    }
+
+                    @Override
+                    public void onError(int code, String msg) {
+                        super.onError(code, msg);
+                    }
+                });
+    }
+
     private ProduceStep mProduceStepHandler = new ProduceStep() {
         @Override
         public void onStep(int step) {
+            if (mTeamInfo.virtualMiner.todayStatus == 2) {
+                $.toast().text(R.string.pls_produce_tomorrow).show();
+                return;
+            }
             if (mTeamInfo.virtualMiner.todayStatus == 0) {
                 // 开始种植
                 produceStart();
@@ -139,9 +159,13 @@ public class ProductionHallActivity extends BaseTitleActivity<ActivityProduction
     public void click(android.view.View view) {
         switch (view.getId()) {
             case R.id.toBase:
-                ViewUtil.gotoActivity(this, ProductionBaseActivity.class);
+                ViewUtil.gotoActivity(this, SeedStoreActivity.class);
                 break;
             case R.id.speedUp:
+                if (mTeamInfo != null && mTeamInfo.virtualMiner.todayStatus == 2) {
+                    $.toast().text(R.string.pls_produce_tomorrow).show();
+                    return;
+                }
                 getAdTasks();
                 break;
         }
@@ -241,8 +265,8 @@ public class ProductionHallActivity extends BaseTitleActivity<ActivityProduction
             return;
         int step = 0;
         int produceStep = mTeamInfo.virtualMiner.step;
-        if (mTeamInfo.virtualMiner.todayStatus == 0) {
-            // 今天未开始
+        if (mTeamInfo.virtualMiner.todayStatus == 0 || mTeamInfo.virtualMiner.todayStatus == 2) {
+            // 今天未开始或者已经结束
             step = 0;
         } else {
             if (produceStep == 0 && !mProgressComplete) {

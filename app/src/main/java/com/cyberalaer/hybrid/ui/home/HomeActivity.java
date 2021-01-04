@@ -18,7 +18,7 @@ import com.cyberalaer.hybrid.ui.game.GameHallActivity;
 import com.cyberalaer.hybrid.ui.government.GovernmentHallActivity;
 import com.cyberalaer.hybrid.ui.hospital.HospitalActivity;
 import com.cyberalaer.hybrid.ui.leisure.LeisureHallActivity;
-import com.cyberalaer.hybrid.ui.produce.ProductionHallActivity;
+import com.cyberalaer.hybrid.ui.produce.SeedStoreActivity;
 import com.cyberalaer.hybrid.ui.shopping.DigitalMallActivity;
 import com.cyberalaer.hybrid.ui.travel.TravelHallActivity;
 import com.cyberalaer.hybrid.ui.user.UserMineActivity;
@@ -67,7 +67,7 @@ public class HomeActivity extends BaseViewBindActivity<ActivityHomeBinding> impl
     }
 
     private Class<? extends Activity>[] mPageClasses = new Class[]{EducationHallActivity.class, DigitalMallActivity.class, GovernmentHallActivity.class,
-            TravelHallActivity.class, GameHallActivity.class, HospitalActivity.class, LeisureHallActivity.class, ProductionHallActivity.class};
+            TravelHallActivity.class, GameHallActivity.class, HospitalActivity.class, LeisureHallActivity.class, SeedStoreActivity.class};
 
     @Override
     public void onClick(View view, int position) {

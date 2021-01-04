@@ -6,6 +6,7 @@ public class TeamInfo {
 
     public Profile profile;
     public VirtualMiner virtualMiner;
+    // 是否已经领取了试用树苗
     public boolean claimNewbieMiner;
     public boolean available;
     public String stime;

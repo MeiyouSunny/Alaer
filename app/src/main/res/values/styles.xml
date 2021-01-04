@@ -51,4 +51,9 @@
         <item name="android:textColor">@color/font_41</item>
     </style>
 
+    <style name="TabTextSeedStore">
+        <item name="android:textSize">@dimen/font_17</item>
+        <item name="android:textColor">@color/font_36</item>
+    </style>
+
 </resources>
