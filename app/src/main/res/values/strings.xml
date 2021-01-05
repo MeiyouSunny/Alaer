@@ -10,6 +10,9 @@
     <string name="farm">农场</string>
     <string name="task">任务</string>
 
+    <string name="digital_cityer_auth">数字市民申请</string>
+    <string name="go_into_alaer">走进阿拉尔</string>
+
     <string name="regist">注册</string>
     <string name="login">登录</string>
     <string name="enter">进入</string>
@@ -76,7 +79,6 @@
     <string name="exchanged_full">兑换完</string>
 
 
-
     <string name="leisure_hall">休闲大厅</string>
     <string name="music">音乐</string>
     <string name="shot_video">短视频</string>
@@ -111,7 +113,7 @@
     <string name="auth_success">恭喜你完成身份认证!</string>
     <string name="share_now">立即分享</string>
 
-    <string name="travel_hall">旅游大厅</string>
+    <string name="travel_hall">旅游中心</string>
     <string name="alaer_travel_video">阿拉尔旅游宣传片</string>
     <string name="travel_ticket">旅游景点购票</string>
 
