@@ -14,7 +14,7 @@
             type="com.alaer.lib.api.bean.SeedMine" />
     </data>
 
-    <RelativeLayout
+    <com.cyberalaer.hybrid.view.GrayRelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="16dp">
@@ -100,6 +100,6 @@
 
         </RelativeLayout>
 
-    </RelativeLayout>
+    </com.cyberalaer.hybrid.view.GrayRelativeLayout>
 
 </layout>

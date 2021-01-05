@@ -18,7 +18,7 @@ import com.cyberalaer.hybrid.ui.game.GameHallActivity;
 import com.cyberalaer.hybrid.ui.government.GovernmentHallActivity;
 import com.cyberalaer.hybrid.ui.hospital.HospitalActivity;
 import com.cyberalaer.hybrid.ui.leisure.LeisureHallActivity;
-import com.cyberalaer.hybrid.ui.produce.SeedStoreActivity;
+import com.cyberalaer.hybrid.ui.produce.ProductionHallActivity;
 import com.cyberalaer.hybrid.ui.shopping.DigitalMallActivity;
 import com.cyberalaer.hybrid.ui.travel.TravelHallActivity;
 import com.cyberalaer.hybrid.ui.user.UserMineActivity;
@@ -54,20 +54,20 @@ public class HomeActivity extends BaseViewBindActivity<ActivityHomeBinding> impl
     private void initMapView() {
         bindRoot.map.getMapView().setImageResource(R.drawable.bg_map);
         List<Marker> markers = new ArrayList<>();
-        markers.add(new Marker(0.61F, 0.35F, R.drawable.icon_education));
-        markers.add(new Marker(0.89F, 0.33F, R.drawable.icon_digital_mall));
-        markers.add(new Marker(0.53F, 0.45F, R.drawable.icon_government));
-        markers.add(new Marker(0.85F, 0.63F, R.drawable.icon_travel));
-        markers.add(new Marker(0.58F, 0.64f, R.drawable.icon_game));
-        markers.add(new Marker(0.34F, 0.6F, R.drawable.icon_hospital));
-        markers.add(new Marker(0.38F, 0.81F, R.drawable.icon_leisure));
-        markers.add(new Marker(0.21F, 0.48F, R.drawable.icon_produce));
+        markers.add(new Marker(0.61F, 0.35F, R.string.education_hall));
+        markers.add(new Marker(0.89F, 0.33F, R.string.digital_mall));
+        markers.add(new Marker(0.53F, 0.45F, R.string.government_hall));
+        markers.add(new Marker(0.85F, 0.63F, R.string.travel_hall));
+        markers.add(new Marker(0.58F, 0.64f, R.string.game_hall));
+        markers.add(new Marker(0.34F, 0.6F, R.string.people_hospital));
+        markers.add(new Marker(0.38F, 0.81F, R.string.leisure_hall));
+        markers.add(new Marker(0.21F, 0.48F, R.string.produce_hall));
         bindRoot.map.setMarkers(markers);
         bindRoot.map.setOnMarkerClickListner(this);
     }
 
     private Class<? extends Activity>[] mPageClasses = new Class[]{EducationHallActivity.class, DigitalMallActivity.class, GovernmentHallActivity.class,
-            TravelHallActivity.class, GameHallActivity.class, HospitalActivity.class, LeisureHallActivity.class, SeedStoreActivity.class};
+            TravelHallActivity.class, GameHallActivity.class, HospitalActivity.class, LeisureHallActivity.class, ProductionHallActivity.class};
 
     @Override
     public void onClick(View view, int position) {

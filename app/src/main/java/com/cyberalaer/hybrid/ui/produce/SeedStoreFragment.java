@@ -1,5 +1,7 @@
 package com.cyberalaer.hybrid.ui.produce;
 
+import android.os.Bundle;
+
 import com.alaer.lib.api.ApiUtil;
 import com.alaer.lib.api.AppConfig;
 import com.alaer.lib.api.Callback;
@@ -18,8 +20,13 @@ import java.util.List;
  */
 public class SeedStoreFragment extends BaseBindFragment<FragmentProduceListBinding> {
 
-    public static SeedStoreFragment newInstance() {
+    private boolean claimNewbieMiner;
+
+    public static SeedStoreFragment newInstance(boolean claimNewbieMiner) {
         SeedStoreFragment fragment = new SeedStoreFragment();
+        Bundle bundle = new Bundle();
+        bundle.putBoolean("claimNewbieMiner", claimNewbieMiner);
+        fragment.setArguments(bundle);
         return fragment;
     }
 
@@ -36,6 +43,7 @@ public class SeedStoreFragment extends BaseBindFragment<FragmentProduceListBindi
     }
 
     private void initData() {
+        claimNewbieMiner = getArguments().getBoolean("claimNewbieMiner");
         UserData userData = UserDataUtil.instance().getUserData();
         if (userData == null)
             return;
@@ -51,7 +59,7 @@ public class SeedStoreFragment extends BaseBindFragment<FragmentProduceListBindi
     }
 
     private void showData(List<SeedStore> data) {
-        AdapterSeedStore adapter = new AdapterSeedStore(data);
+        AdapterSeedStore adapter = new AdapterSeedStore(data, claimNewbieMiner);
         bindRoot.produceList.setAdapter(adapter);
     }
 }

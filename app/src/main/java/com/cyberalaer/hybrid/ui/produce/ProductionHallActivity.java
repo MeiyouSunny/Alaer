@@ -2,6 +2,7 @@ package com.cyberalaer.hybrid.ui.produce;
 
 import android.animation.Animator;
 import android.animation.AnimatorInflater;
+import android.os.Bundle;
 import android.text.TextUtils;
 import android.widget.ImageView;
 
@@ -159,7 +160,13 @@ public class ProductionHallActivity extends BaseTitleActivity<ActivityProduction
     public void click(android.view.View view) {
         switch (view.getId()) {
             case R.id.toBase:
-                ViewUtil.gotoActivity(this, SeedStoreActivity.class);
+                if (mTeamInfo != null) {
+                    Bundle bundle = new Bundle();
+                    bundle.putBoolean("claimNewbieMiner", mTeamInfo.claimNewbieMiner);
+                    ViewUtil.gotoActivity(this, SeedStoreActivity.class, bundle);
+                } else {
+                    ViewUtil.gotoActivity(this, SeedStoreActivity.class);
+                }
                 break;
             case R.id.speedUp:
                 if (mTeamInfo != null && mTeamInfo.virtualMiner.todayStatus == 2) {

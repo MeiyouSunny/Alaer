@@ -21,9 +21,11 @@ public class AdapterSeedStore extends RecyclerView.Adapter<AdapterSeedStore.View
 
     List<SeedStore> mData;
     private SeedDataUtil mUtil;
+    private boolean claimNewbieMiner;
 
-    public AdapterSeedStore(List<SeedStore> data) {
+    public AdapterSeedStore(List<SeedStore> data, boolean claimNewbieMiner) {
         mData = data;
+        this.claimNewbieMiner = claimNewbieMiner;
     }
 
     @Override
@@ -43,6 +45,7 @@ public class AdapterSeedStore extends RecyclerView.Adapter<AdapterSeedStore.View
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.binding.setUtil(mUtil);
         holder.binding.setSeed(mData.get(position));
+        holder.binding.setClaimNewbieMiner(claimNewbieMiner);
         holder.binding.executePendingBindings();
     }
 

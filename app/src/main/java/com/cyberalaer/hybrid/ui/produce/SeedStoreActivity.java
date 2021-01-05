@@ -26,8 +26,11 @@ public class SeedStoreActivity extends BaseTitleActivity<ActivitySeedStoreBindin
     @Override
     public void onViewCreated() {
         super.onViewCreated();
+
+        boolean claimNewbieMiner = getIntent().getBooleanExtra("claimNewbieMiner", false);
+
         TabPagerAdapter sectionsPagerAdapter = new TabPagerAdapter(this, getSupportFragmentManager(),
-                getResources().getStringArray(R.array.produce_base_tabs));
+                getResources().getStringArray(R.array.produce_base_tabs), claimNewbieMiner);
         ViewPager viewPager = findViewById(R.id.view_pager);
         bindRoot.viewPager.setAdapter(sectionsPagerAdapter);
         bindRoot.tabs.setupWithViewPager(viewPager);

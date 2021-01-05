@@ -3,6 +3,7 @@ package com.cyberalaer.hybrid.data;
 import android.content.res.Resources;
 
 import com.cyberalaer.hybrid.R;
+import com.cyberalaer.hybrid.util.TimeUtil;
 
 public class SeedDataUtil {
     // 0.试裁；1.枣树；100.葡萄树；200.苹果树；300.梨树；400.杏树
@@ -110,8 +111,9 @@ public class SeedDataUtil {
         return mRes.getString(R.string.reward_activity_is, num);
     }
 
-    public String parseCultivationTime(int num) {
-        return mRes.getString(R.string.cultivation_time_is, num);
+    // 秒值 --> xx小时xx分钟
+    public String parseCultivationTime(int seconds) {
+        return mRes.getString(R.string.cultivation_time_is, TimeUtil.parseSecondssToTimeString(seconds));
     }
 
     public String parseCultivationDays(int num) {

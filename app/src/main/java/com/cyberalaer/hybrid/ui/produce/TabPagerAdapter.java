@@ -13,11 +13,11 @@ public class TabPagerAdapter extends FragmentPagerAdapter {
     private String[] mTitles;
     private Fragment[] mFragments;
 
-    public TabPagerAdapter(Context context, FragmentManager fm, String[] titles) {
+    public TabPagerAdapter(Context context, FragmentManager fm, String[] titles, boolean claimNewbieMiner) {
         super(fm);
         mContext = context;
         mTitles = titles;
-        mFragments = new Fragment[]{SeedMineFragment.newInstance(), SeedStoreFragment.newInstance(), SeedExpiredFragment.newInstance()};
+        mFragments = new Fragment[]{SeedMineFragment.newInstance(), SeedStoreFragment.newInstance(claimNewbieMiner), SeedExpiredFragment.newInstance()};
     }
 
     @Override

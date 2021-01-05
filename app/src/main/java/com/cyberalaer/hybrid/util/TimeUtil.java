@@ -80,6 +80,18 @@ public class TimeUtil {
         return formater.format(date);
     }
 
+    // 秒值 --> xx小时xx分钟
+    public static String parseSecondssToTimeString(long time) {
+        time *= 1000;
+        Date date = new Date(time);
+        String format = "H小时m分";
+        if (time % (60 * 60) == 0)
+            format = "H小时";
+        SimpleDateFormat formater = new SimpleDateFormat(format);
+        formater.setTimeZone(TimeZone.getTimeZone("GMT+00"));
+        return formater.format(date);
+    }
+
     public static String parseMillesToTimeStringWithSecond(long time) {
         Date date = new Date(time);
         SimpleDateFormat formater = new SimpleDateFormat("MM-dd HH:mm:ss");

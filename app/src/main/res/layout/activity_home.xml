@@ -24,221 +24,261 @@
         android:fitsSystemWindows="true"
         tools:context=".HomeActivity">
 
-        <com.cyberalaer.hybrid.view.mapview.MapContainer
-            android:id="@+id/map"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
+
+            <com.cyberalaer.hybrid.view.mapview.MapContainer
+                android:id="@+id/map"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
 
             <RelativeLayout
-                android:id="@+id/layoutUser"
-                android:layout_width="150dp"
-                android:layout_height="52dp"
-                android:layout_below="@+id/notice"
-                android:layout_marginLeft="18dp"
-                android:layout_marginTop="18dp"
-                android:background="@drawable/bg_gray_round_corner2"
-                android:clickable="true"
-                android:onClick="@{handler.click}"
-                android:paddingLeft="8dp">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-                <ImageView
-                    android:id="@+id/icHead"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_centerVertical="true"
-                    android:src="@drawable/ic_head_default_boy" />
+                <RelativeLayout
+                    android:id="@+id/layoutUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="52dp"
+                    android:paddingRight="14dp"
+                    android:layout_below="@+id/notice"
+                    android:layout_marginTop="18dp"
+                    android:background="@drawable/bg_gray_round_corner2"
+                    android:clickable="true"
+                    android:onClick="@{handler.click}"
+                    android:paddingLeft="8dp">
+
+                    <ImageView
+                        android:id="@+id/icHead"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_head_default_boy" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="48dp"
+                        android:text="点击登录"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_15"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/nameLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="46dp"
+                        android:layout_marginTop="8dp"
+                        android:singleLine="true"
+                        android:text="@string/nike_name"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_11" />
+
+                    <TextView
+                        android:id="@+id/name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_toRightOf="@+id/nameLabel"
+                        android:singleLine="true"
+                        android:text="@{user.name}"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_11"
+                        tools:text="0" />
+
+                    <TextView
+                        android:id="@+id/buildScoreLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="46dp"
+                        android:layout_marginTop="26dp"
+                        android:text="@string/good_cityer"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_11" />
+
+                    <TextView
+                        android:id="@+id/buildScore"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="26dp"
+                        android:layout_toRightOf="@+id/buildScoreLabel"
+                        android:text="@{String.valueOf(balance.money.amount)}"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_11"
+                        tools:text="0" />
+
+                </RelativeLayout>
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="16dp"
+                    android:layout_below="@+id/layoutUser"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="48dp"
-                    android:text="点击登录"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/bg_gray_round_corner2"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="12dp"
+                    android:text="今日活跃度: 0"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/font_15"
+                    android:textSize="@dimen/font_11"
                     android:visibility="gone" />
 
                 <TextView
-                    android:id="@+id/nameLabel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="46dp"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/nike_name"
+                    android:id="@+id/notice"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="48dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="48dp"
+                    android:background="@drawable/bg_gray_round_corner"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="12dp"
+                    android:text="公告：恭喜鲁班同学拿到五杀！"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/font_11" />
+                    android:textSize="@dimen/font_12" />
 
-                <TextView
-                    android:id="@+id/name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:layout_toRightOf="@+id/nameLabel"
-                    android:text="@{user.name}"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/font_11"
-                    tools:text="0" />
+                <RelativeLayout
+                    android:id="@+id/layout_fun1"
+                    android:layout_width="154dp"
+                    android:layout_height="62dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="44dp"
+                    android:visibility="gone">
 
-                <TextView
-                    android:id="@+id/buildScoreLabel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="46dp"
-                    android:layout_marginTop="26dp"
-                    android:text="@string/good_cityer"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/font_11" />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="@drawable/bg_gray_top_left_round_corner" />
 
-                <TextView
-                    android:id="@+id/buildScore"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="26dp"
-                    android:layout_toRightOf="@+id/buildScoreLabel"
-                    android:text="@{String.valueOf(balance.money.amount)}"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/font_11"
-                    tools:text="0" />
+
+                    <TextView
+                        android:id="@+id/btn_notice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginBottom="6dp"
+                        android:layout_toLeftOf="@+id/discover"
+                        android:drawableTop="@drawable/ic_notice"
+                        android:drawablePadding="-4dp"
+                        android:gravity="center"
+                        android:text="公告"
+                        android:textColor="@color/white"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/discover"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="6dp"
+                        android:layout_toLeftOf="@+id/daily_sign"
+                        android:drawableTop="@drawable/ic_discover"
+                        android:drawablePadding="-4dp"
+                        android:gravity="center"
+                        android:text="发现"
+                        android:textColor="@color/white"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/daily_sign"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="6dp"
+                        android:drawableTop="@drawable/ic_daily_sign"
+                        android:drawablePadding="-4dp"
+                        android:gravity="center"
+                        android:text="每日签到"
+                        android:textColor="@color/white"
+                        android:textSize="13sp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/layout_fun2"
+                    android:layout_width="134dp"
+                    android:layout_height="62dp"
+                    android:layout_below="@id/layout_fun1"
+                    android:layout_alignParentRight="true"
+                    android:visibility="gone">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="@drawable/bg_gray_top_left_round_corner" />
+
+                    <TextView
+                        android:id="@+id/production_base"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginRight="4dp"
+                        android:layout_marginBottom="6dp"
+                        android:layout_toLeftOf="@+id/daily_task"
+                        android:drawableTop="@drawable/ic_production_base"
+                        android:drawablePadding="-4dp"
+                        android:gravity="center"
+                        android:text="生产基地"
+                        android:textColor="@color/white"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/daily_task"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="6dp"
+                        android:drawableTop="@drawable/ic_daily_task"
+                        android:drawablePadding="-4dp"
+                        android:gravity="center"
+                        android:text="每日任务"
+                        android:textColor="@color/white"
+                        android:textSize="13sp" />
+
+                </RelativeLayout>
+
 
             </RelativeLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="16dp"
-                android:layout_below="@+id/layoutUser"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="48dp"
-                android:layout_marginTop="8dp"
-                android:background="@drawable/bg_gray_round_corner2"
-                android:paddingLeft="12dp"
-                android:paddingRight="12dp"
-                android:text="今日活跃度: 0"
-                android:textColor="@color/white"
-                android:textSize="@dimen/font_11" />
-
-            <TextView
-                android:id="@+id/notice"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:layout_marginLeft="48dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginRight="48dp"
-                android:background="@drawable/bg_gray_round_corner"
-                android:gravity="center_vertical"
-                android:paddingLeft="12dp"
-                android:text="公告：恭喜鲁班同学拿到五杀！"
-                android:textColor="@color/white"
-                android:textSize="@dimen/font_12" />
-
-            <RelativeLayout
-                android:id="@+id/layout_fun1"
-                android:layout_width="154dp"
-                android:layout_height="62dp"
-                android:layout_alignParentRight="true"
-                android:layout_marginTop="44dp">
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:layout_alignParentBottom="true"
-                    android:background="@drawable/bg_gray_top_left_round_corner" />
-
+                android:layout_height="64dp"
+                android:layout_alignParentBottom="true"
+                android:background="#55000000">
 
                 <TextView
-                    android:id="@+id/btn_notice"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginLeft="24dp"
-                    android:layout_marginBottom="6dp"
-                    android:layout_toLeftOf="@+id/discover"
-                    android:drawableTop="@drawable/ic_notice"
-                    android:drawablePadding="-4dp"
-                    android:gravity="center"
-                    android:text="公告"
-                    android:textColor="@color/white"
-                    android:textSize="13sp" />
+                    style="@style/HomeBottomModule"
+                    android:drawableTop="@drawable/ic_home_produce"
+                    android:text="@string/farm" />
 
                 <TextView
-                    android:id="@+id/discover"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginBottom="6dp"
-                    android:layout_toLeftOf="@+id/daily_sign"
-                    android:drawableTop="@drawable/ic_discover"
-                    android:drawablePadding="-4dp"
-                    android:gravity="center"
-                    android:text="发现"
-                    android:textColor="@color/white"
-                    android:textSize="13sp" />
+                    style="@style/HomeBottomModule"
+                    android:drawableTop="@drawable/ic_home_task"
+                    android:text="@string/task" />
 
                 <TextView
-                    android:id="@+id/daily_sign"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginRight="8dp"
-                    android:layout_marginBottom="6dp"
-                    android:drawableTop="@drawable/ic_daily_sign"
-                    android:drawablePadding="-4dp"
-                    android:gravity="center"
-                    android:text="每日签到"
-                    android:textColor="@color/white"
-                    android:textSize="13sp" />
+                    style="@style/HomeBottomModule"
 
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/layout_fun2"
-                android:layout_width="134dp"
-                android:layout_height="62dp"
-                android:layout_below="@id/layout_fun1"
-                android:layout_alignParentRight="true">
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:layout_alignParentBottom="true"
-                    android:background="@drawable/bg_gray_top_left_round_corner" />
+                    android:drawableTop="@drawable/ic_home_discovery"
+                    android:text="@string/discover" />
 
                 <TextView
-                    android:id="@+id/production_base"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginRight="4dp"
-                    android:layout_marginBottom="6dp"
-                    android:layout_toLeftOf="@+id/daily_task"
-                    android:drawableTop="@drawable/ic_production_base"
-                    android:drawablePadding="-4dp"
-                    android:gravity="center"
-                    android:text="生产基地"
-                    android:textColor="@color/white"
-                    android:textSize="13sp" />
+                    style="@style/HomeBottomModule"
+                    android:drawableTop="@drawable/ic_home_mine"
+                    android:text="@string/mine" />
 
-                <TextView
-                    android:id="@+id/daily_task"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginRight="8dp"
-                    android:layout_marginBottom="6dp"
-                    android:drawableTop="@drawable/ic_daily_task"
-                    android:drawablePadding="-4dp"
-                    android:gravity="center"
-                    android:text="每日任务"
-                    android:textColor="@color/white"
-                    android:textSize="13sp" />
-
-            </RelativeLayout>
-
+            </LinearLayout>
 
         </RelativeLayout>
 

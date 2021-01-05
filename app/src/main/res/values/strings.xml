@@ -7,6 +7,8 @@
 
     <string name="nike_name">昵称：</string>
     <string name="good_cityer">好市民：</string>
+    <string name="farm">农场</string>
+    <string name="task">任务</string>
 
     <string name="regist">注册</string>
     <string name="login">登录</string>
@@ -41,7 +43,7 @@
     <string name="reset_pwd_success">密码修改成功!</string>
 
     <string name="produce_base">生产基地</string>
-    <string name="produce_hall">生产大厅</string>
+    <string name="produce_hall">我的农场</string>
     <string name="produce_base_with_arrow">生产基地></string>
     <string name="fertilize">施肥</string>
     <string name="water">浇水</string>
@@ -64,11 +66,11 @@
     <string name="end_time_is">结束时间：%s</string>
     <string name="remaing_days_is">剩余天数：%d天</string>
     <string name="expired">已过期</string>
-    <string name="getted">已领取</string>
+    <string name="seed_getted">已领取</string>
     <string name="price_is_get_by_auth">兑换价格：实名认证赠送</string>
     <string name="price_is">兑换价格：%d果实</string>
     <string name="reward_activity_is">奖励活跃度%d</string>
-    <string name="cultivation_time_is">栽培时长：%d</string>
+    <string name="cultivation_time_is">栽培时长：%s</string>
     <string name="cultivation_days_is">栽培天数：%d天</string>
     <string name="has_exchanged_is">已兑换：%d/%d个</string>
     <string name="exchanged_full">兑换完</string>
@@ -86,7 +88,7 @@
     <string name="h5_game">H5小游戏</string>
     <string name="more">更多</string>
 
-    <string name="education_hall">教育大厅</string>
+    <string name="education_hall">数字大学</string>
     <string name="compulsory_education">义务教育</string>
     <string name="online_education">在线教育</string>
     <string name="education_video">教育视频</string>
@@ -103,7 +105,7 @@
     <string name="go_exchange_goods">前往兑换</string>
     <string name="goods_exchange">商品兑换</string>
 
-    <string name="government_hall">政务大厅</string>
+    <string name="government_hall">市民中心</string>
     <string name="real_name_auth">实名认证</string>
     <string name="make_sure_security_warning">为保证您的账号安全，提升服务品质，请前往</string>
     <string name="auth_success">恭喜你完成身份认证!</string>

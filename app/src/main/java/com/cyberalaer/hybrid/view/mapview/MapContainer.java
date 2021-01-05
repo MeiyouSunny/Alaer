@@ -4,9 +4,10 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.RectF;
 import android.util.AttributeSet;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.cyberalaer.hybrid.R;
 
@@ -15,8 +16,6 @@ import java.util.List;
 public class MapContainer extends ViewGroup implements MapView.OnMapStateChangedListner {
     private boolean isFirstLayout = true;
     private Context mContext;
-    private int MARKER_WIDTH;
-    private int MARKER_HEIGHT;
     private MapView mMapView;
     private List<Marker> mMarkers;
 
@@ -40,11 +39,7 @@ public class MapContainer extends ViewGroup implements MapView.OnMapStateChanged
             return;
         }
         TypedArray typeArray = mContext.obtainStyledAttributes(attrs, R.styleable.MapView);
-        MARKER_WIDTH = typeArray.getDimensionPixelOffset(R.styleable.MapView_marker_width, 56);
-        MARKER_HEIGHT = typeArray.getDimensionPixelOffset(R.styleable.MapView_marker_height, 24);
 
-        MARKER_WIDTH = dip2px(getContext(), MARKER_WIDTH);
-        MARKER_HEIGHT = dip2px(getContext(), MARKER_HEIGHT);
         typeArray.recycle();
     }
 
@@ -71,9 +66,9 @@ public class MapContainer extends ViewGroup implements MapView.OnMapStateChanged
 
             marker = mMarkers.get(i);
 
-            int left = roundValue(pLeft + pWidth * marker.getScaleX() - MARKER_WIDTH * 1f / 2);
-            int top = roundValue(pTop + pHeight * marker.getScaleY() - MARKER_HEIGHT);
-            int right = roundValue(pLeft + pWidth * marker.getScaleX() + MARKER_WIDTH * 1f / 2);
+            int left = roundValue(pLeft + pWidth * marker.getScaleX() - marker.getMarkerView().getMeasuredWidth() * 1f / 2);
+            int top = roundValue(pTop + pHeight * marker.getScaleY() - marker.getMarkerView().getMeasuredHeight());
+            int right = roundValue(pLeft + pWidth * marker.getScaleX() + marker.getMarkerView().getMeasuredWidth() * 1f / 2);
             int bottom = roundValue(pTop + pHeight * marker.getScaleY());
 
             marker.getMarkerView().layout(left, top, right, bottom);
@@ -103,18 +98,18 @@ public class MapContainer extends ViewGroup implements MapView.OnMapStateChanged
             return;
         }
 
-        LayoutParams params = new LayoutParams(MARKER_WIDTH, MARKER_HEIGHT);
+//        LayoutParams params = new LayoutParams(LayoutParams.WRAP_CONTENT, MARKER_HEIGHT);
 
         for (int i = 0, size = mMarkers.size(); i < size; i++) {
             Marker marker = mMarkers.get(i);
-            final ImageView markerView = new ImageView(mContext);
+            final TextView markerView = (TextView) LayoutInflater.from(getContext()).inflate(R.layout.map_marker, null);
+//            markerView.setPadding(16, 6, 16, 6);
+            markerView.setTag(R.id.is_marker, true);
+//            markerView.setLayoutParams(params);
+            markerView.setText(marker.getText());
             marker.setMarkerView(markerView);
             addView(markerView);
 
-            markerView.setTag(R.id.is_marker, true);
-            markerView.setLayoutParams(params);
-            markerView.setBackgroundResource(R.drawable.bg_marker);
-            markerView.setImageResource(marker.getImgSrcId());
             final int position = i;
             markerView.setOnClickListener(new OnClickListener() {
                 @Override

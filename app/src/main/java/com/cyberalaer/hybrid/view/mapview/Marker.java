@@ -1,20 +1,20 @@
 package com.cyberalaer.hybrid.view.mapview;
 
-import android.widget.ImageView;
+import android.widget.TextView;
 
 public class Marker {
     private float scaleX;
     private float scaleY;
-    private ImageView markerView;
-    private int imgSrcId;
+    private TextView markerView;
+    private int textResId;
 
     public Marker() {
     }
 
-    public Marker(float scaleX, float scaleY, int imgSrcId) {
+    public Marker(float scaleX, float scaleY, int text) {
         this.scaleX = scaleX;
         this.scaleY = scaleY;
-        this.imgSrcId = imgSrcId;
+        this.textResId = text;
     }
 
     public float getScaleX() {
@@ -33,19 +33,19 @@ public class Marker {
         this.scaleY = scaleY;
     }
 
-    public void setMarkerView(ImageView markerView) {
+    public void setMarkerView(TextView markerView) {
         this.markerView = markerView;
     }
 
-    public int getImgSrcId() {
-        return imgSrcId;
+    public int getText() {
+        return textResId;
     }
 
-    public void setImgSrcId(int imgSrcId) {
-        this.imgSrcId = imgSrcId;
+    public void setText(int imgSrcId) {
+        this.textResId = imgSrcId;
     }
 
-    public ImageView getMarkerView() {
+    public TextView getMarkerView() {
         return markerView;
     }
 }

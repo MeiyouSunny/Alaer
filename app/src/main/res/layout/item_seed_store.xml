@@ -8,6 +8,10 @@
         <import type="android.view.View" />
 
         <variable
+            name="claimNewbieMiner"
+            type="boolean" />
+
+        <variable
             name="util"
             type="com.cyberalaer.hybrid.data.SeedDataUtil" />
 
@@ -45,11 +49,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{util.parsePrice(seed.price)}"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="4dp"
                 android:layout_marginBottom="8dp"
+                android:text="@{util.parsePrice(seed.price)}"
                 android:textColor="@color/white"
                 android:textSize="@dimen/font_14" />
 
@@ -57,12 +61,12 @@
                 android:layout_width="77dp"
                 android:layout_height="29dp"
                 android:layout_centerInParent="true"
-                android:background="@drawable/bg_gray_round_corner3"
+                android:background="@drawable/bg_orange_round_corner3"
                 android:gravity="center"
-                android:text="@string/exchanged_full"
+                android:text="@string/seed_getted"
                 android:textColor="@color/white"
                 android:textSize="@dimen/font_15"
-                android:visibility="@{seed.buyNum == seed.buyMax ? View.VISIBLE : View.GONE}" />
+                android:visibility="@{(seed.price == 0 &amp;&amp; claimNewbieMiner) ? View.VISIBLE : View.GONE}" />
 
             <TextView
                 android:layout_width="77dp"
