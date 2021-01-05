@@ -181,4 +181,13 @@ public interface ApiService {
                                   @Query("pageIndex") int pageIndex, @Query("pageSize") int pageSize,
                                   Callback<SeedStoreList> callback);
 
+    /**
+     * 购买树苗
+     */
+    @FormBody
+    @POST("/mining/user/miner")
+    Call<String> bugSeed(@Part("uuid") String uuid, @Part("uid") String uid, @Part("token") String token,
+                         @Part("diamondCurrency") String diamondCurrency, @Part("minerId") String minerId,
+                         Callback<String> callback);
+
 }

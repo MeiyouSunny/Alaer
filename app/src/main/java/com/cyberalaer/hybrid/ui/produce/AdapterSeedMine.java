@@ -23,7 +23,12 @@ public class AdapterSeedMine extends RecyclerView.Adapter<AdapterSeedMine.ViewHo
     private SeedDataUtil mUtil;
 
     public AdapterSeedMine(List<SeedMine> data) {
-        mData = data;
+        this.mData = data;
+    }
+
+    public void setmData(List<SeedMine> data) {
+        this.mData = data;
+        notifyDataSetChanged();
     }
 
     @Override

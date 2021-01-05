@@ -18,6 +18,11 @@
         <variable
             name="seed"
             type="com.alaer.lib.api.bean.SeedStore" />
+
+        <variable
+            name="handler"
+            type="com.cyberalaer.hybrid.ui.produce.AdapterSeedStore.OnBuySeedHandler" />
+
     </data>
 
     <RelativeLayout
@@ -29,6 +34,8 @@
             android:id="@+id/imgSeed"
             android:layout_width="176dp"
             android:layout_height="242dp"
+            android:clickable="true"
+            android:onClick="@{(view)->handler.onBuySeed(seed)}"
             app:drawableRes="@{util.getSeedImage(seed.type)}">
 
             <TextView

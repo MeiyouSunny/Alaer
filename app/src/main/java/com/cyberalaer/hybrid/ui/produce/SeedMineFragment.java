@@ -17,6 +17,8 @@ import java.util.List;
  */
 public class SeedMineFragment extends BaseBindFragment<FragmentProduceListBinding> {
 
+    private AdapterSeedMine adapter;
+
     public static SeedMineFragment newInstance() {
         SeedMineFragment fragment = new SeedMineFragment();
         return fragment;
@@ -31,6 +33,10 @@ public class SeedMineFragment extends BaseBindFragment<FragmentProduceListBindin
     public void onViewCreated() {
         super.onViewCreated();
 
+        initData();
+    }
+
+    public void refresh() {
         initData();
     }
 
@@ -49,7 +55,12 @@ public class SeedMineFragment extends BaseBindFragment<FragmentProduceListBindin
     }
 
     private void showData(List<SeedMine> data) {
-        AdapterSeedMine adapter = new AdapterSeedMine(data);
-        bindRoot.produceList.setAdapter(adapter);
+        if (adapter == null) {
+            adapter = new AdapterSeedMine(data);
+            bindRoot.produceList.setAdapter(adapter);
+        } else {
+            adapter.setmData(data);
+        }
+
     }
 }

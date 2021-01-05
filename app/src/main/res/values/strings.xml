@@ -78,6 +78,9 @@
     <string name="has_exchanged_is">已兑换：%d/%d个</string>
     <string name="exchanged_full">兑换完</string>
 
+    <string name="has_get_try_seed">抱歉,已领取过试种树苗!</string>
+    <string name="seed_sold_out_all">抱歉,已被兑换完!</string>
+
 
     <string name="leisure_hall">休闲大厅</string>
     <string name="music">音乐</string>

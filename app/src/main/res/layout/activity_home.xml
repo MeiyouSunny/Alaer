@@ -41,13 +41,13 @@
                     android:id="@+id/layoutUser"
                     android:layout_width="wrap_content"
                     android:layout_height="52dp"
-                    android:paddingRight="14dp"
                     android:layout_below="@+id/notice"
                     android:layout_marginTop="18dp"
                     android:background="@drawable/bg_gray_round_corner2"
                     android:clickable="true"
                     android:onClick="@{handler.click}"
-                    android:paddingLeft="8dp">
+                    android:paddingLeft="8dp"
+                    android:paddingRight="14dp">
 
                     <ImageView
                         android:id="@+id/icHead"
@@ -258,24 +258,32 @@
                 android:background="#55000000">
 
                 <TextView
+                    android:id="@+id/tabProduce"
                     style="@style/HomeBottomModule"
                     android:drawableTop="@drawable/ic_home_produce"
+                    android:onClick="@{handler.click}"
                     android:text="@string/farm" />
 
                 <TextView
+                    android:id="@+id/tabTask"
                     style="@style/HomeBottomModule"
                     android:drawableTop="@drawable/ic_home_task"
+                    android:onClick="@{handler.click}"
                     android:text="@string/task" />
 
                 <TextView
+                    android:id="@+id/tabDiscover"
                     style="@style/HomeBottomModule"
-
                     android:drawableTop="@drawable/ic_home_discovery"
+
+                    android:onClick="@{handler.click}"
                     android:text="@string/discover" />
 
                 <TextView
+                    android:id="@+id/tabMine"
                     style="@style/HomeBottomModule"
                     android:drawableTop="@drawable/ic_home_mine"
+                    android:onClick="@{handler.click}"
                     android:text="@string/mine" />
 
             </LinearLayout>

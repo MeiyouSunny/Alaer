@@ -22,10 +22,17 @@ public class AdapterSeedStore extends RecyclerView.Adapter<AdapterSeedStore.View
     List<SeedStore> mData;
     private SeedDataUtil mUtil;
     private boolean claimNewbieMiner;
+    private OnBuySeedHandler handler;
 
-    public AdapterSeedStore(List<SeedStore> data, boolean claimNewbieMiner) {
-        mData = data;
+    public AdapterSeedStore(List<SeedStore> data, boolean claimNewbieMiner, OnBuySeedHandler handler) {
+        this.mData = data;
         this.claimNewbieMiner = claimNewbieMiner;
+        this.handler = handler;
+    }
+
+    public void setmData(List<SeedStore> data) {
+        this.mData = data;
+        notifyDataSetChanged();
     }
 
     @Override
@@ -46,6 +53,7 @@ public class AdapterSeedStore extends RecyclerView.Adapter<AdapterSeedStore.View
         holder.binding.setUtil(mUtil);
         holder.binding.setSeed(mData.get(position));
         holder.binding.setClaimNewbieMiner(claimNewbieMiner);
+        holder.binding.setHandler(handler);
         holder.binding.executePendingBindings();
     }
 
@@ -62,5 +70,9 @@ public class AdapterSeedStore extends RecyclerView.Adapter<AdapterSeedStore.View
             super(binding.getRoot());
             this.binding = binding;
         }
+    }
+
+    public interface OnBuySeedHandler {
+        void onBuySeed(SeedStore seed);
     }
 }

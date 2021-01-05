@@ -1,6 +1,7 @@
 package com.cyberalaer.hybrid.ui.produce;
 
 import android.os.Bundle;
+import android.os.Handler;
 
 import com.alaer.lib.api.ApiUtil;
 import com.alaer.lib.api.AppConfig;
@@ -15,12 +16,15 @@ import com.cyberalaer.hybrid.databinding.FragmentProduceListBinding;
 
 import java.util.List;
 
+import likly.dollar.$;
+
 /**
  * 种子商店:种子商店
  */
 public class SeedStoreFragment extends BaseBindFragment<FragmentProduceListBinding> {
 
     private boolean claimNewbieMiner;
+    private AdapterSeedStore adapter;
 
     public static SeedStoreFragment newInstance(boolean claimNewbieMiner) {
         SeedStoreFragment fragment = new SeedStoreFragment();
@@ -59,7 +63,60 @@ public class SeedStoreFragment extends BaseBindFragment<FragmentProduceListBindi
     }
 
     private void showData(List<SeedStore> data) {
-        AdapterSeedStore adapter = new AdapterSeedStore(data, claimNewbieMiner);
-        bindRoot.produceList.setAdapter(adapter);
+        if (adapter == null) {
+            adapter = new AdapterSeedStore(data, claimNewbieMiner, mHandler);
+            bindRoot.produceList.setAdapter(adapter);
+        } else {
+            adapter.setmData(data);
+        }
     }
+
+    private AdapterSeedStore.OnBuySeedHandler mHandler = seed -> buySeed(seed);
+
+    // 领取种子
+    private void buySeed(SeedStore seed) {
+        // 已领取试种树苗
+        if (claimNewbieMiner && seed.price == 0) {
+            $.toast().text(R.string.has_get_try_seed).show();
+            return;
+        }
+        if (seed.buyNum == seed.buyMax) {
+            $.toast().text(R.string.seed_sold_out_all).show();
+            return;
+        }
+
+        UserData userData = UserDataUtil.instance().getUserData();
+        if (userData == null)
+            return;
+
+        $.toast().text("树苗购买成功!").show();
+        // TODO 弹框
+
+        ApiUtil.apiService().bugSeed(userData.uuid, String.valueOf(userData.uid), userData.token,
+                AppConfig.DIAMOND_CURRENCY, String.valueOf(seed.id),
+                new Callback<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        $.toast().text("树苗购买成功!").show();
+                        // TODO 弹框
+
+                        // 跳转到我的种子
+                        if (getActivity() instanceof SeedStoreActivity) {
+                            ((SeedStoreActivity) getActivity()).bindRoot.viewPager.setCurrentItem(0, false);
+                            mUIHandler.postAtTime(() -> ((SeedStoreActivity) getActivity()).refreshMySeeds(), 500);
+                        }
+                        // 刷新
+                        seed.buyNum++;
+                        adapter.notifyDataSetChanged();
+                    }
+
+                    @Override
+                    public void onError(int code, String msg) {
+                        $.toast().text(msg).show();
+                    }
+                });
+    }
+
+    private Handler mUIHandler = new Handler();
+
 }

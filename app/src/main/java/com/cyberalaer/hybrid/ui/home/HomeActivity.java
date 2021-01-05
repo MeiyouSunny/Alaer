@@ -46,7 +46,7 @@ public class HomeActivity extends BaseViewBindActivity<ActivityHomeBinding> impl
     public void onViewCreated() {
         super.onViewCreated();
         initMapView();
-//        initData();
+        initData();
     }
 
     private void initMapView() {
@@ -78,6 +78,18 @@ public class HomeActivity extends BaseViewBindActivity<ActivityHomeBinding> impl
         switch (view.getId()) {
             case R.id.layoutUser:
                 ViewUtil.gotoActivity(this, UserMineActivity.class);
+                break;
+            case R.id.tabMine:
+                ViewUtil.gotoActivity(this, UserMineActivity.class);
+                break;
+            case R.id.tabTask:
+                // TODO
+                break;
+            case R.id.tabProduce:
+                ViewUtil.gotoActivity(this, ProductionHallActivity.class);
+                break;
+            case R.id.tabDiscover:
+                ViewUtil.gotoActivity(this, DiscoverActivity.class);
                 break;
         }
     }
