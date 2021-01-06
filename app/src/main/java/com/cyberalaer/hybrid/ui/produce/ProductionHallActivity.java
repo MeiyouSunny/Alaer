@@ -76,6 +76,11 @@ public class ProductionHallActivity extends BaseTitleActivity<ActivityProduction
                             startTask(tasks.get(0).id);
                         }
                     }
+
+                    @Override
+                    public void onError(int code, String msg) {
+                        super.onError(code, msg);
+                    }
                 });
 
     }
@@ -87,6 +92,7 @@ public class ProductionHallActivity extends BaseTitleActivity<ActivityProduction
                     @Override
                     public void onResponse(String response) {
                         super.onResponse(response);
+                        queryCurrentInfos();
                     }
 
                     @Override
@@ -311,8 +317,10 @@ public class ProductionHallActivity extends BaseTitleActivity<ActivityProduction
             mAnimator.cancel();
             mAnimator = null;
         }
-        mAnimaView.setScaleX(1F);
-        mAnimaView.setScaleX(1F);
+        if (mAnimaView != null) {
+            mAnimaView.setScaleX(1F);
+            mAnimaView.setScaleX(1F);
+        }
     }
 
 }
