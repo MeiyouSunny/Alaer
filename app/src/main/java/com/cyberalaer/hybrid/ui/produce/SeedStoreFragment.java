@@ -2,6 +2,7 @@ package com.cyberalaer.hybrid.ui.produce;
 
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.Gravity;
 
 import com.alaer.lib.api.ApiUtil;
 import com.alaer.lib.api.AppConfig;
@@ -12,10 +13,13 @@ import com.alaer.lib.api.bean.UserData;
 import com.alaer.lib.data.UserDataUtil;
 import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseBindFragment;
+import com.cyberalaer.hybrid.data.SeedDataUtil;
 import com.cyberalaer.hybrid.databinding.FragmentProduceListBinding;
+import com.cyberalaer.hybrid.ui.dialog.DialogBuySeedSuccess;
 
 import java.util.List;
 
+import likly.dialogger.Dialogger;
 import likly.dollar.$;
 
 /**
@@ -89,25 +93,16 @@ public class SeedStoreFragment extends BaseBindFragment<FragmentProduceListBindi
         if (userData == null)
             return;
 
-        $.toast().text("树苗购买成功!").show();
-        // TODO 弹框
-
         ApiUtil.apiService().bugSeed(userData.uuid, String.valueOf(userData.uid), userData.token,
                 AppConfig.DIAMOND_CURRENCY, String.valueOf(seed.id),
                 new Callback<String>() {
                     @Override
                     public void onResponse(String response) {
-                        $.toast().text("树苗购买成功!").show();
-                        // TODO 弹框
-
-                        // 跳转到我的种子
-                        if (getActivity() instanceof SeedStoreActivity) {
-                            ((SeedStoreActivity) getActivity()).bindRoot.viewPager.setCurrentItem(0, false);
-                            mUIHandler.postAtTime(() -> ((SeedStoreActivity) getActivity()).refreshMySeeds(), 500);
-                        }
                         // 刷新
                         seed.buyNum++;
                         adapter.notifyDataSetChanged();
+
+                        showSuccessDialog(seed);
                     }
 
                     @Override
@@ -115,6 +110,23 @@ public class SeedStoreFragment extends BaseBindFragment<FragmentProduceListBindi
                         $.toast().text(msg).show();
                     }
                 });
+    }
+
+    private void showSuccessDialog(SeedStore seed) {
+        final String seedName = getString(new SeedDataUtil(getResources()).getSeedName(seed.type));
+        DialogBuySeedSuccess dialog = new DialogBuySeedSuccess(seedName);
+        dialog.setListener(() -> lookMySeeds());
+        Dialogger.newDialog(getActivity()).holder(dialog)
+                .gravity(Gravity.CENTER).cancelable(false).show();
+    }
+
+    private void lookMySeeds() {
+        // 跳转到我的种子
+        if (getActivity() instanceof SeedStoreActivity) {
+            ((SeedStoreActivity) getActivity()).bindRoot.viewPager.setCurrentItem(0, false);
+            mUIHandler.postAtTime(() -> ((SeedStoreActivity) getActivity()).refreshMySeeds(), 500);
+        }
+
     }
 
     private Handler mUIHandler = new Handler();

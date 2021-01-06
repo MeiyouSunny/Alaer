@@ -80,6 +80,10 @@
 
     <string name="has_get_try_seed">抱歉,已领取过试种树苗!</string>
     <string name="seed_sold_out_all">抱歉,已被兑换完!</string>
+    <string name="look_my_seeds">查看我的树苗</string>
+    <string name="cancel">取消</string>
+    <string name="seed_buyed_is">你已兑换一颗树苗：%s</string>
+    <string name="seed_buy_success">兑换树苗成功</string>
 
 
     <string name="leisure_hall">休闲大厅</string>
