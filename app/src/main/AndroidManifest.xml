@@ -19,8 +19,7 @@
         </activity>
         <activity
             android:name=".ui.welcom.WelcomActivity"
-            android:screenOrientation="portrait">
-        </activity>
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".ui.produce.ProductionHallActivity"
             android:screenOrientation="portrait"></activity>
@@ -29,8 +28,7 @@
             android:screenOrientation="portrait"></activity>
         <activity
             android:name=".ui.home.HomeActivity"
-            android:screenOrientation="portrait">
-        </activity>
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".ui.user.LoginActivity"
             android:screenOrientation="portrait">
@@ -115,8 +113,15 @@
 
         <activity
             android:name=".ui.user.MyTeamActivity"
-            android:screenOrientation="portrait">
-        </activity>
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name=".ui.notice.NoticeListActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name=".ui.notice.NoticeDetailActivity"
+            android:screenOrientation="portrait"></activity>
 
     </application>
 

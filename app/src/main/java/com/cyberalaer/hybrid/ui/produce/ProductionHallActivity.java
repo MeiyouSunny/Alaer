@@ -290,23 +290,29 @@ public class ProductionHallActivity extends BaseTitleActivity<ActivityProduction
         bindRoot.setStep(step);
 
         // animation
-        stopAllAnim();
+        stopAnimation();
         if ((step == 0 && mTeamInfo.virtualMiner.todayStatus == 0) || mProgressComplete) {
             startAnim(mStepImages[step]);
         }
     }
 
     private void startAnim(ImageView view) {
-        Animator anim = AnimatorInflater.loadAnimator(this, R.animator.anima_scale);
-        anim.setTarget(view);
-        anim.start();
+        mAnimator = AnimatorInflater.loadAnimator(this, R.animator.anima_scale);
+        mAnimator.setTarget(view);
+        mAnimator.start();
+        mAnimaView = view;
     }
 
-    private void stopAllAnim() {
-        for (ImageView view : mStepImages) {
-            if (view.getAnimation() != null)
-                view.getAnimation().cancel();
+    Animator mAnimator;
+    ImageView mAnimaView;
+
+    private void stopAnimation() {
+        if (mAnimator != null && mAnimator.isRunning()) {
+            mAnimator.cancel();
+            mAnimator = null;
         }
+        mAnimaView.setScaleX(1F);
+        mAnimaView.setScaleX(1F);
     }
 
 }

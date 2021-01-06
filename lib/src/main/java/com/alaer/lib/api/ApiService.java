@@ -2,6 +2,7 @@ package com.alaer.lib.api;
 
 import com.alaer.lib.api.bean.AdTask;
 import com.alaer.lib.api.bean.Balance;
+import com.alaer.lib.api.bean.Notice;
 import com.alaer.lib.api.bean.SeedMine;
 import com.alaer.lib.api.bean.SeedStoreList;
 import com.alaer.lib.api.bean.TeamDetail;
@@ -189,5 +190,12 @@ public interface ApiService {
     Call<String> bugSeed(@Part("uuid") String uuid, @Part("uid") String uid, @Part("token") String token,
                          @Part("diamondCurrency") String diamondCurrency, @Part("minerId") String minerId,
                          Callback<String> callback);
+
+    /**
+     * 公告列表
+     */
+    @GET("/announce/pageList")
+    Call<List<Notice>> noticeList(@Query("page") int page, @Query("rows") int rows, @Query("appCode") int appCode,
+                                  Callback<List<Notice>> callback);
 
 }

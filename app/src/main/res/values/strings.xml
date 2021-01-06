@@ -188,5 +188,8 @@
     <string name="star_team">团队星级</string>
     <string name="regist_time">注册时间</string>
 
+    <string name="notice_list">公告</string>
+    <string name="notice_detail">公告列表</string>
+
 
 </resources>

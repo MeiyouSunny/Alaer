@@ -1,12 +1,14 @@
 package com.cyberalaer.hybrid.ui.home;
 
 import android.app.Activity;
+import android.os.Bundle;
 import android.view.View;
 
 import com.alaer.lib.api.ApiUtil;
 import com.alaer.lib.api.AppConfig;
 import com.alaer.lib.api.Callback;
 import com.alaer.lib.api.bean.Balance;
+import com.alaer.lib.api.bean.Notice;
 import com.alaer.lib.api.bean.TeamDetail;
 import com.alaer.lib.api.bean.UserData;
 import com.alaer.lib.data.UserDataUtil;
@@ -17,9 +19,12 @@ import com.cyberalaer.hybrid.ui.discover.DiscoverActivity;
 import com.cyberalaer.hybrid.ui.education.EducationHallActivity;
 import com.cyberalaer.hybrid.ui.government.GovernmentHallActivity;
 import com.cyberalaer.hybrid.ui.government.RealNameAuthActivity;
+import com.cyberalaer.hybrid.ui.notice.NoticeDetailActivity;
+import com.cyberalaer.hybrid.ui.notice.NoticeListActivity;
 import com.cyberalaer.hybrid.ui.produce.ProductionHallActivity;
 import com.cyberalaer.hybrid.ui.travel.TravelHallActivity;
 import com.cyberalaer.hybrid.ui.user.UserMineActivity;
+import com.cyberalaer.hybrid.util.CollectionUtils;
 import com.cyberalaer.hybrid.util.ViewUtil;
 import com.cyberalaer.hybrid.view.mapview.MapContainer;
 import com.cyberalaer.hybrid.view.mapview.Marker;
@@ -91,8 +96,20 @@ public class HomeActivity extends BaseViewBindActivity<ActivityHomeBinding> impl
             case R.id.tabDiscover:
                 ViewUtil.gotoActivity(this, DiscoverActivity.class);
                 break;
+            case R.id.noticeList:
+                ViewUtil.gotoActivity(this, NoticeListActivity.class);
+                break;
+            case R.id.notice:
+                if (mNoticeNew != null) {
+                    Bundle bundle = new Bundle();
+                    bundle.putSerializable("notice", mNoticeNew);
+                    ViewUtil.gotoActivity(this, NoticeDetailActivity.class, bundle);
+                }
+                break;
         }
     }
+
+    Notice mNoticeNew;
 
     private void initData() {
         TeamDetail teamDetail = UserDataUtil.instance().getTeamDetail();
@@ -110,6 +127,17 @@ public class HomeActivity extends BaseViewBindActivity<ActivityHomeBinding> impl
                     @Override
                     public void onResponse(Balance balance) {
                         bindRoot.setBalance(balance);
+                    }
+                });
+
+        ApiUtil.apiService().noticeList(1, 5, 1100,
+                new Callback<List<Notice>>() {
+                    @Override
+                    public void onResponse(List<Notice> notices) {
+                        if (!CollectionUtils.isEmpty(notices)) {
+                            mNoticeNew = notices.get(0);
+                            bindRoot.notice.setText(mNoticeNew.title);
+                        }
                     }
                 });
     }

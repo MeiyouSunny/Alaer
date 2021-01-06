@@ -131,15 +131,28 @@
                     android:id="@+id/notice"
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
-                    android:layout_marginLeft="48dp"
+                    android:layout_marginLeft="32dp"
                     android:layout_marginTop="16dp"
-                    android:layout_marginRight="48dp"
+                    android:layout_marginRight="32dp"
                     android:background="@drawable/bg_gray_round_corner"
+                    android:drawableLeft="@drawable/ic_notice"
+                    android:drawablePadding="10dp"
                     android:gravity="center_vertical"
+                    android:onClick="@{handler.click}"
                     android:paddingLeft="12dp"
-                    android:text="公告：恭喜鲁班同学拿到五杀！"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/font_12" />
+                    android:textSize="@dimen/font_12"
+                    tools:text="公告：恭喜鲁班同学拿到五杀！" />
+
+                <ImageView
+                    android:id="@+id/noticeList"
+                    android:layout_width="24dp"
+                    android:layout_height="22dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="32dp"
+                    android:onClick="@{handler.click}"
+                    android:src="@drawable/ic_notice_more" />
 
                 <RelativeLayout
                     android:id="@+id/layout_fun1"
