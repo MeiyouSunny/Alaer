@@ -70,6 +70,7 @@ dependencies {
     implementation 'com.hmcx:mvp:2.0.2'
     implementation 'com.hmcx:dollar:1.0.1'
     implementation 'com.hmcx:rxandroid:1.0.6'
+    compile 'com.hmcx:dialogger:1.0.2'
 
     implementation 'de.hdodenhof:circleimageview:2.1.0'
     implementation 'com.github.bumptech.glide:glide:3.8.0'
