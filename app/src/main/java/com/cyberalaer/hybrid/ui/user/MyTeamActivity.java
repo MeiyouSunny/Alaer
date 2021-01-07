@@ -1,5 +1,8 @@
 package com.cyberalaer.hybrid.ui.user;
 
+import android.os.Build;
+import android.os.Handler;
+import android.os.MessageQueue;
 import android.view.View;
 
 import com.alaer.lib.api.ApiUtil;
@@ -17,7 +20,7 @@ import com.cyberalaer.hybrid.util.ViewUtil;
 
 import java.util.List;
 
-import androidx.viewpager.widget.ViewPager;
+import androidx.annotation.RequiresApi;
 
 /**
  * 我的团队
@@ -36,17 +39,25 @@ public class MyTeamActivity extends BaseTitleActivity<ActivityMyTeamBinding> {
         return R.layout.activity_my_team;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public void onViewCreated() {
         super.onViewCreated();
-        TabActiveDetailAdapter sectionsPagerAdapter = new TabActiveDetailAdapter(this, getSupportFragmentManager(),
+        TabShareUserListAdapter adapter = new TabShareUserListAdapter(this, getSupportFragmentManager(),
                 getResources().getStringArray(R.array.my_team_tabs));
-        ViewPager viewPager = findViewById(R.id.view_pager);
-        bindRoot.viewPager.setAdapter(sectionsPagerAdapter);
-        bindRoot.tabs.setupWithViewPager(viewPager);
+        bindRoot.viewPager.setAdapter(adapter);
+        bindRoot.tabs.setupWithViewPager(bindRoot.viewPager);
 
         userData = UserDataUtil.instance().getUserData();
         initData();
+
+        new Handler().getLooper().getQueue().addIdleHandler(new MessageQueue.IdleHandler() {
+            @Override
+            public boolean queueIdle() {
+                bindRoot.scrollView.scrollTo(0, 0);
+                return false;
+            }
+        });
     }
 
     @Override

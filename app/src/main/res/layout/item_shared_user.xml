@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.alaer.lib.api.bean.SharedUser" />
+
+        <variable
+            name="handler"
+            type="com.cyberalaer.hybrid.ui.user.SharedUserAdapter.Handler" />
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="189dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/ic_head_default_boy"
+                android:clickable="true"
+                android:onClick="@{(View)->handler.clickUser(data)}" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="76dp"
+                android:layout_marginTop="20dp"
+                android:text="@{data.name}"
+                android:textColor="@color/font_41"
+                android:textSize="@dimen/font_17"
+                android:textStyle="bold"
+                tools:text="11****20" />
+
+            <TextView
+                android:layout_width="43dp"
+                android:layout_height="19dp"
+                android:layout_marginLeft="163dp"
+                android:layout_marginTop="23dp"
+                android:background="@{data.isAuthSenior>=0 ? @drawable/bg_gradient_green : @drawable/bg_gradient_gray}"
+                android:gravity="center"
+                android:text="@string/activity"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_12" />
+
+            <TextView
+                android:layout_width="43dp"
+                android:layout_height="19dp"
+                android:layout_marginLeft="212dp"
+                android:layout_marginTop="23dp"
+                android:background="@{data.active==0 ? @drawable/bg_gradient_gray : @drawable/bg_gradient_blue}"
+                android:gravity="center"
+                android:text="@string/real_name"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_12" />
+
+            <TextView
+                android:id="@+id/labelRegistTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="76dp"
+                android:layout_marginTop="49dp"
+                android:text="@string/regist_time_is"
+                android:textColor="@color/font_41"
+                android:textSize="@dimen/font_12" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="49dp"
+                android:layout_toRightOf="@+id/labelRegistTime"
+                android:text="@{data.signupTime}"
+                android:textColor="@color/font_41"
+                android:textSize="@dimen/font_12"
+                tools:text="2020-12-18 19:09:23" />
+
+            <ImageView
+                android:layout_width="36dp"
+                android:layout_height="31dp"
+                android:layout_marginLeft="52dp"
+                android:layout_marginTop="92dp"
+                android:background="@drawable/ic_share_friend" />
+
+            <TextView
+                android:id="@+id/labelNum1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="109dp"
+                android:layout_marginTop="85dp"
+                android:text="@string/partner_persons_is"
+                android:textColor="@color/font_41"
+                android:textSize="@dimen/font_13" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="85dp"
+                android:layout_toRightOf="@+id/labelNum1"
+                android:text="@{String.valueOf(data.num)}"
+                android:textColor="@color/font_41"
+                android:textSize="@dimen/font_13"
+                tools:text="1" />
+
+            <TextView
+                android:id="@+id/labelNum2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="109dp"
+                android:layout_marginTop="112dp"
+                android:text="@string/share_persons_is"
+                android:textColor="@color/font_41"
+                android:textSize="@dimen/font_13" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="112dp"
+                android:layout_toRightOf="@+id/labelNum2"
+                android:text="@{String.valueOf(data.refNum)}"
+                android:textColor="@color/font_41"
+                android:textSize="@dimen/font_13"
+                tools:text="1" />
+
+            <TextView
+                android:id="@+id/labelNum3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="213dp"
+                android:layout_marginTop="85dp"
+                android:text="@string/patner_active_is"
+                android:textColor="@color/font_41"
+                android:textSize="@dimen/font_13" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="85dp"
+                android:layout_toRightOf="@+id/labelNum3"
+                android:text="@{String.valueOf(data.teamActiveness)}"
+                android:textColor="@color/font_41"
+                android:textSize="@dimen/font_13"
+                tools:text="1" />
+
+            <TextView
+                android:id="@+id/labelNum4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="213dp"
+                android:layout_marginTop="112dp"
+                android:text="@string/active_real_auth_is"
+                android:textColor="@color/font_41"
+                android:textSize="@dimen/font_13" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="112dp"
+                android:layout_toRightOf="@+id/labelNum4"
+                android:text="@{String.valueOf(data.refAuthNum)}"
+                android:textColor="@color/font_41"
+                android:textSize="@dimen/font_13"
+                tools:text="1" />
+
+            <TextView
+                android:id="@+id/labelTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="54dp"
+                android:layout_marginTop="151dp"
+                android:drawableLeft="@drawable/ic_time"
+                android:drawablePadding="4dp"
+                android:text="@string/last_mine_time_is"
+                android:textColor="@color/font_41"
+                android:textSize="@dimen/font_13" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/labelTime"
+                android:layout_toRightOf="@+id/labelTime"
+                android:text="@{data.lastMineTime}"
+                android:textColor="@color/font_41"
+                android:textSize="@dimen/font_13"
+                tools:text="2020-12-18 19:09:23" />
+
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

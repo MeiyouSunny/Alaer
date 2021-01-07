@@ -194,6 +194,14 @@
     <string name="team_level_reward_is">奖励1颗%1$s + 数字市民共建基金%2$d%%奖励</string>
     <string name="no_team_level">暂无星级</string>
     <string name="team_level_desc_is">1.分享实名%1$d人\n2.伙伴活跃度%2$d点</string>
+    <string name="regist_time_is">注册时间：</string>
+    <string name="last_mine_time_is">最近劳动时间：</string>
+    <string name="share_persons_is">分享人数：</string>
+    <string name="active_real_auth_is">活跃实名：</string>
+    <string name="partner_persons_is">伙伴人数：</string>
+    <string name="patner_active_is">伙伴活跃度：</string>
+    <string name="activity">活跃</string>
+    <string name="real_name">实名</string>
 
 
 </resources>

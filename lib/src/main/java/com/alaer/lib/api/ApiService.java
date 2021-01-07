@@ -5,6 +5,8 @@ import com.alaer.lib.api.bean.Balance;
 import com.alaer.lib.api.bean.Notice;
 import com.alaer.lib.api.bean.SeedMine;
 import com.alaer.lib.api.bean.SeedStoreList;
+import com.alaer.lib.api.bean.SharedUserDetail;
+import com.alaer.lib.api.bean.SharedUserList;
 import com.alaer.lib.api.bean.TeamDetail;
 import com.alaer.lib.api.bean.TeamInfo;
 import com.alaer.lib.api.bean.TeamLevel;
@@ -215,5 +217,26 @@ public interface ApiService {
     Call<TeamProfile> teamProfile(@Query("uuid") String uuid, @Query("uid") String uid,
                                   @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
                                   Callback<TeamProfile> callback);
+
+    /**
+     * 获取分享用户列表
+     * 排序字段：team_activeness.伙伴活跃度；num.伙伴人数；level.市民星级；uid.注册时间
+     * 排序：asc.正序；desc.倒序
+     */
+    @GET("/mining/team/direct/users")
+    Call<SharedUserList> teamSharedUserList(@Query("uuid") String uuid, @Query("uid") String uid,
+                                            @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
+                                            @Query("pageIndex") int pageIndex, @Query("pageSize") int pageSize,
+                                            @Query("orderField") String orderField, @Query("orderDirection") String orderDirection,
+                                            Callback<SharedUserList> callback);
+
+    /**
+     * 获取分享用户详情
+     */
+    @GET("/mining/team/userinfo")
+    Call<SharedUserDetail> teamSharedUserDetail(@Query("uuid") String uuid, @Query("uid") String uid,
+                                              @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
+                                              @Query("teamUuid") String teamUuid,
+                                              Callback<SharedUserDetail> callback);
 
 }
