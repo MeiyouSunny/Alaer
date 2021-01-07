@@ -191,5 +191,9 @@
     <string name="notice_list">公告</string>
     <string name="notice_detail">公告列表</string>
 
+    <string name="team_level_reward_is">奖励1颗%1$s + 数字市民共建基金%2$d%%奖励</string>
+    <string name="no_team_level">暂无星级</string>
+    <string name="team_level_desc_is">1.分享实名%1$d人\n2.伙伴活跃度%2$d点</string>
+
 
 </resources>

@@ -72,7 +72,7 @@
                 style="@style/AccountEditText"
                 android:layout_marginLeft="16dp"
                 android:hint="@string/pls_input_pwd"
-                android:text="11180980860" />
+                android:text="33330301" />
 
         </LinearLayout>
 
@@ -100,7 +100,7 @@
             android:hint="@string/pls_input_pwd"
             android:inputType="textPassword"
             android:maxLength="20"
-            android:text="admin123" />
+            android:text="asdfgh123" />
 
         <View
             style="@style/LineAccountGray"

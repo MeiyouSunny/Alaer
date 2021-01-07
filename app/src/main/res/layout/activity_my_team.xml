@@ -5,9 +5,23 @@
 
     <data>
 
+        <import type="android.view.View" />
+
         <variable
             name="handler"
             type="com.cyberalaer.hybrid.base.BindClickListener" />
+
+        <variable
+            name="teamProfile"
+            type="com.alaer.lib.api.bean.TeamProfile" />
+
+        <variable
+            name="teamLevel"
+            type="com.alaer.lib.api.bean.TeamLevel" />
+
+        <variable
+            name="levelUtil"
+            type="com.cyberalaer.hybrid.data.TeamLevelUtil" />
     </data>
 
     <ScrollView
@@ -43,25 +57,27 @@
                         android:layout_height="84dp"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="18dp"
-                        android:background="@drawable/ic_my_team_lv2" />
+                        app:drawableRes="@{levelUtil.parseLevelImg(teamLevel)}" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="108dp"
-                        android:text="二级数字市民团队"
+                        android:text="@{levelUtil.parseLevelName(teamLevel)}"
                         android:textColor="@color/black"
-                        android:textSize="@dimen/font_16" />
+                        android:textSize="@dimen/font_16"
+                        tools:text="二级数字市民团队" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="136dp"
-                        android:text="奖励1棵枣树+数字市民共建基金20%"
+                        android:text="@{levelUtil.parseLevelReward(teamLevel)}"
                         android:textColor="@color/font_7E"
-                        android:textSize="@dimen/font_12" />
+                        android:textSize="@dimen/font_12"
+                        tools:text="奖励1棵枣树+数字市民共建基金20%" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -75,13 +91,16 @@
                         android:textSize="@dimen/font_15" />
 
                     <TextView
+                        android:id="@+id/levelRule"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
                         android:layout_marginTop="178dp"
                         android:layout_marginRight="51dp"
+                        android:clickable="true"
                         android:drawableRight="@drawable/ic_item_next_little"
                         android:drawablePadding="6dp"
+                        android:onClick="@{handler.click}"
                         android:text="@string/level_rule"
                         android:textColor="@color/font_41"
                         android:textSize="@dimen/font_15" />
@@ -111,9 +130,10 @@
                                     android:layout_height="wrap_content"
                                     android:layout_centerHorizontal="true"
                                     android:layout_marginTop="15dp"
-                                    android:text="16"
+                                    android:text="@{String.valueOf(teamProfile.refNum)}"
                                     android:textColor="@color/font_41"
-                                    android:textSize="@dimen/font_17" />
+                                    android:textSize="@dimen/font_17"
+                                    tools:text="16" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
@@ -146,16 +166,17 @@
                                     android:layout_height="wrap_content"
                                     android:layout_centerHorizontal="true"
                                     android:layout_marginTop="15dp"
-                                    android:text="1"
+                                    android:text="@{String.valueOf(teamProfile.num)}"
                                     android:textColor="@color/font_41"
-                                    android:textSize="@dimen/font_17" />
+                                    android:textSize="@dimen/font_17"
+                                    tools:text="1" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_centerHorizontal="true"
                                     android:layout_marginTop="43dp"
-                                    android:text="@string/active_real_auth"
+                                    android:text="@string/partner_persons"
                                     android:textColor="@color/font_41"
                                     android:textSize="@dimen/font_16" />
 
@@ -190,16 +211,17 @@
                                     android:layout_height="wrap_content"
                                     android:layout_centerHorizontal="true"
                                     android:layout_marginTop="15dp"
-                                    android:text="17"
+                                    android:text="@{String.valueOf(teamProfile.refAuthNum)}"
                                     android:textColor="@color/font_41"
-                                    android:textSize="@dimen/font_17" />
+                                    android:textSize="@dimen/font_17"
+                                    tools:text="17" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_centerHorizontal="true"
                                     android:layout_marginTop="43dp"
-                                    android:text="@string/partner_persons"
+                                    android:text="@string/active_real_auth"
                                     android:textColor="@color/font_41"
                                     android:textSize="@dimen/font_16" />
 
@@ -225,9 +247,10 @@
                                     android:layout_height="wrap_content"
                                     android:layout_centerHorizontal="true"
                                     android:layout_marginTop="15dp"
-                                    android:text="1"
+                                    android:text="@{String.valueOf(teamProfile.teamActiveness)}"
                                     android:textColor="@color/font_41"
-                                    android:textSize="@dimen/font_17" />
+                                    android:textSize="@dimen/font_17"
+                                    tools:text="1" />
 
                                 <TextView
                                     android:layout_width="wrap_content"

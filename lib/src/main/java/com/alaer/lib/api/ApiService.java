@@ -7,6 +7,8 @@ import com.alaer.lib.api.bean.SeedMine;
 import com.alaer.lib.api.bean.SeedStoreList;
 import com.alaer.lib.api.bean.TeamDetail;
 import com.alaer.lib.api.bean.TeamInfo;
+import com.alaer.lib.api.bean.TeamLevel;
+import com.alaer.lib.api.bean.TeamProfile;
 import com.alaer.lib.api.bean.UserData;
 
 import java.util.List;
@@ -101,7 +103,7 @@ public interface ApiService {
                         Callback<TeamInfo> callback);
 
     /**
-     * 邀请人信息
+     * 贡献值
      */
     @GET("/mining/diamond/balance")
     Call<Balance> getBalance(@Query("uuid") String uuid, @Query("uid") String uid,
@@ -197,5 +199,21 @@ public interface ApiService {
     @GET("/announce/pageList")
     Call<List<Notice>> noticeList(@Query("page") int page, @Query("rows") int rows, @Query("appCode") int appCode,
                                   Callback<List<Notice>> callback);
+
+    /**
+     * 团队星级别
+     */
+    @GET("/mining/team/stars")
+    Call<List<TeamLevel>> teamStarLevel(@Query("uuid") String uuid, @Query("uid") String uid,
+                                        @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
+                                        Callback<List<TeamLevel>> callback);
+
+    /**
+     * 查询团队信息
+     */
+    @GET("/mining/team/profile")
+    Call<TeamProfile> teamProfile(@Query("uuid") String uuid, @Query("uid") String uid,
+                                  @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
+                                  Callback<TeamProfile> callback);
 
 }
