@@ -22,12 +22,13 @@ import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import likly.dollar.$;
 
 public class TaskListFragment extends BottomSheetDialogFragment {
 
     private TaskListFragmentBinding bindRoot;
     private RecyclerView mList;
-
+    private TaskAdapter adapter;
     private UserData userData;
 
     public static TaskListFragment newInstance() {
@@ -56,7 +57,7 @@ public class TaskListFragment extends BottomSheetDialogFragment {
     private void getTaskList() {
         if (userData == null)
             return;
-        ApiUtil.apiService().adTasks(userData.uuid, String.valueOf(userData.uid), userData.token, AppConfig.DIAMOND_CURRENCY, "2",
+        ApiUtil.apiService().queryTasks(userData.uuid, String.valueOf(userData.uid), userData.token, AppConfig.DIAMOND_CURRENCY,
                 new Callback<List<AdTask>>() {
                     @Override
                     public void onResponse(List<AdTask> tasks) {
@@ -73,13 +74,18 @@ public class TaskListFragment extends BottomSheetDialogFragment {
     }
 
     private void showTaskList(List<AdTask> tasks) {
-        mList.setLayoutManager(new LinearLayoutManager(getContext()));
-        mList.setAdapter(new TaskAdapter(getActivity(), tasks, new TaskAdapter.OnTaskClickHandler() {
-            @Override
-            public void onTaskClick(AdTask task) {
-                startTask(task.id);
-            }
-        }));
+        if (adapter == null) {
+            adapter = new TaskAdapter(getActivity(), tasks, new TaskAdapter.OnTaskClickHandler() {
+                @Override
+                public void onTaskClick(AdTask task) {
+                    startTask(task.id);
+                }
+            });
+            mList.setLayoutManager(new LinearLayoutManager(getContext()));
+            mList.setAdapter(adapter);
+        } else {
+            adapter.setData(tasks);
+        }
     }
 
     private void startTask(int taskId) {
@@ -95,7 +101,7 @@ public class TaskListFragment extends BottomSheetDialogFragment {
 
                     @Override
                     public void onError(int code, String msg) {
-                        super.onError(code, msg);
+                        $.toast().text(msg).show();
                     }
                 });
     }
@@ -112,7 +118,7 @@ public class TaskListFragment extends BottomSheetDialogFragment {
 
                     @Override
                     public void onError(int code, String msg) {
-                        super.onError(code, msg);
+                        $.toast().text(msg).show();
                     }
                 });
     }

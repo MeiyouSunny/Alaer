@@ -84,6 +84,9 @@ public class UserMineActivity extends BaseTitleActivity<ActivityUserMineBinding>
     @Override
     public void click(View view) {
         switch (view.getId()) {
+            case R.id.icHead:
+                ViewUtil.gotoActivity(this, UserInfoActivity.class);
+                break;
             case R.id.wechat:
                 ViewUtil.gotoActivity(this, WechatNoSetActivity.class);
                 break;

@@ -9,7 +9,7 @@ public class TeamDetail {
     public int action;
     public Object wechat;
     public String name;
-    public Object uname;
+    public String uname;
     public String avatar;
     public String code;
     public String refCode;

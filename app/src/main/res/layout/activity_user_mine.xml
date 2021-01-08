@@ -33,6 +33,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_marginLeft="27dp"
                 android:layout_marginBottom="21dp"
+                android:onClick="@{handler.click}"
                 android:src="@drawable/ic_head_default_boy"
                 app:civ_border_color="#CB9D3A"
                 app:civ_border_width="1dp" />
@@ -90,11 +91,11 @@
 
                 <!--  -->
                 <androidx.cardview.widget.CardView
-                    android:visibility="gone"
                     android:layout_width="match_parent"
                     android:layout_height="90dp"
                     android:clickable="true"
                     android:foreground="?android:attr/selectableItemBackground"
+                    android:visibility="gone"
                     app:cardCornerRadius="8dp"
                     app:cardElevation="0dp">
 

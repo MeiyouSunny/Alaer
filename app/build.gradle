@@ -74,6 +74,7 @@ dependencies {
 
     implementation 'de.hdodenhof:circleimageview:2.1.0'
     implementation 'com.github.bumptech.glide:glide:3.8.0'
+    implementation 'com.bigkoo:convenientbanner:2.0.5'
 
 
 }

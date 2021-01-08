@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    <data>
+
+        <variable
+            name="handler"
+            type="com.cyberalaer.hybrid.base.BindClickListener" />
+    </data>
+
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white"
@@ -17,11 +26,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <ImageView
+
+            <com.bigkoo.convenientbanner.ConvenientBanner
                 android:id="@+id/topBanner"
                 android:layout_width="match_parent"
-                android:layout_height="158dp"
-                android:background="@drawable/img_discover_banner" />
+                android:layout_height="165dp"
+                app:canLoop="true" />
 
             <LinearLayout
                 android:id="@+id/layout_row1"
@@ -40,23 +50,27 @@
                     android:paddingRight="32dp">
 
                     <TextView
+                        android:id="@+id/newUserGuide"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:drawableTop="@drawable/ic_new_user_guide"
                         android:drawablePadding="6dp"
                         android:gravity="center"
+                        android:onClick="@{handler.click}"
                         android:text="@string/beginner_guide"
                         android:textColor="@color/font_36"
                         android:textSize="@dimen/font_17" />
 
                     <TextView
+                        android:id="@+id/myTeam"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:drawableTop="@drawable/ic_my_team"
                         android:drawablePadding="6dp"
                         android:gravity="center"
+                        android:onClick="@{handler.click}"
                         android:text="@string/my_team"
                         android:textColor="@color/font_36"
                         android:textSize="@dimen/font_17" />
@@ -77,20 +91,22 @@
 
             </LinearLayout>
 
+
             <TextView
                 android:layout_width="72dp"
-                android:layout_height="72dp"
+                android:layout_height="74dp"
                 android:layout_below="@+id/layout_row1"
                 android:layout_marginLeft="52dp"
+                android:layout_marginTop="1dp"
                 android:layout_weight="1"
                 android:drawableTop="@drawable/ic_invitate_friend"
                 android:drawablePadding="6dp"
                 android:gravity="center"
-                android:paddingTop="18dp"
+                android:onClick="@{handler.click}"
+                android:paddingTop="14dp"
                 android:text="@string/invitate_friend"
                 android:textColor="@color/font_36"
                 android:textSize="@dimen/font_17" />
-
 
             <ImageView
                 android:layout_width="match_parent"

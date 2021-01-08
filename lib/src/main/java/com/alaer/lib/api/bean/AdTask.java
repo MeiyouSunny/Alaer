@@ -9,10 +9,10 @@ public class AdTask {
     public int times;
     public int remain;
     public int takt;
-    public int value;
+    public float value;
     public String note;
     public int action;
     public String type;
-    public long nextTime;
+    public String nextTime;
 
 }

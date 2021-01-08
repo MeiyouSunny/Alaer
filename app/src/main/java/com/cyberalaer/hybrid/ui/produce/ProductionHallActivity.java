@@ -319,7 +319,7 @@ public class ProductionHallActivity extends BaseTitleActivity<ActivityProduction
         }
         if (mAnimaView != null) {
             mAnimaView.setScaleX(1F);
-            mAnimaView.setScaleX(1F);
+            mAnimaView.setScaleY(1F);
         }
     }
 

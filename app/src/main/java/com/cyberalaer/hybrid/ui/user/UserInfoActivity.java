@@ -43,8 +43,8 @@ public class UserInfoActivity extends BaseTitleActivity<ActivityUserInfoBinding>
                 new Callback<TeamDetail>() {
                     @Override
                     public void onResponse(TeamDetail teamDetail) {
-                        showUserInfo(teamDetail);
                         UserDataUtil.instance().setTeamDetail(teamDetail);
+                        bindRoot.setUser(teamDetail);
                     }
                 });
 
@@ -52,7 +52,7 @@ public class UserInfoActivity extends BaseTitleActivity<ActivityUserInfoBinding>
                 new Callback<TeamDetail>() {
                     @Override
                     public void onResponse(TeamDetail response) {
-                        showInvitate(response);
+                        bindRoot.setFollow(response);
                     }
                 });
     }

@@ -2,6 +2,7 @@ package com.alaer.lib.api;
 
 import com.alaer.lib.api.bean.AdTask;
 import com.alaer.lib.api.bean.Balance;
+import com.alaer.lib.api.bean.BannerList;
 import com.alaer.lib.api.bean.Notice;
 import com.alaer.lib.api.bean.SeedMine;
 import com.alaer.lib.api.bean.SeedStoreList;
@@ -235,16 +236,24 @@ public interface ApiService {
      */
     @GET("/mining/team/userinfo")
     Call<SharedUserDetail> teamSharedUserDetail(@Query("uuid") String uuid, @Query("uid") String uid,
-                                              @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
-                                              @Query("teamUuid") String teamUuid,
-                                              Callback<SharedUserDetail> callback);
+                                                @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
+                                                @Query("teamUuid") String teamUuid,
+                                                Callback<SharedUserDetail> callback);
 
     /**
      * 拉取任务列表(去除Action:2)
      */
     @GET("/mining/ad/tasks")
     Call<List<AdTask>> queryTasks(@Query("uuid") String uuid, @Query("uid") String uid,
-                               @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
-                               Callback<List<AdTask>> callback);
+                                  @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
+                                  Callback<List<AdTask>> callback);
+
+    /**
+     * 获取轮播图、内容
+     * 类型。1100：轮播图；1101：新手指南
+     */
+    @GET("/open/slide/query")
+    Call<BannerList> banners(@Query("type") int type, @Query("pageIndex") int pageIndex, @Query("pageSize") int pageSize,
+                             Callback<BannerList> callback);
 
 }
