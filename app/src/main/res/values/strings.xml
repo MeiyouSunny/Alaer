@@ -203,5 +203,9 @@
     <string name="activity">活跃</string>
     <string name="real_name">实名</string>
 
+    <string name="do_task">去完成</string>
+    <string name="task_done">已完成</string>
+    <string name="task_done_info">每日奖励上限%1$d次，已完成%2$d/%3$d</string>
+
 
 </resources>

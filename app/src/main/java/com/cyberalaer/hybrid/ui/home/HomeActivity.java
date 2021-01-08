@@ -22,6 +22,7 @@ import com.cyberalaer.hybrid.ui.government.RealNameAuthActivity;
 import com.cyberalaer.hybrid.ui.notice.NoticeDetailActivity;
 import com.cyberalaer.hybrid.ui.notice.NoticeListActivity;
 import com.cyberalaer.hybrid.ui.produce.ProductionHallActivity;
+import com.cyberalaer.hybrid.ui.task.TaskListFragment;
 import com.cyberalaer.hybrid.ui.travel.TravelHallActivity;
 import com.cyberalaer.hybrid.ui.user.UserMineActivity;
 import com.cyberalaer.hybrid.util.CollectionUtils;
@@ -88,7 +89,7 @@ public class HomeActivity extends BaseViewBindActivity<ActivityHomeBinding> impl
                 ViewUtil.gotoActivity(this, UserMineActivity.class);
                 break;
             case R.id.tabTask:
-                // TODO
+                TaskListFragment.newInstance().show(getSupportFragmentManager(), "taskList");
                 break;
             case R.id.tabProduce:
                 ViewUtil.gotoActivity(this, ProductionHallActivity.class);

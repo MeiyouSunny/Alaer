@@ -239,4 +239,12 @@ public interface ApiService {
                                               @Query("teamUuid") String teamUuid,
                                               Callback<SharedUserDetail> callback);
 
+    /**
+     * 拉取任务列表(去除Action:2)
+     */
+    @GET("/mining/ad/tasks")
+    Call<List<AdTask>> queryTasks(@Query("uuid") String uuid, @Query("uid") String uid,
+                               @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
+                               Callback<List<AdTask>> callback);
+
 }
