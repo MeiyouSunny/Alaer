@@ -100,24 +100,11 @@
 
         </androidx.cardview.widget.CardView>
 
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tabs"
+        <fragment
+            android:name="com.cyberalaer.hybrid.ui.user.FruitBillFragment"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginLeft="36dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginRight="36dp"
-            app:tabIndicatorColor="#52C883"
-            app:tabIndicatorFullWidth="false"
-            app:tabIndicatorHeight="2dp"
-            app:tabMode="fixed"
-            app:tabRippleColor="@android:color/transparent"
-            app:tabTextAppearance="@style/TabText" />
-
-        <androidx.viewpager.widget.ViewPager
-            android:id="@+id/view_pager"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:tag="fruitBillFragment" />
 
     </LinearLayout>
 

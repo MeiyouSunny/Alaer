@@ -78,11 +78,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/bg_gray"
+            android:clipChildren="false"
+            android:clipToPadding="false"
             android:paddingLeft="16dp"
             android:paddingTop="10dp"
             android:paddingRight="16dp"
-            android:clipChildren="false"
-            android:clipToPadding="false"
             android:paddingBottom="16dp"
             android:scrollbars="none">
 
@@ -157,9 +157,13 @@
                         android:orientation="horizontal">
 
                         <androidx.cardview.widget.CardView
+                            android:id="@+id/fruitBill"
+                            style="@style/CardViewClick"
                             android:layout_width="0dp"
                             android:layout_height="76dp"
                             android:layout_weight="1"
+                            android:clickable="true"
+                            android:onClick="@{handler.click}"
                             app:cardCornerRadius="8dp"
                             app:cardElevation="0dp">
 
@@ -199,6 +203,9 @@
                         </androidx.cardview.widget.CardView>
 
                         <androidx.cardview.widget.CardView
+                            android:id="@+id/buildScore"
+                            android:onClick="@{handler.click}"
+                            style="@style/CardViewClick"
                             android:layout_width="0dp"
                             android:layout_height="76dp"
                             android:layout_marginLeft="10dp"
@@ -250,6 +257,9 @@
                         android:orientation="horizontal">
 
                         <androidx.cardview.widget.CardView
+                            android:id="@+id/activitySapling"
+                            android:onClick="@{handler.click}"
+                            style="@style/CardViewClick"
                             android:layout_width="0dp"
                             android:layout_height="76dp"
                             android:layout_weight="1"
@@ -292,6 +302,9 @@
                         </androidx.cardview.widget.CardView>
 
                         <androidx.cardview.widget.CardView
+                            android:id="@+id/activityShare"
+                            android:onClick="@{handler.click}"
+                            style="@style/CardViewClick"
                             android:layout_width="0dp"
                             android:layout_height="76dp"
                             android:layout_marginLeft="10dp"

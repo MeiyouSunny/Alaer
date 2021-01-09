@@ -1,9 +1,11 @@
 package com.alaer.lib.api;
 
+import com.alaer.lib.api.bean.ActiveBillList;
 import com.alaer.lib.api.bean.AdTask;
 import com.alaer.lib.api.bean.AdVideo;
 import com.alaer.lib.api.bean.Balance;
 import com.alaer.lib.api.bean.BannerList;
+import com.alaer.lib.api.bean.FruitBill;
 import com.alaer.lib.api.bean.Notice;
 import com.alaer.lib.api.bean.SeedMine;
 import com.alaer.lib.api.bean.SeedStoreList;
@@ -267,5 +269,32 @@ public interface ApiService {
                                    @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
                                    @Query("type") int type,
                                    Callback<List<AdVideo>> callback);
+
+    /**
+     * 查询账户流水 - 果实
+     */
+    @GET("/mining/profile/account/water/dmd/query")
+    Call<List<FruitBill>> fruitBill(@Query("uuid") String uuid, @Query("uid") String uid,
+                                    @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
+                                    @Query("lastId") int lastId, @Query("size") int size,
+                                    Callback<List<FruitBill>> callback);
+
+    /**
+     * 查询账户流水 - 建设功分明细
+     */
+    @GET("/mining/profile/account/water/cny/query")
+    Call<List<FruitBill>> buildScoreBill(@Query("uuid") String uuid, @Query("uid") String uid,
+                                         @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
+                                         @Query("lastId") int lastId, @Query("size") int size,
+                                         Callback<List<FruitBill>> callback);
+
+    /**
+     * 查询活跃度明细 - 树苗
+     */
+    @GET("/mining/profile/activityness/query")
+    Call<ActiveBillList> seedActivity(@Query("uuid") String uuid, @Query("uid") String uid,
+                                      @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
+                                      @Query("pageIndex") int pageIndex, @Query("pageSize") int pageSize,
+                                      Callback<ActiveBillList> callback);
 
 }

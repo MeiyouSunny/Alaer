@@ -211,5 +211,8 @@
     <string name="alaer_digital_person">阿拉尔数字市民</string>
     <string name="invitate_code_is">邀请码：%s</string>
 
+    <string name="balance_is">余额：%f</string>
+    <string name="activity_is">活跃度：%d</string>
+
 
 </resources>

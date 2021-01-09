@@ -97,6 +97,16 @@ public class UserMineActivity extends BaseTitleActivity<ActivityUserMineBinding>
             case R.id.invitationCode:
                 ViewUtil.gotoActivity(this, ShareActivity.class);
                 break;
+            case R.id.fruitBill:
+                ViewUtil.gotoActivity(this, FruitBillActivity.class);
+                break;
+            case R.id.activitySapling:
+            case R.id.activityShare:
+                ViewUtil.gotoActivity(this, ActiveBillActivity.class);
+                break;
+            case R.id.buildScore:
+                ViewUtil.gotoActivity(this, BuildScoreActivity.class);
+                break;
         }
     }
 

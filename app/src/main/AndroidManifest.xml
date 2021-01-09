@@ -119,11 +119,11 @@
             android:screenOrientation="portrait"></activity>
 
         <activity
-            android:name=".ui.user.ActiveDetailActivity"
+            android:name=".ui.user.ActiveBillActivity"
             android:screenOrientation="portrait"></activity>
 
         <activity
-            android:name=".ui.user.FruitBIllActivity"
+            android:name=".ui.user.FruitBillActivity"
             android:screenOrientation="portrait"></activity>
 
         <activity
@@ -136,6 +136,10 @@
 
         <activity
             android:name=".ui.notice.NoticeDetailActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name=".ui.user.BuildScoreActivity"
             android:screenOrientation="portrait"></activity>
 
     </application>

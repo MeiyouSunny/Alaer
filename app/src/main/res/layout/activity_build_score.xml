@@ -15,7 +15,8 @@
         android:layout_height="match_parent"
         android:background="@color/white"
         android:fitsSystemWindows="true"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:context=".ui.user.UserMineActivity">
 
         <include layout="@layout/layout_title_bar_black" />
 
@@ -52,9 +53,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:drawableLeft="@drawable/ic_active_sapling"
+                        android:drawableLeft="@drawable/ic_fruit_bill_total"
                         android:drawablePadding="8dp"
-                        android:text="@string/sapling"
+                        android:text="@string/total"
                         android:textColor="@color/white"
                         android:textSize="@dimen/font_17" />
 
@@ -87,9 +88,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:drawableLeft="@drawable/ic_active_share"
+                        android:drawableLeft="@drawable/ic_fruit_bill_available"
                         android:drawablePadding="8dp"
-                        android:text="@string/share"
+                        android:text="@string/available"
                         android:textColor="@color/white"
                         android:textSize="@dimen/font_17" />
 
@@ -100,10 +101,10 @@
         </androidx.cardview.widget.CardView>
 
         <fragment
-            android:name="com.cyberalaer.hybrid.ui.user.ActiveBillFragment"
+            android:name="com.cyberalaer.hybrid.ui.user.BuildScoreFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:tag="ActiveBillFragment" />
+            android:tag="BuildScoreFragment" />
 
     </LinearLayout>
 
