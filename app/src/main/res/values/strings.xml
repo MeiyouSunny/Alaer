@@ -207,5 +207,9 @@
     <string name="task_done">已完成</string>
     <string name="task_done_info">每日奖励上限%1$d次，已完成%2$d/%3$d</string>
 
+    <string name="is_which_one">我是第%d位</string>
+    <string name="alaer_digital_person">阿拉尔数字市民</string>
+    <string name="invitate_code_is">邀请码：%s</string>
+
 
 </resources>

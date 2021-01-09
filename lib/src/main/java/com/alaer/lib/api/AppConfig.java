@@ -30,4 +30,7 @@ public class AppConfig {
     public static final String TRAVEL_VIDEO2 = "https://app.tokensky.cn/ale/video/tourism-2.mp4";
     public static final String TRAVEL_VIDEO_PIC2 = "https://app.tokensky.cn/ale/video/tourism-2-poster.png";
 
+    // 邀请链接
+    public static final String INVITATE_URL = "https://t-app.tokensky.cn/signup/index.html?ref=";
+
 }

@@ -13,6 +13,7 @@ import com.alaer.lib.data.UserDataUtil;
 import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseTitleActivity;
 import com.cyberalaer.hybrid.databinding.ActivityUserMineBinding;
+import com.cyberalaer.hybrid.ui.share.ShareActivity;
 import com.cyberalaer.hybrid.util.ViewUtil;
 
 /**
@@ -92,6 +93,9 @@ public class UserMineActivity extends BaseTitleActivity<ActivityUserMineBinding>
                 break;
             case R.id.myPartner:
                 ViewUtil.gotoActivity(this, MyTeamActivity.class);
+                break;
+            case R.id.invitationCode:
+                ViewUtil.gotoActivity(this, ShareActivity.class);
                 break;
         }
     }
