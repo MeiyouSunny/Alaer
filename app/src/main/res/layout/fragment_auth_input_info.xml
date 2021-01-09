@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="handler"
+            type="com.cyberalaer.hybrid.base.BindClickListener" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.user.LoginFragment">
+
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="31dp"
+            android:layout_marginLeft="39dp"
+            android:layout_marginTop="34dp"
+            android:background="@drawable/ic_auth_input_info" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="87dp"
+            android:layout_marginTop="28dp"
+            android:text="登记姓名和证件号"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_17" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="87dp"
+            android:layout_marginTop="54dp"
+            android:text="请填写下列信息并完成认证"
+            android:textColor="@color/font_7E"
+            android:textSize="@dimen/font_12" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="52dp"
+            android:layout_marginTop="106dp"
+            android:text="姓名（身份证、护照）"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_16" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginLeft="28dp"
+            android:layout_marginTop="138dp"
+            android:layout_marginRight="28dp"
+            android:background="@drawable/bg_gray_round_corner_et"
+            android:hint="请输入姓名"
+            android:paddingLeft="24dp"
+            android:textColor="@color/font_41"
+            android:textColorHint="#B3B3B3"
+            android:textSize="@dimen/font_17" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="52dp"
+            android:layout_marginTop="224dp"
+            android:text="证件号（身份证、护照）"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_16" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginLeft="28dp"
+            android:layout_marginTop="256dp"
+            android:layout_marginRight="28dp"
+            android:background="@drawable/bg_gray_round_corner_et"
+            android:hint="请输入证件号"
+            android:paddingLeft="24dp"
+            android:textColor="@color/font_41"
+            android:textColorHint="#B3B3B3" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/next"
+            android:layout_marginLeft="45dp"
+            android:layout_marginRight="45dp"
+            android:layout_marginBottom="18dp"
+            android:gravity="center"
+            android:text="实名认证将通过支付宝支付成功进行确认，支付成功后将赠送一颗试栽树苗"
+            android:textColor="#52C883"
+            android:textSize="@dimen/font_13" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/next"
+            style="@style/BtnGreen"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="38dp"
+            android:layout_marginRight="38dp"
+            android:layout_marginBottom="91dp"
+            android:onClick="@{handler.click}"
+            android:text="@string/next_step" />
+
+
+    </RelativeLayout>
+
+</layout>

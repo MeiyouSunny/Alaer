@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:paddingTop="58dp"
-            android:paddingBottom="54dp">
+            android:paddingBottom="91dp">
 
             <ImageView
                 android:id="@+id/ic_auth_success"

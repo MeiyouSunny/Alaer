@@ -71,6 +71,17 @@ public class LoginFragment extends BaseBindFragment<FragmentLoginBinding> {
                 onInputChange();
             }
         });
+
+        judgeLoginedOrNot();
+    }
+
+    private void judgeLoginedOrNot() {
+        UserData userData = UserDataUtil.instance().getSavedUserData();
+        if (userData != null) {
+            UserDataUtil.instance().getSavedTeamDetail();
+            ViewUtil.gotoActivity(getContext(), HomeActivity.class);
+            getActivity().finish();
+        }
     }
 
     private void onInputChange() {
@@ -116,24 +127,17 @@ public class LoginFragment extends BaseBindFragment<FragmentLoginBinding> {
                 new Callback<UserData>() {
                     @Override
                     public void onResponse(UserData userData) {
-                        UserDataUtil.instance().setUserData(userData);
+                        UserDataUtil.instance().saveUserDataInfo(userData);
 
                         ApiUtil.apiService().getTeamDetailInfo(userData.uuid, String.valueOf(userData.uid), userData.token, AppConfig.DIAMOND_CURRENCY,
                                 new Callback<TeamDetail>() {
                                     @Override
                                     public void onResponse(TeamDetail teamDetail) {
-                                        UserDataUtil.instance().setTeamDetail(teamDetail);
+                                        UserDataUtil.instance().saveTeamDetailInfo(teamDetail);
                                         ViewUtil.gotoActivity(getContext(), HomeActivity.class);
+                                        getActivity().finish();
                                     }
                                 });
-
-//                        ApiUtil.apiService().info(userData.uuid, String.valueOf(userData.uid), userData.token, AppConfig.DIAMOND_CURRENCY,
-//                                new Callback<TeamInfo>() {
-//                                    @Override
-//                                    public void onResponse(TeamInfo response) {
-//                                        super.onResponse(response);
-//                                    }
-//                                });
                     }
 
                     @Override

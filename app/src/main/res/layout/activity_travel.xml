@@ -13,48 +13,62 @@
 
         <include layout="@layout/layout_title_bar_black" />
 
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingLeft="18dp"
-            android:paddingTop="36dp"
-            android:paddingRight="18dp">
+            android:layout_height="match_parent"
+            android:scrollbars="none">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="28dp"
-                android:text="@string/alaer_travel_video"
-                android:textColor="@color/black"
-                android:textSize="@dimen/font_19" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="28dp"
-                android:layout_marginTop="6dp"
-                android:text="@string/alaer_travel_video"
-                android:textColor="@color/font_7E"
-                android:textSize="@dimen/font_12" />
-
-            <ImageView
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="212dp"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/img_travel_video_pic"
-                android:clickable="true"
-                android:foreground="?android:attr/selectableItemBackground" />
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="16dp"
+                android:paddingTop="36dp"
+                android:paddingRight="16dp">
 
-            <com.cyberalaer.hybrid.view.ItemLayoutView
-                android:id="@+id/fill_case_history"
-                android:layout_width="match_parent"
-                android:layout_height="84dp"
-                android:layout_marginTop="20dp"
-                app:icon="@drawable/ic_travel_ticket"
-                app:title="@string/travel_ticket" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="28dp"
+                    android:text="@string/alaer_travel_video"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/font_19" />
 
-        </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="28dp"
+                    android:layout_marginTop="6dp"
+                    android:text="@string/alaer_travel_video"
+                    android:textColor="@color/font_7E"
+                    android:textSize="@dimen/font_12" />
+
+                <cn.jzvd.JzvdStd
+                    android:id="@+id/player1"
+                    android:layout_width="match_parent"
+                    android:layout_height="212dp"
+                    android:layout_marginTop="16dp"
+                    android:foreground="?android:attr/selectableItemBackground" />
+
+                <cn.jzvd.JzvdStd
+                    android:id="@+id/player2"
+                    android:layout_width="match_parent"
+                    android:layout_height="212dp"
+                    android:layout_marginTop="16dp"
+                    android:foreground="?android:attr/selectableItemBackground" />
+
+                <com.cyberalaer.hybrid.view.ItemLayoutView
+                    android:id="@+id/fill_case_history"
+                    android:layout_width="match_parent"
+                    android:layout_height="84dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="28dp"
+                    app:icon="@drawable/ic_travel_ticket"
+                    app:title="@string/travel_ticket" />
+
+            </LinearLayout>
+
+        </ScrollView>
 
     </LinearLayout>
 

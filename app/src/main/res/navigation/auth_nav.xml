@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login_nav.xml"
+    app:startDestination="@id/inputInfoFragment">
+
+    <fragment
+        android:id="@+id/inputInfoFragment"
+        android:name="com.cyberalaer.hybrid.ui.auth.InputInfoFragment"
+        android:label="InputInfoFragment">
+        <action
+            android:id="@+id/action_to_pay_confirm"
+            app:destination="@id/payConfirmFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/payConfirmFragment"
+        android:name="com.cyberalaer.hybrid.ui.auth.PayConfirmFragment"
+        android:label="PayConfirmFragment">
+        <action
+            android:id="@+id/action_to_pay_success"
+            app:destination="@id/paySuccessFragment" />
+        <action
+            android:id="@+id/action_to_pay_failed"
+            app:destination="@id/payFailedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/paySuccessFragment"
+        android:name="com.cyberalaer.hybrid.ui.auth.PaySuccessFragment"
+        android:label="PaySuccessFragment" />
+    <fragment
+        android:id="@+id/payFailedFragment"
+        android:name="com.cyberalaer.hybrid.ui.auth.PayFailedFragment"
+        android:label="PayFailedFragment" />
+</navigation>

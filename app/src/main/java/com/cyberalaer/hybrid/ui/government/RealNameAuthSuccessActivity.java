@@ -16,7 +16,7 @@ public class RealNameAuthSuccessActivity extends BaseTitleActivity<ActivityLogin
 
     @Override
     protected int layoutId() {
-        return R.layout.activity_real_name_auth_success;
+        return R.layout.activity_auth_success;
     }
 
 }

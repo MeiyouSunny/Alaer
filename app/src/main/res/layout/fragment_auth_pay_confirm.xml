@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="handler"
+            type="com.cyberalaer.hybrid.base.BindClickListener" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.user.LoginFragment">
+
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="31dp"
+            android:layout_marginLeft="39dp"
+            android:layout_marginTop="34dp"
+            android:background="@drawable/ic_pay_confirm" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="87dp"
+            android:layout_marginTop="28dp"
+            android:text="支付订单"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_17" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="87dp"
+            android:layout_marginTop="54dp"
+            android:text="请确认金额并完成支付"
+            android:textColor="@color/font_7E"
+            android:textSize="@dimen/font_12" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginLeft="28dp"
+            android:layout_marginTop="92dp"
+            android:layout_marginRight="28dp"
+            android:background="@drawable/bg_gray_round_corner_et"
+            android:gravity="center_vertical"
+            android:paddingLeft="24dp"
+            android:text="订单号：12241123435534"
+            android:textColor="@color/font_41"
+            android:textSize="@dimen/font_17" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginLeft="28dp"
+            android:layout_marginTop="168dp"
+            android:layout_marginRight="28dp"
+            android:background="@drawable/bg_gray_round_corner_et"
+            android:gravity="center_vertical"
+            android:paddingLeft="24dp"
+            android:text="支付金额：0.01元"
+            android:textColor="@color/font_41"
+            android:textSize="@dimen/font_17" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/confirm"
+            android:layout_marginLeft="45dp"
+            android:layout_marginRight="45dp"
+            android:layout_marginBottom="18dp"
+            android:gravity="center"
+            android:text="如果您点击“确认”按钮，即表示您同意改次执行操作"
+            android:textColor="#52C883"
+            android:textSize="@dimen/font_13" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/confirm"
+            style="@style/BtnGreen"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="38dp"
+            android:layout_marginRight="38dp"
+            android:layout_marginBottom="91dp"
+            android:onClick="@{handler.click}"
+            android:text="@string/confirm" />
+
+
+    </RelativeLayout>
+
+</layout>
