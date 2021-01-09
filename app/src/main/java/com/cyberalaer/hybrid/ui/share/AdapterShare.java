@@ -24,6 +24,7 @@ public class AdapterShare extends RecyclerView.Adapter<AdapterShare.ViewHolder> 
     UserData userData;
     TeamDetail teamDetail;
     ShareHandler shareHandler;
+    Bitmap qrCode;
 
     public AdapterShare(UserData userData, TeamDetail teamDetail, ShareHandler shareHandler) {
         this.userData = userData;
@@ -47,12 +48,13 @@ public class AdapterShare extends RecyclerView.Adapter<AdapterShare.ViewHolder> 
         holder.binding.setTeamDetail(teamDetail);
         holder.binding.executePendingBindings();
         holder.binding.root.setBackgroundResource(mBgRedIds[position]);
-        holder.binding.qrCode.setImageBitmap(QRCodeEncoder.createQRCode(AppConfig.INVITATE_URL + teamDetail.code, 160));
+        if (qrCode == null)
+            qrCode = QRCodeEncoder.createQRCode(AppConfig.INVITATE_URL + teamDetail.code, 100);
+        holder.binding.qrCode.setImageBitmap(qrCode);
 
         holder.binding.root.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // 核心代码start
                 Bitmap bitmap = captureView(view);
 
                 if (shareHandler != null)
@@ -77,17 +79,12 @@ public class AdapterShare extends RecyclerView.Adapter<AdapterShare.ViewHolder> 
     }
 
     private Bitmap captureView(View view) {
-//        view.isDrawingCacheEnabled = true
         view.setDrawingCacheEnabled(true);
-//        view.buildDrawingCache()
         view.buildDrawingCache();
-        // 重新测量一遍View的宽高
         view.measure(View.MeasureSpec.makeMeasureSpec(view.getWidth(), View.MeasureSpec.EXACTLY),
                 View.MeasureSpec.makeMeasureSpec(view.getHeight(), View.MeasureSpec.EXACTLY));
-        // 确定View的位置
         view.layout((int) view.getX(), (int) view.getY(), (int) view.getX() + view.getMeasuredWidth(),
                 (int) view.getY() + view.getMeasuredHeight());
-        // 生成View宽高一样的Bitmap
         Bitmap bitmap = Bitmap.createBitmap(view.getDrawingCache(), 0, 0, view.getMeasuredWidth(),
                 view.getMeasuredHeight());
         view.setDrawingCacheEnabled(false);

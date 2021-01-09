@@ -81,6 +81,8 @@
             android:paddingLeft="16dp"
             android:paddingTop="10dp"
             android:paddingRight="16dp"
+            android:clipChildren="false"
+            android:clipToPadding="false"
             android:paddingBottom="16dp"
             android:scrollbars="none">
 

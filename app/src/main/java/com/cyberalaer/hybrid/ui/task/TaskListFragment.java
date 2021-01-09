@@ -2,7 +2,10 @@ package com.cyberalaer.hybrid.ui.task;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.MessageQueue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,6 +27,7 @@ import java.util.List;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -47,11 +51,21 @@ public class TaskListFragment extends BottomSheetDialogFragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         bindRoot = DataBindingUtil.inflate(inflater, R.layout.task_list_fragment, container, false);
+
         return bindRoot.getRoot();
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        new Handler().getLooper().getQueue().addIdleHandler(new MessageQueue.IdleHandler() {
+            @Override
+            public boolean queueIdle() {
+                ((View) bindRoot.getRoot().getParent()).setBackgroundColor(getResources().getColor(android.R.color.transparent));
+                return false;
+            }
+        });
+
         mList = (RecyclerView) view.findViewById(R.id.list);
 
         bindRoot.close.setOnClickListener(v -> dismiss());

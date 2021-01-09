@@ -18,10 +18,10 @@ import androidx.appcompat.widget.AppCompatImageView;
 public class MapView extends AppCompatImageView implements ViewTreeObserver.OnGlobalLayoutListener, ScaleGestureDetector.OnScaleGestureListener {
 
     private boolean isPicLoaded = false;
-    float SCALE_MIN = 0.9f;
-    float SCALE_ADAPTIVE = 1.0f;
-    float SCALE_MID = 1.5f;
-    float SCALE_MAX = 2.0f;
+    float SCALE_MIN = 1.0F;
+    float SCALE_ADAPTIVE = 1.0F;
+    float SCALE_MID = 1.5F;
+    float SCALE_MAX = 2.0F;
     private Matrix mScaleMatrix;
     private ScaleGestureDetector mScaleGestureDetector;
     private GestureDetector mGestureDetector;
