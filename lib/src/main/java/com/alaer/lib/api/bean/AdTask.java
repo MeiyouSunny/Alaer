@@ -1,6 +1,8 @@
 package com.alaer.lib.api.bean;
 
-public class AdTask {
+import java.io.Serializable;
+
+public class AdTask implements Serializable {
 
     public int id;
     public String name;

@@ -1,6 +1,7 @@
 package com.alaer.lib.api;
 
 import com.alaer.lib.api.bean.AdTask;
+import com.alaer.lib.api.bean.AdVideo;
 import com.alaer.lib.api.bean.Balance;
 import com.alaer.lib.api.bean.BannerList;
 import com.alaer.lib.api.bean.Notice;
@@ -255,5 +256,16 @@ public interface ApiService {
     @GET("/open/slide/query")
     Call<BannerList> banners(@Query("type") int type, @Query("pageIndex") int pageIndex, @Query("pageSize") int pageSize,
                              Callback<BannerList> callback);
+
+    /**
+     * 获取视频
+     *
+     * @param type 1
+     */
+    @GET("/mining/slide/videos")
+    Call<List<AdVideo>> getAdVideo(@Query("uuid") String uuid, @Query("uid") String uid,
+                                   @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
+                                   @Query("type") int type,
+                                   Callback<List<AdVideo>> callback);
 
 }

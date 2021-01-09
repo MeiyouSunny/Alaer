@@ -1,5 +1,7 @@
 package com.cyberalaer.hybrid.ui.task;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,10 +11,13 @@ import com.alaer.lib.api.ApiUtil;
 import com.alaer.lib.api.AppConfig;
 import com.alaer.lib.api.Callback;
 import com.alaer.lib.api.bean.AdTask;
+import com.alaer.lib.api.bean.AdVideo;
 import com.alaer.lib.api.bean.UserData;
 import com.alaer.lib.data.UserDataUtil;
 import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.databinding.TaskListFragmentBinding;
+import com.cyberalaer.hybrid.ui.video.VideoActivity;
+import com.cyberalaer.hybrid.util.CollectionUtils;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
 import java.util.List;
@@ -30,6 +35,7 @@ public class TaskListFragment extends BottomSheetDialogFragment {
     private RecyclerView mList;
     private TaskAdapter adapter;
     private UserData userData;
+    private AdTask mAdTask;
 
     public static TaskListFragment newInstance() {
         final TaskListFragment fragment = new TaskListFragment();
@@ -78,7 +84,8 @@ public class TaskListFragment extends BottomSheetDialogFragment {
             adapter = new TaskAdapter(getActivity(), tasks, new TaskAdapter.OnTaskClickHandler() {
                 @Override
                 public void onTaskClick(AdTask task) {
-                    startTask(task.id);
+                    mAdTask = task;
+                    startTask(task);
                 }
             });
             mList.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -88,15 +95,25 @@ public class TaskListFragment extends BottomSheetDialogFragment {
         }
     }
 
-    private void startTask(int taskId) {
-        if (userData == null)
-            return;
-        ApiUtil.apiService().startTask(userData.uuid, String.valueOf(userData.uid), userData.token, AppConfig.DIAMOND_CURRENCY, String.valueOf(taskId),
+    // 获取公告视频
+    private void getAdVideos() {
+        ApiUtil.apiService().getAdVideo(userData.uuid, String.valueOf(userData.uid), userData.token, AppConfig.DIAMOND_CURRENCY, 1,
+                new Callback<List<AdVideo>>() {
+                    @Override
+                    public void onResponse(List<AdVideo> adVideos) {
+                        if (adVideos != null && !CollectionUtils.isEmpty(adVideos)) {
+                            startPlayAdVideo(adVideos.get(0));
+                        }
+                    }
+                });
+    }
+
+    private void startTask(AdTask task) {
+        ApiUtil.apiService().startTask(userData.uuid, String.valueOf(userData.uid), userData.token, AppConfig.DIAMOND_CURRENCY, String.valueOf(task.id),
                 new Callback<String>() {
                     @Override
                     public void onResponse(String response) {
-                        super.onResponse(response);
-                        completeTask(taskId);
+                        getAdVideos();
                     }
 
                     @Override
@@ -106,6 +123,11 @@ public class TaskListFragment extends BottomSheetDialogFragment {
                 });
     }
 
+    // 播放公告
+    private void startPlayAdVideo(AdVideo adVideo) {
+        VideoActivity.startPlayFroResult(this, adVideo);
+    }
+
     private void completeTask(int taskId) {
         if (userData == null)
             return;
@@ -113,6 +135,7 @@ public class TaskListFragment extends BottomSheetDialogFragment {
                 new Callback<String>() {
                     @Override
                     public void onResponse(String response) {
+                        $.toast().text("任务已完成!").show();
                         getTaskList();
                     }
 
@@ -121,6 +144,15 @@ public class TaskListFragment extends BottomSheetDialogFragment {
                         $.toast().text(msg).show();
                     }
                 });
+    }
+
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if (requestCode == VideoActivity.REQUEST_CODE && resultCode == Activity.RESULT_OK) {
+            // 播放完成,完成任务
+            completeTask(mAdTask.id);
+        } else {
+            $.toast().text("任务未完成!").show();
+        }
     }
 
 }

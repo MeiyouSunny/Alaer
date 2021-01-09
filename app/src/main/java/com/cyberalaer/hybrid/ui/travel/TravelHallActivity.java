@@ -49,7 +49,6 @@ public class TravelHallActivity extends BaseTitleActivity<ActivityTravelBinding>
     public void onDestroy() {
         super.onDestroy();
         Jzvd.releaseAllVideos();
-        ;
     }
 
 }
