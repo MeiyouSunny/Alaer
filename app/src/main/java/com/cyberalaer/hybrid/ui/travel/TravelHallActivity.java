@@ -1,5 +1,6 @@
 package com.cyberalaer.hybrid.ui.travel;
 
+import com.alaer.lib.api.AppConfig;
 import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseTitleActivity;
 import com.cyberalaer.hybrid.databinding.ActivityTravelBinding;
@@ -29,10 +30,10 @@ public class TravelHallActivity extends BaseTitleActivity<ActivityTravelBinding>
     }
 
     private void initData() {
-        ViewUtil.showImage(getApplicationContext(), bindRoot.player1.posterImageView, "https://app.tokensky.cn/ale/video/tourism-202011-poster.png");
-        bindRoot.player1.setUp("https://app.tokensky.cn/ale/video/tourism-202011.mp4", "");
-        ViewUtil.showImage(getApplicationContext(), bindRoot.player2.posterImageView, "https://app.tokensky.cn/ale/video/tourism-2-poster.png");
-        bindRoot.player2.setUp("https://app.tokensky.cn/ale/video/tourism-2.mp4", "");
+        ViewUtil.showImage(getApplicationContext(), bindRoot.player1.posterImageView, AppConfig.TRAVEL_VIDEO_PIC1);
+        bindRoot.player1.setUp(AppConfig.TRAVEL_VIDEO1, "");
+        ViewUtil.showImage(getApplicationContext(), bindRoot.player2.posterImageView, AppConfig.TRAVEL_VIDEO_PIC2);
+        bindRoot.player2.setUp(AppConfig.TRAVEL_VIDEO2, "");
 
     }
 

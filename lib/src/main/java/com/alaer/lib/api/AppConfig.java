@@ -21,4 +21,13 @@ public class AppConfig {
 
     public static final int PAGE_SIZE_DEFAULT = 20;
 
+    // 视频
+    // 走进alaer
+    public static final String GO_INTO_ALAER_VIDEO = "https://app-tokensky.oss-cn-beijing.aliyuncs.com/ale/video/tourism.mp4";
+    // 旅游大厅
+    public static final String TRAVEL_VIDEO1 = "https://app.tokensky.cn/ale/video/tourism-202011.mp4";
+    public static final String TRAVEL_VIDEO_PIC1 = "https://app.tokensky.cn/ale/video/tourism-202011-poster.png";
+    public static final String TRAVEL_VIDEO2 = "https://app.tokensky.cn/ale/video/tourism-2.mp4";
+    public static final String TRAVEL_VIDEO_PIC2 = "https://app.tokensky.cn/ale/video/tourism-2-poster.png";
+
 }

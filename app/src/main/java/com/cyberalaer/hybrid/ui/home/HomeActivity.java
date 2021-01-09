@@ -34,6 +34,8 @@ import com.meiyou.mvp.MvpBinder;
 import java.util.ArrayList;
 import java.util.List;
 
+import cn.jzvd.JzvdStd;
+
 @MvpBinder(
         presenter = HomePresenterImpl.class
 )
@@ -72,11 +74,16 @@ public class HomeActivity extends BaseViewBindActivity<ActivityHomeBinding> impl
 
     private Class<? extends Activity>[] mPageClasses = new Class[]{
             ProductionHallActivity.class, DiscoverActivity.class, RealNameAuthActivity.class,
-            GovernmentHallActivity.class, TravelHallActivity.class, EducationHallActivity.class, TravelHallActivity.class};
+            GovernmentHallActivity.class, TravelHallActivity.class, EducationHallActivity.class};
 
     @Override
     public void onClick(View view, int position) {
-        ViewUtil.gotoActivity(this, mPageClasses[position]);
+        if (position == 6) {
+            // 走进阿拉尔,播放视频
+            JzvdStd.startFullscreenDirectly(this, JzvdStd.class, AppConfig.GO_INTO_ALAER_VIDEO, getString(R.string.go_into_alaer));
+        } else {
+            ViewUtil.gotoActivity(this, mPageClasses[position]);
+        }
     }
 
     @Override

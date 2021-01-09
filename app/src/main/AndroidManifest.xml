@@ -28,6 +28,7 @@
             android:screenOrientation="portrait"></activity>
         <activity
             android:name=".ui.home.HomeActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait"></activity>
         <activity
             android:name=".ui.user.LoginActivity"
@@ -76,7 +77,9 @@
             android:screenOrientation="portrait"></activity>
 
         <activity
-            android:name=".ui.travel.TravelHallActivity"></activity>
+            android:name=".ui.travel.TravelHallActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait"></activity>
 
         <activity
             android:name=".ui.user.UserMineActivity"
