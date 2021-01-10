@@ -4,14 +4,14 @@ import android.view.View;
 
 import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseTitleActivity;
-import com.cyberalaer.hybrid.databinding.ActivityLoginBinding;
-import com.cyberalaer.hybrid.ui.auth.AuthActivity;
+import com.cyberalaer.hybrid.databinding.ActivityAuthSuccessBinding;
+import com.cyberalaer.hybrid.ui.share.ShareActivity;
 import com.cyberalaer.hybrid.util.ViewUtil;
 
 /**
- * 实名认证
+ * 实名认证完成
  */
-public class RealNameAuthActivity extends BaseTitleActivity<ActivityLoginBinding> {
+public class AuthSuccessActivity extends BaseTitleActivity<ActivityAuthSuccessBinding> {
 
     @Override
     protected int titleResId() {
@@ -20,14 +20,14 @@ public class RealNameAuthActivity extends BaseTitleActivity<ActivityLoginBinding
 
     @Override
     protected int layoutId() {
-        return R.layout.activity_real_name_auth;
+        return R.layout.activity_auth_success;
     }
 
     @Override
     public void click(View view) {
         switch (view.getId()) {
-            case R.id.authByAlipy:
-                ViewUtil.gotoActivity(this, AuthActivity.class);
+            case R.id.share:
+                ViewUtil.gotoActivity(this, ShareActivity.class);
                 break;
         }
     }

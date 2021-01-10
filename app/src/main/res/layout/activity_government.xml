@@ -52,10 +52,17 @@
                 android:textSize="@dimen/font_12" />
 
             <com.cyberalaer.hybrid.view.ItemLayoutView
-                android:id="@+id/realNameAuth"
+                android:id="@+id/mine"
                 style="@style/ItemLayout"
                 android:onClick="@{handler.click}"
-                app:icon="@drawable/ic_real_name_auth"
+                app:icon="@drawable/ic_auth_mine"
+                app:title="@string/mine" />
+
+            <com.cyberalaer.hybrid.view.ItemLayoutView
+                android:id="@+id/auth"
+                style="@style/ItemLayout"
+                android:onClick="@{handler.click}"
+                app:icon="@drawable/ic_real_name_auth_discover"
                 app:title="@string/real_name_auth" />
 
         </LinearLayout>

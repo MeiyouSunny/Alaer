@@ -7,6 +7,7 @@ import com.alaer.lib.api.bean.Balance;
 import com.alaer.lib.api.bean.BannerList;
 import com.alaer.lib.api.bean.FruitBill;
 import com.alaer.lib.api.bean.Notice;
+import com.alaer.lib.api.bean.OrderInfo;
 import com.alaer.lib.api.bean.SeedMine;
 import com.alaer.lib.api.bean.SeedStoreList;
 import com.alaer.lib.api.bean.SharedUserDetail;
@@ -296,5 +297,23 @@ public interface ApiService {
                                       @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
                                       @Query("pageIndex") int pageIndex, @Query("pageSize") int pageSize,
                                       Callback<ActiveBillList> callback);
+
+    /**
+     * 实名认证:创建支付订单
+     */
+    @FormBody
+    @POST("/mining/alipay/create")
+    Call<String> createPayOrder(@Part("uuid") String uuid, @Part("uid") String uid, @Part("token") String token, @Part("diamondCurrency") String diamondCurrency,
+                                @Part("name") String name, @Part("idNumber") String idNumber,
+                                Callback<String> callback);
+
+    /**
+     * 实名认证:查询支付订单状态
+     */
+    @GET("/mining/alipay/detail")
+    Call<OrderInfo> queryPayState(@Query("uuid") String uuid, @Query("uid") String uid,
+                                  @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
+                                  @Query("payOrderNo") String payOrderNo,
+                                  Callback<OrderInfo> callback);
 
 }

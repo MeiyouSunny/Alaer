@@ -235,5 +235,15 @@
 
     <string name="inviter_info">邀请人信息</string>
 
+    <string name="second_pwd">二次密码</string>
+    <string name="second_pwd_set">二次密码设置</string>
+    <string name="pls_make_not_same_with_pwd">请不要和登录密码一致</string>
+    <string name="pls_input_second_pwd">请输入二次密码</string>
+    <string name="pls_input_second_pwd_again">请再次输入二次密码</string>
+    <string name="pls_input_phone_verify_code">请输入手机验证码</string>
+    <string name="pls_make_not_same_with_pwd_long">二次密码请不要和登录密码一致</string>
+
+    <string name="order_id_is">订单号：%s</string>
+
 
 </resources>

@@ -33,4 +33,7 @@ public class AppConfig {
     // 邀请链接
     public static final String INVITATE_URL = "https://t-app.tokensky.cn/signup/index.html?ref=";
 
+    // 支付URL:测试
+    public static final String ALIPAY_URL = "https://t-coupon.yuliang.top/index.php?id=";
+
 }

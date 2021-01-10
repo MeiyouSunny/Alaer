@@ -17,6 +17,7 @@ import com.cyberalaer.hybrid.base.BaseViewBindActivity;
 import com.cyberalaer.hybrid.databinding.ActivityHomeBinding;
 import com.cyberalaer.hybrid.ui.discover.DiscoverActivity;
 import com.cyberalaer.hybrid.ui.education.EducationHallActivity;
+import com.cyberalaer.hybrid.ui.government.AuthSuccessActivity;
 import com.cyberalaer.hybrid.ui.government.GovernmentHallActivity;
 import com.cyberalaer.hybrid.ui.government.RealNameAuthActivity;
 import com.cyberalaer.hybrid.ui.notice.NoticeDetailActivity;
@@ -54,6 +55,11 @@ public class HomeActivity extends BaseViewBindActivity<ActivityHomeBinding> impl
     public void onViewCreated() {
         super.onViewCreated();
         initMapView();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
         initData();
     }
 
@@ -81,6 +87,11 @@ public class HomeActivity extends BaseViewBindActivity<ActivityHomeBinding> impl
         if (position == 6) {
             // 走进阿拉尔,播放视频
             JzvdStd.startFullscreenDirectly(this, JzvdStd.class, AppConfig.GO_INTO_ALAER_VIDEO, getString(R.string.go_into_alaer));
+        } else if (position == 2) {
+            if (UserDataUtil.instance().isAuthed())
+                ViewUtil.gotoActivity(this, AuthSuccessActivity.class);
+            else
+                ViewUtil.gotoActivity(this, RealNameAuthActivity.class);
         } else {
             ViewUtil.gotoActivity(this, mPageClasses[position]);
         }
@@ -135,6 +146,7 @@ public class HomeActivity extends BaseViewBindActivity<ActivityHomeBinding> impl
                     @Override
                     public void onResponse(Balance balance) {
                         bindRoot.setBalance(balance);
+                        UserDataUtil.instance().setBalanse(balance);
                     }
                 });
 

@@ -5,6 +5,8 @@ import android.view.View;
 import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseBindFragment;
 import com.cyberalaer.hybrid.databinding.FragmentAuthPaySuccessBinding;
+import com.cyberalaer.hybrid.ui.share.ShareActivity;
+import com.cyberalaer.hybrid.util.ViewUtil;
 import com.meiyou.mvp.MvpBinder;
 
 @MvpBinder(
@@ -19,15 +21,11 @@ public class PaySuccessFragment extends BaseBindFragment<FragmentAuthPaySuccessB
     @Override
     public void click(View view) {
         switch (view.getId()) {
-            case R.id.confirm:
-                navigate(R.id.action_to_regisPhoneVerify);
+            case R.id.ok:
+                ViewUtil.gotoActivity(getContext(), ShareActivity.class);
+                getActivity().finish();
                 break;
         }
-    }
-
-    @Override
-    public void onViewCreated() {
-        super.onViewCreated();
     }
 
 }

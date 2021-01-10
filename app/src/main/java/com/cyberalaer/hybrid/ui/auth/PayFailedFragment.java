@@ -19,15 +19,10 @@ public class PayFailedFragment extends BaseBindFragment<FragmentAuthPayFailedBin
     @Override
     public void click(View view) {
         switch (view.getId()) {
-            case R.id.confirm:
-                navigate(R.id.action_to_regisPhoneVerify);
+            case R.id.ok:
+                getActivity().finish();
                 break;
         }
-    }
-
-    @Override
-    public void onViewCreated() {
-        super.onViewCreated();
     }
 
 }

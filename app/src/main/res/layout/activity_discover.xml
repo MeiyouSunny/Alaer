@@ -51,6 +51,7 @@
 
                     <TextView
                         android:id="@+id/newUserGuide"
+                        style="@style/SelectableStyle"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -64,6 +65,7 @@
 
                     <TextView
                         android:id="@+id/myTeam"
+                        style="@style/SelectableStyle"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -76,12 +78,15 @@
                         android:textSize="@dimen/font_17" />
 
                     <TextView
+                        android:id="@+id/auth"
+                        style="@style/SelectableStyle"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:drawableTop="@drawable/ic_real_name_auth_discover"
                         android:drawablePadding="6dp"
                         android:gravity="center"
+                        android:onClick="@{handler.click}"
                         android:text="@string/real_name_auth"
                         android:textColor="@color/font_36"
                         android:textSize="@dimen/font_17" />
@@ -93,6 +98,8 @@
 
 
             <TextView
+                android:id="@+id/share"
+                style="@style/SelectableStyle"
                 android:layout_width="72dp"
                 android:layout_height="74dp"
                 android:layout_below="@+id/layout_row1"

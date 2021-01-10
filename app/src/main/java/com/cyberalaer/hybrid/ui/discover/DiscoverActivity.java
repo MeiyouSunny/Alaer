@@ -9,12 +9,16 @@ import com.alaer.lib.api.ApiUtil;
 import com.alaer.lib.api.Callback;
 import com.alaer.lib.api.bean.Banner;
 import com.alaer.lib.api.bean.BannerList;
+import com.alaer.lib.data.UserDataUtil;
 import com.bigkoo.convenientbanner.ConvenientBanner;
 import com.bigkoo.convenientbanner.holder.CBViewHolderCreator;
 import com.bigkoo.convenientbanner.holder.Holder;
 import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseTitleActivity;
 import com.cyberalaer.hybrid.databinding.ActivityDiscoverBinding;
+import com.cyberalaer.hybrid.ui.government.AuthSuccessActivity;
+import com.cyberalaer.hybrid.ui.government.RealNameAuthActivity;
+import com.cyberalaer.hybrid.ui.share.ShareActivity;
 import com.cyberalaer.hybrid.ui.user.MyTeamActivity;
 import com.cyberalaer.hybrid.util.CollectionUtils;
 import com.cyberalaer.hybrid.util.ViewUtil;
@@ -104,6 +108,15 @@ public class DiscoverActivity extends BaseTitleActivity<ActivityDiscoverBinding>
                 break;
             case R.id.myTeam:
                 ViewUtil.gotoActivity(this, MyTeamActivity.class);
+                break;
+            case R.id.share:
+                ViewUtil.gotoActivity(this, ShareActivity.class);
+                break;
+            case R.id.auth:
+                if (UserDataUtil.instance().isAuthed())
+                    ViewUtil.gotoActivity(this, AuthSuccessActivity.class);
+                else
+                    ViewUtil.gotoActivity(this, RealNameAuthActivity.class);
                 break;
         }
     }

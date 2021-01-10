@@ -2,6 +2,7 @@ package com.alaer.lib.data;
 
 import android.text.TextUtils;
 
+import com.alaer.lib.api.bean.Balance;
 import com.alaer.lib.api.bean.TeamDetail;
 import com.alaer.lib.api.bean.UserData;
 
@@ -19,6 +20,7 @@ public class UserDataUtil {
 
     private UserData mUserData;
     private TeamDetail mTeamDetail;
+    private Balance mBalanse;
 
     public UserData getUserData() {
         if (mUserData == null)
@@ -72,6 +74,18 @@ public class UserDataUtil {
         }
 
         return null;
+    }
+
+    public Balance getBalanse() {
+        return mBalanse;
+    }
+
+    public void setBalanse(Balance mBalanse) {
+        this.mBalanse = mBalanse;
+    }
+
+    public boolean isAuthed() {
+        return mBalanse != null && mBalanse.level > 0;
     }
 
 }
