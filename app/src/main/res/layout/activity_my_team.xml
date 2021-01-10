@@ -82,12 +82,15 @@
                         tools:text="奖励1棵枣树+数字市民共建基金20%" />
 
                     <TextView
+                        android:id="@+id/myInviter"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="51dp"
                         android:layout_marginTop="178dp"
+                        android:clickable="true"
                         android:drawableRight="@drawable/ic_item_next_little"
                         android:drawablePadding="6dp"
+                        android:onClick="@{handler.click}"
                         android:text="@string/my_invitater"
                         android:textColor="@color/font_41"
                         android:textSize="@dimen/font_15" />

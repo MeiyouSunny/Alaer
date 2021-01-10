@@ -1,6 +1,8 @@
 package com.alaer.lib.api.bean;
 
-public class TeamDetail {
+import java.io.Serializable;
+
+public class TeamDetail implements Serializable {
 
     public int uid;
     public String uuid;

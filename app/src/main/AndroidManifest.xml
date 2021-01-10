@@ -42,8 +42,11 @@
 
         <activity
             android:name=".ui.user.ExchangeBuildScoreActivity"
-            android:screenOrientation="portrait">
-        </activity>
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name=".ui.user.InviterInfoActivity"
+            android:screenOrientation="portrait"></activity>
 
         <activity
             android:name=".ui.share.ShareActivity"

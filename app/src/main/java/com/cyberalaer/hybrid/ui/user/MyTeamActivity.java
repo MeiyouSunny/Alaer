@@ -1,6 +1,7 @@
 package com.cyberalaer.hybrid.ui.user;
 
 import android.os.Build;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.MessageQueue;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.view.View;
 import com.alaer.lib.api.ApiUtil;
 import com.alaer.lib.api.AppConfig;
 import com.alaer.lib.api.Callback;
+import com.alaer.lib.api.bean.TeamDetail;
 import com.alaer.lib.api.bean.TeamLevel;
 import com.alaer.lib.api.bean.TeamProfile;
 import com.alaer.lib.api.bean.UserData;
@@ -28,6 +30,7 @@ import androidx.annotation.RequiresApi;
 public class MyTeamActivity extends BaseTitleActivity<ActivityMyTeamBinding> {
 
     UserData userData;
+    TeamDetail mInviterInfo;
 
     @Override
     protected int titleResId() {
@@ -66,7 +69,32 @@ public class MyTeamActivity extends BaseTitleActivity<ActivityMyTeamBinding> {
             case R.id.levelRule:
                 ViewUtil.gotoActivity(this, LevelRuleActivity.class);
                 break;
+            case R.id.myInviter:
+                if (mInviterInfo == null)
+                    queryMyInviter();
+                else
+                    goToInviterInfo();
+                break;
         }
+    }
+
+    private void queryMyInviter() {
+        ApiUtil.apiService().getFollowInfo(userData.uuid, String.valueOf(userData.uid), userData.token, AppConfig.DIAMOND_CURRENCY,
+                new Callback<TeamDetail>() {
+                    @Override
+                    public void onResponse(TeamDetail response) {
+                        mInviterInfo = response;
+                        goToInviterInfo();
+                    }
+                });
+    }
+
+    private void goToInviterInfo() {
+        if (mInviterInfo == null)
+            return;
+        Bundle data = new Bundle();
+        data.putSerializable("inviter", mInviterInfo);
+        ViewUtil.gotoActivity(getContext(), InviterInfoActivity.class, data);
     }
 
     private void initData() {

@@ -233,5 +233,7 @@
     <string name="fruit_number_is_about">约%s 果实</string>
     <string name="fund_is">基金：</string>
 
+    <string name="inviter_info">邀请人信息</string>
+
 
 </resources>

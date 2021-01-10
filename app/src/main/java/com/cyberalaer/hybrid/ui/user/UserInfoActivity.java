@@ -1,5 +1,6 @@
 package com.cyberalaer.hybrid.ui.user;
 
+import android.os.Bundle;
 import android.view.View;
 
 import com.alaer.lib.api.ApiUtil;
@@ -17,6 +18,8 @@ import com.cyberalaer.hybrid.util.ViewUtil;
  * 用户信息
  */
 public class UserInfoActivity extends BaseTitleActivity<ActivityUserInfoBinding> {
+
+    private TeamDetail mInviterInfo;
 
     @Override
     protected int titleResId() {
@@ -52,20 +55,13 @@ public class UserInfoActivity extends BaseTitleActivity<ActivityUserInfoBinding>
                 new Callback<TeamDetail>() {
                     @Override
                     public void onResponse(TeamDetail response) {
+                        mInviterInfo = response;
                         bindRoot.setFollow(response);
                     }
                 });
     }
 
-    private void showInvitate(TeamDetail userData) {
-        ViewUtil.setText(bindRoot.invatePerson, userData.name);
-    }
-
     private void showUserInfo(TeamDetail userInfo) {
-        ViewUtil.setText(bindRoot.uid, String.valueOf(userInfo.uid));
-        ViewUtil.setText(bindRoot.name, String.valueOf(userInfo.name));
-        ViewUtil.setText(bindRoot.invateCode, String.valueOf(userInfo.code));
-        ViewUtil.setText(bindRoot.wechatNo, String.valueOf(userInfo.wechat));
         ViewUtil.showImage(getApplicationContext(), bindRoot.icHead, userInfo.avatar);
     }
 
@@ -75,7 +71,18 @@ public class UserInfoActivity extends BaseTitleActivity<ActivityUserInfoBinding>
             case R.id.setWechat:
                 goToSetWechat();
                 break;
+            case R.id.inviterInfo:
+                goToInviterInfo();
+                break;
         }
+    }
+
+    private void goToInviterInfo() {
+        if (mInviterInfo == null)
+            return;
+        Bundle data = new Bundle();
+        data.putSerializable("inviter", mInviterInfo);
+        ViewUtil.gotoActivity(getContext(), InviterInfoActivity.class, data);
     }
 
     private void goToSetWechat() {

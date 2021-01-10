@@ -300,8 +300,11 @@
                     app:cardElevation="0dp">
 
                     <RelativeLayout
+                        android:id="@+id/inviterInfo"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:clickable="true"
+                        android:onClick="@{handler.click}"
                         android:paddingLeft="29dp"
                         android:paddingRight="32dp">
 
