@@ -44,6 +44,12 @@ public class UserMineActivity extends BaseTitleActivity<ActivityUserMineBinding>
         initData();
     }
 
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        initData();
+    }
+
     private void initData() {
         UserData userData = UserDataUtil.instance().getUserData();
         if (userData == null)

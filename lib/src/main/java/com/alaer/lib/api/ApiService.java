@@ -316,4 +316,22 @@ public interface ApiService {
                                   @Query("payOrderNo") String payOrderNo,
                                   Callback<OrderInfo> callback);
 
+    /**
+     * 确认交易密码
+     */
+    @FormBody
+    @POST("/open/check/trade/passphrase/simple")
+    Call<String> confirmTransactionCode(@Part("uuid") String uuid, @Part("uid") String uid, @Part("token") String token, @Part("diamondCurrency") String diamondCurrency,
+                                        @Part("tradePassphrase") String tradePassphrase,
+                                        Callback<String> callback);
+
+    /**
+     * 果实兑换
+     */
+    @FormBody
+    @POST("/mining/diamond/withdraw")
+    Call<String> exchangeFruit(@Part("uuid") String uuid, @Part("uid") String uid, @Part("token") String token, @Part("diamondCurrency") String diamondCurrency,
+                               @Part("validate") String validate, @Part("captchaId") String captchaId, @Part("tradePhraseCode") String tradePhraseCode,
+                               Callback<String> callback);
+
 }

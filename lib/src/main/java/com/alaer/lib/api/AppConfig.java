@@ -13,6 +13,8 @@ public class AppConfig {
     public static final String AES_KEY = "Ale202012274321=";
 
     public static final String MD5_KEY_TEMP = "dig?F*ckDang5PaSsWOrd&%(polarisex0160630).";
+    public static final String MD5_KEY_TEMP_SECOND = "dig?F*ckDa2g5PaSsWOrd&%(polarisexenp0160630).";
+
 
     /* mining请求模块加密本地key */
     public static final String CLIENT_SALT = "v5hcqfseCUUnKAMzmxLe";

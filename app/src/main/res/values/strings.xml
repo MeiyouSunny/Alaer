@@ -245,5 +245,7 @@
 
     <string name="order_id_is">订单号：%s</string>
 
+    <string name="sure">确认</string>
+
 
 </resources>

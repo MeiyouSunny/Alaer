@@ -117,7 +117,6 @@ public class LoginFragment extends BaseBindFragment<FragmentLoginBinding> {
                 .build(getContext());
         final Captcha captcha = Captcha.getInstance().init(configuration);
         captcha.validate();
-
     }
 
     private void login(String validate) {

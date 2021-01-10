@@ -230,11 +230,11 @@
 
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/submit"
+                android:id="@+id/confirm"
                 style="@style/BtnGreen"
                 android:layout_alignParentBottom="true"
                 android:layout_marginBottom="68dp"
-                android:onClick="@{handler.click"
+                android:onClick="@{handler.click}"
                 android:text="@string/sure_to_exchange" />
 
         </RelativeLayout>
