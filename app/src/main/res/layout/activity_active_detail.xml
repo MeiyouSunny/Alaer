@@ -6,6 +6,10 @@
     <data>
 
         <variable
+            name="data"
+            type="com.alaer.lib.api.bean.TeamInfo" />
+
+        <variable
             name="handler"
             type="com.cyberalaer.hybrid.base.BindClickListener" />
     </data>
@@ -44,9 +48,10 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="487380"
+                        android:text="@{String.valueOf(data.profile.minerActivityness)}"
                         android:textColor="@color/white"
-                        android:textSize="@dimen/font_20" />
+                        android:textSize="@dimen/font_20"
+                        tools:text="487380" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -79,9 +84,10 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="94839"
+                        android:text="@{String.valueOf(data.profile.promotionActivityness)}"
                         android:textColor="@color/white"
-                        android:textSize="@dimen/font_20" />
+                        android:textSize="@dimen/font_20"
+                        tools:text="487380" />
 
                     <TextView
                         android:layout_width="wrap_content"

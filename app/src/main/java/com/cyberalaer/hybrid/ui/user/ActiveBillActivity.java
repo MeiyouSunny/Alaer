@@ -1,5 +1,6 @@
 package com.cyberalaer.hybrid.ui.user;
 
+import com.alaer.lib.api.bean.TeamInfo;
 import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseTitleActivity;
 import com.cyberalaer.hybrid.databinding.ActivityActiveDetailBinding;
@@ -24,6 +25,9 @@ public class ActiveBillActivity extends BaseTitleActivity<ActivityActiveDetailBi
         super.onViewCreated();
         setTitleRightVisible(true);
         setTitleRightIcon(R.drawable.ic_question);
+
+        TeamInfo data = (TeamInfo) getIntent().getSerializableExtra("teamInfo");
+        bindRoot.setData(data);
     }
 
 }

@@ -1,8 +1,9 @@
 package com.alaer.lib.api.bean;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class TeamInfo {
+public class TeamInfo implements Serializable {
 
     public Profile profile;
     public VirtualMiner virtualMiner;
@@ -19,7 +20,7 @@ public class TeamInfo {
     public List<?> featureMiners;
     public List<?> expiredMiners;
 
-    public static class Profile {
+    public static class Profile implements Serializable {
         /**
          * id : 700
          * uuid : be45337868b64049ada17ee4fb41da45
@@ -51,7 +52,7 @@ public class TeamInfo {
         public int validateFail;
     }
 
-    public static class VirtualMiner {
+    public static class VirtualMiner implements Serializable {
         /**
          * id : null
          * minerId : null
@@ -121,7 +122,7 @@ public class TeamInfo {
         public int todayNum;
     }
 
-    public static class TodayMiners {
+    public static class TodayMiners implements Serializable {
         /**
          * id : 3288
          * minerId : 15

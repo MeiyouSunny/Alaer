@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="balance"
+            type="com.alaer.lib.api.bean.Balance" />
+
+        <variable
+            name="number"
+            type="com.cyberalaer.hybrid.util.NumberUtils" />
+
+        <variable
+            name="handler"
+            type="com.cyberalaer.hybrid.base.BindClickListener" />
+    </data>
+
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical"
+        tools:context=".ui.user.UserInfoActivity">
+
+        <include layout="@layout/layout_title_bar_black" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="@color/bg_gray" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginLeft="44dp"
+                android:layout_marginTop="34dp"
+                android:background="@drawable/ic_exchange_score" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="87dp"
+                android:layout_marginTop="28dp"
+                android:text="@string/exchange_fruit_number"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_17" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="87dp"
+                android:layout_marginTop="54dp"
+                android:text="@string/pls_input_exchange_number"
+                android:textColor="@color/font_7E"
+                android:textSize="@dimen/font_12" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginLeft="28dp"
+                android:layout_marginTop="93dp"
+                android:layout_marginRight="28dp"
+                app:cardBackgroundColor="@color/bg_gray"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="0dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="24dp"
+                    android:paddingRight="24dp">
+
+                    <EditText
+                        android:id="@+id/etAmount"
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="48dp"
+                        android:layout_toLeftOf="@+id/icClear"
+                        android:background="@null"
+                        android:hint="@string/input_number"
+                        android:inputType="numberDecimal"
+                        android:singleLine="true"
+                        android:textColorHint="@color/font_B3"
+                        android:textSize="@dimen/font_17" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/exchangeAll"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:onClick="@{handler.click}"
+                        android:background="@null"
+                        android:text="@string/exchange_all"
+                        android:textColor="@color/font_green" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="52dp"
+                android:layout_marginTop="169dp"
+                android:text="@{@string/total_score_is(number.parseNumber(balance.money.amount))}"
+                android:textColor="@color/font_green"
+                android:textSize="@dimen/font_15" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="52dp"
+                android:layout_marginTop="196dp"
+                android:text="@{@string/total_fruit_is(number.parseNumber(balance.diamond.amount))}"
+                android:textColor="@color/font_green"
+                android:textSize="@dimen/font_15" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="52dp"
+                android:layout_marginTop="223dp"
+                android:text="@{@string/payment_proportion(balance.feeRate)}"
+                android:textColor="@color/font_green"
+                android:textSize="@dimen/font_15" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/layoutInfo"
+                android:layout_width="match_parent"
+                android:layout_height="166dp"
+                android:layout_marginLeft="28dp"
+                android:layout_marginTop="259dp"
+                android:layout_marginRight="28dp"
+                android:visibility="gone"
+                app:cardBackgroundColor="@color/bg_gray"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="0dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="24dp"
+                    android:paddingRight="24dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="19dp"
+                        android:text="@string/exchange_detail"
+                        android:textColor="@color/font_41"
+                        android:textSize="@dimen/font_15" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="53dp"
+                        android:text="@string/exchange_number"
+                        android:textColor="@color/font_41"
+                        android:textSize="@dimen/font_15" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="87dp"
+                        android:text="@string/get_score_number_is"
+                        android:textColor="@color/font_41"
+                        android:textSize="@dimen/font_15" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="121dp"
+                        android:text="@string/fund_is"
+                        android:textColor="@color/font_41"
+                        android:textSize="@dimen/font_15" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="19dp"
+                        android:text="@string/arrival_timely"
+                        android:textColor="@color/font_green"
+                        android:textSize="@dimen/font_15" />
+
+                    <TextView
+                        android:id="@+id/tvFruitCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="53dp"
+                        android:text="@string/fruit_number_is"
+                        android:textColor="@color/font_green"
+                        android:textSize="@dimen/font_15" />
+
+                    <TextView
+                        android:id="@+id/amount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="87dp"
+                        android:text="@string/score_number_is_about"
+                        android:textColor="@color/font_green"
+                        android:textSize="@dimen/font_15" />
+
+                    <TextView
+                        android:id="@+id/rateAmount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="121dp"
+                        android:text="@string/fruit_number_is_about"
+                        android:textColor="@color/font_green"
+                        android:textSize="@dimen/font_15" />
+
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/submit"
+                style="@style/BtnGreen"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="68dp"
+                android:onClick="@{handler.click"
+                android:text="@string/sure_to_exchange" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</layout>

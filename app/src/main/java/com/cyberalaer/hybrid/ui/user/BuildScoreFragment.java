@@ -1,7 +1,5 @@
 package com.cyberalaer.hybrid.ui.user;
 
-import android.os.Bundle;
-
 import com.alaer.lib.api.ApiUtil;
 import com.alaer.lib.api.AppConfig;
 import com.alaer.lib.api.Callback;
@@ -15,27 +13,9 @@ import com.cyberalaer.hybrid.databinding.FragmentActiveDetailListBinding;
 import java.util.List;
 
 /**
- * 活跃度明细列表Fragment
+ * 建设工分明细列表Fragment
  */
 public class BuildScoreFragment extends BaseBindFragment<FragmentActiveDetailListBinding> {
-    private static final String TYPE = "type";
-
-    public static BuildScoreFragment newInstance(int type) {
-        BuildScoreFragment fragment = new BuildScoreFragment();
-        Bundle bundle = new Bundle();
-        bundle.putInt(TYPE, type);
-        fragment.setArguments(bundle);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        int type = 1;
-        if (getArguments() != null) {
-            type = getArguments().getInt(TYPE);
-        }
-    }
 
     @Override
     public int initLayoutResId() {
@@ -46,10 +26,10 @@ public class BuildScoreFragment extends BaseBindFragment<FragmentActiveDetailLis
     public void onViewCreated() {
         super.onViewCreated();
 
-        queryFruitBill();
+        queryBuildScoreBill();
     }
 
-    private void queryFruitBill() {
+    private void queryBuildScoreBill() {
         UserData userData = UserDataUtil.instance().getUserData();
         if (userData == null)
             return;

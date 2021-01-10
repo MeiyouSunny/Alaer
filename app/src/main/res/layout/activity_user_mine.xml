@@ -91,6 +91,52 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
+                <!-- 兑换积分 -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/exchangeScore"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="10dp"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:onClick="@{handler.click}"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="0dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingLeft="29dp"
+                        android:paddingRight="32dp">
+
+                        <ImageView
+                            android:id="@+id/icExchange"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/ic_exchange_score" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="12dp"
+                            android:layout_toRightOf="@+id/icExchange"
+                            android:text="@string/exchange_build_score"
+                            android:textColor="@color/font_36"
+                            android:textSize="@dimen/font_14" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/ic_item_next_little" />
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
                 <!--  -->
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
@@ -204,12 +250,12 @@
 
                         <androidx.cardview.widget.CardView
                             android:id="@+id/buildScore"
-                            android:onClick="@{handler.click}"
                             style="@style/CardViewClick"
                             android:layout_width="0dp"
                             android:layout_height="76dp"
                             android:layout_marginLeft="10dp"
                             android:layout_weight="1"
+                            android:onClick="@{handler.click}"
                             app:cardCornerRadius="8dp"
                             app:cardElevation="0dp">
 
@@ -258,11 +304,11 @@
 
                         <androidx.cardview.widget.CardView
                             android:id="@+id/activitySapling"
-                            android:onClick="@{handler.click}"
                             style="@style/CardViewClick"
                             android:layout_width="0dp"
                             android:layout_height="76dp"
                             android:layout_weight="1"
+                            android:onClick="@{handler.click}"
                             app:cardCornerRadius="8dp"
                             app:cardElevation="0dp">
 
@@ -303,12 +349,12 @@
 
                         <androidx.cardview.widget.CardView
                             android:id="@+id/activityShare"
-                            android:onClick="@{handler.click}"
                             style="@style/CardViewClick"
                             android:layout_width="0dp"
                             android:layout_height="76dp"
                             android:layout_marginLeft="10dp"
                             android:layout_weight="1"
+                            android:onClick="@{handler.click}"
                             app:cardCornerRadius="8dp"
                             app:cardElevation="0dp">
 

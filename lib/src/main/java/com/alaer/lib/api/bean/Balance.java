@@ -1,6 +1,8 @@
 package com.alaer.lib.api.bean;
 
-public class Balance {
+import java.io.Serializable;
+
+public class Balance implements Serializable {
 
     /**
      * identityFee : 0.01
@@ -18,25 +20,25 @@ public class Balance {
     public int withdrawAmountLimit;
     public int feeRate;
 
-    public static class Diamond {
+    public static class Diamond implements Serializable {
         /**
          * amount : 4238.90435136
          * cashAmount : 4238.90435136
          * currencyId : 174
          */
 
-        public double amount;
-        public double cashAmount;
+        public float amount;
+        public float cashAmount;
         public int currencyId;
     }
 
-    public static class Money {
+    public static class Money implements Serializable {
         /**
          * amount : 0.25
          * cashAmount : 0.25
          */
 
-        public double amount;
-        public double cashAmount;
+        public float amount;
+        public float cashAmount;
     }
 }

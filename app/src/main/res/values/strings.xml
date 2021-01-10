@@ -214,5 +214,24 @@
     <string name="balance_is">余额：%f</string>
     <string name="activity_is">活跃度：%d</string>
 
+    <string name="exchange_build_score">果实兑换建设积分</string>
+    <string name="exchangge_score">积分兑换</string>
+    <string name="sure_to_exchange">确认划出</string>
+    <string name="exchange_fruit_number">划出果实数量</string>
+    <string name="pls_input_exchange_number">请输入划出果实数量</string>
+    <string name="input_number">请输入数量</string>
+    <string name="exchange_all">全部划出</string>
+    <string name="total_score_is">功分总数：%s 功分</string>
+    <string name="total_fruit_is">果实总数：%s 果实</string>
+    <string name="payment_proportion">缴纳基金占比：%d%%</string>
+    <string name="exchange_detail">划出详情：</string>
+    <string name="arrival_timely">即时到账</string>
+    <string name="exchange_number">划出数量：</string>
+    <string name="fruit_number_is">%s 果实</string>
+    <string name="get_score_number_is">可得功分数：</string>
+    <string name="score_number_is_about">约%s 功分</string>
+    <string name="fruit_number_is_about">约%s 果实</string>
+    <string name="fund_is">基金：</string>
+
 
 </resources>

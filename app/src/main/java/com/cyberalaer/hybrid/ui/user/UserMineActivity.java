@@ -1,5 +1,6 @@
 package com.cyberalaer.hybrid.ui.user;
 
+import android.os.Bundle;
 import android.view.View;
 
 import com.alaer.lib.api.ApiUtil;
@@ -14,12 +15,16 @@ import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseTitleActivity;
 import com.cyberalaer.hybrid.databinding.ActivityUserMineBinding;
 import com.cyberalaer.hybrid.ui.share.ShareActivity;
+import com.cyberalaer.hybrid.util.NumberUtils;
 import com.cyberalaer.hybrid.util.ViewUtil;
 
 /**
  * 个人中心
  */
 public class UserMineActivity extends BaseTitleActivity<ActivityUserMineBinding> {
+
+    Balance mBalance;
+    TeamInfo mTeamInfo;
 
     @Override
     protected int titleResId() {
@@ -63,6 +68,7 @@ public class UserMineActivity extends BaseTitleActivity<ActivityUserMineBinding>
     }
 
     private void showInfo(TeamInfo info) {
+        mTeamInfo = info;
         ViewUtil.setText(bindRoot.saplingActivity, String.valueOf(info.profile.minerActivityness));
         ViewUtil.setText(bindRoot.shareActivity, String.valueOf(info.profile.promotionActivityness));
         ViewUtil.setText(bindRoot.contribution, getString(R.string.contribution_value, String.valueOf(info.profile.contribution)));
@@ -77,8 +83,9 @@ public class UserMineActivity extends BaseTitleActivity<ActivityUserMineBinding>
     }
 
     private void showBalanceInfo(Balance balance) {
-        ViewUtil.setText(bindRoot.scoreFruit, String.valueOf(balance.diamond.amount));
-        ViewUtil.setText(bindRoot.scoreBuild, String.valueOf(balance.money.amount));
+        mBalance = balance;
+        ViewUtil.setText(bindRoot.scoreFruit, NumberUtils.instance().parseNumber(balance.diamond.amount));
+        ViewUtil.setText(bindRoot.scoreBuild, NumberUtils.instance().parseNumber(balance.money.amount));
         ViewUtil.setText(bindRoot.level, getResources().getStringArray(R.array.person_level)[balance.level]);
     }
 
@@ -98,14 +105,29 @@ public class UserMineActivity extends BaseTitleActivity<ActivityUserMineBinding>
                 ViewUtil.gotoActivity(this, ShareActivity.class);
                 break;
             case R.id.fruitBill:
-                ViewUtil.gotoActivity(this, FruitBillActivity.class);
+                if (mBalance != null) {
+                    Bundle data = new Bundle();
+                    data.putSerializable("balance", mBalance);
+                    ViewUtil.gotoActivity(this, FruitBillActivity.class, data);
+                }
                 break;
             case R.id.activitySapling:
             case R.id.activityShare:
-                ViewUtil.gotoActivity(this, ActiveBillActivity.class);
+                if (mTeamInfo != null) {
+                    Bundle data = new Bundle();
+                    data.putSerializable("teamInfo", mTeamInfo);
+                    ViewUtil.gotoActivity(this, ActiveBillActivity.class, data);
+                }
                 break;
             case R.id.buildScore:
                 ViewUtil.gotoActivity(this, BuildScoreActivity.class);
+                break;
+            case R.id.exchangeScore:
+                if (mBalance != null) {
+                    Bundle data = new Bundle();
+                    data.putSerializable("balance", mBalance);
+                    ViewUtil.gotoActivity(this, ExchangeBuildScoreActivity.class, data);
+                }
                 break;
         }
     }

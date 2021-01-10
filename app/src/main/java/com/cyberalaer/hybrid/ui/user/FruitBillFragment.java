@@ -1,7 +1,5 @@
 package com.cyberalaer.hybrid.ui.user;
 
-import android.os.Bundle;
-
 import com.alaer.lib.api.ApiUtil;
 import com.alaer.lib.api.AppConfig;
 import com.alaer.lib.api.Callback;
@@ -18,24 +16,6 @@ import java.util.List;
  * 活跃度明细列表Fragment
  */
 public class FruitBillFragment extends BaseBindFragment<FragmentActiveDetailListBinding> {
-    private static final String TYPE = "type";
-
-    public static FruitBillFragment newInstance(int type) {
-        FruitBillFragment fragment = new FruitBillFragment();
-        Bundle bundle = new Bundle();
-        bundle.putInt(TYPE, type);
-        fragment.setArguments(bundle);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        int type = 1;
-        if (getArguments() != null) {
-            type = getArguments().getInt(TYPE);
-        }
-    }
 
     @Override
     public int initLayoutResId() {
