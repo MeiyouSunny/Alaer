@@ -16,6 +16,7 @@ import com.alaer.lib.api.bean.TeamDetail;
 import com.alaer.lib.api.bean.TeamInfo;
 import com.alaer.lib.api.bean.TeamLevel;
 import com.alaer.lib.api.bean.TeamProfile;
+import com.alaer.lib.api.bean.UpdateInfo;
 import com.alaer.lib.api.bean.UserData;
 
 import java.util.List;
@@ -353,5 +354,13 @@ public interface ApiService {
                                 @Part("validate") String validate, @Part("captchaId") String captchaId,
                                 @Part("newFdPassWord") String newFdPassWord, @Part("vercodePhone") String vercodePhone,
                                 Callback<String> callback);
+
+    /**
+     * 检查更新
+     * deviceType Android: 1101；iOS: 1101
+     */
+    @GET("/client/lastest")
+    Call<UpdateInfo> checkUpdate(@Query("deviceType") int deviceType,
+                                 Callback<UpdateInfo> callback);
 
 }
