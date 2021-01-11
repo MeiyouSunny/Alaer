@@ -14,6 +14,7 @@ import com.alaer.lib.data.UserDataUtil;
 import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseTitleActivity;
 import com.cyberalaer.hybrid.databinding.ActivityUserMineBinding;
+import com.cyberalaer.hybrid.ui.about.AboutActivity;
 import com.cyberalaer.hybrid.ui.share.ShareActivity;
 import com.cyberalaer.hybrid.util.NumberUtils;
 import com.cyberalaer.hybrid.util.ViewUtil;
@@ -134,6 +135,9 @@ public class UserMineActivity extends BaseTitleActivity<ActivityUserMineBinding>
                     data.putSerializable("balance", mBalance);
                     ViewUtil.gotoActivity(this, ExchangeBuildScoreActivity.class, data);
                 }
+                break;
+            case R.id.about:
+                ViewUtil.gotoActivity(this, AboutActivity.class);
                 break;
         }
     }

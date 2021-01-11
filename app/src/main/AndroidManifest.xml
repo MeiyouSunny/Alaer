@@ -154,6 +154,14 @@
             android:name=".ui.user.BuildScoreActivity"
             android:screenOrientation="portrait"></activity>
 
+        <activity
+            android:name=".ui.about.AboutActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name=".ui.webpage.WebPageActivity"
+            android:screenOrientation="portrait"></activity>
+
     </application>
 
 </manifest>

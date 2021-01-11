@@ -38,4 +38,7 @@ public class AppConfig {
     // 支付URL:测试
     public static final String ALIPAY_URL = "https://t-coupon.yuliang.top/index.php?id=";
 
+    /* 用户协议 */
+    public static final String USER_AGREEMENT = "https://app.tokensky.cn/privacy/ALE.html";
+
 }

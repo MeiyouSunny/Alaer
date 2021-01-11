@@ -554,10 +554,12 @@
                 </androidx.cardview.widget.CardView>
                 <!--  -->
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/about"
                     android:layout_width="match_parent"
                     android:layout_height="56dp"
                     android:layout_marginTop="10dp"
                     android:clickable="true"
+                    android:onClick="@{handler.click}"
                     android:foreground="?android:attr/selectableItemBackground"
                     app:cardCornerRadius="8dp"
                     app:cardElevation="0dp">
