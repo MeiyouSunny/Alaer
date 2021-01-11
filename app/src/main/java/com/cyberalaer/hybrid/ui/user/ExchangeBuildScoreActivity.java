@@ -15,13 +15,11 @@ import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseTitleActivity;
 import com.cyberalaer.hybrid.databinding.ActivityExchangeScoreBinding;
 import com.cyberalaer.hybrid.ui.dialog.DialogInputSecondPwd;
+import com.cyberalaer.hybrid.util.NeteaseCaptcha;
 import com.cyberalaer.hybrid.util.NumberUtils;
 import com.cyberalaer.hybrid.util.SimpleTextWatcher;
 import com.cyberalaer.hybrid.util.StringUtil;
 import com.cyberalaer.hybrid.util.ViewUtil;
-import com.netease.nis.captcha.Captcha;
-import com.netease.nis.captcha.CaptchaConfiguration;
-import com.netease.nis.captcha.CaptchaListener;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -140,31 +138,17 @@ public class ExchangeBuildScoreActivity extends BaseTitleActivity<ActivityExchan
     }
 
     private void verifyCode() {
-        final CaptchaConfiguration configuration = new CaptchaConfiguration.Builder()
-                .captchaId(AppConfig.VERIFY_ID)
-                .listener(new CaptchaListener() {
-                    @Override
-                    public void onReady() {
-                    }
+        NeteaseCaptcha.start(getContext(), new NeteaseCaptcha.OnCaptchaListener() {
+            @Override
+            public void onCaptchaSuccess(String validate) {
+                exchangeFruit(validate, mTradePhraseCode);
+            }
 
-                    @Override
-                    public void onValidate(String result, String validate, String msg) {
-                        if (!TextUtils.isEmpty(validate)) {
-                            exchangeFruit(validate, mTradePhraseCode);
-                        }
-                    }
-
-                    @Override
-                    public void onError(String s) {
-                    }
-
-                    @Override
-                    public void onCancel() {
-                    }
-                })
-                .build(getContext());
-        final Captcha captcha = Captcha.getInstance().init(configuration);
-        captcha.validate();
+            @Override
+            public void onCaptchaError(String msg) {
+                $.toast().text(msg).show();
+            }
+        });
     }
 
     private void exchangeFruit(String validate, String tradePhraseCode) {

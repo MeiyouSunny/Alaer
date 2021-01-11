@@ -3,7 +3,6 @@ package com.cyberalaer.hybrid.ui.produce;
 import android.animation.Animator;
 import android.animation.AnimatorInflater;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.widget.ImageView;
 
 import com.alaer.lib.api.ApiUtil;
@@ -16,13 +15,11 @@ import com.alaer.lib.data.UserDataUtil;
 import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseTitleActivity;
 import com.cyberalaer.hybrid.databinding.ActivityProductionHallBinding;
+import com.cyberalaer.hybrid.util.NeteaseCaptcha;
 import com.cyberalaer.hybrid.util.TimeUtil;
 import com.cyberalaer.hybrid.util.ViewUtil;
 import com.cyberalaer.hybrid.view.TextProgressBar;
 import com.meiyou.mvp.MvpBinder;
-import com.netease.nis.captcha.Captcha;
-import com.netease.nis.captcha.CaptchaConfiguration;
-import com.netease.nis.captcha.CaptchaListener;
 
 import java.util.List;
 
@@ -214,32 +211,17 @@ public class ProductionHallActivity extends BaseTitleActivity<ActivityProduction
     }
 
     private void verifyCode() {
-        final CaptchaConfiguration configuration = new CaptchaConfiguration.Builder()
-                .captchaId(AppConfig.VERIFY_ID)
-                .listener(new CaptchaListener() {
-                    @Override
-                    public void onReady() {
-                    }
+        NeteaseCaptcha.start(getContext(), new NeteaseCaptcha.OnCaptchaListener() {
+            @Override
+            public void onCaptchaSuccess(String validate) {
+                finishProduce(validate);
+            }
 
-                    @Override
-                    public void onValidate(String result, String validate, String msg) {
-                        if (!TextUtils.isEmpty(validate)) {
-                            finishProduce(validate);
-                        }
-                    }
-
-                    @Override
-                    public void onError(String s) {
-                    }
-
-                    @Override
-                    public void onCancel() {
-                    }
-                })
-                .build(getContext());
-        final Captcha captcha = Captcha.getInstance().init(configuration);
-        captcha.validate();
-
+            @Override
+            public void onCaptchaError(String msg) {
+                $.toast().text(msg).show();
+            }
+        });
     }
 
     private void onTeamInfoGet() {

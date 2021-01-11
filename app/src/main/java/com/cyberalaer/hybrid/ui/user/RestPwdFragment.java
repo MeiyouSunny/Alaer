@@ -10,14 +10,15 @@ import com.alaer.lib.api.Callback;
 import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseBindFragment;
 import com.cyberalaer.hybrid.databinding.FragmentResetPwdBinding;
+import com.cyberalaer.hybrid.util.NeteaseCaptcha;
 import com.cyberalaer.hybrid.util.SimpleTextWatcher;
 import com.cyberalaer.hybrid.util.ViewUtil;
 import com.meiyou.mvp.MvpBinder;
-import com.netease.nis.captcha.Captcha;
-import com.netease.nis.captcha.CaptchaConfiguration;
-import com.netease.nis.captcha.CaptchaListener;
 
 import likly.dollar.$;
+
+import static com.cyberalaer.hybrid.util.NeteaseCaptcha.STEP1;
+import static com.cyberalaer.hybrid.util.NeteaseCaptcha.STEP2;
 
 @MvpBinder(
 )
@@ -65,44 +66,30 @@ public class RestPwdFragment extends BaseBindFragment<FragmentResetPwdBinding> {
     public void click(View view) {
         switch (view.getId()) {
             case R.id.btnSend:
-                captcha(1);
+                verifyCode(STEP1);
                 break;
             case R.id.confirm:
-                captcha(2);
+                verifyCode(STEP2);
                 break;
         }
     }
 
-    private void captcha(int type) {
-        final CaptchaConfiguration configuration = new CaptchaConfiguration.Builder()
-                .captchaId(AppConfig.VERIFY_ID)
-                .listener(new CaptchaListener() {
-                    @Override
-                    public void onReady() {
-                    }
+    private void verifyCode(@NeteaseCaptcha.STEP int step) {
+        NeteaseCaptcha.start(getContext(), step, new NeteaseCaptcha.OnCaptchaListener() {
+            @Override
+            public void onCaptchaSuccess(String validate) {
+                if (step == STEP1) {
+                    getVerifyCode(validate);
+                } else if (step == STEP2) {
+                    resetPwd(validate);
+                }
+            }
 
-                    @Override
-                    public void onValidate(String result, String validate, String msg) {
-                        if (!TextUtils.isEmpty(validate)) {
-                            if (type == 1) {
-                                getVerifyCode(validate);
-                            } else if (type == 2) {
-                                resetPwd(validate);
-                            }
-                        }
-                    }
-
-                    @Override
-                    public void onError(String s) {
-                    }
-
-                    @Override
-                    public void onCancel() {
-                    }
-                })
-                .build(getContext());
-        final Captcha captcha = Captcha.getInstance().init(configuration);
-        captcha.validate();
+            @Override
+            public void onCaptchaError(String msg) {
+                $.toast().text(msg).show();
+            }
+        });
     }
 
     private void getVerifyCode(String validate) {

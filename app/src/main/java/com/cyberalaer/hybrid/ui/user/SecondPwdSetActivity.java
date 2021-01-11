@@ -13,13 +13,14 @@ import com.alaer.lib.data.UserDataUtil;
 import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseTitleActivity;
 import com.cyberalaer.hybrid.databinding.ActivitySecondPwdSetBinding;
+import com.cyberalaer.hybrid.util.NeteaseCaptcha;
 import com.cyberalaer.hybrid.util.SimpleTextWatcher;
 import com.cyberalaer.hybrid.util.ViewUtil;
-import com.netease.nis.captcha.Captcha;
-import com.netease.nis.captcha.CaptchaConfiguration;
-import com.netease.nis.captcha.CaptchaListener;
 
 import likly.dollar.$;
+
+import static com.cyberalaer.hybrid.util.NeteaseCaptcha.STEP1;
+import static com.cyberalaer.hybrid.util.NeteaseCaptcha.STEP2;
 
 /**
  * 设置二级密码
@@ -75,7 +76,7 @@ public class SecondPwdSetActivity extends BaseTitleActivity<ActivitySecondPwdSet
                 bindRoot.etPwdConfirm.setText("");
                 break;
             case R.id.send:
-                verifyCode(1);
+                verifyCode(STEP1);
                 break;
             case R.id.submit:
                 submit();
@@ -92,7 +93,7 @@ public class SecondPwdSetActivity extends BaseTitleActivity<ActivitySecondPwdSet
             $.toast().text(R.string.pls_get_verify_code_first).show();
             return;
         }
-        verifyCode(2);
+        verifyCode(STEP2);
     }
 
     private void sendPhoneCode(String validate) {
@@ -112,37 +113,22 @@ public class SecondPwdSetActivity extends BaseTitleActivity<ActivitySecondPwdSet
                 });
     }
 
-    // type 1:获取验证码; 2:重置密码
-    private void verifyCode(int type) {
-        final CaptchaConfiguration configuration = new CaptchaConfiguration.Builder()
-                .captchaId(AppConfig.VERIFY_ID)
-                .listener(new CaptchaListener() {
-                    @Override
-                    public void onReady() {
-                    }
+    private void verifyCode(@NeteaseCaptcha.STEP int step) {
+        NeteaseCaptcha.start(getContext(), step, new NeteaseCaptcha.OnCaptchaListener() {
+            @Override
+            public void onCaptchaSuccess(String validate) {
+                if (step == STEP1) {
+                    sendPhoneCode(validate);
+                } else if (step == STEP2) {
+                    resetPwd(validate);
+                }
+            }
 
-                    @Override
-                    public void onValidate(String result, String validate, String msg) {
-                        if (!TextUtils.isEmpty(validate)) {
-                            if (type == 1) {
-                                sendPhoneCode(validate);
-                            } else if (type == 2) {
-                                resetPwd(validate);
-                            }
-                        }
-                    }
-
-                    @Override
-                    public void onError(String s) {
-                    }
-
-                    @Override
-                    public void onCancel() {
-                    }
-                })
-                .build(getContext());
-        final Captcha captcha = Captcha.getInstance().init(configuration);
-        captcha.validate();
+            @Override
+            public void onCaptchaError(String msg) {
+                $.toast().text(msg).show();
+            }
+        });
     }
 
     private void resetPwd(String validate) {
