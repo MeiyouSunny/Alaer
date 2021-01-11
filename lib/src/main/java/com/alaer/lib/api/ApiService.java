@@ -332,6 +332,26 @@ public interface ApiService {
     @POST("/mining/diamond/withdraw")
     Call<String> exchangeFruit(@Part("uuid") String uuid, @Part("uid") String uid, @Part("token") String token, @Part("diamondCurrency") String diamondCurrency,
                                @Part("validate") String validate, @Part("captchaId") String captchaId, @Part("tradePhraseCode") String tradePhraseCode,
+                               @Part("amount") String amount,
                                Callback<String> callback);
+
+    /**
+     * 获取验证码 - 用户中心 (须 Token 授权)
+     * 操作类型：1.邮箱；2.手机
+     */
+    @GET("/user/vcode/uc")
+    Call<String> getPhoneCode(@Query("uuid") String uuid, @Query("uid") String uid, @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
+                              @Query("validate") String validate, @Query("captchaId") String captchaId, @Query("type") int type,
+                              Callback<String> callback);
+
+    /**
+     * 修改交易密码
+     */
+    @FormBody
+    @POST("/user/trade/password")
+    Call<String> resetSecondPwd(@Part("uuid") String uuid, @Part("uid") String uid, @Part("token") String token, @Part("diamondCurrency") String diamondCurrency,
+                                @Part("validate") String validate, @Part("captchaId") String captchaId,
+                                @Part("newFdPassWord") String newFdPassWord, @Part("vercodePhone") String vercodePhone,
+                                Callback<String> callback);
 
 }

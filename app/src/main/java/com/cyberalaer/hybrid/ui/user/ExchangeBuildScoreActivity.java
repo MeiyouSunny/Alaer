@@ -169,11 +169,11 @@ public class ExchangeBuildScoreActivity extends BaseTitleActivity<ActivityExchan
 
     private void exchangeFruit(String validate, String tradePhraseCode) {
         ApiUtil.apiService().exchangeFruit(userData.uuid, String.valueOf(userData.uid), userData.token, AppConfig.DIAMOND_CURRENCY,
-                validate, AppConfig.VERIFY_ID, tradePhraseCode,
+                validate, AppConfig.VERIFY_ID, tradePhraseCode, ViewUtil.getText(bindRoot.etAmount),
                 new Callback<String>() {
                     @Override
-                    public void onResponse(String tradePhraseCode) {
-                        $.toast().text("兑换成功!").show();
+                    public void onResponse(String response) {
+                        $.toast().text(R.string.exchange_success).show();
                         finish();
                     }
 

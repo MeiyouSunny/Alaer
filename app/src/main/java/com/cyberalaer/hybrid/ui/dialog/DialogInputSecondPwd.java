@@ -7,6 +7,7 @@ import android.view.View;
 import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseDialogHolder;
 import com.cyberalaer.hybrid.databinding.DialogInputSecondPwdBinding;
+import com.cyberalaer.hybrid.ui.user.SecondPwdSetActivity;
 import com.cyberalaer.hybrid.util.SimpleTextWatcher;
 import com.cyberalaer.hybrid.util.ViewUtil;
 
@@ -44,6 +45,10 @@ public class DialogInputSecondPwd extends BaseDialogHolder<DialogInputSecondPwdB
             case R.id.confirm:
                 if (listener != null)
                     listener.onConfirmClick(ViewUtil.getText(bindRoot.pwd));
+                dismiss();
+                break;
+            case R.id.forgetPwd:
+                ViewUtil.gotoActivity(getContext(), SecondPwdSetActivity.class);
                 dismiss();
                 break;
         }

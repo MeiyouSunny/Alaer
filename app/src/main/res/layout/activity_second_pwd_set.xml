@@ -72,7 +72,7 @@
                     android:paddingRight="29dp">
 
                     <EditText
-                        android:id="@+id/etWechat"
+                        android:id="@+id/etPwd"
                         android:layout_width="match_parent"
                         android:layout_height="42dp"
                         android:layout_centerVertical="true"
@@ -80,6 +80,7 @@
                         android:layout_toLeftOf="@+id/icClear"
                         android:background="@null"
                         android:hint="@string/pls_input_second_pwd"
+                        android:maxLength="22"
                         android:singleLine="true"
                         android:textColorHint="@color/font_B3"
                         android:textSize="@dimen/font_17" />
@@ -90,6 +91,8 @@
                         android:layout_height="20dp"
                         android:layout_alignParentRight="true"
                         android:layout_centerVertical="true"
+                        android:clickable="true"
+                        android:onClick="@{handler.click}"
                         android:src="@drawable/ic_input_clear" />
 
                 </RelativeLayout>
@@ -113,6 +116,7 @@
                     android:paddingRight="29dp">
 
                     <EditText
+                        android:id="@+id/etPwdConfirm"
                         android:layout_width="match_parent"
                         android:layout_height="42dp"
                         android:layout_centerVertical="true"
@@ -120,6 +124,7 @@
                         android:layout_toLeftOf="@+id/icClear2"
                         android:background="@null"
                         android:hint="@string/pls_input_second_pwd_again"
+                        android:maxLength="22"
                         android:singleLine="true"
                         android:textColorHint="@color/font_B3"
                         android:textSize="@dimen/font_17" />
@@ -130,6 +135,8 @@
                         android:layout_height="20dp"
                         android:layout_alignParentRight="true"
                         android:layout_centerVertical="true"
+                        android:clickable="true"
+                        android:onClick="@{handler.click}"
                         android:src="@drawable/ic_input_clear" />
 
                 </RelativeLayout>
@@ -153,6 +160,7 @@
                     android:paddingRight="24dp">
 
                     <EditText
+                        android:id="@+id/etVerifyCode"
                         android:layout_width="match_parent"
                         android:layout_height="42dp"
                         android:layout_centerVertical="true"
@@ -160,6 +168,8 @@
                         android:layout_toLeftOf="@+id/send"
                         android:background="@null"
                         android:hint="@string/pls_input_phone_verify_code"
+                        android:inputType="number"
+                        android:maxLength="6"
                         android:singleLine="true"
                         android:textColorHint="@color/font_B3"
                         android:textSize="@dimen/font_17" />
@@ -179,7 +189,7 @@
                         android:layout_centerVertical="true"
                         android:background="@drawable/btn_green"
                         android:gravity="center"
-                        android:onClick="@{handler.click"
+                        android:onClick="@{handler.click}"
                         android:text="@string/send"
                         android:textColor="#F9F9F9"
                         android:textSize="@dimen/font_12" />
@@ -202,7 +212,7 @@
                 style="@style/BtnGreen"
                 android:layout_alignParentBottom="true"
                 android:layout_marginBottom="86dp"
-                android:onClick="@{handler.click"
+                android:onClick="@{handler.click}"
                 android:text="@string/submit" />
 
         </RelativeLayout>
