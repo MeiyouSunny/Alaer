@@ -85,7 +85,7 @@ public class UserDataUtil {
     }
 
     public boolean isAuthed() {
-        return mBalanse != null && mBalanse.level > 0;
+        return mTeamDetail != null && mTeamDetail.isAuthSenior > 1 && mTeamDetail.isAuthVideo > 0;
     }
 
 }
