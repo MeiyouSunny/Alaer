@@ -1,4 +1,4 @@
-package com.cyberalaer.hybrid.ui.about;
+package com.cyberalaer.hybrid.ui.setting;
 
 import android.view.View;
 
@@ -30,14 +30,6 @@ public class AboutActivity extends BaseTitleActivity<ActivityAboutBinding> {
     @Override
     public void onViewCreated() {
         super.onViewCreated();
-        setTitleRightVisible(true);
-        setTitleRightIcon(R.drawable.ic_setting);
-        initData();
-    }
-
-    @Override
-    protected void onRestart() {
-        super.onRestart();
         initData();
     }
 

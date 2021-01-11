@@ -468,11 +468,13 @@
 
                 <!--  -->
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/securityCenter"
                     android:layout_width="match_parent"
                     android:layout_height="56dp"
                     android:layout_marginTop="10dp"
                     android:clickable="true"
                     android:foreground="?android:attr/selectableItemBackground"
+                    android:onClick="@{handler.click}"
                     app:cardCornerRadius="8dp"
                     app:cardElevation="0dp">
 
@@ -559,8 +561,8 @@
                     android:layout_height="56dp"
                     android:layout_marginTop="10dp"
                     android:clickable="true"
-                    android:onClick="@{handler.click}"
                     android:foreground="?android:attr/selectableItemBackground"
+                    android:onClick="@{handler.click}"
                     app:cardCornerRadius="8dp"
                     app:cardElevation="0dp">
 

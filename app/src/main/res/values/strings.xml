@@ -252,5 +252,8 @@
     <string name="check_update">检查更新</string>
     <string name="user_agreement">用户协议及隐私政策</string>
 
+    <string name="fingerprint">指纹</string>
+    <string name="phone">手机</string>
+
 
 </resources>

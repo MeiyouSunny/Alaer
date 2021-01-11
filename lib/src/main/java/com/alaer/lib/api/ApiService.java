@@ -5,6 +5,7 @@ import com.alaer.lib.api.bean.AdTask;
 import com.alaer.lib.api.bean.AdVideo;
 import com.alaer.lib.api.bean.Balance;
 import com.alaer.lib.api.bean.BannerList;
+import com.alaer.lib.api.bean.CommonQuestionList;
 import com.alaer.lib.api.bean.FruitBill;
 import com.alaer.lib.api.bean.Notice;
 import com.alaer.lib.api.bean.OrderInfo;
@@ -362,5 +363,13 @@ public interface ApiService {
     @GET("/client/lastest")
     Call<UpdateInfo> checkUpdate(@Query("deviceType") int deviceType,
                                  Callback<UpdateInfo> callback);
+
+    /**
+     * 新手指南常见问题
+     * type 1100：轮播图；1101：新手指南
+     */
+    @GET("/open/slide/query")
+    Call<CommonQuestionList> commonQuestions(@Query("type") int type, @Query("pageIndex") int pageIndex, @Query("pageSize") int pageSize,
+                                             Callback<CommonQuestionList> callback);
 
 }

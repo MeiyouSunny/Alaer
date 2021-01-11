@@ -155,7 +155,11 @@
             android:screenOrientation="portrait"></activity>
 
         <activity
-            android:name=".ui.about.AboutActivity"
+            android:name=".ui.setting.AboutActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name=".ui.setting.SecurityCenterActivity"
             android:screenOrientation="portrait"></activity>
 
         <activity

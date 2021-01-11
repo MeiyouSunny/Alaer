@@ -9,7 +9,6 @@ public class ActiveBillList {
     public int pageIndex;
     public int price;
     public int pageSize;
-    public long stime;
     public List<ActiveBill> list;
 
 }
