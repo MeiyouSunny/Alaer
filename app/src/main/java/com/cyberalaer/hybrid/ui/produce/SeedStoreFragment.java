@@ -16,6 +16,7 @@ import com.cyberalaer.hybrid.base.BaseBindFragment;
 import com.cyberalaer.hybrid.data.SeedDataUtil;
 import com.cyberalaer.hybrid.databinding.FragmentProduceListBinding;
 import com.cyberalaer.hybrid.ui.dialog.DialogBuySeedSuccess;
+import com.cyberalaer.hybrid.view.GradViewItemDecoration;
 
 import java.util.List;
 
@@ -69,6 +70,7 @@ public class SeedStoreFragment extends BaseBindFragment<FragmentProduceListBindi
     private void showData(List<SeedStore> data) {
         if (adapter == null) {
             adapter = new AdapterSeedStore(data, claimNewbieMiner, mHandler);
+            bindRoot.produceList.addItemDecoration(new GradViewItemDecoration(getContext(), 4));
             bindRoot.produceList.setAdapter(adapter);
         } else {
             adapter.setmData(data);

@@ -9,6 +9,7 @@ import com.alaer.lib.data.UserDataUtil;
 import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseBindFragment;
 import com.cyberalaer.hybrid.databinding.FragmentProduceListBinding;
+import com.cyberalaer.hybrid.view.GradViewItemDecoration;
 
 import java.util.List;
 
@@ -50,6 +51,7 @@ public class SeedExpiredFragment extends BaseBindFragment<FragmentProduceListBin
 
     private void showData(List<SeedMine> data) {
         AdapterSeedExpired adapter = new AdapterSeedExpired(data);
+        bindRoot.produceList.addItemDecoration(new GradViewItemDecoration(getContext(), 4));
         bindRoot.produceList.setAdapter(adapter);
     }
 }
