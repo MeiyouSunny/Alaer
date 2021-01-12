@@ -46,7 +46,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:clickable="@{step==-1? true: false}"
-                android:onClick="@{() -> stepHandler.onStep(0)}"
+                android:onClick="@{() -> stepHandler.onStep(-1)}"
                 app:drawableRes="@{step == -1 ? R.drawable.img_produce_step_get_miner : bgPics[step]}" />
 
             <LinearLayout

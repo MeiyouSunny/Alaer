@@ -2,6 +2,8 @@ package com.cyberalaer.hybrid.ui.produce;
 
 import android.animation.Animator;
 import android.animation.AnimatorInflater;
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
 
@@ -9,12 +11,15 @@ import com.alaer.lib.api.ApiUtil;
 import com.alaer.lib.api.AppConfig;
 import com.alaer.lib.api.Callback;
 import com.alaer.lib.api.bean.AdTask;
+import com.alaer.lib.api.bean.AdVideo;
 import com.alaer.lib.api.bean.TeamInfo;
 import com.alaer.lib.api.bean.UserData;
 import com.alaer.lib.data.UserDataUtil;
 import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseTitleActivity;
 import com.cyberalaer.hybrid.databinding.ActivityProductionHallBinding;
+import com.cyberalaer.hybrid.ui.video.VideoActivity;
+import com.cyberalaer.hybrid.util.CollectionUtils;
 import com.cyberalaer.hybrid.util.NeteaseCaptcha;
 import com.cyberalaer.hybrid.util.TimeUtil;
 import com.cyberalaer.hybrid.util.ViewUtil;
@@ -23,6 +28,7 @@ import com.meiyou.mvp.MvpBinder;
 
 import java.util.List;
 
+import androidx.annotation.Nullable;
 import likly.dollar.$;
 
 /**
@@ -34,8 +40,8 @@ public class ProductionHallActivity extends BaseTitleActivity<ActivityProduction
     private UserData mUserData;
     private TeamInfo mTeamInfo;
     private boolean mProgressComplete;
-
     private ImageView[] mStepImages;
+    private AdTask mAdTask;
 
     @Override
     protected int layoutId() {
@@ -63,6 +69,12 @@ public class ProductionHallActivity extends BaseTitleActivity<ActivityProduction
         queryCurrentInfos();
     }
 
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        queryCurrentInfos();
+    }
+
     // 获取任务列表
     private void getAdTasks() {
         ApiUtil.apiService().adTasks(mUserData.uuid, String.valueOf(mUserData.uid), mUserData.token, AppConfig.DIAMOND_CURRENCY, "2",
@@ -71,6 +83,7 @@ public class ProductionHallActivity extends BaseTitleActivity<ActivityProduction
                     public void onResponse(List<AdTask> tasks) {
                         if (tasks != null && tasks.size() > 0) {
                             startTask(tasks.get(0).id);
+                            mAdTask = tasks.get(0);
                         }
                     }
 
@@ -88,7 +101,7 @@ public class ProductionHallActivity extends BaseTitleActivity<ActivityProduction
                 new Callback<String>() {
                     @Override
                     public void onResponse(String response) {
-                        super.onResponse(response);
+                        $.toast().text("加速完成!").show();
                         queryCurrentInfos();
                     }
 
@@ -104,8 +117,7 @@ public class ProductionHallActivity extends BaseTitleActivity<ActivityProduction
                 new Callback<String>() {
                     @Override
                     public void onResponse(String response) {
-                        super.onResponse(response);
-                        speedUp(taskId);
+                        getAdVideos();
                     }
 
                     @Override
@@ -115,9 +127,44 @@ public class ProductionHallActivity extends BaseTitleActivity<ActivityProduction
                 });
     }
 
+    // 获取公告视频
+    private void getAdVideos() {
+        ApiUtil.apiService().getAdVideo(mUserData.uuid, String.valueOf(mUserData.uid), mUserData.token, AppConfig.DIAMOND_CURRENCY, 1,
+                new Callback<List<AdVideo>>() {
+                    @Override
+                    public void onResponse(List<AdVideo> adVideos) {
+                        if (adVideos != null && !CollectionUtils.isEmpty(adVideos)) {
+                            startPlayAdVideo(adVideos.get(0));
+                        }
+                    }
+                });
+    }
+
+    // 播放公告
+    private void startPlayAdVideo(AdVideo adVideo) {
+        VideoActivity.startPlayFroResult(this, adVideo);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == VideoActivity.REQUEST_CODE && resultCode == Activity.RESULT_OK) {
+            // 播放完成,完成任务
+            speedUp(mAdTask.id);
+        } else {
+            $.toast().text("任务未完成!").show();
+        }
+    }
+
     private ProduceStep mProduceStepHandler = new ProduceStep() {
         @Override
         public void onStep(int step) {
+            if (step == -1) {
+                // 领取
+                gotoSeedStore();
+                return;
+            }
+
             if (mTeamInfo.virtualMiner.todayStatus == 2) {
                 $.toast().text(R.string.pls_produce_tomorrow).show();
                 return;
@@ -143,7 +190,7 @@ public class ProductionHallActivity extends BaseTitleActivity<ActivityProduction
                 new Callback<String>() {
                     @Override
                     public void onResponse(String response) {
-                        super.onResponse(response);
+                        queryCurrentInfos();
                     }
                 });
     }
@@ -163,13 +210,7 @@ public class ProductionHallActivity extends BaseTitleActivity<ActivityProduction
     public void click(android.view.View view) {
         switch (view.getId()) {
             case R.id.toBase:
-                if (mTeamInfo != null) {
-                    Bundle bundle = new Bundle();
-                    bundle.putBoolean("claimNewbieMiner", mTeamInfo.claimNewbieMiner);
-                    ViewUtil.gotoActivity(this, SeedStoreActivity.class, bundle);
-                } else {
-                    ViewUtil.gotoActivity(this, SeedStoreActivity.class);
-                }
+                gotoSeedStore();
                 break;
             case R.id.speedUp:
                 if (mTeamInfo != null && mTeamInfo.virtualMiner.todayStatus == 2) {
@@ -178,6 +219,16 @@ public class ProductionHallActivity extends BaseTitleActivity<ActivityProduction
                 }
                 getAdTasks();
                 break;
+        }
+    }
+
+    private void gotoSeedStore() {
+        if (mTeamInfo != null) {
+            Bundle bundle = new Bundle();
+            bundle.putBoolean("claimNewbieMiner", mTeamInfo.claimNewbieMiner);
+            ViewUtil.gotoActivity(this, SeedStoreActivity.class, bundle);
+        } else {
+            ViewUtil.gotoActivity(this, SeedStoreActivity.class);
         }
     }
 
@@ -204,7 +255,6 @@ public class ProductionHallActivity extends BaseTitleActivity<ActivityProduction
                 new Callback<String>() {
                     @Override
                     public void onResponse(String response) {
-                        super.onResponse(response);
                         queryCurrentInfos();
                     }
                 });
@@ -258,6 +308,13 @@ public class ProductionHallActivity extends BaseTitleActivity<ActivityProduction
     private void setUiStep() {
         if (mTeamInfo == null)
             return;
+
+        // 未领取
+        if (!mTeamInfo.claimNewbieMiner) {
+            bindRoot.setStep(-1);
+            return;
+        }
+
         int step = 0;
         int produceStep = mTeamInfo.virtualMiner.step;
         if (mTeamInfo.virtualMiner.todayStatus == 0 || mTeamInfo.virtualMiner.todayStatus == 2) {

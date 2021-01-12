@@ -1,5 +1,6 @@
 package com.cyberalaer.hybrid.ui.video;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.view.WindowManager;
@@ -31,6 +32,12 @@ public class VideoActivity extends BaseViewBindActivity<ActivityVideoBinding> {
         Intent intent = new Intent(fragment.getContext(), VideoActivity.class);
         intent.putExtra("adVideo", adVideo);
         fragment.startActivityForResult(intent, REQUEST_CODE);
+    }
+
+    public static void startPlayFroResult(Activity activity, AdVideo adVideo) {
+        Intent intent = new Intent(activity, VideoActivity.class);
+        intent.putExtra("adVideo", adVideo);
+        activity.startActivityForResult(intent, REQUEST_CODE);
     }
 
     @Override
