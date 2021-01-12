@@ -34,6 +34,7 @@ public class GuideActivity extends BaseViewBindActivity<ActivityGuideBinding> im
             $.config().putBoolean("showGuide", false);
         if (!needShowGuide) {
             ViewUtil.gotoActivity(this, LoginActivity.class);
+            finish();
             return;
         }
 
