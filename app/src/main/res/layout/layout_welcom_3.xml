@@ -31,21 +31,21 @@
 
     </RelativeLayout>
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_start"
         android:layout_width="240dp"
         android:layout_height="40dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginLeft="38dp"
+        android:layout_marginTop="314dp"
+        android:layout_marginRight="38dp"
         android:layout_marginBottom="60dp"
+        android:background="@drawable/btn_green"
         android:letterSpacing="0.2"
-        android:background="@drawable/bg_btn_green_round_corner"
-        android:gravity="center"
+        android:onClick="@{handler.click}"
         android:text="探索阿拉尔"
-        android:clickable="true"
-        android:foreground="?android:attr/selectableItemBackground"
-        android:textColor="@color/black"
-        android:textSize="@dimen/font_16"
-        android:textStyle="bold" />
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_16" />
 
 </RelativeLayout>

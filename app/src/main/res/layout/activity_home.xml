@@ -57,7 +57,8 @@
                         android:clickable="true"
                         android:onClick="@{handler.click}"
                         android:paddingLeft="8dp"
-                        android:paddingRight="14dp">
+                        android:paddingRight="14dp"
+                        android:visibility="@{hasLogin?View.VISIBLE:View.GONE}">
 
                         <ImageView
                             android:id="@+id/icHead"
