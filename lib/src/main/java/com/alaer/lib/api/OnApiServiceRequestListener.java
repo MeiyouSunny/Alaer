@@ -26,7 +26,7 @@ public class OnApiServiceRequestListener implements OnServiceInvokeListener {
     public RequestHolder onServiceInvoke(Method method, RequestHolder requestHolder) {
         // 这里处于发送请求前,可以对请求Url,参数,Header作处理
 
-        if (requestHolder.url() != null && requestHolder.url().contains("mining")) {
+        if (requestHolder.url() != null && requestHolder.url().contains("mining") && UserDataUtil.instance().getTeamDetail() != null) {
             Log.e("Http", "mining");
             doSignForMiningModule(requestHolder);
         }
@@ -66,15 +66,17 @@ public class OnApiServiceRequestListener implements OnServiceInvokeListener {
         params.put("commos", "android");
         params.put("User-Agent", "Alaer/1.0 Android 9 Okhttp");
 
-        final int uid = UserDataUtil.instance().getUserData().uid;
-        if (uid != 0)
-            params.put("commuid", String.valueOf(uid));
-        final String uuid = UserDataUtil.instance().getUserData().uuid;
-        if (!TextUtils.isEmpty(uuid))
-            params.put("commuuid", uuid);
-        final String token = UserDataUtil.instance().getUserData().token;
-        if (!TextUtils.isEmpty(token))
-            params.put("commtoken", token);
+        if (UserDataUtil.instance().getUserData() != null) {
+            final int uid = UserDataUtil.instance().getUserData().uid;
+            if (uid != 0)
+                params.put("commuid", String.valueOf(uid));
+            final String uuid = UserDataUtil.instance().getUserData().uuid;
+            if (!TextUtils.isEmpty(uuid))
+                params.put("commuuid", uuid);
+            final String token = UserDataUtil.instance().getUserData().token;
+            if (!TextUtils.isEmpty(token))
+                params.put("commtoken", token);
+        }
 
         if (requestHolder.method() == HttpMethod.GET || requestHolder.method() == HttpMethod.PUT) {
             requestHolder.headers(params);

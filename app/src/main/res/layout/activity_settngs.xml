@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="handler"
+            type="com.cyberalaer.hybrid.base.BindClickListener" />
+    </data>
+
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical"
+        tools:context=".ui.user.UserInfoActivity">
+
+        <include layout="@layout/layout_title_bar_black" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/bg_gray"
+            android:paddingLeft="16dp"
+            android:paddingTop="10dp"
+            android:paddingRight="16dp">
+
+            <!--  -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="10dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:onClick="@{handler.click}"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="0dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="30dp"
+                    android:paddingRight="32dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/access_point"
+                        android:textColor="@color/font_36"
+                        android:textSize="@dimen/font_16" />
+
+                    <TextView
+                        android:id="@+id/phone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:layout_toLeftOf="@+id/ic_next_uid"
+                        android:textColor="@color/font_7E"
+                        android:textSize="@dimen/font_15"
+                        tools:text="854ms" />
+
+                    <ImageView
+                        android:id="@+id/ic_next_uid"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_item_next_little" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/exit"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginBottom="86dp"
+                android:background="@drawable/btn_green"
+                android:onClick="@{handler.click}"
+                android:text="@string/exit"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_18" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</layout>

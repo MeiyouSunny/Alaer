@@ -372,4 +372,12 @@ public interface ApiService {
     Call<CommonQuestionList> commonQuestions(@Query("type") int type, @Query("pageIndex") int pageIndex, @Query("pageSize") int pageSize,
                                              Callback<CommonQuestionList> callback);
 
+    /**
+     * 退出登录
+     */
+    @FormBody
+    @POST("//user/logout")
+    Call<String> exitAccount(@Part("uuid") String uuid, @Part("uid") String uid, @Part("token") String token, @Part("diamondCurrency") String diamondCurrency,
+                             Callback<String> callback);
+
 }

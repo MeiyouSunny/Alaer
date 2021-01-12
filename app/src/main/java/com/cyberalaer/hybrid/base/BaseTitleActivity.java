@@ -50,6 +50,10 @@ public abstract class BaseTitleActivity<T extends ViewDataBinding> extends BaseV
     @Override
     public void setTitleRightIcon(int icon) {
         titleRight.setImageResource(icon);
+        titleRight.setOnClickListener((view) -> onRightClick());
+    }
+
+    protected void onRightClick() {
     }
 
     @Override

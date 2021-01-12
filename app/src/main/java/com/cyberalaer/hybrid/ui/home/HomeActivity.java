@@ -2,6 +2,7 @@ package com.cyberalaer.hybrid.ui.home;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.Process;
 import android.view.View;
 
 import com.alaer.lib.api.ApiUtil;
@@ -25,6 +26,7 @@ import com.cyberalaer.hybrid.ui.notice.NoticeListActivity;
 import com.cyberalaer.hybrid.ui.produce.ProductionHallActivity;
 import com.cyberalaer.hybrid.ui.task.TaskListFragment;
 import com.cyberalaer.hybrid.ui.travel.TravelHallActivity;
+import com.cyberalaer.hybrid.ui.user.LoginActivity;
 import com.cyberalaer.hybrid.ui.user.UserMineActivity;
 import com.cyberalaer.hybrid.util.CollectionUtils;
 import com.cyberalaer.hybrid.util.ViewUtil;
@@ -36,6 +38,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cn.jzvd.JzvdStd;
+import likly.dollar.$;
 
 @MvpBinder(
         presenter = HomePresenterImpl.class
@@ -55,11 +58,12 @@ public class HomeActivity extends BaseViewBindActivity<ActivityHomeBinding> impl
     public void onViewCreated() {
         super.onViewCreated();
         initMapView();
+        initData();
     }
 
     @Override
-    public void onResume() {
-        super.onResume();
+    protected void onRestart() {
+        super.onRestart();
         initData();
     }
 
@@ -103,6 +107,9 @@ public class HomeActivity extends BaseViewBindActivity<ActivityHomeBinding> impl
             case R.id.layoutUser:
                 ViewUtil.gotoActivity(this, UserMineActivity.class);
                 break;
+            case R.id.layoutNotLogin:
+                ViewUtil.gotoActivity(getContext(), LoginActivity.class);
+                break;
             case R.id.tabMine:
                 ViewUtil.gotoActivity(this, UserMineActivity.class);
                 break;
@@ -131,15 +138,18 @@ public class HomeActivity extends BaseViewBindActivity<ActivityHomeBinding> impl
     Notice mNoticeNew;
 
     private void initData() {
+        UserData userData = UserDataUtil.instance().getUserData();
+        if (userData == null) {
+            bindRoot.setHasLogin(false);
+            return;
+        }
+        bindRoot.setHasLogin(true);
+
         TeamDetail teamDetail = UserDataUtil.instance().getTeamDetail();
         if (teamDetail != null) {
             bindRoot.setUser(teamDetail);
             ViewUtil.showImage(getApplicationContext(), bindRoot.icHead, teamDetail.avatar);
         }
-
-        UserData userData = UserDataUtil.instance().getUserData();
-        if (userData == null)
-            return;
 
         ApiUtil.apiService().getBalance(userData.uuid, String.valueOf(userData.uid), userData.token, AppConfig.DIAMOND_CURRENCY,
                 new Callback<Balance>() {
@@ -160,6 +170,23 @@ public class HomeActivity extends BaseViewBindActivity<ActivityHomeBinding> impl
                         }
                     }
                 });
+    }
+
+    @Override
+    public void onBackPressed() {
+        backToExit();
+    }
+
+    private long exitTime = 0;
+
+    private void backToExit() {
+        // 再次点击返回键退出程序
+        if ((System.currentTimeMillis() - exitTime) > 2000) {
+            $.toast().text(R.string.press_twice_exit).show();
+            exitTime = System.currentTimeMillis();
+        } else {
+            Process.killProcess(Process.myPid());
+        }
     }
 
 }

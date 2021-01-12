@@ -254,6 +254,11 @@
 
     <string name="fingerprint">指纹</string>
     <string name="phone">手机</string>
+    <string name="system_settings">系统设置</string>
+    <string name="access_point">接入点</string>
+    <string name="exit">退出</string>
+    <string name="account_heve_exit">账号已退出</string>
+    <string name="press_twice_exit">再按一次返回退出阿拉尔!</string>
 
 
 </resources>

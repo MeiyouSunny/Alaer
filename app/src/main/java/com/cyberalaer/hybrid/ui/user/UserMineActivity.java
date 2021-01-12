@@ -16,6 +16,7 @@ import com.cyberalaer.hybrid.base.BaseTitleActivity;
 import com.cyberalaer.hybrid.databinding.ActivityUserMineBinding;
 import com.cyberalaer.hybrid.ui.setting.AboutActivity;
 import com.cyberalaer.hybrid.ui.setting.SecurityCenterActivity;
+import com.cyberalaer.hybrid.ui.setting.SettingActivity;
 import com.cyberalaer.hybrid.ui.share.ShareActivity;
 import com.cyberalaer.hybrid.util.NumberUtils;
 import com.cyberalaer.hybrid.util.ViewUtil;
@@ -95,6 +96,11 @@ public class UserMineActivity extends BaseTitleActivity<ActivityUserMineBinding>
         ViewUtil.setText(bindRoot.scoreFruit, NumberUtils.instance().parseNumber(balance.diamond.amount));
         ViewUtil.setText(bindRoot.scoreBuild, NumberUtils.instance().parseNumber(balance.money.amount));
         ViewUtil.setText(bindRoot.level, getResources().getStringArray(R.array.person_level)[balance.level]);
+    }
+
+    @Override
+    protected void onRightClick() {
+        ViewUtil.gotoActivity(getContext(), SettingActivity.class);
     }
 
     @Override

@@ -23,14 +23,10 @@ public class UserDataUtil {
     private Balance mBalanse;
 
     public UserData getUserData() {
-        if (mUserData == null)
-            mUserData = new UserData();
         return mUserData;
     }
 
     public TeamDetail getTeamDetail() {
-        if (mTeamDetail == null)
-            mTeamDetail = new TeamDetail();
         return mTeamDetail;
     }
 
@@ -44,7 +40,11 @@ public class UserDataUtil {
 
     public void saveUserDataInfo(UserData userData) {
         mUserData = userData;
-        final String saveJson = $.json().toJson(userData);
+        String saveJson;
+        if (userData == null)
+            saveJson = "";
+        else
+            saveJson = $.json().toJson(userData);
         $.config().putString("userData", saveJson);
     }
 
@@ -61,7 +61,11 @@ public class UserDataUtil {
 
     public void saveTeamDetailInfo(TeamDetail teamDetail) {
         mTeamDetail = teamDetail;
-        final String saveJson = $.json().toJson(teamDetail);
+        String saveJson;
+        if (teamDetail == null)
+            saveJson = "";
+        else
+            saveJson = $.json().toJson(teamDetail);
         $.config().putString("teamDetail", saveJson);
     }
 
@@ -86,6 +90,12 @@ public class UserDataUtil {
 
     public boolean isAuthed() {
         return mTeamDetail != null && mTeamDetail.isAuthSenior > 1 && mTeamDetail.isAuthVideo > 0;
+    }
+
+    public void clearUserDatas() {
+        saveTeamDetailInfo(null);
+        saveUserDataInfo(null);
+        mBalanse = null;
     }
 
 }

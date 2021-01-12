@@ -5,6 +5,12 @@
 
     <data>
 
+        <import type="android.view.View" />
+
+        <variable
+            name="hasLogin"
+            type="boolean" />
+
         <variable
             name="handler"
             type="com.cyberalaer.hybrid.base.BindClickListener" />
@@ -61,16 +67,6 @@
                             android:src="@drawable/ic_head_default_boy" />
 
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
-                            android:layout_marginLeft="48dp"
-                            android:text="点击登录"
-                            android:textColor="@color/white"
-                            android:textSize="@dimen/font_15"
-                            android:visibility="gone" />
-
-                        <TextView
                             android:id="@+id/nameLabel"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -113,6 +109,37 @@
                             android:textColor="@color/white"
                             android:textSize="@dimen/font_11"
                             tools:text="0" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/layoutNotLogin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="52dp"
+                        android:layout_below="@+id/notice"
+                        android:layout_marginTop="18dp"
+                        android:background="@drawable/bg_gray_round_corner2"
+                        android:clickable="true"
+                        android:onClick="@{handler.click}"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="14dp"
+                        android:visibility="@{hasLogin?View.GONE:View.VISIBLE}">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/ic_head_default_boy" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="48dp"
+                            android:text="点击登录"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/font_15" />
+
 
                     </RelativeLayout>
 
