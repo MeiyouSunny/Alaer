@@ -8,6 +8,7 @@ import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseViewBindActivity;
 import com.cyberalaer.hybrid.databinding.ActivityGuideBinding;
 import com.cyberalaer.hybrid.ui.home.HomeActivity;
+import com.cyberalaer.hybrid.ui.user.LoginActivity;
 import com.cyberalaer.hybrid.util.ViewUtil;
 
 import java.util.ArrayList;
@@ -15,6 +16,7 @@ import java.util.List;
 
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
+import likly.dollar.$;
 
 public class GuideActivity extends BaseViewBindActivity<ActivityGuideBinding> implements ViewPager.OnPageChangeListener, View.OnClickListener {
 
@@ -25,6 +27,16 @@ public class GuideActivity extends BaseViewBindActivity<ActivityGuideBinding> im
 
     @Override
     public void onViewCreated() {
+        super.onViewCreated();
+
+        boolean needShowGuide = $.config().getBoolean("showGuide", true);
+        if (needShowGuide)
+            $.config().putBoolean("showGuide", false);
+        if (!needShowGuide) {
+            ViewUtil.gotoActivity(this, LoginActivity.class);
+            return;
+        }
+
         setGuideView();
     }
 
