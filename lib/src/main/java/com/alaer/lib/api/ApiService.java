@@ -380,4 +380,15 @@ public interface ApiService {
     Call<String> exitAccount(@Part("uuid") String uuid, @Part("uid") String uid, @Part("token") String token, @Part("diamondCurrency") String diamondCurrency,
                              Callback<String> callback);
 
+    /**
+     * 更新用户信息
+     * key: name, avatar, wechat, code
+     */
+    @FormBody
+    @PUT("/mining/team/info/meta")
+    Call<String> modifyProfile(@Query("uuid") String uuid, @Query("uid") String uid, @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
+                               @Query("validate") String validate, @Query("captchaId") String captchaId, @Query("tradePhraseCode") String tradePhraseCode,
+                               @Query("key") String key, @Query("value") String value,
+                               Callback<String> callback);
+
 }

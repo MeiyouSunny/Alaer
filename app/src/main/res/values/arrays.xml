@@ -32,7 +32,7 @@
         <item>二级市民</item>
         <item>三级市民</item>
     </string-array>
-    
+
     <string-array name="set_profile_title">
         <item>微信号设置</item>
         <item>邀请码设置</item>
@@ -62,5 +62,11 @@
         <item>@drawable/ic_invitation_code</item>
         <item>@drawable/ic_auth_mine</item>
     </array>
+
+    <string-array name="set_profile_key">
+        <item>wechat</item>
+        <item>code</item>
+        <item>name</item>
+    </string-array>
 
 </resources>

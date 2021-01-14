@@ -1,5 +1,6 @@
 package com.cyberalaer.hybrid.ui.user;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -13,6 +14,8 @@ import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseTitleActivity;
 import com.cyberalaer.hybrid.databinding.ActivityUserInfoBinding;
 import com.cyberalaer.hybrid.util.ViewUtil;
+
+import androidx.annotation.Nullable;
 
 /**
  * 用户信息
@@ -42,14 +45,10 @@ public class UserInfoActivity extends BaseTitleActivity<ActivityUserInfoBinding>
         if (userData == null)
             return;
 
-        ApiUtil.apiService().getTeamDetailInfo(userData.uuid, String.valueOf(userData.uid), userData.token, AppConfig.DIAMOND_CURRENCY,
-                new Callback<TeamDetail>() {
-                    @Override
-                    public void onResponse(TeamDetail teamDetail) {
-                        UserDataUtil.instance().setTeamDetail(teamDetail);
-                        bindRoot.setUser(teamDetail);
-                    }
-                });
+        TeamDetail teamDetail = UserDataUtil.instance().getTeamDetail();
+        if (teamDetail != null) {
+            bindRoot.setUser(teamDetail);
+        }
 
         ApiUtil.apiService().getFollowInfo(userData.uuid, String.valueOf(userData.uid), userData.token, AppConfig.DIAMOND_CURRENCY,
                 new Callback<TeamDetail>() {
@@ -89,6 +88,14 @@ public class UserInfoActivity extends BaseTitleActivity<ActivityUserInfoBinding>
         Bundle data = new Bundle();
         data.putSerializable("inviter", mInviterInfo);
         ViewUtil.gotoActivity(getContext(), InviterInfoActivity.class, data);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == SetProfileActivity.REQUST_CODE && resultCode == RESULT_OK) {
+            getData();
+        }
     }
 
 }

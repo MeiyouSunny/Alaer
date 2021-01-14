@@ -9,7 +9,7 @@ public class TeamDetail implements Serializable {
     public int diamond;
     public int hierarchy;
     public int action;
-    public Object wechat;
+    public String wechat;
     public String name;
     public String uname;
     public String avatar;

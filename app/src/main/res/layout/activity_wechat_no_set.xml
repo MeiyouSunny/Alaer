@@ -92,6 +92,7 @@
                         android:layout_height="20dp"
                         android:layout_alignParentRight="true"
                         android:layout_centerVertical="true"
+                        android:onClick="@{handler.click}"
                         android:src="@drawable/ic_input_clear" />
 
                 </RelativeLayout>
@@ -114,7 +115,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_marginBottom="86dp"
                 android:enabled="false"
-                android:onClick="@{handler.click"
+                android:onClick="@{handler.click}"
                 android:text="@string/submit" />
 
         </RelativeLayout>

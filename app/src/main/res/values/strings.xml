@@ -261,6 +261,7 @@
     <string name="press_twice_exit">再按一次返回退出阿拉尔!</string>
     <string name="agree_and_continur">同意并继续</string>
     <string name="not_agreement">不同意</string>
+    <string name="modify_success">修改成功!</string>
 
 
 </resources>

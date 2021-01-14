@@ -7,15 +7,30 @@ import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextUtils;
+import android.view.Gravity;
 import android.view.View;
 
+import com.alaer.lib.api.ApiUtil;
+import com.alaer.lib.api.AppConfig;
+import com.alaer.lib.api.Callback;
+import com.alaer.lib.api.bean.TeamDetail;
+import com.alaer.lib.api.bean.UserData;
+import com.alaer.lib.data.UserDataUtil;
 import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseTitleActivity;
 import com.cyberalaer.hybrid.databinding.ActivityWechatNoSetBinding;
+import com.cyberalaer.hybrid.ui.dialog.DialogInputSecondPwd;
+import com.cyberalaer.hybrid.util.NeteaseCaptcha;
 import com.cyberalaer.hybrid.util.SimpleTextWatcher;
+import com.cyberalaer.hybrid.util.StringUtil;
 import com.cyberalaer.hybrid.util.ViewUtil;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import androidx.annotation.IntDef;
+import likly.dialogger.Dialogger;
+import likly.dollar.$;
 
 /**
  * 用户属性设置:微信/邀请码/昵称
@@ -33,6 +48,7 @@ public class SetProfileActivity extends BaseTitleActivity<ActivityWechatNoSetBin
     }
 
     int type;
+    String key;
 
     public static void start(Activity context, @TYPE int type) {
         Intent intent = new Intent(context, SetProfileActivity.class);
@@ -41,6 +57,9 @@ public class SetProfileActivity extends BaseTitleActivity<ActivityWechatNoSetBin
         intent.putExtras(bundle);
         context.startActivityForResult(intent, REQUST_CODE);
     }
+
+    UserData userData;
+    String mTradePhraseCode;
 
     @Override
     protected int titleResId() {
@@ -56,6 +75,8 @@ public class SetProfileActivity extends BaseTitleActivity<ActivityWechatNoSetBin
     public void onViewCreated() {
         super.onViewCreated();
 
+        userData = UserDataUtil.instance().getUserData();
+
         type = getIntent().getIntExtra("type", 0);
 
         final Resources resources = getResources();
@@ -65,6 +86,8 @@ public class SetProfileActivity extends BaseTitleActivity<ActivityWechatNoSetBin
         final String profileConsume = resources.getStringArray(R.array.set_profile_consume)[type];
         TypedArray typedArray = resources.obtainTypedArray(R.array.set_profile_icon);
         final int iconResId = typedArray.getResourceId(type, 0);
+        key = resources.getStringArray(R.array.set_profile_key)[type];
+
         setTitleText(title);
         bindRoot.titleBelow.setText(title);
         bindRoot.profileDesc.setText(profileDesc);
@@ -78,6 +101,24 @@ public class SetProfileActivity extends BaseTitleActivity<ActivityWechatNoSetBin
                 bindRoot.submit.setEnabled(!TextUtils.isEmpty(ViewUtil.getText(bindRoot.input)));
             }
         });
+
+        TeamDetail userData = UserDataUtil.instance().getTeamDetail();
+        if (userData == null)
+            return;
+        String inputContent = "";
+        switch (type) {
+            case WECHAT:
+                inputContent = userData.wechat;
+                break;
+            case INVITATE_CODE:
+                inputContent = userData.code;
+                break;
+            case NIKE_NAME:
+                inputContent = userData.name;
+                break;
+        }
+        if (!TextUtils.isEmpty(inputContent))
+            bindRoot.input.setText(inputContent);
     }
 
     @Override
@@ -87,13 +128,89 @@ public class SetProfileActivity extends BaseTitleActivity<ActivityWechatNoSetBin
                 bindRoot.input.setText("");
                 break;
             case R.id.submit:
-                setWecahtNo();
+                showSecondPwdDialog();
                 break;
         }
     }
 
-    private void setWecahtNo() {
+    private void showSecondPwdDialog() {
+        DialogInputSecondPwd dialog = new DialogInputSecondPwd();
+        dialog.setListener(pwd -> confirmTransactionCode(pwd));
+        Dialogger.newDialog(getContext()).holder(dialog).gravity(Gravity.CENTER).cancelable(false).show();
+    }
 
+    private void confirmTransactionCode(String pwd) {
+        if (userData == null)
+            return;
+
+        final String pwdMD5 = StringUtil.toMD5(pwd + AppConfig.MD5_KEY_TEMP_SECOND + userData.uid);
+        ApiUtil.apiService().confirmTransactionCode(userData.uuid, String.valueOf(userData.uid), userData.token, AppConfig.DIAMOND_CURRENCY, pwdMD5,
+                new Callback<String>() {
+                    @Override
+                    public void onResponse(String json) {
+                        if (!TextUtils.isEmpty(json)) {
+                            JSONObject jsonObject = null;
+                            try {
+                                jsonObject = new JSONObject(json);
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                            if (jsonObject.has("code")) {
+                                mTradePhraseCode = jsonObject.optString("code");
+                                verifyCode();
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onError(int code, String msg) {
+                        $.toast().text(msg).show();
+                    }
+                });
+    }
+
+    private void verifyCode() {
+        NeteaseCaptcha.start(getContext(), new NeteaseCaptcha.OnCaptchaListener() {
+            @Override
+            public void onCaptchaSuccess(String validate) {
+                modifyProfile(validate, mTradePhraseCode);
+            }
+
+            @Override
+            public void onCaptchaError(String msg) {
+                $.toast().text(msg).show();
+            }
+        });
+    }
+
+    private void modifyProfile(String validate, String tradePhraseCode) {
+        ApiUtil.apiService().modifyProfile(userData.uuid, String.valueOf(userData.uid), userData.token, AppConfig.DIAMOND_CURRENCY,
+                validate, AppConfig.VERIFY_ID, tradePhraseCode,
+                key, ViewUtil.getText(bindRoot.input),
+                new Callback<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        $.toast().text(R.string.modify_success).show();
+                        refreshProfile();
+                    }
+
+                    @Override
+                    public void onError(int code, String msg) {
+                        $.toast().text(msg).show();
+                    }
+                });
+    }
+
+    private void refreshProfile() {
+        ApiUtil.apiService().getTeamDetailInfo(userData.uuid, String.valueOf(userData.uid), userData.token, AppConfig.DIAMOND_CURRENCY,
+                new Callback<TeamDetail>() {
+                    @Override
+                    public void onResponse(TeamDetail teamDetail) {
+                        UserDataUtil.instance().saveTeamDetailInfo(teamDetail);
+                        setResult(RESULT_OK);
+                        finish();
+                    }
+                });
     }
 
 }
