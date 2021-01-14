@@ -1,5 +1,6 @@
 package com.cyberalaer.hybrid.ui.welcom;
 
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -7,6 +8,7 @@ import android.view.ViewGroup;
 import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseViewBindActivity;
 import com.cyberalaer.hybrid.databinding.ActivityGuideBinding;
+import com.cyberalaer.hybrid.ui.dialog.DialogUserAgreement;
 import com.cyberalaer.hybrid.ui.home.HomeActivity;
 import com.cyberalaer.hybrid.ui.user.LoginActivity;
 import com.cyberalaer.hybrid.util.ViewUtil;
@@ -16,6 +18,7 @@ import java.util.List;
 
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
+import likly.dialogger.Dialogger;
 import likly.dollar.$;
 
 public class GuideActivity extends BaseViewBindActivity<ActivityGuideBinding> implements ViewPager.OnPageChangeListener, View.OnClickListener {
@@ -99,6 +102,10 @@ public class GuideActivity extends BaseViewBindActivity<ActivityGuideBinding> im
     @Override
     public void onPageSelected(int position) {
         bindRoot.setIndicatorIndex(position);
+        if (position == 2) {
+            Dialogger.newDialog(getContext()).holder(new DialogUserAgreement())
+                    .gravity(Gravity.CENTER).cancelable(false).show();
+        }
     }
 
     @Override

@@ -15,5 +15,28 @@
     <string name="level6">六级数字市民团队</string>
     <string name="level_desc">1、分享实名1人\n 2、团活跃度1点</string>
 
+    <string name="user_agreement_html">
+       &lt;div>
+          &lt;p>
+            &lt;span>感谢您申请阿拉尔数字市民，欢迎您使用阿拉尔App! &lt;/span>
+    &lt;/p >
+          &lt;p>
+            &lt;span>我们非常重视您作为阿拉尔数字市民的个人信息和隐私保护。&lt;/span>
+    &lt;span>为了更好地保障您的权益，在使用产品前，请务必审慎阅读
+              &lt;a href="agreement://" class="text-blue">《用户协议和隐私条款》&lt;/a>内的所有条款，尤其是：
+    &lt;/span>
+    &lt;/p >
+    &lt;p>1. 我们对您的个人信息的收集/保存/使用/对外提供/保护等规则条款，以及您的用户权利等条款；&lt;/p >
+    &lt;p>2. 约定我们的限制责任、免责条款；&lt;/p >
+    &lt;p>3. 其它的以颜色、下划线或加粗进行标识的重要条款。&lt;/p>
+    &lt;p>如你对以上协议有任何疑问，可通过人工客服与我们联系。您点击「同意并继续」的行为即表示您已阅读完毕并同意以上协议的全部内容。&lt;/p>
+    &lt;p>
+    &lt;span>
+              如您同意以上协议内容，请点击「同意并继续」，请开始使用我们的产品和服务，开启您的数字市民之旅吧~
+    &lt;/span>
+    &lt;/p>
+    &lt;/div>
+    </string>
+
 
 </resources>
