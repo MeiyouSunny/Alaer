@@ -32,5 +32,35 @@
         <item>二级市民</item>
         <item>三级市民</item>
     </string-array>
+    
+    <string-array name="set_profile_title">
+        <item>微信号设置</item>
+        <item>邀请码设置</item>
+        <item>昵称设置</item>
+    </string-array>
+
+    <string-array name="set_profile_desc">
+        <item>微信号设置后，将公开给上下级用户查看</item>
+        <item>设置个性化邀请码，方便邀请好友</item>
+        <item>设置个性昵称</item>
+    </string-array>
+
+    <string-array name="set_profile_input_hint">
+        <item>请输入微信号</item>
+        <item>请输入邀请码</item>
+        <item>请输入昵称</item>
+    </string-array>
+
+    <string-array name="set_profile_consume">
+        <item>修改微信号将小号10积分，请谨慎设置</item>
+        <item>设置邀请码需要花费1果实</item>
+        <item>设置昵称需要花费1果实，首次免费</item>
+    </string-array>
+
+    <array name="set_profile_icon">
+        <item>@drawable/ic_wechat</item>
+        <item>@drawable/ic_invitation_code</item>
+        <item>@drawable/ic_auth_mine</item>
+    </array>
 
 </resources>

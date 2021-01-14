@@ -130,6 +130,9 @@
                     app:cardElevation="0dp">
 
                     <RelativeLayout
+                        android:id="@+id/setNikeName"
+                        android:clickable="true"
+                        android:onClick="@{handler.click}"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:paddingLeft="29dp"
@@ -186,6 +189,9 @@
                     app:cardElevation="0dp">
 
                     <RelativeLayout
+                        android:id="@+id/setInvitateCode"
+                        android:clickable="true"
+                        android:onClick="@{handler.click}"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:paddingLeft="29dp"

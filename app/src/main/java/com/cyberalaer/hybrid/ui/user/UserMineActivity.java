@@ -17,7 +17,6 @@ import com.cyberalaer.hybrid.databinding.ActivityUserMineBinding;
 import com.cyberalaer.hybrid.ui.setting.AboutActivity;
 import com.cyberalaer.hybrid.ui.setting.SecurityCenterActivity;
 import com.cyberalaer.hybrid.ui.setting.SettingActivity;
-import com.cyberalaer.hybrid.ui.share.ShareActivity;
 import com.cyberalaer.hybrid.util.NumberUtils;
 import com.cyberalaer.hybrid.util.ViewUtil;
 
@@ -110,13 +109,13 @@ public class UserMineActivity extends BaseTitleActivity<ActivityUserMineBinding>
                 ViewUtil.gotoActivity(this, UserInfoActivity.class);
                 break;
             case R.id.wechat:
-                ViewUtil.gotoActivity(this, WechatNoSetActivity.class);
+                SetProfileActivity.start(this, SetProfileActivity.WECHAT);
+                break;
+            case R.id.invitationCode:
+                SetProfileActivity.start(this, SetProfileActivity.INVITATE_CODE);
                 break;
             case R.id.myPartner:
                 ViewUtil.gotoActivity(this, MyTeamActivity.class);
-                break;
-            case R.id.invitationCode:
-                ViewUtil.gotoActivity(this, ShareActivity.class);
                 break;
             case R.id.fruitBill:
                 if (mBalance != null) {

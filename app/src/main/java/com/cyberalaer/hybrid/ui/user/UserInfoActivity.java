@@ -69,7 +69,13 @@ public class UserInfoActivity extends BaseTitleActivity<ActivityUserInfoBinding>
     public void click(View view) {
         switch (view.getId()) {
             case R.id.setWechat:
-                goToSetWechat();
+                SetProfileActivity.start(this, SetProfileActivity.WECHAT);
+                break;
+            case R.id.setInvitateCode:
+                SetProfileActivity.start(this, SetProfileActivity.INVITATE_CODE);
+                break;
+            case R.id.setNikeName:
+                SetProfileActivity.start(this, SetProfileActivity.NIKE_NAME);
                 break;
             case R.id.inviterInfo:
                 goToInviterInfo();
@@ -83,10 +89,6 @@ public class UserInfoActivity extends BaseTitleActivity<ActivityUserInfoBinding>
         Bundle data = new Bundle();
         data.putSerializable("inviter", mInviterInfo);
         ViewUtil.gotoActivity(getContext(), InviterInfoActivity.class, data);
-    }
-
-    private void goToSetWechat() {
-        ViewUtil.gotoActivity(getContext(), WechatNoSetActivity.class);
     }
 
 }

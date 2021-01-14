@@ -128,7 +128,7 @@
             android:screenOrientation="portrait"></activity>
 
         <activity
-            android:name=".ui.user.WechatNoSetActivity"
+            android:name=".ui.user.SetProfileActivity"
             android:screenOrientation="portrait"></activity>
 
         <activity
