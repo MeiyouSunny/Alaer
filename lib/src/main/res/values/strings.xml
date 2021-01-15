@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Library</string>
+    <string name="network_not_available">当前网络不可用!</string>
+</resources>

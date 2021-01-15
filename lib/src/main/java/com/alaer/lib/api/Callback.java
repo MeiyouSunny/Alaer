@@ -3,6 +3,11 @@ package com.alaer.lib.api;
 import android.text.TextUtils;
 import android.util.Log;
 
+import com.alaer.lib.R;
+import com.alaer.lib.util.NetworkUtil;
+
+import likly.dollar.$;
+
 public abstract class Callback<T> implements likly.reverse.Callback<T> {
 
     @Override
@@ -51,14 +56,12 @@ public abstract class Callback<T> implements likly.reverse.Callback<T> {
 
     public boolean isNetworkAvailable() {
         // 网络判断
-//        boolean available = NetworkUtil.isNetworkAvailable();
-//        if (!available) {
-//            $.toast().text(R.string.network_not_available).show();
-//        }
-//
-//        return available;
+        boolean available = NetworkUtil.isNetworkAvailable();
+        if (!available) {
+            $.toast().text(R.string.network_not_available).show();
+        }
 
-        return true;
+        return available;
     }
 
 }
