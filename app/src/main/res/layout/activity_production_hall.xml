@@ -35,6 +35,7 @@
         android:layout_height="match_parent"
         android:background="@drawable/bg_produce_day"
         android:fitsSystemWindows="true"
+        android:clipToPadding="true"
         tools:context=".ui.produce.ProductionHallActivity">
 
         <RelativeLayout

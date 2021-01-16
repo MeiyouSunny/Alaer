@@ -13,14 +13,14 @@
     <LinearLayout xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
-        android:fitsSystemWindows="true"
-        android:orientation="vertical"
-        tools:context=".ui.user.UserMineActivity">
+        android:fitsSystemWindows="false"
+        android:orientation="vertical">
 
         <RelativeLayout
             android:layout_width="match_parent"
+            android:fitsSystemWindows="true"
             android:layout_height="180dp"
+            android:clipToPadding="false"
             android:background="@drawable/img_userinfo_top">
 
             <include layout="@layout/layout_title_bar_black" />

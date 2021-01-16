@@ -2,14 +2,28 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@android:color/transparent</item>
+        <item name="colorPrimaryDark">@android:color/transparent</item>
+        <item name="colorAccent">@android:color/transparent</item>
 
         <!-- AppCompatEditText默认状态状态设置底线颜色 -->
-        <item name="colorControlNormal">#66FFFFFF</item>
+        <item name="colorControlNormal">@color/font_green</item>
         <!-- AppCompatEditText选择的底线颜色 -->
-        <item name="colorControlActivated">#66FFFFFF</item>
+        <item name="colorControlActivated">@color/font_green</item>
+    </style>
+
+
+    <style name="AppTheme.TransparentStausBar" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="windowActionBar">false</item>
+        //取消系统默认的actionBar
+        <item name="windowNoTitle">true</item>
+        //取消actionBar的标题
+        <item name="android:windowTranslucentStatus">false</item>
+        //允许页面可以拉伸到顶部状态栏并且定义顶部状态栏透明，安卓4.4才有
+        <item name="android:windowTranslucentNavigation">true</item>
+        //设置虚拟键透明
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        //设置状态栏的颜色为透明
     </style>
 
 </resources>

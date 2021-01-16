@@ -25,14 +25,13 @@
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:fitsSystemWindows="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:fitsSystemWindows="true"
-            tools:context=".HomeActivity">
+            android:layout_height="match_parent">
 
             <RelativeLayout
                 android:layout_width="match_parent"

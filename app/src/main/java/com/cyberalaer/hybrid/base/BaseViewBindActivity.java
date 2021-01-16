@@ -1,11 +1,10 @@
 package com.cyberalaer.hybrid.base;
 
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
 import android.view.WindowManager;
 
+import com.jaeger.library.StatusBarUtil;
 import com.meiyou.mvp.BaseActivity;
 
 import java.lang.reflect.Method;
@@ -28,6 +27,7 @@ public abstract class BaseViewBindActivity<T extends ViewDataBinding> extends Ba
     protected void initView() {
         setStatusBar();
         bindRoot = (T) DataBindingUtil.setContentView(this, layoutId());
+
         setEventHandler();
     }
 
@@ -39,11 +39,18 @@ public abstract class BaseViewBindActivity<T extends ViewDataBinding> extends Ba
     protected abstract int layoutId();
 
     private void setStatusBar() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            Window window = getWindow();
-            window.setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS,
-                    WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-        }
+//        int option = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+//                | View.SYSTEM_UI_FLAG_LAYOUT_STABLE;
+//        getWindow().getDecorView().setSystemUiVisibility(option);
+//
+//        getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+//        getWindow().setStatusBarColor(Color.TRANSPARENT);
+
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+//        getWindow().setNavigationBarColor(Color.TRANSPARENT);
+
+//        StatusBarUtil.setTransparent(this);
+        StatusBarUtil.setLightMode(this);
     }
 
     private void setEventHandler() {

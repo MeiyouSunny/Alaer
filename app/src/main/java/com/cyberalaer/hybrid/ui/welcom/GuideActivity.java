@@ -1,5 +1,6 @@
 package com.cyberalaer.hybrid.ui.welcom;
 
+import android.os.Handler;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -103,8 +104,13 @@ public class GuideActivity extends BaseViewBindActivity<ActivityGuideBinding> im
     public void onPageSelected(int position) {
         bindRoot.setIndicatorIndex(position);
         if (position == 2) {
-            Dialogger.newDialog(getContext()).holder(new DialogUserAgreement())
-                    .gravity(Gravity.CENTER).cancelable(false).show();
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    Dialogger.newDialog(getContext()).holder(new DialogUserAgreement())
+                            .gravity(Gravity.CENTER).cancelable(false).show();
+                }
+            }, 1000);
         }
     }
 
