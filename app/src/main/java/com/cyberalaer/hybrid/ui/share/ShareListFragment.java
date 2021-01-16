@@ -9,6 +9,8 @@ import com.alaer.lib.data.UserDataUtil;
 import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseBindFragment;
 import com.cyberalaer.hybrid.databinding.FragmentShareListBinding;
+import com.cyberalaer.hybrid.util.QRCodeEncoder;
+import com.cyberalaer.hybrid.util.ThreadUtil;
 import com.cyberalaer.hybrid.view.GradViewItemDecoration;
 
 /**
@@ -39,6 +41,11 @@ public class ShareListFragment extends BaseBindFragment<FragmentShareListBinding
         adapter = new AdapterShare(UserDataUtil.instance().getUserData(), UserDataUtil.instance().getTeamDetail(), this);
         bindRoot.list.addItemDecoration(new GradViewItemDecoration(getContext(), 4));
         bindRoot.list.setAdapter(adapter);
+
+        ThreadUtil.runThread(() -> {
+            final Bitmap qrCode = QRCodeEncoder.createQRCode(UserDataUtil.instance().getTeamDetail().inviteUrl, 100);
+            ThreadUtil.runUIThread(() -> adapter.refreshQrCode(qrCode));
+        });
 
     }
 

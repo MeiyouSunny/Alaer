@@ -1,18 +1,20 @@
 package com.cyberalaer.hybrid.ui.share;
 
 import android.graphics.Bitmap;
+import android.os.Build;
+import android.os.MessageQueue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.alaer.lib.api.AppConfig;
 import com.alaer.lib.api.bean.TeamDetail;
 import com.alaer.lib.api.bean.UserData;
 import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.databinding.ItemShareBinding;
-import com.cyberalaer.hybrid.util.QRCodeEncoder;
+import com.cyberalaer.hybrid.util.ThreadUtil;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -32,6 +34,11 @@ public class AdapterShare extends RecyclerView.Adapter<AdapterShare.ViewHolder> 
         this.shareHandler = shareHandler;
     }
 
+    public void refreshQrCode(Bitmap qrCode) {
+        this.qrCode = qrCode;
+        notifyDataSetChanged();
+    }
+
     @Override
     @NonNull
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -42,15 +49,23 @@ public class AdapterShare extends RecyclerView.Adapter<AdapterShare.ViewHolder> 
         return new ViewHolder(binding);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.binding.setUser(userData);
         holder.binding.setTeamDetail(teamDetail);
         holder.binding.executePendingBindings();
-        holder.binding.root.setBackgroundResource(mBgRedIds[position]);
-        if (qrCode == null)
-            qrCode = QRCodeEncoder.createQRCode(AppConfig.INVITATE_URL + teamDetail.code, 100);
-        holder.binding.qrCode.setImageBitmap(qrCode);
+
+        ThreadUtil.runIdle(new MessageQueue.IdleHandler() {
+            @Override
+            public boolean queueIdle() {
+                holder.binding.root.setBackgroundResource(mBgRedIds[position]);
+                return false;
+            }
+        });
+
+        if (qrCode != null)
+            holder.binding.qrCode.setImageBitmap(qrCode);
 
         holder.binding.root.setOnClickListener(new View.OnClickListener() {
             @Override
