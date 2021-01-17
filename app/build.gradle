@@ -80,5 +80,8 @@ dependencies {
 
     implementation 'com.google.zxing:core:3.3.0'
     implementation 'com.jaeger.statusbarutil:library:1.5.1'
+    compile 'com.liulishuo.filedownloader:library:1.6.9'
+    implementation 'pub.devrel:easypermissions:2.0.1'
+    implementation 'de.greenrobot:eventbus:3.0.0-beta1'
 
 }

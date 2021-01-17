@@ -2,9 +2,13 @@ package com.cyberalaer.hybrid.ui.home;
 
 import android.Manifest;
 import android.app.Activity;
+import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Process;
+import android.provider.Settings;
 import android.view.View;
 
 import com.alaer.lib.api.ApiUtil;
@@ -18,6 +22,8 @@ import com.alaer.lib.data.UserDataUtil;
 import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseViewBindActivity;
 import com.cyberalaer.hybrid.databinding.ActivityHomeBinding;
+import com.cyberalaer.hybrid.event.Event;
+import com.cyberalaer.hybrid.event.EventUtil;
 import com.cyberalaer.hybrid.ui.discover.DiscoverActivity;
 import com.cyberalaer.hybrid.ui.education.EducationHallActivity;
 import com.cyberalaer.hybrid.ui.government.AuthSuccessActivity;
@@ -39,9 +45,14 @@ import com.meiyou.mvp.MvpBinder;
 import java.util.ArrayList;
 import java.util.List;
 
+import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import cn.jzvd.JzvdStd;
+import de.greenrobot.event.EventBus;
+import de.greenrobot.event.Subscribe;
+import de.greenrobot.event.ThreadMode;
 import likly.dollar.$;
 
 @MvpBinder(
@@ -61,6 +72,7 @@ public class HomeActivity extends BaseViewBindActivity<ActivityHomeBinding> impl
     @Override
     public void onViewCreated() {
         super.onViewCreated();
+        EventBus.getDefault().register(this);
         initMapView();
         getSaveData();
         initData();
@@ -209,4 +221,42 @@ public class HomeActivity extends BaseViewBindActivity<ActivityHomeBinding> impl
         }
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    private void requestInstallApkPermission() {
+        boolean haveInstallPermission = getPackageManager().canRequestPackageInstalls();
+        if (!haveInstallPermission) {
+            Uri packageURI = Uri.parse("package:" + getPackageName());
+            Intent intent = new Intent(Settings.ACTION_MANAGE_UNKNOWN_APP_SOURCES, packageURI);
+            startActivityForResult(intent, REQUEST_INSTALL);
+
+        }
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    @Subscribe(threadMode = ThreadMode.MainThread)
+    public void onEvent(Event event) {
+        if (EventUtil.isInstallRequestPermission(event)) {
+            requestInstallApkPermission();
+        }
+    }
+
+    private final int REQUEST_INSTALL = 11;
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_INSTALL) {
+            if (resultCode == RESULT_OK)
+                EventUtil.sendInstallApk();
+            else
+                $.toast().text("授权失败,安装失败!").show();
+        }
+
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
+    }
 }

@@ -1,5 +1,6 @@
 package com.cyberalaer.hybrid.ui.setting;
 
+import android.view.Gravity;
 import android.view.View;
 
 import com.alaer.lib.api.ApiUtil;
@@ -9,8 +10,12 @@ import com.alaer.lib.api.bean.UpdateInfo;
 import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseTitleActivity;
 import com.cyberalaer.hybrid.databinding.ActivityAboutBinding;
+import com.cyberalaer.hybrid.ui.dialog.DialogDownloadApk;
+import com.cyberalaer.hybrid.ui.dialog.DialogNewVersion;
 import com.cyberalaer.hybrid.ui.webpage.WebPageActivity;
 import com.cyberalaer.hybrid.util.SettingUtil;
+
+import likly.dialogger.Dialogger;
 
 /**
  * 关于
@@ -55,6 +60,9 @@ public class AboutActivity extends BaseTitleActivity<ActivityAboutBinding> {
                     @Override
                     public void onResponse(UpdateInfo updateInfo) {
                         super.onResponse(updateInfo);
+                        if (updateInfo != null) {
+                            showNewVersionDialog(updateInfo);
+                        }
                     }
 
                     @Override
@@ -62,6 +70,23 @@ public class AboutActivity extends BaseTitleActivity<ActivityAboutBinding> {
                         super.onError(code, msg);
                     }
                 });
+    }
+
+    private void showNewVersionDialog(UpdateInfo updateInfo) {
+        DialogNewVersion dialog = new DialogNewVersion(updateInfo);
+        dialog.setListener(() -> startDownload(updateInfo));
+        Dialogger.newDialog(this).holder(dialog)
+                .gravity(Gravity.CENTER).cancelable(false).show();
+    }
+
+    private void startDownload(UpdateInfo updateInfo) {
+        DialogDownloadApk dialogDownloadApk = new DialogDownloadApk();
+        Dialogger.newDialog(this).holder(dialogDownloadApk)
+                .gravity(Gravity.CENTER).cancelable(false).show();
+
+        AppUpgradeManager upgradeManager = new AppUpgradeManager(this);
+        upgradeManager.setDownloadProgressListener(dialogDownloadApk);
+        upgradeManager.startDownloadApk(updateInfo);
     }
 
 }

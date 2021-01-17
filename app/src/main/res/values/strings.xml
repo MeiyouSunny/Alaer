@@ -264,5 +264,7 @@
     <string name="modify_success">修改成功!</string>
     <string name="region_number">区域号码</string>
 
+    <string name="downloaded_size">已下载%d</string>
+
 
 </resources>

@@ -3,7 +3,7 @@ package com.alaer.lib.api.bean;
 public class UpdateInfo {
 
     public Object iosUrl;
-    public Object androidUrl;
+    public String androidUrl;
     public Object base64IosUrl;
     public Object base64AndroidUrl;
     public String nowVersion;
