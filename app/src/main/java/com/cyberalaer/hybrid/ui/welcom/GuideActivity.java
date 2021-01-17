@@ -11,7 +11,6 @@ import com.cyberalaer.hybrid.base.BaseViewBindActivity;
 import com.cyberalaer.hybrid.databinding.ActivityGuideBinding;
 import com.cyberalaer.hybrid.ui.dialog.DialogUserAgreement;
 import com.cyberalaer.hybrid.ui.home.HomeActivity;
-import com.cyberalaer.hybrid.ui.user.LoginActivity;
 import com.cyberalaer.hybrid.util.ViewUtil;
 
 import java.util.ArrayList;
@@ -37,7 +36,7 @@ public class GuideActivity extends BaseViewBindActivity<ActivityGuideBinding> im
         if (needShowGuide)
             $.config().putBoolean("showGuide", false);
         if (!needShowGuide) {
-            ViewUtil.gotoActivity(this, LoginActivity.class);
+            ViewUtil.gotoActivity(this, HomeActivity.class);
             finish();
             return;
         }

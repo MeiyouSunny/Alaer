@@ -262,6 +262,7 @@
     <string name="agree_and_continur">同意并继续</string>
     <string name="not_agreement">不同意</string>
     <string name="modify_success">修改成功!</string>
+    <string name="region_number">区域号码</string>
 
 
 </resources>

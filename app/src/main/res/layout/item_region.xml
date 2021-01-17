@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="region"
+            type="com.alaer.lib.api.bean.Region" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="32dp"
+            android:ellipsize="end"
+            android:text="@{region.zh}"
+            android:textColor="@color/font_36"
+            android:textSize="@dimen/font_16"
+            tools:text="中国" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="32dp"
+            android:text="@{String.valueOf(region.code)}"
+            android:textColor="@color/font_7E"
+            android:textSize="@dimen/font_16"
+            tools:text="86" />
+
+        <View
+            style="@style/LineGrayE8"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp" />
+
+    </RelativeLayout>
+
+</layout>

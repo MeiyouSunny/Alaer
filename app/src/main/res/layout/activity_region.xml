@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.user.LoginActivity">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="265dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/img_account_bottom" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            android:orientation="vertical">
+
+            <include layout="@layout/layout_title_bar_black" />
+
+<!--            <androidx.recyclerview.widget.RecyclerView-->
+<!--                android:id="@+id/list"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:clipToPadding="false"-->
+<!--                android:overScrollMode="never"-->
+<!--                android:paddingStart="18dp"-->
+<!--                android:paddingTop="13dp"-->
+<!--                android:paddingEnd="18dp"-->
+<!--                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />-->
+
+            <likly.view.repeat.RepeatView
+                android:id="@+id/repeatView"
+                style="@style/RepeatView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:viewHolderClass="com.cyberalaer.hybrid.ui.user.RegionAdapter"
+                app:viewHolderLayout="@layout/item_region"/>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</layout>

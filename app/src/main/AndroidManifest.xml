@@ -171,6 +171,11 @@
             android:name=".ui.webpage.WebPageActivity"
             android:screenOrientation="portrait"></activity>
 
+        <activity
+            android:name=".ui.user.RegionActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
     </application>
 
 </manifest>

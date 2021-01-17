@@ -1,5 +1,7 @@
 package com.cyberalaer.hybrid.ui.user;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -7,6 +9,7 @@ import android.view.View;
 import com.alaer.lib.api.ApiUtil;
 import com.alaer.lib.api.AppConfig;
 import com.alaer.lib.api.Callback;
+import com.alaer.lib.api.bean.Region;
 import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseBindFragment;
 import com.cyberalaer.hybrid.databinding.FragmentRegistPhoneVerifyBinding;
@@ -15,11 +18,14 @@ import com.cyberalaer.hybrid.util.SimpleTextWatcher;
 import com.cyberalaer.hybrid.util.ViewUtil;
 import com.meiyou.mvp.MvpBinder;
 
+import androidx.annotation.Nullable;
 import likly.dollar.$;
 
 @MvpBinder(
 )
 public class RegistPhoneVerifyFragment extends BaseBindFragment<FragmentRegistPhoneVerifyBinding> {
+
+    Region region;
 
     @Override
     public int initLayoutResId() {
@@ -55,6 +61,9 @@ public class RegistPhoneVerifyFragment extends BaseBindFragment<FragmentRegistPh
                 bundle.putString("verifyCode", ViewUtil.getText(bindRoot.etCode));
                 navigate(R.id.action_to_registConfirmPwd, bundle);
                 break;
+            case R.id.region:
+                RegionActivity.startForResult(this);
+                break;
         }
     }
 
@@ -82,6 +91,15 @@ public class RegistPhoneVerifyFragment extends BaseBindFragment<FragmentRegistPh
                         $.toast().text(R.string.verify_code_send_ok).show();
                     }
                 });
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == RegionActivity.REQUEST_CODE && resultCode == Activity.RESULT_OK) {
+            region = (Region) data.getSerializableExtra("region");
+            bindRoot.region.setText("+" + region.code);
+        }
     }
 
 }

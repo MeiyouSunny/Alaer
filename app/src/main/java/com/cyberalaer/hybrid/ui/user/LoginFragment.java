@@ -1,11 +1,14 @@
 package com.cyberalaer.hybrid.ui.user;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.text.TextUtils;
 import android.view.View;
 
 import com.alaer.lib.api.ApiUtil;
 import com.alaer.lib.api.AppConfig;
 import com.alaer.lib.api.Callback;
+import com.alaer.lib.api.bean.Region;
 import com.alaer.lib.api.bean.TeamDetail;
 import com.alaer.lib.api.bean.UserData;
 import com.alaer.lib.data.UserDataUtil;
@@ -19,6 +22,7 @@ import com.cyberalaer.hybrid.util.StringUtil;
 import com.cyberalaer.hybrid.util.ViewUtil;
 import com.meiyou.mvp.MvpBinder;
 
+import androidx.annotation.Nullable;
 import likly.dollar.$;
 
 @MvpBinder(
@@ -26,6 +30,7 @@ import likly.dollar.$;
 public class LoginFragment extends BaseBindFragment<FragmentLoginBinding> {
 
     private String mPhone, mPwd;
+    Region region;
 
     @Override
     public int initLayoutResId() {
@@ -50,6 +55,9 @@ public class LoginFragment extends BaseBindFragment<FragmentLoginBinding> {
                 break;
             case R.id.btnLogin:
                 verifyCode();
+                break;
+            case R.id.region:
+                RegionActivity.startForResult(this);
                 break;
         }
     }
@@ -128,6 +136,15 @@ public class LoginFragment extends BaseBindFragment<FragmentLoginBinding> {
                         $.toast().text(msg).show();
                     }
                 });
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == RegionActivity.REQUEST_CODE && resultCode == Activity.RESULT_OK) {
+            region = (Region) data.getSerializableExtra("region");
+            bindRoot.region.setText("+" + region.code);
+        }
     }
 
 }
