@@ -14,22 +14,25 @@ import com.alaer.lib.data.UserDataUtil;
 import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseBindFragment;
 import com.cyberalaer.hybrid.data.SeedDataUtil;
-import com.cyberalaer.hybrid.databinding.FragmentProduceListBinding;
+import com.cyberalaer.hybrid.databinding.FragmentSeedStoreListBinding;
 import com.cyberalaer.hybrid.ui.dialog.DialogBuySeedSuccess;
-import com.cyberalaer.hybrid.view.GradViewItemDecoration;
+import com.cyberalaer.hybrid.util.CollectionUtils;
+import com.meiyou.mvp.MvpBinder;
 
 import java.util.List;
 
 import likly.dialogger.Dialogger;
 import likly.dollar.$;
+import likly.view.repeat.OnHolderClickListener;
 
 /**
  * 种子商店:种子商店
  */
-public class SeedStoreFragment extends BaseBindFragment<FragmentProduceListBinding> {
+@MvpBinder(
+)
+public class SeedStoreFragment extends BaseBindFragment<FragmentSeedStoreListBinding> implements OnHolderClickListener<AdapterSeedStore> {
 
     private boolean claimNewbieMiner;
-    private AdapterSeedStore adapter;
 
     public static SeedStoreFragment newInstance(boolean claimNewbieMiner) {
         SeedStoreFragment fragment = new SeedStoreFragment();
@@ -41,7 +44,7 @@ public class SeedStoreFragment extends BaseBindFragment<FragmentProduceListBindi
 
     @Override
     public int initLayoutResId() {
-        return R.layout.fragment_produce_list;
+        return R.layout.fragment_seed_store_list;
     }
 
     @Override
@@ -68,16 +71,16 @@ public class SeedStoreFragment extends BaseBindFragment<FragmentProduceListBindi
     }
 
     private void showData(List<SeedStore> data) {
-        if (adapter == null) {
-            adapter = new AdapterSeedStore(data, claimNewbieMiner, mHandler);
-            bindRoot.produceList.addItemDecoration(new GradViewItemDecoration(getContext(), 4));
-            bindRoot.produceList.setAdapter(adapter);
-        } else {
-            adapter.setmData(data);
-        }
-    }
+        bindRoot.repeatView.getRecyclerView().setPaddingRelative(0, 32, 0, 0);
+        bindRoot.repeatView.getRecyclerView().setClipToPadding(false);
 
-    private AdapterSeedStore.OnBuySeedHandler mHandler = seed -> buySeed(seed);
+        if (!CollectionUtils.isEmpty(data))
+            bindRoot.repeatView.viewManager().bind(data);
+        else
+            bindRoot.repeatView.layoutAdapterManager().showEmptyView();
+
+        bindRoot.repeatView.onClick(this);
+    }
 
     // 领取种子
     private void buySeed(SeedStore seed) {
@@ -102,7 +105,8 @@ public class SeedStoreFragment extends BaseBindFragment<FragmentProduceListBindi
                     public void onResponse(String response) {
                         // 刷新
                         seed.buyNum++;
-                        adapter.notifyDataSetChanged();
+                        bindRoot.repeatView.getAdapter().notifyDataSetChanged();
+//                        adapter.notifyDataSetChanged();
 
                         showSuccessDialog(seed);
                     }
@@ -132,5 +136,11 @@ public class SeedStoreFragment extends BaseBindFragment<FragmentProduceListBindi
     }
 
     private Handler mUIHandler = new Handler();
+
+    @Override
+    public void onHolderClick(AdapterSeedStore adapterSeedStore) {
+        final SeedStore seed = adapterSeedStore.getData();
+        buySeed(seed);
+    }
 
 }

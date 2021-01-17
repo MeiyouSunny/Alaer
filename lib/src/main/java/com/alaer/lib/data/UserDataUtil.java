@@ -20,6 +20,7 @@ public class UserDataUtil {
 
     private UserData mUserData;
     private TeamDetail mTeamDetail;
+    private boolean claimNewbieMiner;
     private Balance mBalanse;
 
     public UserData getUserData() {
@@ -98,4 +99,11 @@ public class UserDataUtil {
         mBalanse = null;
     }
 
+    public boolean isClaimNewbieMiner() {
+        return claimNewbieMiner;
+    }
+
+    public void setClaimNewbieMiner(boolean claimNewbieMiner) {
+        this.claimNewbieMiner = claimNewbieMiner;
+    }
 }

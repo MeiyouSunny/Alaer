@@ -8,15 +8,18 @@ import com.alaer.lib.api.bean.UserData;
 import com.alaer.lib.data.UserDataUtil;
 import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseBindFragment;
-import com.cyberalaer.hybrid.databinding.FragmentProduceListBinding;
-import com.cyberalaer.hybrid.view.GradViewItemDecoration;
+import com.cyberalaer.hybrid.databinding.FragmentSeedExpiredListBinding;
+import com.cyberalaer.hybrid.util.CollectionUtils;
+import com.meiyou.mvp.MvpBinder;
 
 import java.util.List;
 
 /**
  * 种子商店:过期失效
  */
-public class SeedExpiredFragment extends BaseBindFragment<FragmentProduceListBinding> {
+@MvpBinder(
+)
+public class SeedExpiredFragment extends BaseBindFragment<FragmentSeedExpiredListBinding> {
 
     public static SeedExpiredFragment newInstance() {
         SeedExpiredFragment fragment = new SeedExpiredFragment();
@@ -25,7 +28,7 @@ public class SeedExpiredFragment extends BaseBindFragment<FragmentProduceListBin
 
     @Override
     public int initLayoutResId() {
-        return R.layout.fragment_produce_list;
+        return R.layout.fragment_seed_expired_list;
     }
 
     @Override
@@ -50,8 +53,12 @@ public class SeedExpiredFragment extends BaseBindFragment<FragmentProduceListBin
     }
 
     private void showData(List<SeedMine> data) {
-        AdapterSeedExpired adapter = new AdapterSeedExpired(data);
-        bindRoot.produceList.addItemDecoration(new GradViewItemDecoration(getContext(), 4));
-        bindRoot.produceList.setAdapter(adapter);
+        bindRoot.repeatView.getRecyclerView().setPaddingRelative(0, 32, 0, 0);
+        bindRoot.repeatView.getRecyclerView().setClipToPadding(false);
+
+        if (!CollectionUtils.isEmpty(data))
+            bindRoot.repeatView.viewManager().bind(data);
+        else
+            bindRoot.repeatView.layoutAdapterManager().showEmptyView();
     }
 }

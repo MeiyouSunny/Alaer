@@ -62,6 +62,7 @@ public class HomeActivity extends BaseViewBindActivity<ActivityHomeBinding> impl
     public void onViewCreated() {
         super.onViewCreated();
         initMapView();
+        getSaveData();
         initData();
         requestPermission();
     }
@@ -70,6 +71,13 @@ public class HomeActivity extends BaseViewBindActivity<ActivityHomeBinding> impl
     protected void onRestart() {
         super.onRestart();
         initData();
+    }
+
+    private void getSaveData() {
+        UserData userData = UserDataUtil.instance().getSavedUserData();
+        if (userData != null) {
+            UserDataUtil.instance().getSavedTeamDetail();
+        }
     }
 
     private void initMapView() {

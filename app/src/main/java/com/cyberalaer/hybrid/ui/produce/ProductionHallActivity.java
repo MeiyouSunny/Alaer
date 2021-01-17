@@ -241,6 +241,8 @@ public class ProductionHallActivity extends BaseTitleActivity<ActivityProduction
                     @Override
                     public void onResponse(TeamInfo teamInfo) {
                         mTeamInfo = teamInfo;
+                        if (mTeamInfo != null)
+                            UserDataUtil.instance().setClaimNewbieMiner(mTeamInfo.claimNewbieMiner);
                         onTeamInfoGet();
                     }
                 });
