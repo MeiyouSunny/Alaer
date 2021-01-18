@@ -13,6 +13,7 @@ import com.alaer.lib.api.bean.Region;
 import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseBindFragment;
 import com.cyberalaer.hybrid.databinding.FragmentRegistPhoneVerifyBinding;
+import com.cyberalaer.hybrid.ui.webpage.WebPageActivity;
 import com.cyberalaer.hybrid.util.NeteaseCaptcha;
 import com.cyberalaer.hybrid.util.SimpleTextWatcher;
 import com.cyberalaer.hybrid.util.ViewUtil;
@@ -63,6 +64,9 @@ public class RegistPhoneVerifyFragment extends BaseBindFragment<FragmentRegistPh
                 break;
             case R.id.region:
                 RegionActivity.startForResult(this);
+                break;
+            case R.id.agreement:
+                WebPageActivity.start(getActivity(), AppConfig.USER_AGREEMENT, R.string.user_agreement);
                 break;
         }
     }

@@ -14,6 +14,7 @@ import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseBindFragment;
 import com.cyberalaer.hybrid.databinding.FragmentRegistConfirmPwdBinding;
 import com.cyberalaer.hybrid.ui.home.HomeActivity;
+import com.cyberalaer.hybrid.ui.webpage.WebPageActivity;
 import com.cyberalaer.hybrid.util.NeteaseCaptcha;
 import com.cyberalaer.hybrid.util.SimpleTextWatcher;
 import com.cyberalaer.hybrid.util.StringUtil;
@@ -74,6 +75,9 @@ public class RegistConfirmPwdFragment extends BaseBindFragment<FragmentRegistCon
                     return;
                 }
                 verifyCode();
+                break;
+            case R.id.agreement:
+                WebPageActivity.start(getActivity(), AppConfig.USER_AGREEMENT, R.string.user_agreement);
                 break;
         }
     }

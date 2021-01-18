@@ -44,6 +44,8 @@
     <string name="verify_code_send_ok">验证码已发送!</string>
     <string name="regist_success">恭喜你,注册成功!</string>
     <string name="reset_pwd_success">密码修改成功!</string>
+    <string name="use_mean_agree">登录/申请即代表您同意</string>
+    <string name="alaer_agreement">阿拉尔用户协议、隐私政策</string>
 
     <string name="produce_base">生产基地</string>
     <string name="produce_hall">我的农场</string>

@@ -9,124 +9,154 @@
             type="com.cyberalaer.hybrid.base.BindClickListener" />
     </data>
 
-    <RelativeLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.user.LoginFragment">
+        android:scrollbars="none">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="58dp"
-            android:background="@drawable/ic_regist_step2" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".ui.user.LoginFragment">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="47dp"
-            android:layout_marginTop="132dp"
-            android:text="@string/input_pwd"
-            android:textColor="@color/font_41"
-            android:textSize="@dimen/font_17" />
-
-        <EditText
-            android:id="@+id/etPwd"
-            style="@style/AccountEditText"
-            android:layout_marginLeft="47dp"
-            android:layout_marginTop="153dp"
-            android:layout_marginRight="47dp"
-            android:hint="@string/pls_input_pwd"
-            android:inputType="textPassword"
-            android:maxLength="20" />
-
-        <View
-            style="@style/LineAccountGray"
-            android:layout_marginLeft="47dp"
-            android:layout_marginTop="191dp"
-            android:layout_marginRight="47dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="47dp"
-            android:layout_marginTop="205dp"
-            android:text="@string/confirm_pwd"
-            android:textColor="@color/font_41"
-            android:textSize="@dimen/font_17" />
-
-        <EditText
-            android:id="@+id/etPwdConfirm"
-            style="@style/AccountEditText"
-            android:layout_marginLeft="47dp"
-            android:layout_marginTop="236dp"
-            android:layout_marginRight="47dp"
-            android:hint="@string/pls_input_pwd"
-            android:inputType="textPassword"
-            android:maxLength="20" />
-
-        <View
-            style="@style/LineAccountGray"
-            android:layout_marginLeft="47dp"
-            android:layout_marginTop="265dp"
-            android:layout_marginRight="47dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="47dp"
-            android:layout_marginTop="289dp"
-            android:text="@string/invitation_code"
-            android:textColor="@color/font_41"
-            android:textSize="@dimen/font_17" />
-
-        <EditText
-            android:id="@+id/etInvitateCode"
-            style="@style/AccountEditText"
-            android:layout_marginLeft="47dp"
-            android:layout_marginTop="320dp"
-            android:layout_marginRight="47dp"
-            android:hint="@string/pls_input_invitate_code" />
-
-        <View
-            style="@style/LineAccountGray"
-            android:layout_marginLeft="47dp"
-            android:layout_marginTop="349dp"
-            android:layout_marginRight="47dp" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/next"
-            style="@style/BtnGreen"
-            android:layout_marginLeft="38dp"
-            android:layout_marginTop="386dp"
-            android:layout_marginRight="38dp"
-            android:enabled="false"
-            android:onClick="@{handler.click}"
-            android:text="@string/next_step" />
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="460dp"
-            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="58dp"
+                android:background="@drawable/ic_regist_step2" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/has_account"
-                android:textColor="@color/font_7E"
-                android:textSize="@dimen/font_12" />
+                android:layout_marginLeft="47dp"
+                android:layout_marginTop="132dp"
+                android:text="@string/input_pwd"
+                android:textColor="@color/font_41"
+                android:textSize="@dimen/font_17" />
+
+            <EditText
+                android:id="@+id/etPwd"
+                style="@style/AccountEditText"
+                android:layout_marginLeft="47dp"
+                android:layout_marginTop="153dp"
+                android:layout_marginRight="47dp"
+                android:hint="@string/pls_input_pwd"
+                android:inputType="textPassword"
+                android:maxLength="20" />
+
+            <View
+                style="@style/LineAccountGray"
+                android:layout_marginLeft="47dp"
+                android:layout_marginTop="191dp"
+                android:layout_marginRight="47dp" />
 
             <TextView
-                android:id="@+id/toLogin"
-                style="@style/AccountGreenText"
-                android:layout_marginLeft="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="47dp"
+                android:layout_marginTop="205dp"
+                android:text="@string/confirm_pwd"
+                android:textColor="@color/font_41"
+                android:textSize="@dimen/font_17" />
+
+            <EditText
+                android:id="@+id/etPwdConfirm"
+                style="@style/AccountEditText"
+                android:layout_marginLeft="47dp"
+                android:layout_marginTop="236dp"
+                android:layout_marginRight="47dp"
+                android:hint="@string/pls_input_pwd"
+                android:inputType="textPassword"
+                android:maxLength="20" />
+
+            <View
+                style="@style/LineAccountGray"
+                android:layout_marginLeft="47dp"
+                android:layout_marginTop="265dp"
+                android:layout_marginRight="47dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="47dp"
+                android:layout_marginTop="289dp"
+                android:text="@string/invitation_code"
+                android:textColor="@color/font_41"
+                android:textSize="@dimen/font_17" />
+
+            <EditText
+                android:id="@+id/etInvitateCode"
+                style="@style/AccountEditText"
+                android:layout_marginLeft="47dp"
+                android:layout_marginTop="320dp"
+                android:layout_marginRight="47dp"
+                android:hint="@string/pls_input_invitate_code" />
+
+            <View
+                style="@style/LineAccountGray"
+                android:layout_marginLeft="47dp"
+                android:layout_marginTop="349dp"
+                android:layout_marginRight="47dp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/next"
+                style="@style/BtnGreen"
+                android:layout_marginLeft="38dp"
+                android:layout_marginTop="386dp"
+                android:layout_marginRight="38dp"
+                android:enabled="false"
                 android:onClick="@{handler.click}"
-                android:text="@string/login_now" />
+                android:text="@string/next_step" />
 
-        </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="460dp"
+                android:orientation="horizontal">
 
-    </RelativeLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/has_account"
+                    android:textColor="@color/font_7E"
+                    android:textSize="@dimen/font_12" />
+
+                <TextView
+                    android:id="@+id/toLogin"
+                    style="@style/AccountGreenText"
+                    android:layout_marginLeft="12dp"
+                    android:onClick="@{handler.click}"
+                    android:text="@string/login_now" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="492dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/use_mean_agree"
+                    android:textColor="@color/font_7E"
+                    android:textSize="@dimen/font_12" />
+
+                <TextView
+                    android:id="@+id/agreement"
+                    style="@style/AccountGreenText"
+                    android:layout_marginLeft="12dp"
+                    android:onClick="@{handler.click}"
+                    android:text="@string/alaer_agreement" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
 
 </layout>
