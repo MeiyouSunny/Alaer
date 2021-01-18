@@ -268,5 +268,11 @@
 
     <string name="downloaded_size">已下载%d</string>
 
+    <string name="contribution">贡献值</string>
+    <string name="contribution_detail">贡献值明细</string>
+    <string name="contribution_is">活跃度：%d</string>
+
+    <string name="user_level_free_rate_is">2、缴纳基金占比%d%%</string>
+    <string name="contribution_info_is">%s/贡献值：%d</string>
 
 </resources>

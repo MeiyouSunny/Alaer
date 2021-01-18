@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="handler"
+            type="com.cyberalaer.hybrid.base.BindClickListener" />
+    </data>
+
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical">
+
+        <include layout="@layout/layout_title_bar_black" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="78dp"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginRight="13dp"
+            app:cardBackgroundColor="#52c883"
+            app:cardCornerRadius="15dp">
+
+            <TextView
+                android:id="@+id/value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_20"
+                tools:text="487380" />
+
+        </androidx.cardview.widget.CardView>
+
+        <likly.view.repeat.RepeatView
+            android:id="@+id/repeatView"
+            style="@style/RepeatView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:emptyView="@layout/layout_no_data"
+            app:viewHolderClass="com.cyberalaer.hybrid.ui.user.ContributionAdapter"
+            app:viewHolderLayout="@layout/item_contribution_record" />
+
+    </LinearLayout>
+
+</layout>

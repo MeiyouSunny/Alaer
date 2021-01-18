@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="level"
+            type="com.alaer.lib.api.bean.UserLevel" />
+
+        <variable
+            name="imgs"
+            type="int[]" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginBottom="10dp"
+        app:cardCornerRadius="8dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="16dp"
+            android:paddingRight="12dp">
+
+            <ImageView
+                android:id="@+id/icLevel1"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="16dp"
+                app:drawableRes="@{imgs[level.level]}" />
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:layout_toRightOf="@+id/icLevel1"
+                android:text="@{level.name}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_17" />
+
+            <TextView
+                android:id="@+id/lebel1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/label2"
+                android:layout_centerHorizontal="true"
+                android:layout_toRightOf="@+id/icLevel1"
+                android:text="1、"
+                android:textColor="@color/font_7E"
+                android:textSize="@dimen/font_12" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/label2"
+                android:layout_centerHorizontal="true"
+                android:layout_toRightOf="@+id/lebel1"
+                android:singleLine="true"
+                android:text="@{level.description}"
+                android:textColor="@color/font_7E"
+                android:textSize="@dimen/font_12" />
+
+            <TextView
+                android:id="@+id/label2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="18dp"
+                android:layout_toRightOf="@+id/icLevel1"
+                android:singleLine="true"
+                android:text="@{@string/user_level_free_rate_is(level.feeRate)}"
+                android:textColor="@color/font_7E"
+                android:textSize="@dimen/font_12" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

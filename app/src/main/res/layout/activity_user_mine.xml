@@ -18,10 +18,10 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:fitsSystemWindows="true"
             android:layout_height="180dp"
+            android:background="@drawable/img_userinfo_top"
             android:clipToPadding="false"
-            android:background="@drawable/img_userinfo_top">
+            android:fitsSystemWindows="true">
 
             <include layout="@layout/layout_title_bar_black" />
 
@@ -40,6 +40,7 @@
 
             <TextView
                 android:id="@+id/level"
+                android:onClick="@{handler.click}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
@@ -57,6 +58,7 @@
                 android:layout_marginLeft="12dp"
                 android:layout_marginBottom="31dp"
                 android:layout_toRightOf="@+id/level"
+                android:onClick="@{handler.click}"
                 android:textColor="@color/font_99"
                 android:textSize="@dimen/font_13"
                 tools:text="贡献值: 10" />

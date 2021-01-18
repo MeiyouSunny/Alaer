@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="handler"
+            type="com.cyberalaer.hybrid.base.BindClickListener" />
+    </data>
+
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_gray"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical">
+
+        <include layout="@layout/layout_title_bar_black" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="169dp"
+            android:background="@color/font_green">
+
+            <ImageView
+                android:id="@+id/levelImg"
+                android:layout_width="84dp"
+                android:layout_height="84dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/ic_team_level0" />
+
+            <TextView
+                android:id="@+id/levelInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="28dp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_16" />
+
+        </RelativeLayout>
+
+        <likly.view.repeat.RepeatView
+            android:id="@+id/repeatView"
+            style="@style/RepeatView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:emptyView="@layout/layout_no_data"
+            app:viewHolderClass="com.cyberalaer.hybrid.ui.user.UserLevelAdapter"
+            app:viewHolderLayout="@layout/item_contribution_record" />
+
+    </LinearLayout>
+
+</layout>

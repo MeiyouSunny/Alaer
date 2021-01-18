@@ -215,6 +215,16 @@
             android:screenOrientation="portrait">
         </activity>
 
+        <activity
+            android:name=".ui.user.ContributionActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name=".ui.user.UserLevelActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
     </application>
 
 </manifest>

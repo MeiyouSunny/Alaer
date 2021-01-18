@@ -19,6 +19,7 @@ import com.alaer.lib.api.bean.TeamLevel;
 import com.alaer.lib.api.bean.TeamProfile;
 import com.alaer.lib.api.bean.UpdateInfo;
 import com.alaer.lib.api.bean.UserData;
+import com.alaer.lib.api.bean.UserLevelList;
 
 import java.util.List;
 
@@ -218,6 +219,14 @@ public interface ApiService {
                                         Callback<List<TeamLevel>> callback);
 
     /**
+     * 市民等级级别
+     */
+    @GET("/mining/user/level/query")
+    Call<UserLevelList> userLevels(@Query("uuid") String uuid, @Query("uid") String uid,
+                                   @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
+                                   Callback<UserLevelList> callback);
+
+    /**
      * 查询团队信息
      */
     @GET("/mining/team/profile")
@@ -296,6 +305,14 @@ public interface ApiService {
      */
     @GET("/mining/profile/activityness/query")
     Call<ActiveBillList> seedActivity(@Query("uuid") String uuid, @Query("uid") String uid,
+                                      @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
+                                      @Query("pageIndex") int pageIndex, @Query("pageSize") int pageSize,
+                                      Callback<ActiveBillList> callback);
+    /**
+     * 贡献值明细
+     */
+    @GET("/mining/profile/contribution/query")
+    Call<ActiveBillList> contributionRecord(@Query("uuid") String uuid, @Query("uid") String uid,
                                       @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
                                       @Query("pageIndex") int pageIndex, @Query("pageSize") int pageSize,
                                       Callback<ActiveBillList> callback);
