@@ -46,6 +46,11 @@ public abstract class Callback<T> implements likly.reverse.Callback<T> {
         if (error instanceof ServiceError) {
             // 服务器已定义的错误
             final ServiceError exception = (ServiceError) error;
+            if (exception.code == ServiceError.ERROR_TOKEN_INVALID) {
+                // Token失效
+                $.toast().text(exception.msg).show();
+                return;
+            }
             onError(exception.code, exception.msg);
         } else {
             // 请求错误
