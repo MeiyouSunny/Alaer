@@ -6,6 +6,7 @@ import android.view.ViewGroup;
 import com.alaer.lib.api.bean.FruitBill;
 import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.databinding.ItemFruitBillBinding;
+import com.cyberalaer.hybrid.util.NumberUtils;
 
 import java.util.List;
 
@@ -24,11 +25,6 @@ public class FruitBillAdapter extends RecyclerView.Adapter<FruitBillAdapter.View
         this.data = data;
     }
 
-    public void setProductList(final List<FruitBill> productList) {
-        data = productList;
-        notifyDataSetChanged();
-    }
-
     @Override
     @NonNull
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -40,6 +36,7 @@ public class FruitBillAdapter extends RecyclerView.Adapter<FruitBillAdapter.View
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        holder.binding.setNumber(NumberUtils.instance());
         holder.binding.setBill(data.get(position));
         holder.binding.executePendingBindings();
     }

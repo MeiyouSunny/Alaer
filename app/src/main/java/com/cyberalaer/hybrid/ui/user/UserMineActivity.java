@@ -133,7 +133,11 @@ public class UserMineActivity extends BaseTitleActivity<ActivityUserMineBinding>
                 }
                 break;
             case R.id.buildScore:
-                ViewUtil.gotoActivity(this, BuildScoreActivity.class);
+                if (mBalance != null) {
+                    Bundle data = new Bundle();
+                    data.putSerializable("balance", mBalance);
+                    ViewUtil.gotoActivity(this, BuildScoreActivity.class, data);
+                }
                 break;
             case R.id.exchangeScore:
                 if (mBalance != null) {

@@ -37,6 +37,7 @@ import com.cyberalaer.hybrid.ui.travel.TravelHallActivity;
 import com.cyberalaer.hybrid.ui.user.LoginActivity;
 import com.cyberalaer.hybrid.ui.user.UserMineActivity;
 import com.cyberalaer.hybrid.util.CollectionUtils;
+import com.cyberalaer.hybrid.util.NumberUtils;
 import com.cyberalaer.hybrid.util.ViewUtil;
 import com.cyberalaer.hybrid.view.mapview.MapContainer;
 import com.cyberalaer.hybrid.view.mapview.Marker;
@@ -180,7 +181,7 @@ public class HomeActivity extends BaseViewBindActivity<ActivityHomeBinding> impl
                 new Callback<Balance>() {
                     @Override
                     public void onResponse(Balance balance) {
-                        bindRoot.setBalance(balance);
+                        bindRoot.buildScore.setText(NumberUtils.instance().parseNumber(balance.money.amount));
                         UserDataUtil.instance().setBalanse(balance);
                     }
                 });

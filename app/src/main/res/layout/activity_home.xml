@@ -19,9 +19,6 @@
             name="user"
             type="com.alaer.lib.api.bean.TeamDetail" />
 
-        <variable
-            name="balance"
-            type="com.alaer.lib.api.bean.Balance" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -107,7 +104,6 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="26dp"
                             android:layout_toRightOf="@+id/buildScoreLabel"
-                            android:text="@{String.valueOf(balance.money.amount)}"
                             android:textColor="@color/white"
                             android:textSize="@dimen/font_11"
                             tools:text="0" />
