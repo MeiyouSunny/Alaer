@@ -10,6 +10,7 @@ import com.alaer.lib.data.UserDataUtil;
 import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseTitleActivity;
 import com.cyberalaer.hybrid.databinding.ActivityContributionBinding;
+import com.cyberalaer.hybrid.ui.webpage.WebPageActivity;
 import com.cyberalaer.hybrid.util.CollectionUtils;
 
 import java.util.List;
@@ -32,13 +33,17 @@ public class ContributionActivity extends BaseTitleActivity<ActivityContribution
     @Override
     public void onViewCreated() {
         super.onViewCreated();
-        setTitleRightVisible(true);
         setTitleRightIcon(R.drawable.ic_question);
 
         int value = getIntent().getIntExtra("contribution", 0);
         bindRoot.value.setText(String.valueOf(value));
 
         queryRecord();
+    }
+
+    @Override
+    protected void onRightClick() {
+        WebPageActivity.start(this, AppConfig.CONTRIBUTION_EXPLAIN, R.string.contribution_explain);
     }
 
     private void queryRecord() {

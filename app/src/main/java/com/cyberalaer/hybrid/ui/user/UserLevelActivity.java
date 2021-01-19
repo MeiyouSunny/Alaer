@@ -10,6 +10,7 @@ import com.alaer.lib.data.UserDataUtil;
 import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseTitleActivity;
 import com.cyberalaer.hybrid.databinding.ActivityUserLevelBinding;
+import com.cyberalaer.hybrid.ui.webpage.WebPageActivity;
 import com.cyberalaer.hybrid.util.CollectionUtils;
 
 import java.util.List;
@@ -35,6 +36,7 @@ public class UserLevelActivity extends BaseTitleActivity<ActivityUserLevelBindin
     @Override
     public void onViewCreated() {
         super.onViewCreated();
+        setTitleRightIcon(R.drawable.ic_question);
 
         level = getIntent().getIntExtra("level", 0);
         contribution = getIntent().getIntExtra("contribution", 0);
@@ -45,6 +47,11 @@ public class UserLevelActivity extends BaseTitleActivity<ActivityUserLevelBindin
             bindRoot.levelImg.setBackgroundResource(imgs[level]);
 
         queryLevels();
+    }
+
+    @Override
+    protected void onRightClick() {
+        WebPageActivity.start(this, AppConfig.LEVEL_EXPLAIN, R.string.user_level_explain);
     }
 
     private void queryLevels() {

@@ -1,5 +1,7 @@
 package com.cyberalaer.hybrid.ui.travel;
 
+import android.view.View;
+
 import com.alaer.lib.api.AppConfig;
 import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseTitleActivity;
@@ -7,6 +9,7 @@ import com.cyberalaer.hybrid.databinding.ActivityTravelBinding;
 import com.cyberalaer.hybrid.util.ViewUtil;
 
 import cn.jzvd.Jzvd;
+import likly.dollar.$;
 
 /**
  * 旅游大厅
@@ -34,7 +37,15 @@ public class TravelHallActivity extends BaseTitleActivity<ActivityTravelBinding>
         bindRoot.player1.setUp(AppConfig.TRAVEL_VIDEO1, "");
         ViewUtil.showImage(getApplicationContext(), bindRoot.player2.posterImageView, AppConfig.TRAVEL_VIDEO_PIC2);
         bindRoot.player2.setUp(AppConfig.TRAVEL_VIDEO2, "");
+    }
 
+    @Override
+    public void click(View view) {
+        switch (view.getId()) {
+            case R.id.buy_tickets:
+                $.toast().text(R.string.will_open_soon).show();
+                break;
+        }
     }
 
     @Override

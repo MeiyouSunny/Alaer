@@ -15,6 +15,7 @@ import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseTitleActivity;
 import com.cyberalaer.hybrid.databinding.ActivityExchangeScoreBinding;
 import com.cyberalaer.hybrid.ui.dialog.DialogInputSecondPwd;
+import com.cyberalaer.hybrid.ui.webpage.WebPageActivity;
 import com.cyberalaer.hybrid.util.NeteaseCaptcha;
 import com.cyberalaer.hybrid.util.NumberUtils;
 import com.cyberalaer.hybrid.util.SimpleTextWatcher;
@@ -49,6 +50,7 @@ public class ExchangeBuildScoreActivity extends BaseTitleActivity<ActivityExchan
     @Override
     public void onViewCreated() {
         super.onViewCreated();
+        setTitleRightIcon(R.drawable.ic_question);
 
         mBalance = (Balance) getIntent().getSerializableExtra("balance");
         bindRoot.setNumber(NumberUtils.instance());
@@ -62,6 +64,11 @@ public class ExchangeBuildScoreActivity extends BaseTitleActivity<ActivityExchan
         });
 
         userData = UserDataUtil.instance().getUserData();
+    }
+
+    @Override
+    protected void onRightClick() {
+        WebPageActivity.start(this, AppConfig.EXCHANGE_EXPLAIN, R.string.exchange_explain);
     }
 
     private void onInputChanged() {

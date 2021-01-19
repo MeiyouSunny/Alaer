@@ -64,9 +64,6 @@ public class DiscoverActivity extends BaseTitleActivity<ActivityDiscoverBinding>
     }
 
     public void showBanner(List<Banner> banners) {
-        //.setPageTransformer(Transformer.DefaultTransformer);
-//        bindRoot.topBanner.getViewPager().setPadding(100, 40, 100, 40);
-//        bindRoot.topBanner.getViewPager().setClipChildren(false);
         bindRoot.topBanner.getViewPager().setPageMargin(50);
         bindRoot.topBanner.getViewPager().setOffscreenPageLimit(3);
         bindRoot.topBanner.setPageTransformer(new ScaleInTransformer());

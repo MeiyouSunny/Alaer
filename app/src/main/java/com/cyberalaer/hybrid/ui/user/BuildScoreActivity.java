@@ -1,9 +1,11 @@
 package com.cyberalaer.hybrid.ui.user;
 
+import com.alaer.lib.api.AppConfig;
 import com.alaer.lib.api.bean.Balance;
 import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseTitleActivity;
 import com.cyberalaer.hybrid.databinding.ActivityBuildScoreBinding;
+import com.cyberalaer.hybrid.ui.webpage.WebPageActivity;
 import com.cyberalaer.hybrid.util.NumberUtils;
 
 /**
@@ -24,12 +26,16 @@ public class BuildScoreActivity extends BaseTitleActivity<ActivityBuildScoreBind
     @Override
     public void onViewCreated() {
         super.onViewCreated();
-        setTitleRightVisible(true);
         setTitleRightIcon(R.drawable.ic_question);
 
         Balance balance = (Balance) getIntent().getSerializableExtra("balance");
         bindRoot.setNumber(NumberUtils.instance());
         bindRoot.setBalance(balance);
+    }
+
+    @Override
+    protected void onRightClick() {
+        WebPageActivity.start(this, AppConfig.BUILD_SCORE_EXPLAIN, R.string.build_score_explain);
     }
 
 }

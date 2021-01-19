@@ -275,4 +275,13 @@
     <string name="user_level_free_rate_is">2、缴纳基金占比%d%%</string>
     <string name="contribution_info_is">%s/贡献值：%d</string>
 
+    <string name="exchange_explain">兑换说明</string>
+    <string name="contribution_explain">贡献值说明</string>
+    <string name="fruit_explain">果实说明</string>
+    <string name="build_score_explain">建设工分说明</string>
+    <string name="activity_explain">活跃度说明</string>
+    <string name="user_level_explain">用户等级说明</string>
+
+    <string name="will_open_soon">即将开放，敬请期待</string>
+
 </resources>

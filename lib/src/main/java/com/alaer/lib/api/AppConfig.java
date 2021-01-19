@@ -38,6 +38,20 @@ public class AppConfig {
     public static final String ALIPAY_URL = "https://t-coupon.yuliang.top/index.php?id=";
 
     /* 用户协议 */
-    public static final String USER_AGREEMENT = "https://app.tokensky.cn/privacy/ALE.html";
+    public static final String USER_AGREEMENT = "https://app.tokensky.cn/articles/agreement-zh_CN.html";
+    /* 兑换说明 */
+    public static final String EXCHANGE_EXPLAIN = "https://app.tokensky.cn/articles/exchange_zh_CN.html";
+    /* 贡献值说明 */
+    public static final String CONTRIBUTION_EXPLAIN = "https://app.tokensky.cn/articles/contribution_zh_CN.html";
+    /* 果实说明 */
+    public static final String FRUIT_EXPLAIN = "https://app.tokensky.cn/articles/gs_zh_CN.html";
+    /* 功分与基金说明*/
+    public static final String BUILD_SCORE_EXPLAIN = "https://app.tokensky.cn/articles/gf_zh_CN.html";
+
+
+
+
+    /* 等级说明 */
+    public static final String LEVEL_EXPLAIN = "https://app.tokensky.cn/articles/level_zh_CN.html";
 
 }

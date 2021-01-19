@@ -41,7 +41,6 @@ public class UserMineActivity extends BaseTitleActivity<ActivityUserMineBinding>
     @Override
     public void onViewCreated() {
         super.onViewCreated();
-        setTitleRightVisible(true);
         setTitleRightIcon(R.drawable.ic_setting);
         initData();
     }

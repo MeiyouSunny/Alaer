@@ -3,6 +3,13 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <data>
+
+        <variable
+            name="handler"
+            type="com.cyberalaer.hybrid.base.BindClickListener" />
+    </data>
+
     <LinearLayout xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -33,33 +40,41 @@
 
                 <com.cyberalaer.hybrid.view.ItemLayoutView
                     android:id="@+id/music"
+                    style="@style/ClickableStyle"
                     android:layout_width="match_parent"
                     android:layout_height="84dp"
                     android:layout_marginTop="14dp"
+                    android:visibility="gone"
                     app:icon="@drawable/ic_compulsory_education"
                     app:title="@string/compulsory_education" />
 
                 <com.cyberalaer.hybrid.view.ItemLayoutView
                     android:id="@+id/shortVideo"
+                    style="@style/ClickableStyle"
                     android:layout_width="match_parent"
                     android:layout_height="84dp"
                     android:layout_marginTop="14dp"
+                    android:onClick="@{handler.click}"
                     app:icon="@drawable/ic_online_education"
                     app:title="@string/online_education" />
 
                 <com.cyberalaer.hybrid.view.ItemLayoutView
                     android:id="@+id/film"
+                    style="@style/ClickableStyle"
                     android:layout_width="match_parent"
                     android:layout_height="84dp"
                     android:layout_marginTop="14dp"
+                    android:onClick="@{handler.click}"
                     app:icon="@drawable/ic_education_video"
                     app:title="@string/education_video" />
 
                 <com.cyberalaer.hybrid.view.ItemLayoutView
                     android:id="@+id/novel"
+                    style="@style/ClickableStyle"
                     android:layout_width="match_parent"
                     android:layout_height="84dp"
                     android:layout_marginTop="14dp"
+                    android:onClick="@{handler.click}"
                     app:icon="@drawable/ic_career_traning"
                     app:title="@string/career_traning" />
 

@@ -3,6 +3,13 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <data>
+
+        <variable
+            name="handler"
+            type="com.cyberalaer.hybrid.base.BindClickListener" />
+    </data>
+
     <LinearLayout xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -58,11 +65,13 @@
                     android:foreground="?android:attr/selectableItemBackground" />
 
                 <com.cyberalaer.hybrid.view.ItemLayoutView
-                    android:id="@+id/fill_case_history"
+                    android:id="@+id/buy_tickets"
+                    style="@style/ClickableStyle"
                     android:layout_width="match_parent"
                     android:layout_height="84dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="28dp"
+                    android:onClick="@{handler.click}"
                     app:icon="@drawable/ic_travel_ticket"
                     app:title="@string/travel_ticket" />
 

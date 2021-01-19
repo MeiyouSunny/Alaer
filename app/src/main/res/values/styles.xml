@@ -57,7 +57,13 @@
     </style>
 
     <style name="SelectableStyle">
+        <item name="android:clickable">true</item>
         <item name="android:background">?android:attr/selectableItemBackgroundBorderless</item>
+    </style>
+
+    <style name="ClickableStyle">
+        <item name="android:clickable">true</item>
+        <item name="android:background">?android:attr/selectableItemBackground</item>
     </style>
 
     <style name="CardViewClick">
