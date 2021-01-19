@@ -98,8 +98,8 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
                         android:layout_centerVertical="true"
-                        android:onClick="@{handler.click}"
                         android:background="@null"
+                        android:onClick="@{handler.click}"
                         android:text="@string/exchange_all"
                         android:textColor="@color/font_green" />
 
@@ -234,6 +234,7 @@
                 style="@style/BtnGreen"
                 android:layout_alignParentBottom="true"
                 android:layout_marginBottom="68dp"
+                android:enabled="false"
                 android:onClick="@{handler.click}"
                 android:text="@string/sure_to_exchange" />
 

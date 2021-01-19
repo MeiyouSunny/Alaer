@@ -75,6 +75,7 @@ public class ExchangeBuildScoreActivity extends BaseTitleActivity<ActivityExchan
         final String input = ViewUtil.getText(bindRoot.etAmount);
         boolean noInput = TextUtils.isEmpty(input);
         bindRoot.layoutInfo.setVisibility(noInput ? View.GONE : View.VISIBLE);
+        bindRoot.confirm.setEnabled(!noInput);
         if (noInput) {
             return;
         }

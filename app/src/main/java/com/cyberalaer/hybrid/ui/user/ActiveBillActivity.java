@@ -33,7 +33,7 @@ public class ActiveBillActivity extends BaseTitleActivity<ActivityActiveDetailBi
 
     @Override
     protected void onRightClick() {
-        WebPageActivity.start(this, AppConfig.BUILD_SCORE_EXPLAIN, R.string.activity_explain);
+        WebPageActivity.start(this, AppConfig.ACTIVITY_EXPLAIN, R.string.activity_explain);
     }
 
 }

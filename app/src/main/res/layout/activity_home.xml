@@ -22,9 +22,9 @@
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:fitsSystemWindows="true"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -45,12 +45,12 @@
 
                     <RelativeLayout
                         android:id="@+id/layoutUser"
+                        style="@style/ClickableStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="52dp"
                         android:layout_below="@+id/notice"
                         android:layout_marginTop="18dp"
                         android:background="@drawable/bg_gray_round_corner2"
-                        android:clickable="true"
                         android:onClick="@{handler.click}"
                         android:paddingLeft="8dp"
                         android:paddingRight="14dp"
@@ -59,8 +59,8 @@
                         <de.hdodenhof.circleimageview.CircleImageView
                             android:id="@+id/icHead"
                             android:layout_width="40dp"
-                            android:layout_centerVertical="true"
                             android:layout_height="40dp"
+                            android:layout_centerVertical="true"
                             android:src="@drawable/ic_head_default_boy"
                             app:civ_border_color="#CB9D3A"
                             app:civ_border_width="1dp" />
@@ -112,12 +112,12 @@
 
                     <RelativeLayout
                         android:id="@+id/layoutNotLogin"
+                        style="@style/ClickableStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="52dp"
                         android:layout_below="@+id/notice"
                         android:layout_marginTop="18dp"
                         android:background="@drawable/bg_gray_round_corner2"
-                        android:clickable="true"
                         android:onClick="@{handler.click}"
                         android:paddingLeft="8dp"
                         android:paddingRight="14dp"
@@ -126,8 +126,8 @@
                         <de.hdodenhof.circleimageview.CircleImageView
                             android:id="@+id/avatar"
                             android:layout_width="40dp"
-                            android:layout_centerVertical="true"
                             android:layout_height="40dp"
+                            android:layout_centerVertical="true"
                             android:src="@drawable/ic_head_default_boy"
                             app:civ_border_color="#CB9D3A"
                             app:civ_border_width="1dp" />
