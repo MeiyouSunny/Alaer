@@ -39,25 +39,12 @@
                 app:civ_border_width="1dp" />
 
             <TextView
-                android:id="@+id/level"
-                android:onClick="@{handler.click}"
+                android:id="@+id/contribution"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_marginLeft="106dp"
                 android:layout_marginBottom="31dp"
-                android:textColor="@color/font_99"
-                android:textSize="@dimen/font_13"
-                tools:text="临时工" />
-
-            <TextView
-                android:id="@+id/contribution"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_marginLeft="12dp"
-                android:layout_marginBottom="31dp"
-                android:layout_toRightOf="@+id/level"
                 android:onClick="@{handler.click}"
                 android:textColor="@color/font_99"
                 android:textSize="@dimen/font_13"
@@ -92,6 +79,53 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
+
+                <!-- 用户等级 -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/userLevel"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="10dp"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:onClick="@{handler.click}"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="0dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingLeft="29dp"
+                        android:paddingRight="32dp">
+
+                        <ImageView
+                            android:id="@+id/icLevel"
+                            android:layout_width="33dp"
+                            android:layout_height="32dp"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/ic_team_level0" />
+
+                        <TextView
+                            android:id="@+id/levelName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="12dp"
+                            tools:text="二级数字市民"
+                            android:layout_toRightOf="@+id/icLevel"
+                            android:textColor="@color/font_36"
+                            android:textSize="@dimen/font_14" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/ic_item_next_little" />
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
 
                 <!-- 兑换积分 -->
                 <androidx.cardview.widget.CardView

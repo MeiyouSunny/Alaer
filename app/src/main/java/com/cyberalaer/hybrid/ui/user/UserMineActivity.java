@@ -10,6 +10,7 @@ import com.alaer.lib.api.bean.Balance;
 import com.alaer.lib.api.bean.TeamDetail;
 import com.alaer.lib.api.bean.TeamInfo;
 import com.alaer.lib.api.bean.UserData;
+import com.alaer.lib.api.bean.UserLevelList;
 import com.alaer.lib.data.UserDataUtil;
 import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseTitleActivity;
@@ -17,6 +18,7 @@ import com.cyberalaer.hybrid.databinding.ActivityUserMineBinding;
 import com.cyberalaer.hybrid.ui.setting.AboutActivity;
 import com.cyberalaer.hybrid.ui.setting.SecurityCenterActivity;
 import com.cyberalaer.hybrid.ui.setting.SettingActivity;
+import com.cyberalaer.hybrid.util.CollectionUtils;
 import com.cyberalaer.hybrid.util.NumberUtils;
 import com.cyberalaer.hybrid.util.ViewUtil;
 
@@ -25,6 +27,7 @@ import com.cyberalaer.hybrid.util.ViewUtil;
  */
 public class UserMineActivity extends BaseTitleActivity<ActivityUserMineBinding> {
 
+    UserData userData;
     Balance mBalance;
     TeamInfo mTeamInfo;
 
@@ -52,7 +55,7 @@ public class UserMineActivity extends BaseTitleActivity<ActivityUserMineBinding>
     }
 
     private void initData() {
-        UserData userData = UserDataUtil.instance().getUserData();
+        userData = UserDataUtil.instance().getUserData();
         if (userData == null)
             return;
 
@@ -93,12 +96,28 @@ public class UserMineActivity extends BaseTitleActivity<ActivityUserMineBinding>
         mBalance = balance;
         ViewUtil.setText(bindRoot.scoreFruit, NumberUtils.instance().parseNumber(balance.diamond.amount));
         ViewUtil.setText(bindRoot.scoreBuild, NumberUtils.instance().parseNumber(balance.money.amount));
-        ViewUtil.setText(bindRoot.level, getResources().getStringArray(R.array.person_level)[balance.level]);
+        queryLevels(mBalance.level);
     }
 
     @Override
     protected void onRightClick() {
         ViewUtil.gotoActivity(getContext(), SettingActivity.class);
+    }
+
+    private void queryLevels(int level) {
+        ApiUtil.apiService().userLevels(userData.uuid, String.valueOf(userData.uid), userData.token,
+                AppConfig.DIAMOND_CURRENCY,
+                new Callback<UserLevelList>() {
+                    @Override
+                    public void onResponse(UserLevelList levels) {
+                        if (levels != null && !CollectionUtils.isEmpty(levels.list) && level < levels.list.size()) {
+                            bindRoot.levelName.setText(levels.list.get(level).name);
+                            final int[] imgs = new int[]{R.drawable.ic_team_level0, R.drawable.ic_team_level1, R.drawable.ic_team_level2,
+                                    R.drawable.ic_team_level3, R.drawable.ic_team_level4, R.drawable.ic_team_level5, R.drawable.ic_team_level6};
+                            bindRoot.icLevel.setBackgroundResource(imgs[level]);
+                        }
+                    }
+                });
     }
 
     @Override
@@ -158,7 +177,7 @@ public class UserMineActivity extends BaseTitleActivity<ActivityUserMineBinding>
                     ViewUtil.gotoActivity(this, ContributionActivity.class, data);
                 }
                 break;
-            case R.id.level:
+            case R.id.userLevel:
                 if (mTeamInfo != null && mBalance != null) {
                     Bundle data = new Bundle();
                     data.putInt("level", mBalance.level);

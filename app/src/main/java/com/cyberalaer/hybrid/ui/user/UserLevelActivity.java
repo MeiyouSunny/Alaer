@@ -65,13 +65,13 @@ public class UserLevelActivity extends BaseTitleActivity<ActivityUserLevelBindin
                     @Override
                     public void onResponse(UserLevelList levels) {
                         if (levels != null) {
-                            showActiveBill(levels.list);
+                            showLevels(levels.list);
                         }
                     }
                 });
     }
 
-    private void showActiveBill(List<UserLevel> levels) {
+    private void showLevels(List<UserLevel> levels) {
         if (level < levels.size()) {
             bindRoot.levelInfo.setText(getString(R.string.contribution_info_is, levels.get(level).name, contribution));
         }
