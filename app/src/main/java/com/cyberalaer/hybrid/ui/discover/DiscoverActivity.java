@@ -22,6 +22,7 @@ import com.cyberalaer.hybrid.ui.share.ShareActivity;
 import com.cyberalaer.hybrid.ui.user.MyTeamActivity;
 import com.cyberalaer.hybrid.util.CollectionUtils;
 import com.cyberalaer.hybrid.util.ViewUtil;
+import com.zhy.magicviewpager.transformer.ScaleInTransformer;
 
 import java.util.List;
 
@@ -64,9 +65,11 @@ public class DiscoverActivity extends BaseTitleActivity<ActivityDiscoverBinding>
 
     public void showBanner(List<Banner> banners) {
         //.setPageTransformer(Transformer.DefaultTransformer);
-        bindRoot.topBanner.getViewPager().setPadding(100, 40, 100, 40);
-        bindRoot.topBanner.getViewPager().setClipChildren(false);
-        bindRoot.topBanner.getViewPager().setPageMargin(100);
+//        bindRoot.topBanner.getViewPager().setPadding(100, 40, 100, 40);
+//        bindRoot.topBanner.getViewPager().setClipChildren(false);
+        bindRoot.topBanner.getViewPager().setPageMargin(50);
+        bindRoot.topBanner.getViewPager().setOffscreenPageLimit(3);
+        bindRoot.topBanner.setPageTransformer(new ScaleInTransformer());
 
         bindRoot.topBanner.setPages(
                 new CBViewHolderCreator<LocalImageHolderView>() {

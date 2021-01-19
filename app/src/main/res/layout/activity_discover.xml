@@ -31,7 +31,7 @@
             <com.bigkoo.convenientbanner.ConvenientBanner
                 android:id="@+id/topBanner"
                 android:layout_width="match_parent"
-                android:layout_height="165dp"
+                android:layout_height="180dp"
                 app:canLoop="true" />
 
             <LinearLayout
@@ -39,8 +39,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/topBanner"
-                android:orientation="vertical"
-                android:paddingTop="28dp">
+                android:layout_marginTop="12dp"
+                android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
