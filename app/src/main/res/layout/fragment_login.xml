@@ -74,7 +74,7 @@
                 android:id="@+id/etPhone"
                 style="@style/AccountEditText"
                 android:layout_marginLeft="16dp"
-                android:hint="@string/pls_input_pwd"
+                android:hint="@string/pls_input_phone"
                 android:text="11180980860" />
 
         </LinearLayout>

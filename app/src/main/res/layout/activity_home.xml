@@ -178,12 +178,13 @@
 
                     <ImageView
                         android:id="@+id/noticeList"
-                        android:layout_width="13dp"
-                        android:layout_height="11dp"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
                         android:layout_alignParentRight="true"
-                        android:layout_marginTop="22dp"
-                        android:layout_marginRight="44dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginRight="38dp"
                         android:onClick="@{handler.click}"
+                        android:scaleType="centerInside"
                         android:src="@drawable/ic_notice_more" />
 
                     <RelativeLayout

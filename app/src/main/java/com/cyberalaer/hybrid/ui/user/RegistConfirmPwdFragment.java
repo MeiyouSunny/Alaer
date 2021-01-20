@@ -53,8 +53,10 @@ public class RegistConfirmPwdFragment extends BaseBindFragment<FragmentRegistCon
     private void onInputChanged() {
         String pwd = ViewUtil.getText(bindRoot.etPwd);
         String pwdConfirm = ViewUtil.getText(bindRoot.etPwdConfirm);
+        String invitateCode = ViewUtil.getText(bindRoot.etInvitateCode);
         final boolean hasInput = !TextUtils.isEmpty(pwd) && !TextUtils.isEmpty(pwdConfirm)
-                && pwd.length() >= 8 && pwdConfirm.length() >= 8;
+                && pwd.length() >= 8 && pwdConfirm.length() >= 8
+                && !TextUtils.isEmpty(invitateCode);
         bindRoot.next.setEnabled(hasInput);
     }
 

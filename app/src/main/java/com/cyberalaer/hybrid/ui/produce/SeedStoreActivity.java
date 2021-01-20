@@ -28,12 +28,16 @@ public class SeedStoreActivity extends BaseTitleActivity<ActivitySeedStoreBindin
         super.onViewCreated();
 
         boolean claimNewbieMiner = getIntent().getBooleanExtra("claimNewbieMiner", false);
+        int index = getIntent().getIntExtra("index", 0);
 
         mTabAdapter = new TabPagerAdapter(this, getSupportFragmentManager(),
                 getResources().getStringArray(R.array.produce_base_tabs), claimNewbieMiner);
         bindRoot.viewPager.setOffscreenPageLimit(3);
         bindRoot.viewPager.setAdapter(mTabAdapter);
         bindRoot.tabs.setupWithViewPager(bindRoot.viewPager);
+
+        if (index != 0)
+            bindRoot.viewPager.setCurrentItem(index);
     }
 
     // 刷新我的树苗

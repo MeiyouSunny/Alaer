@@ -59,12 +59,12 @@
             android:layout_height="88dp"
             android:layout_below="@+id/imgSeed"
             android:layout_marginTop="6dp"
-            android:background="@drawable/bg_seed_round_corner_1">
+            android:background="@drawable/bg_seed_round_corner_1"
+            android:paddingLeft="16dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
                 android:layout_marginTop="7dp"
                 android:text="@{util.parseYield(seed.product)}"
                 android:textColor="@color/white"
@@ -73,7 +73,6 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
                 android:layout_marginTop="26dp"
                 android:text="@{util.parseStartTime(seed.startTime)}"
                 android:textColor="@color/white"
@@ -82,7 +81,6 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
                 android:layout_marginTop="45dp"
                 android:text="@{util.parseEndTime(seed.endTime)}"
                 android:textColor="@color/white"
@@ -91,7 +89,6 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
                 android:layout_marginTop="64dp"
                 android:text="@{util.parseRemainDays(seed.remainNum)}"
                 android:textColor="@color/white"

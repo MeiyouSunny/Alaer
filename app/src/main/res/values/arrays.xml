@@ -1,8 +1,8 @@
 <resources>
 
     <string-array name="produce_base_tabs">
-        <item>我的果园</item>
-        <item>种子商店</item>
+        <item>我的农场</item>
+        <item>农场商店</item>
         <item>过期失效</item>
     </string-array>
 

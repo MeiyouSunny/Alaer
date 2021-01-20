@@ -43,7 +43,7 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="417dp"
+                android:layout_height="400dp"
                 android:layout_marginLeft="13dp"
                 android:layout_marginTop="18dp"
                 android:layout_marginRight="13dp"
@@ -71,22 +71,22 @@
                         android:textSize="@dimen/font_16"
                         tools:text="二级数字市民团队" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="136dp"
-                        android:text="@{levelUtil.parseLevelReward(teamLevel)}"
-                        android:textColor="@color/font_7E"
-                        android:textSize="@dimen/font_12"
-                        tools:text="奖励1棵枣树+数字市民共建基金20%" />
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_centerHorizontal="true"-->
+<!--                        android:layout_marginTop="136dp"-->
+<!--                        android:text="@{levelUtil.parseLevelReward(teamLevel)}"-->
+<!--                        android:textColor="@color/font_7E"-->
+<!--                        android:textSize="@dimen/font_12"-->
+<!--                        tools:text="奖励1棵枣树+数字市民共建基金20%" />-->
 
                     <TextView
                         android:id="@+id/myInviter"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="51dp"
-                        android:layout_marginTop="178dp"
+                        android:layout_marginTop="160dp"
                         android:clickable="true"
                         android:drawableRight="@drawable/ic_item_next_little"
                         android:drawablePadding="6dp"
@@ -100,7 +100,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
-                        android:layout_marginTop="178dp"
+                        android:layout_marginTop="160dp"
                         android:layout_marginRight="51dp"
                         android:clickable="true"
                         android:drawableRight="@drawable/ic_item_next_little"
@@ -114,7 +114,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="80dp"
                         android:layout_marginLeft="20dp"
-                        android:layout_marginTop="223dp"
+                        android:layout_marginTop="205dp"
                         android:layout_marginRight="20dp"
                         android:orientation="horizontal">
 
@@ -195,7 +195,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="80dp"
                         android:layout_marginLeft="20dp"
-                        android:layout_marginTop="313dp"
+                        android:layout_marginTop="295dp"
                         android:layout_marginRight="20dp"
                         android:orientation="horizontal">
 

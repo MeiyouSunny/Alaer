@@ -226,6 +226,7 @@ public class ProductionHallActivity extends BaseTitleActivity<ActivityProduction
         if (mTeamInfo != null) {
             Bundle bundle = new Bundle();
             bundle.putBoolean("claimNewbieMiner", mTeamInfo.claimNewbieMiner);
+            bundle.putInt("index", 1);
             ViewUtil.gotoActivity(this, SeedStoreActivity.class, bundle);
         } else {
             ViewUtil.gotoActivity(this, SeedStoreActivity.class);

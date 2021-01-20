@@ -61,7 +61,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:text="@{number.parseNumber(bill.changeAmount)}"
+            android:text="@{bill.flag==1 ? @string/amount_add(number.parseNumber(bill.changeAmount)) : @string/amount_reduce(number.parseNumber(bill.changeAmount))}"
             android:textColor="@{bill.flag==1 ? @color/font_green : @color/font_red}"
             android:textSize="@dimen/font_17" />
 

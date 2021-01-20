@@ -9,7 +9,7 @@ import com.cyberalaer.hybrid.ui.webpage.WebPageActivity;
 import com.cyberalaer.hybrid.util.NumberUtils;
 
 /**
- * 建设工分
+ * 建设功分
  */
 public class BuildScoreActivity extends BaseTitleActivity<ActivityBuildScoreBinding> {
 

@@ -88,12 +88,12 @@
             android:layout_below="@+id/imgSeed"
             android:layout_marginTop="6dp"
             android:background="@drawable/bg_seed_round_corner_1"
-            android:clickable="true">
+            android:clickable="true"
+            android:paddingLeft="16dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
                 android:layout_marginTop="7dp"
                 android:text="@{util.parseRewardActivity(seed.activeness)}"
                 android:textColor="@color/white"
@@ -102,7 +102,6 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
                 android:layout_marginTop="26dp"
                 android:text="@{util.parseYield(seed.product)}"
                 android:textColor="@color/white"
@@ -111,7 +110,6 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
                 android:layout_marginTop="45dp"
                 android:text="@{util.parseCultivationTime(seed.duration)}"
                 android:textColor="@color/white"
@@ -120,7 +118,6 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
                 android:layout_marginTop="64dp"
                 android:text="@{util.parseCultivationDays(seed.cycle)}"
                 android:textColor="@color/white"
@@ -129,7 +126,6 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
                 android:layout_marginTop="81dp"
                 android:text="@{util.parseHasExchanged(seed.buyNum, seed.buyMax)}"
                 android:textColor="@color/white"

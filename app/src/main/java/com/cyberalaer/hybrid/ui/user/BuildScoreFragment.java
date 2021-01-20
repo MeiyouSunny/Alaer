@@ -13,7 +13,7 @@ import com.cyberalaer.hybrid.databinding.FragmentActiveDetailListBinding;
 import java.util.List;
 
 /**
- * 建设工分明细列表Fragment
+ * 建设功分明细列表Fragment
  */
 public class BuildScoreFragment extends BaseBindFragment<FragmentActiveDetailListBinding> {
 

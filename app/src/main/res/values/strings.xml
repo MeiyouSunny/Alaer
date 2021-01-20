@@ -6,7 +6,7 @@
 
 
     <string name="nike_name">昵称：</string>
-    <string name="good_cityer">好市民：</string>
+    <string name="good_cityer">建设功分：</string>
     <string name="farm">农场</string>
     <string name="task">任务</string>
 
@@ -17,7 +17,7 @@
     <string name="login">登录</string>
     <string name="enter">进入</string>
     <string name="welcome_to_digital_alaer">欢迎来到数字阿拉尔</string>
-    <string name="account_3D_login_directly">3D视觉用户可直接账号登录</string>
+    <string name="account_3D_login_directly">3D视界用户可直接账号登录</string>
     <string name="phone_no">手机号码</string>
     <string name="pls_input_phone">请输入手机号</string>
     <string name="password">密码</string>
@@ -55,7 +55,7 @@
     <string name="disinsection">除虫</string>
     <string name="reap">收获</string>
     <string name="speed_up">加速</string>
-    <string name="seed_store">种子商店</string>
+    <string name="seed_store">农场商店</string>
     <string name="time_remain">剩余 %s</string>
     <string name="pls_produce_tomorrow">请明天继续</string>
 
@@ -74,7 +74,7 @@
     <string name="seed_getted">已领取</string>
     <string name="price_is_get_by_auth">兑换价格：实名认证赠送</string>
     <string name="price_is">兑换价格：%d果实</string>
-    <string name="reward_activity_is">奖励活跃度%d</string>
+    <string name="reward_activity_is">奖励活跃度：%d</string>
     <string name="cultivation_time_is">栽培时长：%s</string>
     <string name="cultivation_days_is">栽培天数：%d天</string>
     <string name="has_exchanged_is">已兑换：%d/%d个</string>
@@ -133,7 +133,7 @@
     <string name="contribution_value">贡献值：%s</string>
     <string name="total_assets">总资产:(元)</string>
     <string name="fruit">果实</string>
-    <string name="build_integral">建设工分</string>
+    <string name="build_integral">建设功分</string>
     <string name="sapling_activity">树苗活跃度</string>
     <string name="share_activity">分享活跃度</string>
     <string name="my_share">我的分享</string>
@@ -176,7 +176,7 @@
     <string name="exchange">兑换</string>
     <string name="give_away">赠送</string>
 
-    <string name="fruit_bill">果实支出</string>
+    <string name="fruit_bill">果实明细</string>
     <string name="total">总计</string>
     <string name="available">可用</string>
     <string name="income">收入</string>
@@ -216,7 +216,7 @@
     <string name="balance_is">余额：%f</string>
     <string name="activity_is">活跃度：%d</string>
 
-    <string name="exchange_build_score">果实兑换建设积分</string>
+    <string name="exchange_build_score">果实兑换建设功分</string>
     <string name="exchangge_score">积分兑换</string>
     <string name="sure_to_exchange">确认划出</string>
     <string name="exchange_fruit_number">划出果实数量</string>
@@ -278,10 +278,13 @@
     <string name="exchange_explain">兑换说明</string>
     <string name="contribution_explain">贡献值说明</string>
     <string name="fruit_explain">果实说明</string>
-    <string name="build_score_explain">建设工分说明</string>
+    <string name="build_score_explain">建设功分说明</string>
     <string name="activity_explain">活跃度说明</string>
     <string name="user_level_explain">用户等级说明</string>
 
     <string name="will_open_soon">即将开放，敬请期待</string>
+
+    <string name="amount_add">+%s</string>
+    <string name="amount_reduce">-%s</string>
 
 </resources>

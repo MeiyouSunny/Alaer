@@ -44,7 +44,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="52dp"
             android:layout_marginTop="106dp"
-            android:text="姓名（身份证、护照）"
+            android:text="姓名（身份证、护照上的姓名）"
             android:textColor="@color/black"
             android:textSize="@dimen/font_16" />
 
@@ -67,7 +67,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="52dp"
             android:layout_marginTop="224dp"
-            android:text="证件号（身份证、护照）"
+            android:text="证件号（身份证、护照的证件号）"
             android:textColor="@color/black"
             android:textSize="@dimen/font_16" />
 
@@ -93,7 +93,7 @@
             android:layout_marginRight="45dp"
             android:layout_marginBottom="18dp"
             android:gravity="center"
-            android:text="实名认证将通过支付宝支付成功进行确认，支付成功后将赠送一颗试栽树苗"
+            android:text="实名认证将通过支付宝支付成功进行确认，支付成功后将赠送一棵试栽树苗"
             android:textColor="#52C883"
             android:textSize="@dimen/font_13" />
 

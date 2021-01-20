@@ -77,6 +77,7 @@ public class HomeActivity extends BaseViewBindActivity<ActivityHomeBinding> impl
         initMapView();
         getSaveData();
         initData();
+        queryNotices();
         requestPermission();
     }
 
@@ -185,7 +186,9 @@ public class HomeActivity extends BaseViewBindActivity<ActivityHomeBinding> impl
                         UserDataUtil.instance().setBalanse(balance);
                     }
                 });
+    }
 
+    private void queryNotices() {
         ApiUtil.apiService().noticeList(1, 5, 1100,
                 new Callback<List<Notice>>() {
                     @Override
