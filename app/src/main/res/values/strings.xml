@@ -79,6 +79,8 @@
     <string name="cultivation_days_is">栽培天数：%d天</string>
     <string name="has_exchanged_is">已兑换：%d/%d个</string>
     <string name="exchanged_full">兑换完</string>
+    <string name="get_by_start_user">星级数字市民赠送</string>
+    <string name="get_by_activity">活动赠送</string>
 
     <string name="has_get_try_seed">抱歉,已领取过试种树苗!</string>
     <string name="seed_sold_out_all">抱歉,已被兑换完!</string>
@@ -197,7 +199,7 @@
     <string name="no_team_level">暂无星级</string>
     <string name="team_level_desc_is">1.分享实名%1$d人\n2.伙伴活跃度%2$d点</string>
     <string name="regist_time_is">注册时间：</string>
-    <string name="last_mine_time_is">最近劳动时间：</string>
+    <string name="last_mine_time_is">最近建设时间：</string>
     <string name="share_persons_is">分享人数：</string>
     <string name="active_real_auth_is">活跃实名：</string>
     <string name="partner_persons_is">伙伴人数：</string>
@@ -217,23 +219,22 @@
     <string name="activity_is">活跃度：%d</string>
 
     <string name="exchange_build_score">果实兑换建设功分</string>
-    <string name="exchangge_score">积分兑换</string>
-    <string name="sure_to_exchange">确认划出</string>
-    <string name="exchange_fruit_number">划出果实数量</string>
-    <string name="pls_input_exchange_number">请输入划出果实数量</string>
+    <string name="sure_to_exchange">确认兑换</string>
+    <string name="exchange_fruit_number">兑换果实数量</string>
+    <string name="pls_input_exchange_number">请输入需要兑换的果实数量</string>
     <string name="input_number">请输入数量</string>
-    <string name="exchange_all">全部划出</string>
+    <string name="exchange_all">全部兑换</string>
     <string name="total_score_is">功分总数：%s 功分</string>
     <string name="total_fruit_is">果实总数：%s 果实</string>
     <string name="payment_proportion">缴纳基金占比：%d%%</string>
-    <string name="exchange_detail">划出详情：</string>
+    <string name="exchange_detail">兑换详情：</string>
     <string name="arrival_timely">即时到账</string>
-    <string name="exchange_number">划出数量：</string>
+    <string name="exchange_number">兑换数量：</string>
     <string name="fruit_number_is">%s 果实</string>
-    <string name="get_score_number_is">可得功分数：</string>
+    <string name="get_score_number_is">可得功分：</string>
     <string name="score_number_is_about">约%s 功分</string>
     <string name="fruit_number_is_about">约%s 果实</string>
-    <string name="fund_is">基金：</string>
+    <string name="fund_is">缴纳基金：</string>
 
     <string name="inviter_info">邀请人信息</string>
 

@@ -102,8 +102,7 @@
                             android:id="@+id/icLevel"
                             android:layout_width="33dp"
                             android:layout_height="32dp"
-                            android:layout_centerVertical="true"
-                            android:src="@drawable/ic_team_level0" />
+                            android:layout_centerVertical="true" />
 
                         <TextView
                             android:id="@+id/levelName"
@@ -111,10 +110,10 @@
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
                             android:layout_marginLeft="12dp"
-                            tools:text="二级数字市民"
                             android:layout_toRightOf="@+id/icLevel"
                             android:textColor="@color/font_36"
-                            android:textSize="@dimen/font_14" />
+                            android:textSize="@dimen/font_14"
+                            tools:text="二级数字市民" />
 
                         <ImageView
                             android:layout_width="wrap_content"

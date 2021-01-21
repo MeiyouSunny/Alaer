@@ -40,10 +40,10 @@ public class TeamInfo implements Serializable {
         public int id;
         public String uuid;
         public int currencyId;
-        public int activityness;
-        public int minerActivityness;
-        public int promotionActivityness;
-        public int fireActivityness;
+        public float activityness;
+        public float minerActivityness;
+        public float promotionActivityness;
+        public float fireActivityness;
         public double reputation;
         public int contribution;
         public int level;

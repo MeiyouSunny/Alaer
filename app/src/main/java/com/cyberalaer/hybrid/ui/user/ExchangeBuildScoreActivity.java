@@ -39,7 +39,7 @@ public class ExchangeBuildScoreActivity extends BaseTitleActivity<ActivityExchan
 
     @Override
     protected int titleResId() {
-        return R.string.exchangge_score;
+        return R.string.exchange_build_score;
     }
 
     @Override

@@ -18,6 +18,7 @@ import com.cyberalaer.hybrid.databinding.ActivityUserMineBinding;
 import com.cyberalaer.hybrid.ui.setting.AboutActivity;
 import com.cyberalaer.hybrid.ui.setting.SecurityCenterActivity;
 import com.cyberalaer.hybrid.ui.setting.SettingActivity;
+import com.cyberalaer.hybrid.ui.share.ShareActivity;
 import com.cyberalaer.hybrid.util.CollectionUtils;
 import com.cyberalaer.hybrid.util.NumberUtils;
 import com.cyberalaer.hybrid.util.ViewUtil;
@@ -74,13 +75,18 @@ public class UserMineActivity extends BaseTitleActivity<ActivityUserMineBinding>
                     public void onResponse(TeamInfo response) {
                         showInfo(response);
                     }
+
+                    @Override
+                    public void onError(int code, String msg) {
+                        super.onError(code, msg);
+                    }
                 });
     }
 
     private void showInfo(TeamInfo info) {
         mTeamInfo = info;
-        ViewUtil.setText(bindRoot.saplingActivity, String.valueOf(info.profile.minerActivityness));
-        ViewUtil.setText(bindRoot.shareActivity, String.valueOf(info.profile.promotionActivityness));
+        ViewUtil.setText(bindRoot.saplingActivity, String.valueOf(NumberUtils.instance().parseNumber(info.profile.minerActivityness)));
+        ViewUtil.setText(bindRoot.shareActivity, String.valueOf(NumberUtils.instance().parseNumber(info.profile.promotionActivityness)));
         ViewUtil.setText(bindRoot.contribution, getString(R.string.contribution_value, String.valueOf(info.profile.contribution)));
     }
 
@@ -130,7 +136,7 @@ public class UserMineActivity extends BaseTitleActivity<ActivityUserMineBinding>
                 SetProfileActivity.start(this, SetProfileActivity.WECHAT);
                 break;
             case R.id.invitationCode:
-                SetProfileActivity.start(this, SetProfileActivity.INVITATE_CODE);
+                ViewUtil.gotoActivity(this, ShareActivity.class);
                 break;
             case R.id.myPartner:
                 ViewUtil.gotoActivity(this, MyTeamActivity.class);

@@ -3,7 +3,9 @@ package com.cyberalaer.hybrid.ui.user;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.View;
 
 import com.alaer.lib.api.ApiUtil;
@@ -39,12 +41,24 @@ public class RegistPhoneVerifyFragment extends BaseBindFragment<FragmentRegistPh
         setTopLeftIcon(R.drawable.ic_back_close);
         setTitleText(R.string.apply);
 
-        bindRoot.etPhone.addTextChangedListener(new SimpleTextWatcher() {
+        final TextWatcher watcher = new SimpleTextWatcher() {
             @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                bindRoot.btnSend.setEnabled(!TextUtils.isEmpty(ViewUtil.getText(bindRoot.etPhone)));
+            public void afterTextChanged(Editable editable) {
+                onInputChanged();
             }
-        });
+        };
+
+        bindRoot.etPhone.addTextChangedListener(watcher);
+        bindRoot.etCode.addTextChangedListener(watcher);
+    }
+
+    private void onInputChanged() {
+        final String phone = ViewUtil.getText(bindRoot.etPhone);
+        final String code = ViewUtil.getText(bindRoot.etCode);
+        boolean hasInputPhone = !TextUtils.isEmpty(phone);
+        boolean hasInput = !TextUtils.isEmpty(phone) && !TextUtils.isEmpty(code);
+        bindRoot.btnSend.setEnabled(hasInputPhone);
+        bindRoot.next.setEnabled(hasInput);
     }
 
     @Override

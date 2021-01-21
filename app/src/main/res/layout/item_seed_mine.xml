@@ -5,6 +5,8 @@
 
     <data>
 
+        <import type="android.view.View" />
+
         <variable
             name="util"
             type="com.cyberalaer.hybrid.data.SeedDataUtil" />
@@ -33,6 +35,37 @@
                 android:text="@{util.getSeedName(seed.type)}"
                 android:textColor="@color/white"
                 android:textSize="@dimen/font_15" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="52dp"
+                android:background="@drawable/bg_orange_left_corner"
+                android:paddingLeft="10dp"
+                android:paddingTop="4dp"
+                android:paddingRight="8dp"
+                android:paddingBottom="4dp"
+                android:text="@string/get_by_start_user"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_13"
+                android:visibility="@{seed.source == 5 ? View.VISIBLE : View.GONE}" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="52dp"
+                android:background="@drawable/bg_orange_left_corner"
+                android:paddingLeft="10dp"
+                android:paddingTop="4dp"
+                android:paddingRight="8dp"
+                android:paddingBottom="4dp"
+                android:text="@string/get_by_activity"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_13"
+                android:visibility="@{seed.source == 10 ? View.VISIBLE : View.GONE}" />
 
             <View
                 android:layout_width="match_parent"
