@@ -23,6 +23,11 @@ import com.cyberalaer.hybrid.util.CollectionUtils;
 import com.cyberalaer.hybrid.util.NumberUtils;
 import com.cyberalaer.hybrid.util.ViewUtil;
 
+import java.util.UUID;
+
+import cn.udesk.UdeskSDKManager;
+import cn.udesk.config.UdeskConfig;
+
 /**
  * 个人中心
  */
@@ -191,7 +196,17 @@ public class UserMineActivity extends BaseTitleActivity<ActivityUserMineBinding>
                     ViewUtil.gotoActivity(this, UserLevelActivity.class, data);
                 }
                 break;
+            case R.id.customeService:
+                gotoCustomerService();
+                break;
         }
+    }
+
+    private void gotoCustomerService() {
+        UdeskSDKManager.getInstance().initApiKey(getApplicationContext(), AppConfig.UDESK_APP_DOMAIN,
+                AppConfig.UDESK_APP_SECRETKEY, AppConfig.UDESK_APP_ID);
+        final String sdkToken = UUID.randomUUID().toString();
+        UdeskSDKManager.getInstance().entryChat(getApplicationContext(), UdeskConfig.createDefualt(), sdkToken);
     }
 
 }

@@ -65,6 +65,8 @@ dependencies {
     annotationProcessor deps.room.compiler
 
     implementation project(path: ':lib')
+    implementation project(':UdeskSDKUI')
+//    api files('libs/jpush-android-2.2.0.jar')
     implementation(name: 'captcha-release_v3.0.0', ext: 'aar')
 
     implementation 'com.hmcx:mvp:2.0.2'

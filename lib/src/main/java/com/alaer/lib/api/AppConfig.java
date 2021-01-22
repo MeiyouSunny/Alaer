@@ -52,4 +52,11 @@ public class AppConfig {
     /* 活跃度说明 */
     public static final String ACTIVITY_EXPLAIN = "https://app.tokensky.cn/articles/zh_CN/activeness_zh_CN.html";
 
+    /* UDESK App ID */
+    public static final String UDESK_APP_ID = "1fd50f9c5552f80a";
+    /* UDESK App SECRETKEY */
+    public static final String UDESK_APP_SECRETKEY = "220ef3d93e81854122a314262d188058";
+    /* UDESK App DOMAIN */
+    public static final String UDESK_APP_DOMAIN = "1323275.s4.udesk.cn";
+
 }
