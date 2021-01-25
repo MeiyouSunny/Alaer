@@ -22,6 +22,7 @@ public class UserDataUtil {
     private TeamDetail mTeamDetail;
     private boolean claimNewbieMiner;
     private Balance mBalanse;
+    private boolean tokenInvalid;
 
     public UserData getUserData() {
         return mUserData;
@@ -105,5 +106,13 @@ public class UserDataUtil {
 
     public void setClaimNewbieMiner(boolean claimNewbieMiner) {
         this.claimNewbieMiner = claimNewbieMiner;
+    }
+
+    public boolean isTokenInvalid() {
+        return tokenInvalid;
+    }
+
+    public void setTokenInvalid(boolean tokenInvalid) {
+        this.tokenInvalid = tokenInvalid;
     }
 }

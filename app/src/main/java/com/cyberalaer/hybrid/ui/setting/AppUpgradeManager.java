@@ -9,9 +9,9 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import com.alaer.lib.api.bean.UpdateInfo;
+import com.alaer.lib.event.Event;
+import com.alaer.lib.event.EventUtil;
 import com.cyberalaer.hybrid.BuildConfig;
-import com.cyberalaer.hybrid.event.Event;
-import com.cyberalaer.hybrid.event.EventUtil;
 import com.liulishuo.filedownloader.BaseDownloadTask;
 import com.liulishuo.filedownloader.FileDownloadListener;
 import com.liulishuo.filedownloader.FileDownloader;

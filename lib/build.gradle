@@ -44,4 +44,5 @@ dependencies {
     implementation 'io.reactivex:rxjava:1.2.7'
     implementation 'io.reactivex:rxandroid:1.2.1'
     implementation 'com.squareup.okhttp3:okhttp:3.6.0'
+    implementation 'de.greenrobot:eventbus:3.0.0-beta1'
 }

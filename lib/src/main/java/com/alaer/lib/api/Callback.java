@@ -4,6 +4,7 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import com.alaer.lib.R;
+import com.alaer.lib.event.EventUtil;
 import com.alaer.lib.util.NetworkUtil;
 
 import likly.dollar.$;
@@ -49,6 +50,7 @@ public abstract class Callback<T> implements likly.reverse.Callback<T> {
             if (exception.code == ServiceError.ERROR_TOKEN_INVALID) {
                 // Token失效
                 $.toast().text(exception.msg).show();
+                EventUtil.sendTokenInvalid();
                 return;
             }
             onError(exception.code, exception.msg);

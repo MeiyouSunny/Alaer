@@ -1,4 +1,4 @@
-package com.cyberalaer.hybrid.event;
+package com.alaer.lib.event;
 
 public class Event<T> {
 

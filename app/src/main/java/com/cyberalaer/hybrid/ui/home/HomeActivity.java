@@ -19,11 +19,11 @@ import com.alaer.lib.api.bean.Notice;
 import com.alaer.lib.api.bean.TeamDetail;
 import com.alaer.lib.api.bean.UserData;
 import com.alaer.lib.data.UserDataUtil;
+import com.alaer.lib.event.Event;
+import com.alaer.lib.event.EventUtil;
 import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseViewBindActivity;
 import com.cyberalaer.hybrid.databinding.ActivityHomeBinding;
-import com.cyberalaer.hybrid.event.Event;
-import com.cyberalaer.hybrid.event.EventUtil;
 import com.cyberalaer.hybrid.ui.discover.DiscoverActivity;
 import com.cyberalaer.hybrid.ui.education.EducationHallActivity;
 import com.cyberalaer.hybrid.ui.government.AuthSuccessActivity;
@@ -236,11 +236,25 @@ public class HomeActivity extends BaseViewBindActivity<ActivityHomeBinding> impl
         }
     }
 
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        if (UserDataUtil.instance().isTokenInvalid()) {
+            UserDataUtil.instance().setTokenInvalid(false);
+            ViewUtil.gotoActivity(this, LoginActivity.class);
+        }
+    }
+
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Subscribe(threadMode = ThreadMode.MainThread)
     public void onEvent(Event event) {
         if (EventUtil.isInstallRequestPermission(event)) {
             requestInstallApkPermission();
+        } else if (EventUtil.isTokenInvalid(event)) {
+            UserDataUtil.instance().clearUserDatas();
+            UserDataUtil.instance().setTokenInvalid(true);
+            Intent intent = new Intent(this, HomeActivity.class);
+            startActivity(intent);
         }
     }
 
