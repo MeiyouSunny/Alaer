@@ -75,6 +75,7 @@
                 style="@style/AccountEditText"
                 android:layout_marginLeft="16dp"
                 android:hint="@string/pls_input_phone"
+                android:inputType="number"
                 android:text="11180980860" />
 
         </LinearLayout>

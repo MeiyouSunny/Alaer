@@ -192,8 +192,8 @@
     <string name="star_team">团队星级</string>
     <string name="regist_time">注册时间</string>
 
-    <string name="notice_list">公告</string>
-    <string name="notice_detail">公告列表</string>
+    <string name="notice_detail">公告</string>
+    <string name="notice_list">公告列表</string>
 
     <string name="team_level_reward_is">奖励1颗%1$s + 数字市民共建基金%2$d%%奖励</string>
     <string name="no_team_level">暂无星级</string>
@@ -284,6 +284,7 @@
     <string name="user_level_explain">用户等级说明</string>
 
     <string name="will_open_soon">即将开放，敬请期待</string>
+    <string name="no_tasks">没有任务!</string>
 
     <string name="amount_add">+%s</string>
     <string name="amount_reduce">-%s</string>

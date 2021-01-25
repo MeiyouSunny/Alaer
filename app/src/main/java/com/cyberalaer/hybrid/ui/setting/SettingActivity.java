@@ -33,6 +33,10 @@ public class SettingActivity extends BaseTitleActivity<ActivitySettngsBinding> {
     @Override
     public void onViewCreated() {
         super.onViewCreated();
+
+        UserData userData = UserDataUtil.instance().getUserData();
+        if (userData == null)
+            bindRoot.exit.setVisibility(View.GONE);
     }
 
     @Override
@@ -40,6 +44,9 @@ public class SettingActivity extends BaseTitleActivity<ActivitySettngsBinding> {
         switch (view.getId()) {
             case R.id.exit:
                 exitAccount();
+                break;
+            case R.id.securityCenter:
+                ViewUtil.gotoActivity(this, SecurityCenterActivity.class);
                 break;
         }
     }

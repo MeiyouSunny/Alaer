@@ -81,7 +81,8 @@ public class TaskListFragment extends BottomSheetDialogFragment {
                 new Callback<List<AdTask>>() {
                     @Override
                     public void onResponse(List<AdTask> tasks) {
-                        if (tasks != null && tasks.size() > 0) {
+                        if (!CollectionUtils.isEmpty(tasks)) {
+                            filterAdTask(tasks);
                             showTaskList(tasks);
                         }
                     }
@@ -94,6 +95,10 @@ public class TaskListFragment extends BottomSheetDialogFragment {
     }
 
     private void showTaskList(List<AdTask> tasks) {
+        if (CollectionUtils.isEmpty(tasks)) {
+            $.toast().text(R.string.no_tasks).show();
+            return;
+        }
         if (adapter == null) {
             adapter = new TaskAdapter(getActivity(), tasks, new TaskAdapter.OnTaskClickHandler() {
                 @Override
@@ -166,6 +171,17 @@ public class TaskListFragment extends BottomSheetDialogFragment {
             completeTask(mAdTask.id);
         } else {
             $.toast().text("任务未完成!").show();
+        }
+    }
+
+    private void filterAdTask(List<AdTask> tasks) {
+        if (!CollectionUtils.isEmpty(tasks)) {
+            for (int i = 0; i < tasks.size(); i++) {
+                if (tasks.get(i).action == 2) {
+                    tasks.remove(i);
+                    i--;
+                }
+            }
         }
     }
 

@@ -68,7 +68,8 @@
                     android:id="@+id/etPhone"
                     style="@style/AccountEditText"
                     android:layout_marginLeft="16dp"
-                    android:hint="@string/pls_input_phone" />
+                    android:hint="@string/pls_input_phone"
+                    android:inputType="number" />
 
             </LinearLayout>
 
@@ -97,7 +98,8 @@
                 <EditText
                     android:id="@+id/etCode"
                     style="@style/AccountEditText"
-                    android:hint="@string/pls_input_verify_code" />
+                    android:hint="@string/pls_input_verify_code"
+                    android:inputType="number" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btnSend"

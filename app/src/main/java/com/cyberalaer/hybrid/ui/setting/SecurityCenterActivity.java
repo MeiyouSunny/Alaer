@@ -2,6 +2,7 @@ package com.cyberalaer.hybrid.ui.setting;
 
 import android.view.View;
 
+import com.alaer.lib.api.bean.UserData;
 import com.alaer.lib.data.UserDataUtil;
 import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseTitleActivity;
@@ -28,7 +29,9 @@ public class SecurityCenterActivity extends BaseTitleActivity<ActivitySecurityCe
     public void onViewCreated() {
         super.onViewCreated();
 
-        bindRoot.phone.setText(UserDataUtil.instance().getUserData().phone);
+        UserData userData = UserDataUtil.instance().getUserData();
+        if (userData != null)
+            bindRoot.phone.setText(userData.phone);
     }
 
     @Override
