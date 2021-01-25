@@ -114,7 +114,8 @@ public class LoginFragment extends BaseBindFragment<FragmentLoginBinding> {
     private void login(String validate) {
         mPhone = ViewUtil.getText(bindRoot.etPhone);
         mPwd = ViewUtil.getText(bindRoot.etPwd);
-        ApiUtil.apiService().login(mPhone, StringUtil.toMD5(mPwd + AppConfig.MD5_KEY_TEMP), validate, AppConfig.VERIFY_ID, "2",
+        ApiUtil.apiService().login(mPhone, StringUtil.toMD5(mPwd + AppConfig.MD5_KEY_TEMP), validate,
+                AppConfig.VERIFY_ID, "2", AppConfig.DIALLING_CODE,
                 new Callback<UserData>() {
                     @Override
                     public void onResponse(UserData userData) {

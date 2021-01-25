@@ -2,11 +2,11 @@ package com.cyberalaer.hybrid.ui.user;
 
 import android.content.Intent;
 
+import com.alaer.lib.api.AppConfig;
 import com.alaer.lib.api.bean.Region;
 import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseTitleActivity;
 import com.cyberalaer.hybrid.databinding.ActivityRegionBinding;
-import com.cyberalaer.hybrid.ui.video.VideoActivity;
 import com.cyberalaer.hybrid.util.RegionUtil;
 import com.meiyou.mvp.MvpBinder;
 
@@ -53,6 +53,7 @@ public class RegionActivity extends BaseTitleActivity<ActivityRegionBinding> imp
         Region region = holder.getData();
         Intent data = new Intent();
         data.putExtra("region", region);
+        AppConfig.DIALLING_CODE = String.valueOf(region.code);
         setResult(RESULT_OK, data);
         finish();
     }

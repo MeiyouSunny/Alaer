@@ -55,7 +55,7 @@ public interface ApiService {
     @FormBody
     @POST("/user/signin")
     Call<UserData> login(@Part("phone") String phone, @Part("password") String password, @Part("validate") String validate,
-                         @Part("captchaId") String captchaId, @Part("source") String source,
+                         @Part("captchaId") String captchaId, @Part("source") String source, @Part("diallingCode") String diallingCode,
                          Callback<UserData> callback);
 
     /**
@@ -308,14 +308,15 @@ public interface ApiService {
                                       @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
                                       @Query("pageIndex") int pageIndex, @Query("pageSize") int pageSize,
                                       Callback<ActiveBillList> callback);
+
     /**
      * 贡献值明细
      */
     @GET("/mining/profile/contribution/query")
     Call<ActiveBillList> contributionRecord(@Query("uuid") String uuid, @Query("uid") String uid,
-                                      @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
-                                      @Query("pageIndex") int pageIndex, @Query("pageSize") int pageSize,
-                                      Callback<ActiveBillList> callback);
+                                            @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
+                                            @Query("pageIndex") int pageIndex, @Query("pageSize") int pageSize,
+                                            Callback<ActiveBillList> callback);
 
     /**
      * 实名认证:创建支付订单

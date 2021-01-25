@@ -71,6 +71,9 @@ public class RestPwdFragment extends BaseBindFragment<FragmentResetPwdBinding> {
             case R.id.confirm:
                 verifyCode(STEP2);
                 break;
+            case R.id.region:
+                RegionActivity.startForResult(this);
+                break;
         }
     }
 
@@ -94,7 +97,7 @@ public class RestPwdFragment extends BaseBindFragment<FragmentResetPwdBinding> {
 
     private void getVerifyCode(String validate) {
         final String phone = ViewUtil.getText(bindRoot.etPhone);
-        ApiUtil.apiService().getVCode(AppConfig.DIALLING_CODE_DEFAULT, phone, AppConfig.VERIFY_ID, validate, "1",
+        ApiUtil.apiService().getVCode(AppConfig.DIALLING_CODE, phone, AppConfig.VERIFY_ID, validate, "1",
                 new Callback<String>() {
                     @Override
                     public void onResponse(String response) {

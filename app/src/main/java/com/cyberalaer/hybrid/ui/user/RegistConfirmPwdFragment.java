@@ -88,7 +88,7 @@ public class RegistConfirmPwdFragment extends BaseBindFragment<FragmentRegistCon
         ApiUtil.apiService().regist(mPhone, mVerifyCode,
                 StringUtil.toMD5(ViewUtil.getText(bindRoot.etPwd) + AppConfig.MD5_KEY_TEMP),
                 ViewUtil.getText(bindRoot.etInvitateCode),
-                validate, AppConfig.VERIFY_ID, AppConfig.DIALLING_CODE_DEFAULT,
+                validate, AppConfig.VERIFY_ID, AppConfig.DIALLING_CODE,
                 new Callback<UserData>() {
                     @Override
                     public void onResponse(UserData userInfo) {
