@@ -1,6 +1,5 @@
 package com.cyberalaer.hybrid.util;
 
-import java.math.RoundingMode;
 import java.text.NumberFormat;
 
 public class NumberUtils {
@@ -19,7 +18,7 @@ public class NumberUtils {
         NumberFormat nf = NumberFormat.getNumberInstance();
         nf.setMaximumFractionDigits(2);
         nf.setGroupingUsed(false);
-        nf.setRoundingMode(RoundingMode.UP);
+//        nf.setRoundingMode(RoundingMode.DOWN);
         return Float.valueOf(nf.format(value));
     }
 

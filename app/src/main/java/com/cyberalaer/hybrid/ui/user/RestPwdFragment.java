@@ -12,6 +12,8 @@ import com.cyberalaer.hybrid.base.BaseBindFragment;
 import com.cyberalaer.hybrid.databinding.FragmentResetPwdBinding;
 import com.cyberalaer.hybrid.util.NeteaseCaptcha;
 import com.cyberalaer.hybrid.util.SimpleTextWatcher;
+import com.cyberalaer.hybrid.util.StringUtil;
+import com.cyberalaer.hybrid.util.VerifyCodeCounter;
 import com.cyberalaer.hybrid.util.ViewUtil;
 import com.meiyou.mvp.MvpBinder;
 
@@ -78,6 +80,20 @@ public class RestPwdFragment extends BaseBindFragment<FragmentResetPwdBinding> {
     }
 
     private void verifyCode(@NeteaseCaptcha.STEP int step) {
+        if (step == STEP1) {
+            if (!StringUtil.phoneIsValid(ViewUtil.getText(bindRoot.etPhone))) {
+                $.toast().text(R.string.pls_input_valid_phone).show();
+                return;
+            }
+        }
+
+        if (step == STEP2) {
+            if (!StringUtil.pwdIsValid(ViewUtil.getText(bindRoot.etPwd))) {
+                $.toast().text(R.string.pwd_invalid).show();
+                return;
+            }
+        }
+
         NeteaseCaptcha.start(getContext(), step, new NeteaseCaptcha.OnCaptchaListener() {
             @Override
             public void onCaptchaSuccess(String validate) {
@@ -102,6 +118,12 @@ public class RestPwdFragment extends BaseBindFragment<FragmentResetPwdBinding> {
                     @Override
                     public void onResponse(String response) {
                         $.toast().text(R.string.verify_code_send_ok).show();
+                        VerifyCodeCounter.getInstance().startCounter(bindRoot.btnSend);
+                    }
+
+                    @Override
+                    public void onError(int code, String msg) {
+                        $.toast().text(msg).show();
                     }
                 });
     }
@@ -126,6 +148,12 @@ public class RestPwdFragment extends BaseBindFragment<FragmentResetPwdBinding> {
                     }
                 });
 
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        VerifyCodeCounter.getInstance().destory();
     }
 
 }

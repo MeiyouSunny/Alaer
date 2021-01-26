@@ -15,6 +15,8 @@ import com.cyberalaer.hybrid.base.BaseTitleActivity;
 import com.cyberalaer.hybrid.databinding.ActivitySecondPwdSetBinding;
 import com.cyberalaer.hybrid.util.NeteaseCaptcha;
 import com.cyberalaer.hybrid.util.SimpleTextWatcher;
+import com.cyberalaer.hybrid.util.StringUtil;
+import com.cyberalaer.hybrid.util.VerifyCodeCounter;
 import com.cyberalaer.hybrid.util.ViewUtil;
 
 import likly.dollar.$;
@@ -62,7 +64,7 @@ public class SecondPwdSetActivity extends BaseTitleActivity<ActivitySecondPwdSet
         String pwd = ViewUtil.getText(bindRoot.etPwd);
         String pwdConfirm = ViewUtil.getText(bindRoot.etPwdConfirm);
         final boolean hasInput = !TextUtils.isEmpty(pwd) && !TextUtils.isEmpty(pwdConfirm) && !TextUtils.isEmpty(verifyCode)
-                && pwd.length() >= 8 && pwdConfirm.length() >= 8;
+                && StringUtil.pwdIsValid(pwd) && StringUtil.pwdIsValid(pwdConfirm);
         bindRoot.submit.setEnabled(hasInput);
     }
 
@@ -89,6 +91,10 @@ public class SecondPwdSetActivity extends BaseTitleActivity<ActivitySecondPwdSet
             $.toast().text(R.string.pwd_not_same).show();
             return;
         }
+        if (!StringUtil.pwdIsValid(ViewUtil.getText(bindRoot.etPwd))) {
+            $.toast().text(R.string.pwd_invalid).show();
+            return;
+        }
         if (!haveSendCode) {
             $.toast().text(R.string.pls_get_verify_code_first).show();
             return;
@@ -104,6 +110,7 @@ public class SecondPwdSetActivity extends BaseTitleActivity<ActivitySecondPwdSet
                     public void onResponse(String response) {
                         haveSendCode = true;
                         $.toast().text(R.string.verify_code_send_ok).show();
+                        VerifyCodeCounter.getInstance().startCounter(bindRoot.send);
                     }
 
                     @Override
@@ -148,4 +155,9 @@ public class SecondPwdSetActivity extends BaseTitleActivity<ActivitySecondPwdSet
                 });
     }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        VerifyCodeCounter.getInstance().destory();
+    }
 }

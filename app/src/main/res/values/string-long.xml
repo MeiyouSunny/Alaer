@@ -6,12 +6,10 @@
 \n2. 阿拉尔数字市民自愿参与数字阿拉尔的建设，并根据贡献获得 功分奖励和成长红利。 如果您认同数字阿拉尔共识，自愿申请 成为阿拉尔数字市民，请完成实名认证，完成实名认证后您可免 费“试栽树苗”，熟悉数字市民建设流程。
     </string>
 
-    <string name="level1">一级数字市民团队</string>
-    <string name="level2">二级数字市民团队</string>
-    <string name="level3">三级数字市民团队</string>
-    <string name="level4">四级数字市民团队</string>
-    <string name="level5">五级数字市民团队</string>
-    <string name="level6">六级数字市民团队</string>
+    <string name="team_level_desc">
+        注：各级数字市民必须保证有相应的有效推广数字市民和相应的伙伴活跃度，两者缺一不可。所谓有效推广数字市民是指直接推荐并且实名认证通过，且必须有正在种植中的植物。若因为推广数字市民植物种植失败，导致“有效推广”数字市民数量不足20人的，或者伙伴中植物种植失败，导致伙伴总活跃度降低至数字市民标准以下，就会出现等级滑落现象。
+    </string>
+
     <string name="level_desc">1、分享实名1人\n 2、团活跃度1点</string>
 
     <string name="user_agreement_html">

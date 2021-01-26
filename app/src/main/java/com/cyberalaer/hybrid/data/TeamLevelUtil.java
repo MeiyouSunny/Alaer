@@ -33,7 +33,7 @@ public class TeamLevelUtil {
         if (teamLevel == null)
             return R.drawable.ic_team_level0;
         final int[] levelImgs = new int[]{R.drawable.ic_team_level0, R.drawable.ic_team_level1, R.drawable.ic_team_level2,
-                R.drawable.ic_team_level3, R.drawable.ic_team_level4, R.drawable.ic_team_level5, R.drawable.ic_team_level6};
+                R.drawable.ic_team_level3, R.drawable.ic_team_level4};
         if (teamLevel.level < levelImgs.length)
             return levelImgs[teamLevel.level];
 

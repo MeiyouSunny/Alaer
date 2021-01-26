@@ -41,9 +41,9 @@
                 android:layout_marginLeft="47dp"
                 android:layout_marginTop="153dp"
                 android:layout_marginRight="47dp"
-                android:hint="@string/pls_input_pwd"
+                android:hint="@string/pwd_invalid"
                 android:inputType="textPassword"
-                android:maxLength="20" />
+                android:maxLength="16" />
 
             <View
                 style="@style/LineAccountGray"
@@ -66,9 +66,9 @@
                 android:layout_marginLeft="47dp"
                 android:layout_marginTop="236dp"
                 android:layout_marginRight="47dp"
-                android:hint="@string/pls_input_pwd"
+                android:hint="@string/pls_input_pwd_again"
                 android:inputType="textPassword"
-                android:maxLength="20" />
+                android:maxLength="16" />
 
             <View
                 style="@style/LineAccountGray"

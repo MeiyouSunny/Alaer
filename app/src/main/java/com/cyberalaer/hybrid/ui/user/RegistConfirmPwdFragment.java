@@ -37,7 +37,6 @@ public class RegistConfirmPwdFragment extends BaseBindFragment<FragmentRegistCon
     @Override
     public void onResume() {
         super.onResume();
-        setTopLeftIcon(R.drawable.ic_back_close);
         setTitleText(R.string.apply);
 
         TextWatcher textWatcher = new SimpleTextWatcher() {
@@ -48,6 +47,7 @@ public class RegistConfirmPwdFragment extends BaseBindFragment<FragmentRegistCon
         };
         bindRoot.etPwd.addTextChangedListener(textWatcher);
         bindRoot.etPwdConfirm.addTextChangedListener(textWatcher);
+        bindRoot.etInvitateCode.addTextChangedListener(textWatcher);
     }
 
     private void onInputChanged() {
@@ -55,7 +55,7 @@ public class RegistConfirmPwdFragment extends BaseBindFragment<FragmentRegistCon
         String pwdConfirm = ViewUtil.getText(bindRoot.etPwdConfirm);
         String invitateCode = ViewUtil.getText(bindRoot.etInvitateCode);
         final boolean hasInput = !TextUtils.isEmpty(pwd) && !TextUtils.isEmpty(pwdConfirm)
-                && pwd.length() >= 8 && pwdConfirm.length() >= 8
+                && StringUtil.pwdIsValid(pwd) && StringUtil.pwdIsValid(pwdConfirm)
                 && !TextUtils.isEmpty(invitateCode);
         bindRoot.next.setEnabled(hasInput);
     }
@@ -65,7 +65,6 @@ public class RegistConfirmPwdFragment extends BaseBindFragment<FragmentRegistCon
         super.onViewCreated();
         mPhone = getArguments().getString("phone");
         mVerifyCode = getArguments().getString("verifyCode");
-        System.out.println("");
     }
 
     @Override

@@ -18,6 +18,8 @@ import com.cyberalaer.hybrid.databinding.FragmentRegistPhoneVerifyBinding;
 import com.cyberalaer.hybrid.ui.webpage.WebPageActivity;
 import com.cyberalaer.hybrid.util.NeteaseCaptcha;
 import com.cyberalaer.hybrid.util.SimpleTextWatcher;
+import com.cyberalaer.hybrid.util.StringUtil;
+import com.cyberalaer.hybrid.util.VerifyCodeCounter;
 import com.cyberalaer.hybrid.util.ViewUtil;
 import com.meiyou.mvp.MvpBinder;
 
@@ -38,7 +40,6 @@ public class RegistPhoneVerifyFragment extends BaseBindFragment<FragmentRegistPh
     @Override
     public void onResume() {
         super.onResume();
-        setTopLeftIcon(R.drawable.ic_back_close);
         setTitleText(R.string.apply);
 
         final TextWatcher watcher = new SimpleTextWatcher() {
@@ -86,6 +87,10 @@ public class RegistPhoneVerifyFragment extends BaseBindFragment<FragmentRegistPh
     }
 
     private void verifyCode() {
+        if (!StringUtil.phoneIsValid(ViewUtil.getText(bindRoot.etPhone))) {
+            $.toast().text(R.string.pls_input_valid_phone).show();
+            return;
+        }
         NeteaseCaptcha.start(getContext(), new NeteaseCaptcha.OnCaptchaListener() {
             @Override
             public void onCaptchaSuccess(String validate) {
@@ -107,6 +112,7 @@ public class RegistPhoneVerifyFragment extends BaseBindFragment<FragmentRegistPh
                     public void onResponse(String response) {
                         bindRoot.next.setEnabled(true);
                         $.toast().text(R.string.verify_code_send_ok).show();
+                        VerifyCodeCounter.getInstance().startCounter(bindRoot.btnSend);
                     }
                 });
     }
@@ -118,6 +124,12 @@ public class RegistPhoneVerifyFragment extends BaseBindFragment<FragmentRegistPh
             region = (Region) data.getSerializableExtra("region");
             bindRoot.region.setText("+" + region.code);
         }
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        VerifyCodeCounter.getInstance().destory();
     }
 
 }

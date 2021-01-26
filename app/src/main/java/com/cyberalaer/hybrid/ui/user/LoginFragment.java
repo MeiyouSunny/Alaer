@@ -40,7 +40,6 @@ public class LoginFragment extends BaseBindFragment<FragmentLoginBinding> {
     @Override
     public void onResume() {
         super.onResume();
-        setTopLeftIcon(R.drawable.ic_back_black);
         setTitleText(R.string.enter);
     }
 

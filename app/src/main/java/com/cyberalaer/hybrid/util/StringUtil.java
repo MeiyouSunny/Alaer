@@ -1,10 +1,15 @@
 package com.cyberalaer.hybrid.util;
 
+import android.text.TextUtils;
+
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class StringUtil {
+
     /**
      * To MD5
      */
@@ -30,5 +35,28 @@ public class StringUtil {
         return hex.toString();
     }
 
+    /**
+     * 验证手机号有效性
+     */
+    public static boolean phoneIsValid(String phone) {
+        if (TextUtils.isEmpty(phone) || phone.length() != 11)
+            return false;
+
+        String regex = "^1\\d{10}$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(phone);
+        return matcher.matches();
+    }
+
+    /**
+     * 验证密码有效性(8-16位数字或字符,不能包含特殊字符)
+     */
+    public static boolean pwdIsValid(String pwd) {
+        if (TextUtils.isEmpty(pwd) || pwd.length() < 8 || pwd.length() > 16)
+            return false;
+        String regex = "^^(?![0-9]+$)(?![a-zA-Z]+$)([A-Z]|[a-z]|[0-9]|[_`~!@#$%^&*()+=|{}':;',\"\\\\[\\\\].<>/?~！@#￥%……&*（）——+|{}【】‘；：”“'。，、？]){8,16}$";
+        Matcher matcher = Pattern.compile(regex).matcher(pwd);
+        return matcher.matches();
+    }
 
 }
