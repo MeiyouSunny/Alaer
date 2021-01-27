@@ -26,7 +26,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="164dp"
-            android:text="请求失败，您的订单已支付"
+            android:text="您的订单未成功支付"
             android:textColor="@color/black"
             android:textSize="@dimen/font_18" />
 

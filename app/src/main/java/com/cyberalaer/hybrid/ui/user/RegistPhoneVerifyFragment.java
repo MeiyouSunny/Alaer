@@ -110,7 +110,6 @@ public class RegistPhoneVerifyFragment extends BaseBindFragment<FragmentRegistPh
                 new Callback<String>() {
                     @Override
                     public void onResponse(String response) {
-                        bindRoot.next.setEnabled(true);
                         $.toast().text(R.string.verify_code_send_ok).show();
                         VerifyCodeCounter.getInstance().startCounter(bindRoot.btnSend);
                     }

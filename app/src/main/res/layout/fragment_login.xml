@@ -75,8 +75,7 @@
                 style="@style/AccountEditText"
                 android:layout_marginLeft="16dp"
                 android:hint="@string/pls_input_phone"
-                android:inputType="number"
-                android:text="11180980860" />
+                android:inputType="number" />
 
         </LinearLayout>
 
@@ -103,8 +102,7 @@
             android:layout_marginRight="47dp"
             android:hint="@string/pls_input_pwd"
             android:inputType="textPassword"
-            android:maxLength="16"
-            android:text="admin123" />
+            android:maxLength="16" />
 
         <View
             style="@style/LineAccountGray"
@@ -118,6 +116,7 @@
             android:layout_marginLeft="38dp"
             android:layout_marginTop="314dp"
             android:layout_marginRight="38dp"
+            android:enabled="false"
             android:onClick="@{handler.click}"
             android:text="@string/enter" />
 

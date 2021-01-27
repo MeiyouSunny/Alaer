@@ -10,14 +10,6 @@
         android:name="com.cyberalaer.hybrid.ui.auth.InputInfoFragment"
         android:label="InputInfoFragment">
         <action
-            android:id="@+id/action_to_pay_confirm"
-            app:destination="@id/payConfirmFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/payConfirmFragment"
-        android:name="com.cyberalaer.hybrid.ui.auth.PayConfirmFragment"
-        android:label="PayConfirmFragment">
-        <action
             android:id="@+id/action_to_pay_success"
             app:destination="@id/paySuccessFragment" />
         <action
@@ -31,5 +23,12 @@
     <fragment
         android:id="@+id/payFailedFragment"
         android:name="com.cyberalaer.hybrid.ui.auth.PayFailedFragment"
-        android:label="PayFailedFragment" />
+        android:label="PayFailedFragment">
+        <action
+            android:id="@+id/action_to_input_page"
+            app:destination="@id/inputInfoFragment"
+            app:popUpTo="@id/inputInfoFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
 </navigation>

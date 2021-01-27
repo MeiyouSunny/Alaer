@@ -47,6 +47,10 @@ public class SeedDataUtil {
         return typeResId;
     }
 
+    public int getBuySuccessTitle(int type) {
+        return type == TYPE_TRY ? R.string.seed_get_success : R.string.seed_buy_success;
+    }
+
     public int getSeedImage(int type) {
         int typeResId = R.drawable.img_seed_try;
         switch (type) {

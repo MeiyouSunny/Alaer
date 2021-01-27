@@ -5,7 +5,7 @@ import android.view.View;
 import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseBindFragment;
 import com.cyberalaer.hybrid.databinding.FragmentAuthPaySuccessBinding;
-import com.cyberalaer.hybrid.ui.share.ShareActivity;
+import com.cyberalaer.hybrid.ui.home.HomeActivity;
 import com.cyberalaer.hybrid.util.ViewUtil;
 import com.meiyou.mvp.MvpBinder;
 
@@ -22,8 +22,7 @@ public class PaySuccessFragment extends BaseBindFragment<FragmentAuthPaySuccessB
     public void click(View view) {
         switch (view.getId()) {
             case R.id.ok:
-                ViewUtil.gotoActivity(getContext(), ShareActivity.class);
-                getActivity().finish();
+                ViewUtil.gotoActivity(getContext(), HomeActivity.class);
                 break;
         }
     }

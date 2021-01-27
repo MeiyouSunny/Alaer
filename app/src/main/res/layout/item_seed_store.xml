@@ -80,6 +80,18 @@
                 android:textSize="@dimen/font_15"
                 android:visibility="@{seed.buyNum == seed.buyMax ? View.VISIBLE : View.GONE}" />
 
+            <TextView
+                android:id="@+id/getForFree"
+                android:layout_width="77dp"
+                android:layout_height="29dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/bg_orange_round_corner3"
+                android:gravity="center"
+                android:text="@string/get_for_free"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_15"
+                android:visibility="@{(seed.price == 0 &amp;&amp; !claimNewbieMiner) ? View.VISIBLE : View.GONE}" />
+
         </RelativeLayout>
 
         <RelativeLayout

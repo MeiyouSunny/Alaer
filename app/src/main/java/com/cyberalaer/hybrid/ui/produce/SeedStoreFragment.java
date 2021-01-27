@@ -16,7 +16,10 @@ import com.cyberalaer.hybrid.base.BaseBindFragment;
 import com.cyberalaer.hybrid.data.SeedDataUtil;
 import com.cyberalaer.hybrid.databinding.FragmentSeedStoreListBinding;
 import com.cyberalaer.hybrid.ui.dialog.DialogBuySeedSuccess;
+import com.cyberalaer.hybrid.ui.dialog.DialogNotAuth;
+import com.cyberalaer.hybrid.ui.government.RealNameAuthActivity;
 import com.cyberalaer.hybrid.util.CollectionUtils;
+import com.cyberalaer.hybrid.util.ViewUtil;
 import com.meiyou.mvp.MvpBinder;
 
 import java.util.List;
@@ -113,14 +116,32 @@ public class SeedStoreFragment extends BaseBindFragment<FragmentSeedStoreListBin
 
                     @Override
                     public void onError(int code, String msg) {
-                        $.toast().text(msg).show();
+                        if (code == 403) {
+                            showNotAuthDialog();
+                        }
                     }
                 });
     }
 
+    // 未实名认证提示
+    private void showNotAuthDialog() {
+        DialogNotAuth dialogNotAuth = new DialogNotAuth();
+        dialogNotAuth.setListener(new DialogNotAuth.OnConfirmListener() {
+            @Override
+            public void onConfirmClick() {
+                ViewUtil.gotoActivity(getContext(), RealNameAuthActivity.class);
+            }
+        });
+        Dialogger.newDialog(getContext()).holder(dialogNotAuth)
+                .gravity(Gravity.CENTER)
+                .show();
+    }
+
     private void showSuccessDialog(SeedStore seed) {
-        final String seedName = getString(new SeedDataUtil(getResources()).getSeedName(seed.type));
-        DialogBuySeedSuccess dialog = new DialogBuySeedSuccess(seedName);
+        final SeedDataUtil util = new SeedDataUtil(getResources());
+        final String seedName = getString(util.getSeedName(seed.type));
+        final String getType = getString(util.getBuySuccessTitle(seed.type));
+        DialogBuySeedSuccess dialog = new DialogBuySeedSuccess(getType, seedName);
         dialog.setListener(() -> lookMySeeds());
         Dialogger.newDialog(getActivity()).holder(dialog)
                 .gravity(Gravity.CENTER).cancelable(false).show();

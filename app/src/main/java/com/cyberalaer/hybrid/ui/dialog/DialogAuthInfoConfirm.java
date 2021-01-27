@@ -4,25 +4,28 @@ import android.view.View;
 
 import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseDialogHolder;
-import com.cyberalaer.hybrid.databinding.DialogBuySeedSuccessBinding;
+import com.cyberalaer.hybrid.databinding.DialogAuthInfoConfirmBinding;
 
-public class DialogBuySeedSuccess extends BaseDialogHolder<DialogBuySeedSuccessBinding> {
+/**
+ * 认证信息确认
+ */
+public class DialogAuthInfoConfirm extends BaseDialogHolder<DialogAuthInfoConfirmBinding> {
 
-    String getType;
-    String seedName;
+    String name;
+    String cardNo;
     OnConfirmListener listener;
 
-    public DialogBuySeedSuccess(String getType, String seedName) {
-        super(R.layout.dialog_buy_seed_success);
-        this.getType = getType;
-        this.seedName = seedName;
+    public DialogAuthInfoConfirm(String name, String cardNo) {
+        super(R.layout.dialog_auth_info_confirm);
+        this.name = name;
+        this.cardNo = cardNo;
     }
 
     @Override
     public void onViewCreated(View view) {
         super.onViewCreated(view);
-        bindRoot.title.setText(getType);
-        bindRoot.content.setText(getContext().getResources().getString(R.string.seed_buyed_is, seedName));
+        bindRoot.name.setText(getContext().getResources().getString(R.string.name_is, name));
+        bindRoot.cardNo.setText(getContext().getResources().getString(R.string.card_no_is, cardNo));
     }
 
     public void setListener(OnConfirmListener listener) {
@@ -33,6 +36,8 @@ public class DialogBuySeedSuccess extends BaseDialogHolder<DialogBuySeedSuccessB
     public void click(View view) {
         switch (view.getId()) {
             case R.id.cancel:
+                dismiss();
+                break;
             case R.id.confirm:
                 if (listener != null)
                     listener.onConfirmClick();

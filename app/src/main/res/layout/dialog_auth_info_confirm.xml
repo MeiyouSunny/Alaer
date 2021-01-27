@@ -11,7 +11,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="350dp"
         android:layout_margin="40dp"
         android:background="@drawable/bg_white_round_corner">
 
@@ -27,21 +27,66 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="24dp"
-            android:text="@string/seed_buy_success"
+            android:drawableLeft="@drawable/ic_dialog_error"
+            android:drawablePadding="8dp"
+            android:text="@string/info_confirm"
             android:textColor="@color/font_41"
             android:textSize="@dimen/font_20" />
 
-        <TextView
-            android:id="@+id/content"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="206dp"
             android:layout_below="@+id/imgTop"
-            android:layout_centerHorizontal="true"
-            android:gravity="center_vertical"
-            android:paddingLeft="32dp"
-            android:text="@string/seed_buyed_is"
-            android:textColor="@color/font_99"
-            android:textSize="@dimen/font_16" />
+            android:orientation="vertical"
+            android:paddingLeft="24dp"
+            android:paddingTop="16dp"
+            android:paddingRight="24dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:text="@string/pls_confirm_info_is_correct"
+                android:textColor="@color/font_99"
+                android:textSize="@dimen/font_16" />
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center_vertical"
+                android:text="@string/name_is"
+                android:textColor="@color/font_green"
+                android:textSize="@dimen/font_16" />
+
+            <TextView
+                android:id="@+id/cardNo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:gravity="center_vertical"
+                android:text="@string/card_no_is"
+                android:textColor="@color/font_green"
+                android:textSize="@dimen/font_16" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginTop="14dp"
+                android:layout_marginBottom="10dp"
+                android:background="#E1E1E1" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:gravity="center_vertical"
+                android:text="@string/alipay_info_confirm"
+                android:textColor="@color/font_7E"
+                android:textSize="@dimen/font_14" />
+
+        </LinearLayout>
 
         <View
             android:layout_width="match_parent"
@@ -80,7 +125,7 @@
                 android:background="?android:attr/selectableItemBackground"
                 android:clickable="true"
                 android:onClick="@{handler.click}"
-                android:text="@string/look_my_seeds"
+                android:text="@string/sure"
                 android:textColor="@color/font_green"
                 android:textSize="@dimen/font_18" />
 

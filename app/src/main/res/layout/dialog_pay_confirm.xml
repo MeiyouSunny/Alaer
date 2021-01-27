@@ -27,7 +27,9 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="24dp"
-            android:text="@string/seed_buy_success"
+            android:drawableLeft="@drawable/ic_dialog_error"
+            android:drawablePadding="8dp"
+            android:text="@string/pay_confirm"
             android:textColor="@color/font_41"
             android:textSize="@dimen/font_20" />
 
@@ -39,7 +41,7 @@
             android:layout_centerHorizontal="true"
             android:gravity="center_vertical"
             android:paddingLeft="32dp"
-            android:text="@string/seed_buyed_is"
+            android:text="@string/confirm_pay_success_or_not"
             android:textColor="@color/font_99"
             android:textSize="@dimen/font_16" />
 
@@ -80,7 +82,7 @@
                 android:background="?android:attr/selectableItemBackground"
                 android:clickable="true"
                 android:onClick="@{handler.click}"
-                android:text="@string/look_my_seeds"
+                android:text="@string/sure"
                 android:textColor="@color/font_green"
                 android:textSize="@dimen/font_18" />
 

@@ -82,6 +82,7 @@
     <string name="cultivation_days_is">栽培天数：%d天</string>
     <string name="has_exchanged_is">已兑换：%d/%d个</string>
     <string name="exchanged_full">兑换完</string>
+    <string name="get_for_free">免费领取</string>
     <string name="get_by_start_user">星级数字市民赠送</string>
     <string name="get_by_activity">活动赠送</string>
 
@@ -91,6 +92,17 @@
     <string name="cancel">取消</string>
     <string name="seed_buyed_is">你已兑换一棵树苗：%s</string>
     <string name="seed_buy_success">兑换树苗成功</string>
+    <string name="seed_get_success">领取树苗成功</string>
+    <string name="not_auth_yes">您尚未实名，请先进行实名认证！</string>
+    <string name="goto_auth">前往认证</string>
+    <string name="confirm_pay_success_or_not">请确认是否是在支付宝中完成支付？</string>
+    <string name="pay_confirm">支付确认</string>
+    <string name="info_confirm">信息确认</string>
+    <string name="pls_confirm_info_is_correct">请确认以下信息是否正确：</string>
+    <string name="name_is">姓名：%s</string>
+    <string name="card_no_is">证件号：%s</string>
+    <string name="alipay_info_confirm">准备前往支付宝进行支付，请确保支付宝账号身份信息与以上信息一致，否则无法支付成功。</string>
+
 
 
     <string name="leisure_hall">休闲大厅</string>
