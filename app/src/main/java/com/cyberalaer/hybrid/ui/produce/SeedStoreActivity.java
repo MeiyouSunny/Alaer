@@ -45,4 +45,8 @@ public class SeedStoreActivity extends BaseTitleActivity<ActivitySeedStoreBindin
         ((SeedMineFragment) mTabAdapter.getItem(0)).refresh();
     }
 
+    public void showPage(int index) {
+        bindRoot.viewPager.setCurrentItem(index);
+    }
+
 }

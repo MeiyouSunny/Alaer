@@ -115,6 +115,11 @@ public class HomeActivity extends BaseViewBindActivity<ActivityHomeBinding> impl
 
     @Override
     public void onClick(View view, int position) {
+        if (position == 0 || position == 2 || position == 3) {
+            if (!judgeLogined())
+                return;
+        }
+
         if (position == 6) {
             // 走进阿拉尔,播放视频
             JzvdStd.startFullscreenDirectly(this, JzvdStd.class, AppConfig.GO_INTO_ALAER_VIDEO, getString(R.string.go_into_alaer));
@@ -141,10 +146,12 @@ public class HomeActivity extends BaseViewBindActivity<ActivityHomeBinding> impl
                 ViewUtil.gotoActivity(this, UserMineActivity.class);
                 break;
             case R.id.tabTask:
-                TaskListFragment.newInstance().show(getSupportFragmentManager(), "taskList");
+                if (judgeLogined())
+                    TaskListFragment.newInstance().show(getSupportFragmentManager(), "taskList");
                 break;
             case R.id.tabProduce:
-                ViewUtil.gotoActivity(this, ProductionHallActivity.class);
+                if (judgeLogined())
+                    ViewUtil.gotoActivity(this, ProductionHallActivity.class);
                 break;
             case R.id.tabDiscover:
                 ViewUtil.gotoActivity(this, DiscoverActivity.class);

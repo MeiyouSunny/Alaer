@@ -62,8 +62,10 @@ public class UserMineActivity extends BaseTitleActivity<ActivityUserMineBinding>
 
     private void initData() {
         userData = UserDataUtil.instance().getUserData();
-        if (userData == null)
+        if (userData == null) {
+            bindRoot.layoutToLogin.setVisibility(View.VISIBLE);
             return;
+        }
 
         showUserInfo();
 
@@ -122,6 +124,7 @@ public class UserMineActivity extends BaseTitleActivity<ActivityUserMineBinding>
                     @Override
                     public void onResponse(UserLevelList levels) {
                         if (levels != null && !CollectionUtils.isEmpty(levels.list) && level < levels.list.size()) {
+                            bindRoot.userLevel.setVisibility(View.VISIBLE);
                             bindRoot.levelName.setText(levels.list.get(level).name);
                             final int[] imgs = new int[]{R.drawable.ic_user_level0, R.drawable.ic_user_level1, R.drawable.ic_user_level2,
                                     R.drawable.ic_user_level3, R.drawable.ic_user_level4, R.drawable.ic_user_level5, R.drawable.ic_user_level6};
@@ -133,6 +136,11 @@ public class UserMineActivity extends BaseTitleActivity<ActivityUserMineBinding>
 
     @Override
     public void click(View view) {
+        if (view.getId() != R.id.customeService && view.getId() != R.id.about) {
+            if (!judgeLogined())
+                return;
+        }
+
         switch (view.getId()) {
             case R.id.icHead:
                 ViewUtil.gotoActivity(this, UserInfoActivity.class);
@@ -198,6 +206,9 @@ public class UserMineActivity extends BaseTitleActivity<ActivityUserMineBinding>
                 break;
             case R.id.customeService:
                 gotoCustomerService();
+                break;
+            case R.id.layoutToLogin:
+                ViewUtil.gotoActivity(this, LoginActivity.class);
                 break;
         }
     }

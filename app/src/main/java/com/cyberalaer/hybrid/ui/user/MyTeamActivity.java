@@ -25,7 +25,7 @@ import java.util.List;
 import androidx.annotation.RequiresApi;
 
 /**
- * 我的团队
+ * 我的伙伴
  */
 public class MyTeamActivity extends BaseTitleActivity<ActivityMyTeamBinding> {
 

@@ -4,6 +4,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 
+import com.alaer.lib.api.bean.UserData;
+import com.alaer.lib.data.UserDataUtil;
+import com.cyberalaer.hybrid.ui.user.LoginActivity;
+import com.cyberalaer.hybrid.util.ViewUtil;
 import com.jaeger.library.StatusBarUtil;
 import com.meiyou.mvp.BaseActivity;
 
@@ -66,6 +70,15 @@ public abstract class BaseViewBindActivity<T extends ViewDataBinding> extends Ba
 
     @Override
     public void click(View view) {
+    }
+
+    protected boolean judgeLogined() {
+        UserData userData = UserDataUtil.instance().getUserData();
+        if (userData == null) {
+            ViewUtil.gotoActivity(this, LoginActivity.class);
+            return false;
+        }
+        return true;
     }
 
 }

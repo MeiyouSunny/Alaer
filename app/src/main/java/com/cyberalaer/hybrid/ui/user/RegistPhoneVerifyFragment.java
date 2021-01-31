@@ -113,6 +113,11 @@ public class RegistPhoneVerifyFragment extends BaseBindFragment<FragmentRegistPh
                         $.toast().text(R.string.verify_code_send_ok).show();
                         VerifyCodeCounter.getInstance().startCounter(bindRoot.btnSend);
                     }
+
+                    @Override
+                    public void onError(int code, String msg) {
+                        $.toast().text(msg).show();
+                    }
                 });
     }
 

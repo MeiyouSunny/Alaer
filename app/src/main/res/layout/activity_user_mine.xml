@@ -25,41 +25,82 @@
 
             <include layout="@layout/layout_title_bar_black" />
 
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="66dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="27dp"
+                android:layout_marginBottom="21dp">
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/icHead"
-                android:layout_width="66dp"
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/icHead"
+                    android:layout_width="66dp"
+                    android:layout_height="66dp"
+                    android:onClick="@{handler.click}"
+                    android:src="@drawable/ic_head_default_boy"
+                    app:civ_border_color="#CB9D3A"
+                    app:civ_border_width="1dp" />
+
+                <TextView
+                    android:id="@+id/contribution"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="78dp"
+                    android:layout_marginTop="38dp"
+                    android:onClick="@{handler.click}"
+                    android:textColor="@color/font_99"
+                    android:textSize="@dimen/font_13"
+                    tools:text="贡献值: 10" />
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="78dp"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/font_36"
+                    android:textSize="@dimen/font_18"
+                    tools:text="09****89" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layoutToLogin"
+                android:layout_width="wrap_content"
                 android:layout_height="66dp"
                 android:layout_alignParentBottom="true"
                 android:layout_marginLeft="27dp"
                 android:layout_marginBottom="21dp"
-                android:onClick="@{handler.click}"
-                android:src="@drawable/ic_head_default_boy"
-                app:civ_border_color="#CB9D3A"
-                app:civ_border_width="1dp" />
+                android:clickable="true"
+                android:onClick="@{handler.click}">
 
-            <TextView
-                android:id="@+id/contribution"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_marginLeft="106dp"
-                android:layout_marginBottom="31dp"
-                android:onClick="@{handler.click}"
-                android:textColor="@color/font_99"
-                android:textSize="@dimen/font_13"
-                tools:text="贡献值: 10" />
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="66dp"
+                    android:layout_height="66dp"
+                    android:src="@drawable/ic_head_default_boy"
+                    app:civ_border_color="#CB9D3A"
+                    app:civ_border_width="1dp" />
 
-            <TextView
-                android:id="@+id/name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_marginLeft="106dp"
-                android:layout_marginBottom="52dp"
-                android:textColor="@color/font_36"
-                android:textSize="@dimen/font_18"
-                tools:text="09****89" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="78dp"
+                    android:layout_marginTop="38dp"
+                    android:text="欢迎来到数字阿拉尔"
+                    android:textColor="@color/font_99"
+                    android:textSize="@dimen/font_13" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="78dp"
+                    android:layout_marginTop="8dp"
+                    android:text="点击进入"
+                    android:textColor="@color/font_36"
+                    android:textSize="@dimen/font_18" />
+
+            </RelativeLayout>
+
 
         </RelativeLayout>
 
@@ -89,6 +130,7 @@
                     android:clickable="true"
                     android:foreground="?android:attr/selectableItemBackground"
                     android:onClick="@{handler.click}"
+                    android:visibility="gone"
                     app:cardCornerRadius="8dp"
                     app:cardElevation="0dp">
 
@@ -260,6 +302,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="16dp"
+                                    android:text="0.00"
                                     android:textColor="@color/font_41"
                                     android:textSize="@dimen/font_20"
                                     tools:text="5620" />
@@ -306,6 +349,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="16dp"
+                                    android:text="0.00"
                                     android:textColor="@color/font_41"
                                     android:textSize="@dimen/font_20"
                                     tools:text="1500" />
@@ -359,6 +403,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="16dp"
+                                    android:text="0.00"
                                     android:textColor="@color/font_41"
                                     android:textSize="@dimen/font_20"
                                     tools:text="3308" />
@@ -405,6 +450,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="16dp"
+                                    android:text="0.00"
                                     android:textColor="@color/font_41"
                                     android:textSize="@dimen/font_20"
                                     tools:text="1039" />

@@ -102,6 +102,11 @@ public class DiscoverActivity extends BaseTitleActivity<ActivityDiscoverBinding>
 
     @Override
     public void click(View view) {
+        if (view.getId() != R.id.newUserGuide) {
+            if (!judgeLogined())
+                return;
+        }
+
         switch (view.getId()) {
             case R.id.newUserGuide:
                 ViewUtil.gotoActivity(this, BeginnerGuideActivity.class);

@@ -14,12 +14,14 @@ import com.meiyou.mvp.MvpBinder;
 
 import java.util.List;
 
+import likly.view.repeat.RepeatView;
+
 /**
  * 种子商店:我的树苗
  */
 @MvpBinder(
 )
-public class SeedMineFragment extends BaseBindFragment<FragmentSeedMineListBinding> {
+public class SeedMineFragment extends BaseBindFragment<FragmentSeedMineListBinding> implements RepeatView.OnRetryListener {
 
     public static SeedMineFragment newInstance() {
         SeedMineFragment fragment = new SeedMineFragment();
@@ -64,8 +66,15 @@ public class SeedMineFragment extends BaseBindFragment<FragmentSeedMineListBindi
             bindRoot.repeatView.viewManager().bind(data);
             bindRoot.repeatView.layoutAdapterManager().showRepeatView();
         } else {
-            bindRoot.repeatView.layoutAdapterManager().showEmptyView();
+            bindRoot.repeatView.layoutAdapterManager().showRetryView();
+            bindRoot.repeatView.onRetry(this);
         }
 
     }
+
+    @Override
+    public void onRetry() {
+        ((SeedStoreActivity) getActivity()).showPage(1);
+    }
+
 }

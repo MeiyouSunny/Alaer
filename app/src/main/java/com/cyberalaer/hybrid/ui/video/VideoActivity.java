@@ -3,6 +3,7 @@ package com.cyberalaer.hybrid.ui.video;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.view.View;
 import android.view.WindowManager;
 
 import com.alaer.lib.api.AppConfig;
@@ -18,7 +19,7 @@ import cn.jzvd.Jzvd;
 /**
  * 视频播放
  */
-public class VideoActivity extends BaseViewBindActivity<ActivityVideoBinding> {
+public class VideoActivity extends BaseViewBindActivity<ActivityVideoBinding> implements VideoPlayer.OnTimeChnaged {
 
     public static final int REQUEST_CODE = 1;
     private AdVideo mAdVideo;
@@ -64,6 +65,7 @@ public class VideoActivity extends BaseViewBindActivity<ActivityVideoBinding> {
                 finish();
             }
         });
+        bindRoot.player.setTimeListener(this);
         bindRoot.player.startVideo();
     }
 
@@ -72,6 +74,25 @@ public class VideoActivity extends BaseViewBindActivity<ActivityVideoBinding> {
         super.onDestroy();
         Jzvd.releaseAllVideos();
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+    }
+
+    @Override
+    public void onTimeChanged(int seconds) {
+        bindRoot.time.setText(seconds + "s");
+        if (seconds > 30) {
+            bindRoot.time.setVisibility(View.GONE);
+            bindRoot.layoutClose.setVisibility(View.VISIBLE);
+        }
+    }
+
+    @Override
+    public void click(View view) {
+        switch (view.getId()) {
+            case R.id.close:
+                setResult(RESULT_OK);
+                finish();
+                break;
+        }
     }
 
 }
