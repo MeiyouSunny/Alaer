@@ -7,6 +7,9 @@
         <variable
             name="bill"
             type="com.alaer.lib.api.bean.ActiveBill" />
+        <variable
+            name="number"
+            type="com.cyberalaer.hybrid.util.NumberUtils" />
     </data>
 
     <RelativeLayout
@@ -47,7 +50,7 @@
             android:layout_marginLeft="12dp"
             android:layout_marginTop="40dp"
             android:layout_toRightOf="@+id/time"
-            android:text="@{@string/activity_is(bill.postAmount)}"
+            android:text="@{@string/activity_is(number.parseNumber(bill.postAmount))}"
             android:textColor="@color/font_7E"
             android:textSize="@dimen/font_10" />
 
@@ -56,7 +59,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:text="@{bill.flag==1 ? @string/amount_add(String.valueOf(bill.changeAmount)) : @string/amount_reduce(String.valueOf(bill.changeAmount))}"
+            android:text="@{bill.flag==1 ? @string/amount_add(number.parseNumber(bill.changeAmount)) : @string/amount_reduce(number.parseNumber(bill.changeAmount))}"
             android:textColor="@{bill.flag==1 ? @color/font_green : @color/font_red}"
             android:textSize="@dimen/font_17" />
 

@@ -122,6 +122,8 @@ public class SeedStoreFragment extends BaseBindFragment<FragmentSeedStoreListBin
                     public void onError(int code, String msg) {
                         if (code == 403) {
                             showNotAuthDialog();
+                        } else {
+                            $.toast().text(msg).show();
                         }
                     }
                 });

@@ -101,20 +101,13 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
-                            android:layout_marginRight="10dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="18dp"
                             android:layout_toLeftOf="@+id/ic_next_uid"
                             android:text="@{String.valueOf(user.uid)}"
                             android:textColor="@color/font_7E"
                             android:textSize="@dimen/font_15"
                             tools:text="83790" />
-
-                        <ImageView
-                            android:id="@+id/ic_next_uid"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
-                            android:layout_centerVertical="true"
-                            android:src="@drawable/ic_item_next_little" />
 
                     </RelativeLayout>
 

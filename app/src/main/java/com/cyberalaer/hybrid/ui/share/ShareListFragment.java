@@ -1,9 +1,14 @@
 package com.cyberalaer.hybrid.ui.share;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.text.TextUtils;
+import android.view.View;
 
 import com.alaer.lib.data.UserDataUtil;
 import com.cyberalaer.hybrid.R;
@@ -12,6 +17,8 @@ import com.cyberalaer.hybrid.databinding.FragmentShareListBinding;
 import com.cyberalaer.hybrid.util.QRCodeEncoder;
 import com.cyberalaer.hybrid.util.ThreadUtil;
 import com.cyberalaer.hybrid.view.GradViewItemDecoration;
+
+import likly.dollar.$;
 
 /**
  * 邀请,分享列表
@@ -55,6 +62,28 @@ public class ShareListFragment extends BaseBindFragment<FragmentShareListBinding
         Bundle data = new Bundle();
         data.putParcelable("sharePic", imageUri);
         navigate(R.id.action_to_share_pic, data);
+    }
+
+    @Override
+    public void click(View view) {
+        switch (view.getId()) {
+            case R.id.copyCode:
+                copy(UserDataUtil.instance().getTeamDetail().code);
+                break;
+            case R.id.copyUrl:
+                copy(UserDataUtil.instance().getTeamDetail().inviteUrl);
+                break;
+        }
+    }
+
+    public void copy(String content) {
+        if (!TextUtils.isEmpty(content)) {
+            ClipboardManager cmb = (ClipboardManager) getContext().getSystemService(Context.CLIPBOARD_SERVICE);
+            cmb.setText(content.trim());
+            ClipData clipData = ClipData.newPlainText(null, content);
+            cmb.setPrimaryClip(clipData);
+            $.toast().text("复制成功").show();
+        }
     }
 
 }

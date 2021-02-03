@@ -63,8 +63,9 @@ public class SecondPwdSetActivity extends BaseTitleActivity<ActivitySecondPwdSet
         String verifyCode = ViewUtil.getText(bindRoot.etVerifyCode);
         String pwd = ViewUtil.getText(bindRoot.etPwd);
         String pwdConfirm = ViewUtil.getText(bindRoot.etPwdConfirm);
-        final boolean hasInput = !TextUtils.isEmpty(pwd) && !TextUtils.isEmpty(pwdConfirm) && !TextUtils.isEmpty(verifyCode)
-                && StringUtil.pwdIsValid(pwd) && StringUtil.pwdIsValid(pwdConfirm);
+        final boolean hasInput = !TextUtils.isEmpty(pwd)
+                && !TextUtils.isEmpty(pwdConfirm)
+                && !TextUtils.isEmpty(verifyCode);
         bindRoot.submit.setEnabled(hasInput);
     }
 

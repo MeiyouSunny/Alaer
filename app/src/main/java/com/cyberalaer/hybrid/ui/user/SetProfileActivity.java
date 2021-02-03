@@ -117,8 +117,10 @@ public class SetProfileActivity extends BaseTitleActivity<ActivityWechatNoSetBin
                 inputContent = userData.name;
                 break;
         }
-        if (!TextUtils.isEmpty(inputContent))
+        if (!TextUtils.isEmpty(inputContent)) {
             bindRoot.input.setText(inputContent);
+            bindRoot.input.setSelection(inputContent.length());
+        }
     }
 
     @Override

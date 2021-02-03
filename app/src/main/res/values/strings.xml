@@ -24,7 +24,7 @@
     <string name="password">密码</string>
     <string name="pls_input_pwd_short">请输入密码</string>
     <string name="pls_input_pwd">请输入8-16位数字加字母密码</string>
-    <string name="regist_account">申请账号</string>
+    <string name="regist_account">申请</string>
     <string name="forget_pwd">忘记密码</string>
     <string name="apply">申请</string>
     <string name="pls_input_verify_code">请输入验证码</string>
@@ -232,7 +232,7 @@
     <string name="invitate_code_is">邀请码：%s</string>
 
     <string name="balance_is">余额：%f</string>
-    <string name="activity_is">活跃度：%d</string>
+    <string name="activity_is">活跃度：%s</string>
 
     <string name="exchange_build_score">果实兑换建设功分</string>
     <string name="sure_to_exchange">确认兑换</string>

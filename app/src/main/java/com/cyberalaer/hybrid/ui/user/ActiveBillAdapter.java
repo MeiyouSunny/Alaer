@@ -6,6 +6,7 @@ import android.view.ViewGroup;
 import com.alaer.lib.api.bean.ActiveBill;
 import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.databinding.ItemActiveBillBinding;
+import com.cyberalaer.hybrid.util.NumberUtils;
 
 import java.util.List;
 
@@ -40,6 +41,7 @@ public class ActiveBillAdapter extends RecyclerView.Adapter<ActiveBillAdapter.Vi
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        holder.binding.setNumber(NumberUtils.instance());
         holder.binding.setBill(data.get(position));
         holder.binding.executePendingBindings();
     }

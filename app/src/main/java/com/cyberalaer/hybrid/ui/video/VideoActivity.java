@@ -14,6 +14,7 @@ import com.cyberalaer.hybrid.databinding.ActivityVideoBinding;
 import com.cyberalaer.hybrid.util.ViewUtil;
 
 import androidx.fragment.app.Fragment;
+import cn.jzvd.JZUtils;
 import cn.jzvd.Jzvd;
 
 /**
@@ -44,6 +45,8 @@ public class VideoActivity extends BaseViewBindActivity<ActivityVideoBinding> im
     @Override
     public void onViewCreated() {
         super.onViewCreated();
+
+        JZUtils.clearSavedProgress(getContext(), null);
 
         mAdVideo = (AdVideo) getIntent().getSerializableExtra("adVideo");
         if (mAdVideo == null)

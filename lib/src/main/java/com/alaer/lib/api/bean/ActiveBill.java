@@ -23,10 +23,10 @@ public class ActiveBill {
     public String uuid;
     public int type;
     public int flag;
-    public int preAmount;
-    public int changeAmount;
-    public int postAmount;
-    public int refAmount;
+    public float preAmount;
+    public float changeAmount;
+    public float postAmount;
+    public float refAmount;
     public String refId;
     public String note;
     public int status;

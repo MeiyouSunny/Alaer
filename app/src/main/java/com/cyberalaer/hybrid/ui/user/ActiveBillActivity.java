@@ -6,6 +6,7 @@ import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseTitleActivity;
 import com.cyberalaer.hybrid.databinding.ActivityActiveDetailBinding;
 import com.cyberalaer.hybrid.ui.webpage.WebPageActivity;
+import com.cyberalaer.hybrid.util.NumberUtils;
 
 /**
  * 树苗活跃度明细
@@ -28,6 +29,7 @@ public class ActiveBillActivity extends BaseTitleActivity<ActivityActiveDetailBi
         setTitleRightIcon(R.drawable.ic_question);
 
         TeamInfo data = (TeamInfo) getIntent().getSerializableExtra("teamInfo");
+        bindRoot.setNumber(NumberUtils.instance());
         bindRoot.setData(data);
     }
 
