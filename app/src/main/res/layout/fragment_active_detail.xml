@@ -6,13 +6,8 @@
         style="@style/RepeatView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:clipToPadding="false"
-        android:paddingStart="12dp"
-        android:paddingEnd="12dp"
         app:emptyView="@layout/layout_no_data"
-        app:mode="grid"
-        app:spanCount="2"
-        app:viewHolderClass="com.cyberalaer.hybrid.ui.produce.AdapterSeedStore"
-        app:viewHolderLayout="@layout/item_seed_store" />
+        app:viewHolderClass="com.cyberalaer.hybrid.ui.user.ActiveBillAdapter"
+        app:viewHolderLayout="@layout/item_active_bill" />
 
 </layout>

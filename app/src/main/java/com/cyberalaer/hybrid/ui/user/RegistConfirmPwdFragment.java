@@ -99,7 +99,7 @@ public class RegistConfirmPwdFragment extends BaseBindFragment<FragmentRegistCon
                                 new Callback<TeamDetail>() {
                                     @Override
                                     public void onResponse(TeamDetail teamDetail) {
-                                        UserDataUtil.instance().setTeamDetail(teamDetail);
+                                        UserDataUtil.instance().saveTeamDetailInfo(teamDetail);
                                         ViewUtil.gotoActivity(getContext(), HomeActivity.class);
                                     }
                                 });

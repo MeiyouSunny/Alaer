@@ -7,6 +7,10 @@
         <variable
             name="bill"
             type="com.alaer.lib.api.bean.ActiveBill" />
+
+        <variable
+            name="number"
+            type="com.cyberalaer.hybrid.util.NumberUtils" />
     </data>
 
     <RelativeLayout
@@ -18,8 +22,8 @@
         <ImageView
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:layout_marginLeft="4dp"
             android:layout_centerVertical="true"
+            android:layout_marginLeft="4dp"
             android:src="@{bill.flag==1 ? @drawable/ic_bill_add : @drawable/ic_bill_reduce}" />
 
         <TextView
@@ -41,22 +45,22 @@
             android:textColor="@color/font_7E"
             android:textSize="@dimen/font_10" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="12dp"
-            android:layout_marginTop="40dp"
-            android:layout_toRightOf="@+id/time"
-            android:text="@{@string/contribution_is(bill.postAmount)}"
-            android:textColor="@color/font_7E"
-            android:textSize="@dimen/font_10" />
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="12dp"-->
+<!--            android:layout_marginTop="40dp"-->
+<!--            android:layout_toRightOf="@+id/time"-->
+<!--            android:text="@{@string/contribution_is(number.parseNumber(bill.postAmount))}"-->
+<!--            android:textColor="@color/font_7E"-->
+<!--            android:textSize="@dimen/font_10" />-->
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:text="@{String.valueOf(bill.changeAmount)}"
+            android:text="@{bill.flag==1 ? @string/amount_add(number.parseNumber(bill.changeAmount)) : @string/amount_reduce(number.parseNumber(bill.changeAmount))}"
             android:textColor="@{bill.flag==1 ? @color/font_green : @color/font_red}"
             android:textSize="@dimen/font_17" />
 

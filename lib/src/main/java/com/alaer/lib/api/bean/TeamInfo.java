@@ -16,6 +16,7 @@ public class TeamInfo implements Serializable {
     public int adcodeStatus;
     public int master;
     public int masterLocation;
+    public int channel;
     public List<TodayMiners> todayMiners;
     public List<?> featureMiners;
     public List<?> expiredMiners;

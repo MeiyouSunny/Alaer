@@ -4,6 +4,7 @@ import android.text.TextUtils;
 
 import com.alaer.lib.api.bean.Balance;
 import com.alaer.lib.api.bean.TeamDetail;
+import com.alaer.lib.api.bean.TeamInfo;
 import com.alaer.lib.api.bean.UserData;
 
 import likly.dollar.$;
@@ -20,6 +21,7 @@ public class UserDataUtil {
 
     private UserData mUserData;
     private TeamDetail mTeamDetail;
+    private TeamInfo mTeamInfo;
     private boolean claimNewbieMiner;
     private Balance mBalanse;
     private boolean tokenInvalid;
@@ -30,10 +32,6 @@ public class UserDataUtil {
 
     public TeamDetail getTeamDetail() {
         return mTeamDetail;
-    }
-
-    public void setTeamDetail(TeamDetail teamDetail) {
-        mTeamDetail = teamDetail;
     }
 
     public void setUserData(UserData userData) {
@@ -82,6 +80,14 @@ public class UserDataUtil {
         return null;
     }
 
+    public void setTeamInfo(TeamInfo teamInfo) {
+        mTeamInfo = teamInfo;
+    }
+
+    public TeamInfo teamInfo() {
+        return mTeamInfo;
+    }
+
     public Balance getBalanse() {
         return mBalanse;
     }
@@ -94,10 +100,16 @@ public class UserDataUtil {
         return mTeamDetail != null && mTeamDetail.isAuthSenior > 1 && mTeamDetail.isAuthVideo > 0;
     }
 
+    // 3D视界用户
+    public boolean isFrom3DAccount() {
+        return mTeamInfo != null && mTeamInfo.channel == 2;
+    }
+
     public void clearUserDatas() {
         saveTeamDetailInfo(null);
         saveUserDataInfo(null);
         mBalanse = null;
+        mTeamInfo = null;
     }
 
     public boolean isClaimNewbieMiner() {

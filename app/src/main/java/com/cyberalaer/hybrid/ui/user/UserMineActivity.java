@@ -27,6 +27,7 @@ import java.util.UUID;
 
 import cn.udesk.UdeskSDKManager;
 import cn.udesk.config.UdeskConfig;
+import likly.dollar.$;
 
 /**
  * 个人中心
@@ -149,7 +150,10 @@ public class UserMineActivity extends BaseTitleActivity<ActivityUserMineBinding>
                 SetProfileActivity.start(this, SetProfileActivity.WECHAT);
                 break;
             case R.id.invitationCode:
-                ViewUtil.gotoActivity(this, ShareActivity.class);
+                if (UserDataUtil.instance().isFrom3DAccount())
+                    $.toast().text(R.string.function_not_open).show();
+                else
+                    ViewUtil.gotoActivity(this, ShareActivity.class);
                 break;
             case R.id.myPartner:
                 ViewUtil.gotoActivity(this, MyTeamActivity.class);

@@ -11,7 +11,7 @@ import com.alaer.lib.api.bean.UserData;
 import com.alaer.lib.data.UserDataUtil;
 import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseBindFragment;
-import com.cyberalaer.hybrid.databinding.FragmentActiveDetailListBinding;
+import com.cyberalaer.hybrid.databinding.FragmentActiveDetailBinding;
 import com.cyberalaer.hybrid.util.CollectionUtils;
 
 import java.util.List;
@@ -19,7 +19,7 @@ import java.util.List;
 /**
  * 活跃度明细列表Fragment
  */
-public class ActiveBillFragment extends BaseBindFragment<FragmentActiveDetailListBinding> {
+public class ActiveBillFragment extends BaseBindFragment<FragmentActiveDetailBinding> {
     private static final String TYPE = "type";
 
     public static ActiveBillFragment newInstance(int type) {
@@ -41,7 +41,7 @@ public class ActiveBillFragment extends BaseBindFragment<FragmentActiveDetailLis
 
     @Override
     public int initLayoutResId() {
-        return R.layout.fragment_active_detail_list;
+        return R.layout.fragment_active_detail;
     }
 
     @Override
@@ -60,9 +60,7 @@ public class ActiveBillFragment extends BaseBindFragment<FragmentActiveDetailLis
                 new Callback<ActiveBillList>() {
                     @Override
                     public void onResponse(ActiveBillList bills) {
-                        if (bills != null && !CollectionUtils.isEmpty(bills.list)) {
-                            showActiveBill(bills.list);
-                        }
+                        showActiveBill(bills.list);
                     }
 
                     @Override
@@ -73,7 +71,12 @@ public class ActiveBillFragment extends BaseBindFragment<FragmentActiveDetailLis
     }
 
     private void showActiveBill(List<ActiveBill> bills) {
-        ActiveBillAdapter adapter = new ActiveBillAdapter(bills);
-        bindRoot.list.setAdapter(adapter);
+        bindRoot.repeatView.getRecyclerView().setPaddingRelative(0, 48, 0, 0);
+        bindRoot.repeatView.getRecyclerView().setClipToPadding(false);
+
+        if (CollectionUtils.isEmpty(bills))
+            bindRoot.repeatView.layoutAdapterManager().showEmptyView();
+        else
+            bindRoot.repeatView.viewManager().bind(bills);
     }
 }

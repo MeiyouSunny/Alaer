@@ -26,6 +26,8 @@ import com.zhy.magicviewpager.transformer.ScaleInTransformer;
 
 import java.util.List;
 
+import likly.dollar.$;
+
 /**
  * 发现
  */
@@ -115,7 +117,10 @@ public class DiscoverActivity extends BaseTitleActivity<ActivityDiscoverBinding>
                 ViewUtil.gotoActivity(this, MyTeamActivity.class);
                 break;
             case R.id.share:
-                ViewUtil.gotoActivity(this, ShareActivity.class);
+                if (UserDataUtil.instance().isFrom3DAccount())
+                    $.toast().text(R.string.function_not_open).show();
+                else
+                    ViewUtil.gotoActivity(this, ShareActivity.class);
                 break;
             case R.id.auth:
                 if (UserDataUtil.instance().isAuthed())

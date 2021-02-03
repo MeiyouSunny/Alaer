@@ -2,6 +2,12 @@ package com.cyberalaer.hybrid.ui.auth;
 
 import android.view.View;
 
+import com.alaer.lib.api.ApiUtil;
+import com.alaer.lib.api.AppConfig;
+import com.alaer.lib.api.Callback;
+import com.alaer.lib.api.bean.TeamDetail;
+import com.alaer.lib.api.bean.UserData;
+import com.alaer.lib.data.UserDataUtil;
 import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseBindFragment;
 import com.cyberalaer.hybrid.databinding.FragmentAuthPaySuccessBinding;
@@ -25,6 +31,23 @@ public class PaySuccessFragment extends BaseBindFragment<FragmentAuthPaySuccessB
                 ViewUtil.gotoActivity(getContext(), HomeActivity.class);
                 break;
         }
+    }
+
+    @Override
+    public void onViewCreated() {
+        super.onViewCreated();
+        refreshProfile();
+    }
+
+    private void refreshProfile() {
+        UserData userData = UserDataUtil.instance().getUserData();
+        ApiUtil.apiService().getTeamDetailInfo(userData.uuid, String.valueOf(userData.uid), userData.token, AppConfig.DIAMOND_CURRENCY,
+                new Callback<TeamDetail>() {
+                    @Override
+                    public void onResponse(TeamDetail teamDetail) {
+                        UserDataUtil.instance().saveTeamDetailInfo(teamDetail);
+                    }
+                });
     }
 
 }

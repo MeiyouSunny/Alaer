@@ -9,9 +9,10 @@
         android:clipToPadding="false"
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
-        app:retryView="@layout/layout_retry_my_seed"
-        app:retryId="@id/retryId"
+        app:emptyView="@layout/layout_no_data"
         app:mode="grid"
+        app:retryId="@id/retryId"
+        app:retryView="@layout/layout_retry_my_seed"
         app:spanCount="2"
         app:viewHolderClass="com.cyberalaer.hybrid.ui.produce.AdapterSeedMine"
         app:viewHolderLayout="@layout/item_seed_mine" />

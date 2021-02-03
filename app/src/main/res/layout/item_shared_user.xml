@@ -50,7 +50,7 @@
                 android:layout_height="19dp"
                 android:layout_marginLeft="163dp"
                 android:layout_marginTop="23dp"
-                android:background="@{data.isAuthSenior>=0 ? @drawable/bg_gradient_green : @drawable/bg_gradient_gray}"
+                android:background="@{data.isAuthSenior > 1 &amp;&amp; data.isAuthVideo > 0 ? @drawable/bg_gradient_green : @drawable/bg_gradient_gray}"
                 android:gravity="center"
                 android:text="@string/real_name"
                 android:textColor="@color/white"

@@ -1,63 +1,39 @@
 package com.cyberalaer.hybrid.ui.user;
 
-import android.view.LayoutInflater;
-import android.view.ViewGroup;
+import android.view.View;
 
 import com.alaer.lib.api.bean.ActiveBill;
 import com.cyberalaer.hybrid.R;
+import com.cyberalaer.hybrid.base.repeatview.BaseViewHolder;
+import com.cyberalaer.hybrid.data.BillUtil;
 import com.cyberalaer.hybrid.databinding.ItemActiveBillBinding;
 import com.cyberalaer.hybrid.util.NumberUtils;
-
-import java.util.List;
-
-import androidx.annotation.NonNull;
-import androidx.databinding.DataBindingUtil;
-import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * 活跃度账单Adapter
  */
-public class ActiveBillAdapter extends RecyclerView.Adapter<ActiveBillAdapter.ViewHolder> {
+public class ActiveBillAdapter extends BaseViewHolder<ItemActiveBillBinding, ActiveBill> {
 
-    List<ActiveBill> data;
+    BillUtil billUtil;
 
-    public ActiveBillAdapter(List<ActiveBill> data) {
-        this.data = data;
-    }
-
-    public void setProductList(final List<ActiveBill> productList) {
-        data = productList;
-        notifyDataSetChanged();
+    @Override
+    protected void onViewCreated(View view) {
+        super.onViewCreated(view);
+        if (billUtil == null)
+            billUtil = new BillUtil();
     }
 
     @Override
-    @NonNull
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        ItemActiveBillBinding binding = DataBindingUtil
-                .inflate(LayoutInflater.from(parent.getContext()), R.layout.item_active_bill,
-                        parent, false);
-        return new ViewHolder(binding);
+    protected void onBindData(ActiveBill bill) {
+        bindRoot.setBillUtil(billUtil);
+        bindRoot.setNumber(NumberUtils.instance());
+        bindRoot.setBill(bill);
+        bindRoot.executePendingBindings();
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.binding.setNumber(NumberUtils.instance());
-        holder.binding.setBill(data.get(position));
-        holder.binding.executePendingBindings();
+    protected int getViewHolderLayout() {
+        return R.layout.item_active_bill;
     }
 
-    @Override
-    public int getItemCount() {
-        return data == null ? 0 : data.size();
-    }
-
-    static class ViewHolder extends RecyclerView.ViewHolder {
-
-        final ItemActiveBillBinding binding;
-
-        public ViewHolder(ItemActiveBillBinding binding) {
-            super(binding.getRoot());
-            this.binding = binding;
-        }
-    }
 }

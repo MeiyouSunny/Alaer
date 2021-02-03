@@ -12,6 +12,7 @@ import com.cyberalaer.hybrid.base.BaseTitleActivity;
 import com.cyberalaer.hybrid.databinding.ActivityContributionBinding;
 import com.cyberalaer.hybrid.ui.webpage.WebPageActivity;
 import com.cyberalaer.hybrid.util.CollectionUtils;
+import com.cyberalaer.hybrid.util.NumberUtils;
 
 import java.util.List;
 
@@ -36,7 +37,7 @@ public class ContributionActivity extends BaseTitleActivity<ActivityContribution
         setTitleRightIcon(R.drawable.ic_question);
 
         int value = getIntent().getIntExtra("contribution", 0);
-        bindRoot.value.setText(String.valueOf(value));
+        bindRoot.value.setText(NumberUtils.instance().parseNumber(value));
 
         queryRecord();
     }

@@ -17,7 +17,7 @@ public class TabPagerAdapter extends FragmentPagerAdapter {
         super(fm);
         mContext = context;
         mTitles = titles;
-        mFragments = new Fragment[]{SeedMineFragment.newInstance(), SeedStoreFragment.newInstance(claimNewbieMiner), SeedExpiredFragment.newInstance()};
+        mFragments = new Fragment[]{SeedMineFragment.newInstance(claimNewbieMiner), SeedStoreFragment.newInstance(claimNewbieMiner), SeedExpiredFragment.newInstance()};
     }
 
     @Override

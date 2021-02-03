@@ -4,6 +4,7 @@ import com.alaer.lib.api.bean.ActiveBill;
 import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.repeatview.BaseViewHolder;
 import com.cyberalaer.hybrid.databinding.ItemContributionRecordBinding;
+import com.cyberalaer.hybrid.util.NumberUtils;
 
 /**
  * 贡献值Adapter
@@ -11,8 +12,9 @@ import com.cyberalaer.hybrid.databinding.ItemContributionRecordBinding;
 public class ContributionAdapter extends BaseViewHolder<ItemContributionRecordBinding, ActiveBill> {
 
     @Override
-    protected void onBindData(ActiveBill region) {
-        bindRoot.setBill(region);
+    protected void onBindData(ActiveBill bill) {
+        bindRoot.setNumber(NumberUtils.instance());
+        bindRoot.setBill(bill);
         bindRoot.executePendingBindings();
     }
 

@@ -1,5 +1,7 @@
 package com.cyberalaer.hybrid.ui.produce;
 
+import android.os.Bundle;
+
 import com.alaer.lib.api.ApiUtil;
 import com.alaer.lib.api.AppConfig;
 import com.alaer.lib.api.Callback;
@@ -24,8 +26,13 @@ import likly.view.repeat.RepeatView;
 )
 public class SeedMineFragment extends BaseBindFragment<FragmentSeedMineListBinding> implements RepeatView.OnRetryListener {
 
-    public static SeedMineFragment newInstance() {
+    private boolean claimNewbieMiner;
+
+    public static SeedMineFragment newInstance(boolean claimNewbieMiner) {
         SeedMineFragment fragment = new SeedMineFragment();
+        Bundle bundle = new Bundle();
+        bundle.putBoolean("claimNewbieMiner", claimNewbieMiner);
+        fragment.setArguments(bundle);
         return fragment;
     }
 
@@ -46,6 +53,7 @@ public class SeedMineFragment extends BaseBindFragment<FragmentSeedMineListBindi
     }
 
     private void initData() {
+        claimNewbieMiner = getArguments().getBoolean("claimNewbieMiner");
         UserData userData = UserDataUtil.instance().getUserData();
         if (userData == null)
             return;
@@ -68,8 +76,12 @@ public class SeedMineFragment extends BaseBindFragment<FragmentSeedMineListBindi
             bindRoot.repeatView.viewManager().bind(data);
             bindRoot.repeatView.layoutAdapterManager().showRepeatView();
         } else {
-            bindRoot.repeatView.layoutAdapterManager().showRetryView();
-            bindRoot.repeatView.onRetry(this);
+            if (claimNewbieMiner) {
+                bindRoot.repeatView.layoutAdapterManager().showEmptyView();
+            } else {
+                bindRoot.repeatView.layoutAdapterManager().showRetryView();
+                bindRoot.repeatView.onRetry(this);
+            }
         }
 
     }

@@ -8,18 +8,19 @@ import com.alaer.lib.api.bean.UserData;
 import com.alaer.lib.data.UserDataUtil;
 import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseBindFragment;
-import com.cyberalaer.hybrid.databinding.FragmentActiveDetailListBinding;
+import com.cyberalaer.hybrid.databinding.FragmentFruitBillBinding;
+import com.cyberalaer.hybrid.util.CollectionUtils;
 
 import java.util.List;
 
 /**
  * 活跃度明细列表Fragment
  */
-public class FruitBillFragment extends BaseBindFragment<FragmentActiveDetailListBinding> {
+public class FruitBillFragment extends BaseBindFragment<FragmentFruitBillBinding> {
 
     @Override
     public int initLayoutResId() {
-        return R.layout.fragment_active_detail_list;
+        return R.layout.fragment_fruit_bill;
     }
 
     @Override
@@ -49,7 +50,13 @@ public class FruitBillFragment extends BaseBindFragment<FragmentActiveDetailList
     }
 
     private void showFruitBill(List<FruitBill> bills) {
-        FruitBillAdapter adapter = new FruitBillAdapter(bills);
-        bindRoot.list.setAdapter(adapter);
+        bindRoot.repeatView.getRecyclerView().setPaddingRelative(0, 48, 0, 0);
+        bindRoot.repeatView.getRecyclerView().setClipToPadding(false);
+
+        if (CollectionUtils.isEmpty(bills))
+            bindRoot.repeatView.layoutAdapterManager().showEmptyView();
+        else
+            bindRoot.repeatView.viewManager().bind(bills);
     }
+
 }

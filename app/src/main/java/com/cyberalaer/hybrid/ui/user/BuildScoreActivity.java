@@ -15,7 +15,7 @@ public class BuildScoreActivity extends BaseTitleActivity<ActivityBuildScoreBind
 
     @Override
     protected int titleResId() {
-        return R.string.build_integral;
+        return R.string.build_integral_detail;
     }
 
     @Override

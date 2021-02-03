@@ -7,6 +7,11 @@
         <variable
             name="bill"
             type="com.alaer.lib.api.bean.ActiveBill" />
+
+        <variable
+            name="billUtil"
+            type="com.cyberalaer.hybrid.data.BillUtil" />
+
         <variable
             name="number"
             type="com.cyberalaer.hybrid.util.NumberUtils" />
@@ -21,8 +26,8 @@
         <ImageView
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:layout_marginLeft="4dp"
             android:layout_centerVertical="true"
+            android:layout_marginLeft="4dp"
             android:src="@{bill.flag==1 ? @drawable/ic_bill_add : @drawable/ic_bill_reduce}" />
 
         <TextView
@@ -50,7 +55,7 @@
             android:layout_marginLeft="12dp"
             android:layout_marginTop="40dp"
             android:layout_toRightOf="@+id/time"
-            android:text="@{@string/activity_is(number.parseNumber(bill.postAmount))}"
+            android:text="@{billUtil.isSeedActivity(bill) ? @string/sapling_activity_is(number.parseNumber(bill.postAmount)) : @string/share_activity_is(number.parseNumber(bill.postAmount))}"
             android:textColor="@color/font_7E"
             android:textSize="@dimen/font_10" />
 

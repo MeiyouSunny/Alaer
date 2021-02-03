@@ -20,7 +20,8 @@ public class PayFailedFragment extends BaseBindFragment<FragmentAuthPayFailedBin
     public void click(View view) {
         switch (view.getId()) {
             case R.id.ok:
-                navigate(R.id.action_to_input_page);
+//                navigate(R.id.action_to_input_page);
+                getActivity().onBackPressed();
                 break;
         }
     }

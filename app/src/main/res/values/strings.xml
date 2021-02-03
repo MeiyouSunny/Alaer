@@ -152,6 +152,7 @@
     <string name="total_assets">总资产:(元)</string>
     <string name="fruit">果实</string>
     <string name="build_integral">建设功分</string>
+    <string name="build_integral_detail">建设功分明细</string>
     <string name="sapling_activity">树苗活跃度</string>
     <string name="share_activity">分享活跃度</string>
     <string name="my_share">我的分享</string>
@@ -193,6 +194,8 @@
     <string name="all">全部</string>
     <string name="exchange">兑换</string>
     <string name="give_away">赠送</string>
+    <string name="sapling_activity_is">树苗活跃度：%s</string>
+    <string name="share_activity_is">分享活跃度：%s</string>
 
     <string name="fruit_bill">果实明细</string>
     <string name="total">总计</string>
@@ -287,7 +290,7 @@
 
     <string name="contribution">贡献值</string>
     <string name="contribution_detail">贡献值明细</string>
-    <string name="contribution_is">活跃度：%d</string>
+    <string name="contribution_is">活跃度：%s</string>
 
     <string name="user_level_free_rate_is">2、缴纳基金占比%d%%</string>
     <string name="contribution_info_is">%s/贡献值：%d</string>
@@ -304,5 +307,7 @@
 
     <string name="amount_add">+%s</string>
     <string name="amount_reduce">-%s</string>
+
+    <string name="function_not_open">此功能暂未开放</string>
 
 </resources>

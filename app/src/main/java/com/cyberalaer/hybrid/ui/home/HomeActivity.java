@@ -17,6 +17,7 @@ import com.alaer.lib.api.Callback;
 import com.alaer.lib.api.bean.Balance;
 import com.alaer.lib.api.bean.Notice;
 import com.alaer.lib.api.bean.TeamDetail;
+import com.alaer.lib.api.bean.TeamInfo;
 import com.alaer.lib.api.bean.UserData;
 import com.alaer.lib.data.UserDataUtil;
 import com.alaer.lib.event.Event;
@@ -191,6 +192,14 @@ public class HomeActivity extends BaseViewBindActivity<ActivityHomeBinding> impl
                     public void onResponse(Balance balance) {
                         bindRoot.buildScore.setText(NumberUtils.instance().parseNumber(balance.money.amount));
                         UserDataUtil.instance().setBalanse(balance);
+                    }
+                });
+
+        ApiUtil.apiService().info(userData.uuid, String.valueOf(userData.uid), userData.token, AppConfig.DIAMOND_CURRENCY,
+                new Callback<TeamInfo>() {
+                    @Override
+                    public void onResponse(TeamInfo teamInfo) {
+                        UserDataUtil.instance().setTeamInfo(teamInfo);
                     }
                 });
     }

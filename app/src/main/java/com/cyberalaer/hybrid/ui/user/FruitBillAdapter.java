@@ -1,58 +1,26 @@
 package com.cyberalaer.hybrid.ui.user;
 
-import android.view.LayoutInflater;
-import android.view.ViewGroup;
-
 import com.alaer.lib.api.bean.FruitBill;
 import com.cyberalaer.hybrid.R;
+import com.cyberalaer.hybrid.base.repeatview.BaseViewHolder;
 import com.cyberalaer.hybrid.databinding.ItemFruitBillBinding;
 import com.cyberalaer.hybrid.util.NumberUtils;
-
-import java.util.List;
-
-import androidx.annotation.NonNull;
-import androidx.databinding.DataBindingUtil;
-import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * 果实支出账单Adapter
  */
-public class FruitBillAdapter extends RecyclerView.Adapter<FruitBillAdapter.ViewHolder> {
+public class FruitBillAdapter extends BaseViewHolder<ItemFruitBillBinding, FruitBill> {
 
-    List<FruitBill> data;
-
-    public FruitBillAdapter(List<FruitBill> data) {
-        this.data = data;
+    @Override
+    protected void onBindData(FruitBill bill) {
+        bindRoot.setNumber(NumberUtils.instance());
+        bindRoot.setBill(bill);
+        bindRoot.executePendingBindings();
     }
 
     @Override
-    @NonNull
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        ItemFruitBillBinding binding = DataBindingUtil
-                .inflate(LayoutInflater.from(parent.getContext()), R.layout.item_fruit_bill,
-                        parent, false);
-        return new ViewHolder(binding);
+    protected int getViewHolderLayout() {
+        return R.layout.item_fruit_bill;
     }
 
-    @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.binding.setNumber(NumberUtils.instance());
-        holder.binding.setBill(data.get(position));
-        holder.binding.executePendingBindings();
-    }
-
-    @Override
-    public int getItemCount() {
-        return data == null ? 0 : data.size();
-    }
-
-    static class ViewHolder extends RecyclerView.ViewHolder {
-
-        final ItemFruitBillBinding binding;
-
-        public ViewHolder(ItemFruitBillBinding binding) {
-            super(binding.getRoot());
-            this.binding = binding;
-        }
-    }
 }

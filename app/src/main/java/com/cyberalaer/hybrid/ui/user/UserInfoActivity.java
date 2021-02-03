@@ -16,6 +16,7 @@ import com.cyberalaer.hybrid.databinding.ActivityUserInfoBinding;
 import com.cyberalaer.hybrid.util.ViewUtil;
 
 import androidx.annotation.Nullable;
+import likly.dollar.$;
 
 /**
  * 用户信息
@@ -71,7 +72,10 @@ public class UserInfoActivity extends BaseTitleActivity<ActivityUserInfoBinding>
                 SetProfileActivity.start(this, SetProfileActivity.WECHAT);
                 break;
             case R.id.setInvitateCode:
-                SetProfileActivity.start(this, SetProfileActivity.INVITATE_CODE);
+                if (UserDataUtil.instance().isFrom3DAccount())
+                    $.toast().text(R.string.function_not_open).show();
+                else
+                    SetProfileActivity.start(this, SetProfileActivity.INVITATE_CODE);
                 break;
             case R.id.setNikeName:
                 SetProfileActivity.start(this, SetProfileActivity.NIKE_NAME);
