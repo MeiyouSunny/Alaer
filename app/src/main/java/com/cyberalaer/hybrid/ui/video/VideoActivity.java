@@ -56,6 +56,12 @@ public class VideoActivity extends BaseViewBindActivity<ActivityVideoBinding> im
 
         ViewUtil.showImage(getApplicationContext(), bindRoot.player.posterImageView, AppConfig.TRAVEL_VIDEO_PIC2);
         bindRoot.player.progressBar.setEnabled(false);
+        bindRoot.player.progressBar.setVisibility(View.INVISIBLE);
+
+        bindRoot.player.currentTimeTextView.setVisibility(View.INVISIBLE);
+        bindRoot.player.totalTimeTextView.setVisibility(View.INVISIBLE);
+        bindRoot.player.bottomProgressBar.setVisibility(View.INVISIBLE);
+
         bindRoot.player.setUp(mAdVideo.image, mAdVideo.title);
         bindRoot.player.setScreenFullscreen();
         bindRoot.player.setOnCompleteListener(new VideoPlayer.OnCompleteListener() {
@@ -76,13 +82,16 @@ public class VideoActivity extends BaseViewBindActivity<ActivityVideoBinding> im
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     }
 
+    private int TIME_COUNT_MAX = 30;
+
     @Override
     public void onTimeChanged(int seconds) {
-        bindRoot.time.setText(seconds + "s");
         if (seconds > 30) {
             bindRoot.time.setVisibility(View.GONE);
             bindRoot.layoutClose.setVisibility(View.VISIBLE);
+            return;
         }
+        bindRoot.time.setText((TIME_COUNT_MAX - seconds) + "s");
     }
 
     @Override

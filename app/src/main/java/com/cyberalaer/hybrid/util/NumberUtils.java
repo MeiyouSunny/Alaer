@@ -26,7 +26,13 @@ public class NumberUtils {
         float newValue = parseFloat(value);
         int intValue = (int) newValue;
         if ((float) intValue == newValue)
-            return String.valueOf(intValue);
+            return String.valueOf(intValue) + ".00";
+
+        String result = String.valueOf(newValue);
+        if (result.contains(".")) {
+            if (result.split("\\.")[1].length() == 1)
+                return result + "0";
+        }
 
         return String.valueOf(newValue);
     }

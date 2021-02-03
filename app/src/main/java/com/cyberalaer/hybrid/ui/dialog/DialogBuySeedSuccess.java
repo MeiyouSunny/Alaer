@@ -33,6 +33,8 @@ public class DialogBuySeedSuccess extends BaseDialogHolder<DialogBuySeedSuccessB
     public void click(View view) {
         switch (view.getId()) {
             case R.id.cancel:
+                dismiss();
+                break;
             case R.id.confirm:
                 if (listener != null)
                     listener.onConfirmClick();

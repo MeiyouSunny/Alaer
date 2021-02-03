@@ -38,7 +38,7 @@
             android:layout_below="@+id/imgTop"
             android:layout_centerHorizontal="true"
             android:gravity="center_vertical"
-            android:paddingLeft="32dp"
+            android:paddingLeft="22dp"
             android:text="@string/seed_buyed_is"
             android:textColor="@color/font_99"
             android:textSize="@dimen/font_16" />

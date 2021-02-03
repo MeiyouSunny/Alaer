@@ -39,10 +39,10 @@ public class StringUtil {
      * 验证手机号有效性
      */
     public static boolean phoneIsValid(String phone) {
-        if (TextUtils.isEmpty(phone) || phone.length() != 11)
-            return false;
+//        if (TextUtils.isEmpty(phone) || phone.length() != 11)
+//            return false;
 
-        String regex = "^1\\d{10}$";
+        String regex = "([0-9\\s-]{7,})(?:\\s*(?:#|x\\.?|ext\\.?|extension)\\s*(\\d+))?$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(phone);
         return matcher.matches();
@@ -54,7 +54,7 @@ public class StringUtil {
     public static boolean pwdIsValid(String pwd) {
         if (TextUtils.isEmpty(pwd) || pwd.length() < 8 || pwd.length() > 16)
             return false;
-        String regex = "^^(?![0-9]+$)(?![a-zA-Z]+$)([A-Z]|[a-z]|[0-9]|[_`~!@#$%^&*()+=|{}':;',\"\\\\[\\\\].<>/?~！@#￥%……&*（）——+|{}【】‘；：”“'。，、？]){8,16}$";
+        String regex = "^(?=.*\\d)(?=.*[a-zA-Z])[a-zA-Z\\d\\S]{8,16}$";
         Matcher matcher = Pattern.compile(regex).matcher(pwd);
         return matcher.matches();
     }

@@ -19,7 +19,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="16dp">
+        android:paddingBottom="6dp">
 
         <RelativeLayout
             android:id="@+id/imgSeed"
@@ -82,7 +82,7 @@
                 android:layout_marginBottom="8dp"
                 android:text="@{util.parseGrowDays(seed.minedNum)}"
                 android:textColor="@color/white"
-                android:textSize="@dimen/font_14"
+                android:textSize="@dimen/font_12"
                 tools:text="" />
 
         </RelativeLayout>

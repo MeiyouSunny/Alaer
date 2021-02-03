@@ -20,6 +20,7 @@ import com.cyberalaer.hybrid.ui.dialog.DialogNotAuth;
 import com.cyberalaer.hybrid.ui.government.RealNameAuthActivity;
 import com.cyberalaer.hybrid.util.CollectionUtils;
 import com.cyberalaer.hybrid.util.ViewUtil;
+import com.cyberalaer.hybrid.view.GradViewItemDecoration;
 import com.meiyou.mvp.MvpBinder;
 
 import java.util.List;
@@ -74,8 +75,9 @@ public class SeedStoreFragment extends BaseBindFragment<FragmentSeedStoreListBin
     }
 
     private void showData(List<SeedStore> data) {
-        bindRoot.repeatView.getRecyclerView().setPaddingRelative(0, 32, 0, 0);
+//        bindRoot.repeatView.getRecyclerView().setPaddingRelative(0, 32, 0, 0);
         bindRoot.repeatView.getRecyclerView().setClipToPadding(false);
+        bindRoot.repeatView.getRecyclerView().addItemDecoration(new GradViewItemDecoration(getContext(), 6));
 
         if (!CollectionUtils.isEmpty(data))
             bindRoot.repeatView.viewManager().bind(data);
@@ -112,6 +114,8 @@ public class SeedStoreFragment extends BaseBindFragment<FragmentSeedStoreListBin
 //                        adapter.notifyDataSetChanged();
 
                         showSuccessDialog(seed);
+
+                        mUIHandler.postAtTime(() -> ((SeedStoreActivity) getActivity()).refreshMySeeds(), 800);
                     }
 
                     @Override
@@ -151,7 +155,6 @@ public class SeedStoreFragment extends BaseBindFragment<FragmentSeedStoreListBin
         // 跳转到我的种子
         if (getActivity() instanceof SeedStoreActivity) {
             ((SeedStoreActivity) getActivity()).bindRoot.viewPager.setCurrentItem(0, false);
-            mUIHandler.postAtTime(() -> ((SeedStoreActivity) getActivity()).refreshMySeeds(), 500);
         }
 
     }

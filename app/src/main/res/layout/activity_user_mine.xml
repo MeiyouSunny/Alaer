@@ -72,7 +72,8 @@
                 android:layout_marginLeft="27dp"
                 android:layout_marginBottom="21dp"
                 android:clickable="true"
-                android:onClick="@{handler.click}">
+                android:onClick="@{handler.click}"
+                android:visibility="gone">
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:layout_width="66dp"

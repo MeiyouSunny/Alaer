@@ -98,23 +98,54 @@
             </LinearLayout>
 
 
-            <TextView
-                android:id="@+id/share"
-                style="@style/SelectableStyle"
-                android:layout_width="72dp"
-                android:layout_height="74dp"
+            <LinearLayout
+                android:id="@+id/layout_row2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_below="@+id/layout_row1"
-                android:layout_marginLeft="52dp"
-                android:layout_marginTop="1dp"
-                android:layout_weight="1"
-                android:drawableTop="@drawable/ic_invitate_friend"
-                android:drawablePadding="6dp"
-                android:gravity="center"
-                android:onClick="@{handler.click}"
-                android:paddingTop="14dp"
-                android:text="@string/invitate_friend"
-                android:textColor="@color/font_36"
-                android:textSize="@dimen/font_17" />
+                android:layout_marginTop="12dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="74dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="32dp"
+                    android:paddingRight="32dp">
+
+                    <TextView
+                        android:id="@+id/share"
+                        style="@style/SelectableStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableTop="@drawable/ic_invitate_friend"
+                        android:drawablePadding="6dp"
+                        android:gravity="center"
+                        android:onClick="@{handler.click}"
+                        android:text="@string/invitate_friend"
+                        android:textColor="@color/font_36"
+                        android:textSize="@dimen/font_17" />
+
+                    <TextView
+                        style="@style/SelectableStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:visibility="invisible" />
+
+                    <TextView
+                        style="@style/SelectableStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:visibility="invisible" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
 
             <ImageView
                 android:layout_width="match_parent"

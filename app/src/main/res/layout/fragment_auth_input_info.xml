@@ -67,7 +67,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="52dp"
             android:layout_marginTop="224dp"
-            android:text="证件号（身份证、护照的证件号）"
+            android:text="证件号（身份证、护照上的证件号）"
             android:textColor="@color/black"
             android:textSize="@dimen/font_16" />
 

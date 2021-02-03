@@ -1,5 +1,7 @@
 package com.cyberalaer.hybrid.ui.user;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.View;
@@ -7,6 +9,7 @@ import android.view.View;
 import com.alaer.lib.api.ApiUtil;
 import com.alaer.lib.api.AppConfig;
 import com.alaer.lib.api.Callback;
+import com.alaer.lib.api.bean.Region;
 import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseBindFragment;
 import com.cyberalaer.hybrid.databinding.FragmentResetPwdBinding;
@@ -17,6 +20,7 @@ import com.cyberalaer.hybrid.util.VerifyCodeCounter;
 import com.cyberalaer.hybrid.util.ViewUtil;
 import com.meiyou.mvp.MvpBinder;
 
+import androidx.annotation.Nullable;
 import likly.dollar.$;
 
 import static com.cyberalaer.hybrid.util.NeteaseCaptcha.STEP1;
@@ -25,6 +29,8 @@ import static com.cyberalaer.hybrid.util.NeteaseCaptcha.STEP2;
 @MvpBinder(
 )
 public class RestPwdFragment extends BaseBindFragment<FragmentResetPwdBinding> {
+
+    Region region;
 
     @Override
     public int initLayoutResId() {
@@ -134,7 +140,7 @@ public class RestPwdFragment extends BaseBindFragment<FragmentResetPwdBinding> {
             return;
         }
         ApiUtil.apiService().resetPwd(ViewUtil.getText(bindRoot.etPhone), ViewUtil.getText(bindRoot.etCode), ViewUtil.getText(bindRoot.etPwd),
-                validate, AppConfig.VERIFY_ID,
+                validate, AppConfig.VERIFY_ID, AppConfig.DIALLING_CODE,
                 new Callback<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -148,6 +154,15 @@ public class RestPwdFragment extends BaseBindFragment<FragmentResetPwdBinding> {
                     }
                 });
 
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == RegionActivity.REQUEST_CODE && resultCode == Activity.RESULT_OK) {
+            region = (Region) data.getSerializableExtra("region");
+            bindRoot.region.setText("+" + region.code);
+        }
     }
 
     @Override

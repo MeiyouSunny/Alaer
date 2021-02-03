@@ -52,7 +52,7 @@
     </string-array>
 
     <string-array name="set_profile_consume">
-        <item>修改微信号将小号10积分，请谨慎设置</item>
+        <item>修改微信号将消耗1果实，请谨慎设置</item>
         <item>设置邀请码需要花费1果实</item>
         <item>设置昵称需要花费1果实，首次免费</item>
     </string-array>

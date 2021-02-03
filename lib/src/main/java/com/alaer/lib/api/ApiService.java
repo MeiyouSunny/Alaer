@@ -81,7 +81,7 @@ public interface ApiService {
     @FormBody
     @POST("/user/reset")
     Call<String> resetPwd(@Part("phone") String phone, @Part("phoneCode") String phoneCode, @Part("password") String password,
-                          @Part("validate") String validate, @Part("captchaId") String captchaId,
+                          @Part("validate") String validate, @Part("captchaId") String captchaId, @Part("diallingCode") String diallingCode,
                           Callback<String> callback);
 
     /**

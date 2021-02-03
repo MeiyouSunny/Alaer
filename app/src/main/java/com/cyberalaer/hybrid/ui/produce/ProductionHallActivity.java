@@ -89,7 +89,7 @@ public class ProductionHallActivity extends BaseTitleActivity<ActivityProduction
 
                     @Override
                     public void onError(int code, String msg) {
-                        super.onError(code, msg);
+                        $.toast().text(msg).show();
                     }
                 });
 
@@ -107,7 +107,7 @@ public class ProductionHallActivity extends BaseTitleActivity<ActivityProduction
 
                     @Override
                     public void onError(int code, String msg) {
-                        super.onError(code, msg);
+                        $.toast().text(msg).show();
                     }
                 });
     }
@@ -122,7 +122,7 @@ public class ProductionHallActivity extends BaseTitleActivity<ActivityProduction
 
                     @Override
                     public void onError(int code, String msg) {
-                        super.onError(code, msg);
+                        $.toast().text(msg).show();
                     }
                 });
     }
@@ -136,6 +136,11 @@ public class ProductionHallActivity extends BaseTitleActivity<ActivityProduction
                         if (adVideos != null && !CollectionUtils.isEmpty(adVideos)) {
                             startPlayAdVideo(adVideos.get(0));
                         }
+                    }
+
+                    @Override
+                    public void onError(int code, String msg) {
+                        $.toast().text(msg).show();
                     }
                 });
     }
@@ -192,6 +197,11 @@ public class ProductionHallActivity extends BaseTitleActivity<ActivityProduction
                     public void onResponse(String response) {
                         queryCurrentInfos();
                     }
+
+                    @Override
+                    public void onError(int code, String msg) {
+                        $.toast().text(msg).show();
+                    }
                 });
     }
 
@@ -246,6 +256,11 @@ public class ProductionHallActivity extends BaseTitleActivity<ActivityProduction
                             UserDataUtil.instance().setClaimNewbieMiner(mTeamInfo.claimNewbieMiner);
                         onTeamInfoGet();
                     }
+
+                    @Override
+                    public void onError(int code, String msg) {
+                        $.toast().text(msg).show();
+                    }
                 });
     }
 
@@ -259,6 +274,11 @@ public class ProductionHallActivity extends BaseTitleActivity<ActivityProduction
                     @Override
                     public void onResponse(String response) {
                         queryCurrentInfos();
+                    }
+
+                    @Override
+                    public void onError(int code, String msg) {
+                        $.toast().text(msg).show();
                     }
                 });
     }

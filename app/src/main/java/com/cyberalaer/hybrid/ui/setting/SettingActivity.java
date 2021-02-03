@@ -46,6 +46,8 @@ public class SettingActivity extends BaseTitleActivity<ActivitySettngsBinding> {
                 exitAccount();
                 break;
             case R.id.securityCenter:
+                if (!judgeLogined())
+                    break;
                 ViewUtil.gotoActivity(this, SecurityCenterActivity.class);
                 break;
         }

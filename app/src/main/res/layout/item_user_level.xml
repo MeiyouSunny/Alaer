@@ -25,9 +25,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:layout_marginLeft="24dp"
-            android:layout_marginRight="16dp"
-            android:paddingRight="12dp">
+            android:layout_marginLeft="12dp">
 
             <ImageView
                 android:id="@+id/icLevel1"
@@ -56,7 +54,7 @@
                 android:layout_toRightOf="@+id/icLevel1"
                 android:text="1、"
                 android:textColor="@color/font_7E"
-                android:textSize="@dimen/font_12" />
+                android:textSize="@dimen/font_10" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -67,7 +65,7 @@
                 android:singleLine="true"
                 android:text="@{level.description}"
                 android:textColor="@color/font_7E"
-                android:textSize="@dimen/font_12" />
+                android:textSize="@dimen/font_10" />
 
             <TextView
                 android:id="@+id/label2"
@@ -80,7 +78,7 @@
                 android:singleLine="true"
                 android:text="@{@string/user_level_free_rate_is(level.feeRate)}"
                 android:textColor="@color/font_7E"
-                android:textSize="@dimen/font_12" />
+                android:textSize="@dimen/font_10" />
 
         </RelativeLayout>
 

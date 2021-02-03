@@ -43,6 +43,7 @@
                     android:clickable="true"
                     android:foreground="?android:attr/selectableItemBackground"
                     android:onClick="@{handler.click}"
+                    android:visibility="gone"
                     app:cardCornerRadius="8dp"
                     app:cardElevation="0dp">
 

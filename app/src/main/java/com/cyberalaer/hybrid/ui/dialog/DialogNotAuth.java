@@ -30,6 +30,8 @@ public class DialogNotAuth extends BaseDialogHolder<DialogNotAuthBinding> {
     public void click(View view) {
         switch (view.getId()) {
             case R.id.cancel:
+                dismiss();
+                break;
             case R.id.confirm:
                 if (listener != null)
                     listener.onConfirmClick();

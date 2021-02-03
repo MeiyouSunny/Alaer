@@ -51,4 +51,16 @@ public class VideoPlayer extends JzvdStd {
         void onTimeChanged(int seconds);
     }
 
+    @Override
+    public void setAllControlsVisiblity(int topCon, int bottomCon, int startBtn, int loadingPro,
+                                        int posterImg, int bottomPro, int retryLayout) {
+        topContainer.setVisibility(topCon);
+        bottomContainer.setVisibility(bottomCon);
+        startButton.setVisibility(startBtn);
+        loadingProgressBar.setVisibility(loadingPro);
+        posterImageView.setVisibility(posterImg);
+//        bottomProgressBar.setVisibility(bottomPro);
+        mRetryLayout.setVisibility(retryLayout);
+    }
+
 }

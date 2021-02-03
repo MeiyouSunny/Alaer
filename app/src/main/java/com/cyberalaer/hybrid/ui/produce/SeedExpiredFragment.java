@@ -10,6 +10,7 @@ import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseBindFragment;
 import com.cyberalaer.hybrid.databinding.FragmentSeedExpiredListBinding;
 import com.cyberalaer.hybrid.util.CollectionUtils;
+import com.cyberalaer.hybrid.view.GradViewItemDecoration;
 import com.meiyou.mvp.MvpBinder;
 
 import java.util.List;
@@ -53,8 +54,9 @@ public class SeedExpiredFragment extends BaseBindFragment<FragmentSeedExpiredLis
     }
 
     private void showData(List<SeedMine> data) {
-        bindRoot.repeatView.getRecyclerView().setPaddingRelative(0, 32, 0, 0);
+//        bindRoot.repeatView.getRecyclerView().setPaddingRelative(0, 32, 0, 0);
         bindRoot.repeatView.getRecyclerView().setClipToPadding(false);
+        bindRoot.repeatView.getRecyclerView().addItemDecoration(new GradViewItemDecoration(getContext(), 6));
 
         if (!CollectionUtils.isEmpty(data))
             bindRoot.repeatView.viewManager().bind(data);
