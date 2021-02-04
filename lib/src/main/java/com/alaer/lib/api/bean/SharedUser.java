@@ -14,11 +14,11 @@ public class SharedUser {
     public int isAuthSenior;
     public int isAuthVideo;
     public String name;
-    public Object uname;
+    public String uname;
     public String phone;
-    public Object email;
-    public Object avatar;
-    public Object wechat;
+    public String email;
+    public String avatar;
+    public String wechat;
     public String signupTime;
     public int active;
     public String lastMineTime;

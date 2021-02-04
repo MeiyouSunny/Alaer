@@ -25,289 +25,389 @@
             type="com.cyberalaer.hybrid.data.TeamLevelUtil" />
     </data>
 
-    <ScrollView
-        android:id="@+id/scrollView"
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scrollbars="none">
+        android:background="@color/bg_gray"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical"
+        tools:context=".ui.user.UserMineActivity">
 
-        <LinearLayout
+        <include layout="@layout/layout_title_bar_black" />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scrollView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/bg_gray"
-            android:fitsSystemWindows="true"
-            android:orientation="vertical"
-            tools:context=".ui.user.UserMineActivity">
+            android:scrollbars="none">
 
-            <include layout="@layout/layout_title_bar_black" />
-
-            <androidx.cardview.widget.CardView
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="400dp"
-                android:layout_marginLeft="13dp"
-                android:layout_marginTop="18dp"
-                android:layout_marginRight="13dp"
-                app:cardCornerRadius="15dp"
-                app:cardElevation="0dp">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-                <RelativeLayout
+                <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="400dp"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginRight="13dp"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="0dp">
 
-                    <ImageView
-                        android:layout_width="88dp"
-                        android:layout_height="84dp"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="18dp"
-                        app:drawableRes="@{levelUtil.parseLevelImg(teamLevel)}" />
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="108dp"
-                        android:text="@{levelUtil.parseLevelName(teamLevel)}"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/font_16"
-                        tools:text="二级数字市民团队" />
+                        <ImageView
+                            android:layout_width="88dp"
+                            android:layout_height="84dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="18dp"
+                            app:drawableRes="@{levelUtil.parseLevelImg(teamLevel)}" />
 
-<!--                    <TextView-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_centerHorizontal="true"-->
-<!--                        android:layout_marginTop="136dp"-->
-<!--                        android:text="@{levelUtil.parseLevelReward(teamLevel)}"-->
-<!--                        android:textColor="@color/font_7E"-->
-<!--                        android:textSize="@dimen/font_12"-->
-<!--                        tools:text="奖励1棵枣树+数字市民共建基金20%" />-->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="108dp"
+                            android:text="@{levelUtil.parseLevelName(teamLevel)}"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/font_16"
+                            tools:text="二级数字市民团队" />
 
-                    <TextView
-                        android:id="@+id/myInviter"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="51dp"
-                        android:layout_marginTop="160dp"
-                        android:clickable="true"
-                        android:drawableRight="@drawable/ic_item_next_little"
-                        android:drawablePadding="6dp"
-                        android:onClick="@{handler.click}"
-                        android:text="@string/my_invitater"
-                        android:textColor="@color/font_41"
-                        android:textSize="@dimen/font_15" />
+                        <!--                    <TextView-->
+                        <!--                        android:layout_width="wrap_content"-->
+                        <!--                        android:layout_height="wrap_content"-->
+                        <!--                        android:layout_centerHorizontal="true"-->
+                        <!--                        android:layout_marginTop="136dp"-->
+                        <!--                        android:text="@{levelUtil.parseLevelReward(teamLevel)}"-->
+                        <!--                        android:textColor="@color/font_7E"-->
+                        <!--                        android:textSize="@dimen/font_12"-->
+                        <!--                        tools:text="奖励1棵枣树+数字市民共建基金20%" />-->
 
-                    <TextView
-                        android:id="@+id/levelRule"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginTop="160dp"
-                        android:layout_marginRight="51dp"
-                        android:clickable="true"
-                        android:drawableRight="@drawable/ic_item_next_little"
-                        android:drawablePadding="6dp"
-                        android:onClick="@{handler.click}"
-                        android:text="@string/level_rule"
-                        android:textColor="@color/font_41"
-                        android:textSize="@dimen/font_15" />
+                        <TextView
+                            android:id="@+id/myInviter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="51dp"
+                            android:layout_marginTop="160dp"
+                            android:clickable="true"
+                            android:drawableRight="@drawable/ic_item_next_little"
+                            android:drawablePadding="6dp"
+                            android:onClick="@{handler.click}"
+                            android:text="@string/my_invitater"
+                            android:textColor="@color/font_41"
+                            android:textSize="@dimen/font_15" />
+
+                        <TextView
+                            android:id="@+id/levelRule"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginTop="160dp"
+                            android:layout_marginRight="51dp"
+                            android:clickable="true"
+                            android:drawableRight="@drawable/ic_item_next_little"
+                            android:drawablePadding="6dp"
+                            android:onClick="@{handler.click}"
+                            android:text="@string/level_rule"
+                            android:textColor="@color/font_41"
+                            android:textSize="@dimen/font_15" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="205dp"
+                            android:layout_marginRight="20dp"
+                            android:orientation="horizontal">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                app:cardBackgroundColor="@color/bg_gray"
+                                app:cardCornerRadius="8dp"
+                                app:cardElevation="0dp">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_marginTop="15dp"
+                                        android:text="@{String.valueOf(teamProfile.refNum)}"
+                                        android:textColor="@color/font_41"
+                                        android:textSize="@dimen/font_17"
+                                        tools:text="16" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_marginTop="43dp"
+                                        android:text="@string/share_persons"
+                                        android:textColor="@color/font_41"
+                                        android:textSize="@dimen/font_16" />
+
+                                </RelativeLayout>
+
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="10dp"
+                                android:layout_weight="1"
+                                app:cardBackgroundColor="@color/bg_gray"
+                                app:cardCornerRadius="8dp"
+                                app:cardElevation="0dp">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_marginTop="15dp"
+                                        android:text="@{String.valueOf(teamProfile.num)}"
+                                        android:textColor="@color/font_41"
+                                        android:textSize="@dimen/font_17"
+                                        tools:text="1" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_marginTop="43dp"
+                                        android:text="@string/partner_persons"
+                                        android:textColor="@color/font_41"
+                                        android:textSize="@dimen/font_16" />
+
+                                </RelativeLayout>
+
+                            </androidx.cardview.widget.CardView>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="295dp"
+                            android:layout_marginRight="20dp"
+                            android:orientation="horizontal">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                app:cardBackgroundColor="@color/bg_gray"
+                                app:cardCornerRadius="8dp"
+                                app:cardElevation="0dp">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_marginTop="15dp"
+                                        android:text="@{String.valueOf(teamProfile.refAuthNum)}"
+                                        android:textColor="@color/font_41"
+                                        android:textSize="@dimen/font_17"
+                                        tools:text="17" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_marginTop="43dp"
+                                        android:text="@string/active_real_auth"
+                                        android:textColor="@color/font_41"
+                                        android:textSize="@dimen/font_16" />
+
+                                </RelativeLayout>
+
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="10dp"
+                                android:layout_weight="1"
+                                app:cardBackgroundColor="@color/bg_gray"
+                                app:cardCornerRadius="8dp"
+                                app:cardElevation="0dp">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_marginTop="15dp"
+                                        android:text="@{String.valueOf(teamProfile.teamActiveness)}"
+                                        android:textColor="@color/font_41"
+                                        android:textSize="@dimen/font_17"
+                                        tools:text="1" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_marginTop="43dp"
+                                        android:text="@string/patner_active"
+                                        android:textColor="@color/font_41"
+                                        android:textSize="@dimen/font_16" />
+
+                                </RelativeLayout>
+
+                            </androidx.cardview.widget.CardView>
+
+                        </LinearLayout>
+
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <!--                <androidx.cardview.widget.CardView-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="56dp"-->
+                <!--                    android:layout_marginLeft="13dp"-->
+                <!--                    android:layout_marginTop="10dp"-->
+                <!--                    android:layout_marginRight="13dp"-->
+                <!--                    app:cardCornerRadius="8dp"-->
+                <!--                    app:cardElevation="0dp">-->
+
+                <!--                    <com.google.android.material.tabs.TabLayout-->
+                <!--                        android:id="@+id/tabs"-->
+                <!--                        android:layout_width="match_parent"-->
+                <!--                        android:layout_height="match_parent"-->
+                <!--                        app:tabBackground="@color/white"-->
+                <!--                        app:tabIndicatorColor="@color/bg_green"-->
+                <!--                        app:tabIndicatorFullWidth="false"-->
+                <!--                        app:tabIndicatorHeight="0dp"-->
+                <!--                        app:tabMode="fixed"-->
+                <!--                        app:tabRippleColor="@android:color/transparent"-->
+                <!--                        app:tabSelectedTextColor="@color/font_green"-->
+                <!--                        app:tabTextColor="@color/font_7E" />-->
+
+                <!--                </androidx.cardview.widget.CardView>-->
+
+                <!--                <androidx.viewpager.widget.ViewPager-->
+                <!--                    android:id="@+id/view_pager"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="250dp" />-->
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="13dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="0dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="80dp"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="205dp"
-                        android:layout_marginRight="20dp"
+                        android:layout_height="match_parent"
                         android:orientation="horizontal">
 
-                        <androidx.cardview.widget.CardView
+                        <com.cyberalaer.hybrid.view.TabTextView
+                            android:id="@+id/tab1"
+                            style="@style/ClickableStyle"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            app:cardBackgroundColor="@color/bg_gray"
-                            app:cardCornerRadius="8dp"
-                            app:cardElevation="0dp">
+                            android:drawablePadding="0dp"
+                            android:gravity="center"
+                            android:paddingRight="6dp"
+                            android:text="伙伴活跃度"
+                            android:textColor="@color/font_green"
+                            android:textSize="@dimen/font_13"
+                            android:textStyle="bold" />
 
-                            <RelativeLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_centerHorizontal="true"
-                                    android:layout_marginTop="15dp"
-                                    android:text="@{String.valueOf(teamProfile.refNum)}"
-                                    android:textColor="@color/font_41"
-                                    android:textSize="@dimen/font_17"
-                                    tools:text="16" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_centerHorizontal="true"
-                                    android:layout_marginTop="43dp"
-                                    android:text="@string/share_persons"
-                                    android:textColor="@color/font_41"
-                                    android:textSize="@dimen/font_16" />
-
-                            </RelativeLayout>
-
-                        </androidx.cardview.widget.CardView>
-
-                        <androidx.cardview.widget.CardView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginLeft="10dp"
-                            android:layout_weight="1"
-                            app:cardBackgroundColor="@color/bg_gray"
-                            app:cardCornerRadius="8dp"
-                            app:cardElevation="0dp">
-
-                            <RelativeLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_centerHorizontal="true"
-                                    android:layout_marginTop="15dp"
-                                    android:text="@{String.valueOf(teamProfile.num)}"
-                                    android:textColor="@color/font_41"
-                                    android:textSize="@dimen/font_17"
-                                    tools:text="1" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_centerHorizontal="true"
-                                    android:layout_marginTop="43dp"
-                                    android:text="@string/partner_persons"
-                                    android:textColor="@color/font_41"
-                                    android:textSize="@dimen/font_16" />
-
-                            </RelativeLayout>
-
-                        </androidx.cardview.widget.CardView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="80dp"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="295dp"
-                        android:layout_marginRight="20dp"
-                        android:orientation="horizontal">
-
-                        <androidx.cardview.widget.CardView
+                        <com.cyberalaer.hybrid.view.TabTextView
+                            android:id="@+id/tab2"
+                            style="@style/ClickableStyle"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            app:cardBackgroundColor="@color/bg_gray"
-                            app:cardCornerRadius="8dp"
-                            app:cardElevation="0dp">
+                            android:gravity="center"
+                            android:paddingRight="6dp"
+                            android:text="伙伴人数"
+                            android:textColor="@color/font_green"
+                            android:textSize="@dimen/font_13"
+                            android:textStyle="bold" />
 
-                            <RelativeLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_centerHorizontal="true"
-                                    android:layout_marginTop="15dp"
-                                    android:text="@{String.valueOf(teamProfile.refAuthNum)}"
-                                    android:textColor="@color/font_41"
-                                    android:textSize="@dimen/font_17"
-                                    tools:text="17" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_centerHorizontal="true"
-                                    android:layout_marginTop="43dp"
-                                    android:text="@string/active_real_auth"
-                                    android:textColor="@color/font_41"
-                                    android:textSize="@dimen/font_16" />
-
-                            </RelativeLayout>
-
-                        </androidx.cardview.widget.CardView>
-
-                        <androidx.cardview.widget.CardView
+                        <com.cyberalaer.hybrid.view.TabTextView
+                            android:id="@+id/tab3"
+                            style="@style/ClickableStyle"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_marginLeft="10dp"
                             android:layout_weight="1"
-                            app:cardBackgroundColor="@color/bg_gray"
-                            app:cardCornerRadius="8dp"
-                            app:cardElevation="0dp">
+                            android:gravity="center"
+                            android:paddingRight="6dp"
+                            android:text="市民星级"
+                            android:textColor="@color/font_green"
+                            android:textSize="@dimen/font_13"
+                            android:textStyle="bold" />
 
-                            <RelativeLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_centerHorizontal="true"
-                                    android:layout_marginTop="15dp"
-                                    android:text="@{String.valueOf(teamProfile.teamActiveness)}"
-                                    android:textColor="@color/font_41"
-                                    android:textSize="@dimen/font_17"
-                                    tools:text="1" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_centerHorizontal="true"
-                                    android:layout_marginTop="43dp"
-                                    android:text="@string/patner_active"
-                                    android:textColor="@color/font_41"
-                                    android:textSize="@dimen/font_16" />
-
-                            </RelativeLayout>
-
-                        </androidx.cardview.widget.CardView>
+                        <com.cyberalaer.hybrid.view.TabTextView
+                            android:id="@+id/tab4"
+                            style="@style/ClickableStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:paddingRight="6dp"
+                            android:text="注册时间"
+                            android:textColor="@color/font_green"
+                            android:textSize="@dimen/font_13"
+                            android:textStyle="bold" />
 
                     </LinearLayout>
 
 
-                </RelativeLayout>
+                </androidx.cardview.widget.CardView>
 
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:layout_marginLeft="13dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="13dp"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="0dp">
-
-                <com.google.android.material.tabs.TabLayout
-                    android:id="@+id/tabs"
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/list"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    app:tabBackground="@color/white"
-                    app:tabIndicatorColor="@color/bg_green"
-                    app:tabIndicatorFullWidth="false"
-                    app:tabIndicatorHeight="0dp"
-                    app:tabMode="fixed"
-                    app:tabRippleColor="@android:color/transparent"
-                    app:tabSelectedTextColor="@color/font_green"
-                    app:tabTextColor="@color/font_7E" />
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:overScrollMode="never"
+                    android:paddingStart="12dp"
+                    android:paddingTop="4dp"
+                    android:paddingEnd="12dp"
+                    android:visibility="gone" />
 
-            </androidx.cardview.widget.CardView>
+                <ImageView
+                    android:id="@+id/noData"
+                    android:layout_width="215dp"
+                    android:layout_height="161dp"
+                    android:layout_marginBottom="24dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/img_no_data" />
 
-            <androidx.viewpager.widget.ViewPager
-                android:id="@+id/view_pager"
-                android:layout_width="match_parent"
-                android:layout_height="250dp" />
+            </LinearLayout>
 
-        </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
 
-    </ScrollView>
+    </LinearLayout>
 
 </layout>

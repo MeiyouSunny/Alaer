@@ -16,6 +16,7 @@ import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.data.TeamLevelUtil;
 import com.cyberalaer.hybrid.databinding.ItemSharedUserBinding;
 import com.cyberalaer.hybrid.ui.dialog.DialogUserDetail;
+import com.cyberalaer.hybrid.util.ViewUtil;
 
 import java.util.List;
 
@@ -78,6 +79,8 @@ public class SharedUserAdapter extends RecyclerView.Adapter<SharedUserAdapter.Vi
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        ViewUtil.showImage(context.getApplicationContext(), holder.binding.icHead, data.get(position).avatar);
+
         holder.binding.setData(data.get(position));
         holder.binding.setHandler(handler);
         holder.binding.executePendingBindings();

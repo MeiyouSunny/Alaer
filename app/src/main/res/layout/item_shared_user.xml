@@ -18,6 +18,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="189dp"
+        android:layout_marginBottom="10dp"
         app:cardCornerRadius="8dp"
         app:cardElevation="0dp">
 
@@ -25,14 +26,17 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <ImageView
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/icHead"
                 android:layout_width="46dp"
                 android:layout_height="46dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/ic_head_default_boy"
                 android:clickable="true"
-                android:onClick="@{(View)->handler.clickUser(data)}" />
+                android:onClick="@{(View)->handler.clickUser(data)}"
+                android:src="@drawable/ic_head_default_boy"
+                app:civ_border_color="#CB9D3A"
+                app:civ_border_width="1dp" />
 
             <TextView
                 android:layout_width="wrap_content"
