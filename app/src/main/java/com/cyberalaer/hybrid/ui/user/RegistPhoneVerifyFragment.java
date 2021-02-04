@@ -30,8 +30,6 @@ import likly.dollar.$;
 )
 public class RegistPhoneVerifyFragment extends BaseBindFragment<FragmentRegistPhoneVerifyBinding> {
 
-    Region region;
-
     @Override
     public int initLayoutResId() {
         return R.layout.fragment_regist_phone_verify;
@@ -41,6 +39,7 @@ public class RegistPhoneVerifyFragment extends BaseBindFragment<FragmentRegistPh
     public void onResume() {
         super.onResume();
         setTitleText(R.string.apply);
+        bindRoot.region.setText("+" + AppConfig.DIALLING_CODE);
 
         final TextWatcher watcher = new SimpleTextWatcher() {
             @Override
@@ -125,7 +124,7 @@ public class RegistPhoneVerifyFragment extends BaseBindFragment<FragmentRegistPh
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == RegionActivity.REQUEST_CODE && resultCode == Activity.RESULT_OK) {
-            region = (Region) data.getSerializableExtra("region");
+            final Region region = (Region) data.getSerializableExtra("region");
             bindRoot.region.setText("+" + region.code);
         }
     }

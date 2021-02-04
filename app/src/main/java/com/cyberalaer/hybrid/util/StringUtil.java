@@ -59,4 +59,10 @@ public class StringUtil {
         return matcher.matches();
     }
 
+    public static String getNullStringDefault(String text) {
+        if (TextUtils.isEmpty(text) || TextUtils.equals(text, "null"))
+            return "--";
+        return text;
+    }
+
 }

@@ -30,7 +30,6 @@ import likly.dollar.$;
 public class LoginFragment extends BaseBindFragment<FragmentLoginBinding> {
 
     private String mPhone, mPwd;
-    Region region;
 
     @Override
     public int initLayoutResId() {
@@ -64,6 +63,8 @@ public class LoginFragment extends BaseBindFragment<FragmentLoginBinding> {
     @Override
     public void onViewCreated() {
         super.onViewCreated();
+        bindRoot.region.setText("+" + AppConfig.DIALLING_CODE);
+
         bindRoot.etPhone.addTextChangedListener(new SimpleTextWatcher() {
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -148,7 +149,7 @@ public class LoginFragment extends BaseBindFragment<FragmentLoginBinding> {
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == RegionActivity.REQUEST_CODE && resultCode == Activity.RESULT_OK) {
-            region = (Region) data.getSerializableExtra("region");
+            final Region region = (Region) data.getSerializableExtra("region");
             bindRoot.region.setText("+" + region.code);
         }
     }

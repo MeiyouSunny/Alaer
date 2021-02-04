@@ -30,8 +30,6 @@ import static com.cyberalaer.hybrid.util.NeteaseCaptcha.STEP2;
 )
 public class RestPwdFragment extends BaseBindFragment<FragmentResetPwdBinding> {
 
-    Region region;
-
     @Override
     public int initLayoutResId() {
         return R.layout.fragment_reset_pwd;
@@ -42,6 +40,7 @@ public class RestPwdFragment extends BaseBindFragment<FragmentResetPwdBinding> {
         super.onResume();
         setTopLeftIcon(R.drawable.ic_back_black);
         setTitleText(R.string.reset_pwd);
+        bindRoot.region.setText("+" + AppConfig.DIALLING_CODE);
 
         bindRoot.etPhone.addTextChangedListener(new SimpleTextWatcher() {
             @Override
@@ -160,7 +159,7 @@ public class RestPwdFragment extends BaseBindFragment<FragmentResetPwdBinding> {
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == RegionActivity.REQUEST_CODE && resultCode == Activity.RESULT_OK) {
-            region = (Region) data.getSerializableExtra("region");
+            final Region region = (Region) data.getSerializableExtra("region");
             bindRoot.region.setText("+" + region.code);
         }
     }

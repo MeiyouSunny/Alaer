@@ -81,7 +81,7 @@ public class TextProgressBar extends ProgressBar {
         this.timeEnd = timeEnd;
         this.timeNow = timeNow;
 
-        removeMsg();
+        removeMsg(false);
         showProgressAndTime();
     }
 
@@ -146,17 +146,18 @@ public class TextProgressBar extends ProgressBar {
         invalidateTextPaintAndMeasurements();
     }
 
-    private void removeMsg() {
+    private void removeMsg(boolean setNull) {
         if (handler != null && handler.hasMessages(MSG_TYPE_PROGRESS)) {
             handler.removeMessages(MSG_TYPE_PROGRESS);
-            handler = null;
+            if (setNull)
+                handler = null;
         }
     }
 
     @Override
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        removeMsg();
+        removeMsg(true);
     }
 
     public void setProgressListener(ProgressChange listener) {

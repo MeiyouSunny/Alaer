@@ -22,7 +22,10 @@ import cn.jzvd.Jzvd;
  */
 public class VideoActivity extends BaseViewBindActivity<ActivityVideoBinding> implements VideoPlayer.OnTimeChnaged {
 
-    public static final int REQUEST_CODE = 1;
+    /* 加速 */
+    public static final int REQUEST_CODE_SPEED_UP = 1;
+    /* 收获 */
+    public static final int REQUEST_CODE_FINISH_PRODUCE = 2;
     private AdVideo mAdVideo;
 
     @Override
@@ -33,13 +36,13 @@ public class VideoActivity extends BaseViewBindActivity<ActivityVideoBinding> im
     public static void startPlayFroResult(Fragment fragment, AdVideo adVideo) {
         Intent intent = new Intent(fragment.getContext(), VideoActivity.class);
         intent.putExtra("adVideo", adVideo);
-        fragment.startActivityForResult(intent, REQUEST_CODE);
+        fragment.startActivityForResult(intent, REQUEST_CODE_SPEED_UP);
     }
 
-    public static void startPlayFroResult(Activity activity, AdVideo adVideo) {
+    public static void startPlayFroResult(Activity activity, AdVideo adVideo, int requestCode) {
         Intent intent = new Intent(activity, VideoActivity.class);
         intent.putExtra("adVideo", adVideo);
-        activity.startActivityForResult(intent, REQUEST_CODE);
+        activity.startActivityForResult(intent, requestCode);
     }
 
     @Override

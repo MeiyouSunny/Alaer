@@ -6,6 +6,7 @@ import com.alaer.lib.data.UserDataUtil;
 import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseTitleActivity;
 import com.cyberalaer.hybrid.databinding.ActivityGovernmentBinding;
+import com.cyberalaer.hybrid.ui.auth.AuthSuccessActivity;
 import com.cyberalaer.hybrid.ui.user.UserMineActivity;
 import com.cyberalaer.hybrid.util.ViewUtil;
 

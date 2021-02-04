@@ -5,6 +5,7 @@ import android.animation.AnimatorInflater;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.widget.ImageView;
 
 import com.alaer.lib.api.ApiUtil;
@@ -117,7 +118,7 @@ public class ProductionHallActivity extends BaseTitleActivity<ActivityProduction
                 new Callback<String>() {
                     @Override
                     public void onResponse(String response) {
-                        getAdVideos();
+                        getAdVideos(VideoActivity.REQUEST_CODE_SPEED_UP);
                     }
 
                     @Override
@@ -128,13 +129,13 @@ public class ProductionHallActivity extends BaseTitleActivity<ActivityProduction
     }
 
     // 获取公告视频
-    private void getAdVideos() {
+    private void getAdVideos(int type) {
         ApiUtil.apiService().getAdVideo(mUserData.uuid, String.valueOf(mUserData.uid), mUserData.token, AppConfig.DIAMOND_CURRENCY, 1,
                 new Callback<List<AdVideo>>() {
                     @Override
                     public void onResponse(List<AdVideo> adVideos) {
                         if (adVideos != null && !CollectionUtils.isEmpty(adVideos)) {
-                            startPlayAdVideo(adVideos.get(0));
+                            startPlayAdVideo(adVideos.get(0), type);
                         }
                     }
 
@@ -146,16 +147,22 @@ public class ProductionHallActivity extends BaseTitleActivity<ActivityProduction
     }
 
     // 播放公告
-    private void startPlayAdVideo(AdVideo adVideo) {
-        VideoActivity.startPlayFroResult(this, adVideo);
+    private void startPlayAdVideo(AdVideo adVideo, int requestCode) {
+        VideoActivity.startPlayFroResult(this, adVideo, requestCode);
     }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == VideoActivity.REQUEST_CODE && resultCode == Activity.RESULT_OK) {
-            // 播放完成,完成任务
-            speedUp(mAdTask.id);
+        if (resultCode == Activity.RESULT_OK) {
+            if (requestCode == VideoActivity.REQUEST_CODE_SPEED_UP) {
+                // 加速
+                speedUp(mAdTask.id);
+            } else if (requestCode == VideoActivity.REQUEST_CODE_FINISH_PRODUCE) {
+                // 收获
+                if (!TextUtils.isEmpty(mVlidate))
+                    finishProduce(mVlidate);
+            }
         } else {
             $.toast().text("任务未完成!").show();
         }
@@ -164,6 +171,9 @@ public class ProductionHallActivity extends BaseTitleActivity<ActivityProduction
     private ProduceStep mProduceStepHandler = new ProduceStep() {
         @Override
         public void onStep(int step) {
+            if (mTeamInfo == null)
+                return;
+
             if (step == -1) {
                 // 领取
                 gotoSeedStore();
@@ -283,11 +293,15 @@ public class ProductionHallActivity extends BaseTitleActivity<ActivityProduction
                 });
     }
 
+    String mVlidate;
+
+    // 验证->播放广告->收获
     private void verifyCode() {
         NeteaseCaptcha.start(getContext(), new NeteaseCaptcha.OnCaptchaListener() {
             @Override
             public void onCaptchaSuccess(String validate) {
-                finishProduce(validate);
+                mVlidate = validate;
+                getAdVideos(VideoActivity.REQUEST_CODE_FINISH_PRODUCE);
             }
 
             @Override

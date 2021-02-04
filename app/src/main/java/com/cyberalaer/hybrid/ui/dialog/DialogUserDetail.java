@@ -6,6 +6,7 @@ import com.alaer.lib.api.bean.SharedUserDetail;
 import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseDialogHolder;
 import com.cyberalaer.hybrid.databinding.DialogSharedUserDetailBinding;
+import com.cyberalaer.hybrid.util.NumberUtils;
 
 public class DialogUserDetail extends BaseDialogHolder<DialogSharedUserDetailBinding> {
 
@@ -19,6 +20,8 @@ public class DialogUserDetail extends BaseDialogHolder<DialogSharedUserDetailBin
     @Override
     public void onViewCreated(View view) {
         super.onViewCreated(view);
+//        bindRoot.setStringUtil(new StringUtil());
+        bindRoot.setNumber(NumberUtils.instance());
         bindRoot.setData(userDetail);
     }
 

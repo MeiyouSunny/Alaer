@@ -155,10 +155,6 @@
             android:screenOrientation="portrait"></activity>
 
         <activity
-            android:name=".ui.government.AuthSuccessActivity"
-            android:screenOrientation="portrait"></activity>
-
-        <activity
             android:name=".ui.user.LevelRuleActivity"
             android:screenOrientation="portrait"></activity>
 
@@ -212,18 +208,15 @@
 
         <activity
             android:name=".ui.user.RegionActivity"
-            android:screenOrientation="portrait">
-        </activity>
+            android:screenOrientation="portrait"></activity>
 
         <activity
             android:name=".ui.user.ContributionActivity"
-            android:screenOrientation="portrait">
-        </activity>
+            android:screenOrientation="portrait"></activity>
 
         <activity
             android:name=".ui.user.UserLevelActivity"
-            android:screenOrientation="portrait">
-        </activity>
+            android:screenOrientation="portrait"></activity>
 
     </application>
 

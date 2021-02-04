@@ -11,7 +11,6 @@ import com.alaer.lib.data.UserDataUtil;
 import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseBindFragment;
 import com.cyberalaer.hybrid.databinding.FragmentAuthPaySuccessBinding;
-import com.cyberalaer.hybrid.ui.home.HomeActivity;
 import com.cyberalaer.hybrid.util.ViewUtil;
 import com.meiyou.mvp.MvpBinder;
 
@@ -28,7 +27,8 @@ public class PaySuccessFragment extends BaseBindFragment<FragmentAuthPaySuccessB
     public void click(View view) {
         switch (view.getId()) {
             case R.id.ok:
-                ViewUtil.gotoActivity(getContext(), HomeActivity.class);
+                ViewUtil.gotoActivity(getContext(), AuthSuccessActivity.class);
+                getActivity().finish();
                 break;
         }
     }

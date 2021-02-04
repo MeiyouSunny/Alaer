@@ -166,7 +166,7 @@ public class TaskListFragment extends BottomSheetDialogFragment {
     }
 
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        if (requestCode == VideoActivity.REQUEST_CODE && resultCode == Activity.RESULT_OK) {
+        if (requestCode == VideoActivity.REQUEST_CODE_SPEED_UP && resultCode == Activity.RESULT_OK) {
             // 播放完成,完成任务
             completeTask(mAdTask.id);
         } else {

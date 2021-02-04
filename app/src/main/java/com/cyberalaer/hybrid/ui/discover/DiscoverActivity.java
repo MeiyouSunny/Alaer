@@ -16,7 +16,7 @@ import com.bigkoo.convenientbanner.holder.Holder;
 import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseTitleActivity;
 import com.cyberalaer.hybrid.databinding.ActivityDiscoverBinding;
-import com.cyberalaer.hybrid.ui.government.AuthSuccessActivity;
+import com.cyberalaer.hybrid.ui.auth.AuthSuccessActivity;
 import com.cyberalaer.hybrid.ui.government.RealNameAuthActivity;
 import com.cyberalaer.hybrid.ui.share.ShareActivity;
 import com.cyberalaer.hybrid.ui.user.MyTeamActivity;
