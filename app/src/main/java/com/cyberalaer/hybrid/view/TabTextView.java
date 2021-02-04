@@ -60,12 +60,9 @@ public class TabTextView extends AppCompatTextView implements View.OnClickListen
     public void setState(@STATE int state) {
         mState = state;
         Drawable drawableRight = getResources().getDrawable(STATE_ICONS[state]);
-//        setCompoundDrawablesWithIntrinsicBounds(null, null, drawableRight, null);
-//        setCompoundDrawablePadding(-4);
 
         drawableRight.setBounds(0, 0, drawableRight.getMinimumWidth(), drawableRight.getMinimumHeight());
         setCompoundDrawables(null, null, drawableRight, null);
-        setCompoundDrawablePadding(-4);
 
         int textColor = Color.parseColor(mState == UNSELECTED ? "#7E7E7E" : "#52C883");
         setTextColor(textColor);
@@ -109,10 +106,6 @@ public class TabTextView extends AppCompatTextView implements View.OnClickListen
                 setState(ORDER_ASC);
                 break;
         }
-    }
-
-    public StateChangedListener getStateListener() {
-        return stateListener;
     }
 
     public void setStateListener(StateChangedListener stateListener) {
