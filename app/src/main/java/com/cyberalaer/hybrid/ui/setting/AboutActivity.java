@@ -1,21 +1,28 @@
 package com.cyberalaer.hybrid.ui.setting;
 
-import android.view.Gravity;
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Build;
+import android.provider.Settings;
 import android.view.View;
 
-import com.alaer.lib.api.ApiUtil;
 import com.alaer.lib.api.AppConfig;
-import com.alaer.lib.api.Callback;
-import com.alaer.lib.api.bean.UpdateInfo;
+import com.alaer.lib.data.UserDataUtil;
+import com.alaer.lib.event.Event;
+import com.alaer.lib.event.EventUtil;
 import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseTitleActivity;
 import com.cyberalaer.hybrid.databinding.ActivityAboutBinding;
-import com.cyberalaer.hybrid.ui.dialog.DialogDownloadApk;
-import com.cyberalaer.hybrid.ui.dialog.DialogNewVersion;
+import com.cyberalaer.hybrid.ui.home.HomeActivity;
 import com.cyberalaer.hybrid.ui.webpage.WebPageActivity;
 import com.cyberalaer.hybrid.util.SettingUtil;
 
-import likly.dialogger.Dialogger;
+import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
+import de.greenrobot.event.EventBus;
+import de.greenrobot.event.Subscribe;
+import de.greenrobot.event.ThreadMode;
+import likly.dollar.$;
 
 /**
  * 关于
@@ -35,6 +42,7 @@ public class AboutActivity extends BaseTitleActivity<ActivityAboutBinding> {
     @Override
     public void onViewCreated() {
         super.onViewCreated();
+        EventBus.getDefault().register(this);
         initData();
     }
 
@@ -55,38 +63,50 @@ public class AboutActivity extends BaseTitleActivity<ActivityAboutBinding> {
     }
 
     private void checkUpdate() {
-        ApiUtil.apiService().checkUpdate(1100,
-                new Callback<UpdateInfo>() {
-                    @Override
-                    public void onResponse(UpdateInfo updateInfo) {
-                        super.onResponse(updateInfo);
-                        if (updateInfo != null) {
-                            showNewVersionDialog(updateInfo);
-                        }
-                    }
-
-                    @Override
-                    public void onError(int code, String msg) {
-                        super.onError(code, msg);
-                    }
-                });
+        new AppUpgradeManager(this).checkUpdate(true);
     }
 
-    private void showNewVersionDialog(UpdateInfo updateInfo) {
-        DialogNewVersion dialog = new DialogNewVersion(updateInfo);
-        dialog.setListener(() -> startDownload(updateInfo));
-        Dialogger.newDialog(this).holder(dialog)
-                .gravity(Gravity.CENTER).cancelable(false).show();
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    @Subscribe(threadMode = ThreadMode.MainThread)
+    public void onEvent(Event event) {
+        if (EventUtil.isInstallRequestPermission(event) && event.data == this) {
+            requestInstallApkPermission();
+        } else if (EventUtil.isTokenInvalid(event)) {
+            UserDataUtil.instance().clearUserDatas();
+            UserDataUtil.instance().setTokenInvalid(true);
+            Intent intent = new Intent(this, HomeActivity.class);
+            startActivity(intent);
+        }
     }
 
-    private void startDownload(UpdateInfo updateInfo) {
-        DialogDownloadApk dialogDownloadApk = new DialogDownloadApk();
-        Dialogger.newDialog(this).holder(dialogDownloadApk)
-                .gravity(Gravity.CENTER).cancelable(false).show();
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    private void requestInstallApkPermission() {
+        boolean haveInstallPermission = getPackageManager().canRequestPackageInstalls();
+        if (!haveInstallPermission) {
+            Uri packageURI = Uri.parse("package:" + getPackageName());
+            Intent intent = new Intent(Settings.ACTION_MANAGE_UNKNOWN_APP_SOURCES, packageURI);
+            startActivityForResult(intent, REQUEST_INSTALL);
 
-        AppUpgradeManager upgradeManager = new AppUpgradeManager(this);
-        upgradeManager.setDownloadProgressListener(dialogDownloadApk);
-        upgradeManager.startDownloadApk(updateInfo);
+        }
+    }
+
+    private final int REQUEST_INSTALL = 11;
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_INSTALL) {
+            if (resultCode == RESULT_OK)
+                EventUtil.sendInstallApk();
+            else
+                $.toast().text("授权失败!").show();
+        }
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
     }
 
 }

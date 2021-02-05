@@ -18,8 +18,8 @@ public class EventUtil {
         return event != null && event.type == EVENT_TOKEN_INVALID;
     }
 
-    public static void sendInstallRequestPermission() {
-        Event event = Event.create(EVENT_INSTALL_PERMISSION_REQUEST);
+    public static void sendInstallRequestPermission(Object target) {
+        Event event = Event.create(EVENT_INSTALL_PERMISSION_REQUEST, target);
         EventBus.getDefault().post(event);
     }
 

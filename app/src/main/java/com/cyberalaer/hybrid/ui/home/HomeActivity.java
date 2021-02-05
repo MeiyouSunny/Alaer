@@ -33,6 +33,7 @@ import com.cyberalaer.hybrid.ui.government.RealNameAuthActivity;
 import com.cyberalaer.hybrid.ui.notice.NoticeDetailActivity;
 import com.cyberalaer.hybrid.ui.notice.NoticeListActivity;
 import com.cyberalaer.hybrid.ui.produce.ProductionHallActivity;
+import com.cyberalaer.hybrid.ui.setting.AppUpgradeManager;
 import com.cyberalaer.hybrid.ui.task.TaskListFragment;
 import com.cyberalaer.hybrid.ui.travel.TravelHallActivity;
 import com.cyberalaer.hybrid.ui.user.LoginActivity;
@@ -80,6 +81,8 @@ public class HomeActivity extends BaseViewBindActivity<ActivityHomeBinding> impl
         initData();
         queryNotices();
         requestPermission();
+        // 版本更新
+        new AppUpgradeManager(this).checkUpdate(false);
     }
 
     @Override
@@ -264,7 +267,7 @@ public class HomeActivity extends BaseViewBindActivity<ActivityHomeBinding> impl
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Subscribe(threadMode = ThreadMode.MainThread)
     public void onEvent(Event event) {
-        if (EventUtil.isInstallRequestPermission(event)) {
+        if (EventUtil.isInstallRequestPermission(event) && event.data == this) {
             requestInstallApkPermission();
         } else if (EventUtil.isTokenInvalid(event)) {
             UserDataUtil.instance().clearUserDatas();
@@ -283,7 +286,7 @@ public class HomeActivity extends BaseViewBindActivity<ActivityHomeBinding> impl
             if (resultCode == RESULT_OK)
                 EventUtil.sendInstallApk();
             else
-                $.toast().text("授权失败,安装失败!").show();
+                $.toast().text("授权失败!").show();
         }
 
     }
@@ -293,4 +296,5 @@ public class HomeActivity extends BaseViewBindActivity<ActivityHomeBinding> impl
         super.onDestroy();
         EventBus.getDefault().unregister(this);
     }
+
 }
