@@ -84,6 +84,7 @@
     <string name="has_exchanged_is">已兑换：%d/%d个</string>
     <string name="exchanged_full">兑换完</string>
     <string name="get_for_free">免费领取</string>
+    <string name="renewal">续期</string>
     <string name="get_by_start_user">星级数字市民赠送</string>
     <string name="get_by_activity">活动赠送</string>
 
@@ -269,6 +270,7 @@
 
     <string name="sure">确认</string>
     <string name="exchange_success">兑换成功!</string>
+    <string name="renewal_success">续期成功!</string>
     <string name="pls_get_verify_code_first">请先获取验证码!</string>
 
     <string name="check_update">检查更新</string>

@@ -1,6 +1,8 @@
 package com.cyberalaer.hybrid.ui.produce;
 
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.view.Gravity;
 
 import com.alaer.lib.api.ApiUtil;
 import com.alaer.lib.api.AppConfig;
@@ -11,12 +13,21 @@ import com.alaer.lib.data.UserDataUtil;
 import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseBindFragment;
 import com.cyberalaer.hybrid.databinding.FragmentSeedMineListBinding;
+import com.cyberalaer.hybrid.ui.dialog.DialogInputSecondPwd;
 import com.cyberalaer.hybrid.util.CollectionUtils;
+import com.cyberalaer.hybrid.util.NeteaseCaptcha;
+import com.cyberalaer.hybrid.util.StringUtil;
 import com.cyberalaer.hybrid.view.GradViewItemDecoration;
 import com.meiyou.mvp.MvpBinder;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.List;
 
+import likly.dialogger.Dialogger;
+import likly.dollar.$;
+import likly.view.repeat.OnHolderClickListener;
 import likly.view.repeat.RepeatView;
 
 /**
@@ -24,9 +35,12 @@ import likly.view.repeat.RepeatView;
  */
 @MvpBinder(
 )
-public class SeedMineFragment extends BaseBindFragment<FragmentSeedMineListBinding> implements RepeatView.OnRetryListener {
+public class SeedMineFragment extends BaseBindFragment<FragmentSeedMineListBinding> implements RepeatView.OnRetryListener, OnHolderClickListener<AdapterSeedMine> {
 
+    UserData userData;
     private boolean claimNewbieMiner;
+    String mTradePhraseCode;
+    SeedMine mSeed;
 
     public static SeedMineFragment newInstance(boolean claimNewbieMiner) {
         SeedMineFragment fragment = new SeedMineFragment();
@@ -54,7 +68,7 @@ public class SeedMineFragment extends BaseBindFragment<FragmentSeedMineListBindi
 
     private void initData() {
         claimNewbieMiner = getArguments().getBoolean("claimNewbieMiner");
-        UserData userData = UserDataUtil.instance().getUserData();
+        userData = UserDataUtil.instance().getUserData();
         if (userData == null)
             return;
         ApiUtil.apiService().mySeeds(userData.uuid, String.valueOf(userData.uid), userData.token, AppConfig.DIAMOND_CURRENCY,
@@ -71,6 +85,7 @@ public class SeedMineFragment extends BaseBindFragment<FragmentSeedMineListBindi
 //        bindRoot.repeatView.getRecyclerView().setPaddingRelative(0, 32, 0, 0);
         bindRoot.repeatView.getRecyclerView().setClipToPadding(false);
         bindRoot.repeatView.getRecyclerView().addItemDecoration(new GradViewItemDecoration(getContext(), 6));
+        bindRoot.repeatView.onClick(this);
 
         if (!CollectionUtils.isEmpty(data)) {
             bindRoot.repeatView.viewManager().bind(data);
@@ -89,6 +104,82 @@ public class SeedMineFragment extends BaseBindFragment<FragmentSeedMineListBindi
     @Override
     public void onRetry() {
         ((SeedStoreActivity) getActivity()).showPage(1);
+    }
+
+    @Override
+    public void onHolderClick(AdapterSeedMine adapterSeedMine) {
+        mSeed = adapterSeedMine.getData();
+        if (mSeed == null || mSeed.remainNum > 3)
+            return;
+        // 续期
+        showSecondPwdDialog();
+    }
+
+    private void showSecondPwdDialog() {
+        DialogInputSecondPwd dialog = new DialogInputSecondPwd();
+        dialog.setListener(pwd -> confirmTransactionCode(pwd));
+        Dialogger.newDialog(getContext()).holder(dialog).gravity(Gravity.CENTER).cancelable(false).show();
+    }
+
+    private void confirmTransactionCode(String pwd) {
+        if (userData == null)
+            return;
+
+        final String pwdMD5 = StringUtil.toMD5(pwd + AppConfig.MD5_KEY_TEMP_SECOND + userData.uid);
+        ApiUtil.apiService().confirmTransactionCode(userData.uuid, String.valueOf(userData.uid), userData.token, AppConfig.DIAMOND_CURRENCY, pwdMD5,
+                new Callback<String>() {
+                    @Override
+                    public void onResponse(String json) {
+                        if (!TextUtils.isEmpty(json)) {
+                            JSONObject jsonObject = null;
+                            try {
+                                jsonObject = new JSONObject(json);
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                            if (jsonObject.has("code")) {
+                                mTradePhraseCode = jsonObject.optString("code");
+                                verifyCode();
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onError(int code, String msg) {
+                        $.toast().text(msg).show();
+                    }
+                });
+    }
+
+    private void verifyCode() {
+        NeteaseCaptcha.start(getContext(), new NeteaseCaptcha.OnCaptchaListener() {
+            @Override
+            public void onCaptchaSuccess(String validate) {
+                seedRenewal(validate, mTradePhraseCode);
+            }
+
+            @Override
+            public void onCaptchaError(String msg) {
+                $.toast().text(msg).show();
+            }
+        });
+    }
+
+    private void seedRenewal(String validate, String tradePhraseCode) {
+        ApiUtil.apiService().seedRenewal(userData.uuid, String.valueOf(userData.uid), userData.token, AppConfig.DIAMOND_CURRENCY,
+                validate, AppConfig.VERIFY_ID, tradePhraseCode, mSeed.id,
+                new Callback<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        $.toast().text(R.string.renewal_success).show();
+                        initData();
+                    }
+
+                    @Override
+                    public void onError(int code, String msg) {
+                        $.toast().text(msg).show();
+                    }
+                });
     }
 
 }

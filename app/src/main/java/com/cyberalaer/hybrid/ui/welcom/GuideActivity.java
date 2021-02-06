@@ -109,7 +109,7 @@ public class GuideActivity extends BaseViewBindActivity<ActivityGuideBinding> im
                     Dialogger.newDialog(getContext()).holder(new DialogUserAgreement())
                             .gravity(Gravity.CENTER).cancelable(false).show();
                 }
-            }, 1000);
+            }, 500);
         }
     }
 

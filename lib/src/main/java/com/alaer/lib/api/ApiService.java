@@ -366,6 +366,16 @@ public interface ApiService {
                                Callback<String> callback);
 
     /**
+     * 树苗续期
+     */
+    @FormBody
+    @PUT("/mining/user/miner/renew")
+    Call<String> seedRenewal(@Query("uuid") String uuid, @Query("uid") String uid, @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
+                             @Query("validate") String validate, @Query("captchaId") String captchaId, @Query("tradePhraseCode") String tradePhraseCode,
+                             @Query("userMinerId") int userMinerId,
+                             Callback<String> callback);
+
+    /**
      * 获取验证码 - 用户中心 (须 Token 授权)
      * 操作类型：1.邮箱；2.手机
      */

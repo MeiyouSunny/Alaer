@@ -88,7 +88,7 @@ dependencies {
 //    api files('libs/jpush-android-2.2.0.jar')
     implementation(name: 'captcha-release_v3.0.0', ext: 'aar')
 
-//    implementation 'com.hmcx:mvp:2.0.2'
+    implementation 'com.hmcx:mvp:2.0.2'
     implementation 'com.hmcx:dollar:1.0.1'
     implementation 'com.hmcx:rxandroid:1.0.6'
     implementation 'com.hmcx:dialogger:1.0.2'
