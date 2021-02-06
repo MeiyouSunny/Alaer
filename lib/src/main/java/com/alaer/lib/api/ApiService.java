@@ -1,6 +1,7 @@
 package com.alaer.lib.api;
 
 import com.alaer.lib.api.bean.ActiveBillList;
+import com.alaer.lib.api.bean.ActiveDetail;
 import com.alaer.lib.api.bean.AdTask;
 import com.alaer.lib.api.bean.AdVideo;
 import com.alaer.lib.api.bean.Balance;
@@ -308,6 +309,15 @@ public interface ApiService {
                                       @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
                                       @Query("pageIndex") int pageIndex, @Query("pageSize") int pageSize,
                                       Callback<ActiveBillList> callback);
+
+    /**
+     * 活跃度明细
+     */
+    @GET("/mining/team/activityinfo")
+    Call<ActiveDetail> activityDetail(@Query("uuid") String uuid, @Query("uid") String uid,
+                                      @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
+                                      @Query("minerId") String minerId,
+                                      Callback<ActiveDetail> callback);
 
     /**
      * 贡献值明细

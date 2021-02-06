@@ -2,26 +2,26 @@ package com.cyberalaer.hybrid.ui.dialog;
 
 import android.view.View;
 
-import com.alaer.lib.api.bean.SharedUserDetail;
+import com.alaer.lib.api.bean.ActiveDetail;
 import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseDialogHolder;
-import com.cyberalaer.hybrid.databinding.DialogSharedUserDetailBinding;
+import com.cyberalaer.hybrid.databinding.DialogAvtivityDetailBinding;
 import com.cyberalaer.hybrid.util.NumberUtils;
 
-public class DialogUserDetail extends BaseDialogHolder<DialogSharedUserDetailBinding> {
+public class DialogActiveDetail extends BaseDialogHolder<DialogAvtivityDetailBinding> {
 
-    SharedUserDetail userDetail;
+    ActiveDetail detail;
 
-    public DialogUserDetail(SharedUserDetail userDetail) {
-        super(R.layout.dialog_shared_user_detail);
-        this.userDetail = userDetail;
+    public DialogActiveDetail(ActiveDetail detail) {
+        super(R.layout.dialog_avtivity_detail);
+        this.detail = detail;
     }
 
     @Override
     public void onViewCreated(View view) {
         super.onViewCreated(view);
         bindRoot.setNumber(NumberUtils.instance());
-        bindRoot.setData(userDetail);
+        bindRoot.setData(detail);
     }
 
     @Override

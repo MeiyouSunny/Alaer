@@ -55,7 +55,7 @@
             android:layout_marginLeft="12dp"
             android:layout_marginTop="40dp"
             android:layout_toRightOf="@+id/time"
-            android:text="@{billUtil.isSeedActivity(bill) ? @string/sapling_activity_is(number.parseNumber(bill.postAmount)) : @string/share_activity_is(number.parseNumber(bill.postAmount))}"
+            android:text="@{billUtil.isSeedActivity(bill) ? @string/sapling_activity_is(number.parseNumber(bill.refAmount)) : @string/share_activity_is(number.parseNumber(bill.refAmount))}"
             android:textColor="@color/font_7E"
             android:textSize="@dimen/font_10" />
 

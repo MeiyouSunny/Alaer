@@ -16,19 +16,38 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    buildTypes {
+    signingConfigs {
         release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            storeFile file('alaer-release-key.keystore')
+            storePassword "bqex6666"
+            keyAlias "alaer"
+            keyPassword "bqex6666"
         }
     }
+
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.release
+            minifyEnabled false
+        }
+        release {
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//            minifyEnabled true
+            zipAlignEnabled true
+        }
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
-    dataBinding {
-        enabled = true
+//    dataBinding {
+//        enabled = true
+//    }
+    buildFeatures{
+        dataBinding = true
     }
 
     repositories {
@@ -69,7 +88,7 @@ dependencies {
 //    api files('libs/jpush-android-2.2.0.jar')
     implementation(name: 'captcha-release_v3.0.0', ext: 'aar')
 
-    implementation 'com.hmcx:mvp:2.0.2'
+//    implementation 'com.hmcx:mvp:2.0.2'
     implementation 'com.hmcx:dollar:1.0.1'
     implementation 'com.hmcx:rxandroid:1.0.6'
     implementation 'com.hmcx:dialogger:1.0.2'

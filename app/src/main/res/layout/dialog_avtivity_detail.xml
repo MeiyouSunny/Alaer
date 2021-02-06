@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="handler"
+            type="com.cyberalaer.hybrid.base.BindClickListener" />
+
+        <variable
+            name="number"
+            type="com.cyberalaer.hybrid.util.NumberUtils" />
+
+        <variable
+            name="data"
+            type="com.alaer.lib.api.bean.ActiveDetail" />
+
+        <import type="com.cyberalaer.hybrid.util.StringUtil" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="348dp"
+        android:layout_margin="34dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/close"
+            android:layout_width="26dp"
+            android:layout_height="25dp"
+            android:layout_gravity="right"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/ic_dialog_close"
+            android:clickable="true"
+            android:onClick="@{handler.click}" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="437dp"
+            android:background="@drawable/bg_white_round_corner">
+
+
+            <ImageView
+                android:id="@+id/imgTop"
+                android:layout_width="match_parent"
+                android:layout_height="78dp"
+                android:background="@drawable/img_buy_seed_success_header" />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:text="用户操作记录"
+                android:textColor="@color/font_41"
+                android:textSize="@dimen/font_18" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="98dp"
+                android:layout_toLeftOf="@+id/title"
+                android:gravity="right"
+                android:text="UID："
+                android:textColor="@color/font_7E"
+                android:textSize="@dimen/font_16" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="128dp"
+                android:layout_marginTop="98dp"
+                android:gravity="left"
+                android:text="@{String.valueOf(data.uid)}"
+                android:textColor="@color/font_41"
+                android:textSize="@dimen/font_16" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="129dp"
+                android:layout_toLeftOf="@+id/title"
+                android:gravity="right"
+                android:text="手机号："
+                android:textColor="@color/font_7E"
+                android:textSize="@dimen/font_16" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="128dp"
+                android:layout_marginTop="129dp"
+                android:gravity="left"
+                android:text="@{data.phone}"
+                android:textColor="@color/font_41"
+                android:textSize="@dimen/font_16" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="162dp"
+                android:layout_toLeftOf="@+id/title"
+                android:gravity="right"
+                android:text="说明："
+                android:textColor="@color/font_7E"
+                android:textSize="@dimen/font_16" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="128dp"
+                android:layout_marginTop="162dp"
+                android:gravity="left"
+                android:text="@{StringUtil.getNullStringDefault(data.note)}"
+                android:textColor="@color/font_41"
+                android:textSize="@dimen/font_16" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="194dp"
+                android:layout_toLeftOf="@+id/title"
+                android:gravity="right"
+                android:text="树苗活跃度："
+                android:textColor="@color/font_7E"
+                android:textSize="@dimen/font_16" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="128dp"
+                android:layout_marginTop="194dp"
+                android:gravity="left"
+                android:text="@{number.parseNumber(data.minerActivityness)}"
+                android:textColor="@color/font_41"
+                android:textSize="@dimen/font_16" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="227dp"
+                android:layout_toLeftOf="@+id/title"
+                android:gravity="right"
+                android:text="账号位置："
+                android:textColor="@color/font_7E"
+                android:textSize="@dimen/font_16" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="128dp"
+                android:layout_marginTop="227dp"
+                android:gravity="left"
+                android:text="@{StringUtil.getNullStringDefault(data.cityName)}"
+                android:textColor="@color/font_41"
+                android:textSize="@dimen/font_16" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="260dp"
+                android:layout_toLeftOf="@+id/title"
+                android:gravity="right"
+                android:text="时间："
+                android:textColor="@color/font_7E"
+                android:textSize="@dimen/font_16" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="128dp"
+                android:layout_marginTop="260dp"
+                android:gravity="left"
+                android:text="@{data.time}"
+                android:textColor="@color/font_41"
+                android:textSize="@dimen/font_16" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</layout>
