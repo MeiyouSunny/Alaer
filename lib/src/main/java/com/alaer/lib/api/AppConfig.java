@@ -2,7 +2,9 @@ package com.alaer.lib.api;
 
 public class AppConfig {
 
-    public static final String BASE_URL = "https://t-api.yuliang.top/polarisex";
+//    public static final String BASE_URL = "https://t-api.yuliang.top/polarisex";
+
+    public static final String BASE_URL = "https://api.tokensky.cn/polarisex";
 
     /* 易盾形为验证码业务ID */
     public static final String VERIFY_ID = "2652309a070249d2942831e936e0d87d";
