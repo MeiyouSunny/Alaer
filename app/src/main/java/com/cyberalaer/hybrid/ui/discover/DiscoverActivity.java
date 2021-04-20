@@ -128,6 +128,12 @@ public class DiscoverActivity extends BaseTitleActivity<ActivityDiscoverBinding>
                 else
                     ViewUtil.gotoActivity(this, RealNameAuthActivity.class);
                 break;
+            case R.id.myCity:
+                if (UserDataUtil.instance().isAuthed())
+                    ViewUtil.gotoActivity(this, AuthSuccessActivity.class);
+                else
+                    ViewUtil.gotoActivity(this, RealNameAuthActivity.class);
+                break;
         }
     }
 

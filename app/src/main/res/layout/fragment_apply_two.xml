@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="handler"
+            type="com.cyberalaer.hybrid.base.BindClickListener" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="18dp"
+            android:paddingRight="18dp"
+            android:paddingBottom="24dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/ic_regist_step2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="76dp"
+                android:text="*"
+                android:textColor="#FF3333"
+                android:textSize="@dimen/font_16" />
+
+            <TextView
+                android:id="@+id/label1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="76dp"
+                android:text="计划整体运作投入资金？"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_15" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/select1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/label1"
+                android:layout_marginTop="15dp"
+                app:cardBackgroundColor="@color/bg_gray"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="0dp">
+
+                <com.cyberalaer.hybrid.view.FlowRadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginRight="24dp"
+                    android:layout_marginBottom="18dp">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="58dp"
+                        android:paddingRight="58dp"
+                        android:text="5万" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="58dp"
+                        android:text="10万" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="58dp"
+                        android:text="15万" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="58dp"
+                        android:text="20万" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="58dp"
+                        android:text="25万" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="58dp"
+                        android:text="30万" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="58dp"
+                        android:text="30万以上" />
+
+                </com.cyberalaer.hybrid.view.FlowRadioGroup>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/select1"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="20dp"
+                android:text="*"
+                android:textColor="#FF3333"
+                android:textSize="@dimen/font_16" />
+
+            <TextView
+                android:id="@+id/label2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/select1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="20dp"
+                android:text="您若取得该区域合作资格，是以个人还是公司签署合作"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_15" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/select2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/label2"
+                android:layout_marginTop="15dp"
+                app:cardBackgroundColor="@color/bg_gray"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="0dp">
+
+                <com.cyberalaer.hybrid.view.FlowRadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginRight="24dp"
+                    android:layout_marginBottom="18dp">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="58dp"
+                        android:paddingRight="58dp"
+                        android:text="个人" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="58dp"
+                        android:text="合作" />
+
+                </com.cyberalaer.hybrid.view.FlowRadioGroup>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/label3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/select2"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="20dp"
+                android:text="您计划是个人经营还是合伙经营"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_15" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/select3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/label3"
+                android:layout_marginTop="15dp"
+                app:cardBackgroundColor="@color/bg_gray"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="0dp">
+
+                <com.cyberalaer.hybrid.view.FlowRadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginRight="24dp"
+                    android:layout_marginBottom="18dp">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="58dp"
+                        android:paddingRight="58dp"
+                        android:text="个人" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="58dp"
+                        android:text="合作" />
+
+                </com.cyberalaer.hybrid.view.FlowRadioGroup>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/label4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/select3"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="20dp"
+                android:text="是否从事过实业相关工作，请简单描述"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_15" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/select4"
+                android:layout_width="match_parent"
+                android:layout_height="88dp"
+                android:layout_below="@+id/label4"
+                android:layout_marginTop="15dp"
+                app:cardBackgroundColor="@color/bg_gray"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="0dp">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:gravity="left|top"
+                    android:hint="请简单描述"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingRight="16dp"
+                    android:paddingBottom="8dp"
+                    android:textColorHint="@color/font_B3"
+                    android:textSize="@dimen/font_17" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/label5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/select4"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="20dp"
+                android:text="您在当地的资源、人脉以及曾经组织过的活动，请简单描述"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_15" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/select5"
+                android:layout_width="match_parent"
+                android:layout_height="88dp"
+                android:layout_below="@+id/label5"
+                android:layout_marginTop="15dp"
+                app:cardBackgroundColor="@color/bg_gray"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="0dp">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:gravity="left|top"
+                    android:hint="请简单描述"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingRight="16dp"
+                    android:paddingBottom="8dp"
+                    android:textColorHint="@color/font_B3"
+                    android:textSize="@dimen/font_17" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/label6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/select5"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="20dp"
+                android:text="是否报名参加星级达人表彰城市节点大会"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_15" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/select6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/label6"
+                android:layout_marginTop="15dp"
+                app:cardBackgroundColor="@color/bg_gray"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="0dp">
+
+                <com.cyberalaer.hybrid.view.FlowRadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginRight="24dp"
+                    android:layout_marginBottom="18dp">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="58dp"
+                        android:paddingRight="58dp"
+                        android:text="已报名" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="58dp"
+                        android:text="未报名" />
+
+                </com.cyberalaer.hybrid.view.FlowRadioGroup>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/submit"
+                style="@style/BtnGreen"
+                android:layout_below="@+id/select6"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginRight="20dp"
+                android:enabled="true"
+                android:onClick="@{handler.click}"
+                android:text="提交申请" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</layout>

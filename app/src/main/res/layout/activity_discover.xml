@@ -129,11 +129,18 @@
                         android:textSize="@dimen/font_17" />
 
                     <TextView
+                        android:id="@+id/myCity"
                         style="@style/SelectableStyle"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:visibility="invisible" />
+                        android:drawableTop="@drawable/ic_my_city"
+                        android:drawablePadding="6dp"
+                        android:gravity="center"
+                        android:onClick="@{handler.click}"
+                        android:text="我的城市"
+                        android:textColor="@color/font_36"
+                        android:textSize="@dimen/font_17" />
 
                     <TextView
                         style="@style/SelectableStyle"

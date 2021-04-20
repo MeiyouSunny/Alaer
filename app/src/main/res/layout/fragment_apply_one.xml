@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="handler"
+            type="com.cyberalaer.hybrid.base.BindClickListener" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="18dp"
+            android:paddingRight="18dp"
+            android:paddingBottom="24dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/ic_regist_step1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="76dp"
+                android:text="*"
+                android:textColor="#FF3333"
+                android:textSize="@dimen/font_16" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="76dp"
+                android:text="真实姓名"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_15" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="105dp"
+                app:cardBackgroundColor="@color/bg_gray"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="0dp">
+
+                <EditText
+                    android:id="@+id/input"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/icClear"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="请输入您的真实姓名"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:singleLine="true"
+                    android:textColorHint="@color/font_B3"
+                    android:textSize="@dimen/font_17" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="171dp"
+                android:text="*"
+                android:textColor="#FF3333"
+                android:textSize="@dimen/font_16" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="171dp"
+                android:text="手机号"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_15" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="200dp"
+                app:cardBackgroundColor="@color/bg_gray"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="0dp">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/icClear"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="请输入手机号"
+                    android:maxLength="11"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:singleLine="true"
+                    android:textColorHint="@color/font_B3"
+                    android:textSize="@dimen/font_17" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="266dp"
+                android:text="微信号"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_15" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="295dp"
+                app:cardBackgroundColor="@color/bg_gray"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="0dp">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/icClear"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="请输入微信号"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:singleLine="true"
+                    android:textColorHint="@color/font_B3"
+                    android:textSize="@dimen/font_17" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="361dp"
+                android:text="推荐人"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_15" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="390dp"
+                app:cardBackgroundColor="@color/bg_gray"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="0dp">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/icClear"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="请输入推荐人"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:singleLine="true"
+                    android:textColorHint="@color/font_B3"
+                    android:textSize="@dimen/font_17" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="456dp"
+                android:text="推荐人手机号码"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_15" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="485dp"
+                app:cardBackgroundColor="@color/bg_gray"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="0dp">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/icClear"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="请输入推荐人手机号码"
+                    android:maxLength="11"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:singleLine="true"
+                    android:textColorHint="@color/font_B3"
+                    android:textSize="@dimen/font_17" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="551dp"
+                android:text="*"
+                android:textColor="#FF3333"
+                android:textSize="@dimen/font_16" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="551dp"
+                android:text="意向城市"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_15" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="580dp"
+                app:cardBackgroundColor="@color/bg_gray"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="0dp">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/icClear"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="请选择 省/市/区（县）"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:singleLine="true"
+                    android:textColorHint="@color/font_B3"
+                    android:textSize="@dimen/font_17" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="639dp"
+                app:cardBackgroundColor="@color/bg_gray"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="0dp">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/icClear"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="详细地址"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:singleLine="true"
+                    android:textColorHint="@color/font_B3"
+                    android:textSize="@dimen/font_17" />
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/next"
+                style="@style/BtnGreen"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="711dp"
+                android:layout_marginRight="20dp"
+                android:enabled="true"
+                android:onClick="@{handler.click}"
+                android:text="@string/next_step" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</layout>
