@@ -66,6 +66,10 @@
         <activity
             android:name=".ui.welcom.GuideActivity"
             android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".ui.city.CityNodeApplyActivity"
@@ -79,10 +83,6 @@
         <activity
             android:name=".ui.city.CityPopulationActivity"
             android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".ui.home.HomeActivity"

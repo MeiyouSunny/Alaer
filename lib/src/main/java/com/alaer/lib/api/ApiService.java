@@ -6,6 +6,7 @@ import com.alaer.lib.api.bean.AdTask;
 import com.alaer.lib.api.bean.AdVideo;
 import com.alaer.lib.api.bean.Balance;
 import com.alaer.lib.api.bean.BannerList;
+import com.alaer.lib.api.bean.CityChartData;
 import com.alaer.lib.api.bean.CommonQuestionList;
 import com.alaer.lib.api.bean.FruitBill;
 import com.alaer.lib.api.bean.Notice;
@@ -428,5 +429,21 @@ public interface ApiService {
                                @Query("validate") String validate, @Query("captchaId") String captchaId, @Query("tradePhraseCode") String tradePhraseCode,
                                @Query("key") String key, @Query("value") String value,
                                Callback<String> callback);
+
+    /**
+     * 城市7日 - 统计曲线
+     */
+    @GET("/mining/city/master/week")
+    Call<CityChartData> cityWeekData(@Query("uuid") String uuid, @Query("uid") String uid,
+                                     @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
+                                     Callback<CityChartData> callback);
+
+    /**
+     * 所有城主信息
+     */
+    @GET("/mining/city/masters")
+    Call<String> cityMasters(@Query("uuid") String uuid, @Query("uid") String uid,
+                             @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
+                             Callback<String> callback);
 
 }
