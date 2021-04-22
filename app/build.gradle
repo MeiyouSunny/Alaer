@@ -103,7 +103,7 @@ dependencies {
     implementation 'pub.devrel:easypermissions:2.0.1'
     implementation 'de.greenrobot:eventbus:3.0.0-beta1'
     implementation 'com.zhy:magic-viewpager:1.0.1'
+    implementation 'com.contrarywind:wheelview:4.1.0'
     // MPAndroidChart
     implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3'
-
 }

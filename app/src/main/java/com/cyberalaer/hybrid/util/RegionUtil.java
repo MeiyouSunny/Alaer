@@ -9,19 +9,16 @@ import com.alaer.lib.api.bean.Region;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
 import java.util.List;
 
 import likly.dollar.$;
 
 public class RegionUtil {
 
-    private final String regionFile = "region.json";
-
     public List<Region> parseRegions(Context context) {
         try {
             AssetManager assetManager = context.getAssets();
-            InputStreamReader inputStreamReader = new InputStreamReader(assetManager.open(regionFile), "UTF-8");
+            InputStreamReader inputStreamReader = new InputStreamReader(assetManager.open("region.json"), "UTF-8");
             BufferedReader br = new BufferedReader(inputStreamReader);
             String line;
             StringBuilder builder = new StringBuilder();
@@ -42,37 +39,61 @@ public class RegionUtil {
         return null;
     }
 
-    public List<Province.Entity> parseAreas(Context context) {
-        List<Province.Entity> list = new ArrayList<>();
+    public List<Province> parseCitys(Context context) {
         try {
             AssetManager assetManager = context.getAssets();
-            InputStreamReader inputStreamReader = new InputStreamReader(assetManager.open("areas"), "UTF-8");
+            InputStreamReader inputStreamReader = new InputStreamReader(assetManager.open("City.json"), "UTF-8");
             BufferedReader br = new BufferedReader(inputStreamReader);
             String line;
             StringBuilder builder = new StringBuilder();
             while ((line = br.readLine()) != null) {
                 builder.append(line);
-                String[] values = line.split("\t");
-
-                Province.Entity entity = new Province.Entity();
-                entity.name = values[0];
-//                entity.codeString = values[1];
-                entity.code = Integer.valueOf(values[1]);
-                list.add(entity);
-//                if (Integer.valueOf(values[1]) % 10000 == 0) {
-//                    Log.e("Areas", values[0] + " " + values[1] + "\n");
-//                }
             }
             br.close();
             inputStreamReader.close();
 
             final String json = builder.toString();
+            if (!TextUtils.isEmpty(json)) {
+                return $.json().toList(json, Province.class);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        return list;
+        return null;
     }
+
+//    public List<Province.Entity> parseAreas(Context context) {
+//        List<Province.Entity> list = new ArrayList<>();
+//        try {
+//            AssetManager assetManager = context.getAssets();
+//            InputStreamReader inputStreamReader = new InputStreamReader(assetManager.open("areas"), "UTF-8");
+//            BufferedReader br = new BufferedReader(inputStreamReader);
+//            String line;
+//            StringBuilder builder = new StringBuilder();
+//            while ((line = br.readLine()) != null) {
+//                builder.append(line);
+//                String[] values = line.split("\t");
+//
+//                Province.Entity entity = new Province.Entity();
+//                entity.name = values[0];
+////                entity.codeString = values[1];
+//                entity.code = Integer.valueOf(values[1]);
+//                list.add(entity);
+////                if (Integer.valueOf(values[1]) % 10000 == 0) {
+////                    Log.e("Areas", values[0] + " " + values[1] + "\n");
+////                }
+//            }
+//            br.close();
+//            inputStreamReader.close();
+//
+//            final String json = builder.toString();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//
+//        return list;
+//    }
 
 //    RegionUtil util = new RegionUtil();
 //    List<Province.Entity> list = util.parseAreas(getApplicationContext());
