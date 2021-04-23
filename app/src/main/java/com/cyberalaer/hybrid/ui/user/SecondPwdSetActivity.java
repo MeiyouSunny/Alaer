@@ -25,7 +25,7 @@ import static com.cyberalaer.hybrid.util.NeteaseCaptcha.STEP1;
 import static com.cyberalaer.hybrid.util.NeteaseCaptcha.STEP2;
 
 /**
- * 设置二级密码
+ * 设置兑换密码
  */
 public class SecondPwdSetActivity extends BaseTitleActivity<ActivitySecondPwdSetBinding> {
 

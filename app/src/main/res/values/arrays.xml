@@ -40,7 +40,7 @@
     </string-array>
 
     <string-array name="set_profile_desc">
-        <item>微信号设置后，将公开给上下级用户查看</item>
+        <item>微信号设置后，将公开给分享和邀请人查看</item>
         <item>设置个性化邀请码，方便邀请好友</item>
         <item>设置个性昵称</item>
     </string-array>
