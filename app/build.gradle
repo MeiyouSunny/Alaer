@@ -106,4 +106,6 @@ dependencies {
     implementation 'com.contrarywind:wheelview:4.1.0'
     // MPAndroidChart
     implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3'
+    // AMap
+    compile 'com.amap.api:3dmap:latest.integration'
 }

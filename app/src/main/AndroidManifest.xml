@@ -43,6 +43,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="174c899f0037be77999b12500215fe42" />
+
         <!-- 申请临时共享空间 Android N （拍照、相册等）-->
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -73,17 +77,14 @@
         </activity>
         <activity
             android:name=".ui.city.CityNodeApplyActivity"
-            android:screenOrientation="portrait">
-        </activity>
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".ui.city.MyCityActivity"
-            android:screenOrientation="portrait">
-        </activity>
+            android:screenOrientation="portrait"></activity>
 
         <activity
             android:name=".ui.city.CityPopulationActivity"
-            android:screenOrientation="portrait">
-        </activity>
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".ui.home.HomeActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"

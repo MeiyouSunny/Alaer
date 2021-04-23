@@ -30,10 +30,11 @@ public class MyCityActivity extends BaseViewBindActivity<ActivityMyCityBinding> 
     }
 
     private void showFragment(Fragment fragment) {
-        if (mFragmentMyCity == null)
+        if (mFragmentMyCity == null) {
             mFragmentMyCity = new MyCityFragment();
-        if (fragment == null)
             fragment = mFragmentMyCity;
+        }
+
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.content, fragment)
                 .commit();

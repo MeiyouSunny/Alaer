@@ -11,6 +11,7 @@ import com.alaer.lib.data.UserDataUtil;
 import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseBindFragment;
 import com.cyberalaer.hybrid.databinding.FragmentRegistPhoneVerifyBinding;
+import com.cyberalaer.hybrid.util.ViewUtil;
 import com.meiyou.mvp.MvpBinder;
 
 import java.util.List;
@@ -29,7 +30,8 @@ public class MyCityFragment extends BaseBindFragment<FragmentRegistPhoneVerifyBi
     @Override
     public void click(View view) {
         switch (view.getId()) {
-            case R.id.next:
+            case R.id.cityPopulation:
+                ViewUtil.gotoActivity(getContext(), CityPopulationActivity.class);
                 break;
         }
     }
