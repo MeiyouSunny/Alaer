@@ -8,6 +8,8 @@ import com.alaer.lib.api.bean.Balance;
 import com.alaer.lib.api.bean.BannerList;
 import com.alaer.lib.api.bean.CityChartData;
 import com.alaer.lib.api.bean.CityMaster;
+import com.alaer.lib.api.bean.CityMasterDetail;
+import com.alaer.lib.api.bean.CityStatistic;
 import com.alaer.lib.api.bean.CommonQuestionList;
 import com.alaer.lib.api.bean.FruitBill;
 import com.alaer.lib.api.bean.Notice;
@@ -444,7 +446,23 @@ public interface ApiService {
      */
     @GET("/mining/city/masters")
     Call<List<CityMaster>> cityMasters(@Query("uuid") String uuid, @Query("uid") String uid,
-                             @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
-                             Callback<List<CityMaster>> callback);
+                                       @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
+                                       Callback<List<CityMaster>> callback);
+
+    /**
+     * 城市统计
+     */
+    @GET("/mining/city/master/statistic")
+    Call<CityStatistic> cityStatistic(@Query("uuid") String uuid, @Query("uid") String uid,
+                                      @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
+                                      Callback<CityStatistic> callback);
+
+    /**
+     * 获取城主资料
+     */
+    @GET("/mining/city/master/profile")
+    Call<CityMasterDetail> cityMasterInfo(@Query("uuid") String uuid, @Query("uid") String uid,
+                                          @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
+                                          Callback<CityMasterDetail> callback);
 
 }

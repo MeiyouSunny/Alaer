@@ -6,6 +6,7 @@ import com.alaer.lib.api.ApiUtil;
 import com.alaer.lib.api.AppConfig;
 import com.alaer.lib.api.Callback;
 import com.alaer.lib.api.bean.CityChartData;
+import com.alaer.lib.api.bean.CityStatistic;
 import com.alaer.lib.api.bean.UserData;
 import com.alaer.lib.data.UserDataUtil;
 import com.cyberalaer.hybrid.R;
@@ -52,6 +53,14 @@ public class CityPopulationActivity extends BaseTitleActivity<ActivityCityPopula
                         if (data != null) {
                             showChart(data.date, data.people);
                         }
+                    }
+                });
+
+        ApiUtil.apiService().cityStatistic(userData.uuid, String.valueOf(userData.uid), userData.token, AppConfig.DIAMOND_CURRENCY,
+                new Callback<CityStatistic>() {
+                    @Override
+                    public void onResponse(CityStatistic data) {
+                        bindRoot.setStatistic(data);
                     }
                 });
     }

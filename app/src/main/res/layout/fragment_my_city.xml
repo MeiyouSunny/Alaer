@@ -6,6 +6,14 @@
     <data>
 
         <variable
+            name="cityMaster"
+            type="com.alaer.lib.api.bean.CityMasterDetail" />
+
+        <variable
+            name="dataUtil"
+            type="com.cyberalaer.hybrid.data.CityDataUtil" />
+
+        <variable
             name="handler"
             type="com.cyberalaer.hybrid.base.BindClickListener" />
     </data>
@@ -59,11 +67,12 @@
                             android:layout_centerVertical="true"
                             android:layout_toLeftOf="@+id/icLocation1"
                             android:gravity="center_vertical"
-                            android:hint="新疆省阿拉尔市xxx区"
                             android:paddingRight="16dp"
                             android:singleLine="true"
+                            android:text="@{dataUtil.parseFullCity(cityMaster)}"
                             android:textColor="@color/black"
-                            android:textSize="@dimen/font_15" />
+                            android:textSize="@dimen/font_15"
+                            tools:text="新疆省阿拉尔市xxx区" />
 
                         <ImageView
                             android:id="@+id/icLocation1"
@@ -101,21 +110,35 @@
                         android:layout_toLeftOf="@+id/icLocation2"
                         android:gravity="center_vertical"
                         android:singleLine="true"
-                        android:text="欢迎福州市城市节点"
+                        android:text="@{@string/welcome_to_whart_city_master(cityMaster.city)}"
                         android:textColor="@color/white"
                         android:textSize="@dimen/font_17"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        tools:text="欢迎福州市城市节点" />
 
                     <TextView
-                        android:layout_width="match_parent"
+                        android:id="@+id/timeIs"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:gravity="center_vertical"
+                        android:singleLine="true"
+                        android:text="有效期："
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_13" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentBottom="true"
                         android:layout_toLeftOf="@+id/icLocation2"
+                        android:layout_toRightOf="@+id/timeIs"
                         android:gravity="center_vertical"
                         android:singleLine="true"
-                        android:text="有效期：2021.01.03～2022.10.30"
+                        android:text="@{dataUtil.parseTermOfValidity(cityMaster)}"
                         android:textColor="@color/white"
-                        android:textSize="@dimen/font_13" />
+                        android:textSize="@dimen/font_13"
+                        tools:text="2021.01.03～2022.10.30" />
 
                     <ImageView
                         android:id="@+id/icLocation2"
@@ -162,10 +185,11 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentBottom="true"
                             android:layout_centerHorizontal="true"
-                            android:text="32326"
+                            android:text="@{dataUtil.parseNumber(cityMaster.total)}"
                             android:textColor="@color/white"
                             android:textSize="21sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            tools:text="31" />
 
                     </RelativeLayout>
 
@@ -199,7 +223,8 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentBottom="true"
                             android:layout_centerHorizontal="true"
-                            android:text="56"
+                            tools:text="56"
+                            android:text="@{dataUtil.parseNumber(cityMaster.activitynessToday)}"
                             android:textColor="@color/white"
                             android:textSize="21sp"
                             android:textStyle="bold" />
@@ -243,7 +268,8 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentBottom="true"
                             android:layout_centerHorizontal="true"
-                            android:text="8245"
+                            tools:text="8245"
+                            android:text="@{dataUtil.parseNumber(cityMaster.activityness)}"
                             android:textColor="@color/white"
                             android:textSize="21sp"
                             android:textStyle="bold" />
@@ -280,7 +306,8 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentBottom="true"
                             android:layout_centerHorizontal="true"
-                            android:text="34"
+                            tools:text="34"
+                            android:text="@{dataUtil.parseNumber(cityMaster.totalToday)}"
                             android:textColor="@color/white"
                             android:textSize="21sp"
                             android:textStyle="bold" />
@@ -339,7 +366,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
-                            android:text="--"
+                            android:text="@{dataUtil.parseNumber(cityMaster.cityBonus)}"
                             android:textColor="@color/font_green"
                             android:textSize="@dimen/font_20"
                             android:textStyle="bold" />
@@ -366,7 +393,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
-                            android:text="--"
+                            android:text="@{dataUtil.parseNumber(cityMaster.cityBonusToday)}"
                             android:textColor="@color/font_41"
                             android:textSize="@dimen/font_20"
                             android:textStyle="bold" />
@@ -434,7 +461,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
-                            android:text="--"
+                            android:text="@{dataUtil.parseNumber(cityMaster.rewardBonus)}"
                             android:textColor="@color/font_green"
                             android:textSize="@dimen/font_20"
                             android:textStyle="bold" />
@@ -461,7 +488,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
-                            android:text="--"
+                            android:text="@{dataUtil.parseNumber(cityMaster.rewardBonusToday)}"
                             android:textColor="@color/font_41"
                             android:textSize="@dimen/font_20"
                             android:textStyle="bold" />
@@ -529,7 +556,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
-                            android:text="--"
+                            android:text="@{dataUtil.parseNumber(cityMaster.activityness)}"
                             android:textColor="@color/font_green"
                             android:textSize="@dimen/font_20"
                             android:textStyle="bold" />
@@ -556,7 +583,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
-                            android:text="--"
+                            android:text="@{dataUtil.parseNumber(cityMaster.activitynessToday)}"
                             android:textColor="@color/font_41"
                             android:textSize="@dimen/font_20"
                             android:textStyle="bold" />
@@ -594,7 +621,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="11dp"
-                    android:text="阿拉尔实业公分奖励"
+                    android:text="阿拉尔实业功分奖励"
                     android:textColor="@color/font_41"
                     android:textSize="@dimen/font_17" />
 
@@ -624,7 +651,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
-                            android:text="--"
+                            android:text="@{dataUtil.parseNumber(cityMaster.offline)}"
                             android:textColor="@color/font_green"
                             android:textSize="@dimen/font_20"
                             android:textStyle="bold" />
@@ -651,7 +678,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
-                            android:text="--"
+                            android:text="@{dataUtil.parseNumber(cityMaster.offlineToday)}"
                             android:textColor="@color/font_41"
                             android:textSize="@dimen/font_20"
                             android:textStyle="bold" />
@@ -703,6 +730,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/customerService"
                     style="@style/CardViewClick"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
