@@ -8,6 +8,8 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.View;
 
 import com.alaer.lib.api.ApiUtil;
@@ -92,7 +94,12 @@ public class CityHallFragment extends BaseBindFragment<FragmentCityHallBinding> 
                 new Callback<List<CityMaster>>() {
                     @Override
                     public void onResponse(List<CityMaster> cityMasters) {
-                        showCityMasters(cityMasters);
+                        new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                showCityMasters(cityMasters);
+                            }
+                        }, 2000);
                     }
                 });
     }
@@ -105,8 +112,7 @@ public class CityHallFragment extends BaseBindFragment<FragmentCityHallBinding> 
 
                 for (CityMaster cityMaster : cityMasters) {
                     LatLng latLng = new LatLng(cityMaster.lat, cityMaster.lon, false);
-                    RegionItem regionItem = new RegionItem(latLng,
-                            "test");
+                    RegionItem regionItem = new RegionItem(latLng, cityMaster);
                     items.add(regionItem);
                 }
                 ClusterOverlay mClusterOverlay = new ClusterOverlay(mAMap, items,
@@ -124,7 +130,7 @@ public class CityHallFragment extends BaseBindFragment<FragmentCityHallBinding> 
 
     @Override
     public Drawable getDrawAble(int clusterNum) {
-        int radius = dp2px(getContext().getApplicationContext(), 80);
+        int radius = dp2px(getContext().getApplicationContext(), 55);
         if (clusterNum == 1) {
             Drawable bitmapDrawable = mBackDrawAbles.get(1);
             if (bitmapDrawable == null) {
@@ -139,7 +145,7 @@ public class CityHallFragment extends BaseBindFragment<FragmentCityHallBinding> 
             Drawable bitmapDrawable = mBackDrawAbles.get(2);
             if (bitmapDrawable == null) {
                 bitmapDrawable = new BitmapDrawable(null, drawCircle(radius,
-                        Color.argb(159, 210, 154, 6)));
+                        Color.argb(220, 210, 154, 6)));
                 mBackDrawAbles.put(2, bitmapDrawable);
             }
 
@@ -148,7 +154,7 @@ public class CityHallFragment extends BaseBindFragment<FragmentCityHallBinding> 
             Drawable bitmapDrawable = mBackDrawAbles.get(3);
             if (bitmapDrawable == null) {
                 bitmapDrawable = new BitmapDrawable(null, drawCircle(radius,
-                        Color.argb(199, 217, 114, 0)));
+                        Color.argb(220, 217, 114, 0)));
                 mBackDrawAbles.put(3, bitmapDrawable);
             }
 
@@ -157,7 +163,7 @@ public class CityHallFragment extends BaseBindFragment<FragmentCityHallBinding> 
             Drawable bitmapDrawable = mBackDrawAbles.get(4);
             if (bitmapDrawable == null) {
                 bitmapDrawable = new BitmapDrawable(null, drawCircle(radius,
-                        Color.argb(235, 215, 66, 2)));
+                        Color.argb(220, 215, 66, 2)));
                 mBackDrawAbles.put(4, bitmapDrawable);
             }
 

@@ -65,6 +65,7 @@ public class UserInfoActivity extends BaseTitleActivity<ActivityUserInfoBinding>
         TeamDetail teamDetail = UserDataUtil.instance().getTeamDetail();
         if (teamDetail != null) {
             bindRoot.setUser(teamDetail);
+            showUserAvatar(teamDetail.avatar);
         }
 
         ApiUtil.apiService().getFollowInfo(userData.uuid, String.valueOf(userData.uid), userData.token, AppConfig.DIAMOND_CURRENCY,
@@ -73,7 +74,6 @@ public class UserInfoActivity extends BaseTitleActivity<ActivityUserInfoBinding>
                     public void onResponse(TeamDetail response) {
                         mInviterInfo = response;
                         bindRoot.setFollow(response);
-                        showUserAvatar(response.avatar);
                     }
                 });
     }

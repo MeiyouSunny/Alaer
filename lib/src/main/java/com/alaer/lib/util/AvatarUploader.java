@@ -3,9 +3,12 @@ package com.alaer.lib.util;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.Handler;
+import android.os.Looper;
 import android.text.TextUtils;
 import android.util.Base64;
 
+import com.alaer.lib.api.AppConfig;
 import com.alaer.lib.api.bean.AvatarUploadResult;
 import com.alaer.lib.api.bean.UserData;
 import com.alaer.lib.data.UserDataUtil;
@@ -83,14 +86,21 @@ public class AvatarUploader {
     private void handleResult(String result) {
         if (mListener == null || TextUtils.isEmpty(result))
             return;
-        AvatarUploadResult resultInfo = $.json().toBean(result, AvatarUploadResult.class);
-        if (resultInfo != null && resultInfo.attachment != null && !TextUtils.isEmpty(resultInfo.attachment.url)) {
-            mListener.onUploadResult(true, resultInfo.attachment.url);
-        }
+        new Handler(Looper.getMainLooper()).post(new Runnable() {
+            @Override
+            public void run() {
+                AvatarUploadResult resultInfo = $.json().toBean(result, AvatarUploadResult.class);
+                if (resultInfo != null && resultInfo.attachment != null && !TextUtils.isEmpty(resultInfo.attachment.url)) {
+                    mListener.onUploadResult(true, resultInfo.attachment.url);
+                } else {
+                    mListener.onUploadResult(false, "");
+                }
+            }
+        });
     }
 
     private String buildUrl() {
-        String url = "https://api.tokensky.cn/polarisex/system/upload/base64";
+        String url = AppConfig.BASE_URL + "/system/upload/base64";
         UserData userData = UserDataUtil.instance().getUserData();
         url = url + "?uid=" + userData.uid
                 + "&uuid=" + userData.uuid

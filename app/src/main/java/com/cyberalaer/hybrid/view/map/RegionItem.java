@@ -1,26 +1,20 @@
 package com.cyberalaer.hybrid.view.map;
 
+import com.alaer.lib.api.bean.CityMaster;
 import com.amap.api.maps.model.LatLng;
 
-/**
- * Created by yiyi.qi on 16/10/10.
- */
-
 public class RegionItem implements ClusterItem {
-    private LatLng mLatLng;
-    private String mTitle;
-    public RegionItem(LatLng latLng, String title) {
-        mLatLng=latLng;
-        mTitle=title;
+    public LatLng mLatLng;
+    public CityMaster cityMaster;
+
+    public RegionItem(LatLng latLng, CityMaster cityMaster) {
+        this.mLatLng = latLng;
+        this.cityMaster = cityMaster;
     }
 
     @Override
     public LatLng getPosition() {
-        // TODO Auto-generated method stub
         return mLatLng;
-    }
-    public String getTitle(){
-        return mTitle;
     }
 
 }
