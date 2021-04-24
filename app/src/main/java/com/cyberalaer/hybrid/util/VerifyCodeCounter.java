@@ -55,8 +55,10 @@ public class VerifyCodeCounter {
     }
 
     private void sendMsg() {
-        if (mHandler != null)
+        if (mHandler != null) {
+            removeMsg();
             mHandler.sendEmptyMessageDelayed(MSG_TYPE_COUNT, 1000);
+        }
     }
 
     private void removeMsg() {
@@ -67,15 +69,15 @@ public class VerifyCodeCounter {
     private void countOver() {
         count = COUNT_MAX;
         removeMsg();
-        if (countView != null) {
-            countView.setText("发送");
-            countView.setEnabled(true);
-        }
+//        if (countView != null) {
+//            countView.setText("发送");
+//            countView.setEnabled(true);
+//        }
     }
 
     public void destory() {
         countOver();
-        mHandler = null;
+//        mHandler = null;
         countView = null;
     }
 
