@@ -318,4 +318,6 @@
     <string name="update_date_is">更新时间：%s</string>
     <string name="welcome_to_whart_city_master">欢迎%s城市节点</string>
 
+    <string name="refresh">刷新</string>
+
 </resources>

@@ -213,6 +213,10 @@
             android:screenOrientation="portrait"></activity>
 
         <activity
+            android:name=".ui.setting.AccessPointActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
             android:name=".ui.setting.SettingActivity"
             android:screenOrientation="portrait"></activity>
 

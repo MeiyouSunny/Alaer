@@ -1,5 +1,6 @@
 package com.alaer.lib.api;
 
+import com.alaer.lib.api.bean.AccessPointInfo;
 import com.alaer.lib.api.bean.ActiveBillList;
 import com.alaer.lib.api.bean.ActiveDetail;
 import com.alaer.lib.api.bean.AdTask;
@@ -464,5 +465,13 @@ public interface ApiService {
     Call<CityMasterDetail> cityMasterInfo(@Query("uuid") String uuid, @Query("uid") String uid,
                                           @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
                                           Callback<CityMasterDetail> callback);
+
+    /**
+     * 接入点信息
+     */
+    @GET("/system/heartbeat")
+    Call<AccessPointInfo> accessPoint(@Query("uuid") String uuid, @Query("uid") String uid,
+                                      @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
+                                      Callback<AccessPointInfo> callback);
 
 }

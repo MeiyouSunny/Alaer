@@ -5,6 +5,7 @@ import android.view.View;
 import com.alaer.lib.api.ApiUtil;
 import com.alaer.lib.api.AppConfig;
 import com.alaer.lib.api.Callback;
+import com.alaer.lib.api.bean.AccessPointInfo;
 import com.alaer.lib.api.bean.UserData;
 import com.alaer.lib.data.UserDataUtil;
 import com.cyberalaer.hybrid.R;
@@ -37,6 +38,7 @@ public class SettingActivity extends BaseTitleActivity<ActivitySettngsBinding> {
         UserData userData = UserDataUtil.instance().getUserData();
         if (userData == null)
             bindRoot.exit.setVisibility(View.GONE);
+        getAccessPointInfo();
     }
 
     @Override
@@ -49,6 +51,9 @@ public class SettingActivity extends BaseTitleActivity<ActivitySettngsBinding> {
                 if (!judgeLogined())
                     break;
                 ViewUtil.gotoActivity(this, SecurityCenterActivity.class);
+                break;
+            case R.id.accessPoint:
+                ViewUtil.gotoActivity(this, AccessPointActivity.class);
                 break;
         }
     }
@@ -67,6 +72,19 @@ public class SettingActivity extends BaseTitleActivity<ActivitySettngsBinding> {
                     @Override
                     public void onError(int code, String msg) {
                         $.toast().text(msg).show();
+                    }
+                });
+    }
+
+    private void getAccessPointInfo() {
+        long timeStart = System.currentTimeMillis();
+        UserData userData = UserDataUtil.instance().getUserData();
+        ApiUtil.apiService().accessPoint(userData.uuid, String.valueOf(userData.uid), userData.token, AppConfig.DIAMOND_CURRENCY,
+                new Callback<AccessPointInfo>() {
+                    @Override
+                    public void onResponse(AccessPointInfo accessPointInfo) {
+                        long speed = accessPointInfo.timestamp - timeStart;
+                        bindRoot.speed.setText(speed + "ms");
                     }
                 });
     }

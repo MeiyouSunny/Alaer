@@ -32,11 +32,11 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-                android:visibility="gone"
                 android:layout_marginTop="10dp"
                 android:clickable="true"
                 android:foreground="?android:attr/selectableItemBackground"
                 android:onClick="@{handler.click}"
+                android:visibility="gone"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="0dp">
 
@@ -67,6 +67,73 @@
 
                     <ImageView
                         android:id="@+id/ic_next_uid"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_item_next_little" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/accessPoint"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="76dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:onClick="@{handler.click}"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="0dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="29dp"
+                    android:paddingRight="32dp">
+
+                    <ImageView
+                        android:id="@+id/icAccessPoint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_access_point" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="12dp"
+                        android:layout_toRightOf="@+id/icAccessPoint"
+                        android:text="@string/access_point"
+                        android:textColor="@color/font_36"
+                        android:textSize="@dimen/font_14" />
+
+                    <TextView
+                        android:id="@+id/speed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginRight="6dp"
+                        android:layout_toLeftOf="@+id/hookIcon"
+                        android:textColor="@color/font_green"
+                        android:textSize="@dimen/font_12"
+                        tools:text="584ms" />
+
+                    <ImageView
+                        android:id="@+id/hookIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="18dp"
+                        android:layout_toLeftOf="@+id/rightIcon"
+                        android:src="@drawable/ic_access_point_hook" />
+
+                    <ImageView
+                        android:id="@+id/rightIcon"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"

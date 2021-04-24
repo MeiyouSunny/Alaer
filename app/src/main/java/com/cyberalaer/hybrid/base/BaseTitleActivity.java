@@ -10,7 +10,7 @@ import androidx.databinding.ViewDataBinding;
 
 public abstract class BaseTitleActivity<T extends ViewDataBinding> extends BaseViewBindActivity<T> implements View.OnClickListener, TitleControl {
 
-    private TextView title;
+    private TextView title, rightTitle;
     private ImageView titleLeft, titleRight;
 
     @Override
@@ -20,19 +20,26 @@ public abstract class BaseTitleActivity<T extends ViewDataBinding> extends BaseV
 
     private void initTitleBar() {
         title = bindRoot.getRoot().findViewById(R.id.title);
+        rightTitle = bindRoot.getRoot().findViewById(R.id.rightTitle);
         titleLeft = bindRoot.getRoot().findViewById(R.id.title_left);
         titleRight = bindRoot.getRoot().findViewById(R.id.title_right);
 
         if (titleResId() != -1)
             title.setText(titleResId());
         titleLeft.setOnClickListener(this);
+        rightTitle.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
         if (view.getId() == R.id.title_left) {
             onBackPressed();
+        } else if (view.getId() == R.id.rightTitle) {
+            onRightTitleClick();
         }
+    }
+
+    protected void onRightTitleClick() {
     }
 
     protected abstract int titleResId();
@@ -52,6 +59,12 @@ public abstract class BaseTitleActivity<T extends ViewDataBinding> extends BaseV
         titleRight.setVisibility(View.VISIBLE);
         titleRight.setImageResource(icon);
         titleRight.setOnClickListener((view) -> onRightClick());
+    }
+
+    @Override
+    public void setRightTitleText(int text) {
+        rightTitle.setVisibility(View.VISIBLE);
+        rightTitle.setText(text);
     }
 
     protected void onRightClick() {

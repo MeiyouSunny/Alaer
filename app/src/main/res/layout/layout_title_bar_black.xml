@@ -22,6 +22,18 @@
         android:visibility="gone" />
 
     <TextView
+        android:id="@+id/rightTitle"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentRight="true"
+        android:clickable="true"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_15"
+        android:visibility="gone"
+        tools:text="Title" />
+
+    <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

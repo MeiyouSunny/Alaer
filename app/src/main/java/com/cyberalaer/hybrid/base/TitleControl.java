@@ -15,4 +15,6 @@ public interface TitleControl {
 
     void setTitleRightVisible(boolean visible);
 
+    void setRightTitleText(@StringRes int text);
+
 }
