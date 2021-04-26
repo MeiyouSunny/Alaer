@@ -22,7 +22,8 @@ import androidx.recyclerview.widget.RecyclerView;
  * 邀请好友Adapter
  */
 public class AdapterShare extends RecyclerView.Adapter<AdapterShare.ViewHolder> {
-    private final int[] mBgRedIds = new int[]{R.drawable.img_share1, R.drawable.img_share2, R.drawable.img_share3};
+    private final int[] mBgRedIds = new int[]{R.drawable.img_share1, R.drawable.img_share2, R.drawable.img_share3,
+            R.drawable.img_share4, R.drawable.img_share5, R.drawable.img_share6};
     UserData userData;
     TeamDetail teamDetail;
     ShareHandler shareHandler;
@@ -80,7 +81,7 @@ public class AdapterShare extends RecyclerView.Adapter<AdapterShare.ViewHolder> 
 
     @Override
     public int getItemCount() {
-        return 3;
+        return 6;
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
