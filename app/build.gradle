@@ -107,5 +107,6 @@ dependencies {
     // MPAndroidChart
     implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3'
     // AMap
-    compile 'com.amap.api:3dmap:latest.integration'
+    implementation 'com.amap.api:3dmap:latest.integration'
+    implementation 'com.amap.api:location:latest.integration'
 }
