@@ -5,6 +5,12 @@
 
     <data>
 
+        <import type="android.view.View" />
+
+        <variable
+            name="isApplyed"
+            type="boolean" />
+
         <variable
             name="cityMaster"
             type="com.alaer.lib.api.bean.CityMasterDetail" />
@@ -62,6 +68,7 @@
                         android:paddingRight="22dp">
 
                         <TextView
+                            android:id="@+id/location"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_centerVertical="true"
@@ -92,6 +99,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:layout_marginTop="18dp"
+                android:visibility="@{isApplyed ? View.VISIBLE : View.GONE}"
                 app:cardBackgroundColor="@color/bg_green"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="0dp">
@@ -147,6 +155,48 @@
                         android:layout_alignParentRight="true"
                         android:layout_centerVertical="true"
                         android:src="@drawable/ic_location_transation" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginTop="18dp"
+                android:visibility="@{isApplyed ? View.GONE : View.VISIBLE}"
+                app:cardBackgroundColor="@color/bg_green"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="0dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="14dp"
+                    android:paddingRight="18dp"
+                    android:paddingBottom="14dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="你还不是城市节点"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_17"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/apply"
+                        android:layout_width="62dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/bg_white_round_corner"
+                        android:onClick="@{handler.click}"
+                        android:text="申请"
+                        android:textColor="@color/green2"
+                        android:textSize="15sp" />
 
                 </RelativeLayout>
 
@@ -223,11 +273,11 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentBottom="true"
                             android:layout_centerHorizontal="true"
-                            tools:text="56"
                             android:text="@{dataUtil.parseNumber(cityMaster.activitynessToday)}"
                             android:textColor="@color/white"
                             android:textSize="21sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            tools:text="56" />
 
                     </RelativeLayout>
 
@@ -268,11 +318,11 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentBottom="true"
                             android:layout_centerHorizontal="true"
-                            tools:text="8245"
                             android:text="@{dataUtil.parseNumber(cityMaster.activityness)}"
                             android:textColor="@color/white"
                             android:textSize="21sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            tools:text="8245" />
 
                     </RelativeLayout>
 
@@ -306,11 +356,11 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentBottom="true"
                             android:layout_centerHorizontal="true"
-                            tools:text="34"
                             android:text="@{dataUtil.parseNumber(cityMaster.totalToday)}"
                             android:textColor="@color/white"
                             android:textSize="21sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            tools:text="34" />
 
                     </RelativeLayout>
 

@@ -474,4 +474,12 @@ public interface ApiService {
                                       @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
                                       Callback<AccessPointInfo> callback);
 
+    /**
+     * 城市节点申请状态
+     */
+    @GET("/mining/master/apply")
+    Call<Boolean> cityMasterStatus(@Query("uuid") String uuid, @Query("uid") String uid,
+                                  @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
+                                  Callback<Boolean> callback);
+
 }

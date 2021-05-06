@@ -27,7 +27,8 @@ public abstract class BaseTitleActivity<T extends ViewDataBinding> extends BaseV
         if (titleResId() != -1)
             title.setText(titleResId());
         titleLeft.setOnClickListener(this);
-        rightTitle.setOnClickListener(this);
+        if (rightTitle != null)
+            rightTitle.setOnClickListener(this);
     }
 
     @Override
@@ -63,8 +64,10 @@ public abstract class BaseTitleActivity<T extends ViewDataBinding> extends BaseV
 
     @Override
     public void setRightTitleText(int text) {
-        rightTitle.setVisibility(View.VISIBLE);
-        rightTitle.setText(text);
+        if (rightTitle != null) {
+            rightTitle.setVisibility(View.VISIBLE);
+            rightTitle.setText(text);
+        }
     }
 
     protected void onRightClick() {

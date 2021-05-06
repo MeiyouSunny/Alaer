@@ -2,6 +2,7 @@ package com.cyberalaer.hybrid.ui.city;
 
 import android.os.Bundle;
 
+import com.amap.api.maps.model.LatLng;
 import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseTitleActivity;
 import com.cyberalaer.hybrid.databinding.ActivityAuthBinding;
@@ -15,6 +16,7 @@ import androidx.annotation.Nullable;
 @MvpBinder(
 )
 public class CityNodeApplyActivity extends BaseTitleActivity<ActivityAuthBinding> {
+    public LatLng mLocation;
 
     @Override
     protected int titleResId() {
@@ -29,6 +31,8 @@ public class CityNodeApplyActivity extends BaseTitleActivity<ActivityAuthBinding
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        mLocation = getIntent().getParcelableExtra("location");
     }
 
 }

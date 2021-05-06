@@ -27,6 +27,7 @@ import com.amap.api.maps.model.Marker;
 import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseBindFragment;
 import com.cyberalaer.hybrid.databinding.FragmentCityHallBinding;
+import com.cyberalaer.hybrid.ui.App;
 import com.cyberalaer.hybrid.view.map.ClusterClickListener;
 import com.cyberalaer.hybrid.view.map.ClusterItem;
 import com.cyberalaer.hybrid.view.map.ClusterOverlay;
@@ -99,7 +100,7 @@ public class CityHallFragment extends BaseBindFragment<FragmentCityHallBinding> 
                             public void run() {
                                 showCityMasters(cityMasters);
                             }
-                        }, 2000);
+                        }, 2500);
                     }
                 });
     }
@@ -116,8 +117,8 @@ public class CityHallFragment extends BaseBindFragment<FragmentCityHallBinding> 
                     items.add(regionItem);
                 }
                 ClusterOverlay mClusterOverlay = new ClusterOverlay(mAMap, items,
-                        dp2px(getContext().getApplicationContext(), 30),
-                        getContext().getApplicationContext());
+                        dp2px(App.mAppContext, 30),
+                        App.mAppContext);
                 mClusterOverlay.setClusterRenderer(CityHallFragment.this);
                 mClusterOverlay.setOnClusterClickListener(CityHallFragment.this);
 

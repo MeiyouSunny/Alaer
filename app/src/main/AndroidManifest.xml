@@ -10,7 +10,6 @@
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_LOGS" />
@@ -45,7 +44,10 @@
 
         <meta-data
             android:name="com.amap.api.v2.apikey"
-            android:value="174c899f0037be77999b12500215fe42" />
+            android:value="b6b4182f4ff41ddae2d8d80f3f2f47f6" />
+
+        <!-- 定位需要的服务 使用2.0的定位需要加上这个 -->
+        <service android:name="com.amap.api.location.APSService" />
 
         <!-- 申请临时共享空间 Android N （拍照、相册等）-->
         <provider

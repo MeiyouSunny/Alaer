@@ -1,5 +1,6 @@
 package com.cyberalaer.hybrid.ui.city;
 
+import android.content.Intent;
 import android.view.Gravity;
 import android.view.View;
 
@@ -9,6 +10,11 @@ import com.alaer.lib.api.Callback;
 import com.alaer.lib.api.bean.CityMasterDetail;
 import com.alaer.lib.api.bean.UserData;
 import com.alaer.lib.data.UserDataUtil;
+import com.amap.api.location.AMapLocation;
+import com.amap.api.location.AMapLocationClient;
+import com.amap.api.location.AMapLocationClientOption;
+import com.amap.api.location.AMapLocationListener;
+import com.amap.api.maps.model.LatLng;
 import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseBindFragment;
 import com.cyberalaer.hybrid.data.CityDataUtil;
@@ -22,10 +28,11 @@ import java.util.UUID;
 import cn.udesk.UdeskSDKManager;
 import cn.udesk.config.UdeskConfig;
 import likly.dialogger.Dialogger;
+import likly.dollar.$;
 
 @MvpBinder(
 )
-public class MyCityFragment extends BaseBindFragment<FragmentMyCityBinding> {
+public class MyCityFragment extends BaseBindFragment<FragmentMyCityBinding> implements AMapLocationListener {
 
     UserData userData;
 
@@ -51,7 +58,20 @@ public class MyCityFragment extends BaseBindFragment<FragmentMyCityBinding> {
                 }
                 gotoCustomerService();
                 break;
+            case R.id.apply:
+                applyCityNode();
+                break;
         }
+    }
+
+    private void applyCityNode() {
+        if (mLocation == null) {
+            $.toast().text("获取定位失败！").show();
+            return;
+        }
+        Intent intent = new Intent(getContext(), CityNodeApplyActivity.class);
+        intent.putExtra("location", mLocation);
+        getContext().startActivity(intent);
     }
 
     @Override
@@ -67,6 +87,16 @@ public class MyCityFragment extends BaseBindFragment<FragmentMyCityBinding> {
                         bindRoot.setCityMaster(data);
                     }
                 });
+
+        ApiUtil.apiService().cityMasterStatus(userData.uuid, String.valueOf(userData.uid), userData.token, AppConfig.DIAMOND_CURRENCY,
+                new Callback<Boolean>() {
+                    @Override
+                    public void onResponse(Boolean isApplyed) {
+                        bindRoot.setIsApplyed(isApplyed);
+                    }
+                });
+
+        activate();
     }
 
     private boolean isCityMaster() {
@@ -94,4 +124,50 @@ public class MyCityFragment extends BaseBindFragment<FragmentMyCityBinding> {
         UdeskSDKManager.getInstance().entryChat(getContext().getApplicationContext(), UdeskConfig.createDefualt(), sdkToken);
     }
 
+    // Location
+
+    private AMapLocationClient mlocationClient;
+    private AMapLocationClientOption mLocationOption;
+
+    public void activate() {
+        if (mlocationClient == null) {
+            mlocationClient = new AMapLocationClient(getContext());
+            mLocationOption = new AMapLocationClientOption();
+            mlocationClient.setLocationListener(this);
+            mLocationOption.setLocationMode(AMapLocationClientOption.AMapLocationMode.Hight_Accuracy);
+            mLocationOption.setInterval(5000);
+            mLocationOption.setNeedAddress(true);
+            mlocationClient.setLocationOption(mLocationOption);
+            mlocationClient.startLocation();
+        }
+    }
+
+    /**
+     * 停止定位
+     */
+    public void deactivate() {
+        if (mlocationClient != null) {
+            mlocationClient.stopLocation();
+            mlocationClient.onDestroy();
+        }
+        mlocationClient = null;
+    }
+
+    LatLng mLocation;
+
+    @Override
+    public void onLocationChanged(AMapLocation location) {
+        if (location != null
+                && location.getErrorCode() == 0) {
+            final String address = location.getProvince() + location.getCity() + location.getDistrict();
+            bindRoot.location.setText(address);
+            mLocation = new LatLng(location.getLatitude(), location.getLongitude());
+        }
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        deactivate();
+    }
 }
