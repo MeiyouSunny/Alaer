@@ -419,7 +419,7 @@ public interface ApiService {
      * 退出登录
      */
     @FormBody
-    @POST("//user/logout")
+    @POST("/user/logout")
     Call<String> exitAccount(@Part("uuid") String uuid, @Part("uid") String uid, @Part("token") String token, @Part("diamondCurrency") String diamondCurrency,
                              Callback<String> callback);
 
@@ -479,7 +479,42 @@ public interface ApiService {
      */
     @GET("/mining/master/apply")
     Call<Boolean> cityMasterStatus(@Query("uuid") String uuid, @Query("uid") String uid,
-                                  @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
-                                  Callback<Boolean> callback);
+                                   @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
+                                   Callback<Boolean> callback);
+
+    /**
+     * 上传城市位置
+     */
+    @GET("/city/adcode")
+    Call<String> uploadLocation(@Query("uuid") String uuid, @Query("uid") String uid,
+                                @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
+                                @Query("lon") double lon, @Query("lat") double lat,
+                                Callback<String> callback);
+
+    /**
+     * 申请城市节点
+     * name:真实姓名
+     * phone:手机号
+     * wechat:微信
+     * inviter:推荐人
+     * inviterPhone:推荐人手机号
+     * city:城市
+     * address:地址
+     * amount:投入资金
+     * cooperateType：合作资格1个人2公司
+     * manageType：经营类型1个人2合伙
+     * msgJob：相关工作描述
+     * msgRelation：当地人脉描述
+     * star：是否报名城市大会1报名0未报名
+     */
+    @FormBody
+    @POST("/mining/master/apply")
+    Call<String> applyCityNode(@Part("uuid") String uuid, @Part("uid") String uid, @Part("token") String token, @Part("diamondCurrency") String diamondCurrency,
+                               @Part("name") String name, @Part("phone") String phone, @Part("wechat") String wechat,
+                               @Part("inviter") String inviter, @Part("inviterPhone") String inviterPhone, @Part("city") String city,
+                               @Part("address") String address, @Part("amount") int amount, @Part("cooperateType") int cooperateType,
+                               @Part("manageType") int manageType, @Part("msgJob") String msgJob, @Part("msgRelation") String msgRelation,
+                               @Part("star") int star,
+                               Callback<String> callback);
 
 }

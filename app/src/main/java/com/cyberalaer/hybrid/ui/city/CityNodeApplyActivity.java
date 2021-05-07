@@ -2,6 +2,11 @@ package com.cyberalaer.hybrid.ui.city;
 
 import android.os.Bundle;
 
+import com.alaer.lib.api.ApiUtil;
+import com.alaer.lib.api.AppConfig;
+import com.alaer.lib.api.Callback;
+import com.alaer.lib.api.bean.UserData;
+import com.alaer.lib.data.UserDataUtil;
 import com.amap.api.maps.model.LatLng;
 import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseTitleActivity;
@@ -33,6 +38,15 @@ public class CityNodeApplyActivity extends BaseTitleActivity<ActivityAuthBinding
         super.onCreate(savedInstanceState);
 
         mLocation = getIntent().getParcelableExtra("location");
+        UserData userData = UserDataUtil.instance().getUserData();
+        ApiUtil.apiService().uploadLocation(userData.uuid, String.valueOf(userData.uid), userData.token, AppConfig.DIAMOND_CURRENCY,
+                mLocation.longitude, mLocation.latitude,
+                new Callback<String>() {
+                    @Override
+                    public void onResponse(String isApplyed) {
+                        super.onResponse(isApplyed);
+                    }
+                });
     }
 
 }
