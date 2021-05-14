@@ -46,6 +46,9 @@ public class MyCityActivity extends BaseViewBindActivity<ActivityMyCityBinding> 
     @Override
     public void click(View view) {
         switch (view.getId()) {
+            case R.id.title_left:
+                finish();
+                break;
             case R.id.cityHall:
                 showFragment(mFragmentCityHall);
                 break;

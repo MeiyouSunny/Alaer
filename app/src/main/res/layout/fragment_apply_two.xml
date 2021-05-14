@@ -59,6 +59,7 @@
                 app:cardElevation="0dp">
 
                 <com.cyberalaer.hybrid.view.FlowRadioGroup
+                    android:id="@+id/amount"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="24dp"
@@ -67,43 +68,51 @@
                     android:layout_marginBottom="18dp">
 
                     <RadioButton
+                        android:id="@+id/rg11"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="58dp"
+                        android:checked="true"
                         android:paddingRight="58dp"
                         android:text="5万" />
 
                     <RadioButton
+                        android:id="@+id/rg12"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingRight="58dp"
                         android:text="10万" />
 
                     <RadioButton
+                        android:id="@+id/rg13"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingRight="58dp"
                         android:text="15万" />
 
                     <RadioButton
+                        android:id="@+id/rg14"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingRight="58dp"
                         android:text="20万" />
 
                     <RadioButton
+                        android:id="@+id/rg15"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingRight="58dp"
                         android:text="25万" />
 
                     <RadioButton
+                        android:id="@+id/rg16"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingRight="58dp"
                         android:text="30万" />
 
                     <RadioButton
+                        android:id="@+id/rg17"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingRight="58dp"
@@ -145,6 +154,7 @@
                 app:cardElevation="0dp">
 
                 <com.cyberalaer.hybrid.view.FlowRadioGroup
+                    android:id="@+id/cooperateType"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="24dp"
@@ -153,13 +163,16 @@
                     android:layout_marginBottom="18dp">
 
                     <RadioButton
+                        android:id="@+id/rg21"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="58dp"
+                        android:checked="true"
                         android:paddingRight="58dp"
                         android:text="个人" />
 
                     <RadioButton
+                        android:id="@+id/rg22"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingRight="58dp"
@@ -191,6 +204,7 @@
                 app:cardElevation="0dp">
 
                 <com.cyberalaer.hybrid.view.FlowRadioGroup
+                    android:id="@+id/manageType"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="24dp"
@@ -199,13 +213,16 @@
                     android:layout_marginBottom="18dp">
 
                     <RadioButton
+                        android:id="@+id/rg31"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="58dp"
+                        android:checked="true"
                         android:paddingRight="58dp"
                         android:text="个人" />
 
                     <RadioButton
+                        android:id="@+id/rg32"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingRight="58dp"
@@ -237,6 +254,7 @@
                 app:cardElevation="0dp">
 
                 <EditText
+                    android:id="@+id/msgJob"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@null"
@@ -273,6 +291,7 @@
                 app:cardElevation="0dp">
 
                 <EditText
+                    android:id="@+id/msgRelation"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@null"
@@ -309,6 +328,7 @@
                 app:cardElevation="0dp">
 
                 <com.cyberalaer.hybrid.view.FlowRadioGroup
+                    android:id="@+id/star"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="24dp"
@@ -317,13 +337,16 @@
                     android:layout_marginBottom="18dp">
 
                     <RadioButton
+                        android:id="@+id/rg41"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="58dp"
+                        android:checked="true"
                         android:paddingRight="58dp"
                         android:text="已报名" />
 
                     <RadioButton
+                        android:id="@+id/rg42"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingRight="58dp"

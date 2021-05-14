@@ -56,7 +56,7 @@
                 app:cardElevation="0dp">
 
                 <EditText
-                    android:id="@+id/input"
+                    android:id="@+id/name"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_centerVertical="true"
@@ -99,6 +99,7 @@
                 app:cardElevation="0dp">
 
                 <EditText
+                    android:id="@+id/phone"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_centerVertical="true"
@@ -133,6 +134,7 @@
                 app:cardElevation="0dp">
 
                 <EditText
+                    android:id="@+id/wechat"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_centerVertical="true"
@@ -166,6 +168,7 @@
                 app:cardElevation="0dp">
 
                 <EditText
+                    android:id="@+id/inviter"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_centerVertical="true"
@@ -199,6 +202,7 @@
                 app:cardElevation="0dp">
 
                 <EditText
+                    android:id="@+id/inviterPhone"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_centerVertical="true"
@@ -234,14 +238,18 @@
                 android:textSize="@dimen/font_15" />
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/selectCity"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="580dp"
+                android:clickable="true"
+                android:onClick="@{handler.click}"
                 app:cardBackgroundColor="@color/bg_gray"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="0dp">
 
-                <EditText
+                <TextView
+                    android:id="@+id/city"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_centerVertical="true"
@@ -266,6 +274,7 @@
                 app:cardElevation="0dp">
 
                 <EditText
+                    android:id="@+id/address"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_centerVertical="true"

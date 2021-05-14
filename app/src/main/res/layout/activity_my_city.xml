@@ -23,8 +23,11 @@
 
             <ImageView
                 android:id="@+id/title_left"
+                style="@style/ClickableStyle"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
+                android:clickable="true"
+                android:onClick="@{handler.click}"
                 android:scaleType="centerInside"
                 android:src="@drawable/ic_back_black" />
 

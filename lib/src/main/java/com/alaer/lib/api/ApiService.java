@@ -483,12 +483,13 @@ public interface ApiService {
                                    Callback<Boolean> callback);
 
     /**
-     * 上传城市位置
+     * 上传城主位置
      */
-    @GET("/city/adcode")
-    Call<String> uploadLocation(@Query("uuid") String uuid, @Query("uid") String uid,
-                                @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
-                                @Query("lon") double lon, @Query("lat") double lat,
+    @FormBody
+    @POST("/mining/city/master/location")
+    Call<String> uploadLocation(@Part("uuid") String uuid, @Part("uid") String uid,
+                                @Part("token") String token, @Part("diamondCurrency") String diamondCurrency,
+                                @Part("lon") double lon, @Part("lat") double lat,
                                 Callback<String> callback);
 
     /**

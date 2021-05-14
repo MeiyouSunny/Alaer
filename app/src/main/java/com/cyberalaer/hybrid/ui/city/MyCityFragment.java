@@ -8,6 +8,7 @@ import com.alaer.lib.api.ApiUtil;
 import com.alaer.lib.api.AppConfig;
 import com.alaer.lib.api.Callback;
 import com.alaer.lib.api.bean.CityMasterDetail;
+import com.alaer.lib.api.bean.TeamDetail;
 import com.alaer.lib.api.bean.UserData;
 import com.alaer.lib.data.UserDataUtil;
 import com.amap.api.location.AMapLocation;
@@ -19,6 +20,7 @@ import com.cyberalaer.hybrid.R;
 import com.cyberalaer.hybrid.base.BaseBindFragment;
 import com.cyberalaer.hybrid.data.CityDataUtil;
 import com.cyberalaer.hybrid.databinding.FragmentMyCityBinding;
+import com.cyberalaer.hybrid.ui.App;
 import com.cyberalaer.hybrid.ui.dialog.DialogNotCityMaster;
 import com.cyberalaer.hybrid.util.ViewUtil;
 import com.meiyou.mvp.MvpBinder;
@@ -78,6 +80,17 @@ public class MyCityFragment extends BaseBindFragment<FragmentMyCityBinding> impl
     public void onViewCreated() {
         super.onViewCreated();
 
+        activate();
+        TeamDetail teamDetail = UserDataUtil.instance().getTeamDetail();
+        if (teamDetail != null) {
+            ViewUtil.showImage(App.mAppContext, bindRoot.icHead, teamDetail.avatar);
+        }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
         userData = UserDataUtil.instance().getUserData();
         ApiUtil.apiService().cityMasterInfo(userData.uuid, String.valueOf(userData.uid), userData.token, AppConfig.DIAMOND_CURRENCY,
                 new Callback<CityMasterDetail>() {
@@ -95,8 +108,6 @@ public class MyCityFragment extends BaseBindFragment<FragmentMyCityBinding> impl
                         bindRoot.setIsApplyed(isApplyed);
                     }
                 });
-
-        activate();
     }
 
     private boolean isCityMaster() {
@@ -109,7 +120,7 @@ public class MyCityFragment extends BaseBindFragment<FragmentMyCityBinding> impl
             @Override
             public void onConfirmClick() {
                 ViewUtil.gotoActivity(getContext(), CityNodeApplyActivity.class);
-                getActivity().finish();
+//                getActivity().finish();
             }
         });
         Dialogger.newDialog(getContext()).holder(dialog)
