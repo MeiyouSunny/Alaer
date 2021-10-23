@@ -7,7 +7,7 @@ android {
     buildToolsVersion "30.0.2"
 
     defaultConfig {
-        applicationId "com.cyberalaer.hybrid"
+        applicationId "llc.metaversenetwork.app"
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 2021051501
@@ -92,6 +92,9 @@ dependencies {
     implementation 'com.hmcx:rxandroid:1.0.6'
     implementation 'com.hmcx:dialogger:1.0.2'
     implementation 'com.hmcx:repeatview:1.0.9'
+    implementation 'com.hmcx:http:1.0.6'
+    implementation 'com.hmcx:okhttp:1.0.6'
+    implementation 'com.hmcx:rxjava:1.0.6'
 
     implementation 'de.hdodenhof:circleimageview:2.1.0'
     implementation 'com.github.bumptech.glide:glide:3.8.0'

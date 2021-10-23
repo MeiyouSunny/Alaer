@@ -7,7 +7,7 @@
 
         <variable
             name="handler"
-            type="com.cyberalaer.hybrid.base.BindClickListener" />
+            type="llc.metaversenetwork.app.base.BindClickListener" />
     </data>
 
     <ScrollView
@@ -58,7 +58,7 @@
                 app:cardCornerRadius="8dp"
                 app:cardElevation="0dp">
 
-                <com.cyberalaer.hybrid.view.FlowRadioGroup
+                <llc.metaversenetwork.app.view.FlowRadioGroup
                     android:id="@+id/amount"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -118,7 +118,7 @@
                         android:paddingRight="58dp"
                         android:text="30万以上" />
 
-                </com.cyberalaer.hybrid.view.FlowRadioGroup>
+                </llc.metaversenetwork.app.view.FlowRadioGroup>
 
             </androidx.cardview.widget.CardView>
 
@@ -153,7 +153,7 @@
                 app:cardCornerRadius="8dp"
                 app:cardElevation="0dp">
 
-                <com.cyberalaer.hybrid.view.FlowRadioGroup
+                <llc.metaversenetwork.app.view.FlowRadioGroup
                     android:id="@+id/cooperateType"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -178,7 +178,7 @@
                         android:paddingRight="58dp"
                         android:text="合作" />
 
-                </com.cyberalaer.hybrid.view.FlowRadioGroup>
+                </llc.metaversenetwork.app.view.FlowRadioGroup>
 
             </androidx.cardview.widget.CardView>
 
@@ -203,7 +203,7 @@
                 app:cardCornerRadius="8dp"
                 app:cardElevation="0dp">
 
-                <com.cyberalaer.hybrid.view.FlowRadioGroup
+                <llc.metaversenetwork.app.view.FlowRadioGroup
                     android:id="@+id/manageType"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -228,7 +228,7 @@
                         android:paddingRight="58dp"
                         android:text="合作" />
 
-                </com.cyberalaer.hybrid.view.FlowRadioGroup>
+                </llc.metaversenetwork.app.view.FlowRadioGroup>
 
             </androidx.cardview.widget.CardView>
 
@@ -327,7 +327,7 @@
                 app:cardCornerRadius="8dp"
                 app:cardElevation="0dp">
 
-                <com.cyberalaer.hybrid.view.FlowRadioGroup
+                <llc.metaversenetwork.app.view.FlowRadioGroup
                     android:id="@+id/star"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -352,7 +352,7 @@
                         android:paddingRight="58dp"
                         android:text="未报名" />
 
-                </com.cyberalaer.hybrid.view.FlowRadioGroup>
+                </llc.metaversenetwork.app.view.FlowRadioGroup>
 
             </androidx.cardview.widget.CardView>
 

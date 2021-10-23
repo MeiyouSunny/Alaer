@@ -11,7 +11,7 @@
 
         <variable
             name="handler"
-            type="com.cyberalaer.hybrid.ui.notice.NoticeAdapter.OnNoticeHandler" />`
+            type="llc.metaversenetwork.app.ui.notice.NoticeAdapter.OnNoticeHandler" />`
     </data>
 
     <androidx.cardview.widget.CardView

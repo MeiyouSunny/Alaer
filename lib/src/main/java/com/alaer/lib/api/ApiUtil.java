@@ -4,11 +4,11 @@ import likly.reverse.Reverse;
 
 public class ApiUtil {
 
-    private static ApiService mApiService;
+    private static com.alaer.lib.api.ApiService mApiService;
 
-    public static synchronized ApiService apiService() {
+    public static synchronized com.alaer.lib.api.ApiService apiService() {
         if (mApiService == null)
-            mApiService = Reverse.service(ApiService.class);
+            mApiService = Reverse.service(com.alaer.lib.api.ApiService.class);
         return mApiService;
     }
 

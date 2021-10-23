@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/shareListFragment"
-        android:name="com.cyberalaer.hybrid.ui.share.ShareListFragment"
+        android:name="llc.metaversenetwork.app.ui.share.ShareListFragment"
         android:label="ShareListFragment">
         <action
             android:id="@+id/action_to_share_pic"
@@ -16,6 +16,6 @@
     </fragment>
     <fragment
         android:id="@+id/sharePicFragment"
-        android:name="com.cyberalaer.hybrid.ui.share.SharePicFragment"
+        android:name="llc.metaversenetwork.app.ui.share.SharePicFragment"
         android:label="SharePicFragment" />
 </navigation>

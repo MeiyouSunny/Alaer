@@ -11,7 +11,7 @@
 
         <variable
             name="levelUtil"
-            type="com.cyberalaer.hybrid.data.TeamLevelUtil" />
+            type="llc.metaversenetwork.app.data.TeamLevelUtil" />
     </data>
 
     <RelativeLayout

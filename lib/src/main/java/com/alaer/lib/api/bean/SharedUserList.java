@@ -7,6 +7,6 @@ public class SharedUserList {
     public int size;
     public int pageIndex;
     public int pageSize;
-    public List<SharedUser> list;
+    public List<com.alaer.lib.api.bean.SharedUser> list;
 
 }

@@ -7,7 +7,7 @@
 
         <variable
             name="handler"
-            type="com.cyberalaer.hybrid.base.BindClickListener" />
+            type="llc.metaversenetwork.app.base.BindClickListener" />
     </data>
 
     <LinearLayout xmlns:tools="http://schemas.android.com/tools"
@@ -45,7 +45,7 @@
                 android:textColor="@color/font_7E"
                 android:textSize="@dimen/font_12" />
 
-            <com.cyberalaer.hybrid.view.ItemLayoutView
+            <llc.metaversenetwork.app.view.ItemLayoutView
                 android:id="@+id/authByAlipy"
                 android:layout_width="match_parent"
                 android:layout_height="84dp"
@@ -54,7 +54,7 @@
                 app:icon="@drawable/ic_alipay_auth"
                 app:title="@string/alipay_auth" />
 
-            <com.cyberalaer.hybrid.view.ItemLayoutView
+            <llc.metaversenetwork.app.view.ItemLayoutView
                 android:layout_width="match_parent"
                 android:layout_height="84dp"
                 android:layout_marginTop="20dp"

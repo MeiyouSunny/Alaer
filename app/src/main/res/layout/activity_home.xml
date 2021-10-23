@@ -13,7 +13,7 @@
 
         <variable
             name="handler"
-            type="com.cyberalaer.hybrid.base.BindClickListener" />
+            type="llc.metaversenetwork.app.base.BindClickListener" />
 
         <variable
             name="user"
@@ -34,7 +34,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <com.cyberalaer.hybrid.view.mapview.MapContainer
+                <llc.metaversenetwork.app.view.mapview.MapContainer
                     android:id="@+id/map"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />

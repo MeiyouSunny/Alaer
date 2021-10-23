@@ -11,11 +11,11 @@
 
         <variable
             name="number"
-            type="com.cyberalaer.hybrid.util.NumberUtils" />
+            type="llc.metaversenetwork.app.util.NumberUtils" />
 
         <variable
             name="handler"
-            type="com.cyberalaer.hybrid.base.BindClickListener" />
+            type="llc.metaversenetwork.app.base.BindClickListener" />
     </data>
 
     <LinearLayout xmlns:tools="http://schemas.android.com/tools"

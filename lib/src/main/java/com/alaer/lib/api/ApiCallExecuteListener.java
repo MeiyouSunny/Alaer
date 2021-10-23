@@ -56,7 +56,7 @@ public class ApiCallExecuteListener implements OnCallExecuteListener {
         final int code = jsonObject.optInt("status");
         if (code != 200) {
             final String errorMsg = jsonObject.optString("message");
-            throw new ServiceError(code, errorMsg);
+            throw new com.alaer.lib.api.ServiceError(code, errorMsg);
         }
         final String data = jsonObject.optString("attachment");
 

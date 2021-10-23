@@ -17,11 +17,11 @@
 
         <variable
             name="dataUtil"
-            type="com.cyberalaer.hybrid.data.CityDataUtil" />
+            type="llc.metaversenetwork.app.data.CityDataUtil" />
 
         <variable
             name="handler"
-            type="com.cyberalaer.hybrid.base.BindClickListener" />
+            type="llc.metaversenetwork.app.base.BindClickListener" />
     </data>
 
     <ScrollView

@@ -6,7 +6,7 @@
         android:layout_height="match_parent"
         tools:context=".ui.welcom.WelcomActivity">
 
-        <com.cyberalaer.hybrid.view.CustomVideoView
+        <llc.metaversenetwork.app.view.CustomVideoView
             android:id="@+id/videoView"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />

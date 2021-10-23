@@ -6,17 +6,17 @@
 
         <variable
             name="handler"
-            type="com.cyberalaer.hybrid.base.BindClickListener" />
+            type="llc.metaversenetwork.app.base.BindClickListener" />
 
         <variable
             name="number"
-            type="com.cyberalaer.hybrid.util.NumberUtils" />
+            type="llc.metaversenetwork.app.util.NumberUtils" />
 
         <variable
             name="data"
             type="com.alaer.lib.api.bean.ActiveDetail" />
 
-        <import type="com.cyberalaer.hybrid.util.StringUtil" />
+        <import type="llc.metaversenetwork.app.util.StringUtil" />
 
     </data>
 

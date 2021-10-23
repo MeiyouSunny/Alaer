@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/inputInfoFragment"
-        android:name="com.cyberalaer.hybrid.ui.auth.InputInfoFragment"
+        android:name="llc.metaversenetwork.app.ui.auth.InputInfoFragment"
         android:label="InputInfoFragment">
         <action
             android:id="@+id/action_to_pay_success"
@@ -18,11 +18,11 @@
     </fragment>
     <fragment
         android:id="@+id/paySuccessFragment"
-        android:name="com.cyberalaer.hybrid.ui.auth.PaySuccessFragment"
+        android:name="llc.metaversenetwork.app.ui.auth.PaySuccessFragment"
         android:label="PaySuccessFragment" />
     <fragment
         android:id="@+id/payFailedFragment"
-        android:name="com.cyberalaer.hybrid.ui.auth.PayFailedFragment"
+        android:name="llc.metaversenetwork.app.ui.auth.PayFailedFragment"
         android:label="PayFailedFragment">
         <action
             android:id="@+id/action_to_input_page"

@@ -7,7 +7,7 @@
 
         <variable
             name="handler"
-            type="com.cyberalaer.hybrid.base.BindClickListener" />
+            type="llc.metaversenetwork.app.base.BindClickListener" />
     </data>
 
     <LinearLayout xmlns:tools="http://schemas.android.com/tools"
@@ -64,7 +64,7 @@
                     android:layout_marginTop="16dp"
                     android:foreground="?android:attr/selectableItemBackground" />
 
-                <com.cyberalaer.hybrid.view.ItemLayoutView
+                <llc.metaversenetwork.app.view.ItemLayoutView
                     android:id="@+id/buy_tickets"
                     style="@style/ClickableStyle"
                     android:layout_width="match_parent"

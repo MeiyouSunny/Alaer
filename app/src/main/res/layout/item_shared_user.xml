@@ -11,7 +11,7 @@
 
         <variable
             name="handler"
-            type="com.cyberalaer.hybrid.ui.user.SharedUserAdapter.Handler" />
+            type="llc.metaversenetwork.app.ui.user.SharedUserAdapter.Handler" />
 
     </data>
 

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/applyOne"
-        android:name="com.cyberalaer.hybrid.ui.city.ApplyOneFragment"
+        android:name="llc.metaversenetwork.app.ui.city.ApplyOneFragment"
         android:label="ApplyOneFragment">
         <action
             android:id="@+id/action_applyOne_to_applyTwo"
@@ -16,7 +16,7 @@
 
     <fragment
         android:id="@+id/applyTwo"
-        android:name="com.cyberalaer.hybrid.ui.city.ApplyTwoFragment"
+        android:name="llc.metaversenetwork.app.ui.city.ApplyTwoFragment"
         android:label="ApplyTwoFragment"></fragment>
 
 </navigation>

@@ -13,7 +13,7 @@
 
         <variable
             name="util"
-            type="com.cyberalaer.hybrid.data.SeedDataUtil" />
+            type="llc.metaversenetwork.app.data.SeedDataUtil" />
 
         <variable
             name="seed"

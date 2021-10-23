@@ -10,14 +10,14 @@
 
         <variable
             name="util"
-            type="com.cyberalaer.hybrid.data.SeedDataUtil" />
+            type="llc.metaversenetwork.app.data.SeedDataUtil" />
 
         <variable
             name="seed"
             type="com.alaer.lib.api.bean.SeedMine" />
     </data>
 
-    <com.cyberalaer.hybrid.view.GrayRelativeLayout
+    <llc.metaversenetwork.app.view.GrayRelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="6dp">
@@ -132,6 +132,6 @@
 
         </RelativeLayout>
 
-    </com.cyberalaer.hybrid.view.GrayRelativeLayout>
+    </llc.metaversenetwork.app.view.GrayRelativeLayout>
 
 </layout>

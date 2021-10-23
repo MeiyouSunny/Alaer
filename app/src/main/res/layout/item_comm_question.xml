@@ -10,7 +10,7 @@
 
         <variable
             name="handler"
-            type="com.cyberalaer.hybrid.ui.discover.CommQuestionAdapter.OnQuestionHandler" />
+            type="llc.metaversenetwork.app.ui.discover.CommQuestionAdapter.OnQuestionHandler" />
     </data>
 
     <androidx.cardview.widget.CardView

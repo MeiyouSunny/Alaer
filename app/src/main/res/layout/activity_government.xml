@@ -7,7 +7,7 @@
 
         <variable
             name="handler"
-            type="com.cyberalaer.hybrid.base.BindClickListener" />
+            type="llc.metaversenetwork.app.base.BindClickListener" />
     </data>
 
     <LinearLayout xmlns:tools="http://schemas.android.com/tools"
@@ -51,14 +51,14 @@
                 android:textColor="@color/font_7E"
                 android:textSize="@dimen/font_12" />
 
-            <com.cyberalaer.hybrid.view.ItemLayoutView
+            <llc.metaversenetwork.app.view.ItemLayoutView
                 android:id="@+id/mine"
                 style="@style/ItemLayout"
                 android:onClick="@{handler.click}"
                 app:icon="@drawable/ic_auth_mine"
                 app:title="@string/mine" />
 
-            <com.cyberalaer.hybrid.view.ItemLayoutView
+            <llc.metaversenetwork.app.view.ItemLayoutView
                 android:id="@+id/auth"
                 style="@style/ItemLayout"
                 android:onClick="@{handler.click}"

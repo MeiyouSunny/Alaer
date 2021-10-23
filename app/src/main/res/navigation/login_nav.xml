@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.cyberalaer.hybrid.ui.user.LoginFragment"
+        android:name="llc.metaversenetwork.app.ui.user.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login">
         <action
@@ -20,7 +20,7 @@
 
     <fragment
         android:id="@+id/registPhoneVerifyFragment"
-        android:name="com.cyberalaer.hybrid.ui.user.RegistPhoneVerifyFragment"
+        android:name="llc.metaversenetwork.app.ui.user.RegistPhoneVerifyFragment"
         android:label="RegistPhoneVerifyFragment">
         <action
             android:id="@+id/action_to_login"
@@ -33,7 +33,7 @@
     </fragment>
     <fragment
         android:id="@+id/registConfirmPwdFragment"
-        android:name="com.cyberalaer.hybrid.ui.user.RegistConfirmPwdFragment"
+        android:name="llc.metaversenetwork.app.ui.user.RegistConfirmPwdFragment"
         android:label="RegistConfirmPwdFragment">
         <action
             android:id="@+id/action_to_login"
@@ -43,7 +43,7 @@
     </fragment>
     <fragment
         android:id="@+id/restPwdFragment"
-        android:name="com.cyberalaer.hybrid.ui.user.RestPwdFragment"
+        android:name="llc.metaversenetwork.app.ui.user.RestPwdFragment"
         android:label="RestPwdFragment" >
         <action
             android:id="@+id/action_to_login"

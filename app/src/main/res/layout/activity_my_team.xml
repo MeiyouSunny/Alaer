@@ -10,7 +10,7 @@
 
         <variable
             name="handler"
-            type="com.cyberalaer.hybrid.base.BindClickListener" />
+            type="llc.metaversenetwork.app.base.BindClickListener" />
 
         <variable
             name="teamProfile"
@@ -22,7 +22,7 @@
 
         <variable
             name="levelUtil"
-            type="com.cyberalaer.hybrid.data.TeamLevelUtil" />
+            type="llc.metaversenetwork.app.data.TeamLevelUtil" />
     </data>
 
 
@@ -326,7 +326,7 @@
                         android:layout_height="match_parent"
                         android:orientation="horizontal">
 
-                        <com.cyberalaer.hybrid.view.TabTextView
+                        <llc.metaversenetwork.app.view.TabTextView
                             android:id="@+id/tab1"
                             style="@style/ClickableStyle"
                             android:layout_width="0dp"
@@ -340,7 +340,7 @@
                             android:textSize="@dimen/font_13"
                             android:textStyle="bold" />
 
-                        <com.cyberalaer.hybrid.view.TabTextView
+                        <llc.metaversenetwork.app.view.TabTextView
                             android:id="@+id/tab2"
                             style="@style/ClickableStyle"
                             android:layout_width="0dp"
@@ -353,7 +353,7 @@
                             android:textSize="@dimen/font_13"
                             android:textStyle="bold" />
 
-                        <com.cyberalaer.hybrid.view.TabTextView
+                        <llc.metaversenetwork.app.view.TabTextView
                             android:id="@+id/tab3"
                             style="@style/ClickableStyle"
                             android:layout_width="0dp"
@@ -366,7 +366,7 @@
                             android:textSize="@dimen/font_13"
                             android:textStyle="bold" />
 
-                        <com.cyberalaer.hybrid.view.TabTextView
+                        <llc.metaversenetwork.app.view.TabTextView
                             android:id="@+id/tab4"
                             style="@style/ClickableStyle"
                             android:layout_width="0dp"

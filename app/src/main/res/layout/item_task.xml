@@ -5,7 +5,7 @@
 
     <data>
 
-        <import type="com.cyberalaer.hybrid.R" />
+        <import type="llc.metaversenetwork.app.R" />
 
         <variable
             name="data"
@@ -13,7 +13,7 @@
 
         <variable
             name="handler"
-            type="com.cyberalaer.hybrid.ui.task.TaskAdapter.OnTaskClickHandler" />
+            type="llc.metaversenetwork.app.ui.task.TaskAdapter.OnTaskClickHandler" />
     </data>
 
     <androidx.cardview.widget.CardView

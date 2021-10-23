@@ -30,6 +30,7 @@ import com.alaer.lib.api.bean.UserLevelList;
 import java.util.List;
 
 import likly.reverse.Call;
+import likly.reverse.Callback;
 import likly.reverse.annotation.BaseUrl;
 import likly.reverse.annotation.CallExecuteListener;
 import likly.reverse.annotation.FormBody;
@@ -43,9 +44,9 @@ import likly.reverse.annotation.ServiceInvokeListener;
 /**
  * 请求定义
  */
-@BaseUrl(AppConfig.BASE_URL)
-@ServiceInvokeListener(OnApiServiceRequestListener.class)
-@CallExecuteListener(ApiCallExecuteListener.class)
+@BaseUrl(com.alaer.lib.api.AppConfig.BASE_URL)
+@ServiceInvokeListener(com.alaer.lib.api.OnApiServiceRequestListener.class)
+@CallExecuteListener(com.alaer.lib.api.ApiCallExecuteListener.class)
 @SuppressWarnings("all")
 public interface ApiService {
 

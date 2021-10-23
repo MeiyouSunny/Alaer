@@ -10,11 +10,11 @@
 
         <variable
             name="billUtil"
-            type="com.cyberalaer.hybrid.data.BillUtil" />
+            type="llc.metaversenetwork.app.data.BillUtil" />
 
         <variable
             name="number"
-            type="com.cyberalaer.hybrid.util.NumberUtils" />
+            type="llc.metaversenetwork.app.util.NumberUtils" />
     </data>
 
     <RelativeLayout

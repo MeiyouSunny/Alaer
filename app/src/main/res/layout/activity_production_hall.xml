@@ -6,11 +6,11 @@
 
         <import type="android.view.View" />
 
-        <import type="com.cyberalaer.hybrid.R" />
+        <import type="llc.metaversenetwork.app.R" />
 
         <variable
             name="handler"
-            type="com.cyberalaer.hybrid.base.BindClickListener" />
+            type="llc.metaversenetwork.app.base.BindClickListener" />
 
         <variable
             name="step"
@@ -26,7 +26,7 @@
 
         <variable
             name="stepHandler"
-            type="com.cyberalaer.hybrid.ui.produce.ProductionHallActivity.ProduceStep" />
+            type="llc.metaversenetwork.app.ui.produce.ProductionHallActivity.ProduceStep" />
 
     </data>
 
@@ -63,7 +63,7 @@
                 android:paddingRight="44dp"
                 android:visibility="@{step>=0 ? View.VISIBLE : View.INVISIBLE}">
 
-                <com.cyberalaer.hybrid.view.TextProgressBar
+                <llc.metaversenetwork.app.view.TextProgressBar
                     android:id="@+id/progress"
                     style="@style/Widget.AppCompat.ProgressBar.Horizontal"
                     android:layout_width="0dp"

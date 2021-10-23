@@ -44,7 +44,7 @@
                 android:textColor="@color/font_7E"
                 android:textSize="@dimen/font_12" />
 
-            <com.cyberalaer.hybrid.view.ItemLayoutView
+            <llc.metaversenetwork.app.view.ItemLayoutView
                 android:id="@+id/fill_case_history"
                 android:layout_width="match_parent"
                 android:layout_height="84dp"

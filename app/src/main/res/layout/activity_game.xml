@@ -31,7 +31,7 @@
                 android:paddingTop="18dp"
                 android:paddingRight="18dp">
 
-                <com.cyberalaer.hybrid.view.ItemLayoutView
+                <llc.metaversenetwork.app.view.ItemLayoutView
                     android:id="@+id/music"
                     android:layout_width="match_parent"
                     android:layout_height="84dp"
@@ -39,7 +39,7 @@
                     app:icon="@drawable/ic_classic_game"
                     app:title="@string/classic_game" />
 
-                <com.cyberalaer.hybrid.view.ItemLayoutView
+                <llc.metaversenetwork.app.view.ItemLayoutView
                     android:id="@+id/shortVideo"
                     android:layout_width="match_parent"
                     android:layout_height="84dp"
@@ -47,7 +47,7 @@
                     app:icon="@drawable/ic_h5_game"
                     app:title="@string/h5_game" />
 
-                <com.cyberalaer.hybrid.view.ItemLayoutView
+                <llc.metaversenetwork.app.view.ItemLayoutView
                     android:id="@+id/film"
                     android:layout_width="match_parent"
                     android:layout_height="84dp"

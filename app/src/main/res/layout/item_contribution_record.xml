@@ -10,7 +10,7 @@
 
         <variable
             name="number"
-            type="com.cyberalaer.hybrid.util.NumberUtils" />
+            type="llc.metaversenetwork.app.util.NumberUtils" />
     </data>
 
     <RelativeLayout
