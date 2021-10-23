@@ -25,6 +25,16 @@ allprojects {
         maven {
             url 'https://jitpack.io'
         }
+        maven {
+            url 'https://maven.aliyun.com/repository/public'
+        }
+        maven {
+            credentials {
+                username '60a3d803aa6381038e88bbe6'
+                password 'BMZNSD(=Q9C-'
+            }
+            url 'https://packages.aliyun.com/maven/repository/2104205-release-qPlYsz/'
+        }
     }
 }
 
