@@ -87,7 +87,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="78dp"
                     android:layout_marginTop="38dp"
-                    android:text="欢迎来到数字阿拉尔"
+                    android:text="@string/welcome_to_digital_alaer"
                     android:textColor="@color/font_99"
                     android:textSize="@dimen/font_13" />
 
@@ -96,8 +96,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="78dp"
                     android:layout_marginTop="8dp"
-                    android:text="点击进入"
-                    android:textColor="@color/font_36"
+                    android:text="@string/enter"
+                    android:textColor="@color/font_99"
                     android:textSize="@dimen/font_18" />
 
             </RelativeLayout>
