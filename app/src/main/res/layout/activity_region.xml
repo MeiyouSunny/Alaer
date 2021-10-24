@@ -32,7 +32,7 @@
                 style="@style/RepeatView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:viewHolderClass="com.cyberalaer.hybrid.ui.user.RegionAdapter"
+                app:viewHolderClass="llc.metaversenetwork.app.ui.user.RegionAdapter"
                 app:viewHolderLayout="@layout/item_region"/>
 
 

@@ -1,9 +1,9 @@
 <resources>
 
     <string-array name="produce_base_tabs">
-        <item>我的农场</item>
-        <item>农场商店</item>
-        <item>过期失效</item>
+        <item>我的元宇宙</item>
+        <item>元宇宙商店</item>
+        <item>過期失效</item>
     </string-array>
 
 <!--    <string-array name="active_detail_tabs">-->

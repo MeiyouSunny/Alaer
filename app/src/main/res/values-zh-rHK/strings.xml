@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">MNW</string>
+    <string name="my_city">我的元宇宙</string>
     <string name="nike_name">昵稱：</string>
     <string name="good_cityer">建設功分：</string>
     <string name="farm">元宇宙</string>
@@ -47,7 +48,7 @@
     <string name="produce_hall">我的元宇宙</string>
     <string name="produce_base_with_arrow">生產基地></string>
     <string name="fertilize">探測器</string>
-    <string name="water">Input laser</string>
+    <string name="water">輸入雷射</string>
     <string name="amount_add">+%s</string>
     <string name="amount_reduce">-%s</string>
     <string name="disinsection">發現元宇礦</string>

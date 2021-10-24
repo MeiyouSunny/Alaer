@@ -12,7 +12,7 @@
         app:emptyView="@layout/layout_no_data"
         app:mode="grid"
         app:spanCount="2"
-        app:viewHolderClass="com.cyberalaer.hybrid.ui.produce.AdapterSeedExpired"
+        app:viewHolderClass="llc.metaversenetwork.app.ui.produce.AdapterSeedExpired"
         app:viewHolderLayout="@layout/item_seed_expored" />
 
 </layout>

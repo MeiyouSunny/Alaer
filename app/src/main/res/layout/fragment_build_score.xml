@@ -7,7 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:emptyView="@layout/layout_no_data"
-        app:viewHolderClass="com.cyberalaer.hybrid.ui.user.FruitBillAdapter"
+        app:viewHolderClass="llc.metaversenetwork.app.ui.user.FruitBillAdapter"
         app:viewHolderLayout="@layout/item_fruit_bill" />
 
 </layout>

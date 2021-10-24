@@ -138,7 +138,7 @@
                         android:drawablePadding="6dp"
                         android:gravity="center"
                         android:onClick="@{handler.click}"
-                        android:text="我的城市"
+                        android:text="@string/my_city"
                         android:textColor="@color/font_36"
                         android:textSize="@dimen/font_17" />
 

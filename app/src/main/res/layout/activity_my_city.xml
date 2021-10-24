@@ -86,7 +86,7 @@
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="8dp"
                         android:layout_toRightOf="@+id/iconMyCity"
-                        android:text="我的城市"
+                        android:text="@string/my_city"
                         android:textColor="@color/black"
                         android:textSize="@dimen/font_16" />
 

@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">MNW</string>
 
-
+    <string name="my_city">My metaverse</string>
     <string name="nike_name">Nickname:</string>
     <string name="good_cityer">Construction work points:</string>
     <string name="farm">Metaverse</string>
