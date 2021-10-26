@@ -1,3 +1,4 @@
+<?xml version="1.0" ?>
 <resources>
     <string name="app_name">MNW</string>
     <string name="my_city">我的元宇宙</string>
@@ -46,9 +47,9 @@
     <string name="pwd_invalid">密碼至少由字母+數位，8-16比特組成</string>
     <string name="produce_base">生產基地</string>
     <string name="produce_hall">我的元宇宙</string>
-    <string name="produce_base_with_arrow">生產基地></string>
+    <string name="produce_base_with_arrow">生產基地&gt;</string>
     <string name="fertilize">探測器</string>
-    <string name="water">輸入雷射</string>
+    <string name="water">輸入激光</string>
     <string name="amount_add">+%s</string>
     <string name="amount_reduce">-%s</string>
     <string name="disinsection">發現元宇礦</string>
@@ -269,6 +270,4 @@
     <string name="update_date_is">更新時間：%s</string>
     <string name="welcome_to_whart_city_master">歡迎%s元宇宙節點</string>
     <string name="refresh">重繪</string>
-
-
 </resources>
