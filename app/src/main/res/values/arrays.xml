@@ -1,9 +1,9 @@
 <resources>
 
     <string-array name="produce_base_tabs">
-        <item>我的元宇宙</item>
-        <item>元宇宙商店</item>
-        <item>過期失效</item>
+        <item>@string/my_city</item>
+        <item>@string/seed_store</item>
+        <item>@string/expired</item>
     </string-array>
 
 <!--    <string-array name="active_detail_tabs">-->
@@ -27,34 +27,34 @@
     </string-array>
 
     <string-array name="person_level">
-        <item>未实名认证</item>
-        <item>一级市民</item>
-        <item>二级市民</item>
-        <item>三级市民</item>
+        <item>@string/no_verify_yes</item>
+        <item>@string/citizen_level1</item>
+        <item>@string/citizen_level2</item>
+        <item>@string/citizen_level3</item>
     </string-array>
 
     <string-array name="set_profile_title">
-        <item>微信号设置</item>
-        <item>邀请码设置</item>
-        <item>昵称设置</item>
+        <item>@string/wechat_no_set</item>
+        <item>@string/invatation_code_set</item>
+        <item>@string/nike_name_set</item>
     </string-array>
 
     <string-array name="set_profile_desc">
-        <item>微信号设置后，将公开给分享和邀请人查看</item>
-        <item>设置个性化邀请码，方便邀请好友</item>
-        <item>设置个性昵称</item>
+        <item>@string/wechat_no_set_warning</item>
+        <item>@string/set_invitation_code_desc</item>
+        <item>@string/set_nick_desc</item>
     </string-array>
 
     <string-array name="set_profile_input_hint">
-        <item>请输入微信号</item>
-        <item>请输入邀请码</item>
-        <item>请输入昵称</item>
+        <item>@string/pls_input_wechat_no</item>
+        <item>@string/pls_intpu_invatation_code</item>
+        <item>@string/pls_input_nike</item>
     </string-array>
 
     <string-array name="set_profile_consume">
-        <item>修改微信号将消耗1果实，请谨慎设置</item>
-        <item>设置邀请码需要花费1果实</item>
-        <item>设置昵称需要花费1果实，首次免费</item>
+        <item>@string/set_wechat_price</item>
+        <item>@string/set_invitation_code_price</item>
+        <item>@string/set_nick_price</item>
     </string-array>
 
     <array name="set_profile_icon">

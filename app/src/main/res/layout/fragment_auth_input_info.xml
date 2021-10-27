@@ -26,7 +26,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="87dp"
             android:layout_marginTop="28dp"
-            android:text="登记姓名和证件号"
+            android:text="@string/name_and_id"
             android:textColor="@color/black"
             android:textSize="@dimen/font_17" />
 
@@ -35,7 +35,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="87dp"
             android:layout_marginTop="54dp"
-            android:text="请填写下列信息并完成认证"
+            android:text="@string/input_follow_infos_to_verify"
             android:textColor="@color/font_7E"
             android:textSize="@dimen/font_12" />
 
@@ -44,7 +44,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="52dp"
             android:layout_marginTop="106dp"
-            android:text="姓名（身份证、护照上的姓名）"
+            android:text="@string/name_from"
             android:textColor="@color/black"
             android:textSize="@dimen/font_16" />
 
@@ -56,7 +56,7 @@
             android:layout_marginTop="138dp"
             android:layout_marginRight="28dp"
             android:background="@drawable/bg_gray_round_corner_et"
-            android:hint="请输入姓名"
+            android:hint="@string/input_name"
             android:paddingLeft="24dp"
             android:textColor="@color/font_41"
             android:textColorHint="#B3B3B3"
@@ -67,7 +67,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="52dp"
             android:layout_marginTop="224dp"
-            android:text="证件号（身份证、护照上的证件号）"
+            android:text="@string/id_no_from"
             android:textColor="@color/black"
             android:textSize="@dimen/font_16" />
 
@@ -79,7 +79,7 @@
             android:layout_marginTop="256dp"
             android:layout_marginRight="28dp"
             android:background="@drawable/bg_gray_round_corner_et"
-            android:hint="请输入证件号"
+            android:hint="@string/input_license"
             android:paddingLeft="24dp"
             android:textColor="@color/font_41"
             android:textColorHint="#B3B3B3" />
@@ -93,7 +93,7 @@
             android:layout_marginRight="45dp"
             android:layout_marginBottom="18dp"
             android:gravity="center"
-            android:text="实名认证将通过支付宝支付成功进行确认，支付成功后将赠送一棵试栽树苗"
+            android:text="@string/verify_to_get_detector"
             android:textColor="#52C883"
             android:textSize="@dimen/font_13" />
 

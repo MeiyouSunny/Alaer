@@ -82,7 +82,7 @@ public class ShareListFragment extends BaseBindFragment<FragmentShareListBinding
             cmb.setText(content.trim());
             ClipData clipData = ClipData.newPlainText(null, content);
             cmb.setPrimaryClip(clipData);
-            $.toast().text("复制成功").show();
+            $.toast().text(R.string.copyed).show();
         }
     }
 

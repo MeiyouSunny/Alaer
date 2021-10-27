@@ -41,7 +41,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:onClick="@{handler.click}"
-                android:text="复制邀请码"
+                android:text="@string/copy_invite_code"
                 android:textColor="@color/font_36"
                 android:textSize="@dimen/font_16" />
 
@@ -59,7 +59,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:onClick="@{handler.click}"
-                android:text="复制邀请链接"
+                android:text="@string/copy_invite_link"
                 android:textColor="@color/font_36"
                 android:textSize="@dimen/font_16" />
 

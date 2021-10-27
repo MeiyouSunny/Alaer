@@ -24,7 +24,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="24dp"
             android:lineSpacingExtra="10dp"
-            android:text="人人参与阿拉尔\n人人投资阿拉尔\n人人共享阿拉尔"
+            android:text="@string/all_join"
             android:textColor="@color/font_brown"
             android:textSize="@dimen/font_18"
             android:textStyle="bold" />
@@ -44,7 +44,7 @@
         android:background="@drawable/btn_green"
         android:letterSpacing="0.2"
         android:onClick="@{handler.click}"
-        android:text="探索阿拉尔"
+        android:text="@string/explore_universe"
         android:textColor="@color/white"
         android:textSize="@dimen/font_16" />
 

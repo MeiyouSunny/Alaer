@@ -60,6 +60,8 @@ public class SettingActivity extends BaseTitleActivity<ActivitySettngsBinding> {
 
     private void exitAccount() {
         UserData userData = UserDataUtil.instance().getUserData();
+        if(userData == null)
+            return;
         ApiUtil.apiService().exitAccount(userData.uuid, String.valueOf(userData.uid), userData.token, AppConfig.DIAMOND_CURRENCY,
                 new Callback<String>() {
                     @Override

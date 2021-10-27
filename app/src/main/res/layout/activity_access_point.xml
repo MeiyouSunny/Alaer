@@ -58,7 +58,7 @@
                         android:layout_marginTop="8dp"
                         android:layout_marginLeft="16dp"
                         android:layout_toRightOf="@+id/icAccessPoint"
-                        android:text="主接入点"
+                        android:text="@string/main_access_point"
                         android:textColor="@color/font_36"
                         android:textSize="@dimen/font_15" />
 
@@ -67,7 +67,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="16dp"
                         android:layout_toRightOf="@+id/icAccessPoint"
-                        android:text="默认主要接入点"
+                        android:text="@string/default_access_point"
                         android:textColor="@color/font_7E"
                         android:layout_alignParentBottom="true"
                         android:layout_marginBottom="8dp"
