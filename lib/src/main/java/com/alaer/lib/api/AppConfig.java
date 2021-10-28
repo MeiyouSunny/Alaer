@@ -41,7 +41,12 @@ public class AppConfig {
     public static final String ALIPAY_URL = "https://t-coupon.yuliang.top/index.php?id=";
 
     /* 用户协议 */
-    public static final String USER_AGREEMENT = "https://app.tokensky.cn/articles/zh_CN/agreement-zh_CN.html";
+    public static String USER_AGREEMENT;
+    // 繁体
+    private static final String USER_AGREEMENT_TW = "http://bqd.linker.world/articles/zh_TW/agreement-zh_TW.html";
+    // 英文
+    private static final String USER_AGREEMENT_EN = "http://bqd.linker.world/articles/en_US/agreement-zh_US.html";
+
     /* 兑换说明 */
     public static final String EXCHANGE_EXPLAIN = "https://app.tokensky.cn/articles/zh_CN/exchange_zh_CN.html";
     /* 贡献值说明 */
@@ -61,5 +66,13 @@ public class AppConfig {
     public static final String UDESK_APP_SECRETKEY = "220ef3d93e81854122a314262d188058";
     /* UDESK App DOMAIN */
     public static final String UDESK_APP_DOMAIN = "1323275.s4.udesk.cn";
+
+    public static void init(boolean isEnglish) {
+        if(isEnglish) {
+            USER_AGREEMENT = USER_AGREEMENT_EN;
+        } else {
+            USER_AGREEMENT = USER_AGREEMENT_TW;
+        }
+    }
 
 }

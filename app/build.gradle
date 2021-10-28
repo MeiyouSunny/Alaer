@@ -59,6 +59,7 @@ android {
 
     lintOptions {
         disable 'ExtraTranslation'
+        baseline file("lint-baseline.xml")
     }
 }
 
