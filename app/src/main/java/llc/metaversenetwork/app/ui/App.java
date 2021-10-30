@@ -7,6 +7,7 @@ import com.alaer.lib.api.HttpManager;
 import com.alaer.lib.util.NetworkUtil;
 
 import likly.dollar.$;
+import llc.metaversenetwork.app.util.FontUtil;
 import llc.metaversenetwork.app.util.LocaleUtil;
 
 public class App extends Application {
@@ -22,6 +23,7 @@ public class App extends Application {
         HttpManager.initHttp(getApplicationContext());
         NetworkUtil.init(getApplicationContext());
         LocaleUtil.init(this);
+        FontUtil.changeDefaultFont(getApplicationContext());
     }
 
 }
