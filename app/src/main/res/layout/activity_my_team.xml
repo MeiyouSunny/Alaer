@@ -85,7 +85,7 @@
                         <!--                        android:text="@{levelUtil.parseLevelReward(teamLevel)}"-->
                         <!--                        android:textColor="@color/font_7E"-->
                         <!--                        android:textSize="@dimen/font_12"-->
-                        <!--                        tools:text="奖励1棵枣树+数字市民共建基金20%" />-->
+                        <!--                        tools:text="奖励1棵枣树+数字市民共建手續費20%" />-->
 
                         <TextView
                             android:id="@+id/myInviter"

@@ -67,6 +67,12 @@ public class VideoActivity extends BaseViewBindActivity<ActivityVideoBinding> im
         bindRoot.player.currentTimeTextView.setVisibility(View.INVISIBLE);
         bindRoot.player.totalTimeTextView.setVisibility(View.INVISIBLE);
         bindRoot.player.bottomProgressBar.setVisibility(View.INVISIBLE);
+        bindRoot.player.backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         bindRoot.player.setUp(mAdVideo.image, mAdVideo.title);
         bindRoot.player.setScreenFullscreen();

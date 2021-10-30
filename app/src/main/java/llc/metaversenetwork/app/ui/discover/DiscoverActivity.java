@@ -30,7 +30,7 @@ import java.util.List;
 import likly.dollar.$;
 
 /**
- * 发现
+ * 發現
  */
 public class DiscoverActivity extends BaseTitleActivity<ActivityDiscoverBinding> {
 

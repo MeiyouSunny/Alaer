@@ -9,7 +9,7 @@ import llc.metaversenetwork.app.ui.webpage.WebPageActivity;
 import llc.metaversenetwork.app.util.NumberUtils;
 
 /**
- * 建设功分
+ * 元宇積分
  */
 public class BuildScoreActivity extends BaseTitleActivity<ActivityBuildScoreBinding> {
 

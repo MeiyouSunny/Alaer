@@ -10,6 +10,6 @@
         android:layout_width="150dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="32dp"
-        android:text="免费领取树苗" />
+        android:text="@string/get_detector_for_free" />
 
 </RelativeLayout>

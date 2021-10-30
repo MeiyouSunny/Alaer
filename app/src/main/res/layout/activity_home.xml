@@ -229,7 +229,7 @@
                             android:drawableTop="@drawable/ic_discover"
                             android:drawablePadding="-4dp"
                             android:gravity="center"
-                            android:text="发现"
+                            android:text="發現"
                             android:textColor="@color/white"
                             android:textSize="13sp" />
 

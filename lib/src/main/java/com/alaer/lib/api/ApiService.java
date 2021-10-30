@@ -299,7 +299,7 @@ public interface ApiService {
                                     Callback<List<FruitBill>> callback);
 
     /**
-     * 查询账户流水 - 建设功分明细
+     * 查询账户流水 - 元宇積分明细
      */
     @GET("/mining/profile/account/water/cny/query")
     Call<List<FruitBill>> buildScoreBill(@Query("uuid") String uuid, @Query("uid") String uid,

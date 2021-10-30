@@ -47,8 +47,8 @@
                     android:layout_height="74dp"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
-                    android:paddingLeft="32dp"
-                    android:paddingRight="32dp">
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp">
 
                     <TextView
                         android:id="@+id/newUserGuide"
@@ -56,13 +56,13 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:drawableTop="@drawable/ic_new_user_guide"
                         android:drawablePadding="6dp"
+                        android:drawableTop="@drawable/ic_new_user_guide"
                         android:gravity="center"
                         android:onClick="@{handler.click}"
                         android:text="@string/beginner_guide"
                         android:textColor="@color/font_36"
-                        android:textSize="@dimen/font_17" />
+                        android:textSize="@dimen/font_15" />
 
                     <TextView
                         android:id="@+id/myTeam"
@@ -76,7 +76,7 @@
                         android:onClick="@{handler.click}"
                         android:text="@string/my_team"
                         android:textColor="@color/font_36"
-                        android:textSize="@dimen/font_17" />
+                        android:textSize="@dimen/font_15" />
 
                     <TextView
                         android:id="@+id/auth"
@@ -90,7 +90,7 @@
                         android:onClick="@{handler.click}"
                         android:text="@string/real_name_auth"
                         android:textColor="@color/font_36"
-                        android:textSize="@dimen/font_17" />
+                        android:textSize="@dimen/font_15" />
 
                 </LinearLayout>
 
@@ -111,8 +111,8 @@
                     android:layout_height="74dp"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
-                    android:paddingLeft="32dp"
-                    android:paddingRight="32dp">
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp">
 
                     <TextView
                         android:id="@+id/share"
@@ -126,7 +126,7 @@
                         android:onClick="@{handler.click}"
                         android:text="@string/invitate_friend"
                         android:textColor="@color/font_36"
-                        android:textSize="@dimen/font_17" />
+                        android:textSize="@dimen/font_15" />
 
                     <TextView
                         android:id="@+id/myCity"
@@ -140,7 +140,7 @@
                         android:onClick="@{handler.click}"
                         android:text="@string/my_city"
                         android:textColor="@color/font_36"
-                        android:textSize="@dimen/font_17" />
+                        android:textSize="@dimen/font_15" />
 
                     <TextView
                         style="@style/SelectableStyle"

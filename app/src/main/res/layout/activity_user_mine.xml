@@ -48,7 +48,7 @@
                     android:layout_marginLeft="78dp"
                     android:layout_marginTop="38dp"
                     android:onClick="@{handler.click}"
-                    android:textColor="@color/font_99"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/font_13"
                     tools:text="贡献值: 10" />
 
@@ -58,7 +58,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="78dp"
                     android:layout_marginTop="8dp"
-                    android:textColor="@color/font_36"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/font_18"
                     tools:text="09****89" />
 
@@ -294,8 +294,8 @@
                             <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:paddingLeft="32dp"
-                                android:paddingRight="10dp"
+                                android:paddingLeft="18dp"
+                                android:paddingRight="18dp"
                                 android:paddingBottom="8dp">
 
                                 <TextView
@@ -305,7 +305,7 @@
                                     android:layout_marginTop="16dp"
                                     android:text="0.00"
                                     android:textColor="@color/font_41"
-                                    android:textSize="@dimen/font_20"
+                                    android:textSize="@dimen/font_18"
                                     tools:text="5620" />
 
                                 <TextView
@@ -314,7 +314,7 @@
                                     android:layout_below="@+id/scoreFruit"
                                     android:text="@string/fruit"
                                     android:textColor="@color/font_41"
-                                    android:textSize="@dimen/font_13" />
+                                    android:textSize="@dimen/font_12" />
 
                                 <ImageView
                                     android:layout_width="wrap_content"
@@ -341,8 +341,8 @@
                             <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:paddingLeft="32dp"
-                                android:paddingRight="10dp"
+                                android:paddingLeft="18dp"
+                                android:paddingRight="18dp"
                                 android:paddingBottom="8dp">
 
                                 <TextView
@@ -352,7 +352,7 @@
                                     android:layout_marginTop="16dp"
                                     android:text="0.00"
                                     android:textColor="@color/font_41"
-                                    android:textSize="@dimen/font_20"
+                                    android:textSize="@dimen/font_18"
                                     tools:text="1500" />
 
                                 <TextView
@@ -361,7 +361,7 @@
                                     android:layout_below="@+id/scoreBuild"
                                     android:text="@string/build_integral"
                                     android:textColor="@color/font_41"
-                                    android:textSize="@dimen/font_13" />
+                                    android:textSize="@dimen/font_12" />
 
                                 <ImageView
                                     android:layout_width="wrap_content"
@@ -395,8 +395,8 @@
                             <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:paddingLeft="32dp"
-                                android:paddingRight="10dp"
+                                android:paddingLeft="18dp"
+                                android:paddingRight="18dp"
                                 android:paddingBottom="8dp">
 
                                 <TextView
@@ -406,7 +406,7 @@
                                     android:layout_marginTop="16dp"
                                     android:text="0.00"
                                     android:textColor="@color/font_41"
-                                    android:textSize="@dimen/font_20"
+                                    android:textSize="@dimen/font_18"
                                     tools:text="3308" />
 
                                 <TextView
@@ -415,7 +415,7 @@
                                     android:layout_below="@+id/saplingActivity"
                                     android:text="@string/sapling_activity"
                                     android:textColor="@color/font_41"
-                                    android:textSize="@dimen/font_13" />
+                                    android:textSize="@dimen/font_12" />
 
                                 <ImageView
                                     android:layout_width="wrap_content"
@@ -442,8 +442,8 @@
                             <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:paddingLeft="32dp"
-                                android:paddingRight="10dp"
+                                android:paddingLeft="18dp"
+                                android:paddingRight="18dp"
                                 android:paddingBottom="8dp">
 
                                 <TextView
@@ -453,7 +453,7 @@
                                     android:layout_marginTop="16dp"
                                     android:text="0.00"
                                     android:textColor="@color/font_41"
-                                    android:textSize="@dimen/font_20"
+                                    android:textSize="@dimen/font_18"
                                     tools:text="1039" />
 
                                 <TextView
@@ -462,7 +462,7 @@
                                     android:layout_below="@+id/shareActivity"
                                     android:text="@string/share_activity"
                                     android:textColor="@color/font_41"
-                                    android:textSize="@dimen/font_13" />
+                                    android:textSize="@dimen/font_11" />
 
                                 <ImageView
                                     android:layout_width="wrap_content"

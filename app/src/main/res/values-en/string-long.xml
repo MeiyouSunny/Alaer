@@ -5,7 +5,7 @@
     </string>
 
     <string name="team_level_desc">
-        Note: Metaverse digital citizens at all levels must ensure that they have corresponding active real names and corresponding partner activity, both of which are indispensable. The so-called active real-name refers to direct recommendation and real-name authentication, and there must be a running detector. If the number of "active real-name" digital citizens is less than 20 due to the failure of the promotion of digital citizen detectors, or the failure of the detectors among partners causes the total activity of the partners to fall below the active real-name standard, a level drop will occur.
+        Note: Metaverse digital citizens at all levels must ensure that they have corresponding active real names and corresponding team activity, both of which are indispensable. The so-called active real-name refers to direct recommendation and real-name authentication, and there must be a running detector. If the number of "active real-name" digital citizens is less than 20 due to the failure of the promotion of digital citizen detectors, or the failure of the detectors among team causes the total activity of the partners to fall below the active real-name standard, a level drop will occur.
     </string>
 
     <string name="level_desc">1. Share real name 1 person \n 2. Group activity 1 point</string>

@@ -30,7 +30,7 @@
             android:drawableLeft="@drawable/ic_dialog_error"
             android:drawablePadding="8dp"
             android:text="@string/info_confirm"
-            android:textColor="@color/font_41"
+            android:textColor="@color/white"
             android:textSize="@dimen/font_20" />
 
         <LinearLayout

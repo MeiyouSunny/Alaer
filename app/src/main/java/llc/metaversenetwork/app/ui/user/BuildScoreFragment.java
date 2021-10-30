@@ -6,15 +6,16 @@ import com.alaer.lib.api.Callback;
 import com.alaer.lib.api.bean.FruitBill;
 import com.alaer.lib.api.bean.UserData;
 import com.alaer.lib.data.UserDataUtil;
+
+import java.util.List;
+
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseBindFragment;
 import llc.metaversenetwork.app.databinding.FragmentBuildScoreBinding;
 import llc.metaversenetwork.app.util.CollectionUtils;
 
-import java.util.List;
-
 /**
- * 建设功分明细列表Fragment
+ * 元宇積分明细列表Fragment
  */
 public class BuildScoreFragment extends BaseBindFragment<FragmentBuildScoreBinding> {
 
