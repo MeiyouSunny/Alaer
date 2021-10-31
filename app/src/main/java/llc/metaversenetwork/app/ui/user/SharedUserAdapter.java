@@ -4,6 +4,8 @@ import android.content.Context;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.alaer.lib.api.ApiUtil;
 import com.alaer.lib.api.AppConfig;
@@ -84,6 +86,20 @@ public class SharedUserAdapter extends RecyclerView.Adapter<SharedUserAdapter.Vi
         holder.binding.setData(data.get(position));
         holder.binding.setHandler(handler);
         holder.binding.executePendingBindings();
+
+        showLevelStar(data.get(position), holder.binding.layoutStar);
+    }
+
+    private void showLevelStar(SharedUser sharedUser, LinearLayout layoutStar) {
+        if (sharedUser.level <= 0) {
+            layoutStar.removeAllViews();
+            return;
+        }
+        for (int i = 0; i < sharedUser.level; i++) {
+            ImageView icon = new ImageView(context);
+            icon.setImageResource(R.drawable.ic_level_star);
+            layoutStar.addView(icon);
+        }
     }
 
     @Override

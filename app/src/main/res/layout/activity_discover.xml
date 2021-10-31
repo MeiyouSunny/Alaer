@@ -39,6 +39,7 @@
                     <androidx.cardview.widget.CardView
                         android:id="@+id/newUserGuide"
                         style="@style/CardViewClick"
+                        android:onClick="@{handler.click}"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -53,7 +54,6 @@
                             android:drawablePadding="6dp"
                             android:drawableTop="@drawable/ic_new_user_guide"
                             android:gravity="center"
-                            android:onClick="@{handler.click}"
                             android:text="@string/beginner_guide"
                             android:textColor="@color/white"
                             android:textSize="@dimen/font_15" />
@@ -63,6 +63,7 @@
                     <androidx.cardview.widget.CardView
                         android:id="@+id/myTeam"
                         style="@style/CardViewClick"
+                        android:onClick="@{handler.click}"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -72,14 +73,12 @@
                         app:cardElevation="0dp">
 
                         <TextView
-                            style="@style/SelectableStyle"
                             android:layout_gravity="center"
                             android:drawablePadding="6dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:drawableTop="@drawable/ic_my_team"
                             android:gravity="center"
-                            android:onClick="@{handler.click}"
                             android:text="@string/my_team"
                             android:textColor="@color/white"
                             android:textSize="@dimen/font_15" />
@@ -89,6 +88,7 @@
                     <androidx.cardview.widget.CardView
                         android:id="@+id/auth"
                         style="@style/CardViewClick"
+                        android:onClick="@{handler.click}"
                         android:layout_width="0dp"
                         android:layout_marginLeft="16dp"
                         android:layout_height="match_parent"
@@ -98,14 +98,12 @@
                         app:cardElevation="0dp">
 
                         <TextView
-                            style="@style/SelectableStyle"
                             android:layout_width="wrap_content"
                             android:drawablePadding="6dp"
                             android:layout_height="wrap_content"
                             android:drawableTop="@drawable/ic_real_name_auth_discover"
                             android:gravity="center"
                             android:layout_gravity="center"
-                            android:onClick="@{handler.click}"
                             android:text="@string/real_name_auth"
                             android:textColor="@color/white"
                             android:textSize="@dimen/font_15" />
@@ -137,6 +135,7 @@
                     <androidx.cardview.widget.CardView
                         android:id="@+id/share"
                         style="@style/CardViewClick"
+                        android:onClick="@{handler.click}"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -145,14 +144,12 @@
                         app:cardElevation="0dp">
 
                         <TextView
-                            style="@style/SelectableStyle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:drawablePadding="6dp"
                             android:drawableTop="@drawable/ic_invitate_friend"
                             android:gravity="center"
-                            android:onClick="@{handler.click}"
                             android:text="@string/invitate_friend"
                             android:textColor="@color/white"
                             android:textSize="@dimen/font_15" />
@@ -162,6 +159,7 @@
                     <androidx.cardview.widget.CardView
                         android:id="@+id/myCity"
                         style="@style/CardViewClick"
+                        android:onClick="@{handler.click}"
                         android:layout_width="0dp"
                         android:layout_marginLeft="16dp"
                         android:layout_height="match_parent"
@@ -171,14 +169,12 @@
                         app:cardElevation="0dp">
 
                         <TextView
-                            style="@style/SelectableStyle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:drawablePadding="6dp"
                             android:drawableTop="@drawable/ic_my_city"
                             android:gravity="center"
                             android:layout_gravity="center"
-                            android:onClick="@{handler.click}"
                             android:text="@string/my_city"
                             android:textColor="@color/white"
                             android:textSize="@dimen/font_15" />
