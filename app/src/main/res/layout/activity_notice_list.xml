@@ -18,7 +18,7 @@
         android:orientation="vertical"
         tools:context=".ui.user.UserInfoActivity">
 
-        <include layout="@layout/layout_title_bar_black" />
+        <include layout="@layout/layout_title_bar_white" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/list"

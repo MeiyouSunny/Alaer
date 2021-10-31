@@ -34,7 +34,7 @@
         android:orientation="vertical"
         tools:context=".ui.user.UserMineActivity">
 
-        <include layout="@layout/layout_title_bar_black" />
+        <include layout="@layout/layout_title_bar_white" />
 
         <androidx.core.widget.NestedScrollView
             android:id="@+id/scrollView"

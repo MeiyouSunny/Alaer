@@ -93,7 +93,7 @@
 
             </RelativeLayout>
 
-            <include layout="@layout/layout_title_bar_black" />
+            <include layout="@layout/layout_title_bar_white" />
 
 
         </RelativeLayout>

@@ -19,7 +19,7 @@
         android:orientation="vertical"
         tools:context=".ui.government.RealNameAuthSuccessActivityActivity">
 
-        <include layout="@layout/layout_title_bar_black" />
+        <include layout="@layout/layout_title_bar_white" />
 
         <RelativeLayout
             android:layout_width="match_parent"

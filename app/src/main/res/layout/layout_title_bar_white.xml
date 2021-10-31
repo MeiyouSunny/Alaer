@@ -10,7 +10,7 @@
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:scaleType="centerInside"
-        android:src="@drawable/ic_back_black" />
+        android:src="@drawable/ic_back" />
 
     <ImageView
         android:id="@+id/title_right"
@@ -28,7 +28,7 @@
         android:layout_alignParentRight="true"
         android:clickable="true"
         android:gravity="center"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="@dimen/font_15"
         android:visibility="gone"
         tools:text="Title" />
@@ -38,7 +38,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="@dimen/font_18"
         tools:text="Title" />
 
