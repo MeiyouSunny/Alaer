@@ -13,12 +13,12 @@
     <LinearLayout xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
+        android:background="@drawable/bg_discover"
         android:fitsSystemWindows="true"
         android:orientation="vertical"
         tools:context=".ui.education.EducationHallActivity">
 
-        <include layout="@layout/layout_title_bar_black" />
+        <include layout="@layout/layout_title_bar_white" />
 
         <RelativeLayout
             android:layout_width="match_parent"

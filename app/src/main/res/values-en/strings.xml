@@ -327,4 +327,12 @@
     <string name="regional_activity">Regional activity</string>
     <string name="community_activity">Community activity</string>
     <string name="auth_success_return">Return MNW Metaverse</string>
+
+    <string name="saturn">Saturn</string>
+    <string name="mercury">Mercury</string>
+    <string name="earth">earth</string>
+    <string name="uranus">Uranus</string>
+    <string name="venus">Venus</string>
+    <string name="jupiter">Jupiter</string>
+    <string name="neptune">Neptune</string>
 </resources>

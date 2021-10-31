@@ -9,9 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import llc.metaversenetwork.app.R;
-
 import java.util.List;
+
+import llc.metaversenetwork.app.R;
 
 public class MapContainer extends ViewGroup implements MapView.OnMapStateChangedListner {
     private boolean isFirstLayout = true;
@@ -102,11 +102,11 @@ public class MapContainer extends ViewGroup implements MapView.OnMapStateChanged
 
         for (int i = 0, size = mMarkers.size(); i < size; i++) {
             Marker marker = mMarkers.get(i);
-            final TextView markerView = (TextView) LayoutInflater.from(getContext()).inflate(R.layout.map_marker, null);
+            final View markerView = LayoutInflater.from(getContext()).inflate(R.layout.map_marker_, null);
 //            markerView.setPadding(16, 6, 16, 6);
             markerView.setTag(R.id.is_marker, true);
 //            markerView.setLayoutParams(params);
-            markerView.setText(marker.getText());
+            ((TextView) markerView.findViewById(R.id.name)).setText(marker.getText());
             marker.setMarkerView(markerView);
             addView(markerView);
 

@@ -22,6 +22,20 @@ import com.alaer.lib.api.bean.UserData;
 import com.alaer.lib.data.UserDataUtil;
 import com.alaer.lib.event.Event;
 import com.alaer.lib.event.EventUtil;
+import com.meiyou.mvp.MvpBinder;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import cn.jzvd.JzvdStd;
+import de.greenrobot.event.EventBus;
+import de.greenrobot.event.Subscribe;
+import de.greenrobot.event.ThreadMode;
+import likly.dollar.$;
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseViewBindActivity;
 import llc.metaversenetwork.app.databinding.ActivityHomeBinding;
@@ -43,20 +57,6 @@ import llc.metaversenetwork.app.util.NumberUtils;
 import llc.metaversenetwork.app.util.ViewUtil;
 import llc.metaversenetwork.app.view.mapview.MapContainer;
 import llc.metaversenetwork.app.view.mapview.Marker;
-import com.meiyou.mvp.MvpBinder;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-import cn.jzvd.JzvdStd;
-import de.greenrobot.event.EventBus;
-import de.greenrobot.event.Subscribe;
-import de.greenrobot.event.ThreadMode;
-import likly.dollar.$;
 
 @MvpBinder(
         presenter = HomePresenterImpl.class
@@ -101,13 +101,13 @@ public class HomeActivity extends BaseViewBindActivity<ActivityHomeBinding> impl
     private void initMapView() {
         bindRoot.map.getMapView().setImageResource(R.drawable.bg_map);
         List<Marker> markers = new ArrayList<>();
-        markers.add(new Marker(0.09F, 0.55F, R.string.produce_hall));
-        markers.add(new Marker(0.27F, 0.46F, R.string.discover));
-        markers.add(new Marker(0.4F, 0.27F, R.string.digital_cityer_auth));
-        markers.add(new Marker(0.63F, 0.46F, R.string.government_hall));
-        markers.add(new Marker(0.64F, 0.64F, R.string.travel_hall));
-        markers.add(new Marker(0.57F, 0.88F, R.string.education_hall));
-        markers.add(new Marker(0.82F, 0.35F, R.string.go_into_alaer));
+        markers.add(new Marker(0.09F, 0.55F, R.string.saturn));
+        markers.add(new Marker(0.27F, 0.46F, R.string.earth));
+        markers.add(new Marker(0.4F, 0.27F, R.string.jupiter));
+        markers.add(new Marker(0.63F, 0.46F, R.string.uranus));
+        markers.add(new Marker(0.64F, 0.64F, R.string.venus));
+        markers.add(new Marker(0.57F, 0.88F, R.string.neptune));
+        markers.add(new Marker(0.82F, 0.35F, R.string.mercury));
 
         bindRoot.map.setMarkers(markers);
         bindRoot.map.setOnMarkerClickListner(this);

@@ -13,21 +13,20 @@ import com.alaer.lib.data.UserDataUtil;
 import com.bigkoo.convenientbanner.ConvenientBanner;
 import com.bigkoo.convenientbanner.holder.CBViewHolderCreator;
 import com.bigkoo.convenientbanner.holder.Holder;
-import llc.metaversenetwork.app.R;
-import llc.metaversenetwork.app.base.BaseTitleActivity;
-import llc.metaversenetwork.app.databinding.ActivityDiscoverBinding;
-import llc.metaversenetwork.app.ui.auth.AuthSuccessActivity;
-import llc.metaversenetwork.app.ui.city.MyCityActivity;
-import llc.metaversenetwork.app.ui.government.RealNameAuthActivity;
-import llc.metaversenetwork.app.ui.share.ShareActivity;
-import llc.metaversenetwork.app.ui.user.MyTeamActivity;
-import llc.metaversenetwork.app.util.CollectionUtils;
-import llc.metaversenetwork.app.util.ViewUtil;
 import com.zhy.magicviewpager.transformer.ScaleInTransformer;
 
 import java.util.List;
 
 import likly.dollar.$;
+import llc.metaversenetwork.app.R;
+import llc.metaversenetwork.app.base.BaseTitleActivity;
+import llc.metaversenetwork.app.databinding.ActivityDiscoverBinding;
+import llc.metaversenetwork.app.ui.auth.AuthSuccessActivity;
+import llc.metaversenetwork.app.ui.government.RealNameAuthActivity;
+import llc.metaversenetwork.app.ui.share.ShareActivity;
+import llc.metaversenetwork.app.ui.user.MyTeamActivity;
+import llc.metaversenetwork.app.util.CollectionUtils;
+import llc.metaversenetwork.app.util.ViewUtil;
 
 /**
  * 發現
@@ -130,10 +129,11 @@ public class DiscoverActivity extends BaseTitleActivity<ActivityDiscoverBinding>
                     ViewUtil.gotoActivity(this, RealNameAuthActivity.class);
                 break;
             case R.id.myCity:
-                if (UserDataUtil.instance().isAuthed())
-                    ViewUtil.gotoActivity(this, MyCityActivity.class);
-                else
-                    ViewUtil.gotoActivity(this, RealNameAuthActivity.class);
+                $.toast().text(R.string.will_open_soon).show();
+//                if (UserDataUtil.instance().isAuthed())
+//                    ViewUtil.gotoActivity(this, MyCityActivity.class);
+//                else
+//                    ViewUtil.gotoActivity(this, RealNameAuthActivity.class);
                 break;
         }
     }

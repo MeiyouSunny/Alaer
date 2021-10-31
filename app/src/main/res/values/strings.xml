@@ -327,4 +327,13 @@
     <string name="regional_activity">大區活動度</string>
     <string name="community_activity">小區活動度</string>
     <string name="auth_success_return">返回MNW元宇宙</string>
+
+    <string name="saturn">土星</string>
+    <string name="mercury">水星</string>
+    <string name="earth">地球</string>
+    <string name="uranus">天王星</string>
+    <string name="venus">金星</string>
+    <string name="jupiter">木星</string>
+    <string name="neptune">海王星</string>
+
 </resources>
