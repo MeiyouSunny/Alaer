@@ -30,6 +30,8 @@ public class NoticeDetailActivity extends BaseTitleActivity<ActivityNoticeDetail
     private void showNotice() {
         Notice notice = (Notice) getIntent().getSerializableExtra("notice");
 
+        bindRoot.webView.setBackgroundColor(0);
+        bindRoot.webView.getBackground().setAlpha(0);
         bindRoot.webView.loadData(notice.content, "", "UTF-8");
     }
 
