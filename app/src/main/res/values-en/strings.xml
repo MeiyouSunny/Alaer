@@ -156,7 +156,7 @@
     <string name="invitees">Invitee</string>
     <string name="operation_guide">Operation guide</string>
     <string name="common_problem">Common problem</string>
-    <string name="level_rule">Star Digital Citizen Rules</string>
+    <string name="level_rule">Level rules</string>
     <string name="user_info">User Info</string>
     <string name="uid">UID</string>
     <string name="nike">Nickname</string>
@@ -323,4 +323,6 @@
     <string name="citizen_level2">Secondary metaverse citizen</string>
     <string name="citizen_level3">Third class metaverse citizen</string>
     <string name="get_detector_for_free">Get detector for free</string>
+    <string name="regional_activity">Regional activity</string>
+    <string name="community_activity">Community activity</string>
 </resources>

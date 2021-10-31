@@ -9,6 +9,8 @@
     <color name="bg_gray">#F5F6F7</color>
     <color name="bg_green">#52C883</color>
 
+    <color name="card_bg_trans">#33FFFFFF</color>
+
     <!-- 字体 -->
     <color name="font_brown">#552107</color>
     <color name="font_green">#52C883</color>

@@ -149,14 +149,14 @@
     <string name="about">關於</string>
     <string name="discover">發現</string>
     <string name="beginner_guide">新手指南</string>
-    <string name="my_team">我的伙伴</string>
+    <string name="my_team">我的團隊</string>
     <string name="invitate_friend">邀請好友</string>
     <string name="build_guide">建設指南</string>
     <string name="promotion_guide">推廣指南</string>
     <string name="invitees">邀請人</string>
     <string name="operation_guide">操作引導</string>
     <string name="common_problem">常見問題</string>
-    <string name="level_rule">星數字市民規則</string>
+    <string name="level_rule">等級規則</string>
     <string name="user_info">用戶信息</string>
     <string name="uid">UID</string>
     <string name="nike">昵稱</string>
@@ -323,4 +323,6 @@
     <string name="citizen_level2">二級市民</string>
     <string name="citizen_level3">三級市民</string>
     <string name="get_detector_for_free">免費領取探測器</string>
+    <string name="regional_activity">大區活動度</string>
+    <string name="community_activity">小區活動度</string>
 </resources>

@@ -6,8 +6,6 @@ import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.view.View;
 
-import llc.metaversenetwork.app.R;
-
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
@@ -15,6 +13,7 @@ import androidx.annotation.IntDef;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatTextView;
+import llc.metaversenetwork.app.R;
 
 public class TabTextView extends AppCompatTextView implements View.OnClickListener {
     private final int[] STATE_ICONS = new int[]{R.drawable.ic_tab_state_unselected, R.drawable.ic_tab_state_asc, R.drawable.ic_tab_state_desc};
@@ -64,7 +63,7 @@ public class TabTextView extends AppCompatTextView implements View.OnClickListen
         drawableRight.setBounds(0, 0, drawableRight.getMinimumWidth(), drawableRight.getMinimumHeight());
         setCompoundDrawables(null, null, drawableRight, null);
 
-        int textColor = Color.parseColor(mState == UNSELECTED ? "#7E7E7E" : "#52C883");
+        int textColor = Color.parseColor(mState == UNSELECTED ? "#FFFFFF" : "#52C883");
         setTextColor(textColor);
 
         if (state != UNSELECTED && stateListener != null) {

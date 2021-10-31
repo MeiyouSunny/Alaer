@@ -3,13 +3,6 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <data>
-
-        <variable
-            name="handler"
-            type="llc.metaversenetwork.app.base.BindClickListener" />
-    </data>
-
     <LinearLayout xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -23,23 +16,12 @@
             android:clipToPadding="false"
             android:fitsSystemWindows="true">
 
-            <include layout="@layout/layout_title_bar_black" />
-
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="66dp"
                 android:layout_alignParentBottom="true"
-                android:layout_marginLeft="27dp"
-                android:layout_marginBottom="21dp">
-
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/icHead"
-                    android:layout_width="66dp"
-                    android:layout_height="66dp"
-                    android:onClick="@{handler.click}"
-                    android:src="@drawable/ic_head_default_boy"
-                    app:civ_border_color="#CB9D3A"
-                    app:civ_border_width="1dp" />
+                android:layout_marginBottom="21dp"
+                android:layout_marginLeft="27dp">
 
                 <TextView
                     android:id="@+id/contribution"
@@ -62,6 +44,15 @@
                     android:textSize="@dimen/font_18"
                     tools:text="09****89" />
 
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/icHead"
+                    android:layout_width="66dp"
+                    android:layout_height="66dp"
+                    android:onClick="@{handler.click}"
+                    android:src="@drawable/ic_head_default_boy"
+                    app:civ_border_color="#CB9D3A"
+                    app:civ_border_width="1dp" />
+
             </RelativeLayout>
 
             <RelativeLayout
@@ -69,18 +60,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="66dp"
                 android:layout_alignParentBottom="true"
-                android:layout_marginLeft="27dp"
                 android:layout_marginBottom="21dp"
+                android:layout_marginLeft="27dp"
                 android:clickable="true"
                 android:onClick="@{handler.click}"
                 android:visibility="gone">
-
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:layout_width="66dp"
-                    android:layout_height="66dp"
-                    android:src="@drawable/ic_head_default_boy"
-                    app:civ_border_color="#CB9D3A"
-                    app:civ_border_width="1dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -100,7 +84,16 @@
                     android:textColor="@color/font_99"
                     android:textSize="@dimen/font_18" />
 
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="66dp"
+                    android:layout_height="66dp"
+                    android:src="@drawable/ic_head_default_boy"
+                    app:civ_border_color="#CB9D3A"
+                    app:civ_border_width="1dp" />
+
             </RelativeLayout>
+
+            <include layout="@layout/layout_title_bar_black" />
 
 
         </RelativeLayout>
@@ -111,10 +104,10 @@
             android:background="@color/bg_gray"
             android:clipChildren="false"
             android:clipToPadding="false"
-            android:paddingLeft="16dp"
-            android:paddingTop="10dp"
-            android:paddingRight="16dp"
             android:paddingBottom="16dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="10dp"
             android:scrollbars="none">
 
             <LinearLayout
@@ -123,157 +116,12 @@
                 android:orientation="vertical">
 
                 <!-- 用户等级 -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/userLevel"
-                    android:layout_width="match_parent"
-                    android:layout_height="56dp"
-                    android:layout_marginTop="10dp"
-                    android:clickable="true"
-                    android:foreground="?android:attr/selectableItemBackground"
-                    android:onClick="@{handler.click}"
-                    android:visibility="gone"
-                    app:cardCornerRadius="8dp"
-                    app:cardElevation="0dp">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:paddingLeft="29dp"
-                        android:paddingRight="32dp">
-
-                        <ImageView
-                            android:id="@+id/icLevel"
-                            android:layout_width="33dp"
-                            android:layout_height="32dp"
-                            android:layout_centerVertical="true" />
-
-                        <TextView
-                            android:id="@+id/levelName"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
-                            android:layout_marginLeft="12dp"
-                            android:layout_toRightOf="@+id/icLevel"
-                            android:textColor="@color/font_36"
-                            android:textSize="@dimen/font_14"
-                            tools:text="二级数字市民" />
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
-                            android:layout_centerVertical="true"
-                            android:src="@drawable/ic_item_next_little" />
-
-                    </RelativeLayout>
-
-                </androidx.cardview.widget.CardView>
-
-                <!-- 兑换积分 -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/exchangeScore"
-                    android:layout_width="match_parent"
-                    android:layout_height="56dp"
-                    android:layout_marginTop="10dp"
-                    android:clickable="true"
-                    android:foreground="?android:attr/selectableItemBackground"
-                    android:onClick="@{handler.click}"
-                    app:cardCornerRadius="8dp"
-                    app:cardElevation="0dp">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:paddingLeft="29dp"
-                        android:paddingRight="32dp">
-
-                        <ImageView
-                            android:id="@+id/icExchange"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
-                            android:src="@drawable/ic_exchange_score" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
-                            android:layout_marginLeft="12dp"
-                            android:layout_toRightOf="@+id/icExchange"
-                            android:text="@string/exchange_build_score"
-                            android:textColor="@color/font_36"
-                            android:textSize="@dimen/font_14" />
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
-                            android:layout_centerVertical="true"
-                            android:src="@drawable/ic_item_next_little" />
-
-                    </RelativeLayout>
-
-                </androidx.cardview.widget.CardView>
-
-                <!--  -->
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="90dp"
-                    android:clickable="true"
-                    android:foreground="?android:attr/selectableItemBackground"
-                    android:visibility="gone"
-                    app:cardCornerRadius="8dp"
-                    app:cardElevation="0dp">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:paddingLeft="32dp"
-                        android:paddingRight="32dp">
-
-                        <TextView
-                            android:id="@+id/totalAssets"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="16dp"
-                            android:text="@string/total_assets"
-                            android:textColor="@color/font_7E"
-                            android:textSize="@dimen/font_14" />
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="20dp"
-                            android:layout_alignBottom="@+id/totalAssets"
-                            android:layout_marginLeft="8dp"
-                            android:layout_toRightOf="@+id/totalAssets"
-                            android:src="@drawable/ic_eye" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/totalAssets"
-                            android:text="45.35"
-                            android:textColor="@color/black"
-                            android:textSize="30sp" />
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
-                            android:layout_centerVertical="true"
-                            android:src="@drawable/ic_item_next_little" />
-
-                    </RelativeLayout>
-
-                </androidx.cardview.widget.CardView>
-
-                <!--  -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp">
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -294,9 +142,25 @@
                             <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
+                                android:paddingBottom="8dp"
                                 android:paddingLeft="18dp"
-                                android:paddingRight="18dp"
-                                android:paddingBottom="8dp">
+                                android:paddingRight="18dp">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_alignParentRight="true"
+                                    android:src="@drawable/ic_fruit" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/scoreFruit"
+                                    android:layout_marginTop="6dp"
+                                    android:text="@string/fruit"
+                                    android:textColor="@color/font_41"
+                                    android:textSize="@dimen/font_12" />
 
                                 <TextView
                                     android:id="@+id/scoreFruit"
@@ -307,21 +171,6 @@
                                     android:textColor="@color/font_41"
                                     android:textSize="@dimen/font_18"
                                     tools:text="5620" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_below="@+id/scoreFruit"
-                                    android:text="@string/fruit"
-                                    android:textColor="@color/font_41"
-                                    android:textSize="@dimen/font_12" />
-
-                                <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_alignParentRight="true"
-                                    android:layout_alignParentBottom="true"
-                                    android:src="@drawable/ic_fruit" />
 
                             </RelativeLayout>
 
@@ -341,9 +190,25 @@
                             <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
+                                android:paddingBottom="8dp"
                                 android:paddingLeft="18dp"
-                                android:paddingRight="18dp"
-                                android:paddingBottom="8dp">
+                                android:paddingRight="18dp">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_alignParentRight="true"
+                                    android:src="@drawable/ic_intefral" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/scoreBuild"
+                                    android:layout_marginTop="6dp"
+                                    android:text="@string/build_integral"
+                                    android:textColor="@color/font_41"
+                                    android:textSize="@dimen/font_12" />
 
                                 <TextView
                                     android:id="@+id/scoreBuild"
@@ -354,21 +219,6 @@
                                     android:textColor="@color/font_41"
                                     android:textSize="@dimen/font_18"
                                     tools:text="1500" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_below="@+id/scoreBuild"
-                                    android:text="@string/build_integral"
-                                    android:textColor="@color/font_41"
-                                    android:textSize="@dimen/font_12" />
-
-                                <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_alignParentRight="true"
-                                    android:layout_alignParentBottom="true"
-                                    android:src="@drawable/ic_intefral" />
 
                             </RelativeLayout>
 
@@ -395,9 +245,25 @@
                             <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
+                                android:paddingBottom="8dp"
                                 android:paddingLeft="18dp"
-                                android:paddingRight="18dp"
-                                android:paddingBottom="8dp">
+                                android:paddingRight="18dp">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_alignParentRight="true"
+                                    android:src="@drawable/ic_sapling_activity" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/saplingActivity"
+                                    android:layout_marginTop="6dp"
+                                    android:text="@string/sapling_activity"
+                                    android:textColor="@color/font_41"
+                                    android:textSize="@dimen/font_12" />
 
                                 <TextView
                                     android:id="@+id/saplingActivity"
@@ -408,21 +274,6 @@
                                     android:textColor="@color/font_41"
                                     android:textSize="@dimen/font_18"
                                     tools:text="3308" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_below="@+id/saplingActivity"
-                                    android:text="@string/sapling_activity"
-                                    android:textColor="@color/font_41"
-                                    android:textSize="@dimen/font_12" />
-
-                                <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_alignParentRight="true"
-                                    android:layout_alignParentBottom="true"
-                                    android:src="@drawable/ic_sapling_activity" />
 
                             </RelativeLayout>
 
@@ -442,9 +293,25 @@
                             <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
+                                android:paddingBottom="8dp"
                                 android:paddingLeft="18dp"
-                                android:paddingRight="18dp"
-                                android:paddingBottom="8dp">
+                                android:paddingRight="18dp">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_alignParentRight="true"
+                                    android:src="@drawable/ic_share_activity" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/shareActivity"
+                                    android:layout_marginTop="6dp"
+                                    android:text="@string/share_activity"
+                                    android:textColor="@color/font_41"
+                                    android:textSize="@dimen/font_11" />
 
                                 <TextView
                                     android:id="@+id/shareActivity"
@@ -456,21 +323,6 @@
                                     android:textSize="@dimen/font_18"
                                     tools:text="1039" />
 
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_below="@+id/shareActivity"
-                                    android:text="@string/share_activity"
-                                    android:textColor="@color/font_41"
-                                    android:textSize="@dimen/font_11" />
-
-                                <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_alignParentRight="true"
-                                    android:layout_alignParentBottom="true"
-                                    android:src="@drawable/ic_share_activity" />
-
                             </RelativeLayout>
 
                         </androidx.cardview.widget.CardView>
@@ -478,6 +330,151 @@
                     </LinearLayout>
 
                 </LinearLayout>
+
+                <!-- 兑换积分 -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/exchangeScore"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="10dp"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:onClick="@{handler.click}"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="0dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingLeft="29dp"
+                        android:paddingRight="32dp">
+
+                        <ImageView
+                            android:id="@+id/icExchange"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/ic_exchange_score" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/ic_item_next_little" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="12dp"
+                            android:layout_toRightOf="@+id/icExchange"
+                            android:text="@string/exchange_build_score"
+                            android:textColor="@color/font_36"
+                            android:textSize="@dimen/font_14" />
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <!--  -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:visibility="gone"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="0dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingLeft="32dp"
+                        android:paddingRight="32dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp"
+                            android:layout_alignBottom="@+id/totalAssets"
+                            android:layout_marginLeft="8dp"
+                            android:layout_toRightOf="@+id/totalAssets"
+                            android:src="@drawable/ic_eye" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/ic_item_next_little" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/totalAssets"
+                            android:text="45.35"
+                            android:textColor="@color/black"
+                            android:textSize="30sp" />
+
+                        <TextView
+                            android:id="@+id/totalAssets"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/total_assets"
+                            android:textColor="@color/font_7E"
+                            android:textSize="@dimen/font_14" />
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <!--  -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/userLevel"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="10dp"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:onClick="@{handler.click}"
+                    android:visibility="gone"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="0dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingLeft="29dp"
+                        android:paddingRight="32dp">
+
+                        <ImageView
+                            android:id="@+id/icLevel"
+                            android:layout_width="33dp"
+                            android:layout_height="32dp"
+                            android:layout_centerVertical="true" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/ic_item_next_little" />
+
+                        <TextView
+                            android:id="@+id/levelName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="12dp"
+                            android:layout_toRightOf="@+id/icLevel"
+                            android:textColor="@color/font_36"
+                            android:textSize="@dimen/font_14"
+                            tools:text="二级数字市民" />
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
 
                 <!--  -->
                 <androidx.cardview.widget.CardView
@@ -489,9 +486,9 @@
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:paddingBottom="18dp"
                         android:paddingLeft="27dp"
-                        android:paddingTop="18dp"
-                        android:paddingBottom="18dp">
+                        android:paddingTop="18dp">
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -506,8 +503,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentBottom="true"
-                            android:drawableTop="@drawable/ic_my_partner"
                             android:drawablePadding="6dp"
+                            android:drawableTop="@drawable/ic_my_partner"
                             android:gravity="center"
                             android:onClick="@{handler.click}"
                             android:text="@string/my_partner"
@@ -521,8 +518,8 @@
                             android:layout_alignParentBottom="true"
                             android:layout_marginLeft="32dp"
                             android:layout_toRightOf="@+id/myPartner"
-                            android:drawableTop="@drawable/ic_invitation_code"
                             android:drawablePadding="6dp"
+                            android:drawableTop="@drawable/ic_invitation_code"
                             android:gravity="center"
                             android:onClick="@{handler.click}"
                             android:text="@string/invitation_code"
@@ -536,8 +533,8 @@
                             android:layout_alignParentBottom="true"
                             android:layout_marginLeft="32dp"
                             android:layout_toRightOf="@+id/invitationCode"
-                            android:drawableTop="@drawable/ic_wechat"
                             android:drawablePadding="6dp"
+                            android:drawableTop="@drawable/ic_wechat"
                             android:gravity="center"
                             android:onClick="@{handler.click}"
                             android:text="@string/wechat"
@@ -573,6 +570,13 @@
                             android:layout_centerVertical="true"
                             android:src="@drawable/ic_security_center" />
 
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/ic_item_next_little" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -582,13 +586,6 @@
                             android:text="@string/security_center"
                             android:textColor="@color/font_36"
                             android:textSize="@dimen/font_14" />
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
-                            android:layout_centerVertical="true"
-                            android:src="@drawable/ic_item_next_little" />
 
                     </RelativeLayout>
 
@@ -618,6 +615,13 @@
                             android:layout_centerVertical="true"
                             android:src="@drawable/ic_customer_service" />
 
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/ic_item_next_little" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -627,13 +631,6 @@
                             android:text="@string/customer_service"
                             android:textColor="@color/font_36"
                             android:textSize="@dimen/font_14" />
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
-                            android:layout_centerVertical="true"
-                            android:src="@drawable/ic_item_next_little" />
 
                     </RelativeLayout>
 
@@ -663,6 +660,13 @@
                             android:layout_centerVertical="true"
                             android:src="@drawable/ic_about" />
 
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/ic_item_next_little" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -673,13 +677,6 @@
                             android:textColor="@color/font_36"
                             android:textSize="@dimen/font_14" />
 
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
-                            android:layout_centerVertical="true"
-                            android:src="@drawable/ic_item_next_little" />
-
                     </RelativeLayout>
 
                 </androidx.cardview.widget.CardView>
@@ -689,5 +686,12 @@
         </ScrollView>
 
     </LinearLayout>
+
+    <data>
+
+        <variable
+            name="handler"
+            type="llc.metaversenetwork.app.base.BindClickListener" />
+    </data>
 
 </layout>

@@ -8,6 +8,7 @@ import com.alaer.lib.api.Callback;
 import com.alaer.lib.api.bean.AccessPointInfo;
 import com.alaer.lib.api.bean.UserData;
 import com.alaer.lib.data.UserDataUtil;
+
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseTitleActivity;
 import llc.metaversenetwork.app.databinding.ActivitySettngsBinding;
@@ -36,8 +37,10 @@ public class SettingActivity extends BaseTitleActivity<ActivitySettngsBinding> {
         super.onViewCreated();
 
         UserData userData = UserDataUtil.instance().getUserData();
-        if (userData == null)
+        if (userData == null) {
             bindRoot.exit.setVisibility(View.GONE);
+            return;
+        }
         getAccessPointInfo();
     }
 
@@ -60,7 +63,7 @@ public class SettingActivity extends BaseTitleActivity<ActivitySettngsBinding> {
 
     private void exitAccount() {
         UserData userData = UserDataUtil.instance().getUserData();
-        if(userData == null)
+        if (userData == null)
             return;
         ApiUtil.apiService().exitAccount(userData.uuid, String.valueOf(userData.uid), userData.token, AppConfig.DIAMOND_CURRENCY,
                 new Callback<String>() {
