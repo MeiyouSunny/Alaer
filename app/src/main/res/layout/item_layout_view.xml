@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     app:cardElevation="0dp"
     android:foreground="?android:attr/selectableItemBackground"
-    app:cardBackgroundColor="#F7F6F9"
+    app:cardBackgroundColor="@color/card_bg_trans"
     app:cardCornerRadius="13dp">
 
     <RelativeLayout
@@ -35,7 +35,7 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="18dp"
             android:layout_toRightOf="@id/icon"
-            android:textColor="@color/font_36"
+            android:textColor="@color/white"
             android:textSize="@dimen/font_17"
             tools:text="xxxx" />
 

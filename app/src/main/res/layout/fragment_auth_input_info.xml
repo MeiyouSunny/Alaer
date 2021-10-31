@@ -27,7 +27,7 @@
             android:layout_marginLeft="87dp"
             android:layout_marginTop="28dp"
             android:text="@string/name_and_id"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="@dimen/font_17" />
 
         <TextView
@@ -36,7 +36,7 @@
             android:layout_marginLeft="87dp"
             android:layout_marginTop="54dp"
             android:text="@string/input_follow_infos_to_verify"
-            android:textColor="@color/font_7E"
+            android:textColor="@color/white"
             android:textSize="@dimen/font_12" />
 
         <TextView
@@ -45,7 +45,7 @@
             android:layout_marginLeft="52dp"
             android:layout_marginTop="106dp"
             android:text="@string/name_from"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="@dimen/font_16" />
 
         <EditText
@@ -58,8 +58,8 @@
             android:background="@drawable/bg_gray_round_corner_et"
             android:hint="@string/input_name"
             android:paddingLeft="24dp"
-            android:textColor="@color/font_41"
-            android:textColorHint="#B3B3B3"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
             android:textSize="@dimen/font_17" />
 
         <TextView
@@ -68,7 +68,7 @@
             android:layout_marginLeft="52dp"
             android:layout_marginTop="224dp"
             android:text="@string/id_no_from"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="@dimen/font_16" />
 
         <EditText
@@ -81,8 +81,8 @@
             android:background="@drawable/bg_gray_round_corner_et"
             android:hint="@string/input_license"
             android:paddingLeft="24dp"
-            android:textColor="@color/font_41"
-            android:textColorHint="#B3B3B3" />
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
 
 
         <TextView
@@ -94,7 +94,7 @@
             android:layout_marginBottom="18dp"
             android:gravity="center"
             android:text="@string/verify_to_get_detector"
-            android:textColor="#52C883"
+            android:textColor="@color/font_red"
             android:textSize="@dimen/font_13" />
 
         <androidx.appcompat.widget.AppCompatButton

@@ -26,8 +26,8 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="164dp"
-            android:text="您的订单未成功支付"
-            android:textColor="@color/black"
+            android:text="@string/auth_pay_failed"
+            android:textColor="@color/white"
             android:textSize="@dimen/font_18" />
 
 
@@ -39,7 +39,7 @@
             android:layout_marginRight="38dp"
             android:layout_marginBottom="91dp"
             android:onClick="@{handler.click}"
-            android:text="返回数字阿拉尔" />
+            android:text="@string/auth_success_return" />
 
 
     </RelativeLayout>

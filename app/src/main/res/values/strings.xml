@@ -99,6 +99,7 @@
     <string name="name_is">姓名：%s</string>
     <string name="card_no_is">證件號：%s</string>
     <string name="alipay_info_confirm">準備前往支付寶進行支付，請確保支付寶帳號身份資訊與以上資訊一致，否則無法支付成功。</string>
+    <string name="auth_pay_failed">您的訂單支付失敗!</string>
     <string name="leisure_hall">休閒大廳</string>
     <string name="music">音樂</string>
     <string name="shot_video">短視頻</string>
@@ -325,4 +326,5 @@
     <string name="get_detector_for_free">免費領取探測器</string>
     <string name="regional_activity">大區活動度</string>
     <string name="community_activity">小區活動度</string>
+    <string name="auth_success_return">返回MNW元宇宙</string>
 </resources>
