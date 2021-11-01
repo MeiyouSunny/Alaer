@@ -14,7 +14,7 @@ public class FontUtil {
 
     public static void changeDefaultFont(Context context) {
         try{
-            Typeface newTypeface = Typeface.createFromAsset(context.getAssets(), "font/HCSN_W5.TTF");
+            Typeface newTypeface = Typeface.createFromAsset(context.getAssets(), "font/HKLST-W7.TTF");
             Field field = Typeface.class.getDeclaredField("SERIF");
             field.setAccessible(true);
             field.set(null, newTypeface);
