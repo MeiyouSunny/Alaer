@@ -1,11 +1,11 @@
 package llc.metaversenetwork.app.view.mapview;
 
-import android.view.View;
+import android.widget.TextView;
 
 public class Marker {
     private float scaleX;
     private float scaleY;
-    private View markerView;
+    private TextView markerView;
     private int textResId;
 
     public Marker() {
@@ -33,7 +33,7 @@ public class Marker {
         this.scaleY = scaleY;
     }
 
-    public void setMarkerView(View markerView) {
+    public void setMarkerView(TextView markerView) {
         this.markerView = markerView;
     }
 
@@ -45,7 +45,7 @@ public class Marker {
         this.textResId = imgSrcId;
     }
 
-    public View getMarkerView() {
+    public TextView getMarkerView() {
         return markerView;
     }
 }

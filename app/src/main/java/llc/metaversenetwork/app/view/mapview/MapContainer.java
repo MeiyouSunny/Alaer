@@ -102,11 +102,11 @@ public class MapContainer extends ViewGroup implements MapView.OnMapStateChanged
 
         for (int i = 0, size = mMarkers.size(); i < size; i++) {
             Marker marker = mMarkers.get(i);
-            final View markerView = LayoutInflater.from(getContext()).inflate(R.layout.map_marker_, null);
+            final TextView markerView = (TextView) LayoutInflater.from(getContext()).inflate(R.layout.map_marker, null);
 //            markerView.setPadding(16, 6, 16, 6);
             markerView.setTag(R.id.is_marker, true);
 //            markerView.setLayoutParams(params);
-            ((TextView) markerView.findViewById(R.id.name)).setText(marker.getText());
+            markerView.setText(marker.getText());
             marker.setMarkerView(markerView);
             addView(markerView);
 

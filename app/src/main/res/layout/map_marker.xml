@@ -9,6 +9,6 @@
     android:paddingLeft="6dp"
     android:paddingRight="6dp"
     android:paddingBottom="4dp"
-    android:textColor="#00732D"
-    android:textSize="@dimen/font_13"
+    android:textColor="@color/white"
+    android:textSize="@dimen/font_20"
     tools:text="我的元宇宙" />
