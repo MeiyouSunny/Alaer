@@ -49,12 +49,12 @@
     <string name="produce_base">Production base</string>
     <string name="produce_hall">My Metauniverse</string>
     <string name="produce_base_with_arrow">Production base&gt;</string>
-    <string name="fertilize">Detector</string>
+    <string name="fertilize">Start detection</string>
     <string name="water">Activate laser</string>
     <string name="amount_add">+%s</string>
     <string name="amount_reduce">-%s</string>
-    <string name="disinsection">Discover MetaMine</string>
-    <string name="reap">Harvest</string>
+    <string name="disinsection">Find diamonds</string>
+    <string name="reap">Collect diamonds</string>
     <string name="speed_up">Accelerate</string>
     <string name="seed_store">My Metaverse</string>
     <string name="time_remain">%s remaining</string>

@@ -17,6 +17,10 @@
             type="int" />
 
         <variable
+            name="bgBigPics"
+            type="int[]" />
+
+        <variable
             name="bgPics"
             type="int[]" />
 
@@ -33,7 +37,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/bg_produce_day"
+        app:drawableRes="@{bgBigPics[step]}"
         android:fitsSystemWindows="true"
         android:clipToPadding="true"
         tools:context=".ui.produce.ProductionHallActivity">
@@ -59,8 +63,8 @@
                 android:layout_marginBottom="20dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:paddingLeft="44dp"
-                android:paddingRight="44dp"
+                android:paddingLeft="26dp"
+                android:paddingRight="26dp"
                 android:visibility="@{step>=0 ? View.VISIBLE : View.INVISIBLE}">
 
                 <llc.metaversenetwork.app.view.TextProgressBar
@@ -71,7 +75,7 @@
                     android:layout_weight="1"
                     android:progress="0"
                     android:progressDrawable="@drawable/bg_progress"
-                    app:textColor="#2E7446"
+                    app:textColor="@color/white"
                     app:textSize="11sp" />
 
                 <androidx.appcompat.widget.AppCompatButton
@@ -79,12 +83,12 @@
                     android:layout_width="72dp"
                     android:layout_height="26dp"
                     android:layout_marginLeft="14dp"
-                    android:background="@drawable/bg_white_round_corner"
+                    android:background="@drawable/bg_red_round_corner"
                     android:clickable="true"
                     android:gravity="center"
                     android:onClick="@{handler.click}"
                     android:text="@string/speed_up"
-                    android:textColor="#4CA261"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/font_10"
                     android:textStyle="bold" />
 
@@ -105,7 +109,6 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:alpha="@{step==0 ? 1F : 0.5F}"
                     android:clickable="@{step==0 ? true : false}"
                     android:onClick="@{() -> stepHandler.onStep(1)}"
                     android:orientation="vertical">
@@ -113,6 +116,7 @@
                     <ImageView
                         android:id="@+id/icStepFertilize"
                         android:layout_gravity="center_horizontal"
+                        android:alpha="@{step==0 ? 1F : 0.5F}"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:background="@drawable/ic_produce_fertilize" />
@@ -121,11 +125,11 @@
                         android:layout_width="54dp"
                         android:layout_height="24dp"
                         android:layout_gravity="center_horizontal"
-                        android:background="@drawable/bg_white_round_corner"
+                        app:drawableRes="@{step==0 ? R.drawable.bg_orange_round_corner : R.drawable.bg_gray_round_corner}"
                         android:gravity="center"
                         android:text="@string/fertilize"
-                        android:textColor="@color/font_green_produce_step"
-                        android:textSize="@dimen/font_13"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_10"
                         android:textStyle="bold" />
 
                 </LinearLayout>
@@ -134,7 +138,6 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:alpha="@{step==1 ? 1F : 0.5F}"
                     android:clickable="@{step==1 ? true : false}"
                     android:onClick="@{() -> stepHandler.onStep(2)}"
                     android:orientation="vertical">
@@ -144,17 +147,18 @@
                         android:layout_width="40dp"
                         android:layout_gravity="center_horizontal"
                         android:layout_height="40dp"
+                        android:alpha="@{step==1 ? 1F : 0.5F}"
                         android:background="@drawable/ic_produce_water" />
 
                     <TextView
                         android:layout_width="54dp"
                         android:layout_height="24dp"
                         android:layout_gravity="center_horizontal"
-                        android:background="@drawable/bg_white_round_corner"
+                        app:drawableRes="@{step==1 ? R.drawable.bg_orange_round_corner : R.drawable.bg_gray_round_corner}"
                         android:gravity="center"
                         android:text="@string/water"
-                        android:textColor="@color/font_green_produce_step"
-                        android:textSize="@dimen/font_11"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_10"
                         android:textStyle="bold" />
 
                 </LinearLayout>
@@ -163,7 +167,6 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:alpha="@{step==2 ? 1F : 0.5F}"
                     android:clickable="@{step==2 ? true : false}"
                     android:onClick="@{() -> stepHandler.onStep(3)}"
                     android:orientation="vertical">
@@ -172,18 +175,19 @@
                         android:id="@+id/icStepDisinsection"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
+                        android:alpha="@{step==2 ? 1F : 0.5F}"
                         android:layout_gravity="center_horizontal"
                         android:background="@drawable/ic_produce_disinsection" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="54dp"
                         android:layout_height="24dp"
                         android:layout_gravity="center_horizontal"
-                        android:background="@drawable/bg_white_round_corner"
+                        app:drawableRes="@{step==2 ? R.drawable.bg_orange_round_corner : R.drawable.bg_gray_round_corner}"
                         android:gravity="center"
                         android:text="@string/disinsection"
-                        android:textColor="@color/font_green_produce_step"
-                        android:textSize="@dimen/font_11"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_10"
                         android:textStyle="bold" />
 
                 </LinearLayout>
@@ -192,7 +196,6 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:alpha="@{step == 3 ? 1F : 0.5F}"
                     android:clickable="@{step == 3 ? true : false}"
                     android:onClick="@{() -> stepHandler.onStep(4)}"
                     android:orientation="vertical">
@@ -201,18 +204,19 @@
                         android:id="@+id/icStepReap"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
+                        android:alpha="@{step == 3 ? 1F : 0.5F}"
                         android:layout_gravity="center_horizontal"
                         android:background="@drawable/ic_produce_reap" />
 
                     <TextView
                         android:layout_width="54dp"
                         android:layout_height="24dp"
-                        android:background="@drawable/bg_white_round_corner"
+                        app:drawableRes="@{step==3 ? R.drawable.bg_orange_round_corner : R.drawable.bg_gray_round_corner}"
                         android:gravity="center"
                         android:layout_gravity="center_horizontal"
                         android:text="@string/reap"
-                        android:textColor="@color/font_green_produce_step"
-                        android:textSize="@dimen/font_13"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_10"
                         android:textStyle="bold" />
 
                 </LinearLayout>
@@ -222,18 +226,18 @@
 
             <TextView
                 android:id="@+id/toBase"
-                android:layout_width="154dp"
-                android:layout_height="70dp"
+                android:layout_width="140dp"
+                android:layout_height="32dp"
                 android:layout_alignParentRight="true"
-                android:layout_marginTop="140dp"
+                android:layout_marginTop="48dp"
                 android:background="@drawable/bg_to_produce_base"
                 android:clickable="true"
                 android:gravity="center_vertical|right"
                 android:onClick="@{handler.click}"
                 android:paddingLeft="16dp"
-                android:paddingRight="8dp"
+                android:paddingRight="14dp"
                 android:text="@string/seed_store"
-                android:textColor="@color/white"
+                android:textColor="#621B16"
                 android:textSize="@dimen/font_12"
                 android:textStyle="bold" />
 

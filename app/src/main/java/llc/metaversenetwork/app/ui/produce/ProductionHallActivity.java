@@ -59,8 +59,11 @@ public class ProductionHallActivity extends BaseTitleActivity<ActivityProduction
         super.onViewCreated();
         int[] bgResIds = new int[]{R.drawable.img_produce_step0, R.drawable.img_produce_step2,
                 R.drawable.img_produce_step3, R.drawable.img_produce_step4};
+        int[] bgBigResIds = new int[]{R.drawable.bg_produce_1, R.drawable.bg_produce_2,
+                R.drawable.bg_produce_3, R.drawable.bg_produce_4};
         mStepImages = new ImageView[]{bindRoot.icStepFertilize, bindRoot.icStepWater, bindRoot.icStepDisinsection, bindRoot.icStepReap};
 
+        bindRoot.setBgBigPics(bgBigResIds);
         bindRoot.setBgPics(bgResIds);
         bindRoot.setStep(0);
         bindRoot.setStepHandler(mProduceStepHandler);

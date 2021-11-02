@@ -49,12 +49,12 @@
     <string name="produce_base">生產基地</string>
     <string name="produce_hall">我的元宇宙</string>
     <string name="produce_base_with_arrow">生產基地&gt;</string>
-    <string name="fertilize">探測器</string>
+    <string name="fertilize">啟動探測</string>
     <string name="water">輸入激光</string>
     <string name="amount_add">+%s</string>
     <string name="amount_reduce">-%s</string>
-    <string name="disinsection">發現元宇礦</string>
-    <string name="reap">收穫</string>
+    <string name="disinsection">發現礦石</string>
+    <string name="reap">收藏鑽石</string>
     <string name="speed_up">加速</string>
     <string name="seed_store">我的元宇宙</string>
     <string name="time_remain">剩餘%s</string>
