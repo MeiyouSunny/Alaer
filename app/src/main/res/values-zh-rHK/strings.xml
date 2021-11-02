@@ -56,7 +56,7 @@
     <string name="disinsection">發現礦石</string>
     <string name="reap">收藏鑽石</string>
     <string name="speed_up">加速</string>
-    <string name="seed_store">我的元宇宙</string>
+    <string name="seed_store">元宇宙商店</string>
     <string name="time_remain">剩餘%s</string>
     <string name="pls_produce_tomorrow">請明天繼續</string>
     <string name="seed_try">新手探測器</string>
@@ -66,7 +66,7 @@
     <string name="seed_apple">蘋果樹</string>
     <string name="seed_jujube">棗樹</string>
     <string name="grow_days_is">探测天數：%d天</string>
-    <string name="yield_is">產量：%d元宇矿石</string>
+    <string name="yield_is">產量：%d元宇礦</string>
     <string name="start_time_is">開始時間：%s</string>
     <string name="end_time_is">結束時間：%s</string>
     <string name="remaing_days_is">剩餘天數：%d天</string>
@@ -77,7 +77,7 @@
     <string name="reward_activity_is">獎勵活躍度：%d</string>
     <string name="cultivation_time_is">採探時長：%s</string>
     <string name="cultivation_days_is">採探天數：%d天</string>
-    <string name="has_exchanged_is">已兌換：%d/%d臺</string>
+    <string name="has_exchanged_is">已兌換：%d/%d</string>
     <string name="exchanged_full">兌換完</string>
     <string name="get_for_free">免費領取</string>
     <string name="renewal">續期</string>
@@ -335,5 +335,8 @@
     <string name="venus">金星</string>
     <string name="jupiter">木星</string>
     <string name="neptune">海王星</string>
+
+    <string name="my_seed">我的探測器</string>
+    <string name="select_seed">探測器選購</string>
 
 </resources>

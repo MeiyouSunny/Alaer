@@ -1,8 +1,8 @@
 <resources>
 
     <string-array name="produce_base_tabs">
-        <item>@string/my_city</item>
-        <item>@string/seed_store</item>
+        <item>@string/my_seed</item>
+        <item>@string/select_seed</item>
         <item>@string/expired</item>
     </string-array>
 

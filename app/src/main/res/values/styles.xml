@@ -48,7 +48,7 @@
 
     <style name="TabText">
         <item name="android:textSize">@dimen/font_17</item>
-        <item name="android:textColor">@color/font_41</item>
+        <item name="android:textColor">@color/white</item>
     </style>
 
     <style name="TabTextSeedStore">

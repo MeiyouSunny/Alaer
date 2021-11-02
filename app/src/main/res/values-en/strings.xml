@@ -56,7 +56,7 @@
     <string name="disinsection">Find diamonds</string>
     <string name="reap">Collect diamonds</string>
     <string name="speed_up">Accelerate</string>
-    <string name="seed_store">My Metaverse</string>
+    <string name="seed_store">Metaverse Store</string>
     <string name="time_remain">%s remaining</string>
     <string name="pls_produce_tomorrow">Please continue tomorrow</string>
     <string name="seed_try">Novice detector</string>
@@ -77,7 +77,7 @@
     <string name="reward_activity_is">Reward activity:%d</string>
     <string name="cultivation_time_is">Exploration time:%s</string>
     <string name="cultivation_days_is">Exploration days:%d days</string>
-    <string name="has_exchanged_is">Redeemed:%d /%d units</string>
+    <string name="has_exchanged_is">Redeemed:%d /%d</string>
     <string name="exchanged_full">Exchange finished</string>
     <string name="get_for_free">Free collection</string>
     <string name="renewal">Renewal</string>
@@ -335,4 +335,7 @@
     <string name="venus">Venus</string>
     <string name="jupiter">Jupiter</string>
     <string name="neptune">Neptune</string>
+
+    <string name="my_seed">My detectors</string>
+    <string name="select_seed">Select detector</string>
 </resources>

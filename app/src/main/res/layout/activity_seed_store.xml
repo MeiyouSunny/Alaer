@@ -4,19 +4,19 @@
     <LinearLayout xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
+        android:background="@drawable/bg_seed_store"
         android:fitsSystemWindows="true"
         android:orientation="vertical"
         tools:context=".ui.produce.SeedStoreActivity">
 
-        <include layout="@layout/layout_title_bar_black" />
+        <include layout="@layout/layout_title_bar_white" />
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabs"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             app:tabGravity="center"
-            app:tabIndicatorColor="@color/bg_green"
+            app:tabIndicatorColor="@color/white"
             app:tabIndicatorHeight="2dp"
             app:tabTextAppearance="@style/TabText"
             app:tabMode="fixed"
