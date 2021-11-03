@@ -46,7 +46,7 @@
                 android:id="@+id/imgTop"
                 android:layout_width="match_parent"
                 android:layout_height="78dp"
-                android:background="@drawable/img_buy_seed_success_header" />
+                android:background="@drawable/bg_dialog_userin_top" />
 
             <TextView
                 android:id="@+id/title"
@@ -55,7 +55,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="20dp"
                 android:text="@string/user_info"
-                android:textColor="@color/font_41"
+                android:textColor="@color/white"
                 android:textSize="@dimen/font_18" />
 
             <TextView

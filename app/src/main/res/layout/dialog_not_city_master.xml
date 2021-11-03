@@ -19,7 +19,7 @@
             android:id="@+id/imgTop"
             android:layout_width="match_parent"
             android:layout_height="91dp"
-            android:background="@drawable/img_buy_seed_success_header" />
+            android:background="@drawable/bg_dialog_top" />
 
         <TextView
             android:id="@+id/title"
@@ -30,7 +30,7 @@
             android:drawableLeft="@drawable/ic_dialog_error"
             android:drawablePadding="8dp"
             android:text="权限不足"
-            android:textColor="@color/font_41"
+            android:textColor="@color/white"
             android:textSize="@dimen/font_20" />
 
         <TextView
@@ -42,7 +42,7 @@
             android:gravity="center_vertical"
             android:paddingLeft="16dp"
             android:text="@string/apply_to_city_node"
-            android:textColor="@color/font_99"
+            android:textColor="@color/font_41"
             android:textSize="@dimen/font_16" />
 
         <View
@@ -63,7 +63,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="?android:attr/selectableItemBackground"
+                android:background="@drawable/bg_dialog_bottom_left_button"
                 android:onClick="@{handler.click}"
                 android:text="@string/cancel"
                 android:textColor="@color/font_41"
@@ -79,11 +79,11 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="?android:attr/selectableItemBackground"
+                android:background="@drawable/bg_dialog_bottom_right_button"
                 android:clickable="true"
                 android:onClick="@{handler.click}"
                 android:text="@string/go_apply"
-                android:textColor="@color/font_green"
+                android:textColor="@color/white"
                 android:textSize="@dimen/font_18" />
 
         </LinearLayout>

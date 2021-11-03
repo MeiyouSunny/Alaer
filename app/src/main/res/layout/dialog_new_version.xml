@@ -19,12 +19,13 @@
             android:id="@+id/imgTop"
             android:layout_width="match_parent"
             android:layout_height="91dp"
-            android:background="@drawable/img_buy_seed_success_header" />
+            android:background="@drawable/bg_dialog_top" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="24dp"
             android:text="@string/new_version"
             android:textColor="@color/white"
             android:textSize="@dimen/font_20" />
@@ -37,7 +38,7 @@
             android:layout_centerHorizontal="true"
             android:gravity="center_vertical"
             android:paddingLeft="32dp"
-            android:textColor="@color/font_99"
+            android:textColor="@color/font_41"
             android:textSize="@dimen/font_16" />
 
         <View
@@ -58,7 +59,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="?android:attr/selectableItemBackground"
+                android:background="@drawable/bg_dialog_bottom_left_button"
                 android:onClick="@{handler.click}"
                 android:text="@string/cancel"
                 android:textColor="@color/font_41"
@@ -75,11 +76,11 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="?android:attr/selectableItemBackground"
+                android:background="@drawable/bg_dialog_bottom_right_button"
                 android:clickable="true"
                 android:onClick="@{handler.click}"
                 android:text="更新"
-                android:textColor="@color/font_green"
+                android:textColor="@color/white"
                 android:textSize="@dimen/font_18" />
 
         </LinearLayout>

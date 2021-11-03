@@ -19,7 +19,7 @@
             android:id="@+id/imgTop"
             android:layout_width="match_parent"
             android:layout_height="91dp"
-            android:background="@drawable/img_buy_seed_success_header" />
+            android:background="@drawable/bg_dialog_top" />
 
         <TextView
             android:id="@+id/title"
@@ -47,7 +47,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:text="@string/pls_confirm_info_is_correct"
-                android:textColor="@color/font_99"
+                android:textColor="@color/font_41"
                 android:textSize="@dimen/font_16" />
 
             <TextView
@@ -57,7 +57,7 @@
                 android:layout_marginTop="8dp"
                 android:gravity="center_vertical"
                 android:text="@string/name_is"
-                android:textColor="@color/font_green"
+                android:textColor="@color/blue"
                 android:textSize="@dimen/font_16" />
 
             <TextView
@@ -67,7 +67,7 @@
                 android:layout_marginTop="6dp"
                 android:gravity="center_vertical"
                 android:text="@string/card_no_is"
-                android:textColor="@color/font_green"
+                android:textColor="@color/blue"
                 android:textSize="@dimen/font_16" />
 
             <View
@@ -83,7 +83,7 @@
                 android:layout_marginTop="6dp"
                 android:gravity="center_vertical"
                 android:text="@string/alipay_info_confirm"
-                android:textColor="@color/font_7E"
+                android:textColor="@color/font_41"
                 android:textSize="@dimen/font_14" />
 
         </LinearLayout>
@@ -106,7 +106,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="?android:attr/selectableItemBackground"
+                android:background="@drawable/bg_dialog_bottom_left_button"
                 android:onClick="@{handler.click}"
                 android:text="@string/cancel"
                 android:textColor="@color/font_41"
@@ -122,11 +122,11 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="?android:attr/selectableItemBackground"
+                android:background="@drawable/bg_dialog_bottom_right_button"
                 android:clickable="true"
                 android:onClick="@{handler.click}"
                 android:text="@string/sure"
-                android:textColor="@color/font_green"
+                android:textColor="@color/white"
                 android:textSize="@dimen/font_18" />
 
         </LinearLayout>
