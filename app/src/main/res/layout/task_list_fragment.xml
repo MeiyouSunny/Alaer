@@ -6,12 +6,12 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/bg_task"
         android:orientation="vertical">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="80dp"
-            android:background="@drawable/img_task_bg"
             android:paddingLeft="39dp">
 
             <ImageView
@@ -27,7 +27,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="每日任务"
+                android:text="每日任務"
                 android:textColor="@color/white"
                 android:textSize="@dimen/font_20" />
 
@@ -36,7 +36,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_marginBottom="14dp"
-                android:text="每天都可以来做任务哦~"
+                android:text="每天都可以來做任務哦~"
                 android:textColor="@color/white"
                 android:textSize="@dimen/font_12" />
 
@@ -46,7 +46,6 @@
             android:id="@+id/list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/white"
             android:clipChildren="false"
             android:clipToPadding="false"
             android:paddingLeft="20dp"
