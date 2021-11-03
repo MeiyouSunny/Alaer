@@ -12,6 +12,12 @@ import com.alaer.lib.api.bean.TeamInfo;
 import com.alaer.lib.api.bean.UserData;
 import com.alaer.lib.api.bean.UserLevelList;
 import com.alaer.lib.data.UserDataUtil;
+
+import java.util.UUID;
+
+import cn.udesk.UdeskSDKManager;
+import cn.udesk.config.UdeskConfig;
+import likly.dollar.$;
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseTitleActivity;
 import llc.metaversenetwork.app.databinding.ActivityUserMineBinding;
@@ -22,12 +28,6 @@ import llc.metaversenetwork.app.ui.share.ShareActivity;
 import llc.metaversenetwork.app.util.CollectionUtils;
 import llc.metaversenetwork.app.util.NumberUtils;
 import llc.metaversenetwork.app.util.ViewUtil;
-
-import java.util.UUID;
-
-import cn.udesk.UdeskSDKManager;
-import cn.udesk.config.UdeskConfig;
-import likly.dollar.$;
 
 /**
  * 个人中心
@@ -125,11 +125,7 @@ public class UserMineActivity extends BaseTitleActivity<ActivityUserMineBinding>
                     @Override
                     public void onResponse(UserLevelList levels) {
                         if (levels != null && !CollectionUtils.isEmpty(levels.list) && level < levels.list.size()) {
-                            bindRoot.userLevel.setVisibility(View.VISIBLE);
                             bindRoot.levelName.setText(levels.list.get(level).name);
-                            final int[] imgs = new int[]{R.drawable.ic_user_level0, R.drawable.ic_user_level1, R.drawable.ic_user_level2,
-                                    R.drawable.ic_user_level3, R.drawable.ic_user_level4, R.drawable.ic_user_level5, R.drawable.ic_user_level6};
-                            bindRoot.icLevel.setBackgroundResource(imgs[level]);
                         }
                     }
                 });
@@ -200,14 +196,14 @@ public class UserMineActivity extends BaseTitleActivity<ActivityUserMineBinding>
                     ViewUtil.gotoActivity(this, ContributionActivity.class, data);
                 }
                 break;
-            case R.id.userLevel:
-                if (mTeamInfo != null && mBalance != null) {
-                    Bundle data = new Bundle();
-                    data.putInt("level", mBalance.level);
-                    data.putInt("contribution", mTeamInfo.profile.contribution);
-                    ViewUtil.gotoActivity(this, UserLevelActivity.class, data);
-                }
-                break;
+//            case R.id.userLevel:
+//                if (mTeamInfo != null && mBalance != null) {
+//                    Bundle data = new Bundle();
+//                    data.putInt("level", mBalance.level);
+//                    data.putInt("contribution", mTeamInfo.profile.contribution);
+//                    ViewUtil.gotoActivity(this, UserLevelActivity.class, data);
+//                }
+//                break;
             case R.id.customeService:
                 gotoCustomerService();
                 break;

@@ -6,13 +6,13 @@
     <LinearLayout xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/bg_settings"
         android:fitsSystemWindows="false"
         android:orientation="vertical">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="180dp"
-            android:background="@drawable/img_userinfo_top"
+            android:layout_height="160dp"
             android:clipToPadding="false"
             android:fitsSystemWindows="true">
 
@@ -20,15 +20,38 @@
                 android:layout_width="wrap_content"
                 android:layout_height="66dp"
                 android:layout_alignParentBottom="true"
-                android:layout_marginBottom="21dp"
-                android:layout_marginLeft="27dp">
+                android:layout_marginLeft="27dp"
+                android:layout_marginBottom="21dp">
+
+                <TextView
+                    android:id="@+id/levelName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="78dp"
+                    android:layout_marginTop="38dp"
+                    android:onClick="@{handler.click}"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_13"
+                    tools:text="贡献值: 10" />
+
+                <TextView
+                    android:id="@+id/labelLine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginTop="38dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_toRightOf="@+id/levelName"
+                    android:text="|"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_13" />
 
                 <TextView
                     android:id="@+id/contribution"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="78dp"
                     android:layout_marginTop="38dp"
+                    android:layout_toRightOf="@+id/labelLine"
                     android:onClick="@{handler.click}"
                     android:textColor="@color/white"
                     android:textSize="@dimen/font_13"
@@ -60,8 +83,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="66dp"
                 android:layout_alignParentBottom="true"
-                android:layout_marginBottom="21dp"
                 android:layout_marginLeft="27dp"
+                android:layout_marginBottom="21dp"
                 android:clickable="true"
                 android:onClick="@{handler.click}"
                 android:visibility="gone">
@@ -101,13 +124,12 @@
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/bg_gray"
             android:clipChildren="false"
             android:clipToPadding="false"
-            android:paddingBottom="16dp"
             android:paddingLeft="16dp"
-            android:paddingRight="16dp"
             android:paddingTop="10dp"
+            android:paddingRight="16dp"
+            android:paddingBottom="16dp"
             android:scrollbars="none">
 
             <LinearLayout
@@ -115,13 +137,59 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
+                <!-- 兑换积分 -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/exchangeScore"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:onClick="@{handler.click}"
+                    app:cardBackgroundColor="@color/card_bg_trans"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="0dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingLeft="29dp"
+                        android:paddingRight="22dp">
+
+                        <ImageView
+                            android:id="@+id/icExchange"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/ic_exchange_score" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/ic_item_next_little_white" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="12dp"
+                            android:layout_toRightOf="@+id/icExchange"
+                            android:text="@string/exchange_build_score"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/font_14" />
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
                 <!-- 用户等级 -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:paddingBottom="10dp"
-                    android:paddingTop="10dp">
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -136,21 +204,22 @@
                             android:layout_weight="1"
                             android:clickable="true"
                             android:onClick="@{handler.click}"
+                            app:cardBackgroundColor="@color/card_bg_trans"
                             app:cardCornerRadius="8dp"
                             app:cardElevation="0dp">
 
                             <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:paddingBottom="8dp"
                                 android:paddingLeft="18dp"
-                                android:paddingRight="18dp">
+                                android:paddingRight="18dp"
+                                android:paddingBottom="8dp">
 
                                 <ImageView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_alignParentBottom="true"
                                     android:layout_alignParentRight="true"
+                                    android:layout_alignParentBottom="true"
                                     android:src="@drawable/ic_fruit" />
 
                                 <TextView
@@ -159,7 +228,7 @@
                                     android:layout_below="@+id/scoreFruit"
                                     android:layout_marginTop="6dp"
                                     android:text="@string/fruit"
-                                    android:textColor="@color/font_41"
+                                    android:textColor="@color/white"
                                     android:textSize="@dimen/font_12" />
 
                                 <TextView
@@ -168,7 +237,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="16dp"
                                     android:text="0.00"
-                                    android:textColor="@color/font_41"
+                                    android:textColor="@color/white"
                                     android:textSize="@dimen/font_18"
                                     tools:text="5620" />
 
@@ -184,21 +253,22 @@
                             android:layout_marginLeft="10dp"
                             android:layout_weight="1"
                             android:onClick="@{handler.click}"
+                            app:cardBackgroundColor="@color/card_bg_trans"
                             app:cardCornerRadius="8dp"
                             app:cardElevation="0dp">
 
                             <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:paddingBottom="8dp"
                                 android:paddingLeft="18dp"
-                                android:paddingRight="18dp">
+                                android:paddingRight="18dp"
+                                android:paddingBottom="8dp">
 
                                 <ImageView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_alignParentBottom="true"
                                     android:layout_alignParentRight="true"
+                                    android:layout_alignParentBottom="true"
                                     android:src="@drawable/ic_intefral" />
 
                                 <TextView
@@ -207,7 +277,7 @@
                                     android:layout_below="@+id/scoreBuild"
                                     android:layout_marginTop="6dp"
                                     android:text="@string/build_integral"
-                                    android:textColor="@color/font_41"
+                                    android:textColor="@color/white"
                                     android:textSize="@dimen/font_12" />
 
                                 <TextView
@@ -216,9 +286,114 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="16dp"
                                     android:text="0.00"
-                                    android:textColor="@color/font_41"
+                                    android:textColor="@color/white"
                                     android:textSize="@dimen/font_18"
                                     tools:text="1500" />
+
+                            </RelativeLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/activityHonorValue"
+                            style="@style/CardViewClick"
+                            android:layout_width="0dp"
+                            android:layout_height="76dp"
+                            android:layout_weight="1"
+                            android:onClick="@{handler.click}"
+                            app:cardBackgroundColor="@color/card_bg_trans"
+                            app:cardCornerRadius="8dp"
+                            app:cardElevation="0dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:paddingLeft="18dp"
+                                android:paddingRight="18dp"
+                                android:paddingBottom="8dp">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_alignParentBottom="true"
+                                    android:src="@drawable/ic_honor_value" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/honor_value"
+                                    android:layout_marginTop="6dp"
+                                    android:text="@string/honor_value"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/font_12" />
+
+                                <TextView
+                                    android:id="@+id/honor_value"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="16dp"
+                                    android:text="0.00"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/font_18"
+                                    tools:text="3308" />
+
+                            </RelativeLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/activityContribution"
+                            style="@style/CardViewClick"
+                            android:layout_width="0dp"
+                            android:layout_height="76dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1"
+                            android:onClick="@{handler.click}"
+                            app:cardBackgroundColor="@color/card_bg_trans"
+                            app:cardCornerRadius="8dp"
+                            app:cardElevation="0dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:paddingLeft="18dp"
+                                android:paddingRight="18dp"
+                                android:paddingBottom="8dp">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_alignParentBottom="true"
+                                    android:src="@drawable/ic_contribution_value" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/contributionValue"
+                                    android:layout_marginTop="6dp"
+                                    android:text="@string/contribution"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/font_11" />
+
+                                <TextView
+                                    android:id="@+id/contributionValue"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="16dp"
+                                    android:text="0.00"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/font_18"
+                                    tools:text="1039" />
 
                             </RelativeLayout>
 
@@ -239,21 +414,22 @@
                             android:layout_height="76dp"
                             android:layout_weight="1"
                             android:onClick="@{handler.click}"
+                            app:cardBackgroundColor="@color/card_bg_trans"
                             app:cardCornerRadius="8dp"
                             app:cardElevation="0dp">
 
                             <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:paddingBottom="8dp"
                                 android:paddingLeft="18dp"
-                                android:paddingRight="18dp">
+                                android:paddingRight="18dp"
+                                android:paddingBottom="8dp">
 
                                 <ImageView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_alignParentBottom="true"
                                     android:layout_alignParentRight="true"
+                                    android:layout_alignParentBottom="true"
                                     android:src="@drawable/ic_sapling_activity" />
 
                                 <TextView
@@ -262,7 +438,7 @@
                                     android:layout_below="@+id/saplingActivity"
                                     android:layout_marginTop="6dp"
                                     android:text="@string/sapling_activity"
-                                    android:textColor="@color/font_41"
+                                    android:textColor="@color/white"
                                     android:textSize="@dimen/font_12" />
 
                                 <TextView
@@ -271,7 +447,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="16dp"
                                     android:text="0.00"
-                                    android:textColor="@color/font_41"
+                                    android:textColor="@color/white"
                                     android:textSize="@dimen/font_18"
                                     tools:text="3308" />
 
@@ -287,21 +463,22 @@
                             android:layout_marginLeft="10dp"
                             android:layout_weight="1"
                             android:onClick="@{handler.click}"
+                            app:cardBackgroundColor="@color/card_bg_trans"
                             app:cardCornerRadius="8dp"
                             app:cardElevation="0dp">
 
                             <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:paddingBottom="8dp"
                                 android:paddingLeft="18dp"
-                                android:paddingRight="18dp">
+                                android:paddingRight="18dp"
+                                android:paddingBottom="8dp">
 
                                 <ImageView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_alignParentBottom="true"
                                     android:layout_alignParentRight="true"
+                                    android:layout_alignParentBottom="true"
                                     android:src="@drawable/ic_share_activity" />
 
                                 <TextView
@@ -310,7 +487,7 @@
                                     android:layout_below="@+id/shareActivity"
                                     android:layout_marginTop="6dp"
                                     android:text="@string/share_activity"
-                                    android:textColor="@color/font_41"
+                                    android:textColor="@color/white"
                                     android:textSize="@dimen/font_11" />
 
                                 <TextView
@@ -319,7 +496,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="16dp"
                                     android:text="0.00"
-                                    android:textColor="@color/font_41"
+                                    android:textColor="@color/white"
                                     android:textSize="@dimen/font_18"
                                     tools:text="1039" />
 
@@ -330,52 +507,6 @@
                     </LinearLayout>
 
                 </LinearLayout>
-
-                <!-- 兑换积分 -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/exchangeScore"
-                    android:layout_width="match_parent"
-                    android:layout_height="56dp"
-                    android:layout_marginTop="10dp"
-                    android:clickable="true"
-                    android:foreground="?android:attr/selectableItemBackground"
-                    android:onClick="@{handler.click}"
-                    app:cardCornerRadius="8dp"
-                    app:cardElevation="0dp">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:paddingLeft="29dp"
-                        android:paddingRight="32dp">
-
-                        <ImageView
-                            android:id="@+id/icExchange"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
-                            android:src="@drawable/ic_exchange_score" />
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
-                            android:layout_centerVertical="true"
-                            android:src="@drawable/ic_item_next_little" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
-                            android:layout_marginLeft="12dp"
-                            android:layout_toRightOf="@+id/icExchange"
-                            android:text="@string/exchange_build_score"
-                            android:textColor="@color/font_36"
-                            android:textSize="@dimen/font_14" />
-
-                    </RelativeLayout>
-
-                </androidx.cardview.widget.CardView>
 
                 <!--  -->
                 <androidx.cardview.widget.CardView
@@ -390,8 +521,8 @@
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:paddingLeft="32dp"
-                        android:paddingRight="32dp">
+                        android:paddingLeft="22dp"
+                        android:paddingRight="22dp">
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -431,70 +562,24 @@
 
                 <!--  -->
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/userLevel"
-                    android:layout_width="match_parent"
-                    android:layout_height="56dp"
-                    android:layout_marginTop="10dp"
-                    android:clickable="true"
-                    android:foreground="?android:attr/selectableItemBackground"
-                    android:onClick="@{handler.click}"
-                    android:visibility="gone"
-                    app:cardCornerRadius="8dp"
-                    app:cardElevation="0dp">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:paddingLeft="29dp"
-                        android:paddingRight="32dp">
-
-                        <ImageView
-                            android:id="@+id/icLevel"
-                            android:layout_width="33dp"
-                            android:layout_height="32dp"
-                            android:layout_centerVertical="true" />
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
-                            android:layout_centerVertical="true"
-                            android:src="@drawable/ic_item_next_little" />
-
-                        <TextView
-                            android:id="@+id/levelName"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
-                            android:layout_marginLeft="12dp"
-                            android:layout_toRightOf="@+id/icLevel"
-                            android:textColor="@color/font_36"
-                            android:textSize="@dimen/font_14"
-                            tools:text="二级数字市民" />
-
-                    </RelativeLayout>
-
-                </androidx.cardview.widget.CardView>
-
-                <!--  -->
-                <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="135dp"
+                    app:cardBackgroundColor="@color/card_bg_trans"
                     app:cardCornerRadius="8dp"
                     app:cardElevation="0dp">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:paddingBottom="18dp"
                         android:paddingLeft="27dp"
-                        android:paddingTop="18dp">
+                        android:paddingTop="18dp"
+                        android:paddingBottom="18dp">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/my_share"
-                            android:textColor="@color/font_36"
+                            android:textColor="@color/white"
                             android:textSize="@dimen/font_16"
                             android:textStyle="bold" />
 
@@ -503,12 +588,12 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentBottom="true"
-                            android:drawablePadding="6dp"
                             android:drawableTop="@drawable/ic_my_partner"
+                            android:drawablePadding="6dp"
                             android:gravity="center"
                             android:onClick="@{handler.click}"
                             android:text="@string/my_partner"
-                            android:textColor="@color/font_36"
+                            android:textColor="@color/white"
                             android:textSize="@dimen/font_15" />
 
                         <TextView
@@ -516,14 +601,14 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentBottom="true"
-                            android:layout_marginLeft="32dp"
+                            android:layout_marginLeft="22dp"
                             android:layout_toRightOf="@+id/myPartner"
-                            android:drawablePadding="6dp"
                             android:drawableTop="@drawable/ic_invitation_code"
+                            android:drawablePadding="6dp"
                             android:gravity="center"
                             android:onClick="@{handler.click}"
                             android:text="@string/invitation_code"
-                            android:textColor="@color/font_36"
+                            android:textColor="@color/white"
                             android:textSize="@dimen/font_15" />
 
                         <TextView
@@ -531,151 +616,100 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentBottom="true"
-                            android:layout_marginLeft="32dp"
+                            android:layout_marginLeft="22dp"
                             android:layout_toRightOf="@+id/invitationCode"
-                            android:drawablePadding="6dp"
                             android:drawableTop="@drawable/ic_wechat"
+                            android:drawablePadding="6dp"
                             android:gravity="center"
                             android:onClick="@{handler.click}"
                             android:text="@string/wechat"
-                            android:textColor="@color/font_36"
+                            android:textColor="@color/white"
                             android:textSize="@dimen/font_15" />
 
                     </RelativeLayout>
 
                 </androidx.cardview.widget.CardView>
 
-                <!--  -->
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/securityCenter"
                     android:layout_width="match_parent"
-                    android:layout_height="56dp"
+                    android:layout_height="135dp"
                     android:layout_marginTop="10dp"
-                    android:clickable="true"
-                    android:foreground="?android:attr/selectableItemBackground"
-                    android:onClick="@{handler.click}"
+                    app:cardBackgroundColor="@color/card_bg_trans"
                     app:cardCornerRadius="8dp"
                     app:cardElevation="0dp">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:paddingLeft="29dp"
-                        android:paddingRight="32dp">
-
-                        <ImageView
-                            android:id="@+id/icSecurity"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
-                            android:src="@drawable/ic_security_center" />
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
-                            android:layout_centerVertical="true"
-                            android:src="@drawable/ic_item_next_little" />
+                        android:paddingLeft="27dp"
+                        android:paddingTop="18dp"
+                        android:paddingBottom="18dp">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
-                            android:layout_marginLeft="12dp"
-                            android:layout_toRightOf="@+id/icSecurity"
+                            android:text="@string/system"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/font_16"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/myWallet"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:drawableTop="@drawable/ic_my_wallet"
+                            android:drawablePadding="6dp"
+                            android:gravity="center"
+                            android:onClick="@{handler.click}"
+                            android:text="@string/my_wallet"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/font_15" />
+
+                        <TextView
+                            android:id="@+id/securityCenter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginLeft="22dp"
+                            android:layout_toRightOf="@+id/myWallet"
+                            android:drawableTop="@drawable/ic_security_setting"
+                            android:drawablePadding="6dp"
+                            android:gravity="center"
+                            android:onClick="@{handler.click}"
                             android:text="@string/security_center"
-                            android:textColor="@color/font_36"
-                            android:textSize="@dimen/font_14" />
-
-                    </RelativeLayout>
-
-                </androidx.cardview.widget.CardView>
-                <!--  -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/customeService"
-                    android:layout_width="match_parent"
-                    android:layout_height="56dp"
-                    android:layout_marginTop="10dp"
-                    android:clickable="true"
-                    android:foreground="?android:attr/selectableItemBackground"
-                    android:onClick="@{handler.click}"
-                    app:cardCornerRadius="8dp"
-                    app:cardElevation="0dp">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:paddingLeft="29dp"
-                        android:paddingRight="32dp">
-
-                        <ImageView
-                            android:id="@+id/icCustomerService"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
-                            android:src="@drawable/ic_customer_service" />
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
-                            android:layout_centerVertical="true"
-                            android:src="@drawable/ic_item_next_little" />
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/font_15" />
 
                         <TextView
+                            android:id="@+id/customeService"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
-                            android:layout_marginLeft="12dp"
-                            android:layout_toRightOf="@+id/icCustomerService"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginLeft="22dp"
+                            android:layout_toRightOf="@+id/securityCenter"
+                            android:drawableTop="@drawable/ic_customer_service"
+                            android:drawablePadding="6dp"
+                            android:gravity="center"
+                            android:onClick="@{handler.click}"
                             android:text="@string/customer_service"
-                            android:textColor="@color/font_36"
-                            android:textSize="@dimen/font_14" />
-
-                    </RelativeLayout>
-
-                </androidx.cardview.widget.CardView>
-                <!--  -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/about"
-                    android:layout_width="match_parent"
-                    android:layout_height="56dp"
-                    android:layout_marginTop="10dp"
-                    android:clickable="true"
-                    android:foreground="?android:attr/selectableItemBackground"
-                    android:onClick="@{handler.click}"
-                    app:cardCornerRadius="8dp"
-                    app:cardElevation="0dp">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:paddingLeft="29dp"
-                        android:paddingRight="32dp">
-
-                        <ImageView
-                            android:id="@+id/icAbout"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
-                            android:src="@drawable/ic_about" />
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
-                            android:layout_centerVertical="true"
-                            android:src="@drawable/ic_item_next_little" />
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/font_15" />
 
                         <TextView
+                            android:id="@+id/about"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
-                            android:layout_marginLeft="12dp"
-                            android:layout_toRightOf="@+id/icAbout"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginLeft="22dp"
+                            android:layout_toRightOf="@+id/customeService"
+                            android:drawableTop="@drawable/ic_about"
+                            android:drawablePadding="6dp"
+                            android:gravity="center"
+                            android:onClick="@{handler.click}"
                             android:text="@string/about"
-                            android:textColor="@color/font_36"
-                            android:textSize="@dimen/font_14" />
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/font_15" />
 
                     </RelativeLayout>
 

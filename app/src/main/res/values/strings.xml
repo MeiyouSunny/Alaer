@@ -136,8 +136,8 @@
     <string name="mine">我的</string>
     <string name="contribution_value">貢獻值：%s</string>
     <string name="total_assets">總資產：（元）</string>
-    <string name="fruit">元宇礦石</string>
-    <string name="build_integral">元宇積分</string>
+    <string name="fruit">元宇礦WMNC</string>
+    <string name="build_integral">元宇積分MNC</string>
     <string name="build_integral_detail">元宇積分明細</string>
     <string name="sapling_activity">探測器活躍度</string>
     <string name="share_activity">分享活躍度</string>
@@ -338,5 +338,9 @@
 
     <string name="my_seed">我的探測器</string>
     <string name="select_seed">探測器選購</string>
+
+    <string name="system">系統</string>
+    <string name="my_wallet">我的錢包</string>
+    <string name="honor_value">榮譽值</string>
 
 </resources>

@@ -338,4 +338,9 @@
 
     <string name="my_seed">My detectors</string>
     <string name="select_seed">Select detector</string>
+
+    <string name="system">System</string>
+    <string name="my_wallet">My wallet</string>
+    <string name="honor_value">Honor value</string>
+
 </resources>
