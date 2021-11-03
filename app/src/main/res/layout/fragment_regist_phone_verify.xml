@@ -32,7 +32,7 @@
                 android:layout_marginLeft="47dp"
                 android:layout_marginTop="132dp"
                 android:text="@string/phone_no"
-                android:textColor="@color/font_41"
+                android:textColor="@color/white"
                 android:textSize="@dimen/font_17" />
 
             <LinearLayout
@@ -53,7 +53,7 @@
                     android:drawablePadding="4dp"
                     android:onClick="@{handler.click}"
                     android:text="+86"
-                    android:textColor="@color/font_41"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/font_16" />
 
                 <View
@@ -85,7 +85,7 @@
                 android:layout_marginLeft="47dp"
                 android:layout_marginTop="217dp"
                 android:text="@string/vierify_code"
-                android:textColor="@color/font_41"
+                android:textColor="@color/white"
                 android:textSize="@dimen/font_17" />
 
             <RelativeLayout
@@ -141,7 +141,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/has_account"
-                    android:textColor="@color/font_7E"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/font_12" />
 
                 <TextView
@@ -164,7 +164,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/use_mean_agree"
-                    android:textColor="@color/font_7E"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/font_12" />
 
                 <TextView

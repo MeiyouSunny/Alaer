@@ -32,7 +32,7 @@
                 android:layout_marginLeft="47dp"
                 android:layout_marginTop="132dp"
                 android:text="@string/input_pwd"
-                android:textColor="@color/font_41"
+                android:textColor="@color/white"
                 android:textSize="@dimen/font_17" />
 
             <EditText
@@ -57,7 +57,7 @@
                 android:layout_marginLeft="47dp"
                 android:layout_marginTop="205dp"
                 android:text="@string/confirm_pwd"
-                android:textColor="@color/font_41"
+                android:textColor="@color/white"
                 android:textSize="@dimen/font_17" />
 
             <EditText
@@ -82,7 +82,7 @@
                 android:layout_marginLeft="47dp"
                 android:layout_marginTop="289dp"
                 android:text="@string/invitation_code"
-                android:textColor="@color/font_41"
+                android:textColor="@color/white"
                 android:textSize="@dimen/font_17" />
 
             <EditText
@@ -120,7 +120,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/has_account"
-                    android:textColor="@color/font_7E"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/font_12" />
 
                 <TextView
@@ -143,7 +143,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/use_mean_agree"
-                    android:textColor="@color/font_7E"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/font_12" />
 
                 <TextView
