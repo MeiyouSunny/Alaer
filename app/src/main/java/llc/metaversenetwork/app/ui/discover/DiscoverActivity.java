@@ -22,7 +22,6 @@ import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseTitleActivity;
 import llc.metaversenetwork.app.databinding.ActivityDiscoverBinding;
 import llc.metaversenetwork.app.ui.auth.AuthSuccessActivity;
-import llc.metaversenetwork.app.ui.city.MyCityActivity;
 import llc.metaversenetwork.app.ui.government.RealNameAuthActivity;
 import llc.metaversenetwork.app.ui.share.ShareActivity;
 import llc.metaversenetwork.app.ui.user.MyTeamActivity;
@@ -130,11 +129,11 @@ public class DiscoverActivity extends BaseTitleActivity<ActivityDiscoverBinding>
                     ViewUtil.gotoActivity(this, RealNameAuthActivity.class);
                 break;
             case R.id.myCity:
-//                $.toast().text(R.string.will_open_soon).show();
-                if (UserDataUtil.instance().isAuthed())
-                    ViewUtil.gotoActivity(this, MyCityActivity.class);
-                else
-                    ViewUtil.gotoActivity(this, RealNameAuthActivity.class);
+                $.toast().text(R.string.will_open_soon).show();
+//                if (UserDataUtil.instance().isAuthed())
+//                    ViewUtil.gotoActivity(this, MyCityActivity.class);
+//                else
+//                    ViewUtil.gotoActivity(this, RealNameAuthActivity.class);
                 break;
         }
     }
