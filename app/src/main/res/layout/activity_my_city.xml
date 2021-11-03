@@ -11,7 +11,7 @@
     <LinearLayout xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
+        android:background="@drawable/bg_city_note"
         android:fitsSystemWindows="true"
         android:orientation="vertical"
         tools:context=".ui.city.MyCityActivity">
@@ -29,7 +29,7 @@
                 android:clickable="true"
                 android:onClick="@{handler.click}"
                 android:scaleType="centerInside"
-                android:src="@drawable/ic_back_black" />
+                android:src="@drawable/ic_back" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -60,7 +60,7 @@
                         android:layout_marginLeft="8dp"
                         android:layout_toRightOf="@+id/iconCityHall"
                         android:text="城市大厅"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         android:textSize="@dimen/font_16" />
 
                 </RelativeLayout>
@@ -87,7 +87,7 @@
                         android:layout_marginLeft="8dp"
                         android:layout_toRightOf="@+id/iconMyCity"
                         android:text="@string/my_city"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         android:textSize="@dimen/font_16" />
 
                 </RelativeLayout>
@@ -96,8 +96,6 @@
             </LinearLayout>
 
         </RelativeLayout>
-
-        <View style="@style/LineGrayE8" />
 
         <FrameLayout
             android:id="@+id/content"

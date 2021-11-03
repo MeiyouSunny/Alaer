@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
@@ -14,15 +15,15 @@
             type="llc.metaversenetwork.app.base.BindClickListener" />
     </data>
 
-    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
+        android:background="@drawable/bg_city_note"
         android:fitsSystemWindows="true"
         android:orientation="vertical"
         tools:context=".ui.user.UserInfoActivity">
 
-        <include layout="@layout/layout_title_bar_black" />
+        <include layout="@layout/layout_title_bar_white" />
 
         <ScrollView
             android:layout_width="match_parent"
@@ -46,7 +47,7 @@
                         android:layout_height="wrap_content"
                         tools:text="278.3"
                         android:text="@{String.valueOf(statistic.number)}"
-                        android:textColor="@color/font_green"
+                        android:textColor="@color/white"
                         android:textSize="34sp" />
 
                     <TextView
@@ -56,7 +57,7 @@
                         android:layout_marginLeft="6dp"
                         android:layout_toRightOf="@+id/peopleNum"
                         android:text="@string/ten_thousand_people"
-                        android:textColor="@color/font_green"
+                        android:textColor="@color/white"
                         android:textSize="14sp" />
 
 
@@ -70,7 +71,7 @@
                     android:layout_marginTop="14dp"
                     android:layout_toRightOf="@+id/peopleNum"
                     android:text="@string/city_total_people_verifed"
-                    android:textColor="@color/font_41"
+                    android:textColor="@color/white"
                     android:textSize="14sp" />
 
                 <androidx.cardview.widget.CardView
@@ -78,7 +79,7 @@
                     android:layout_height="26dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="18dp"
-                    app:cardBackgroundColor="#D0F0DE"
+                    app:cardBackgroundColor="@color/card_bg_trans"
                     app:cardCornerRadius="16dp"
                     app:cardElevation="0dp">
 
@@ -91,10 +92,10 @@
                         android:gravity="center_vertical"
                         android:paddingLeft="30dp"
                         android:paddingRight="30dp"
-                        tools:text="更新时间：2021-01-03 21:30:09"
                         android:text="@{@string/update_date_is(String.valueOf(statistic.countDate))}"
-                        android:textColor="@color/font_green"
-                        android:textSize="13sp" />
+                        android:textColor="@color/white"
+                        android:textSize="13sp"
+                        tools:text="更新时间：2021-01-03 21:30:09" />
 
                 </androidx.cardview.widget.CardView>
 
@@ -110,7 +111,7 @@
                         android:layout_width="0dp"
                         android:layout_height="80dp"
                         android:layout_weight="1"
-                        app:cardBackgroundColor="@color/bg_green"
+                        app:cardBackgroundColor="@color/card_bg_trans"
                         app:cardCornerRadius="8dp"
                         app:cardElevation="0dp">
 
@@ -165,7 +166,7 @@
                         android:layout_height="80dp"
                         android:layout_marginLeft="12dp"
                         android:layout_weight="1"
-                        app:cardBackgroundColor="@color/bg_green"
+                        app:cardBackgroundColor="@color/card_bg_trans"
                         app:cardCornerRadius="8dp"
                         app:cardElevation="0dp">
 
@@ -230,7 +231,7 @@
                     android:layout_marginTop="28dp"
                     android:layout_marginRight="18dp"
                     android:text="@string/added_7days"
-                    android:textColor="@color/font_B3"
+                    android:textColor="@color/white"
                     android:textSize="13sp" />
 
                 <com.github.mikephil.charting.charts.BarChart

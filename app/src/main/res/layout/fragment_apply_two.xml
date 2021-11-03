@@ -45,7 +45,7 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="76dp"
                 android:text="计划整体运作投入资金？"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="@dimen/font_15" />
 
             <androidx.cardview.widget.CardView
@@ -54,7 +54,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/label1"
                 android:layout_marginTop="15dp"
-                app:cardBackgroundColor="@color/bg_gray"
+                app:cardBackgroundColor="@color/card_bg_trans"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="0dp">
 
@@ -73,11 +73,13 @@
                         android:layout_height="wrap_content"
                         android:layout_marginRight="58dp"
                         android:checked="true"
+                        android:textColor="@color/white"
                         android:paddingRight="58dp"
                         android:text="5万" />
 
                     <RadioButton
                         android:id="@+id/rg12"
+                        android:textColor="@color/white"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingRight="58dp"
@@ -85,6 +87,7 @@
 
                     <RadioButton
                         android:id="@+id/rg13"
+                        android:textColor="@color/white"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingRight="58dp"
@@ -92,6 +95,7 @@
 
                     <RadioButton
                         android:id="@+id/rg14"
+                        android:textColor="@color/white"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingRight="58dp"
@@ -99,6 +103,7 @@
 
                     <RadioButton
                         android:id="@+id/rg15"
+                        android:textColor="@color/white"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingRight="58dp"
@@ -106,6 +111,7 @@
 
                     <RadioButton
                         android:id="@+id/rg16"
+                        android:textColor="@color/white"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingRight="58dp"
@@ -113,6 +119,7 @@
 
                     <RadioButton
                         android:id="@+id/rg17"
+                        android:textColor="@color/white"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingRight="58dp"
@@ -140,7 +147,7 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="20dp"
                 android:text="您若取得该区域合作资格，是以个人还是公司签署合作"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="@dimen/font_15" />
 
             <androidx.cardview.widget.CardView
@@ -149,7 +156,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/label2"
                 android:layout_marginTop="15dp"
-                app:cardBackgroundColor="@color/bg_gray"
+                app:cardBackgroundColor="@color/card_bg_trans"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="0dp">
 
@@ -168,11 +175,13 @@
                         android:layout_height="wrap_content"
                         android:layout_marginRight="58dp"
                         android:checked="true"
+                        android:textColor="@color/white"
                         android:paddingRight="58dp"
                         android:text="个人" />
 
                     <RadioButton
                         android:id="@+id/rg22"
+                        android:textColor="@color/white"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingRight="58dp"
@@ -190,7 +199,7 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="20dp"
                 android:text="您计划是个人经营还是合伙经营"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="@dimen/font_15" />
 
             <androidx.cardview.widget.CardView
@@ -199,7 +208,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/label3"
                 android:layout_marginTop="15dp"
-                app:cardBackgroundColor="@color/bg_gray"
+                app:cardBackgroundColor="@color/card_bg_trans"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="0dp">
 
@@ -218,6 +227,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginRight="58dp"
                         android:checked="true"
+                        android:textColor="@color/white"
                         android:paddingRight="58dp"
                         android:text="个人" />
 
@@ -226,6 +236,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingRight="58dp"
+                        android:textColor="@color/white"
                         android:text="合作" />
 
                 </llc.metaversenetwork.app.view.FlowRadioGroup>
@@ -239,8 +250,8 @@
                 android:layout_below="@+id/select3"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="20dp"
+                android:textColor="@color/white"
                 android:text="是否从事过实业相关工作，请简单描述"
-                android:textColor="@color/black"
                 android:textSize="@dimen/font_15" />
 
             <androidx.cardview.widget.CardView
@@ -249,7 +260,7 @@
                 android:layout_height="88dp"
                 android:layout_below="@+id/label4"
                 android:layout_marginTop="15dp"
-                app:cardBackgroundColor="@color/bg_gray"
+                app:cardBackgroundColor="@color/card_bg_trans"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="0dp">
 
@@ -264,7 +275,7 @@
                     android:paddingTop="8dp"
                     android:paddingRight="16dp"
                     android:paddingBottom="8dp"
-                    android:textColorHint="@color/font_B3"
+                    android:textColorHint="@color/white"
                     android:textSize="@dimen/font_17" />
 
             </androidx.cardview.widget.CardView>
@@ -277,7 +288,7 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="20dp"
                 android:text="您在当地的资源、人脉以及曾经组织过的活动，请简单描述"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="@dimen/font_15" />
 
             <androidx.cardview.widget.CardView
@@ -314,7 +325,7 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="20dp"
                 android:text="是否报名参加星级达人表彰城市节点大会"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="@dimen/font_15" />
 
             <androidx.cardview.widget.CardView

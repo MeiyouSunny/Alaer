@@ -57,7 +57,7 @@
                     android:layout_height="40dp"
                     android:layout_marginLeft="12dp"
                     android:layout_weight="1"
-                    app:cardBackgroundColor="@color/bg_gray"
+                    app:cardBackgroundColor="@color/card_bg_trans"
                     app:cardCornerRadius="8dp"
                     app:cardElevation="0dp">
 
@@ -99,7 +99,7 @@
                 android:layout_height="80dp"
                 android:layout_marginTop="18dp"
                 android:visibility="@{cityMaster.isMaster==1 ? View.VISIBLE : View.GONE}"
-                app:cardBackgroundColor="@color/bg_green"
+                app:cardBackgroundColor="@color/card_bg_trans"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="0dp">
 
@@ -164,7 +164,7 @@
                 android:layout_height="80dp"
                 android:layout_marginTop="18dp"
                 android:visibility="@{cityMaster.isMaster==0 ? View.VISIBLE : View.GONE}"
-                app:cardBackgroundColor="@color/bg_green"
+                app:cardBackgroundColor="@color/card_bg_trans"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="0dp">
 
@@ -194,7 +194,7 @@
                         android:background="@drawable/bg_white_round_corner"
                         android:onClick="@{handler.click}"
                         android:text="@string/apply"
-                        android:textColor="#52C883"
+                        android:textColor="#357EEE"
                         android:textSize="15sp"
                         android:visibility="@{isApplyed ? View.GONE : View.VISIBLE}" />
 
@@ -224,7 +224,7 @@
                     android:layout_width="0dp"
                     android:layout_height="80dp"
                     android:layout_weight="1"
-                    app:cardBackgroundColor="@color/bg_green"
+                    app:cardBackgroundColor="@color/card_bg_trans"
                     app:cardCornerRadius="8dp"
                     app:cardElevation="0dp">
 
@@ -262,7 +262,7 @@
                     android:layout_height="80dp"
                     android:layout_marginLeft="12dp"
                     android:layout_weight="1"
-                    app:cardBackgroundColor="@color/bg_green"
+                    app:cardBackgroundColor="@color/card_bg_trans"
                     app:cardCornerRadius="8dp"
                     app:cardElevation="0dp">
 
@@ -307,7 +307,7 @@
                     android:layout_width="0dp"
                     android:layout_height="80dp"
                     android:layout_weight="1"
-                    app:cardBackgroundColor="@color/bg_green"
+                    app:cardBackgroundColor="@color/card_bg_trans"
                     app:cardCornerRadius="8dp"
                     app:cardElevation="0dp">
 
@@ -345,7 +345,7 @@
                     android:layout_height="80dp"
                     android:layout_marginLeft="12dp"
                     android:layout_weight="1"
-                    app:cardBackgroundColor="@color/bg_green"
+                    app:cardBackgroundColor="@color/card_bg_trans"
                     app:cardCornerRadius="8dp"
                     app:cardElevation="0dp">
 
@@ -399,7 +399,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="11dp"
                     android:text="@string/build_fruit_award"
-                    android:textColor="@color/font_41"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/font_17" />
 
             </LinearLayout>
@@ -408,7 +408,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="82dp"
                 android:layout_marginTop="12dp"
-                app:cardBackgroundColor="#F7F6F9"
+                app:cardBackgroundColor="@color/card_bg_trans"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="0dp">
 
@@ -429,7 +429,7 @@
                             android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
                             android:text="@{dataUtil.parseNumber(cityMaster.cityBonus)}"
-                            android:textColor="@color/font_green"
+                            android:textColor="@color/white"
                             android:textSize="@dimen/font_20"
                             android:textStyle="bold" />
 
@@ -439,7 +439,7 @@
                             android:layout_alignParentBottom="true"
                             android:layout_centerHorizontal="true"
                             android:text="@string/total_awards"
-                            android:textColor="@color/font_41"
+                            android:textColor="@color/white"
                             android:textSize="15sp" />
 
                     </RelativeLayout>
@@ -456,7 +456,7 @@
                             android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
                             android:text="@{dataUtil.parseNumber(cityMaster.cityBonusToday)}"
-                            android:textColor="@color/font_41"
+                            android:textColor="@color/white"
                             android:textSize="@dimen/font_20"
                             android:textStyle="bold" />
 
@@ -466,7 +466,7 @@
                             android:layout_alignParentBottom="true"
                             android:layout_centerHorizontal="true"
                             android:text="@string/yesterday_award"
-                            android:textColor="@color/font_41"
+                            android:textColor="@color/white"
                             android:textSize="15sp" />
 
                     </RelativeLayout>
@@ -494,7 +494,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="11dp"
                     android:text="@string/bounty_rewards"
-                    android:textColor="@color/font_41"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/font_17" />
 
             </LinearLayout>
@@ -503,7 +503,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="82dp"
                 android:layout_marginTop="12dp"
-                app:cardBackgroundColor="#F7F6F9"
+                app:cardBackgroundColor="@color/card_bg_trans"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="0dp">
 
@@ -524,7 +524,7 @@
                             android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
                             android:text="@{dataUtil.parseNumber(cityMaster.rewardBonus)}"
-                            android:textColor="@color/font_green"
+                            android:textColor="@color/white"
                             android:textSize="@dimen/font_20"
                             android:textStyle="bold" />
 
@@ -534,7 +534,7 @@
                             android:layout_alignParentBottom="true"
                             android:layout_centerHorizontal="true"
                             android:text="@string/total_awards"
-                            android:textColor="@color/font_41"
+                            android:textColor="@color/white"
                             android:textSize="15sp" />
 
                     </RelativeLayout>
@@ -551,7 +551,7 @@
                             android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
                             android:text="@{dataUtil.parseNumber(cityMaster.rewardBonusToday)}"
-                            android:textColor="@color/font_41"
+                            android:textColor="@color/white"
                             android:textSize="@dimen/font_20"
                             android:textStyle="bold" />
 
@@ -561,7 +561,7 @@
                             android:layout_alignParentBottom="true"
                             android:layout_centerHorizontal="true"
                             android:text="@string/yesterday_award"
-                            android:textColor="@color/font_41"
+                            android:textColor="@color/white"
                             android:textSize="15sp" />
 
                     </RelativeLayout>
@@ -589,7 +589,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="11dp"
                     android:text="@string/share_activity_award"
-                    android:textColor="@color/font_41"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/font_17" />
 
             </LinearLayout>
@@ -598,7 +598,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="82dp"
                 android:layout_marginTop="12dp"
-                app:cardBackgroundColor="#F7F6F9"
+                app:cardBackgroundColor="@color/card_bg_trans"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="0dp">
 
@@ -619,7 +619,7 @@
                             android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
                             android:text="@{dataUtil.parseNumber(cityMaster.activityness)}"
-                            android:textColor="@color/font_green"
+                            android:textColor="@color/white"
                             android:textSize="@dimen/font_20"
                             android:textStyle="bold" />
 
@@ -629,7 +629,7 @@
                             android:layout_alignParentBottom="true"
                             android:layout_centerHorizontal="true"
                             android:text="@string/total_awards"
-                            android:textColor="@color/font_41"
+                            android:textColor="@color/white"
                             android:textSize="15sp" />
 
                     </RelativeLayout>
@@ -646,7 +646,7 @@
                             android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
                             android:text="@{dataUtil.parseNumber(cityMaster.activitynessToday)}"
-                            android:textColor="@color/font_41"
+                            android:textColor="@color/white"
                             android:textSize="@dimen/font_20"
                             android:textStyle="bold" />
 
@@ -656,7 +656,7 @@
                             android:layout_alignParentBottom="true"
                             android:layout_centerHorizontal="true"
                             android:text="@string/yesterday_award"
-                            android:textColor="@color/font_41"
+                            android:textColor="@color/white"
                             android:textSize="15sp" />
 
                     </RelativeLayout>
@@ -684,7 +684,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="11dp"
                     android:text="@string/industrial_reward"
-                    android:textColor="@color/font_41"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/font_17" />
 
             </LinearLayout>
@@ -693,7 +693,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="82dp"
                 android:layout_marginTop="12dp"
-                app:cardBackgroundColor="#F7F6F9"
+                app:cardBackgroundColor="@color/card_bg_trans"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="0dp">
 
@@ -714,7 +714,7 @@
                             android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
                             android:text="@{dataUtil.parseNumber(cityMaster.offline)}"
-                            android:textColor="@color/font_green"
+                            android:textColor="@color/white"
                             android:textSize="@dimen/font_20"
                             android:textStyle="bold" />
 
@@ -724,7 +724,7 @@
                             android:layout_alignParentBottom="true"
                             android:layout_centerHorizontal="true"
                             android:text="@string/total_awards"
-                            android:textColor="@color/font_41"
+                            android:textColor="@color/white"
                             android:textSize="15sp" />
 
                     </RelativeLayout>
@@ -741,7 +741,7 @@
                             android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
                             android:text="@{dataUtil.parseNumber(cityMaster.offlineToday)}"
-                            android:textColor="@color/font_41"
+                            android:textColor="@color/white"
                             android:textSize="@dimen/font_20"
                             android:textStyle="bold" />
 
@@ -751,7 +751,7 @@
                             android:layout_alignParentBottom="true"
                             android:layout_centerHorizontal="true"
                             android:text="@string/yesterday_award"
-                            android:textColor="@color/font_41"
+                            android:textColor="@color/white"
                             android:textSize="15sp" />
 
                     </RelativeLayout>
@@ -774,7 +774,7 @@
                     android:layout_marginTop="18dp"
                     android:layout_weight="1"
                     android:onClick="@{handler.click}"
-                    app:cardBackgroundColor="#F7F6F9"
+                    app:cardBackgroundColor="@color/card_bg_trans"
                     app:cardCornerRadius="8dp"
                     app:cardElevation="0dp">
 
@@ -786,7 +786,7 @@
                         android:drawablePadding="6dp"
                         android:gravity="center"
                         android:text="@string/city_people_num"
-                        android:textColor="@color/font_41"
+                        android:textColor="@color/white"
                         android:textSize="@dimen/font_15" />
 
                 </androidx.cardview.widget.CardView>
@@ -800,7 +800,7 @@
                     android:layout_marginTop="18dp"
                     android:layout_weight="1"
                     android:onClick="@{handler.click}"
-                    app:cardBackgroundColor="#F7F6F9"
+                    app:cardBackgroundColor="@color/card_bg_trans"
                     app:cardCornerRadius="8dp"
                     app:cardElevation="0dp">
 
@@ -812,7 +812,7 @@
                         android:drawablePadding="6dp"
                         android:gravity="center"
                         android:text="@string/customer_service"
-                        android:textColor="@color/font_41"
+                        android:textColor="@color/white"
                         android:textSize="@dimen/font_15" />
 
                 </androidx.cardview.widget.CardView>
