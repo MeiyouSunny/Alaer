@@ -13,17 +13,16 @@
     <LinearLayout xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
+        android:background="@drawable/bg_settings"
         android:fitsSystemWindows="true"
         android:orientation="vertical"
         tools:context=".ui.user.UserInfoActivity">
 
-        <include layout="@layout/layout_title_bar_black" />
+        <include layout="@layout/layout_title_bar_white" />
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/bg_gray"
             android:paddingLeft="16dp"
             android:paddingTop="10dp"
             android:paddingRight="16dp">
@@ -34,6 +33,7 @@
                 android:layout_height="56dp"
                 android:layout_marginTop="10dp"
                 android:clickable="true"
+                app:cardBackgroundColor="@color/card_bg_trans"
                 android:foreground="?android:attr/selectableItemBackground"
                 android:onClick="@{handler.click}"
                 app:cardCornerRadius="8dp"
@@ -59,7 +59,7 @@
                         android:layout_marginLeft="16dp"
                         android:layout_toRightOf="@+id/icAccessPoint"
                         android:text="@string/main_access_point"
-                        android:textColor="@color/font_36"
+                        android:textColor="@color/white"
                         android:textSize="@dimen/font_15" />
 
                     <TextView
@@ -68,7 +68,7 @@
                         android:layout_marginLeft="16dp"
                         android:layout_toRightOf="@+id/icAccessPoint"
                         android:text="@string/default_access_point"
-                        android:textColor="@color/font_7E"
+                        android:textColor="@color/white"
                         android:layout_alignParentBottom="true"
                         android:layout_marginBottom="8dp"
                         android:textSize="@dimen/font_10" />
@@ -81,7 +81,7 @@
                         android:layout_marginLeft="12dp"
                         android:layout_marginRight="6dp"
                         android:layout_toLeftOf="@+id/hookIcon"
-                        android:textColor="@color/font_green"
+                        android:textColor="@color/blue"
                         android:textSize="@dimen/font_12"
                         tools:text="584ms" />
 

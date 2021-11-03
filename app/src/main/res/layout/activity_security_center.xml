@@ -13,17 +13,16 @@
     <LinearLayout xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
+        android:background="@drawable/bg_settings"
         android:fitsSystemWindows="true"
         android:orientation="vertical"
         tools:context=".ui.user.UserInfoActivity">
 
-        <include layout="@layout/layout_title_bar_black" />
+        <include layout="@layout/layout_title_bar_white" />
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/bg_gray"
             android:paddingLeft="16dp"
             android:paddingTop="10dp"
             android:paddingRight="16dp"
@@ -70,6 +69,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="56dp"
                     android:layout_marginTop="10dp"
+                    app:cardBackgroundColor="@color/card_bg_trans"
+                    android:foreground="?android:attr/selectableItemBackground"
                     app:cardCornerRadius="8dp"
                     app:cardElevation="0dp">
 
@@ -84,7 +85,7 @@
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
                             android:text="@string/phone"
-                            android:textColor="@color/font_36"
+                            android:textColor="@color/white"
                             android:textSize="@dimen/font_16" />
 
                         <TextView
@@ -94,7 +95,7 @@
                             android:layout_centerVertical="true"
                             android:layout_marginRight="10dp"
                             android:layout_toLeftOf="@+id/ic_next_uid"
-                            android:textColor="@color/font_7E"
+                            android:textColor="@color/white"
                             android:textSize="@dimen/font_15"
                             tools:text="83790" />
 
@@ -105,7 +106,7 @@
                             android:visibility="invisible"
                             android:layout_alignParentRight="true"
                             android:layout_centerVertical="true"
-                            android:src="@drawable/ic_item_next_little" />
+                            android:src="@drawable/ic_item_next_little_white" />
 
                     </RelativeLayout>
 
@@ -117,8 +118,9 @@
                     android:layout_height="56dp"
                     android:layout_marginTop="10dp"
                     android:clickable="true"
-                    android:foreground="?android:attr/selectableItemBackground"
                     android:onClick="@{handler.click}"
+                    app:cardBackgroundColor="@color/card_bg_trans"
+                    android:foreground="?android:attr/selectableItemBackground"
                     app:cardCornerRadius="8dp"
                     app:cardElevation="0dp">
 
@@ -133,7 +135,7 @@
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
                             android:text="@string/second_pwd"
-                            android:textColor="@color/font_36"
+                            android:textColor="@color/white"
                             android:textSize="@dimen/font_16" />
 
                         <ImageView
@@ -142,7 +144,7 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"
                             android:layout_centerVertical="true"
-                            android:src="@drawable/ic_item_next_little" />
+                            android:src="@drawable/ic_item_next_little_white" />
 
                     </RelativeLayout>
 
