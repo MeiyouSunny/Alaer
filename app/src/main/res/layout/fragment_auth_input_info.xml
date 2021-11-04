@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
@@ -9,106 +10,217 @@
             type="llc.metaversenetwork.app.base.BindClickListener" />
     </data>
 
-    <RelativeLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:scrollbars="none"
+        tools:background="@drawable/bg_auth"
         tools:context=".ui.user.LoginFragment">
 
-        <ImageView
-            android:layout_width="36dp"
-            android:layout_height="31dp"
-            android:layout_marginLeft="39dp"
-            android:layout_marginTop="34dp"
-            android:background="@drawable/ic_auth_input_info" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="87dp"
-            android:layout_marginTop="28dp"
-            android:text="@string/name_and_id"
-            android:textColor="@color/white"
-            android:textSize="@dimen/font_17" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="87dp"
-            android:layout_marginTop="54dp"
-            android:text="@string/input_follow_infos_to_verify"
-            android:textColor="@color/white"
-            android:textSize="@dimen/font_12" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="52dp"
-            android:layout_marginTop="106dp"
-            android:text="@string/name_from"
-            android:textColor="@color/white"
-            android:textSize="@dimen/font_16" />
-
-        <EditText
-            android:id="@+id/etName"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:layout_marginLeft="28dp"
-            android:layout_marginTop="138dp"
-            android:layout_marginRight="28dp"
-            android:background="@drawable/bg_gray_round_corner_et"
-            android:hint="@string/input_name"
-            android:paddingLeft="24dp"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
-            android:textSize="@dimen/font_17" />
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="52dp"
-            android:layout_marginTop="224dp"
-            android:text="@string/id_no_from"
-            android:textColor="@color/white"
-            android:textSize="@dimen/font_16" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-        <EditText
-            android:id="@+id/etCard"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:layout_marginLeft="28dp"
-            android:layout_marginTop="256dp"
-            android:layout_marginRight="28dp"
-            android:background="@drawable/bg_gray_round_corner_et"
-            android:hint="@string/input_license"
-            android:paddingLeft="24dp"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white" />
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="31dp"
+                    android:layout_marginLeft="39dp"
+                    android:layout_marginTop="34dp"
+                    android:background="@drawable/ic_auth_input_info" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="87dp"
+                    android:layout_marginTop="28dp"
+                    android:text="@string/name_and_id"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_17" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="87dp"
+                    android:layout_marginTop="54dp"
+                    android:text="@string/input_follow_infos_to_verify"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_12" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="22dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="22dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="72dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/card_type"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_16" />
+
+                <RelativeLayout
+                    android:paddingLeft="18dp"
+                    android:layout_width="0dp"
+                    android:layout_height="42dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1"
+                    android:background="@color/card_bg_trans">
+
+                    <Spinner
+                        android:theme="@style/Spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:backgroundTint="@color/white"
+                        android:entries="@array/card_types"
+                        android:spinnerMode="dropdown"
+                        android:popupBackground="#D9D9D9"
+                        android:textSize="@dimen/font_16" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="22dp"
+                android:layout_marginRight="22dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="72dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/card_name"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_16" />
+
+                <EditText
+                    android:id="@+id/etName"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:layout_marginLeft="8dp"
+                    android:background="@color/card_bg_trans"
+                    android:hint="@string/input_name"
+                    android:paddingLeft="18dp"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textSize="@dimen/font_17" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="22dp"
+                android:layout_marginRight="22dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="72dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:text="@string/card_id"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_16" />
+
+                <EditText
+                    android:id="@+id/etCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:layout_marginLeft="8dp"
+                    android:background="@color/card_bg_trans"
+                    android:hint="@string/input_license"
+                    android:paddingLeft="18dp"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textSize="@dimen/font_17" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="72dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="22dp"
+                android:layout_marginTop="40dp"
+                android:text="@string/card_photo"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_16" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:layout_marginLeft="36dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginRight="36dp"
+                android:background="@color/card_bg_trans">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/ic_card_photo" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/next"
+                android:layout_marginLeft="18dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="45dp"
+                android:gravity="center"
+                android:text="@string/card_photo_desc"
+                android:textColor="@color/font_red"
+                android:textSize="@dimen/font_13" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginLeft="18dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginRight="18dp"
+                android:layout_marginBottom="32dp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/cancel"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentBottom="true"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_gray"
+                    android:onClick="@{handler.click}"
+                    android:text="@string/cancel" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/next"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="18dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_green"
+                    android:onClick="@{handler.click}"
+                    android:text="@string/confirm" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </LinearLayout>
 
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/next"
-            android:layout_marginLeft="45dp"
-            android:layout_marginRight="45dp"
-            android:layout_marginBottom="18dp"
-            android:gravity="center"
-            android:text="@string/verify_to_get_detector"
-            android:textColor="@color/font_red"
-            android:textSize="@dimen/font_13" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/next"
-            style="@style/BtnGreen"
-            android:layout_alignParentBottom="true"
-            android:layout_marginLeft="38dp"
-            android:layout_marginRight="38dp"
-            android:layout_marginBottom="91dp"
-            android:enabled="false"
-            android:onClick="@{handler.click}"
-            android:text="@string/next_step" />
-
-
-    </RelativeLayout>
+    </ScrollView>
 
 </layout>

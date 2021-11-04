@@ -46,21 +46,31 @@
                 android:textSize="@dimen/font_12" />
 
             <llc.metaversenetwork.app.view.ItemLayoutView
-                android:id="@+id/authByAlipy"
+                android:id="@+id/authPayPal"
                 android:layout_width="match_parent"
                 android:layout_height="84dp"
                 android:layout_marginTop="20dp"
                 android:onClick="@{handler.click}"
-                app:icon="@drawable/ic_alipay_auth"
-                app:title="@string/alipay_auth" />
+                app:icon="@drawable/ic_paypal"
+                app:title="@string/auth_paypal" />
 
             <llc.metaversenetwork.app.view.ItemLayoutView
+                android:id="@+id/authCard"
                 android:layout_width="match_parent"
                 android:layout_height="84dp"
                 android:layout_marginTop="20dp"
-                android:visibility="gone"
+                android:onClick="@{handler.click}"
                 app:icon="@drawable/ic_card_auth"
-                app:title="@string/card_auth" />
+                app:title="@string/auth_card" />
+
+            <llc.metaversenetwork.app.view.ItemLayoutView
+                android:id="@+id/authVisa"
+                android:layout_width="match_parent"
+                android:layout_height="84dp"
+                android:layout_marginTop="20dp"
+                android:onClick="@{handler.click}"
+                app:icon="@drawable/ic_visa"
+                app:title="@string/auth_credit" />
 
             <TextView
                 android:layout_width="wrap_content"

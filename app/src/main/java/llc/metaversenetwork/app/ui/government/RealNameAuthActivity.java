@@ -2,6 +2,7 @@ package llc.metaversenetwork.app.ui.government;
 
 import android.view.View;
 
+import likly.dollar.$;
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseTitleActivity;
 import llc.metaversenetwork.app.databinding.ActivityLoginBinding;
@@ -26,8 +27,12 @@ public class RealNameAuthActivity extends BaseTitleActivity<ActivityLoginBinding
     @Override
     public void click(View view) {
         switch (view.getId()) {
-            case R.id.authByAlipy:
+            case R.id.authCard:
                 ViewUtil.gotoActivity(this, AuthActivity.class);
+                break;
+            case R.id.authPayPal:
+            case R.id.authVisa:
+                $.toast().text(R.string.will_open_soon).show();
                 break;
         }
     }

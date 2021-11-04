@@ -343,4 +343,18 @@
     <string name="my_wallet">我的錢包</string>
     <string name="honor_value">榮譽值</string>
 
+    <string name="auth_paypal">PayPal認證</string>
+    <string name="auth_card">用戶證件認證</string>
+    <string name="auth_credit">信用卡認證</string>
+    <string name="card_type">證件類型</string>
+    <string name="card_name">證件姓名</string>
+    <string name="card_id">證件號</string>
+    <string name="card_photo">證件圖片</string>
+    <string name="card_photo_desc">證件圖片證件圖片支持JPG/PNG格式，大小不超過8M</string>
+    <string name="card_passport">護照</string>
+    <string name="driving_license">駕照</string>
+    <string name="taiwan_certificate">臺胞證</string>
+    <string name="kongkong_pass">港澳通行證</string>
+
+
 </resources>

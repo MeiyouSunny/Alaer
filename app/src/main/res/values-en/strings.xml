@@ -343,4 +343,18 @@
     <string name="my_wallet">My wallet</string>
     <string name="honor_value">Honor value</string>
 
+    <string name="auth_paypal">PayPal authentication</string>
+    <string name="auth_card">User certificate authentication</string>
+    <string name="auth_credit">Credit card authentication</string>
+
+    <string name="card_type">Card type</string>
+    <string name="card_name">ID name</string>
+    <string name="card_id">Certificate No</string>
+    <string name="card_photo">Certificate picture</string>
+    <string name="card_photo_desc">Certificate image certificate image supports JPG / PNG format, and the size does not exceed 8M</string>
+    <string name="card_passport">Passport</string>
+    <string name="driving_license">Driving license</string>
+    <string name="taiwan_certificate">Taiwan compatriot certificate</string>
+    <string name="kongkong_pass">Hong Kong and Macao pass</string>
+
 </resources>
