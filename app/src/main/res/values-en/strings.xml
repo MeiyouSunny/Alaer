@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <resources>
-    <string name="app_name">MNW</string>
+    <string name="app_name">MNC</string>
     <string name="new_version">New Version</string>
     <string name="my_city">My Metaverse</string>
     <string name="nike_name">Nick name:</string>
@@ -326,7 +326,7 @@
     <string name="get_detector_for_free">Get detector for free</string>
     <string name="regional_activity">Regional activity</string>
     <string name="community_activity">Community activity</string>
-    <string name="auth_success_return">Return MNW Metaverse</string>
+    <string name="auth_success_return">Return MNC Metaverse</string>
 
     <string name="saturn">Saturn</string>
     <string name="mercury">Mercury</string>
@@ -356,5 +356,14 @@
     <string name="driving_license">Driving license</string>
     <string name="taiwan_certificate">Taiwan compatriot certificate</string>
     <string name="kongkong_pass">Hong Kong and Macao pass</string>
+    <string name="auth_state_waitting">It\'ll be completed within 24 hours. Please wait patiently.</string>
+    <string name="auth_state_fail">Real name authentication failed!Reason:%s</string>
+    <string name="call_customer_service">Customer service</string>
+    <string name="resubmit">Resubmit</string>
+    <string name="auth_info_confirm">User info verification</string>
+    <string name="auth_info_confir_warning">Please confirm the real name information again to avoid the failure of real name authentication due to errors</string>
+    <string name="confirm_submit">Confirm submit</string>
+    <string name="upload_failed">Upload failed!</string>
+    <string name="uploading">Uploading</string>
 
 </resources>

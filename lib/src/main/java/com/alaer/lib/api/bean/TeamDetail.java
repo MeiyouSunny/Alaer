@@ -18,6 +18,7 @@ public class TeamDetail implements Serializable {
     public int refUid;
     public String inviteUrl;
     public String diallingCode;
+    // 1是已提交 2是已通过
     public int isAuthSenior;
     public int isAuthVideo;
     public int identityPaidStatus;

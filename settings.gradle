@@ -1,2 +1,2 @@
-rootProject.name = "MNW"
+rootProject.name = "MNC"
 include ':app', ":lib", 'UdeskSDKUI'

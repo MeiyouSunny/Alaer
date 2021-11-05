@@ -280,7 +280,6 @@ public interface ApiService {
 
     /**
      * 获取视频
-     *
      * @param type 1
      */
     @GET("/mining/slide/videos")
@@ -341,6 +340,18 @@ public interface ApiService {
     @POST("/mining/alipay/create")
     Call<String> createPayOrder(@Part("uuid") String uuid, @Part("uid") String uid, @Part("token") String token, @Part("diamondCurrency") String diamondCurrency,
                                 @Part("name") String name, @Part("idNumber") String idNumber,
+                                Callback<String> callback);
+
+    /**
+     * 实名认证：证件上传认证
+     * @return
+     */
+    @FormBody
+    @POST("/user/submitUserInfo")
+    Call<String> submitCardInfo(@Part("uuid") String uuid, @Part("uid") String uid, @Part("token") String token, @Part("diamondCurrency") String diamondCurrency,
+                                @Part("firstName") String firstName, @Part("country") String country,
+                                @Part("secondName") String secondName, @Part("idNumber") String idNumber,
+                                @Part("positiveImages") String positiveImages, @Part("propertyOther") String propertyOther,
                                 Callback<String> callback);
 
     /**

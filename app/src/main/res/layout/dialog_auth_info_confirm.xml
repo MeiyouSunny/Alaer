@@ -11,123 +11,164 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="350dp"
+        android:layout_height="380dp"
         android:layout_margin="40dp"
-        android:background="@drawable/bg_white_round_corner">
-
-        <ImageView
-            android:id="@+id/imgTop"
-            android:layout_width="match_parent"
-            android:layout_height="91dp"
-            android:background="@drawable/bg_dialog_top" />
+        android:background="#33405E">
 
         <TextView
-            android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="24dp"
-            android:drawableLeft="@drawable/ic_dialog_error"
-            android:drawablePadding="8dp"
-            android:text="@string/info_confirm"
+            android:layout_marginTop="18dp"
+            android:text="@string/auth_info_confirm"
             android:textColor="@color/white"
-            android:textSize="@dimen/font_20" />
+            android:textSize="18sp" />
+
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="206dp"
-            android:layout_below="@+id/imgTop"
-            android:orientation="vertical"
-            android:paddingLeft="12dp"
-            android:paddingTop="16dp"
-            android:paddingRight="12dp">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:orientation="vertical">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:text="@string/pls_confirm_info_is_correct"
-                android:textColor="@color/font_41"
-                android:textSize="@dimen/font_16" />
+                android:layout_height="60dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:gravity="center"
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:gravity="center_vertical"
-                android:text="@string/name_is"
-                android:textColor="@color/blue"
-                android:textSize="@dimen/font_16" />
+                <TextView
+                    android:layout_width="72dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/card_type"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_16" />
 
-            <TextView
-                android:id="@+id/cardNo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:gravity="center_vertical"
-                android:text="@string/card_no_is"
-                android:textColor="@color/blue"
-                android:textSize="@dimen/font_16" />
+                <TextView
+                    android:id="@+id/cardType"
+                    android:layout_width="0dp"
+                    android:layout_height="42dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_weight="1"
+                    android:background="@color/card_bg_trans"
+                    android:gravity="center_vertical|left"
+                    android:paddingLeft="12dp"
+                    android:textColor="@color/white"
+                    android:singleLine="true"
+                    android:textSize="@dimen/font_14" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1px"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="10dp"
-                android:background="#E1E1E1" />
+            </LinearLayout>
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:gravity="center_vertical"
-                android:text="@string/alipay_info_confirm"
-                android:textColor="@color/font_41"
-                android:textSize="@dimen/font_14" />
+                android:layout_height="60dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="72dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/card_name"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_16" />
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:layout_marginLeft="4dp"
+                    android:background="@color/card_bg_trans"
+                    android:gravity="center_vertical|left"
+                    android:paddingLeft="12dp"
+                    android:singleLine="true"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textSize="@dimen/font_14" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="72dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:text="@string/card_id"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_16" />
+
+                <TextView
+                    android:id="@+id/cardNo"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:layout_marginLeft="4dp"
+                    android:background="@color/card_bg_trans"
+                    android:gravity="center_vertical|left"
+                    android:paddingLeft="12dp"
+                    android:singleLine="true"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textSize="@dimen/font_14" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
-        <View
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            android:layout_height="wrap_content"
             android:layout_above="@+id/layoutBottom"
-            android:background="#E1E1E1" />
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="45dp"
+            android:layout_marginBottom="18dp"
+            android:gravity="center"
+            android:text="@string/auth_info_confir_warning"
+            android:textColor="@color/font_red"
+            android:textSize="@dimen/font_13" />
 
         <LinearLayout
             android:id="@+id/layoutBottom"
             android:layout_width="match_parent"
-            android:layout_height="54dp"
+            android:layout_height="42dp"
             android:layout_alignParentBottom="true"
+            android:layout_marginLeft="22dp"
+            android:layout_marginRight="22dp"
+            android:layout_marginBottom="22dp"
             android:orientation="horizontal">
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/cancel"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
                 android:layout_weight="1"
-                android:background="@drawable/bg_dialog_bottom_left_button"
+                android:background="@drawable/btn_gray"
                 android:onClick="@{handler.click}"
                 android:text="@string/cancel"
-                android:textColor="@color/font_41"
-                android:textSize="@dimen/font_18" />
-
-            <View
-                android:layout_width="1dp"
-                android:layout_height="match_parent"
-                android:background="#E1E1E1" />
+                android:textColor="@color/white" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/confirm"
+                android:id="@+id/submit"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="18dp"
                 android:layout_weight="1"
-                android:background="@drawable/bg_dialog_bottom_right_button"
-                android:clickable="true"
+                android:background="@drawable/btn_green"
                 android:onClick="@{handler.click}"
-                android:text="@string/sure"
-                android:textColor="@color/white"
-                android:textSize="@dimen/font_18" />
+                android:text="@string/confirm_submit"
+                android:textColor="@color/white" />
 
         </LinearLayout>
 

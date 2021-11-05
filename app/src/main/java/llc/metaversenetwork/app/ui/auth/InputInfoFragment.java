@@ -1,7 +1,10 @@
 package llc.metaversenetwork.app.ui.auth;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.net.Uri;
+import android.os.Bundle;
+import android.provider.MediaStore;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -11,27 +14,30 @@ import android.view.View;
 import com.alaer.lib.api.ApiUtil;
 import com.alaer.lib.api.AppConfig;
 import com.alaer.lib.api.Callback;
-import com.alaer.lib.api.bean.OrderInfo;
 import com.alaer.lib.api.bean.UserData;
 import com.alaer.lib.data.UserDataUtil;
+import com.alaer.lib.util.AvatarUploader;
+import com.meiyou.mvp.MvpBinder;
+
+import androidx.annotation.Nullable;
+import likly.dialogger.Dialogger;
+import likly.dollar.$;
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseBindFragment;
 import llc.metaversenetwork.app.databinding.FragmentAuthInputInfoBinding;
 import llc.metaversenetwork.app.ui.dialog.DialogAuthInfoConfirm;
-import llc.metaversenetwork.app.ui.dialog.DialogPayConfirm;
 import llc.metaversenetwork.app.util.SimpleTextWatcher;
 import llc.metaversenetwork.app.util.ViewUtil;
-import com.meiyou.mvp.MvpBinder;
 
-import likly.dialogger.Dialogger;
-import likly.dollar.$;
+import static android.app.Activity.RESULT_OK;
 
 @MvpBinder(
 )
-public class InputInfoFragment extends BaseBindFragment<FragmentAuthInputInfoBinding> {
+public class InputInfoFragment extends BaseBindFragment<FragmentAuthInputInfoBinding> implements AvatarUploader.OnUploadListener {
+    private final int REQUEST_SELECT_PIC = 2;
 
     UserData userData;
-    String mOrderId;
+    String mOrderId, mPhotoPath, mPhotoUrl;
 
     @Override
     public int initLayoutResId() {
@@ -44,15 +50,45 @@ public class InputInfoFragment extends BaseBindFragment<FragmentAuthInputInfoBin
             case R.id.next:
                 showAlipayInfoConfirm();
                 break;
+            case R.id.selectPhoto:
+                selectPic();
+                break;
         }
     }
 
+    private void selectPic() {
+        Intent intent = new Intent(Intent.ACTION_PICK,
+                android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        startActivityForResult(intent, REQUEST_SELECT_PIC);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_OK && requestCode == REQUEST_SELECT_PIC && data != null) {
+            Uri selectedImage = data.getData();
+            String[] filePathColumns = {MediaStore.Images.Media.DATA};
+            Cursor cursor = getContext().getContentResolver().query(selectedImage, filePathColumns, null, null, null);
+            cursor.moveToFirst();
+            int columnIndex = cursor.getColumnIndex(filePathColumns[0]);
+            mPhotoPath = cursor.getString(columnIndex);
+            cursor.close();
+            showPhoto(selectedImage);
+        }
+    }
+
+    private void showPhoto(Uri imgeUri) {
+        bindRoot.photo.setImageURI(imgeUri);
+    }
+
     private void showAlipayInfoConfirm() {
-        DialogAuthInfoConfirm dialogAuthInfoConfirm = new DialogAuthInfoConfirm(ViewUtil.getText(bindRoot.etName), ViewUtil.getText(bindRoot.etCard));
+        String cardType = (String) bindRoot.cardTypeSpinner.getSelectedItem();
+        DialogAuthInfoConfirm dialogAuthInfoConfirm = new DialogAuthInfoConfirm(
+                cardType, ViewUtil.getText(bindRoot.etName), ViewUtil.getText(bindRoot.etCard));
         dialogAuthInfoConfirm.setListener(new DialogAuthInfoConfirm.OnConfirmListener() {
             @Override
             public void onConfirmClick() {
-                createPayOrder();
+                uploadPic();
             }
         });
         Dialogger.newDialog(getContext()).holder(dialogAuthInfoConfirm)
@@ -61,36 +97,42 @@ public class InputInfoFragment extends BaseBindFragment<FragmentAuthInputInfoBin
                 .show();
     }
 
-    private void showPayStateConfirm() {
-        DialogPayConfirm dialogPayConfirm = new DialogPayConfirm();
-        dialogPayConfirm.setListener(new DialogPayConfirm.OnConfirmListener() {
-            @Override
-            public void onConfirmClick() {
-                queryPayState();
-            }
-        });
-        Dialogger.newDialog(getContext()).holder(dialogPayConfirm)
-                .gravity(Gravity.CENTER)
-                .cancelable(false)
-                .show();
+    private void uploadPic() {
+        AvatarUploader uploader = new AvatarUploader(getContext());
+        uploader.setmListener(this);
+        uploader.upload(mPhotoPath);
+        $.toast().text(R.string.uploading).show();
     }
 
-    private void queryPayState() {
-        ApiUtil.apiService().queryPayState(userData.uuid, String.valueOf(userData.uid), userData.token, AppConfig.DIAMOND_CURRENCY, mOrderId,
-                new Callback<OrderInfo>() {
+    @Override
+    public void onUploadResult(boolean success, String picUrl) {
+        if (success && !TextUtils.isEmpty(picUrl)) {
+            mPhotoUrl = picUrl;
+            submitAuthInfo();
+        } else {
+            $.toast().text(R.string.upload_failed).show();
+        }
+    }
+
+    private void submitAuthInfo() {
+        String cardType = (String) bindRoot.cardTypeSpinner.getSelectedItem();
+        String name = ViewUtil.getText(bindRoot.etName);
+        String cardNo = ViewUtil.getText(bindRoot.etCard);
+
+        ApiUtil.apiService().submitCardInfo(userData.uuid, String.valueOf(userData.uid), userData.token, AppConfig.DIAMOND_CURRENCY,
+                "-", "-",
+                name, cardNo, mPhotoUrl, cardType,
+                new Callback<String>() {
                     @Override
-                    public void onResponse(OrderInfo orderInfo) {
-                        if (orderInfo != null && orderInfo.status == 1) {
-                            // 支付成功
-                            navigate(R.id.action_to_pay_success);
-                        } else {
-                            navigate(R.id.action_to_pay_failed);
-                        }
+                    public void onResponse(String orderId) {
+                        navigate(R.id.action_to_pay_success);
                     }
 
                     @Override
                     public void onError(int code, String msg) {
-                        $.toast().text(msg).show();
+                        Bundle data = new Bundle();
+                        data.putString("error", msg);
+                        navigate(R.id.action_to_pay_failed, data);
                     }
                 });
     }
@@ -116,26 +158,6 @@ public class InputInfoFragment extends BaseBindFragment<FragmentAuthInputInfoBin
         final String cardID = ViewUtil.getText(bindRoot.etCard);
         boolean hasInput = !TextUtils.isEmpty(name) && !TextUtils.isEmpty(cardID);
         bindRoot.next.setEnabled(hasInput);
-    }
-
-    private void createPayOrder() {
-        if (userData == null)
-            return;
-        ApiUtil.apiService().createPayOrder(userData.uuid, String.valueOf(userData.uid), userData.token, AppConfig.DIAMOND_CURRENCY,
-                ViewUtil.getText(bindRoot.etName), ViewUtil.getText(bindRoot.etCard),
-                new Callback<String>() {
-                    @Override
-                    public void onResponse(String orderId) {
-                        mOrderId = orderId;
-                        showPayStateConfirm();
-                        gotoPayWeb();
-                    }
-
-                    @Override
-                    public void onError(int code, String msg) {
-                        $.toast().text(msg).show();
-                    }
-                });
     }
 
     private void gotoPayWeb() {

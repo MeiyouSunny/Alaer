@@ -11,12 +11,14 @@ import llc.metaversenetwork.app.databinding.DialogAuthInfoConfirmBinding;
  */
 public class DialogAuthInfoConfirm extends BaseDialogHolder<DialogAuthInfoConfirmBinding> {
 
+    String cardType;
     String name;
     String cardNo;
     OnConfirmListener listener;
 
-    public DialogAuthInfoConfirm(String name, String cardNo) {
+    public DialogAuthInfoConfirm(String cardType, String name, String cardNo) {
         super(R.layout.dialog_auth_info_confirm);
+        this.cardType = cardType;
         this.name = name;
         this.cardNo = cardNo;
     }
@@ -24,8 +26,9 @@ public class DialogAuthInfoConfirm extends BaseDialogHolder<DialogAuthInfoConfir
     @Override
     public void onViewCreated(View view) {
         super.onViewCreated(view);
-        bindRoot.name.setText(getContext().getResources().getString(R.string.name_is, name));
-        bindRoot.cardNo.setText(getContext().getResources().getString(R.string.card_no_is, cardNo));
+        bindRoot.cardType.setText(cardType);
+        bindRoot.name.setText(name);
+        bindRoot.cardNo.setText(cardNo);
     }
 
     public void setListener(OnConfirmListener listener) {
@@ -38,7 +41,7 @@ public class DialogAuthInfoConfirm extends BaseDialogHolder<DialogAuthInfoConfir
             case R.id.cancel:
                 dismiss();
                 break;
-            case R.id.confirm:
+            case R.id.submit:
                 if (listener != null)
                     listener.onConfirmClick();
                 dismiss();

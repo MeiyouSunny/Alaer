@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <resources>
-    <string name="app_name">MNW</string>
+    <string name="app_name">MNC</string>
     <string name="new_version">新版本</string>
     <string name="my_city">我的元宇宙</string>
     <string name="nike_name">昵稱：</string>
@@ -326,7 +326,7 @@
     <string name="get_detector_for_free">免費領取探測器</string>
     <string name="regional_activity">大區活動度</string>
     <string name="community_activity">小區活動度</string>
-    <string name="auth_success_return">返回MNW元宇宙</string>
+    <string name="auth_success_return">返回MNC元宇宙</string>
 
     <string name="saturn">土星</string>
     <string name="mercury">水星</string>
@@ -355,6 +355,15 @@
     <string name="driving_license">駕照</string>
     <string name="taiwan_certificate">臺胞證</string>
     <string name="kongkong_pass">港澳通行證</string>
+    <string name="auth_state_waitting">預計24h稽核完成，請耐心等待</string>
+    <string name="auth_state_fail">實名認證失敗！原因：%s</string>
+    <string name="call_customer_service">聯系客服</string>
+    <string name="resubmit">重新提交</string>
+    <string name="auth_info_confirm">用戶證件核對</string>
+    <string name="auth_info_confir_warning">請再次確認實名資訊，避免因錯誤導致實名認證稽核失敗</string>
+    <string name="confirm_submit">確認提交</string>
+    <string name="upload_failed">上傳失敗!</string>
+    <string name="uploading">正在上傳…</string>
 
 
 </resources>

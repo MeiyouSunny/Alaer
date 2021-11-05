@@ -100,6 +100,11 @@ public class UserDataUtil {
         return mTeamDetail != null && mTeamDetail.isAuthSenior > 1 && mTeamDetail.isAuthVideo > 0;
     }
 
+    // 正在审核
+    public boolean isAuthing() {
+        return mTeamDetail != null && mTeamDetail.isAuthSenior == 1;
+    }
+
     // 3D视界用户
     public boolean isFrom3DAccount() {
         return mTeamInfo != null && mTeamInfo.channel == 2;
