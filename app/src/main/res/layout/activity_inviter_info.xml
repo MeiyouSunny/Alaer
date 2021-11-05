@@ -17,19 +17,17 @@
     <LinearLayout xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/bg_settings"
         android:fitsSystemWindows="true"
         android:orientation="vertical"
         tools:context=".ui.user.UserInfoActivity">
 
-        <include
-            layout="@layout/layout_title_bar_black"
-            android:background="@color/white" />
+        <include layout="@layout/layout_title_bar_white" />
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/bg_gray"
             android:orientation="vertical"
             android:paddingLeft="16dp"
             android:paddingTop="10dp"
@@ -41,6 +39,7 @@
                 android:layout_marginTop="10dp"
                 android:clickable="true"
                 android:foreground="?android:attr/selectableItemBackground"
+                app:cardBackgroundColor="@color/card_bg_trans"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="0dp">
 
@@ -61,6 +60,7 @@
                 android:layout_marginTop="10dp"
                 android:clickable="true"
                 android:foreground="?android:attr/selectableItemBackground"
+                app:cardBackgroundColor="@color/card_bg_trans"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="0dp">
 
@@ -75,7 +75,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:src="@drawable/ic_nike" />
+                        android:src="@drawable/ic_nike"
+                        android:visibility="gone" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -84,7 +85,7 @@
                         android:layout_marginLeft="12dp"
                         android:layout_toRightOf="@+id/icNike"
                         android:text="@string/nike"
-                        android:textColor="@color/font_36"
+                        android:textColor="@color/white"
                         android:textSize="@dimen/font_16" />
 
                     <TextView
@@ -95,7 +96,7 @@
                         android:layout_centerVertical="true"
                         android:layout_marginRight="10dp"
                         android:text="@{data.name}"
-                        android:textColor="@color/font_7E"
+                        android:textColor="@color/white"
                         android:textSize="@dimen/font_15"
                         tools:text="11*283" />
 
@@ -109,6 +110,7 @@
                 android:layout_marginTop="10dp"
                 android:clickable="true"
                 android:foreground="?android:attr/selectableItemBackground"
+                app:cardBackgroundColor="@color/card_bg_trans"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="0dp">
 
@@ -126,7 +128,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:src="@drawable/ic_wechar_no" />
+                        android:src="@drawable/ic_wechar_no"
+                        android:visibility="gone" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -135,7 +138,7 @@
                         android:layout_marginLeft="12dp"
                         android:layout_toRightOf="@+id/icWechatNo"
                         android:text="@string/wechat_no"
-                        android:textColor="@color/font_36"
+                        android:textColor="@color/white"
                         android:textSize="@dimen/font_16" />
 
                     <TextView
@@ -146,7 +149,7 @@
                         android:layout_centerVertical="true"
                         android:layout_marginRight="10dp"
                         android:text="@{data.wechat==null ? @string/not_bind: data.wechat}"
-                        android:textColor="@color/font_7E"
+                        android:textColor="@color/white"
                         android:textSize="@dimen/font_15" />
 
                 </RelativeLayout>

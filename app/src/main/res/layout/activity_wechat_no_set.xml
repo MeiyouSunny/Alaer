@@ -13,17 +13,13 @@
     <LinearLayout xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
+        android:background="@drawable/bg_settings"
         android:fitsSystemWindows="true"
         android:orientation="vertical"
         tools:context=".ui.user.UserInfoActivity">
 
-        <include layout="@layout/layout_title_bar_black" />
+        <include layout="@layout/layout_title_bar_white" />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="10dp"
-            android:background="@color/bg_gray" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -43,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="87dp"
                 android:layout_marginTop="28dp"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="@dimen/font_17"
                 tools:text="@string/wechat_no_set" />
 
@@ -53,7 +49,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="87dp"
                 android:layout_marginTop="54dp"
-                android:textColor="@color/font_7E"
+                android:textColor="@color/white"
                 android:textSize="@dimen/font_12"
                 tools:text="@string/wechat_no_set_warning" />
 
@@ -63,7 +59,7 @@
                 android:layout_marginLeft="28dp"
                 android:layout_marginTop="93dp"
                 android:layout_marginRight="28dp"
-                app:cardBackgroundColor="@color/bg_gray"
+                app:cardBackgroundColor="@color/card_bg_trans"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="0dp">
 
@@ -82,7 +78,8 @@
                         android:layout_toLeftOf="@+id/icClear"
                         android:background="@null"
                         android:singleLine="true"
-                        android:textColorHint="@color/font_B3"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"
                         android:textSize="@dimen/font_17"
                         tools:hint="@string/pls_input_wechat_no" />
 
@@ -106,7 +103,7 @@
                 android:layout_above="@+id/submit"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="18dp"
-                android:textColor="@color/font_green"
+                android:textColor="@color/font_red"
                 tools:text="@string/wechat_no_modify_warning" />
 
             <androidx.appcompat.widget.AppCompatButton

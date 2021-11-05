@@ -16,13 +16,6 @@ import com.alaer.lib.api.bean.TeamDetail;
 import com.alaer.lib.api.bean.UserData;
 import com.alaer.lib.data.UserDataUtil;
 import com.alaer.lib.util.AvatarUploader;
-import llc.metaversenetwork.app.R;
-import llc.metaversenetwork.app.base.BaseTitleActivity;
-import llc.metaversenetwork.app.databinding.ActivityUserInfoBinding;
-import llc.metaversenetwork.app.ui.dialog.DialogInputSecondPwd;
-import llc.metaversenetwork.app.util.NeteaseCaptcha;
-import llc.metaversenetwork.app.util.StringUtil;
-import llc.metaversenetwork.app.util.ViewUtil;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -30,6 +23,13 @@ import org.json.JSONObject;
 import androidx.annotation.Nullable;
 import likly.dialogger.Dialogger;
 import likly.dollar.$;
+import llc.metaversenetwork.app.R;
+import llc.metaversenetwork.app.base.BaseTitleActivity;
+import llc.metaversenetwork.app.databinding.ActivityUserInfoBinding;
+import llc.metaversenetwork.app.ui.dialog.DialogInputSecondPwd;
+import llc.metaversenetwork.app.util.NeteaseCaptcha;
+import llc.metaversenetwork.app.util.StringUtil;
+import llc.metaversenetwork.app.util.ViewUtil;
 
 /**
  * 用户信息
@@ -150,7 +150,7 @@ public class UserInfoActivity extends BaseTitleActivity<ActivityUserInfoBinding>
     @Override
     public void onUploadResult(boolean success, String picUrl) {
         if (!success) {
-            $.toast().text("头像上传失败！").show();
+            $.toast().text(R.string.upload_failed).show();
             return;
         }
         if (!TextUtils.isEmpty(picUrl)) {

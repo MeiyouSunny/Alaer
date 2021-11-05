@@ -43,4 +43,15 @@ public class ViewUtil {
                 .into(imageView);
     }
 
+    public static void showImage(Context context, ImageView imageView, String imageUrl, int defaultIcon) {
+        if (imageView == null || TextUtils.isEmpty(imageUrl))
+            return;
+        Glide.with(context)
+                .load(imageUrl)
+                .error(defaultIcon)
+                .placeholder(defaultIcon)
+                .dontAnimate()
+                .into(imageView);
+    }
+
 }

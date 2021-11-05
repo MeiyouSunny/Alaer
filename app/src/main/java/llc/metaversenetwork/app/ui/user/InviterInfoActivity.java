@@ -1,6 +1,7 @@
 package llc.metaversenetwork.app.ui.user;
 
 import com.alaer.lib.api.bean.TeamDetail;
+
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseTitleActivity;
 import llc.metaversenetwork.app.databinding.ActivityInviterInfoBinding;
@@ -30,7 +31,7 @@ public class InviterInfoActivity extends BaseTitleActivity<ActivityInviterInfoBi
             return;
 
         bindRoot.setData(info);
-        ViewUtil.showImage(getApplicationContext(), bindRoot.icHead, info.avatar);
+        ViewUtil.showImage(getApplicationContext(), bindRoot.icHead, info.avatar, R.drawable.ic_app_icon);
     }
 
 }
