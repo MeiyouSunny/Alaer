@@ -28,19 +28,19 @@ public class SeedDataUtil {
                 typeResId = R.string.seed_try;
                 break;
             case TYPE_JUJUBE:
-                typeResId = R.string.seed_jujube;
+                typeResId = R.string.machine1;
                 break;
             case TYPE_GRAPE:
-                typeResId = R.string.seed_grape;
+                typeResId = R.string.machine2;
                 break;
             case TYPE_APPLE:
-                typeResId = R.string.seed_apple;
+                typeResId = R.string.machine3;
                 break;
             case TYPE_PEAR:
-                typeResId = R.string.seed_pear;
+                typeResId = R.string.machine4;
                 break;
             case TYPE_GINKGO:
-                typeResId = R.string.seed_ginkgo;
+                typeResId = R.string.machine4;
                 break;
         }
 

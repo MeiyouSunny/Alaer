@@ -88,6 +88,13 @@ public class UserDataUtil {
         return mTeamInfo;
     }
 
+    public int teamLevel() {
+        if (mTeamInfo != null && mTeamInfo.profile != null)
+            return mTeamInfo.profile.level;
+
+        return 1;
+    }
+
     public Balance getBalanse() {
         return mBalanse;
     }

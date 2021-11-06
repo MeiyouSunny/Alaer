@@ -19,54 +19,70 @@
         android:layout_height="116dp"
         android:layout_marginLeft="18dp"
         android:layout_marginRight="18dp"
-        android:paddingTop="10dp"
-        android:paddingRight="12dp">
+        android:paddingTop="10dp">
 
         <ImageView
             android:id="@+id/icLevel1"
-            android:layout_width="65dp"
-            android:layout_height="65dp"
-            android:layout_marginLeft="24dp"
-            android:layout_marginRight="16dp"
+            android:layout_width="48dp"
+            android:layout_height="44dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="10dp"
             app:drawableRes="@{levelUtil.parseLevelImg(teamLevel)}" />
 
         <TextView
-            android:id="@+id/level1"
+            android:id="@+id/labelCurrent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/bg_team_level_current"
+            android:gravity="center"
+            android:paddingLeft="4dp"
+            android:text="@string/level_current"
+            android:textColor="@color/font_red"
+            android:textSize="@dimen/font_12" />
+
+        <TextView
+            android:id="@+id/label1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="6dp"
             android:layout_toRightOf="@+id/icLevel1"
-            android:text="@{levelUtil.parseLevelName(teamLevel)}"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="@dimen/font_17" />
 
         <TextView
+            android:id="@+id/label2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/level1"
+            android:layout_below="@+id/label1"
             android:layout_toRightOf="@+id/icLevel1"
             android:lineSpacingExtra="4dp"
-            android:text="@{levelUtil.parseLevelDesc(teamLevel)}"
-            android:textColor="@color/font_7E"
+            android:textColor="@color/white"
             android:textSize="@dimen/font_12"
-            tools:text="@string/level_desc" />
+            tools:text="1111" />
+
+        <TextView
+            android:id="@+id/label3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/label2"
+            android:layout_toRightOf="@+id/icLevel1"
+            android:lineSpacingExtra="4dp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_12"
+            tools:text="2222" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="12dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginBottom="20dp"
             android:singleLine="true"
             android:text="@{levelUtil.parseLevelReward(teamLevel)}"
-            android:textColor="@color/font_7E"
+            android:textColor="@color/white"
             android:textSize="@dimen/font_13" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_alignParentBottom="true"
-            android:background="@color/bg_gray" />
 
     </RelativeLayout>
 

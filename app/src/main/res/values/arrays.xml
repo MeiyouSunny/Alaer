@@ -76,4 +76,11 @@
         <item>@string/kongkong_pass</item>
     </string-array>
 
+    <string-array name="machines">
+        <item>@string/machine1</item>
+        <item>@string/machine2</item>
+        <item>@string/machine3</item>
+        <item>@string/machine4</item>
+    </string-array>
+
 </resources>

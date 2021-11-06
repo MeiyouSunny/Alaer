@@ -366,5 +366,13 @@
     <string name="upload_failed">Upload failed!</string>
     <string name="uploading">Uploading</string>
     <string name="level_is">LV%d</string>
+    <string name="level_current">Current</string>
+    <string name="machine1">Calibos</string>
+    <string name="machine2">Metusa</string>
+    <string name="machine3">Bochotor</string>
+    <string name="machine4">Eusabios</string>
+    <string name="auth_person_num">Active real name:%d</string>
+    <string name="team_activity_is">Team activity:%d points</string>
+    <string name="area_little_activity">Minor activity:%d points</string>
 
 </resources>

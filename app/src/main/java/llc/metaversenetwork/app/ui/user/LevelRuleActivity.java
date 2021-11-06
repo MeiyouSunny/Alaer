@@ -5,7 +5,6 @@ import com.alaer.lib.api.AppConfig;
 import com.alaer.lib.api.Callback;
 import com.alaer.lib.api.bean.TeamLevel;
 import com.alaer.lib.api.bean.UserData;
-import com.alaer.lib.api.bean.UserLevelList;
 import com.alaer.lib.data.UserDataUtil;
 
 import java.util.List;
@@ -45,16 +44,6 @@ public class LevelRuleActivity extends BaseTitleActivity<ActivityLevelRuleBindin
                     @Override
                     public void onResponse(List<TeamLevel> levels) {
                         showLevels(levels);
-                    }
-                });
-
-        ApiUtil.apiService().userLevels(userData.uuid, String.valueOf(userData.uid), userData.token,
-                AppConfig.DIAMOND_CURRENCY,
-                new Callback<UserLevelList>() {
-                    @Override
-                    public void onResponse(UserLevelList levels) {
-                        if (levels != null) {
-                        }
                     }
                 });
     }

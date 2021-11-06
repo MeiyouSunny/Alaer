@@ -365,6 +365,14 @@
     <string name="upload_failed">上傳失敗!</string>
     <string name="uploading">正在上傳…</string>
     <string name="level_is">LV%d</string>
+    <string name="auth_person_num">活躍實名：%d人</string>
+    <string name="team_activity_is">團隊活躍度：%d點</string>
+    <string name="area_little_activity">小區活躍度：%d點</string>
+    <string name="machine1">加力寶</string>
+    <string name="machine2">美杜莎</string>
+    <string name="machine3">波賽頓</string>
+    <string name="machine4">歐莎堡</string>
+    <string name="level_current">當前</string>
 
 
 </resources>
