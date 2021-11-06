@@ -374,5 +374,8 @@
     <string name="auth_person_num">Active real name:%d</string>
     <string name="team_activity_is">Team activity:%d points</string>
     <string name="area_little_activity">Minor activity:%d points</string>
+    <string name="total_assets_usdt">Total assets (USDT)</string>
+    <string name="recharge">Recharge</string>
+    <string name="withdrawal">Withdrawal</string>
 
 </resources>

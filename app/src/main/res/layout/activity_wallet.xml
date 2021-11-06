@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.alaer.lib.api.bean.TeamDetail" />
+
+        <variable
+            name="handler"
+            type="llc.metaversenetwork.app.base.BindClickListener" />
+    </data>
+
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_wallet"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical"
+        tools:context=".ui.user.UserInfoActivity">
+
+        <include layout="@layout/layout_title_bar_white" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="16dp"
+            android:paddingTop="10dp"
+            android:paddingRight="16dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/bg_wallet_top"
+                android:paddingLeft="22dp"
+                android:paddingTop="22dp"
+                android:paddingRight="22dp"
+                android:paddingBottom="22dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:text="@string/total_assets_usdt"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_16" />
+
+                <TextView
+                    android:id="@+id/total"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="12dp"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_22"
+                    tools:text="100.01" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/recharge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/btn_green"
+                    android:onClick="@{handler.click}"
+                    android:text="@string/recharge"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_14" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/submit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/btn_green"
+                    android:onClick="@{handler.click}"
+                    android:text="@string/withdrawal"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_14" />
+
+
+            </RelativeLayout>
+
+            <likly.view.repeat.RepeatView
+                android:id="@+id/repeatView"
+                style="@style/RepeatView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:emptyView="@layout/layout_no_data"
+                app:viewHolderClass="llc.metaversenetwork.app.ui.wallet.WalletAdapter"
+                app:viewHolderLayout="@layout/item_wallet" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

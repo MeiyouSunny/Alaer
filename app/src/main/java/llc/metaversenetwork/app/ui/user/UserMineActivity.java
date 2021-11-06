@@ -210,6 +210,9 @@ public class UserMineActivity extends BaseTitleActivity<ActivityUserMineBinding>
             case R.id.layoutToLogin:
                 ViewUtil.gotoActivity(this, LoginActivity.class);
                 break;
+            case R.id.myWallet:
+                ViewUtil.gotoActivity(this, WalletActivity.class);
+                break;
         }
     }
 

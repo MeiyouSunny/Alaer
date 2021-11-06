@@ -375,6 +375,9 @@
     <string name="level_current">當前</string>
     <string name="explore_guide_url">https://metaverse-3.gitbook.io/mnw-guide-tw/mnc-tan-suo-zhi-nan</string>
     <string name="promotion_guide_url">https://metaverse-3.gitbook.io/mnw-guide-tw/mnc-tui-guang-zhi-nan</string>
+    <string name="total_assets_usdt">總資產（USDT）</string>
+    <string name="recharge">充值</string>
+    <string name="withdrawal">提現</string>
 
 
 </resources>

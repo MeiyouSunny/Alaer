@@ -5,6 +5,7 @@ import com.alaer.lib.api.bean.ActiveBillList;
 import com.alaer.lib.api.bean.ActiveDetail;
 import com.alaer.lib.api.bean.AdTask;
 import com.alaer.lib.api.bean.AdVideo;
+import com.alaer.lib.api.bean.AssetsTotalInfo;
 import com.alaer.lib.api.bean.Balance;
 import com.alaer.lib.api.bean.BannerList;
 import com.alaer.lib.api.bean.CityChartData;
@@ -529,5 +530,15 @@ public interface ApiService {
                                @Part("manageType") int manageType, @Part("msgJob") String msgJob, @Part("msgRelation") String msgRelation,
                                @Part("star") int star,
                                Callback<String> callback);
+
+    /**
+     * 获取用户总资产
+     */
+    @GET("/wallet/assets")
+    Call<AssetsTotalInfo> queryTotalAssets(@Query("uuid") String uuid, @Query("uid") String uid,
+                                           @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
+                                           @Query("pageIndex") int pageIndex, @Query("pageSize") int pageSize,
+                                           @Query("baseCurrency") String baseCurrency, @Query("local") String local,
+                                           Callback<AssetsTotalInfo> callback);
 
 }

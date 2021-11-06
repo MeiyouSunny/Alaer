@@ -15,6 +15,7 @@
     <dimen name="font_18">18sp</dimen>
     <dimen name="font_19">19sp</dimen>
     <dimen name="font_20">20sp</dimen>
+    <dimen name="font_22">22sp</dimen>
     <dimen name="font_24">24sp</dimen>
     <dimen name="font_30">30sp</dimen>
     <!-- Default screen margins, per the Android Design guidelines. -->

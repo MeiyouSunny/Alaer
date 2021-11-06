@@ -238,6 +238,10 @@
             android:name=".ui.user.UserLevelActivity"
             android:screenOrientation="portrait"></activity>
 
+        <activity
+            android:name=".ui.user.WalletActivity"
+            android:screenOrientation="portrait"></activity>
+
     </application>
 
 </manifest>
