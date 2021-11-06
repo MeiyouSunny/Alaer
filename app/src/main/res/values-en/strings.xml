@@ -207,7 +207,7 @@
     <string name="is_which_one">I\'m number%d</string>
     <string name="alaer_digital_person">Metaverse digital ecological user</string>
     <string name="invitate_code_is">Invitation code:%s</string>
-    <string name="balance_is">Balance:%f</string>
+    <string name="balance_is">Balance:%s</string>
     <string name="activity_is">Activity:%s</string>
     <string name="exchange_build_score">MetaMine stones exchange Metaverse integral</string>
     <string name="sure_to_exchange">Confirm exchange</string>
@@ -377,5 +377,6 @@
     <string name="total_assets_usdt">Total assets (USDT)</string>
     <string name="recharge">Recharge</string>
     <string name="withdrawal">Withdrawal</string>
+    <string name="frozen">frozen</string>
 
 </resources>

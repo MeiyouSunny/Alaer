@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.alaer.lib.api.bean.AssetsTotalInfo.Assets" />
+
+        <variable
+            name="handler"
+            type="llc.metaversenetwork.app.base.BindClickListener" />
+    </data>
+
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_wallet"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical"
+        tools:context=".ui.user.UserInfoActivity">
+
+        <include layout="@layout/layout_title_bar_white" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="16dp"
+            android:paddingTop="20dp"
+            android:paddingRight="16dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/bg_wallet_top"
+                android:paddingLeft="18dp"
+                android:paddingTop="18dp"
+                android:paddingRight="18dp"
+                android:paddingBottom="18dp">
+
+                <ImageView
+                    android:id="@+id/typeIcon"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/ic_usdt"
+                    app:drawableRes="@{data.iconResId}" />
+
+                <TextView
+                    android:id="@+id/typeName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_toRightOf="@+id/typeIcon"
+                    android:text="@{data.currencyNameEn}"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_16"
+                    tools:text="USDT" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/recharge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
+                    android:layout_toLeftOf="@+id/withdrawal"
+                    android:background="@drawable/btn_green"
+                    android:onClick="@{handler.click}"
+                    android:text="@string/recharge"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_14" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/withdrawal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="12dp"
+                    android:background="@drawable/btn_green"
+                    android:onClick="@{handler.click}"
+                    android:text="@string/withdrawal"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_14" />
+
+                <TextView
+                    android:id="@+id/labelAvalible"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/amoutAvalible"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/available"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_16" />
+
+                <TextView
+                    android:id="@+id/amoutAvalible"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="8dp"
+                    android:text="@{String.valueOf(data.cashAmount)}"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_18"
+                    tools:text="100.01" />
+
+                <TextView
+                    android:id="@+id/labelFrozen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/amoutFrozen"
+                    android:layout_alignLeft="@+id/amoutFrozen"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/frozen"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_16" />
+
+                <TextView
+                    android:id="@+id/amoutFrozen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginRight="12dp"
+                    android:text="@{String.valueOf(data.freezeAmount)}"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_18"
+                    tools:text="100.01" />
+
+
+            </RelativeLayout>
+
+            <likly.view.repeat.RepeatView
+                android:id="@+id/repeatView"
+                style="@style/RepeatView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:emptyView="@layout/layout_no_data"
+                app:viewHolderClass="llc.metaversenetwork.app.ui.wallet.CurrencyAdapter"
+                app:viewHolderLayout="@layout/item_transaction_record" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="record"
+            type="com.alaer.lib.api.bean.CurrencyRecord" />
+
+        <variable
+            name="number"
+            type="llc.metaversenetwork.app.util.NumberUtils" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="16dp"
+            android:text="@{record.note}"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_15" />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="6dp"
+            android:layout_marginBottom="6dp"
+            android:text="@{record.createTime}"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_12" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="16dp"
+            android:text="@{record.flag==1 ? @string/amount_add(number.parseNumber(record.changeAmount)) : @string/amount_reduce(number.parseNumber(record.changeAmount))}"
+            android:textColor="@{record.flag==1 ? @color/blue : @color/font_red}"
+            android:textSize="@dimen/font_17" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="6dp"
+            android:text="@{@string/balance_is(number.parseNumber(record.afterAmount))}"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_12" />
+
+        <View
+            style="@style/LineGrayE8"
+            android:layout_alignParentBottom="true" />
+
+    </RelativeLayout>
+
+</layout>

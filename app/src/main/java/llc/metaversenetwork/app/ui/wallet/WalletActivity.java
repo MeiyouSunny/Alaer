@@ -1,4 +1,4 @@
-package llc.metaversenetwork.app.ui.user;
+package llc.metaversenetwork.app.ui.wallet;
 
 import com.alaer.lib.api.ApiUtil;
 import com.alaer.lib.api.AppConfig;
@@ -13,13 +13,16 @@ import likly.view.repeat.OnHolderClickListener;
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseTitleActivity;
 import llc.metaversenetwork.app.databinding.ActivityWalletBinding;
-import llc.metaversenetwork.app.ui.wallet.WalletAdapter;
 import llc.metaversenetwork.app.util.CollectionUtils;
+import llc.metaversenetwork.app.util.ViewUtil;
+import llc.metaversenetwork.app.util.WalletDataUtil;
 
 /**
  * 我的钱包
  */
 public class WalletActivity extends BaseTitleActivity<ActivityWalletBinding> implements OnHolderClickListener<WalletAdapter> {
+    // USDT:4
+    // MNC:173
 
     @Override
     protected int titleResId() {
@@ -49,7 +52,8 @@ public class WalletActivity extends BaseTitleActivity<ActivityWalletBinding> imp
                     public void onResponse(AssetsTotalInfo assetsTotalInfo) {
                         if (assetsTotalInfo != null) {
                             bindRoot.total.setText(String.valueOf(assetsTotalInfo.total));
-                            showWalletList(assetsTotalInfo.assets);
+                            List<AssetsTotalInfo.Assets> list = WalletDataUtil.parseAssetsList(assetsTotalInfo.assets);
+                            showWalletList(list);
                         }
                     }
                 });
@@ -66,7 +70,8 @@ public class WalletActivity extends BaseTitleActivity<ActivityWalletBinding> imp
 
     @Override
     public void onHolderClick(WalletAdapter walletAdapter) {
-
+        AssetsTotalInfo.Assets assets = walletAdapter.getData();
+        ViewUtil.gotoActivity(this, WalletDetailActivity.class, "asset", assets);
     }
 
 }

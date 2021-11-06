@@ -13,6 +13,7 @@ import com.alaer.lib.api.bean.CityMaster;
 import com.alaer.lib.api.bean.CityMasterDetail;
 import com.alaer.lib.api.bean.CityStatistic;
 import com.alaer.lib.api.bean.CommonQuestionList;
+import com.alaer.lib.api.bean.CurrencyRecord;
 import com.alaer.lib.api.bean.FruitBill;
 import com.alaer.lib.api.bean.Notice;
 import com.alaer.lib.api.bean.OrderInfo;
@@ -540,5 +541,14 @@ public interface ApiService {
                                            @Query("pageIndex") int pageIndex, @Query("pageSize") int pageSize,
                                            @Query("baseCurrency") String baseCurrency, @Query("local") String local,
                                            Callback<AssetsTotalInfo> callback);
+
+    /**
+     * 单个币种账户流水
+     */
+    @GET("/mining/profile/account/water/dmd/query")
+    Call<List<CurrencyRecord>> queryCurrencyRecords(@Query("uuid") String uuid, @Query("uid") String uid,
+                                      @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
+                                      @Query("pageIndex") int pageIndex, @Query("pageSize") int pageSize,
+                                      Callback<List<CurrencyRecord>> callback);
 
 }

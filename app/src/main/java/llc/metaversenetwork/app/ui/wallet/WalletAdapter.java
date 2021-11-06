@@ -14,6 +14,7 @@ public class WalletAdapter extends BaseViewHolder<ItemWalletBinding, AssetsTotal
     @Override
     protected void onBindData(AssetsTotalInfo.Assets assets) {
         bindRoot.setAssets(assets);
+        bindRoot.icon.setImageResource(assets.iconResId);
         bindRoot.executePendingBindings();
     }
 

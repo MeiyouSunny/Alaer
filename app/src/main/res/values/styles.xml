@@ -27,7 +27,7 @@
     <style name="LineGrayE8">
         <item name="android:layout_width">match_parent</item>
         <item name="android:background">#E8E8E8</item>
-        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_height">1px</item>
     </style>
 
     <style name="AccountGreenText">

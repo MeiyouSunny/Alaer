@@ -25,6 +25,7 @@ import llc.metaversenetwork.app.ui.setting.AboutActivity;
 import llc.metaversenetwork.app.ui.setting.SecurityCenterActivity;
 import llc.metaversenetwork.app.ui.setting.SettingActivity;
 import llc.metaversenetwork.app.ui.share.ShareActivity;
+import llc.metaversenetwork.app.ui.wallet.WalletActivity;
 import llc.metaversenetwork.app.util.CollectionUtils;
 import llc.metaversenetwork.app.util.NumberUtils;
 import llc.metaversenetwork.app.util.ViewUtil;

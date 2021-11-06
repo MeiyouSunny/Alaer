@@ -1,5 +1,6 @@
 package com.alaer.lib.api.bean;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -15,12 +16,13 @@ public class AssetsTotalInfo {
     public String baseCurrency;
     public String base;
 
-    public static class Assets {
+    public static class Assets implements Serializable {
         public int currencyId;
         public int currencyType;
         public String currencyName;
         public String currencyNameEn;
         public String icoUrl;
+        public int iconResId;
         public double point_num;
         public double point_price;
         public int status;

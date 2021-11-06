@@ -207,7 +207,7 @@
     <string name="is_which_one">我是第%d位</string>
     <string name="alaer_digital_person">元宇宙數位生態用戶</string>
     <string name="invitate_code_is">邀請碼：%s</string>
-    <string name="balance_is">余额：%f</string>
+    <string name="balance_is">餘額：%s</string>
     <string name="activity_is">活跃度：%s</string>
     <string name="exchange_build_score">元宇礦石兌換元宇積分</string>
     <string name="sure_to_exchange">確認兌換</string>
@@ -378,6 +378,7 @@
     <string name="total_assets_usdt">總資產（USDT）</string>
     <string name="recharge">充值</string>
     <string name="withdrawal">提現</string>
+    <string name="frozen">凍結</string>
 
 
 </resources>

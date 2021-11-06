@@ -30,13 +30,13 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:paddingLeft="16dp"
-            android:paddingTop="10dp"
+            android:paddingTop="20dp"
             android:paddingRight="16dp">
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="110dp"
-                android:layout_margin="10dp"
+                android:layout_marginBottom="24dp"
                 android:background="@drawable/bg_wallet_top"
                 android:paddingLeft="22dp"
                 android:paddingTop="22dp"

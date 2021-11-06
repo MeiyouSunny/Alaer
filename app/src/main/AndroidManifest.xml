@@ -239,7 +239,11 @@
             android:screenOrientation="portrait"></activity>
 
         <activity
-            android:name=".ui.user.WalletActivity"
+            android:name=".ui.wallet.WalletActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name=".ui.wallet.WalletDetailActivity"
             android:screenOrientation="portrait"></activity>
 
     </application>

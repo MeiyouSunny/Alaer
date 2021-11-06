@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
+import java.io.Serializable;
+
 public class ViewUtil {
 
     public static void gotoActivity(Context context, Class<? extends Activity> activityDes) {
@@ -19,6 +21,12 @@ public class ViewUtil {
     public static void gotoActivity(Context context, Class<? extends Activity> activityDes, Bundle bundle) {
         Intent intent = new Intent(context, activityDes);
         intent.putExtras(bundle);
+        context.startActivity(intent);
+    }
+
+    public static void gotoActivity(Context context, Class<? extends Activity> activityDes, String key, Serializable value) {
+        Intent intent = new Intent(context, activityDes);
+        intent.putExtra(key, value);
         context.startActivity(intent);
     }
 
