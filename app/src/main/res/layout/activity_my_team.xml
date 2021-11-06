@@ -67,15 +67,15 @@
                             android:layout_marginTop="8dp"
                             app:drawableRes="@{levelUtil.parseLevelImg(teamLevel)}" />
 
-<!--                        <TextView-->
-<!--                            android:layout_width="wrap_content"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:layout_centerHorizontal="true"-->
-<!--                            android:layout_marginTop="108dp"-->
-<!--                            android:text="@{levelUtil.parseLevelName(teamLevel)}"-->
-<!--                            android:textColor="@color/white"-->
-<!--                            android:textSize="@dimen/font_16"-->
-<!--                            tools:text="二级数字市民团队" />-->
+                        <!--                        <TextView-->
+                        <!--                            android:layout_width="wrap_content"-->
+                        <!--                            android:layout_height="wrap_content"-->
+                        <!--                            android:layout_centerHorizontal="true"-->
+                        <!--                            android:layout_marginTop="108dp"-->
+                        <!--                            android:text="@{levelUtil.parseLevelName(teamLevel)}"-->
+                        <!--                            android:textColor="@color/white"-->
+                        <!--                            android:textSize="@dimen/font_16"-->
+                        <!--                            tools:text="二级数字市民团队" />-->
 
                         <!--                    <TextView-->
                         <!--                        android:layout_width="wrap_content"-->
@@ -106,8 +106,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"
-                            android:layout_marginRight="20dp"
                             android:layout_marginTop="74dp"
+                            android:layout_marginRight="20dp"
                             android:clickable="true"
                             android:drawableRight="@drawable/ic_item_next_little"
                             android:drawablePadding="6dp"
@@ -299,6 +299,7 @@
                                     android:layout_height="match_parent">
 
                                     <TextView
+                                        android:id="@+id/majorActiveness"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_centerHorizontal="true"
@@ -335,6 +336,7 @@
                                     android:layout_height="match_parent">
 
                                     <TextView
+                                        android:id="@+id/minorActiveness"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_centerHorizontal="true"
@@ -479,9 +481,9 @@
                     android:id="@+id/noData"
                     android:layout_width="215dp"
                     android:layout_height="161dp"
-                    android:layout_marginBottom="24dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="24dp"
+                    android:layout_marginBottom="24dp"
                     android:background="@drawable/img_no_data" />
 
             </LinearLayout>
