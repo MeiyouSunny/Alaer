@@ -152,7 +152,7 @@
     <string name="beginner_guide">新手指南</string>
     <string name="my_team">我的團隊</string>
     <string name="invitate_friend">邀請好友</string>
-    <string name="build_guide">建設指南</string>
+    <string name="build_guide">探索指南</string>
     <string name="promotion_guide">推廣指南</string>
     <string name="invitees">邀請人</string>
     <string name="operation_guide">操作引導</string>
@@ -373,6 +373,8 @@
     <string name="machine3">波賽頓</string>
     <string name="machine4">歐莎堡</string>
     <string name="level_current">當前</string>
+    <string name="explore_guide_url">https://metaverse-3.gitbook.io/mnw-guide-tw/mnc-tan-suo-zhi-nan</string>
+    <string name="promotion_guide_url">https://metaverse-3.gitbook.io/mnw-guide-tw/mnc-tui-guang-zhi-nan</string>
 
 
 </resources>

@@ -39,8 +39,8 @@
 
             <View
                 android:layout_width="match_parent"
-                android:background="@drawable/bg_seed_store_item_top"
-                android:layout_height="34dp"/>
+                android:layout_height="34dp"
+                android:background="@drawable/bg_seed_store_item_top" />
 
             <TextView
                 android:layout_width="wrap_content"

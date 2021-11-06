@@ -18,9 +18,9 @@
         android:layout_height="56dp"
         android:layout_marginTop="10dp"
         android:clickable="true"
+        app:cardBackgroundColor="@color/card_bg_trans"
         android:foreground="?android:attr/selectableItemBackground"
         android:onClick="@{(view)->handler.onQuestionClick(question)}"
-        app:cardBackgroundColor="@color/bg_gray"
         app:cardCornerRadius="8dp"
         app:cardElevation="0dp">
 
@@ -43,7 +43,7 @@
                 android:layout_marginLeft="18dp"
                 android:layout_toRightOf="@+id/icon"
                 android:text="@{question.title}"
-                android:textColor="@color/font_36"
+                android:textColor="@color/white"
                 android:textSize="@dimen/font_16" />
 
             <ImageView
@@ -51,7 +51,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
-                android:src="@drawable/ic_item_next_little" />
+                android:src="@drawable/ic_item_next_little_white" />
 
         </RelativeLayout>
 
