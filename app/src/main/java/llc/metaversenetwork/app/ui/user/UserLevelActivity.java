@@ -7,20 +7,21 @@ import com.alaer.lib.api.bean.UserData;
 import com.alaer.lib.api.bean.UserLevel;
 import com.alaer.lib.api.bean.UserLevelList;
 import com.alaer.lib.data.UserDataUtil;
+
+import java.util.List;
+
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseTitleActivity;
 import llc.metaversenetwork.app.databinding.ActivityUserLevelBinding;
 import llc.metaversenetwork.app.ui.webpage.WebPageActivity;
 import llc.metaversenetwork.app.util.CollectionUtils;
 
-import java.util.List;
-
 /**
  * 市民等级规则
  */
 public class UserLevelActivity extends BaseTitleActivity<ActivityUserLevelBinding> {
 
-    int level;
+    public  static int level;
     int contribution;
 
     @Override
@@ -41,6 +42,7 @@ public class UserLevelActivity extends BaseTitleActivity<ActivityUserLevelBindin
         level = getIntent().getIntExtra("level", 0);
         contribution = getIntent().getIntExtra("contribution", 0);
 
+        bindRoot.levelValue.setText(getString(R.string.level_is, level));
         final int[] imgs = new int[]{R.drawable.ic_user_level0, R.drawable.ic_user_level1, R.drawable.ic_user_level2,
                 R.drawable.ic_user_level3, R.drawable.ic_user_level4, R.drawable.ic_user_level5, R.drawable.ic_user_level6};
         if (level < imgs.length)
@@ -73,7 +75,8 @@ public class UserLevelActivity extends BaseTitleActivity<ActivityUserLevelBindin
 
     private void showLevels(List<UserLevel> levels) {
         if (level < levels.size()) {
-            bindRoot.levelInfo.setText(getString(R.string.contribution_info_is, levels.get(level).name, contribution));
+            bindRoot.levelLabel.setText(levels.get(level).name);
+            bindRoot.levelInfo.setText(getString(R.string.contribution_info_is, contribution));
         }
 
         bindRoot.repeatView.getRecyclerView().setPaddingRelative(0, 48, 0, 0);

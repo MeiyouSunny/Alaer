@@ -14,74 +14,79 @@
             type="int[]" />
     </data>
 
-    <androidx.cardview.widget.CardView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginLeft="12dp"
-        android:layout_marginRight="12dp"
-        android:layout_marginBottom="10dp"
-        app:cardCornerRadius="8dp">
+        android:layout_height="80dp"
+        android:layout_marginLeft="22dp"
+        android:layout_marginRight="12dp">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginLeft="12dp">
+        <ImageView
+            android:id="@+id/levelPoint"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_user_level_point" />
 
-            <ImageView
-                android:id="@+id/icLevel1"
-                android:layout_width="65dp"
-                android:layout_height="65dp"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="16dp"
-                app:drawableRes="@{imgs[level.level]}" />
+        <TextView
+            android:id="@+id/levelValue"
+            android:layout_toRightOf="@+id/levelPoint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:paddingLeft="3dp"
+            android:paddingRight="3dp"
+            android:background="@drawable/btn_gray_trans"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:text="LV1"
+            android:textSize="@dimen/font_14"
+            android:textColor="@color/font_orange" />
 
-            <TextView
-                android:id="@+id/name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="14dp"
-                android:layout_toRightOf="@+id/icLevel1"
-                android:text="@{level.name}"
-                android:textColor="@color/black"
-                android:textSize="@dimen/font_17" />
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/levelValue"
+            android:text="@{level.name}"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_17" />
 
-            <TextView
-                android:id="@+id/lebel1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_above="@+id/label2"
-                android:layout_centerHorizontal="true"
-                android:layout_toRightOf="@+id/icLevel1"
-                android:text="1、"
-                android:textColor="@color/font_7E"
-                android:textSize="@dimen/font_10" />
+        <TextView
+            android:id="@+id/lebel1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/label2"
+            android:layout_centerHorizontal="true"
+            android:layout_toRightOf="@+id/levelValue"
+            android:text="1、"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_12" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_above="@+id/label2"
-                android:layout_centerHorizontal="true"
-                android:layout_toRightOf="@+id/lebel1"
-                android:singleLine="true"
-                android:text="@{level.description}"
-                android:textColor="@color/font_7E"
-                android:textSize="@dimen/font_10" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/label2"
+            android:layout_centerHorizontal="true"
+            android:layout_toRightOf="@+id/lebel1"
+            android:singleLine="true"
+            android:text="@{level.description}"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_12" />
 
-            <TextView
-                android:id="@+id/label2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_marginTop="4dp"
-                android:layout_marginBottom="18dp"
-                android:layout_toRightOf="@+id/icLevel1"
-                android:singleLine="true"
-                android:text="@{@string/user_level_free_rate_is(level.feeRate)}"
-                android:textColor="@color/font_7E"
-                android:textSize="@dimen/font_10" />
+        <TextView
+            android:id="@+id/label2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="10dp"
+            android:layout_toRightOf="@+id/levelValue"
+            android:singleLine="true"
+            android:text="@{@string/user_level_free_rate_is(level.feeRate)}"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_12" />
 
-        </RelativeLayout>
-
-    </androidx.cardview.widget.CardView>
+    </RelativeLayout>
 
 </layout>

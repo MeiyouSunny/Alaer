@@ -196,14 +196,14 @@ public class UserMineActivity extends BaseTitleActivity<ActivityUserMineBinding>
                     ViewUtil.gotoActivity(this, ContributionActivity.class, data);
                 }
                 break;
-//            case R.id.userLevel:
-//                if (mTeamInfo != null && mBalance != null) {
-//                    Bundle data = new Bundle();
-//                    data.putInt("level", mBalance.level);
-//                    data.putInt("contribution", mTeamInfo.profile.contribution);
-//                    ViewUtil.gotoActivity(this, UserLevelActivity.class, data);
-//                }
-//                break;
+            case R.id.levelName:
+                if (mTeamInfo != null && mBalance != null) {
+                    Bundle data = new Bundle();
+                    data.putInt("level", mBalance.level);
+                    data.putInt("contribution", mTeamInfo.profile.contribution);
+                    ViewUtil.gotoActivity(this, UserLevelActivity.class, data);
+                }
+                break;
             case R.id.customeService:
                 gotoCustomerService();
                 break;

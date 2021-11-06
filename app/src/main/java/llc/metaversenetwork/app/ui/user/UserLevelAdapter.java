@@ -1,6 +1,9 @@
 package llc.metaversenetwork.app.ui.user;
 
+import android.view.View;
+
 import com.alaer.lib.api.bean.UserLevel;
+
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.repeatview.BaseViewHolder;
 import llc.metaversenetwork.app.databinding.ItemUserLevelBinding;
@@ -10,14 +13,13 @@ import llc.metaversenetwork.app.databinding.ItemUserLevelBinding;
  */
 public class UserLevelAdapter extends BaseViewHolder<ItemUserLevelBinding, UserLevel> {
 
-    final int[] imgs = new int[]{R.drawable.ic_user_level0, R.drawable.ic_user_level1, R.drawable.ic_user_level2,
-            R.drawable.ic_user_level3, R.drawable.ic_user_level4, R.drawable.ic_user_level5, R.drawable.ic_user_level6};
-
     @Override
     protected void onBindData(UserLevel level) {
-        bindRoot.setImgs(imgs);
         bindRoot.setLevel(level);
+        bindRoot.levelValue.setText(getContext().getString(R.string.level_is, level.level));
         bindRoot.executePendingBindings();
+        int position = getPosition();
+        bindRoot.levelPoint.setVisibility(getPosition() == UserLevelActivity.level ? View.VISIBLE : View.INVISIBLE);
     }
 
     @Override

@@ -257,7 +257,7 @@
     <string name="contribution_is">活躍度：%s</string>
     <string name="contribution_detail">貢獻值明細</string>
     <string name="user_level_free_rate_is">2、繳納手續費占比%d%%</string>
-    <string name="contribution_info_is">%s/貢獻值：%d</string>
+    <string name="contribution_info_is">貢獻值：%d</string>
     <string name="exchange_explain">兌換說明</string>
     <string name="contribution_explain">貢獻值說明</string>
     <string name="fruit_explain">元宇礦石說明</string>
@@ -364,6 +364,7 @@
     <string name="confirm_submit">確認提交</string>
     <string name="upload_failed">上傳失敗!</string>
     <string name="uploading">正在上傳…</string>
+    <string name="level_is">LV%d</string>
 
 
 </resources>

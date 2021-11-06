@@ -257,7 +257,7 @@
     <string name="contribution_is">Activity: %s</string>
     <string name="contribution_detail">Contribution value details</string>
     <string name="user_level_free_rate_is">2. Proportion of paid service charge %d%%</string>
-    <string name="contribution_info_is">%s/contribution value:%d</string>
+    <string name="contribution_info_is">contribution value:%d</string>
     <string name="exchange_explain">Exchange instructions</string>
     <string name="contribution_explain">Contribution value description</string>
     <string name="fruit_explain">MetaMine stones description</string>
@@ -365,5 +365,6 @@
     <string name="confirm_submit">Confirm submit</string>
     <string name="upload_failed">Upload failed!</string>
     <string name="uploading">Uploading</string>
+    <string name="level_is">LV%d</string>
 
 </resources>
