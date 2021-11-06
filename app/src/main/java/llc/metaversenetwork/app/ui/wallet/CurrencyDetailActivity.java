@@ -18,7 +18,7 @@ import llc.metaversenetwork.app.util.CollectionUtils;
 /**
  * 我的钱包
  */
-public class WalletDetailActivity extends BaseTitleActivity<ActivityWalletDetailBinding> implements OnHolderClickListener<WalletAdapter> {
+public class CurrencyDetailActivity extends BaseTitleActivity<ActivityWalletDetailBinding> implements OnHolderClickListener<WalletAdapter> {
     // USDT:4
     // MNC:173
     AssetsTotalInfo.Assets mAssets;
@@ -42,6 +42,7 @@ public class WalletDetailActivity extends BaseTitleActivity<ActivityWalletDetail
 
     private void getData() {
         mAssets = (AssetsTotalInfo.Assets) getIntent().getSerializableExtra("asset");
+        setTitleText(getString(R.string.what_assets_detail, mAssets.currencyNameEn));
         bindRoot.setData(mAssets);
 
         UserData userData = UserDataUtil.instance().getUserData();

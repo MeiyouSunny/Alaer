@@ -378,5 +378,17 @@
     <string name="recharge">Recharge</string>
     <string name="withdrawal">Withdrawal</string>
     <string name="frozen">frozen</string>
+    <string name="what_assets_detail">%s assets detail</string>
+    <string name="recharge_record">Recharge record</string>
+    <string name="currency_select">Select currency</string>
+    <string name="time_is">Time: %s</string>
+    <string name="currency_type">Currency: %s</string>
+    <string name="service_charge_is">Service charge:%s</string>
+    <string name="chain_type_is">Chain type: %s</string>
+    <string name="state_is">"State: "</string>
+    <string name="failed">Failed</string>
+    <string name="success">Success</string>
+    <string name="quantity_is">Quantiry: %s</string>
+    <string name="withdrawal_record">Withdrawal record</string>
 
 </resources>

@@ -13,10 +13,6 @@ import com.alaer.lib.api.bean.UserData;
 import com.alaer.lib.api.bean.UserLevelList;
 import com.alaer.lib.data.UserDataUtil;
 
-import java.util.UUID;
-
-import cn.udesk.UdeskSDKManager;
-import cn.udesk.config.UdeskConfig;
 import likly.dollar.$;
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseTitleActivity;
@@ -206,7 +202,7 @@ public class UserMineActivity extends BaseTitleActivity<ActivityUserMineBinding>
                 }
                 break;
             case R.id.customeService:
-                gotoCustomerService();
+                ViewUtil.gotoCustomerService(this);
                 break;
             case R.id.layoutToLogin:
                 ViewUtil.gotoActivity(this, LoginActivity.class);
@@ -215,13 +211,6 @@ public class UserMineActivity extends BaseTitleActivity<ActivityUserMineBinding>
                 ViewUtil.gotoActivity(this, WalletActivity.class);
                 break;
         }
-    }
-
-    private void gotoCustomerService() {
-        UdeskSDKManager.getInstance().initApiKey(getApplicationContext(), AppConfig.UDESK_APP_DOMAIN,
-                AppConfig.UDESK_APP_SECRETKEY, AppConfig.UDESK_APP_ID);
-        final String sdkToken = UUID.randomUUID().toString();
-        UdeskSDKManager.getInstance().entryChat(getApplicationContext(), UdeskConfig.createDefualt(), sdkToken);
     }
 
 }

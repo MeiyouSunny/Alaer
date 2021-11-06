@@ -243,7 +243,14 @@
             android:screenOrientation="portrait"></activity>
 
         <activity
-            android:name=".ui.wallet.WalletDetailActivity"
+            android:name=".ui.wallet.CurrencyDetailActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name=".ui.wallet.CurrencyRechargeRecordActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".ui.wallet.CurrencyWithdrawalRecordActivity"
             android:screenOrientation="portrait"></activity>
 
     </application>

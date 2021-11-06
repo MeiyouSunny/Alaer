@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.alaer.lib.api.bean.AssetsTotalInfo.Assets" />
+
+        <variable
+            name="currencyId"
+            type="int" />
+
+        <variable
+            name="handler"
+            type="llc.metaversenetwork.app.base.BindClickListener" />
+    </data>
+
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_wallet"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical"
+        tools:context=".ui.user.UserInfoActivity">
+
+        <include layout="@layout/layout_title_bar_white" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="16dp"
+            android:paddingTop="20dp"
+            android:paddingRight="16dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="26dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/amoutAvalible"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:text="@string/withdrawal_record"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_15" />
+
+                <TextView
+                    android:id="@+id/typeUSDT"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:background="@{currencyId == 4 ? @drawable/btn_blue : @drawable/btn_gray_trans}"
+                    android:clickable="true"
+                    android:onClick="@{handler.click}"
+                    android:paddingLeft="8dp"
+                    android:paddingTop="4dp"
+                    android:paddingRight="8dp"
+                    android:paddingBottom="4dp"
+                    android:text="USDT"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_14" />
+
+                <TextView
+                    android:id="@+id/typeMNC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:background="@{currencyId == 13 ? @drawable/btn_blue : @drawable/btn_gray_trans}"
+                    android:clickable="true"
+                    android:onClick="@{handler.click}"
+                    android:paddingLeft="8dp"
+                    android:paddingTop="4dp"
+                    android:paddingRight="8dp"
+                    android:paddingBottom="4dp"
+                    android:text="MNC"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_14" />
+
+
+            </LinearLayout>
+
+            <likly.view.repeat.RepeatView
+                android:id="@+id/repeatView"
+                style="@style/RepeatView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:emptyView="@layout/layout_no_data"
+                app:viewHolderClass="llc.metaversenetwork.app.ui.wallet.CurrencyAdapter"
+                app:viewHolderLayout="@layout/item_transaction_record" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

@@ -379,6 +379,18 @@
     <string name="recharge">充值</string>
     <string name="withdrawal">提現</string>
     <string name="frozen">凍結</string>
+    <string name="what_assets_detail">%s資產明細</string>
+    <string name="recharge_record">充值記錄</string>
+    <string name="currency_select">資產選擇</string>
+    <string name="time_is">時間：%s</string>
+    <string name="currency_type">幣種：%s</string>
+    <string name="service_charge_is">手續費：%s</string>
+    <string name="chain_type_is">鏈類型：%s</string>
+    <string name="quantity_is">數量：%s</string>
+    <string name="state_is">狀態：</string>
+    <string name="success">成功</string>
+    <string name="failed">失敗</string>
+    <string name="withdrawal_record">提現記錄</string>
 
 
 </resources>

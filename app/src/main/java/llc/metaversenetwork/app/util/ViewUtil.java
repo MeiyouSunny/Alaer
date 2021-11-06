@@ -8,9 +8,14 @@ import android.text.TextUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.alaer.lib.api.AppConfig;
 import com.bumptech.glide.Glide;
 
 import java.io.Serializable;
+import java.util.UUID;
+
+import cn.udesk.UdeskSDKManager;
+import cn.udesk.config.UdeskConfig;
 
 public class ViewUtil {
 
@@ -28,6 +33,13 @@ public class ViewUtil {
         Intent intent = new Intent(context, activityDes);
         intent.putExtra(key, value);
         context.startActivity(intent);
+    }
+
+    public static void gotoCustomerService(Context context) {
+        UdeskSDKManager.getInstance().initApiKey(context.getApplicationContext(), AppConfig.UDESK_APP_DOMAIN,
+                AppConfig.UDESK_APP_SECRETKEY, AppConfig.UDESK_APP_ID);
+        final String sdkToken = UUID.randomUUID().toString();
+        UdeskSDKManager.getInstance().entryChat(context.getApplicationContext(), UdeskConfig.createDefualt(), sdkToken);
     }
 
     public static String getText(TextView textView) {

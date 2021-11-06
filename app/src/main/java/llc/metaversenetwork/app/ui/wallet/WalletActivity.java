@@ -71,7 +71,7 @@ public class WalletActivity extends BaseTitleActivity<ActivityWalletBinding> imp
     @Override
     public void onHolderClick(WalletAdapter walletAdapter) {
         AssetsTotalInfo.Assets assets = walletAdapter.getData();
-        ViewUtil.gotoActivity(this, WalletDetailActivity.class, "asset", assets);
+        ViewUtil.gotoActivity(this, CurrencyDetailActivity.class, "asset", assets);
     }
 
 }

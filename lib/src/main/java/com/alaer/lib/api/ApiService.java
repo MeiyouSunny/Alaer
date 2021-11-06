@@ -547,8 +547,19 @@ public interface ApiService {
      */
     @GET("/mining/profile/account/water/dmd/query")
     Call<List<CurrencyRecord>> queryCurrencyRecords(@Query("uuid") String uuid, @Query("uid") String uid,
-                                      @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
-                                      @Query("pageIndex") int pageIndex, @Query("pageSize") int pageSize,
-                                      Callback<List<CurrencyRecord>> callback);
+                                                    @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
+                                                    @Query("pageIndex") int pageIndex, @Query("pageSize") int pageSize,
+                                                    Callback<List<CurrencyRecord>> callback);
 
+    /**
+     * 币种充值记录
+     */
+    @FormBody
+    @POST("/coin/selectListByUuid")
+    Call<String> queryCurrencyRechargeRecords(@Part("uuid") String uuid, @Part("uid") String uid,
+                                              @Part("token") String token, @Part("diamondCurrency") String diamondCurrency,
+                                              @Part("start") int start, @Part("size") int size,
+                                              @Part("currencyId") int currencyId, @Part("beginTime") String beginTime, @Part("endTime") String endTime,
+                                              @Part("status") String status,
+                                              Callback<String> callback);
 }
