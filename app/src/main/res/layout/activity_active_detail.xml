@@ -21,31 +21,33 @@
     <LinearLayout xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
+        android:background="@drawable/bg_settings"
         android:fitsSystemWindows="true"
         android:orientation="vertical">
 
-        <include layout="@layout/layout_title_bar_black" />
+        <include layout="@layout/layout_title_bar_white" />
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="124dp"
+            android:layout_height="120dp"
             android:layout_marginLeft="13dp"
             android:layout_marginTop="18dp"
             android:layout_marginRight="13dp"
-            app:cardBackgroundColor="#52c883"
             app:cardCornerRadius="15dp">
 
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_bill_top"
+                android:gravity="center"
+                android:orientation="horizontal">
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_marginRight="52dp"
                     android:layout_toLeftOf="@+id/dividerLine"
+                    android:layout_weight="1"
                     android:gravity="center"
                     android:orientation="vertical">
 
@@ -54,18 +56,17 @@
                         android:layout_height="wrap_content"
                         android:text="@{number.parseNumber(data.profile.minerActivityness)}"
                         android:textColor="@color/white"
-                        android:textSize="@dimen/font_20"
+                        android:textSize="@dimen/font_16"
                         tools:text="487380" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:drawableLeft="@drawable/ic_active_sapling"
                         android:drawablePadding="8dp"
-                        android:text="@string/sapling"
+                        android:text="@string/sapling_activity"
                         android:textColor="@color/white"
-                        android:textSize="@dimen/font_17" />
+                        android:textSize="@dimen/font_16" />
 
                 </LinearLayout>
 
@@ -73,15 +74,14 @@
                     android:id="@+id/dividerLine"
                     android:layout_width="1dp"
                     android:layout_height="40dp"
-                    android:layout_centerInParent="true"
                     android:background="@color/white" />
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_marginLeft="52dp"
                     android:layout_toRightOf="@+id/dividerLine"
+                    android:layout_weight="1"
                     android:gravity="center"
                     android:orientation="vertical">
 
@@ -90,22 +90,57 @@
                         android:layout_height="wrap_content"
                         android:text="@{number.parseNumber(data.profile.promotionActivityness)}"
                         android:textColor="@color/white"
-                        android:textSize="@dimen/font_20"
+                        android:textSize="@dimen/font_16"
                         tools:text="487380" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:drawableLeft="@drawable/ic_active_share"
                         android:drawablePadding="8dp"
-                        android:text="@string/share"
+                        android:text="@string/share_activity"
                         android:textColor="@color/white"
-                        android:textSize="@dimen/font_17" />
+                        android:textSize="@dimen/font_16" />
 
                 </LinearLayout>
 
-            </RelativeLayout>
+                <View
+                    android:id="@+id/dividerLine2"
+                    android:layout_width="1dp"
+                    android:layout_height="40dp"
+                    android:layout_centerInParent="true"
+                    android:background="@color/white" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/dividerLine2"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{number.parseNumber(data.profile.fireActivityness)}"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_16"
+                        tools:text="487380" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:drawableLeft="@drawable/ic_fire"
+                        android:drawablePadding="8dp"
+                        android:text="@string/burn"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_16" />
+
+                </LinearLayout>
+
+            </LinearLayout>
 
         </androidx.cardview.widget.CardView>
 

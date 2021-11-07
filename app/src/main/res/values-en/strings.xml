@@ -400,5 +400,6 @@
     <string name="get_quantity">Get quantity:</string>
     <string name="immediate_receipt">Immediate receipt</string>
     <string name="person_level_is">Personal level: LV%d</string>
+    <string name="burn">Burn</string>
 
 </resources>

@@ -401,6 +401,7 @@
     <string name="get_quantity">可得數量：</string>
     <string name="immediate_receipt">即時到賬</string>
     <string name="person_level_is">個人等級：LV%d</string>
+    <string name="burn">燒傷</string>
 
 
 </resources>
