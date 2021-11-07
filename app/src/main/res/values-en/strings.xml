@@ -218,7 +218,7 @@
     <string name="total_score_is">Total power points:%s power points</string>
     <string name="total_fruit_is">Total MetaMine stones:%s</string>
     <string name="payment_proportion">Proportion of paid service charge:%d%%</string>
-    <string name="exchange_detail">Exchange details:</string>
+    <string name="exchange_detail">Exchange details</string>
     <string name="arrival_timely">Immediate receipt</string>
     <string name="exchange_number">Exchange quantity:</string>
     <string name="fruit_number_is">%s MetaMine stones</string>
@@ -390,5 +390,14 @@
     <string name="success">Success</string>
     <string name="quantity_is">Quantiry: %s</string>
     <string name="withdrawal_record">Withdrawal record</string>
+    <string name="assets_exchange">Assets exchange</string>
+    <string name="assets_select">"Select assets "</string>
+    <string name="input_exchange_amount">Input exchange value</string>
+    <string name="convert_assets">Asset conversion</string>
+    <string name="exchange_type">Exchange type</string>
+    <string name="exchange_fee">Exchange fee:</string>
+    <string name="get_quantity">Get quantity:</string>
+    <string name="immediate_receipt">Immediate receipt</string>
+    <string name="person_level_is">Personal level: LV%d</string>
 
 </resources>

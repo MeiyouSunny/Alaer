@@ -25,6 +25,9 @@ public class AppConfig {
 
     public static final int PAGE_SIZE_DEFAULT = 20;
 
+    public static final int USDT_ID = 4;
+    public static final int MNC_ID = 173;
+
     // 视频
     // 走进alaer
     public static final String GO_INTO_ALAER_VIDEO = "https://t-app.linker.world/meta/video/official/welcome.mp4";

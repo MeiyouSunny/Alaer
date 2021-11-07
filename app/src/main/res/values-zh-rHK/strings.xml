@@ -218,7 +218,7 @@
     <string name="total_score_is">功分总数：%s 功分</string>
     <string name="total_fruit_is">元宇礦石總數：%s元宇礦石</string>
     <string name="payment_proportion">缴纳手續費占比：%d%%</string>
-    <string name="exchange_detail">兌換詳情：</string>
+    <string name="exchange_detail">兌換詳情</string>
     <string name="arrival_timely">即时到账</string>
     <string name="exchange_number">兌換數量：</string>
     <string name="fruit_number_is">%s元宇礦石</string>
@@ -391,6 +391,15 @@
     <string name="success">成功</string>
     <string name="failed">失敗</string>
     <string name="withdrawal_record">提現記錄</string>
+    <string name="assets_exchange">資產兌換</string>
+    <string name="assets_select">資產選擇</string>
+    <string name="input_exchange_amount">請輸入兌換數量</string>
+    <string name="convert_assets">轉換資產</string>
+    <string name="exchange_type">兌換類型：</string>
+    <string name="exchange_fee">兌換手續費：</string>
+    <string name="get_quantity">可得數量：</string>
+    <string name="immediate_receipt">即時到賬</string>
+    <string name="person_level_is">個人等級：LV%d</string>
 
 
 </resources>
