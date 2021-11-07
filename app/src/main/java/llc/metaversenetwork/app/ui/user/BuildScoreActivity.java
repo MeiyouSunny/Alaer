@@ -1,7 +1,7 @@
 package llc.metaversenetwork.app.ui.user;
 
-import com.alaer.lib.api.AppConfig;
 import com.alaer.lib.api.bean.Balance;
+
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseTitleActivity;
 import llc.metaversenetwork.app.databinding.ActivityBuildScoreBinding;
@@ -35,7 +35,7 @@ public class BuildScoreActivity extends BaseTitleActivity<ActivityBuildScoreBind
 
     @Override
     protected void onRightClick() {
-        WebPageActivity.start(this, AppConfig.BUILD_SCORE_EXPLAIN, R.string.build_score_explain);
+        WebPageActivity.start(this, getString(R.string.mnc_desc_url), R.string.build_score_explain);
     }
 
 }

@@ -410,6 +410,8 @@
     <string name="team_level_desc_url">https://metaverse-3.gitbook.io/mnw-guide-tw/mnc-tuan-dui-deng-ji-shui-ming</string>
     <string name="user_level_desc_url">https://metaverse-3.gitbook.io/mnw-guide-tw/mnc-hui-yuan-deng-ji-shui-ming</string>
     <string name="assets_exchange_desc_url">https://metaverse-3.gitbook.io/mnw-guide-tw/mnc-zi-chan-dui-huan-liu-cheng-shui-ming</string>
+    <string name="wmnc_desc_url">https://app.gitbook.com/s/7u4QBkkfAjWaNsEInSlE/mnc-guan-wu-yuan-yu-kuang-wmnc</string>
+    <string name="mnc_desc_url">https://app.gitbook.com/s/7u4QBkkfAjWaNsEInSlE/mnc-guan-wu-yuan-yu-ji-fen-mnc</string>
 
 
 </resources>

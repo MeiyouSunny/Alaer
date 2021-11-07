@@ -80,6 +80,11 @@ public class BeginnerGuideActivity extends BaseTitleActivity<ActivityBeginnerGui
                                 data.putSerializable("inviter", response);
                                 ViewUtil.gotoActivity(getContext(), InviterInfoActivity.class, data);
                             }
+
+                            @Override
+                            public void onError(Throwable throwable) {
+                                super.onError(throwable);
+                            }
                         });
                 break;
         }

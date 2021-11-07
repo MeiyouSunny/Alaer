@@ -1,7 +1,7 @@
 package llc.metaversenetwork.app.ui.user;
 
-import com.alaer.lib.api.AppConfig;
 import com.alaer.lib.api.bean.Balance;
+
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseTitleActivity;
 import llc.metaversenetwork.app.databinding.ActivityFruitBillBinding;
@@ -35,7 +35,7 @@ public class FruitBillActivity extends BaseTitleActivity<ActivityFruitBillBindin
 
     @Override
     protected void onRightClick() {
-        WebPageActivity.start(this, AppConfig.FRUIT_EXPLAIN, R.string.fruit_explain);
+        WebPageActivity.start(this, getString(R.string.wmnc_desc_url), R.string.fruit_explain);
     }
 
 }

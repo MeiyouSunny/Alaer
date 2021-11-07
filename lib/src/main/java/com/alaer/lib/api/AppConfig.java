@@ -54,7 +54,7 @@ public class AppConfig {
     /* 贡献值说明 */
 //    public static final String CONTRIBUTION_EXPLAIN = "https://app.tokensky.cn/articles/zh_CN/contribution_zh_CN.html";
     /* 果实说明 */
-    public static final String FRUIT_EXPLAIN = "https://app.tokensky.cn/articles/zh_CN/gs_zh_CN.html";
+//    public static final String FRUIT_EXPLAIN = "https://app.tokensky.cn/articles/zh_CN/gs_zh_CN.html";
     /* 功分与手續費说明*/
     public static final String BUILD_SCORE_EXPLAIN = "https://app.tokensky.cn/articles/zh_CN/gf_zh_CN.html";
     /* 等级说明 */
