@@ -83,4 +83,9 @@
         <item>@string/machine4</item>
     </string-array>
 
+    <string-array name="exchange_types">
+        <item>@string/fruit</item>
+        <item>@string/build_integral</item>
+    </string-array>
+
 </resources>

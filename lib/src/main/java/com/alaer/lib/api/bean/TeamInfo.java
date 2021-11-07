@@ -45,7 +45,7 @@ public class TeamInfo implements Serializable {
         public float minerActivityness;
         public float promotionActivityness;
         public float fireActivityness;
-        public double reputation;
+        public float reputation;
         public int contribution;
         public int level;
         public String createTime;

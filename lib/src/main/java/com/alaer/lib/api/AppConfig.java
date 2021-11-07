@@ -4,7 +4,7 @@ public class AppConfig {
 
 //    public static final String BASE_URL = "https://t-api.yuliang.top/polarisex";
 
-//    public static final String BASE_URL = "https://api.tokensky.cn/polarisex";
+    //    public static final String BASE_URL = "https://api.tokensky.cn/polarisex";
     public static final String BASE_URL = "https://t-api.linker.world/polarisex/";
 
     /* 易盾形为验证码业务ID */
@@ -25,8 +25,8 @@ public class AppConfig {
 
     public static final int PAGE_SIZE_DEFAULT = 20;
 
-    public static final int USDT_ID = 4;
-    public static final int MNC_ID = 173;
+    public static final String WMNC_ID = "174";
+    public static final String MNC_ID = "173";
 
     // 视频
     // 走进alaer
@@ -71,7 +71,7 @@ public class AppConfig {
     public static final String UDESK_APP_DOMAIN = "1323275.s4.udesk.cn";
 
     public static void init(boolean isEnglish) {
-        if(isEnglish) {
+        if (isEnglish) {
             USER_AGREEMENT = USER_AGREEMENT_EN;
         } else {
             USER_AGREEMENT = USER_AGREEMENT_TW;

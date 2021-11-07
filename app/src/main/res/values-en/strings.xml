@@ -138,7 +138,8 @@
     <string name="total_assets">Total assets: (¥)</string>
     <string name="fruit">MetaMine stones</string>
     <string name="build_integral">Metaverse integral</string>
-    <string name="build_integral_detail">Metaverse integral details</string>
+    <string name="mnc_unit">Metaverse integral</string>
+    <string name="build_integral_detail">Metaverse integral MNC details</string>
     <string name="sapling_activity">Detector activity</string>
     <string name="share_activity">Sharing activity</string>
     <string name="my_share">My share</string>
@@ -176,7 +177,7 @@
     <string name="give_away">Give</string>
     <string name="sapling_activity_is">Detector activity:%s</string>
     <string name="share_activity_is">Share activity:%s</string>
-    <string name="fruit_bill">Detecors details</string>
+    <string name="fruit_bill">MetaMine stones WMNC details</string>
     <string name="total">total</string>
     <string name="available">available</string>
     <string name="income">income</string>

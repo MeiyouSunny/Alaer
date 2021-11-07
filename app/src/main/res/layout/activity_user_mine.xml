@@ -287,8 +287,8 @@
                                     android:id="@+id/scoreBuild"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="0.00"
                                     android:layout_marginTop="16dp"
+                                    android:text="0.00"
                                     android:textColor="@color/white"
                                     android:textSize="@dimen/font_18"
                                     tools:text="1500" />
@@ -333,14 +333,14 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_below="@+id/honor_value"
+                                    android:layout_below="@+id/honorValue"
                                     android:layout_marginTop="6dp"
                                     android:text="@string/honor_value"
                                     android:textColor="@color/white"
                                     android:textSize="@dimen/font_12" />
 
                                 <TextView
-                                    android:id="@+id/honor_value"
+                                    android:id="@+id/honorValue"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="16dp"

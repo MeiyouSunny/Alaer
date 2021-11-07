@@ -93,6 +93,7 @@ public class UserMineActivity extends BaseTitleActivity<ActivityUserMineBinding>
         ViewUtil.setText(bindRoot.saplingActivity, String.valueOf(NumberUtils.instance().parseNumber(info.profile.minerActivityness)));
         ViewUtil.setText(bindRoot.shareActivity, String.valueOf(NumberUtils.instance().parseNumber(info.profile.promotionActivityness)));
         ViewUtil.setText(bindRoot.contributionValue, String.valueOf(NumberUtils.instance().parseNumber(info.profile.contribution)));
+        ViewUtil.setText(bindRoot.honorValue, String.valueOf(NumberUtils.instance().parseNumber(info.profile.reputation)));
     }
 
     private void showUserInfo() {

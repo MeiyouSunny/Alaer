@@ -562,4 +562,15 @@ public interface ApiService {
                                               @Part("currencyId") int currencyId, @Part("beginTime") String beginTime, @Part("endTime") String endTime,
                                               @Part("status") String status,
                                               Callback<String> callback);
+
+    /**
+     * 资产兑换
+     */
+    @FormBody
+    @POST("/mining/diamond/exchange")
+    Call<String> exchangeAssets(@Part("uuid") String uuid, @Part("uid") String uid, @Part("token") String token,
+                               @Part("validate") String validate, @Part("captchaId") String captchaId, @Part("tradePhraseCode") String tradePhraseCode,
+                               @Part("amount") String amount, @Part("tradeCurrencyId") String tradeCurrencyId, @Part("diamondCurrencyId") String diamondCurrencyId,
+                               Callback<String> callback);
+
 }

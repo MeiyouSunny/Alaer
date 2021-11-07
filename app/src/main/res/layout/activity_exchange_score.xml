@@ -6,6 +6,10 @@
     <data>
 
         <variable
+            name="isWMNC"
+            type="boolean" />
+
+        <variable
             name="balance"
             type="com.alaer.lib.api.bean.Balance" />
 
@@ -37,15 +41,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:paddingLeft="18dp"
+                android:paddingLeft="12dp"
                 android:paddingTop="28dp"
-                android:paddingRight="18dp"
+                android:paddingRight="12dp"
                 android:paddingBottom="32dp">
 
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="86dp">
+                    android:layout_height="80dp">
 
                     <TextView
                         android:id="@+id/label1"
@@ -61,71 +65,98 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
                         android:layout_marginRight="18dp"
-                        android:text="@string/assets_select"
                         android:textColor="@color/blue"
-                        android:textSize="@dimen/font_14"
-                        tools:text="余额：00" />
+                        android:textSize="@dimen/font_14" />
 
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/label1">
 
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="194dp"
-                        android:layout_height="40dp"
-                        android:layout_below="@+id/label1"
-                        android:layout_marginTop="16dp"
-                        app:cardBackgroundColor="@color/card_bg_trans"
-                        app:cardCornerRadius="8dp"
-                        app:cardElevation="0dp">
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="164dp"
+                            android:layout_height="40dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="10dp"
+                            app:cardBackgroundColor="@color/card_bg_trans"
+                            app:cardCornerRadius="8dp"
+                            app:cardElevation="0dp">
 
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
-                            <EditText
-                                android:id="@+id/etAmount"
+                            <RelativeLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="42dp"
-                                android:layout_centerVertical="true"
-                                android:layout_toLeftOf="@+id/exchangeAll"
-                                android:background="@null"
-                                android:hint="@string/input_number"
-                                android:inputType="numberDecimal"
-                                android:paddingLeft="18dp"
-                                android:paddingRight="8dp"
-                                android:singleLine="true"
-                                android:textColorHint="@color/white"
-                                android:textSize="@dimen/font_14" />
+                                android:layout_height="match_parent">
 
-                            <TextView
-                                android:id="@+id/exchangeAll"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentRight="true"
-                                android:layout_centerVertical="true"
-                                android:layout_marginRight="8dp"
-                                android:background="@drawable/btn_blue"
-                                android:onClick="@{handler.click}"
-                                android:padding="4dp"
-                                android:text="@string/exchange_all"
-                                android:textColor="@color/white" />
+                                <EditText
+                                    android:id="@+id/etAmount"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="42dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_toLeftOf="@+id/exchangeAll"
+                                    android:background="@null"
+                                    android:hint="@string/input_number"
+                                    android:inputType="numberDecimal"
+                                    android:paddingLeft="8dp"
+                                    android:paddingRight="8dp"
+                                    android:singleLine="true"
+                                    android:textColor="@color/white"
+                                    android:textColorHint="@color/white"
+                                    android:textSize="@dimen/font_14" />
 
-                        </RelativeLayout>
+                                <TextView
+                                    android:id="@+id/exchangeAll"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="8dp"
+                                    android:background="@drawable/btn_blue"
+                                    android:onClick="@{handler.click}"
+                                    android:padding="4dp"
+                                    android:text="@string/exchange_all"
+                                    android:textColor="@color/white" />
 
-                    </androidx.cardview.widget.CardView>
+                            </RelativeLayout>
 
+                        </androidx.cardview.widget.CardView>
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_centerVertical="true"
+                            android:layout_toLeftOf="@+id/spinnerInput"
+                            android:background="@{isWMNC ? @drawable/ic_fruit : @drawable/ic_intefral}" />
+
+                        <Spinner
+                            android:id="@+id/spinnerInput"
+                            android:layout_width="132dp"
+                            android:layout_height="36dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:backgroundTint="@color/white"
+                            android:entries="@array/exchange_types"
+                            android:popupBackground="#D9D9D9"
+                            android:spinnerMode="dropdown"
+                            android:textSize="@dimen/font_14"
+                            android:theme="@style/Spinner" />
+
+
+                    </RelativeLayout>
 
                 </RelativeLayout>
 
                 <ImageView
+                    android:id="@+id/change"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="80dp"
                     android:layout_marginTop="12dp"
                     android:layout_marginBottom="4dp"
+                    android:clickable="true"
                     android:src="@drawable/ic_exchange_arrow" />
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="86dp">
+                    android:layout_height="80dp">
 
                     <TextView
                         android:id="@+id/label2"
@@ -141,41 +172,65 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
                         android:layout_marginRight="18dp"
-                        android:text="@string/assets_select"
                         android:textColor="@color/blue"
                         android:textSize="@dimen/font_14"
                         tools:text="余额：00" />
 
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/label2">
 
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="194dp"
-                        android:layout_height="40dp"
-                        android:layout_below="@+id/label2"
-                        android:layout_marginTop="16dp"
-                        app:cardBackgroundColor="@color/card_bg_trans"
-                        app:cardCornerRadius="8dp"
-                        app:cardElevation="0dp">
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="164dp"
+                            android:layout_height="40dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="12dp"
+                            app:cardBackgroundColor="@color/card_bg_trans"
+                            app:cardCornerRadius="8dp"
+                            app:cardElevation="0dp">
 
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
-                            <TextView
-                                android:id="@+id/amountGet"
+                            <RelativeLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="42dp"
-                                android:gravity="center_vertical"
-                                android:inputType="numberDecimal"
-                                android:paddingLeft="42dp"
-                                android:paddingRight="8dp"
-                                android:singleLine="true"
-                                android:textColorHint="@color/white"
-                                android:textSize="@dimen/font_14" />
+                                android:layout_height="match_parent">
 
-                        </RelativeLayout>
+                                <TextView
+                                    android:id="@+id/amountGet"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="42dp"
+                                    android:gravity="center_vertical"
+                                    android:inputType="numberDecimal"
+                                    android:paddingLeft="42dp"
+                                    android:paddingRight="8dp"
+                                    android:singleLine="true"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/font_14" />
 
-                    </androidx.cardview.widget.CardView>
+                            </RelativeLayout>
 
+                        </androidx.cardview.widget.CardView>
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_centerVertical="true"
+                            android:layout_toLeftOf="@+id/spinnerGet"
+                            android:background="@{isWMNC ? @drawable/ic_intefral : @drawable/ic_fruit}" />
+
+                        <Spinner
+                            android:id="@+id/spinnerGet"
+                            android:layout_width="132dp"
+                            android:layout_height="36dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:backgroundTint="@color/white"
+                            android:entries="@array/exchange_types"
+                            android:popupBackground="#D9D9D9"
+                            android:spinnerMode="dropdown"
+                            android:textSize="@dimen/font_14"
+                            android:theme="@style/Spinner" />
+
+                    </RelativeLayout>
 
                 </RelativeLayout>
 
@@ -201,16 +256,17 @@
                         android:textSize="@dimen/font_15" />
 
                     <TextView
+                        android:id="@+id/personLevel"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="12dp"
-                        android:layout_toLeftOf="@+id/fee"
+                        android:layout_toLeftOf="@+id/serviceFee"
                         android:textColor="@color/font_orange"
                         android:textSize="@dimen/font_13"
                         tools:text="個人等級：LV2" />
 
                     <TextView
-                        android:id="@+id/fee"
+                        android:id="@+id/serviceFee"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
@@ -269,7 +325,6 @@
                             android:layout_below="@+id/detailLabel12"
                             android:layout_alignParentRight="true"
                             android:layout_marginTop="14dp"
-                            android:text="@string/immediate_receipt"
                             android:textColor="@color/blue" />
 
                         <TextView
@@ -288,7 +343,6 @@
                             android:layout_below="@+id/detailLabel22"
                             android:layout_alignParentRight="true"
                             android:layout_marginTop="14dp"
-                            android:text="@string/immediate_receipt"
                             android:textColor="@color/blue" />
 
                         <TextView
@@ -307,7 +361,6 @@
                             android:layout_below="@+id/detailLabel32"
                             android:layout_alignParentRight="true"
                             android:layout_marginTop="14dp"
-                            android:text="@string/immediate_receipt"
                             android:textColor="@color/blue" />
 
                     </RelativeLayout>

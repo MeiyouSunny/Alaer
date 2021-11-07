@@ -138,7 +138,8 @@
     <string name="total_assets">總資產：（元）</string>
     <string name="fruit">元宇礦WMNC</string>
     <string name="build_integral">元宇積分MNC</string>
-    <string name="build_integral_detail">元宇積分明細</string>
+    <string name="mnc_unit">元宇積分</string>
+    <string name="build_integral_detail">元宇積分MNC明細</string>
     <string name="sapling_activity">探測器活躍度</string>
     <string name="share_activity">分享活躍度</string>
     <string name="my_share">我的分享</string>
@@ -169,14 +170,14 @@
     <string name="wechat_no_modify_warning">修改微訊號將消耗1元宇礦石，請謹慎設定</string>
     <string name="submit">提交</string>
     <string name="active_detail">活躍度明細</string>
-    <string name="sapling">元宇礦石</string>
+    <string name="sapling">元宇礦</string>
     <string name="share">分享</string>
     <string name="all">全部</string>
     <string name="exchange">兌換</string>
     <string name="give_away">贈送</string>
     <string name="sapling_activity_is">探測器活躍度：%s</string>
     <string name="share_activity_is">分享活躍度：%s</string>
-    <string name="fruit_bill">探測器明細</string>
+    <string name="fruit_bill">元宇礦WMNC明細</string>
     <string name="total">總計</string>
     <string name="available">可用</string>
     <string name="income">收入</string>
