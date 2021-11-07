@@ -10,6 +10,9 @@ import com.alaer.lib.api.Callback;
 import com.alaer.lib.api.bean.TeamDetail;
 import com.alaer.lib.api.bean.UserData;
 import com.alaer.lib.data.UserDataUtil;
+import com.meiyou.mvp.MvpBinder;
+
+import likly.dollar.$;
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseBindFragment;
 import llc.metaversenetwork.app.databinding.FragmentRegistConfirmPwdBinding;
@@ -19,9 +22,6 @@ import llc.metaversenetwork.app.util.NeteaseCaptcha;
 import llc.metaversenetwork.app.util.SimpleTextWatcher;
 import llc.metaversenetwork.app.util.StringUtil;
 import llc.metaversenetwork.app.util.ViewUtil;
-import com.meiyou.mvp.MvpBinder;
-
-import likly.dollar.$;
 
 @MvpBinder(
 )
@@ -78,7 +78,7 @@ public class RegistConfirmPwdFragment extends BaseBindFragment<FragmentRegistCon
                 verifyCode();
                 break;
             case R.id.agreement:
-                WebPageActivity.start(getActivity(), AppConfig.USER_AGREEMENT, R.string.user_agreement);
+                WebPageActivity.start(getActivity(), getString(R.string.user_rule_url), R.string.user_agreement);
                 break;
         }
     }

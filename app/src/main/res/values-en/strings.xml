@@ -343,6 +343,7 @@
     <string name="system">System</string>
     <string name="my_wallet">My wallet</string>
     <string name="honor_value">Honor value</string>
+    <string name="honor_value_record">Honor value detail</string>
 
     <string name="auth_paypal">PayPal authentication</string>
     <string name="auth_card">User certificate authentication</string>
@@ -401,5 +402,6 @@
     <string name="immediate_receipt">Immediate receipt</string>
     <string name="person_level_is">Personal level: LV%d</string>
     <string name="burn">Burn</string>
+    <string name="user_rule_url">http://bqd.linker.world/articles/en_US/agreement-zh_US.html</string>
 
 </resources>

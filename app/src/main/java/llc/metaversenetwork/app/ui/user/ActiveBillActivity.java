@@ -1,7 +1,7 @@
 package llc.metaversenetwork.app.ui.user;
 
-import com.alaer.lib.api.AppConfig;
 import com.alaer.lib.api.bean.TeamInfo;
+
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseTitleActivity;
 import llc.metaversenetwork.app.databinding.ActivityActiveDetailBinding;
@@ -35,7 +35,7 @@ public class ActiveBillActivity extends BaseTitleActivity<ActivityActiveDetailBi
 
     @Override
     protected void onRightClick() {
-        WebPageActivity.start(this, AppConfig.ACTIVITY_EXPLAIN, R.string.activity_explain);
+        WebPageActivity.start(this, getString(R.string.activity_desc_url), R.string.activity_explain);
     }
 
 }

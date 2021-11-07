@@ -1,8 +1,10 @@
 package llc.metaversenetwork.app.ui.user;
 
 import com.alaer.lib.api.bean.FruitBill;
+
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.repeatview.BaseViewHolder;
+import llc.metaversenetwork.app.data.BillUtil;
 import llc.metaversenetwork.app.databinding.ItemFruitBillBinding;
 import llc.metaversenetwork.app.util.NumberUtils;
 
@@ -14,6 +16,7 @@ public class FruitBillAdapter extends BaseViewHolder<ItemFruitBillBinding, Fruit
     @Override
     protected void onBindData(FruitBill bill) {
         bindRoot.setNumber(NumberUtils.instance());
+        bindRoot.setBillUtil(new BillUtil());
         bindRoot.setBill(bill);
         bindRoot.executePendingBindings();
     }

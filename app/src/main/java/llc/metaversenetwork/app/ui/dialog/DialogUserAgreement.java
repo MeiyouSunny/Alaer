@@ -5,7 +5,6 @@ import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-import com.alaer.lib.api.AppConfig;
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseDialogHolder;
 import llc.metaversenetwork.app.databinding.DialogUserAgreementBinding;
@@ -44,7 +43,7 @@ public class DialogUserAgreement extends BaseDialogHolder<DialogUserAgreementBin
         @Override
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
             if (url.startsWith("agreement://")) {
-                WebPageActivity.start(getContext(), AppConfig.USER_AGREEMENT, R.string.user_agreement);
+                WebPageActivity.start(getContext(), getContext().getString(R.string.user_rule_url), R.string.user_agreement);
                 return true;
             }
             return false;

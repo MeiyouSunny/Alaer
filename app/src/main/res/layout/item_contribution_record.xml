@@ -9,6 +9,10 @@
             type="com.alaer.lib.api.bean.ActiveBill" />
 
         <variable
+            name="billUtil"
+            type="llc.metaversenetwork.app.data.BillUtil" />
+
+        <variable
             name="number"
             type="llc.metaversenetwork.app.util.NumberUtils" />
     </data>
@@ -20,19 +24,23 @@
         android:paddingRight="32dp">
 
         <ImageView
+            android:id="@+id/icon"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_centerVertical="true"
             android:layout_marginLeft="4dp"
-            android:src="@{bill.type==3 ? @drawable/ic_type_gift : @drawable/ic_type_share}" />
+            app:drawableRes="@{billUtil.parseTypeIcon(bill.type)}" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="38dp"
+            android:layout_marginLeft="8dp"
             android:layout_marginTop="16dp"
+            android:layout_marginRight="8dp"
+            android:layout_toLeftOf="@+id/value"
+            android:layout_toRightOf="@+id/icon"
             android:text="@{bill.note}"
-            android:textColor="@color/font_41"
+            android:textColor="@color/white"
             android:textSize="@dimen/font_15" />
 
         <TextView
@@ -42,7 +50,7 @@
             android:layout_marginLeft="38dp"
             android:layout_marginTop="40dp"
             android:text="@{bill.createTime}"
-            android:textColor="@color/font_7E"
+            android:textColor="@color/white"
             android:textSize="@dimen/font_10" />
 
         <!--        <TextView-->
@@ -56,6 +64,7 @@
         <!--            android:textSize="@dimen/font_10" />-->
 
         <TextView
+            android:id="@+id/value"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"

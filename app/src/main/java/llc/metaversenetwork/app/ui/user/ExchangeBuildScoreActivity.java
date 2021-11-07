@@ -108,7 +108,7 @@ public class ExchangeBuildScoreActivity extends BaseTitleActivity<ActivityExchan
 
     @Override
     protected void onRightClick() {
-        WebPageActivity.start(this, AppConfig.EXCHANGE_EXPLAIN, R.string.exchange_explain);
+        WebPageActivity.start(this, getString(R.string.assets_exchange_desc_url), R.string.exchange_explain);
     }
 
     private void updateShow() {

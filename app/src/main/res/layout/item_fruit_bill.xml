@@ -9,6 +9,10 @@
             type="com.alaer.lib.api.bean.FruitBill" />
 
         <variable
+            name="billUtil"
+            type="llc.metaversenetwork.app.data.BillUtil" />
+
+        <variable
             name="number"
             type="llc.metaversenetwork.app.util.NumberUtils" />
 

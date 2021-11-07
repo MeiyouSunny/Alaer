@@ -121,7 +121,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="266dp"
-                android:text="微信号"
+                android:text="Telegram號"
                 android:textColor="@color/white"
                 android:textSize="@dimen/font_15" />
 

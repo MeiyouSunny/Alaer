@@ -6,16 +6,9 @@ import android.os.Build;
 import android.provider.Settings;
 import android.view.View;
 
-import com.alaer.lib.api.AppConfig;
 import com.alaer.lib.data.UserDataUtil;
 import com.alaer.lib.event.Event;
 import com.alaer.lib.event.EventUtil;
-import llc.metaversenetwork.app.R;
-import llc.metaversenetwork.app.base.BaseTitleActivity;
-import llc.metaversenetwork.app.databinding.ActivityAboutBinding;
-import llc.metaversenetwork.app.ui.home.HomeActivity;
-import llc.metaversenetwork.app.ui.webpage.WebPageActivity;
-import llc.metaversenetwork.app.util.SettingUtil;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
@@ -23,6 +16,12 @@ import de.greenrobot.event.EventBus;
 import de.greenrobot.event.Subscribe;
 import de.greenrobot.event.ThreadMode;
 import likly.dollar.$;
+import llc.metaversenetwork.app.R;
+import llc.metaversenetwork.app.base.BaseTitleActivity;
+import llc.metaversenetwork.app.databinding.ActivityAboutBinding;
+import llc.metaversenetwork.app.ui.home.HomeActivity;
+import llc.metaversenetwork.app.ui.webpage.WebPageActivity;
+import llc.metaversenetwork.app.util.SettingUtil;
 
 /**
  * 关于
@@ -54,7 +53,7 @@ public class AboutActivity extends BaseTitleActivity<ActivityAboutBinding> {
     public void click(View view) {
         switch (view.getId()) {
             case R.id.userAgreement:
-                WebPageActivity.start(this, AppConfig.USER_AGREEMENT, R.string.user_agreement);
+                WebPageActivity.start(this, getString(R.string.user_rule_url), R.string.user_agreement);
                 break;
             case R.id.update:
                 checkUpdate();

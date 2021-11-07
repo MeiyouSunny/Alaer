@@ -187,11 +187,18 @@ public class UserMineActivity extends BaseTitleActivity<ActivityUserMineBinding>
             case R.id.securityCenter:
                 ViewUtil.gotoActivity(this, SecurityCenterActivity.class);
                 break;
-            case R.id.contribution:
+            case R.id.activityContribution:
                 if (mTeamInfo != null) {
                     Bundle data = new Bundle();
                     data.putInt("contribution", mTeamInfo.profile.contribution);
                     ViewUtil.gotoActivity(this, ContributionActivity.class, data);
+                }
+                break;
+            case R.id.activityHonorValue:
+                if (mTeamInfo != null) {
+                    Bundle data = new Bundle();
+                    data.putFloat("honor", mTeamInfo.profile.reputation);
+                    ViewUtil.gotoActivity(this, HonorRecordActivity.class, data);
                 }
                 break;
             case R.id.levelName:

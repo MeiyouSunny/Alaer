@@ -12,6 +12,10 @@ import com.alaer.lib.api.ApiUtil;
 import com.alaer.lib.api.AppConfig;
 import com.alaer.lib.api.Callback;
 import com.alaer.lib.api.bean.Region;
+import com.meiyou.mvp.MvpBinder;
+
+import androidx.annotation.Nullable;
+import likly.dollar.$;
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseBindFragment;
 import llc.metaversenetwork.app.databinding.FragmentRegistPhoneVerifyBinding;
@@ -21,10 +25,6 @@ import llc.metaversenetwork.app.util.SimpleTextWatcher;
 import llc.metaversenetwork.app.util.StringUtil;
 import llc.metaversenetwork.app.util.VerifyCodeCounter;
 import llc.metaversenetwork.app.util.ViewUtil;
-import com.meiyou.mvp.MvpBinder;
-
-import androidx.annotation.Nullable;
-import likly.dollar.$;
 
 @MvpBinder(
 )
@@ -80,7 +80,7 @@ public class RegistPhoneVerifyFragment extends BaseBindFragment<FragmentRegistPh
                 RegionActivity.startForResult(this);
                 break;
             case R.id.agreement:
-                WebPageActivity.start(getActivity(), AppConfig.USER_AGREEMENT, R.string.user_agreement);
+                WebPageActivity.start(getActivity(), getString(R.string.user_rule_url), R.string.user_agreement);
                 break;
         }
     }

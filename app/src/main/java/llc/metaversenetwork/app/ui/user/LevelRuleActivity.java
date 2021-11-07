@@ -12,6 +12,7 @@ import java.util.List;
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseTitleActivity;
 import llc.metaversenetwork.app.databinding.ActivityLevelRuleBinding;
+import llc.metaversenetwork.app.ui.webpage.WebPageActivity;
 
 /**
  * 等级规则
@@ -31,7 +32,13 @@ public class LevelRuleActivity extends BaseTitleActivity<ActivityLevelRuleBindin
     @Override
     public void onViewCreated() {
         super.onViewCreated();
+        setTitleRightIcon(R.drawable.ic_question);
         initData();
+    }
+
+    @Override
+    protected void onRightClick() {
+        WebPageActivity.start(this, getString(R.string.team_level_desc_url), R.string.level_rule);
     }
 
     private void initData() {

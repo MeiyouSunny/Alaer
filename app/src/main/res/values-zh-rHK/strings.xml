@@ -145,7 +145,7 @@
     <string name="my_share">我的分享</string>
     <string name="my_partner">我的團隊</string>
     <string name="invitation_code">邀請碼</string>
-    <string name="wechat">微信</string>
+    <string name="wechat">Telegram</string>
     <string name="security_center">安全中心</string>
     <string name="customer_service">客服</string>
     <string name="about">關於</string>
@@ -317,7 +317,7 @@
     <string name="nike_name_set">昵稱設定</string>
     <string name="set_invitation_code_desc">設定個性化邀請碼，方便邀請好友</string>
     <string name="set_nick_desc">設定個性昵稱</string>
-    <string name="set_wechat_price">設置微信號需要花費1元宇礦</string>
+    <string name="set_wechat_price">設置Telegram號需要花費1元宇礦</string>
     <string name="set_invitation_code_price">設置邀請碼需要花費1元宇礦</string>
     <string name="set_nick_price">設置暱稱需要花費1元宇礦，首次免費</string>
     <string name="no_verify_yes">未實名認證</string>
@@ -343,6 +343,7 @@
     <string name="system">系統</string>
     <string name="my_wallet">我的錢包</string>
     <string name="honor_value">榮譽值</string>
+    <string name="honor_value_record">榮譽值明細</string>
 
     <string name="auth_paypal">PayPal認證</string>
     <string name="auth_card">用戶證件認證</string>
@@ -402,6 +403,13 @@
     <string name="immediate_receipt">即時到賬</string>
     <string name="person_level_is">個人等級：LV%d</string>
     <string name="burn">燒傷</string>
+    <string name="user_rule_url">http://bqd.linker.world/articles/zh_TW/agreement-zh_TW.html</string>
+    <string name="activity_desc_url">https://metaverse-3.gitbook.io/mnw-guide-tw/mnc-huo-yue-du-shu-zhi-shui-ming</string>
+    <string name="contribution_desc_url">https://metaverse-3.gitbook.io/mnw-guide-tw/mnc-gong-xian-zhi-shui-ming</string>
+    <string name="honor_desc_url">https://metaverse-3.gitbook.io/mnw-guide-tw/mnc-rong-yu-zhi-shui-ming</string>
+    <string name="team_level_desc_url">https://metaverse-3.gitbook.io/mnw-guide-tw/mnc-tuan-dui-deng-ji-shui-ming</string>
+    <string name="user_level_desc_url">https://metaverse-3.gitbook.io/mnw-guide-tw/mnc-hui-yuan-deng-ji-shui-ming</string>
+    <string name="assets_exchange_desc_url">https://metaverse-3.gitbook.io/mnw-guide-tw/mnc-zi-chan-dui-huan-liu-cheng-shui-ming</string>
 
 
 </resources>

@@ -53,7 +53,7 @@ public class UserLevelActivity extends BaseTitleActivity<ActivityUserLevelBindin
 
     @Override
     protected void onRightClick() {
-        WebPageActivity.start(this, AppConfig.LEVEL_EXPLAIN, R.string.user_level_explain);
+        WebPageActivity.start(this, getString(R.string.user_level_desc_url), R.string.user_level_explain);
     }
 
     private void queryLevels() {

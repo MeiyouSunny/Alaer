@@ -98,36 +98,36 @@ public class HomeActivity extends BaseViewBindActivity<ActivityHomeBinding> impl
         }
     }
 
+    private Class<? extends Activity>[] mPageClasses = new Class[]{
+            ProductionHallActivity.class, null, DiscoverActivity.class, UserMineActivity.class,
+            GovernmentHallActivity.class, TravelHallActivity.class, EducationHallActivity.class};
+
     private void initMapView() {
         bindRoot.map.getMapView().setImageResource(R.drawable.bg_map);
         List<Marker> markers = new ArrayList<>();
-        markers.add(new Marker(0.09F, 0.55F, R.string.saturn));
-        markers.add(new Marker(0.27F, 0.46F, R.string.earth));
-        markers.add(new Marker(0.4F, 0.27F, R.string.jupiter));
-        markers.add(new Marker(0.63F, 0.46F, R.string.uranus));
-        markers.add(new Marker(0.64F, 0.64F, R.string.venus));
-        markers.add(new Marker(0.57F, 0.88F, R.string.neptune));
-        markers.add(new Marker(0.82F, 0.35F, R.string.mercury));
+        markers.add(new Marker(0.12F, 0.57F, R.string.saturn));
+        markers.add(new Marker(0.27F, 0.70F, R.string.mercury));
+        markers.add(new Marker(0.33F, 0.89F, R.string.earth));
+        markers.add(new Marker(0.37F, 0.39F, R.string.uranus));
+        markers.add(new Marker(0.83F, 0.89F, R.string.jupiter));
+        markers.add(new Marker(0.87F, 0.51F, R.string.venus));
+        markers.add(new Marker(0.75F, 0.21F, R.string.neptune));
 
         bindRoot.map.setMarkers(markers);
         bindRoot.map.setOnMarkerClickListner(this);
     }
 
-    private Class<? extends Activity>[] mPageClasses = new Class[]{
-            ProductionHallActivity.class, DiscoverActivity.class, RealNameAuthActivity.class,
-            GovernmentHallActivity.class, TravelHallActivity.class, EducationHallActivity.class};
-
     @Override
     public void onClick(View view, int position) {
-        if (position == 0 || position == 2 || position == 3) {
+        if (position == 0 || position == 3 || position == 5) {
             if (!judgeLogined())
                 return;
         }
 
-        if (position == 6) {
+        if (position == 1) {
             // 走进阿拉尔,播放视频
             JzvdStd.startFullscreenDirectly(this, JzvdStd.class, AppConfig.GO_INTO_ALAER_VIDEO, getString(R.string.go_into_alaer));
-        } else if (position == 2) {
+        } else if (position == 5) {
             if (UserDataUtil.instance().isAuthed())
                 ViewUtil.gotoActivity(this, AuthSuccessActivity.class);
             else

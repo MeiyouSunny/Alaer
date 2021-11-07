@@ -8,6 +8,8 @@ public class SharedUserDetail {
     public String wechat;
     public String levelName;
     public float activityness;
+    public float majorActiveness;
+    public float minorActiveness;
     public float minerActivityness;
     public float promotionActivityness;
     public int minerNum;

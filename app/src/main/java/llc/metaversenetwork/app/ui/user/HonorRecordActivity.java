@@ -18,13 +18,13 @@ import llc.metaversenetwork.app.util.CollectionUtils;
 import llc.metaversenetwork.app.util.NumberUtils;
 
 /**
- * 贡献值明细
+ * 荣誉值明细
  */
-public class ContributionActivity extends BaseTitleActivity<ActivityContributionBinding> {
+public class HonorRecordActivity extends BaseTitleActivity<ActivityContributionBinding> {
 
     @Override
     protected int titleResId() {
-        return R.string.contribution_detail;
+        return R.string.honor_value_record;
     }
 
     @Override
@@ -37,7 +37,7 @@ public class ContributionActivity extends BaseTitleActivity<ActivityContribution
         super.onViewCreated();
         setTitleRightIcon(R.drawable.ic_question);
 
-        int value = getIntent().getIntExtra("contribution", 0);
+        float value = getIntent().getFloatExtra("honor", 0);
         bindRoot.value.setText(NumberUtils.instance().parseNumber(value));
 
         queryRecord();
@@ -45,7 +45,7 @@ public class ContributionActivity extends BaseTitleActivity<ActivityContribution
 
     @Override
     protected void onRightClick() {
-        WebPageActivity.start(this, getString(R.string.contribution_desc_url), R.string.contribution_explain);
+        WebPageActivity.start(this, getString(R.string.honor_desc_url), R.string.contribution_explain);
     }
 
     private void queryRecord() {
@@ -53,7 +53,7 @@ public class ContributionActivity extends BaseTitleActivity<ActivityContribution
         if (userData == null)
             return;
 
-        ApiUtil.apiService().contributionRecord(userData.uuid, String.valueOf(userData.uid), userData.token, AppConfig.DIAMOND_CURRENCY, 1, 100,
+        ApiUtil.apiService().honorRecord(userData.uuid, String.valueOf(userData.uid), userData.token, AppConfig.DIAMOND_CURRENCY, 1, 100,
                 new Callback<ActiveBillList>() {
                     @Override
                     public void onResponse(ActiveBillList bills) {
@@ -65,7 +65,9 @@ public class ContributionActivity extends BaseTitleActivity<ActivityContribution
                     @Override
                     public void onError(int code, String msg) {
                         super.onError(code, msg);
+                        showActiveBill(null);
                     }
+
                 });
     }
 

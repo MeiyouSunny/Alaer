@@ -252,7 +252,9 @@
         <activity
             android:name=".ui.wallet.CurrencyWithdrawalRecordActivity"
             android:screenOrientation="portrait"></activity>
-
+        <activity
+            android:name=".ui.user.HonorRecordActivity"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

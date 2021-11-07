@@ -336,6 +336,15 @@ public interface ApiService {
                                             Callback<ActiveBillList> callback);
 
     /**
+     * 荣誉值明细
+     */
+    @GET("/mining/profile/reputation/query")
+    Call<ActiveBillList> honorRecord(@Query("uuid") String uuid, @Query("uid") String uid,
+                                            @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
+                                            @Query("pageIndex") int pageIndex, @Query("pageSize") int pageSize,
+                                            Callback<ActiveBillList> callback);
+
+    /**
      * 实名认证:创建支付订单
      */
     @FormBody
