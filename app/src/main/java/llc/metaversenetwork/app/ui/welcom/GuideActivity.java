@@ -33,8 +33,6 @@ public class GuideActivity extends BaseViewBindActivity<ActivityGuideBinding> im
         super.onViewCreated();
 
         boolean needShowGuide = $.config().getBoolean("showGuide", true);
-        if (needShowGuide)
-            $.config().putBoolean("showGuide", false);
         if (!needShowGuide) {
             ViewUtil.gotoActivity(this, HomeActivity.class);
             finish();

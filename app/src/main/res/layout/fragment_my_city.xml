@@ -48,9 +48,7 @@
                     android:id="@+id/icHead"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:src="@drawable/ic_head_default_boy"
-                    app:civ_border_color="#CB9D3A"
-                    app:civ_border_width="1dp" />
+                    android:src="@drawable/ic_head_default_boy" />
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="0dp"

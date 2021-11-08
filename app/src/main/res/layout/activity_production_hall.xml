@@ -35,11 +35,12 @@
     </data>
 
     <FrameLayout
+        android:id="@+id/rootLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:drawableRes="@{bgBigPics[step]}"
-        android:fitsSystemWindows="true"
         android:clipToPadding="true"
+        android:fitsSystemWindows="true"
+        app:drawableRes="@{step == -1 ? R.drawable.bg_produce_1 : bgBigPics[step]}"
         tools:context=".ui.produce.ProductionHallActivity">
 
         <RelativeLayout
@@ -115,22 +116,22 @@
 
                     <ImageView
                         android:id="@+id/icStepFertilize"
-                        android:layout_gravity="center_horizontal"
-                        android:alpha="@{step==0 ? 1F : 0.5F}"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
+                        android:layout_gravity="center_horizontal"
+                        android:alpha="@{step==0 ? 1F : 0.5F}"
                         android:background="@drawable/ic_produce_fertilize" />
 
                     <TextView
                         android:layout_width="54dp"
                         android:layout_height="24dp"
                         android:layout_gravity="center_horizontal"
-                        app:drawableRes="@{step==0 ? R.drawable.bg_orange_round_corner : R.drawable.bg_gray_round_corner}"
                         android:gravity="center"
                         android:text="@string/fertilize"
                         android:textColor="@color/white"
                         android:textSize="@dimen/font_10"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        app:drawableRes="@{step==0 ? R.drawable.bg_orange_round_corner : R.drawable.bg_gray_round_corner_produce_step}" />
 
                 </LinearLayout>
 
@@ -145,8 +146,8 @@
                     <ImageView
                         android:id="@+id/icStepWater"
                         android:layout_width="40dp"
-                        android:layout_gravity="center_horizontal"
                         android:layout_height="40dp"
+                        android:layout_gravity="center_horizontal"
                         android:alpha="@{step==1 ? 1F : 0.5F}"
                         android:background="@drawable/ic_produce_water" />
 
@@ -154,12 +155,12 @@
                         android:layout_width="54dp"
                         android:layout_height="24dp"
                         android:layout_gravity="center_horizontal"
-                        app:drawableRes="@{step==1 ? R.drawable.bg_orange_round_corner : R.drawable.bg_gray_round_corner}"
                         android:gravity="center"
                         android:text="@string/water"
                         android:textColor="@color/white"
                         android:textSize="@dimen/font_10"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        app:drawableRes="@{step==1 ? R.drawable.bg_orange_round_corner : R.drawable.bg_gray_round_corner_produce_step}" />
 
                 </LinearLayout>
 
@@ -175,20 +176,20 @@
                         android:id="@+id/icStepDisinsection"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:alpha="@{step==2 ? 1F : 0.5F}"
                         android:layout_gravity="center_horizontal"
+                        android:alpha="@{step==2 ? 1F : 0.5F}"
                         android:background="@drawable/ic_produce_disinsection" />
 
                     <TextView
                         android:layout_width="54dp"
                         android:layout_height="24dp"
                         android:layout_gravity="center_horizontal"
-                        app:drawableRes="@{step==2 ? R.drawable.bg_orange_round_corner : R.drawable.bg_gray_round_corner}"
                         android:gravity="center"
                         android:text="@string/disinsection"
                         android:textColor="@color/white"
                         android:textSize="@dimen/font_10"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        app:drawableRes="@{step==2 ? R.drawable.bg_orange_round_corner : R.drawable.bg_gray_round_corner_produce_step}" />
 
                 </LinearLayout>
 
@@ -204,20 +205,20 @@
                         android:id="@+id/icStepReap"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:alpha="@{step == 3 ? 1F : 0.5F}"
                         android:layout_gravity="center_horizontal"
+                        android:alpha="@{step == 3 ? 1F : 0.5F}"
                         android:background="@drawable/ic_produce_reap" />
 
                     <TextView
                         android:layout_width="54dp"
                         android:layout_height="24dp"
-                        app:drawableRes="@{step==3 ? R.drawable.bg_orange_round_corner : R.drawable.bg_gray_round_corner}"
-                        android:gravity="center"
                         android:layout_gravity="center_horizontal"
+                        android:gravity="center"
                         android:text="@string/reap"
                         android:textColor="@color/white"
                         android:textSize="@dimen/font_10"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        app:drawableRes="@{step==3 ? R.drawable.bg_orange_round_corner : R.drawable.bg_gray_round_corner_produce_step}" />
 
                 </LinearLayout>
 

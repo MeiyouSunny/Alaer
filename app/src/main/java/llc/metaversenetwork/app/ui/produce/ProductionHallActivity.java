@@ -51,7 +51,7 @@ public class ProductionHallActivity extends BaseTitleActivity<ActivityProduction
 
     @Override
     protected int titleResId() {
-        return -1;
+        return R.string.exploring_metauniverse;
     }
 
     @Override

@@ -41,7 +41,7 @@
     <string name="vierify_code">驗證碼</string>
     <string name="pwd_not_same">兩次輸入的密碼不一致！</string>
     <string name="verify_code_send_ok">驗證碼已發送！</string>
-    <string name="regist_success">恭喜你，注册成功！</string>
+    <string name="regist_success">恭喜您，註冊成功！</string>
     <string name="reset_pwd_success">密碼修改成功！</string>
     <string name="use_mean_agree">登入/申請即代表您同意</string>
     <string name="alaer_agreement">元宇宙使用者協定、隱私政策</string>
@@ -111,9 +111,9 @@
     <string name="more">更多</string>
     <string name="education_hall">元宇宙大學</string>
     <string name="compulsory_education">義務教育</string>
-    <string name="online_education">線上教育</string>
-    <string name="education_video">教育視頻</string>
-    <string name="career_traning">職業培訓</string>
+    <string name="online_education">元宇宙線上資料</string>
+    <string name="education_video">元宇宙視頻</string>
+    <string name="career_traning">元宇宙記錄</string>
     <string name="people_hospital">平行宇宙</string>
     <string name="appointment">預約掛號</string>
     <string name="appointment_without_queuing">線上預約不排隊</string>
@@ -162,12 +162,12 @@
     <string name="user_info">用戶信息</string>
     <string name="uid">UID</string>
     <string name="nike">昵稱</string>
-    <string name="wechat_no">微訊號</string>
+    <string name="wechat_no">Telegram號</string>
     <string name="not_bind">未綁定</string>
-    <string name="wechat_no_set">微訊號設定</string>
-    <string name="wechat_no_set_warning">微訊號設定後，將公開給分享和邀請人查看</string>
-    <string name="pls_input_wechat_no">請輸入微訊號</string>
-    <string name="wechat_no_modify_warning">修改微訊號將消耗1元宇礦石，請謹慎設定</string>
+    <string name="wechat_no_set">Telegram號設定</string>
+    <string name="wechat_no_set_warning">Telegram號設定後，將公開給分享和邀請人查看</string>
+    <string name="pls_input_wechat_no">請輸入Telegram號</string>
+    <string name="wechat_no_modify_warning">修改Telegram號將消耗1元宇礦石，請謹慎設定</string>
     <string name="submit">提交</string>
     <string name="active_detail">活躍度明細</string>
     <string name="sapling">元宇礦</string>
@@ -191,7 +191,7 @@
     <string name="regist_time">註冊時間</string>
     <string name="notice_detail">公告</string>
     <string name="notice_list">公告列表</string>
-    <string name="team_level_reward_is">獎勵1棵%1$s +元宇宙星民共建手續費%2$d%%獎勵</string>
+    <string name="team_level_reward_is">獎勵1臺%1$s探測器+元宇宙數字生態會員手續費%2$d%%獎勵</string>
     <string name="no_team_level">暫無星級</string>
     <string name="team_level_desc_is">1.分享實名%1$d人\\n2.團隊活躍度%2$d點</string>
     <string name="regist_time_is">註冊時間：</string>
@@ -206,11 +206,11 @@
     <string name="task_done">已完成</string>
     <string name="task_done_info">每日獎勵上限%1$d次，已完成%2$d/%3$d</string>
     <string name="is_which_one">我是第%d位</string>
-    <string name="alaer_digital_person">元宇宙數位生態用戶</string>
+    <string name="alaer_digital_person">元宇宙数字生态会员</string>
     <string name="invitate_code_is">邀請碼：%s</string>
     <string name="balance_is">餘額：%s</string>
     <string name="activity_is">活跃度：%s</string>
-    <string name="exchange_build_score">元宇礦石兌換元宇積分</string>
+    <string name="exchange_build_score">元宇宙資產兌換</string>
     <string name="sure_to_exchange">確認兌換</string>
     <string name="exchange_fruit_number">兌換元宇礦石數量</string>
     <string name="pls_input_exchange_number">請輸入需要兌換的元宇礦石數量</string>
@@ -412,6 +412,9 @@
     <string name="assets_exchange_desc_url">https://metaverse-3.gitbook.io/mnw-guide-tw/mnc-zi-chan-dui-huan-liu-cheng-shui-ming</string>
     <string name="wmnc_desc_url">https://app.gitbook.com/s/7u4QBkkfAjWaNsEInSlE/mnc-guan-wu-yuan-yu-kuang-wmnc</string>
     <string name="mnc_desc_url">https://app.gitbook.com/s/7u4QBkkfAjWaNsEInSlE/mnc-guan-wu-yuan-yu-ji-fen-mnc</string>
+    <string name="daily_task">每日任務</string>
+    <string name="task_hint">完成元宇宙每日任務可獲取更多獎勵</string>
+    <string name="exploring_metauniverse">探索元宇宙</string>
 
 
 </resources>

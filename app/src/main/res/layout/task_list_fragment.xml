@@ -27,7 +27,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="每日任務"
+                android:text="@string/daily_task"
                 android:textColor="@color/white"
                 android:textSize="@dimen/font_20" />
 
@@ -36,7 +36,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_marginBottom="14dp"
-                android:text="每天都可以來做任務哦~"
+                android:text="@string/task_hint"
                 android:textColor="@color/white"
                 android:textSize="@dimen/font_12" />
 

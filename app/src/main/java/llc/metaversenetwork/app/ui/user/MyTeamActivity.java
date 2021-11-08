@@ -13,6 +13,10 @@ import com.alaer.lib.api.bean.TeamLevel;
 import com.alaer.lib.api.bean.TeamProfile;
 import com.alaer.lib.api.bean.UserData;
 import com.alaer.lib.data.UserDataUtil;
+
+import java.util.List;
+
+import androidx.annotation.RequiresApi;
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseTitleActivity;
 import llc.metaversenetwork.app.data.TeamLevelUtil;
@@ -22,16 +26,13 @@ import llc.metaversenetwork.app.util.ViewUtil;
 import llc.metaversenetwork.app.view.FullyLinearLayoutManager;
 import llc.metaversenetwork.app.view.TabTextView;
 
-import java.util.List;
-
-import androidx.annotation.RequiresApi;
-
 /**
  * 我的伙伴
  */
 public class MyTeamActivity extends BaseTitleActivity<ActivityMyTeamBinding> implements TabTextView.StateChangedListener {
     private static final String[] types = new String[]{"team_activeness", "num", "level", "uid"};
 
+    public static int mTeamLevel;
     private TabTextView[] mTabs;
 
     UserData userData;
@@ -155,6 +156,7 @@ public class MyTeamActivity extends BaseTitleActivity<ActivityMyTeamBinding> imp
 
                         bindRoot.setTeamProfile(teamProfile);
                         bindRoot.setLevelUtil(new TeamLevelUtil(getResources()));
+                        mTeamLevel = teamProfile.level;
                         if (teamProfile.level == 0) {
                             bindRoot.setTeamLevel(null);
                         } else {

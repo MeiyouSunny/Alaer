@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.alaer.lib.api.bean.TeamLevel;
-import com.alaer.lib.data.UserDataUtil;
 
 import java.util.List;
 
@@ -50,8 +49,11 @@ public class TeamLevelAdapter extends RecyclerView.Adapter<TeamLevelAdapter.View
         holder.binding.label1.setText(resources.getString(R.string.auth_person_num, teamLevel.refAuthNum));
         holder.binding.label2.setText(resources.getString(R.string.team_activity_is, teamLevel.teamActiveness));
         holder.binding.label3.setText(resources.getString(R.string.area_little_activity, teamLevel.minorActiveness));
-        final int level = UserDataUtil.instance().teamLevel();
-        holder.binding.labelCurrent.setVisibility((position + 1) == level ? View.VISIBLE : View.INVISIBLE);
+        final int level = MyTeamActivity.mTeamLevel;
+        boolean isCurrent = false;
+        if (level > 0 && (level - 1) == position)
+            isCurrent = true;
+        holder.binding.labelCurrent.setVisibility(isCurrent ? View.VISIBLE : View.INVISIBLE);
 
         holder.binding.executePendingBindings();
     }

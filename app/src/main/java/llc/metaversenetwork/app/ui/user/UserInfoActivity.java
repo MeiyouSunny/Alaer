@@ -92,7 +92,7 @@ public class UserInfoActivity extends BaseTitleActivity<ActivityUserInfoBinding>
                 break;
             case R.id.setInvitateCode:
                 if (UserDataUtil.instance().isFrom3DAccount())
-                    $.toast().text(R.string.function_not_open).show();
+                    $.toast().text(R.string.will_open_soon).show();
                 else
                     SetProfileActivity.start(this, SetProfileActivity.INVITATE_CODE);
                 break;

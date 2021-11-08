@@ -8,14 +8,12 @@ import android.text.TextUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.alaer.lib.api.AppConfig;
 import com.bumptech.glide.Glide;
 
 import java.io.Serializable;
-import java.util.UUID;
 
-import cn.udesk.UdeskSDKManager;
-import cn.udesk.config.UdeskConfig;
+import likly.dollar.$;
+import llc.metaversenetwork.app.R;
 
 public class ViewUtil {
 
@@ -36,10 +34,11 @@ public class ViewUtil {
     }
 
     public static void gotoCustomerService(Context context) {
-        UdeskSDKManager.getInstance().initApiKey(context.getApplicationContext(), AppConfig.UDESK_APP_DOMAIN,
-                AppConfig.UDESK_APP_SECRETKEY, AppConfig.UDESK_APP_ID);
-        final String sdkToken = UUID.randomUUID().toString();
-        UdeskSDKManager.getInstance().entryChat(context.getApplicationContext(), UdeskConfig.createDefualt(), sdkToken);
+//        UdeskSDKManager.getInstance().initApiKey(context.getApplicationContext(), AppConfig.UDESK_APP_DOMAIN,
+//                AppConfig.UDESK_APP_SECRETKEY, AppConfig.UDESK_APP_ID);
+//        final String sdkToken = UUID.randomUUID().toString();
+//        UdeskSDKManager.getInstance().entryChat(context.getApplicationContext(), UdeskConfig.createDefualt(), sdkToken);
+        $.toast().text(R.string.will_open_soon).show();
     }
 
     public static String getText(TextView textView) {

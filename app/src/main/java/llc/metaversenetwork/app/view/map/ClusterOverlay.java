@@ -24,13 +24,13 @@ import com.amap.api.maps.model.LatLng;
 import com.amap.api.maps.model.LatLngBounds;
 import com.amap.api.maps.model.Marker;
 import com.amap.api.maps.model.MarkerOptions;
-import llc.metaversenetwork.app.R;
-import llc.metaversenetwork.app.util.CollectionUtils;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+import llc.metaversenetwork.app.R;
+import llc.metaversenetwork.app.util.CollectionUtils;
 
 public class ClusterOverlay implements AMap.OnCameraChangeListener,
         AMap.OnMarkerClickListener {

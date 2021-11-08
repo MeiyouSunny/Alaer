@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<layout xmlns:tools="http://schemas.android.com/tools"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -75,9 +75,7 @@
                     android:layout_width="66dp"
                     android:layout_height="66dp"
                     android:onClick="@{handler.click}"
-                    android:src="@drawable/ic_head_default_boy"
-                    app:civ_border_color="#CB9D3A"
-                    app:civ_border_width="1dp" />
+                    android:src="@drawable/ic_head_default_boy" />
 
             </RelativeLayout>
 
@@ -113,9 +111,7 @@
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:layout_width="66dp"
                     android:layout_height="66dp"
-                    android:src="@drawable/ic_head_default_boy"
-                    app:civ_border_color="#CB9D3A"
-                    app:civ_border_width="1dp" />
+                    android:src="@drawable/ic_head_default_boy" />
 
             </RelativeLayout>
 
@@ -497,8 +493,8 @@
                                     android:id="@+id/shareActivity"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="0.00"
                                     android:layout_marginTop="16dp"
+                                    android:text="0.00"
                                     android:textColor="@color/white"
                                     android:textSize="@dimen/font_18"
                                     tools:text="1039" />
@@ -574,60 +570,70 @@
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:paddingLeft="27dp"
                         android:paddingTop="18dp"
                         android:paddingBottom="18dp">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginLeft="26dp"
                             android:text="@string/my_share"
                             android:textColor="@color/white"
                             android:textSize="@dimen/font_16"
                             android:textStyle="bold" />
 
-                        <TextView
-                            android:id="@+id/myPartner"
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_alignParentBottom="true"
-                            android:drawableTop="@drawable/ic_my_partner"
-                            android:drawablePadding="6dp"
-                            android:gravity="center"
-                            android:onClick="@{handler.click}"
-                            android:text="@string/my_partner"
-                            android:textColor="@color/white"
-                            android:textSize="@dimen/font_15" />
+                            android:orientation="horizontal">
 
-                        <TextView
-                            android:id="@+id/invitationCode"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentBottom="true"
-                            android:layout_marginLeft="22dp"
-                            android:layout_toRightOf="@+id/myPartner"
-                            android:drawableTop="@drawable/ic_invitation_code"
-                            android:drawablePadding="6dp"
-                            android:gravity="center"
-                            android:onClick="@{handler.click}"
-                            android:text="@string/invitation_code"
-                            android:textColor="@color/white"
-                            android:textSize="@dimen/font_15" />
+                            <TextView
+                                android:id="@+id/myPartner"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:drawableTop="@drawable/ic_my_partner"
+                                android:drawablePadding="2dp"
+                                android:gravity="center"
+                                android:onClick="@{handler.click}"
+                                android:text="@string/my_partner"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/font_15" />
 
-                        <TextView
-                            android:id="@+id/wechat"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentBottom="true"
-                            android:layout_marginLeft="22dp"
-                            android:layout_toRightOf="@+id/invitationCode"
-                            android:drawableTop="@drawable/ic_wechat"
-                            android:drawablePadding="6dp"
-                            android:gravity="center"
-                            android:onClick="@{handler.click}"
-                            android:text="@string/wechat"
-                            android:textColor="@color/white"
-                            android:textSize="@dimen/font_15" />
+                            <TextView
+                                android:id="@+id/invitationCode"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:drawableTop="@drawable/ic_invitation_code"
+                                android:drawablePadding="2dp"
+                                android:gravity="center"
+                                android:onClick="@{handler.click}"
+                                android:text="@string/invitation_code"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/font_15" />
+
+                            <TextView
+                                android:id="@+id/wechat"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:drawableTop="@drawable/ic_wechat"
+                                android:drawablePadding="2dp"
+                                android:gravity="center"
+                                android:onClick="@{handler.click}"
+                                android:text="@string/wechat"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/font_15" />
+
+                            <TextView
+                                android:id="@+id/tv4"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1" />
+
+                        </LinearLayout>
 
                     </RelativeLayout>
 
@@ -644,75 +650,78 @@
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:paddingLeft="27dp"
                         android:paddingTop="18dp"
                         android:paddingBottom="18dp">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginLeft="26dp"
                             android:text="@string/system"
                             android:textColor="@color/white"
                             android:textSize="@dimen/font_16"
                             android:textStyle="bold" />
 
-                        <TextView
-                            android:id="@+id/myWallet"
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_alignParentBottom="true"
-                            android:drawableTop="@drawable/ic_my_wallet"
-                            android:drawablePadding="6dp"
-                            android:gravity="center"
-                            android:onClick="@{handler.click}"
-                            android:text="@string/my_wallet"
-                            android:textColor="@color/white"
-                            android:textSize="@dimen/font_15" />
+                            android:orientation="horizontal">
 
-                        <TextView
-                            android:id="@+id/securityCenter"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentBottom="true"
-                            android:layout_marginLeft="22dp"
-                            android:layout_toRightOf="@+id/myWallet"
-                            android:drawableTop="@drawable/ic_security_setting"
-                            android:drawablePadding="6dp"
-                            android:gravity="center"
-                            android:onClick="@{handler.click}"
-                            android:text="@string/security_center"
-                            android:textColor="@color/white"
-                            android:textSize="@dimen/font_15" />
+                            <TextView
+                                android:id="@+id/myWallet"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:drawableTop="@drawable/ic_my_wallet"
+                                android:drawablePadding="2dp"
+                                android:gravity="center"
+                                android:onClick="@{handler.click}"
+                                android:text="@string/my_wallet"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/font_15" />
 
-                        <TextView
-                            android:id="@+id/customeService"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentBottom="true"
-                            android:layout_marginLeft="22dp"
-                            android:layout_toRightOf="@+id/securityCenter"
-                            android:drawableTop="@drawable/ic_customer_service"
-                            android:drawablePadding="6dp"
-                            android:gravity="center"
-                            android:onClick="@{handler.click}"
-                            android:text="@string/customer_service"
-                            android:textColor="@color/white"
-                            android:textSize="@dimen/font_15" />
+                            <TextView
+                                android:id="@+id/securityCenter"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:drawableTop="@drawable/ic_security_setting"
+                                android:drawablePadding="2dp"
+                                android:gravity="center"
+                                android:onClick="@{handler.click}"
+                                android:text="@string/security_center"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/font_15" />
 
-                        <TextView
-                            android:id="@+id/about"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentBottom="true"
-                            android:layout_marginLeft="22dp"
-                            android:layout_toRightOf="@+id/customeService"
-                            android:drawableTop="@drawable/ic_about"
-                            android:drawablePadding="6dp"
-                            android:gravity="center"
-                            android:onClick="@{handler.click}"
-                            android:text="@string/about"
-                            android:textColor="@color/white"
-                            android:textSize="@dimen/font_15" />
+                            <TextView
+                                android:id="@+id/customeService"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:drawableTop="@drawable/ic_customer_service"
+                                android:drawablePadding="2dp"
+                                android:gravity="center"
+                                android:onClick="@{handler.click}"
+                                android:text="@string/customer_service"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/font_15" />
+
+                            <TextView
+                                android:id="@+id/about"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:drawableTop="@drawable/ic_about"
+                                android:drawablePadding="2dp"
+                                android:gravity="center"
+                                android:onClick="@{handler.click}"
+                                android:text="@string/about"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/font_15" />
+
+
+                        </LinearLayout>
 
                     </RelativeLayout>
 

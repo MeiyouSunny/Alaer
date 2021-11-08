@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
@@ -10,7 +11,7 @@
             type="llc.metaversenetwork.app.base.BindClickListener" />
     </data>
 
-    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/bg_discover"
@@ -28,6 +29,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="168dp"
                 android:layout_alignParentBottom="true"
+                android:layout_marginBottom="1dp"
+                android:visibility="gone"
                 android:background="@drawable/img_education_bottom" />
 
             <LinearLayout

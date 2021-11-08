@@ -5,6 +5,7 @@ import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+import likly.dollar.$;
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseDialogHolder;
 import llc.metaversenetwork.app.databinding.DialogUserAgreementBinding;
@@ -34,6 +35,7 @@ public class DialogUserAgreement extends BaseDialogHolder<DialogUserAgreementBin
                 Process.killProcess(Process.myPid());
                 break;
             case R.id.confirm:
+                $.config().putBoolean("showGuide", false);
                 dismiss();
                 break;
         }

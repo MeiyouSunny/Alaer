@@ -7,8 +7,12 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
 import android.os.Process;
 import android.provider.Settings;
+import android.util.Log;
 import android.view.View;
 
 import com.alaer.lib.api.ApiUtil;
@@ -27,6 +31,7 @@ import com.meiyou.mvp.MvpBinder;
 import java.util.ArrayList;
 import java.util.List;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.core.app.ActivityCompat;
@@ -72,18 +77,7 @@ public class HomeActivity extends BaseViewBindActivity<ActivityHomeBinding> impl
     public void showError(String content) {
     }
 
-    @Override
-    public void onViewCreated() {
-        super.onViewCreated();
-        EventBus.getDefault().register(this);
-        initMapView();
-        getSaveData();
-        initData();
-        queryNotices();
-        requestPermission();
-        // 版本更新
-        new AppUpgradeManager(this).checkUpdate(false);
-    }
+    List<Notice> mNotices;
 
     @Override
     protected void onRestart() {
@@ -116,26 +110,7 @@ public class HomeActivity extends BaseViewBindActivity<ActivityHomeBinding> impl
         bindRoot.map.setMarkers(markers);
         bindRoot.map.setOnMarkerClickListner(this);
     }
-
-    @Override
-    public void onClick(View view, int position) {
-        if (position == 0 || position == 3 || position == 5) {
-            if (!judgeLogined())
-                return;
-        }
-
-        if (position == 1) {
-            // 走进阿拉尔,播放视频
-            JzvdStd.startFullscreenDirectly(this, JzvdStd.class, AppConfig.GO_INTO_ALAER_VIDEO, getString(R.string.go_into_alaer));
-        } else if (position == 5) {
-            if (UserDataUtil.instance().isAuthed())
-                ViewUtil.gotoActivity(this, AuthSuccessActivity.class);
-            else
-                ViewUtil.gotoActivity(this, RealNameAuthActivity.class);
-        } else {
-            ViewUtil.gotoActivity(this, mPageClasses[position]);
-        }
-    }
+    int noticeIndex = 0;
 
     @Override
     public void click(View view) {
@@ -206,6 +181,54 @@ public class HomeActivity extends BaseViewBindActivity<ActivityHomeBinding> impl
                     }
                 });
     }
+    private Handler mHandler = new Handler(Looper.getMainLooper()) {
+        @Override
+        public void handleMessage(@NonNull Message msg) {
+            Log.e("XXX", "===");
+            mNoticeNew = mNotices.get(noticeIndex);
+            bindRoot.notice.setText(mNoticeNew.title);
+
+            if (noticeIndex == mNotices.size() - 1 || noticeIndex == 2)
+                noticeIndex = 0;
+            else
+                noticeIndex++;
+            mHandler.sendEmptyMessageDelayed(0, 5000);
+        }
+    };
+
+    @Override
+    public void onViewCreated() {
+        super.onViewCreated();
+        EventBus.getDefault().register(this);
+        initMapView();
+        getSaveData();
+        initData();
+        queryNotices();
+        requestPermission();
+        // 版本更新
+        new AppUpgradeManager(this).checkUpdate(false);
+        bindRoot.notice.requestFocus();
+    }
+
+    @Override
+    public void onClick(View view, int position) {
+        if (position == 0 || position == 1 || position == 3 || position == 5) {
+            if (!judgeLogined())
+                return;
+        }
+
+        if (position == 1) {
+            // 走进阿拉尔,播放视频
+            JzvdStd.startFullscreenDirectly(this, JzvdStd.class, AppConfig.GO_INTO_ALAER_VIDEO, getString(R.string.go_into_alaer));
+        } else if (position == 5) {
+            if (UserDataUtil.instance().isAuthed())
+                ViewUtil.gotoActivity(this, AuthSuccessActivity.class);
+            else
+                ViewUtil.gotoActivity(this, RealNameAuthActivity.class);
+        } else {
+            ViewUtil.gotoActivity(this, mPageClasses[position]);
+        }
+    }
 
     private void queryNotices() {
         ApiUtil.apiService().noticeList(1, 5, 1100,
@@ -213,8 +236,8 @@ public class HomeActivity extends BaseViewBindActivity<ActivityHomeBinding> impl
                     @Override
                     public void onResponse(List<Notice> notices) {
                         if (!CollectionUtils.isEmpty(notices)) {
-                            mNoticeNew = notices.get(0);
-                            bindRoot.notice.setText(mNoticeNew.title);
+                            mNotices = notices;
+                            mHandler.sendEmptyMessage(0);
                         }
                     }
                 });

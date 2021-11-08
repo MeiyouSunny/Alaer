@@ -111,9 +111,9 @@
     <string name="more">More</string>
     <string name="education_hall">Metaverse College</string>
     <string name="compulsory_education">compulsory education</string>
-    <string name="online_education">Online education</string>
-    <string name="education_video">Educational video</string>
-    <string name="career_traning">Vocational training</string>
+    <string name="online_education">Metaverse Online Data</string>
+    <string name="education_video">Metauniverse video</string>
+    <string name="career_traning">Metauniverse record</string>
     <string name="people_hospital">Parallel universe</string>
     <string name="appointment">have an appointment with a doctor</string>
     <string name="appointment_without_queuing">Online reservation without queuing</string>
@@ -145,7 +145,7 @@
     <string name="my_share">My share</string>
     <string name="my_partner">My team</string>
     <string name="invitation_code">Invitation code</string>
-    <string name="wechat">WeChat</string>
+    <string name="wechat">Telegram</string>
     <string name="security_center">Security Center</string>
     <string name="customer_service">Customer service</string>
     <string name="about">About</string>
@@ -162,12 +162,12 @@
     <string name="user_info">User Info</string>
     <string name="uid">UID</string>
     <string name="nike">Nickname</string>
-    <string name="wechat_no">WeChat number</string>
+    <string name="wechat_no">Telegram number</string>
     <string name="not_bind">Unbound</string>
-    <string name="wechat_no_set">WeChat number setting</string>
-    <string name="wechat_no_set_warning">After WeChat number setting, it will be made public to share and invite people to view</string>
-    <string name="pls_input_wechat_no">Please input WeChat number</string>
-    <string name="wechat_no_modify_warning">Modifying WeChat number will consume 1 yuan of MetaMine stones, please set it carefully</string>
+    <string name="wechat_no_set">Telegram number setting</string>
+    <string name="wechat_no_set_warning">After Telegram number setting, it will be made public to share and invite people to view</string>
+    <string name="pls_input_wechat_no">Please input Telegram number</string>
+    <string name="wechat_no_modify_warning">Modifying Telegram number will consume 1 yuan of MetaMine stones, please set it carefully</string>
     <string name="submit">Submit</string>
     <string name="active_detail">Activity details</string>
     <string name="sapling">MetaMine stones</string>
@@ -210,7 +210,7 @@
     <string name="invitate_code_is">Invitation code:%s</string>
     <string name="balance_is">Balance:%s</string>
     <string name="activity_is">Activity:%s</string>
-    <string name="exchange_build_score">MetaMine stones exchange Metaverse integral</string>
+    <string name="exchange_build_score">MetaMine assets exchange</string>
     <string name="sure_to_exchange">Confirm exchange</string>
     <string name="exchange_fruit_number">Exchange MetaMine stones quantity</string>
     <string name="pls_input_exchange_number">Please enter the quantity of MetaMine stones to be exchanged</string>
@@ -317,7 +317,7 @@
     <string name="nike_name_set">Nick name setting</string>
     <string name="set_invitation_code_desc">Set a personalized invitation code to invite friends</string>
     <string name="set_nick_desc">Set a Personal Nickname</string>
-    <string name="set_wechat_price">It costs 1 metamines to set up WeChat ID</string>
+    <string name="set_wechat_price">It costs 1 metamines to set up Telegram ID</string>
     <string name="set_invitation_code_price">It costs 1 metamine  to set up the invitation code</string>
     <string name="set_nick_price">It costs 1 metamines to set up a nickname, and it’s free for the first time</string>
     <string name="no_verify_yes">No real name authentication</string>
@@ -403,5 +403,8 @@
     <string name="person_level_is">Personal level: LV%d</string>
     <string name="burn">Burn</string>
     <string name="user_rule_url">http://bqd.linker.world/articles/en_US/agreement-zh_US.html</string>
+    <string name="daily_task">Daily task</string>
+    <string name="task_hint">Complete the metauniverse daily task to obtain more rewards</string>
+    <string name="exploring_metauniverse">Exploring the Metauniverse</string>
 
 </resources>
