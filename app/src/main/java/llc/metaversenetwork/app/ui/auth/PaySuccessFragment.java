@@ -13,6 +13,8 @@ import com.meiyou.mvp.MvpBinder;
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseBindFragment;
 import llc.metaversenetwork.app.databinding.FragmentAuthPaySuccessBinding;
+import llc.metaversenetwork.app.ui.home.HomeActivity;
+import llc.metaversenetwork.app.util.ViewUtil;
 
 @MvpBinder(
 )
@@ -27,7 +29,7 @@ public class PaySuccessFragment extends BaseBindFragment<FragmentAuthPaySuccessB
     public void click(View view) {
         switch (view.getId()) {
             case R.id.ok:
-//                ViewUtil.gotoActivity(getContext(), AuthSuccessActivity.class);
+                ViewUtil.gotoActivity(getContext(), HomeActivity.class);
                 getActivity().finish();
                 break;
         }

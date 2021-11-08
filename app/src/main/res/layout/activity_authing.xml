@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="handler"
+            type="llc.metaversenetwork.app.base.BindClickListener" />
+    </data>
+
+
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_auth"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical"
+        tools:context=".ui.government.RealNameAuthSuccessActivityActivity">
+
+        <include layout="@layout/layout_title_bar_white" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="58dp">
+
+            <ImageView
+                android:id="@+id/ic_auth_success"
+                android:layout_width="86dp"
+                android:layout_height="86dp"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/ic_pay_success" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ic_auth_success"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="24dp"
+                android:text="@string/auth_state_waitting"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_18" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/ok"
+                style="@style/BtnGreen"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="91dp"
+                android:onClick="@{handler.click}"
+                android:text="@string/sure" />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</layout>

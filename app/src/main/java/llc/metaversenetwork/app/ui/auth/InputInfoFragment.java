@@ -47,6 +47,9 @@ public class InputInfoFragment extends BaseBindFragment<FragmentAuthInputInfoBin
     @Override
     public void click(View view) {
         switch (view.getId()) {
+            case R.id.cancel:
+                getActivity().finish();
+                break;
             case R.id.next:
                 showAlipayInfoConfirm();
                 break;

@@ -8,12 +8,16 @@ import android.text.TextUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.alaer.lib.data.UserDataUtil;
 import com.bumptech.glide.Glide;
 
 import java.io.Serializable;
 
 import likly.dollar.$;
 import llc.metaversenetwork.app.R;
+import llc.metaversenetwork.app.ui.auth.AuthSuccessActivity;
+import llc.metaversenetwork.app.ui.auth.AuthingActivity;
+import llc.metaversenetwork.app.ui.government.RealNameAuthActivity;
 
 public class ViewUtil {
 
@@ -71,6 +75,16 @@ public class ViewUtil {
                 .placeholder(defaultIcon)
                 .dontAnimate()
                 .into(imageView);
+    }
+
+    public static void gotoAuthPage(Context context) {
+        if (UserDataUtil.instance().isAuthed()) {
+            ViewUtil.gotoActivity(context, AuthSuccessActivity.class);
+        } else if (UserDataUtil.instance().isAuthing()) {
+            ViewUtil.gotoActivity(context, AuthingActivity.class);
+        } else {
+            ViewUtil.gotoActivity(context, RealNameAuthActivity.class);
+        }
     }
 
 }

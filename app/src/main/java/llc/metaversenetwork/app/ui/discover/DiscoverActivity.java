@@ -21,8 +21,6 @@ import likly.dollar.$;
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseTitleActivity;
 import llc.metaversenetwork.app.databinding.ActivityDiscoverBinding;
-import llc.metaversenetwork.app.ui.auth.AuthSuccessActivity;
-import llc.metaversenetwork.app.ui.government.RealNameAuthActivity;
 import llc.metaversenetwork.app.ui.share.ShareActivity;
 import llc.metaversenetwork.app.ui.user.MyTeamActivity;
 import llc.metaversenetwork.app.util.CollectionUtils;
@@ -123,10 +121,7 @@ public class DiscoverActivity extends BaseTitleActivity<ActivityDiscoverBinding>
                     ViewUtil.gotoActivity(this, ShareActivity.class);
                 break;
             case R.id.auth:
-                if (UserDataUtil.instance().isAuthed())
-                    ViewUtil.gotoActivity(this, AuthSuccessActivity.class);
-                else
-                    ViewUtil.gotoActivity(this, RealNameAuthActivity.class);
+                ViewUtil.gotoAuthPage(this);
                 break;
             case R.id.myCity:
                 $.toast().text(R.string.will_open_soon).show();

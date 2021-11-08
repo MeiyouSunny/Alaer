@@ -126,6 +126,10 @@
             android:screenOrientation="portrait"></activity>
 
         <activity
+            android:name=".ui.auth.AuthingActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
             android:name=".ui.leisure.LeisureHallActivity"
             android:screenOrientation="portrait"></activity>
 

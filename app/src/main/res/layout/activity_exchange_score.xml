@@ -134,7 +134,7 @@
                             android:layout_centerVertical="true"
                             android:backgroundTint="@color/white"
                             android:entries="@array/exchange_types"
-                            android:popupBackground="#D9D9D9"
+                            android:popupBackground="#CC000000"
                             android:spinnerMode="dropdown"
                             android:textSize="@dimen/font_14"
                             android:theme="@style/Spinner" />
@@ -225,7 +225,7 @@
                             android:layout_centerVertical="true"
                             android:backgroundTint="@color/white"
                             android:entries="@array/exchange_types"
-                            android:popupBackground="#D9D9D9"
+                            android:popupBackground="#CC000000"
                             android:spinnerMode="dropdown"
                             android:textSize="@dimen/font_14"
                             android:theme="@style/Spinner" />

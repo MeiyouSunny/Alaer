@@ -83,7 +83,7 @@
                         android:layout_height="match_parent"
                         android:backgroundTint="@color/white"
                         android:entries="@array/card_types"
-                        android:popupBackground="#D9D9D9"
+                        android:popupBackground="#CC000000"
                         android:spinnerMode="dropdown"
                         android:textSize="@dimen/font_16"
                         android:theme="@style/Spinner" />

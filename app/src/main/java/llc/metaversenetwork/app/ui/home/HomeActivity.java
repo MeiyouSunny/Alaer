@@ -44,11 +44,9 @@ import likly.dollar.$;
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseViewBindActivity;
 import llc.metaversenetwork.app.databinding.ActivityHomeBinding;
-import llc.metaversenetwork.app.ui.auth.AuthSuccessActivity;
 import llc.metaversenetwork.app.ui.discover.DiscoverActivity;
 import llc.metaversenetwork.app.ui.education.EducationHallActivity;
 import llc.metaversenetwork.app.ui.government.GovernmentHallActivity;
-import llc.metaversenetwork.app.ui.government.RealNameAuthActivity;
 import llc.metaversenetwork.app.ui.notice.NoticeDetailActivity;
 import llc.metaversenetwork.app.ui.notice.NoticeListActivity;
 import llc.metaversenetwork.app.ui.produce.ProductionHallActivity;
@@ -85,6 +83,25 @@ public class HomeActivity extends BaseViewBindActivity<ActivityHomeBinding> impl
         initData();
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        refreshProfile();
+    }
+
+    private void refreshProfile() {
+        UserData userData = UserDataUtil.instance().getUserData();
+        if (userData == null)
+            return;
+        ApiUtil.apiService().getTeamDetailInfo(userData.uuid, String.valueOf(userData.uid), userData.token, AppConfig.DIAMOND_CURRENCY,
+                new Callback<TeamDetail>() {
+                    @Override
+                    public void onResponse(TeamDetail teamDetail) {
+                        UserDataUtil.instance().saveTeamDetailInfo(teamDetail);
+                    }
+                });
+    }
+
     private void getSaveData() {
         UserData userData = UserDataUtil.instance().getSavedUserData();
         if (userData != null) {
@@ -110,6 +127,7 @@ public class HomeActivity extends BaseViewBindActivity<ActivityHomeBinding> impl
         bindRoot.map.setMarkers(markers);
         bindRoot.map.setOnMarkerClickListner(this);
     }
+
     int noticeIndex = 0;
 
     @Override
@@ -181,6 +199,7 @@ public class HomeActivity extends BaseViewBindActivity<ActivityHomeBinding> impl
                     }
                 });
     }
+
     private Handler mHandler = new Handler(Looper.getMainLooper()) {
         @Override
         public void handleMessage(@NonNull Message msg) {
@@ -221,10 +240,7 @@ public class HomeActivity extends BaseViewBindActivity<ActivityHomeBinding> impl
             // 走进阿拉尔,播放视频
             JzvdStd.startFullscreenDirectly(this, JzvdStd.class, AppConfig.GO_INTO_ALAER_VIDEO, getString(R.string.go_into_alaer));
         } else if (position == 5) {
-            if (UserDataUtil.instance().isAuthed())
-                ViewUtil.gotoActivity(this, AuthSuccessActivity.class);
-            else
-                ViewUtil.gotoActivity(this, RealNameAuthActivity.class);
+            ViewUtil.gotoAuthPage(this);
         } else {
             ViewUtil.gotoActivity(this, mPageClasses[position]);
         }
