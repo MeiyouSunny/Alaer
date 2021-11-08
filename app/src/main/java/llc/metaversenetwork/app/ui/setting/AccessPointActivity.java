@@ -8,6 +8,7 @@ import com.alaer.lib.api.Callback;
 import com.alaer.lib.api.bean.AccessPointInfo;
 import com.alaer.lib.api.bean.UserData;
 import com.alaer.lib.data.UserDataUtil;
+
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseTitleActivity;
 import llc.metaversenetwork.app.databinding.ActivityAccessPointBinding;
@@ -46,6 +47,8 @@ public class AccessPointActivity extends BaseTitleActivity<ActivityAccessPointBi
     private void getAccessPointInfo() {
         long timeStart = System.currentTimeMillis();
         UserData userData = UserDataUtil.instance().getUserData();
+        if (userData == null)
+            return;
         ApiUtil.apiService().accessPoint(userData.uuid, String.valueOf(userData.uid), userData.token, AppConfig.DIAMOND_CURRENCY,
                 new Callback<AccessPointInfo>() {
                     @Override
