@@ -9,14 +9,12 @@ import com.alaer.lib.api.bean.AccessPointInfo;
 import com.alaer.lib.api.bean.UserData;
 import com.alaer.lib.data.UserDataUtil;
 
+import likly.dollar.$;
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseTitleActivity;
 import llc.metaversenetwork.app.databinding.ActivitySettngsBinding;
 import llc.metaversenetwork.app.ui.home.HomeActivity;
-import llc.metaversenetwork.app.util.NumberUtils;
 import llc.metaversenetwork.app.util.ViewUtil;
-
-import likly.dollar.$;
 
 /**
  * 设置
@@ -43,9 +41,6 @@ public class SettingActivity extends BaseTitleActivity<ActivitySettngsBinding> {
             return;
         }
         getAccessPointInfo();
-
-        String result = NumberUtils.instance().parse(1.5590F);
-        System.out.println("");
     }
 
     @Override

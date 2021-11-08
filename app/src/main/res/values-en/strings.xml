@@ -89,7 +89,7 @@
     <string name="cancel">Cancel</string>
     <string name="seed_buyed_is">You have exchanged a detecor:%s</string>
     <string name="seed_buy_success">Successfully exchanged MetaMine stones</string>
-    <string name="seed_get_success">Successfully received MetaMine stones</string>
+    <string name="seed_get_success">Successfully received detector</string>
     <string name="not_auth_yes">You have not your real name, please verify your real name first!</string>
     <string name="goto_auth">Go to certification</string>
     <string name="confirm_pay_success_or_not">Please confirm whether payment is completed in Alipay?</string>

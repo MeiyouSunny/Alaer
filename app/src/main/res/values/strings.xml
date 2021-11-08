@@ -89,7 +89,7 @@
     <string name="cancel">取消</string>
     <string name="seed_buyed_is">您已兌換一臺探測器：%s</string>
     <string name="seed_buy_success">兌換元宇礦石成功</string>
-    <string name="seed_get_success">領取元宇礦石成功</string>
+    <string name="seed_get_success">領取探測器成功</string>
     <string name="not_auth_yes">您尚未實名，請先進行實名認證！</string>
     <string name="goto_auth">前往認證</string>
     <string name="confirm_pay_success_or_not">請確認是否是在支付寶中完成支付？</string>
