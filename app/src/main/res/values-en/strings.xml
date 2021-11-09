@@ -411,5 +411,6 @@
     <string name="mnc_service_disclaimer_url">https://metaverse-3.gitbook.io/mnw-guide-tw/disclaimer-of-liability</string>
     <string name="honor_value_desc">Honor value description</string>
     <string name="record">Record</string>
+    <string name="reward_honor_value_is">Reward honor value:%d</string>
 
 </resources>

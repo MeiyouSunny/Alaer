@@ -421,6 +421,7 @@
     <string name="mnc_service_disclaimer_url">https://files.metaversenetwork.ai/html/MNC_DISCLAIMER OF LIABILITY.html</string>
     <string name="honor_value_desc">榮譽值說明</string>
     <string name="record">記錄</string>
+    <string name="reward_honor_value_is">獎勵榮譽值：%d</string>
 
 
 </resources>

@@ -115,6 +115,10 @@ public class SeedDataUtil {
         return mRes.getString(R.string.reward_activity_is, num);
     }
 
+    public String parseRewardHonor(int num) {
+        return mRes.getString(R.string.reward_honor_value_is, num);
+    }
+
     // 秒值 --> xx小时xx分钟
     public String parseCultivationTime(int seconds) {
         return mRes.getString(R.string.cultivation_time_is, TimeUtil.parseSecondssToTimeString(seconds));
