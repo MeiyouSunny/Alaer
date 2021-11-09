@@ -2,14 +2,13 @@ package llc.metaversenetwork.app.ui.travel;
 
 import android.view.View;
 
-import com.alaer.lib.api.AppConfig;
+import cn.jzvd.Jzvd;
+import cn.jzvd.JzvdStd;
+import likly.dollar.$;
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseTitleActivity;
 import llc.metaversenetwork.app.databinding.ActivityTravelBinding;
-import llc.metaversenetwork.app.util.ViewUtil;
-
-import cn.jzvd.Jzvd;
-import likly.dollar.$;
+import llc.metaversenetwork.app.view.JZMediaSystemAssertFolder;
 
 /**
  * 旅游大厅
@@ -33,10 +32,15 @@ public class TravelHallActivity extends BaseTitleActivity<ActivityTravelBinding>
     }
 
     private void initData() {
-        ViewUtil.showImage(getApplicationContext(), bindRoot.player1.posterImageView, AppConfig.TRAVEL_VIDEO_PIC1);
-        bindRoot.player1.setUp(AppConfig.TRAVEL_VIDEO1, "");
-        ViewUtil.showImage(getApplicationContext(), bindRoot.player2.posterImageView, AppConfig.TRAVEL_VIDEO_PIC2);
-        bindRoot.player2.setUp(AppConfig.TRAVEL_VIDEO2, "");
+//        ViewUtil.showImage(getApplicationContext(), bindRoot.player1.posterImageView, AppConfig.TRAVEL_VIDEO_PIC1);
+//        bindRoot.player1.setUp(AppConfig.TRAVEL_VIDEO1, "");
+//        ViewUtil.showImage(getApplicationContext(), bindRoot.player2.posterImageView, AppConfig.TRAVEL_VIDEO_PIC2);
+//        bindRoot.player2.setUp(AppConfig.TRAVEL_VIDEO2, "");
+
+        bindRoot.player1.posterImageView.setImageResource(R.drawable.img_travel_1);
+        bindRoot.player1.setUp("welcom.mp4", "", JzvdStd.SCREEN_NORMAL, JZMediaSystemAssertFolder.class);
+        bindRoot.player2.posterImageView.setImageResource(R.drawable.img_travel_2);
+        bindRoot.player2.setUp("task-2.mp4", "", JzvdStd.SCREEN_NORMAL, JZMediaSystemAssertFolder.class);
     }
 
     @Override

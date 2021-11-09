@@ -50,19 +50,31 @@
                     android:textColor="@color/font_7E"
                     android:textSize="@dimen/font_12" />
 
-                <cn.jzvd.JzvdStd
+<!--                <cn.jzvd.JzvdStd-->
+<!--                    android:id="@+id/player1"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="212dp"-->
+<!--                    android:layout_marginTop="16dp"-->
+<!--                    android:foreground="?android:attr/selectableItemBackground" />-->
+
+                <llc.metaversenetwork.app.view.JzvdStdAssert
                     android:id="@+id/player1"
                     android:layout_width="match_parent"
                     android:layout_height="212dp"
-                    android:layout_marginTop="16dp"
-                    android:foreground="?android:attr/selectableItemBackground" />
+                    android:layout_marginTop="16dp" />
 
-                <cn.jzvd.JzvdStd
+<!--                <cn.jzvd.JzvdStd-->
+<!--                    android:id="@+id/player2"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="212dp"-->
+<!--                    android:layout_marginTop="16dp"-->
+<!--                    android:foreground="?android:attr/selectableItemBackground" />-->
+
+                <llc.metaversenetwork.app.view.JzvdStdAssert
                     android:id="@+id/player2"
                     android:layout_width="match_parent"
                     android:layout_height="212dp"
-                    android:layout_marginTop="16dp"
-                    android:foreground="?android:attr/selectableItemBackground" />
+                    android:layout_marginTop="16dp" />
 
                 <llc.metaversenetwork.app.view.ItemLayoutView
                     android:id="@+id/buy_tickets"

@@ -69,14 +69,22 @@
                 android:textColor="@color/black"
                 android:textSize="@dimen/font_15" />
 
-            <cn.jzvd.JzvdStd
+<!--            <cn.jzvd.JzvdStd-->
+<!--                android:id="@+id/player"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="156dp"-->
+<!--                android:layout_below="@+id/desc"-->
+<!--                android:layout_marginLeft="18dp"-->
+<!--                android:layout_marginRight="18dp"-->
+<!--                android:foreground="?android:attr/selectableItemBackground" />-->
+
+            <llc.metaversenetwork.app.view.JzvdStdAssert
                 android:id="@+id/player"
                 android:layout_width="match_parent"
                 android:layout_height="156dp"
                 android:layout_below="@+id/desc"
                 android:layout_marginLeft="18dp"
-                android:layout_marginRight="18dp"
-                android:foreground="?android:attr/selectableItemBackground" />
+                android:layout_marginRight="18dp" />
 
             <ImageView
                 android:layout_width="match_parent"
