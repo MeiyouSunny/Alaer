@@ -63,4 +63,14 @@ public class VideoPlayer extends JzvdStd {
         mRetryLayout.setVisibility(retryLayout);
     }
 
+    @Override
+    public void onPrepared() {
+        state = STATE_PREPARED;
+        if (!preloading) {
+            mediaInterface.start();
+            preloading = false;
+        }
+        onStatePlaying();
+    }
+
 }

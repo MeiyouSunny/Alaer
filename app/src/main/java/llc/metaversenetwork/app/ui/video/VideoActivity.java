@@ -8,14 +8,18 @@ import android.view.WindowManager;
 
 import com.alaer.lib.api.AppConfig;
 import com.alaer.lib.api.bean.AdVideo;
-import llc.metaversenetwork.app.R;
-import llc.metaversenetwork.app.base.BaseViewBindActivity;
-import llc.metaversenetwork.app.databinding.ActivityVideoBinding;
-import llc.metaversenetwork.app.util.ViewUtil;
+
+import java.util.Random;
 
 import androidx.fragment.app.Fragment;
 import cn.jzvd.JZUtils;
 import cn.jzvd.Jzvd;
+import cn.jzvd.JzvdStd;
+import llc.metaversenetwork.app.R;
+import llc.metaversenetwork.app.base.BaseViewBindActivity;
+import llc.metaversenetwork.app.databinding.ActivityVideoBinding;
+import llc.metaversenetwork.app.util.ViewUtil;
+import llc.metaversenetwork.app.view.JZMediaSystemAssertFolder;
 
 /**
  * 视频播放
@@ -74,7 +78,10 @@ public class VideoActivity extends BaseViewBindActivity<ActivityVideoBinding> im
             }
         });
 
-        bindRoot.player.setUp(mAdVideo.image, mAdVideo.title);
+//        bindRoot.player.setUp(mAdVideo.image, mAdVideo.title);
+        bindRoot.player.setUp(getVideoName(), mAdVideo.title, JzvdStd.SCREEN_NORMAL, JZMediaSystemAssertFolder.class);
+
+
         bindRoot.player.setScreenFullscreen();
         bindRoot.player.setOnCompleteListener(new VideoPlayer.OnCompleteListener() {
             @Override
@@ -85,6 +92,13 @@ public class VideoActivity extends BaseViewBindActivity<ActivityVideoBinding> im
         });
         bindRoot.player.setTimeListener(this);
         bindRoot.player.startVideo();
+    }
+
+    private String getVideoName() {
+        final String[] videos = {"task-1.mp4", "task-2.mp4", "task-3.mp4"};
+        Random rand = new Random();
+        int index = rand.nextInt(3);
+        return videos[index];
     }
 
     @Override

@@ -21,6 +21,12 @@
             android:layout_height="match_parent"
             android:foreground="?android:attr/selectableItemBackground" />
 
+<!--        <llc.metaversenetwork.app.view.JzvdStdAssert-->
+<!--            android:id="@+id/player"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:foreground="?android:attr/selectableItemBackground" />-->
+
         <TextView
             android:id="@+id/time"
             android:layout_width="40dp"
