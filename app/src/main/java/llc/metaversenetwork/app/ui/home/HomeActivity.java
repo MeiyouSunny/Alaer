@@ -13,6 +13,7 @@ import android.os.Message;
 import android.os.Process;
 import android.provider.Settings;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 
 import com.alaer.lib.api.ApiUtil;
@@ -40,10 +41,12 @@ import cn.jzvd.JzvdStd;
 import de.greenrobot.event.EventBus;
 import de.greenrobot.event.Subscribe;
 import de.greenrobot.event.ThreadMode;
+import likly.dialogger.Dialogger;
 import likly.dollar.$;
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseViewBindActivity;
 import llc.metaversenetwork.app.databinding.ActivityHomeBinding;
+import llc.metaversenetwork.app.ui.dialog.DialogWelcome;
 import llc.metaversenetwork.app.ui.discover.DiscoverActivity;
 import llc.metaversenetwork.app.ui.education.EducationHallActivity;
 import llc.metaversenetwork.app.ui.government.GovernmentHallActivity;
@@ -227,6 +230,19 @@ public class HomeActivity extends BaseViewBindActivity<ActivityHomeBinding> impl
         // 版本更新
         new AppUpgradeManager(this).checkUpdate(false);
         bindRoot.notice.requestFocus();
+
+        showWelcomeDialog();
+    }
+
+    private void showWelcomeDialog() {
+        boolean showWelcome = $.config().getBoolean("showWelcome", true);
+        if(showWelcome) {
+            Dialogger.newDialog(getContext()).holder(new DialogWelcome())
+                    .gravity(Gravity.CENTER)
+                    .cancelable(false)
+                    .show();
+            $.config().putBoolean("showWelcome", false);
+        }
     }
 
     @Override

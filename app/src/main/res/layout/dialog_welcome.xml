@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="handler"
+            type="llc.metaversenetwork.app.base.BindClickListener" />
+
+        <variable
+            name="number"
+            type="llc.metaversenetwork.app.util.NumberUtils" />
+
+        <variable
+            name="data"
+            type="com.alaer.lib.api.bean.SharedUserDetail" />
+
+        <import type="llc.metaversenetwork.app.util.StringUtil" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="560dp"
+        android:layout_margin="34dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/close"
+            android:layout_width="26dp"
+            android:layout_height="25dp"
+            android:layout_gravity="right"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/ic_dialog_close"
+            android:clickable="true"
+            android:onClick="@{handler.click}" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:background="@drawable/bg_white_round_corner">
+
+
+            <ImageView
+                android:id="@+id/imgTop"
+                android:layout_width="match_parent"
+                android:layout_height="91dp"
+                android:background="@drawable/bg_dialog_welcome_top" />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="28dp"
+                android:text="@string/welcome_join_metauniverse"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_18" />
+
+            <TextView
+                android:id="@+id/desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imgTop"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="18dp"
+                android:text="@string/welcome_desc"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_15" />
+
+            <cn.jzvd.JzvdStd
+                android:id="@+id/player"
+                android:layout_width="match_parent"
+                android:layout_height="156dp"
+                android:layout_below="@+id/desc"
+                android:layout_marginLeft="18dp"
+                android:layout_marginRight="18dp"
+                android:foreground="?android:attr/selectableItemBackground" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="156dp"
+                android:layout_below="@+id/player"
+                android:layout_marginLeft="18dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="18dp"
+                android:layout_marginBottom="18dp"
+                android:background="@drawable/bg_welcome_img" />
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</layout>

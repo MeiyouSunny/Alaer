@@ -406,5 +406,6 @@
     <string name="daily_task">Daily task</string>
     <string name="task_hint">Complete the metauniverse daily task to obtain more rewards</string>
     <string name="exploring_metauniverse">Exploring the Metauniverse</string>
+    <string name="welcome_join_metauniverse">Welcome to join the Metauniverse</string>
 
 </resources>

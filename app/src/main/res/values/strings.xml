@@ -415,6 +415,8 @@
     <string name="daily_task">每日任務</string>
     <string name="task_hint">完成元宇宙每日任務可獲取更多獎勵</string>
     <string name="exploring_metauniverse">探索元宇宙</string>
+    <string name="welcome_join_metauniverse">歡迎您加入元宇宙</string>
+    <string name="welcome_desc">歡迎進入元宇宙數字生態，你的願望將是我們的責任，在此預祝閣下旅途愉快并實現你一切的夢想。</string>
 
 
 </resources>
