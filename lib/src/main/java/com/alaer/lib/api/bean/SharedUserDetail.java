@@ -14,4 +14,7 @@ public class SharedUserDetail {
     public float promotionActivityness;
     public int minerNum;
     public String cityName;
+    public float teamActiveness;
+    public int teamLevel;
+    public int level;
 }
