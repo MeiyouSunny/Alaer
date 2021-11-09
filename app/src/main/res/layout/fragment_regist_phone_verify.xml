@@ -172,7 +172,7 @@
                     style="@style/AccountGreenText"
                     android:layout_marginLeft="12dp"
                     android:onClick="@{handler.click}"
-                    android:text="@string/alaer_agreement" />
+                    android:text="@string/user_agreement" />
 
             </LinearLayout>
 

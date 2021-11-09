@@ -5,6 +5,8 @@ import android.view.View;
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseTitleActivity;
 import llc.metaversenetwork.app.databinding.ActivityAuthingBinding;
+import llc.metaversenetwork.app.ui.home.HomeActivity;
+import llc.metaversenetwork.app.util.ViewUtil;
 
 /**
  * 实名认证审核中
@@ -25,7 +27,7 @@ public class AuthingActivity extends BaseTitleActivity<ActivityAuthingBinding> {
     public void click(View view) {
         switch (view.getId()) {
             case R.id.ok:
-                finish();
+                ViewUtil.gotoActivity(this, HomeActivity.class);
                 break;
         }
     }

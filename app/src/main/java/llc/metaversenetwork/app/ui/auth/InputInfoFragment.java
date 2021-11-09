@@ -77,6 +77,7 @@ public class InputInfoFragment extends BaseBindFragment<FragmentAuthInputInfoBin
             mPhotoPath = cursor.getString(columnIndex);
             cursor.close();
             showPhoto(selectedImage);
+            onInputChanged();
         }
     }
 
@@ -159,7 +160,7 @@ public class InputInfoFragment extends BaseBindFragment<FragmentAuthInputInfoBin
     private void onInputChanged() {
         final String name = ViewUtil.getText(bindRoot.etName);
         final String cardID = ViewUtil.getText(bindRoot.etCard);
-        boolean hasInput = !TextUtils.isEmpty(name) && !TextUtils.isEmpty(cardID);
+        boolean hasInput = !TextUtils.isEmpty(name) && !TextUtils.isEmpty(cardID) && !TextUtils.isEmpty(mPhotoPath);
         bindRoot.next.setEnabled(hasInput);
     }
 

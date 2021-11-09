@@ -386,7 +386,7 @@
     <string name="currency_select">資產選擇</string>
     <string name="time_is">時間：%s</string>
     <string name="currency_type">幣種：%s</string>
-    <string name="service_charge_is">手續費：%s</string>
+    <string name="service_charge_is">手續費率：%s</string>
     <string name="chain_type_is">鏈類型：%s</string>
     <string name="quantity_is">數量：%s</string>
     <string name="state_is">狀態：</string>
@@ -401,7 +401,7 @@
     <string name="exchange_fee">兌換手續費：</string>
     <string name="get_quantity">可得數量：</string>
     <string name="immediate_receipt">即時到賬</string>
-    <string name="person_level_is">個人等級：LV%d</string>
+    <string name="person_level_is">會員等級：LV%d</string>
     <string name="burn">燒傷</string>
     <string name="user_rule_url">https://metaverse-3.gitbook.io/mnw-guide-tw/metaverse-network-llc-yong-hu-fu-wu-xie-yi</string>
     <string name="activity_desc_url">https://metaverse-3.gitbook.io/mnw-guide-tw/mnc-huo-yue-du-shu-zhi-shui-ming</string>
@@ -419,6 +419,7 @@
     <string name="welcome_desc">歡迎進入元宇宙數字生態，你的願望將是我們的責任，在此預祝閣下旅途愉快并實現你一切的夢想。</string>
     <string name="mnc_service_disclaimer">MNC服務免責聲明</string>
     <string name="mnc_service_disclaimer_url">https://metaverse-3.gitbook.io/mnw-guide-tw/mnc-fu-wu-mian-ze-sheng-ming</string>
+    <string name="honor_value_desc">榮譽值說明</string>
 
 
 </resources>

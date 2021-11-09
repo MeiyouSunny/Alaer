@@ -81,11 +81,11 @@
 
             <RelativeLayout
                 android:id="@+id/layoutToLogin"
+                android:layout_marginLeft="42dp"
                 android:layout_width="wrap_content"
                 android:layout_height="66dp"
                 android:layout_alignParentBottom="true"
-                android:layout_marginLeft="27dp"
-                android:layout_marginBottom="21dp"
+                android:layout_marginBottom="2dp"
                 android:clickable="true"
                 android:onClick="@{handler.click}"
                 android:visibility="gone">

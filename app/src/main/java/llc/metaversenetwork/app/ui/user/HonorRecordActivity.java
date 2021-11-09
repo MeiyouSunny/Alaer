@@ -12,7 +12,7 @@ import java.util.List;
 
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseTitleActivity;
-import llc.metaversenetwork.app.databinding.ActivityContributionBinding;
+import llc.metaversenetwork.app.databinding.ActivityHonorRecordBindingImpl;
 import llc.metaversenetwork.app.ui.webpage.WebPageActivity;
 import llc.metaversenetwork.app.util.CollectionUtils;
 import llc.metaversenetwork.app.util.NumberUtils;
@@ -20,7 +20,7 @@ import llc.metaversenetwork.app.util.NumberUtils;
 /**
  * 荣誉值明细
  */
-public class HonorRecordActivity extends BaseTitleActivity<ActivityContributionBinding> {
+public class HonorRecordActivity extends BaseTitleActivity<ActivityHonorRecordBindingImpl> {
 
     @Override
     protected int titleResId() {
@@ -29,7 +29,7 @@ public class HonorRecordActivity extends BaseTitleActivity<ActivityContributionB
 
     @Override
     protected int layoutId() {
-        return R.layout.activity_contribution;
+        return R.layout.activity_honor_record;
     }
 
     @Override
@@ -45,7 +45,7 @@ public class HonorRecordActivity extends BaseTitleActivity<ActivityContributionB
 
     @Override
     protected void onRightClick() {
-        WebPageActivity.start(this, getString(R.string.honor_desc_url), R.string.contribution_explain);
+        WebPageActivity.start(this, getString(R.string.honor_desc_url), R.string.honor_value_desc);
     }
 
     private void queryRecord() {

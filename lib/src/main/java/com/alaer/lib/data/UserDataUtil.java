@@ -112,6 +112,18 @@ public class UserDataUtil {
         return mTeamDetail != null && mTeamDetail.isAuthSenior == 1;
     }
 
+    // 审核驳回
+    public boolean isAuthFailed() {
+        return mTeamDetail != null && mTeamDetail.isAuthSenior == -1;
+    }
+
+    // 审核驳回原因
+    public String authFailedReason() {
+        if (mTeamDetail != null)
+            return mTeamDetail.authFailReason;
+        return "";
+    }
+
     // 3D视界用户
     public boolean isFrom3DAccount() {
         return mTeamInfo != null && mTeamInfo.channel == 2;

@@ -6,9 +6,11 @@ import android.view.View;
 import com.meiyou.mvp.MvpBinder;
 
 import androidx.annotation.Nullable;
+import likly.dollar.$;
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseBindFragment;
 import llc.metaversenetwork.app.databinding.FragmentAuthPayFailedBinding;
+import llc.metaversenetwork.app.util.ViewUtil;
 
 @MvpBinder(
 )
@@ -30,10 +32,11 @@ public class PayFailedFragment extends BaseBindFragment<FragmentAuthPayFailedBin
     public void click(View view) {
         switch (view.getId()) {
             case R.id.customerService:
-                getActivity().onBackPressed();
+                $.toast().text(R.string.will_open_soon).show();
                 break;
             case R.id.reTry:
-                getActivity().onBackPressed();
+                ViewUtil.gotoActivity(getActivity(), AuthActivity.class);
+                getActivity().finish();
                 break;
         }
     }

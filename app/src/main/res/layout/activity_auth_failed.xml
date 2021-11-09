@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="handler"
+            type="llc.metaversenetwork.app.base.BindClickListener" />
+    </data>
+
+
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_auth"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical"
+        tools:context=".ui.government.RealNameAuthSuccessActivityActivity">
+
+        <include layout="@layout/layout_title_bar_white" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="58dp">
+
+            <ImageView
+                android:id="@+id/ic_auth_success"
+                android:layout_width="86dp"
+                android:layout_height="86dp"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/ic_pay_failed" />
+
+            <TextView
+                android:id="@+id/reason"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ic_auth_success"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="18dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginRight="18dp"
+                android:text="@string/auth_state_fail"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_18" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="62dp"
+                android:layout_marginRight="62dp"
+                android:layout_marginBottom="91dp"
+                android:orientation="horizontal">
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/customerService"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_gray"
+                    android:gravity="center"
+                    android:onClick="@{handler.click}"
+                    android:text="@string/call_customer_service"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_18" />
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/reTry"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="28dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_green"
+                    android:gravity="center"
+                    android:onClick="@{handler.click}"
+                    android:text="@string/resubmit"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_18" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</layout>

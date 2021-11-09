@@ -385,7 +385,7 @@
     <string name="currency_select">Select currency</string>
     <string name="time_is">Time: %s</string>
     <string name="currency_type">Currency: %s</string>
-    <string name="service_charge_is">Service charge:%s</string>
+    <string name="service_charge_is">Service charge rate:%s</string>
     <string name="chain_type_is">Chain type: %s</string>
     <string name="state_is">"State: "</string>
     <string name="failed">Failed</string>
@@ -400,7 +400,7 @@
     <string name="exchange_fee">Exchange fee:</string>
     <string name="get_quantity">Get quantity:</string>
     <string name="immediate_receipt">Immediate receipt</string>
-    <string name="person_level_is">Personal level: LV%d</string>
+    <string name="person_level_is">Member level: LV%d</string>
     <string name="burn">Burn</string>
     <string name="user_rule_url">https://metaverse-3.gitbook.io/mnw-guide-tw/metaverse-network-llc-user-agreement</string>
     <string name="daily_task">Daily task</string>
@@ -409,5 +409,6 @@
     <string name="welcome_join_metauniverse">Welcome to join the Metauniverse</string>
     <string name="mnc_service_disclaimer">MNC service disclaimer</string>
     <string name="mnc_service_disclaimer_url">https://metaverse-3.gitbook.io/mnw-guide-tw/disclaimer-of-liability</string>
+    <string name="honor_value_desc">Honor value description</string>
 
 </resources>

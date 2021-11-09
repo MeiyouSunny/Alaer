@@ -11,16 +11,6 @@ import com.alaer.lib.api.bean.SeedStore;
 import com.alaer.lib.api.bean.SeedStoreList;
 import com.alaer.lib.api.bean.UserData;
 import com.alaer.lib.data.UserDataUtil;
-import llc.metaversenetwork.app.R;
-import llc.metaversenetwork.app.base.BaseBindFragment;
-import llc.metaversenetwork.app.data.SeedDataUtil;
-import llc.metaversenetwork.app.databinding.FragmentSeedStoreListBinding;
-import llc.metaversenetwork.app.ui.dialog.DialogBuySeedSuccess;
-import llc.metaversenetwork.app.ui.dialog.DialogNotAuth;
-import llc.metaversenetwork.app.ui.government.RealNameAuthActivity;
-import llc.metaversenetwork.app.util.CollectionUtils;
-import llc.metaversenetwork.app.util.ViewUtil;
-import llc.metaversenetwork.app.view.GradViewItemDecoration;
 import com.meiyou.mvp.MvpBinder;
 
 import java.util.List;
@@ -28,6 +18,15 @@ import java.util.List;
 import likly.dialogger.Dialogger;
 import likly.dollar.$;
 import likly.view.repeat.OnHolderClickListener;
+import llc.metaversenetwork.app.R;
+import llc.metaversenetwork.app.base.BaseBindFragment;
+import llc.metaversenetwork.app.data.SeedDataUtil;
+import llc.metaversenetwork.app.databinding.FragmentSeedStoreListBinding;
+import llc.metaversenetwork.app.ui.dialog.DialogBuySeedSuccess;
+import llc.metaversenetwork.app.ui.dialog.DialogNotAuth;
+import llc.metaversenetwork.app.util.CollectionUtils;
+import llc.metaversenetwork.app.util.ViewUtil;
+import llc.metaversenetwork.app.view.GradViewItemDecoration;
 
 /**
  * 种子商店:种子商店
@@ -135,7 +134,7 @@ public class SeedStoreFragment extends BaseBindFragment<FragmentSeedStoreListBin
         dialogNotAuth.setListener(new DialogNotAuth.OnConfirmListener() {
             @Override
             public void onConfirmClick() {
-                ViewUtil.gotoActivity(getContext(), RealNameAuthActivity.class);
+                ViewUtil.gotoAuthPage(getContext());
             }
         });
         Dialogger.newDialog(getContext()).holder(dialogNotAuth)

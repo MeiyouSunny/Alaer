@@ -396,7 +396,7 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="56dp"
+                    android:layout_height="46dp"
                     android:layout_marginLeft="13dp"
                     android:layout_marginRight="13dp"
                     app:cardBackgroundColor="@color/transparent"
@@ -473,7 +473,6 @@
                     android:clipToPadding="false"
                     android:overScrollMode="never"
                     android:paddingStart="12dp"
-                    android:paddingTop="4dp"
                     android:paddingEnd="12dp"
                     android:visibility="gone" />
 

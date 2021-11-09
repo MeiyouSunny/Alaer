@@ -175,10 +175,15 @@ public class UserMineActivity extends BaseTitleActivity<ActivityUserMineBinding>
                 }
                 break;
             case R.id.exchangeScore:
-                if (mBalance != null) {
-                    Bundle data = new Bundle();
-                    data.putSerializable("balance", mBalance);
-                    ViewUtil.gotoActivity(this, ExchangeBuildScoreActivity.class, data);
+                // 是否实名认证
+                if (!UserDataUtil.instance().isAuthed()) {
+                    ViewUtil.gotoAuthPage(getContext());
+                } else {
+                    if (mBalance != null) {
+                        Bundle data = new Bundle();
+                        data.putSerializable("balance", mBalance);
+                        ViewUtil.gotoActivity(this, ExchangeBuildScoreActivity.class, data);
+                    }
                 }
                 break;
             case R.id.about:

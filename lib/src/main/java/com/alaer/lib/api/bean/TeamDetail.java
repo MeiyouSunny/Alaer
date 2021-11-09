@@ -21,6 +21,8 @@ public class TeamDetail implements Serializable {
     // 1是已提交 2是已通过
     public int isAuthSenior;
     public int isAuthVideo;
+    // 认证驳回原因
+    public String authFailReason;
     public int identityPaidStatus;
     public double identityFee;
     public int secondaryCurrency;

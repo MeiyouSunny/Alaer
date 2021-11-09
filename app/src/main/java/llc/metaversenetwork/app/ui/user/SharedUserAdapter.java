@@ -81,7 +81,7 @@ public class SharedUserAdapter extends RecyclerView.Adapter<SharedUserAdapter.Vi
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        ViewUtil.showImage(context.getApplicationContext(), holder.binding.icHead, data.get(position).avatar);
+        ViewUtil.showImage(context.getApplicationContext(), holder.binding.icHead, data.get(position).avatar, R.drawable.ic_app_icon);
 
         holder.binding.setData(data.get(position));
         holder.binding.setHandler(handler);
