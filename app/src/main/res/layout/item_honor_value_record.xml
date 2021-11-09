@@ -6,7 +6,7 @@
 
         <variable
             name="bill"
-            type="com.alaer.lib.api.bean.FruitBill" />
+            type="com.alaer.lib.api.bean.ActiveBill" />
 
         <variable
             name="billUtil"
@@ -15,7 +15,6 @@
         <variable
             name="number"
             type="llc.metaversenetwork.app.util.NumberUtils" />
-
     </data>
 
     <RelativeLayout
@@ -30,7 +29,7 @@
             android:layout_height="24dp"
             android:layout_centerVertical="true"
             android:layout_marginLeft="4dp"
-            android:src="@{bill.flag==1 ? @drawable/ic_type_add : @drawable/ic_type_reduce}" />
+            app:drawableRes="@{billUtil.parseHonorValueTypeIcon(bill.type)}" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -40,7 +39,6 @@
             android:layout_marginRight="8dp"
             android:layout_toLeftOf="@+id/value"
             android:layout_toRightOf="@+id/icon"
-            android:ellipsize="end"
             android:text="@{bill.note}"
             android:textColor="@color/white"
             android:textSize="@dimen/font_15" />
@@ -55,15 +53,15 @@
             android:textColor="@color/white"
             android:textSize="@dimen/font_10" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="12dp"
-            android:layout_marginTop="40dp"
-            android:layout_toRightOf="@+id/time"
-            android:text="@{number.parseNumber(bill.afterAmount)}"
-            android:textColor="@color/white"
-            android:textSize="@dimen/font_10" />
+        <!--        <TextView-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginLeft="12dp"-->
+        <!--            android:layout_marginTop="40dp"-->
+        <!--            android:layout_toRightOf="@+id/time"-->
+        <!--            android:text="@{@string/contribution_is(number.parseNumber(bill.postAmount))}"-->
+        <!--            android:textColor="@color/font_7E"-->
+        <!--            android:textSize="@dimen/font_10" />-->
 
         <TextView
             android:id="@+id/value"

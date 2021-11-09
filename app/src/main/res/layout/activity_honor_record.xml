@@ -55,8 +55,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:emptyView="@layout/layout_no_data"
-            app:viewHolderClass="llc.metaversenetwork.app.ui.user.ContributionAdapter"
-            app:viewHolderLayout="@layout/item_contribution_record" />
+            app:viewHolderClass="llc.metaversenetwork.app.ui.user.HonorValueAdapter"
+            app:viewHolderLayout="@layout/item_honor_value_record" />
 
     </LinearLayout>
 

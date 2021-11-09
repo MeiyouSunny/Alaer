@@ -29,7 +29,7 @@
             android:layout_height="24dp"
             android:layout_centerVertical="true"
             android:layout_marginLeft="4dp"
-            app:drawableRes="@{billUtil.parseTypeIcon(bill.type)}" />
+            app:drawableRes="@{billUtil.parseContributionTypeIcon(bill.type)}" />
 
         <TextView
             android:layout_width="wrap_content"
