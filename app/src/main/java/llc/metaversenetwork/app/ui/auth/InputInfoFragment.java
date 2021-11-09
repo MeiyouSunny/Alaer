@@ -129,7 +129,9 @@ public class InputInfoFragment extends BaseBindFragment<FragmentAuthInputInfoBin
                 new Callback<String>() {
                     @Override
                     public void onResponse(String orderId) {
-                        navigate(R.id.action_to_pay_success);
+//                        navigate(R.id.action_to_pay_success);
+                        ViewUtil.gotoAuthPage(getContext(), true);
+                        getActivity().finish();
                     }
 
                     @Override

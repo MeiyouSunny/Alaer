@@ -420,6 +420,7 @@
     <string name="mnc_service_disclaimer">MNC服務免責聲明</string>
     <string name="mnc_service_disclaimer_url">https://metaverse-3.gitbook.io/mnw-guide-tw/mnc-fu-wu-mian-ze-sheng-ming</string>
     <string name="honor_value_desc">榮譽值說明</string>
+    <string name="record">記錄</string>
 
 
 </resources>

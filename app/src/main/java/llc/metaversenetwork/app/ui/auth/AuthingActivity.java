@@ -13,6 +13,8 @@ import llc.metaversenetwork.app.util.ViewUtil;
  */
 public class AuthingActivity extends BaseTitleActivity<ActivityAuthingBinding> {
 
+    boolean needBackHome;
+
     @Override
     protected int titleResId() {
         return R.string.real_name_auth;
@@ -24,10 +26,19 @@ public class AuthingActivity extends BaseTitleActivity<ActivityAuthingBinding> {
     }
 
     @Override
+    public void onViewCreated() {
+        super.onViewCreated();
+        needBackHome = getIntent().getBooleanExtra("needBackHome", false);
+    }
+
+    @Override
     public void click(View view) {
         switch (view.getId()) {
             case R.id.ok:
-                ViewUtil.gotoActivity(this, HomeActivity.class);
+                if (needBackHome)
+                    ViewUtil.gotoActivity(this, HomeActivity.class);
+                else
+                    finish();
                 break;
         }
     }

@@ -42,7 +42,7 @@ public class CurrencyWithdrawalRecordActivity extends BaseTitleActivity<Activity
         super.onViewCreated();
 
         setRightTitleText(R.string.call_customer_service);
-        getData();
+//        getData();
     }
 
     private void getData() {

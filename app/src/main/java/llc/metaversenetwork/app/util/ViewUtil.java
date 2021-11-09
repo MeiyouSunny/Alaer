@@ -43,6 +43,12 @@ public class ViewUtil {
         context.startActivity(intent);
     }
 
+    public static void gotoActivity(Context context, Class<? extends Activity> activityDes, String key, boolean value) {
+        Intent intent = new Intent(context, activityDes);
+        intent.putExtra(key, value);
+        context.startActivity(intent);
+    }
+
     public static void gotoCustomerService(Context context) {
 //        UdeskSDKManager.getInstance().initApiKey(context.getApplicationContext(), AppConfig.UDESK_APP_DOMAIN,
 //                AppConfig.UDESK_APP_SECRETKEY, AppConfig.UDESK_APP_ID);
@@ -84,6 +90,10 @@ public class ViewUtil {
     }
 
     public static void gotoAuthPage(Context context) {
+        gotoAuthPage(context, false);
+    }
+
+    public static void gotoAuthPage(Context context, boolean needBackHome) {
         UserData userData = UserDataUtil.instance().getUserData();
         if (userData == null)
             return;
@@ -96,7 +106,7 @@ public class ViewUtil {
                         if (UserDataUtil.instance().isAuthed()) {
                             ViewUtil.gotoActivity(context, AuthSuccessActivity.class);
                         } else if (UserDataUtil.instance().isAuthing()) {
-                            ViewUtil.gotoActivity(context, AuthingActivity.class);
+                            ViewUtil.gotoActivity(context, AuthingActivity.class, "needBackHome", needBackHome);
                         } else if (UserDataUtil.instance().isAuthFailed()) {
                             ViewUtil.gotoActivity(context, AuthFailedActivity.class);
                         } else {

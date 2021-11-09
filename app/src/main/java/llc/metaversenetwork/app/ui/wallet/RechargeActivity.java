@@ -3,21 +3,17 @@ package llc.metaversenetwork.app.ui.wallet;
 import android.view.View;
 
 import com.alaer.lib.api.bean.AssetsTotalInfo;
-import com.alaer.lib.api.bean.CurrencyRecord;
-
-import java.util.List;
 
 import likly.view.repeat.OnHolderClickListener;
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseTitleActivity;
-import llc.metaversenetwork.app.databinding.ActivityCurrencyRechargeRecordBinding;
-import llc.metaversenetwork.app.util.CollectionUtils;
+import llc.metaversenetwork.app.databinding.ActivityRechargeBinding;
 import llc.metaversenetwork.app.util.ViewUtil;
 
 /**
- * 币种充值记录
+ * 币种充值
  */
-public class CurrencyRechargeRecordActivity extends BaseTitleActivity<ActivityCurrencyRechargeRecordBinding> implements OnHolderClickListener<WalletAdapter> {
+public class RechargeActivity extends BaseTitleActivity<ActivityRechargeBinding> implements OnHolderClickListener<WalletAdapter> {
     // USDT:4
     // MNC:173
     AssetsTotalInfo.Assets mAssets;
@@ -25,23 +21,23 @@ public class CurrencyRechargeRecordActivity extends BaseTitleActivity<ActivityCu
 
     @Override
     protected int titleResId() {
-        return R.string.recharge_record;
+        return R.string.recharge;
     }
 
     @Override
     protected int layoutId() {
-        return R.layout.activity_currency_recharge_record;
+        return R.layout.activity_recharge;
     }
 
     @Override
     public void onViewCreated() {
         super.onViewCreated();
 
-        setRightTitleText(R.string.call_customer_service);
-        getData();
+        setRightTitleText(R.string.record);
+//        getData();
     }
 
-    private void getData() {
+//    private void getData() {
 //        mAssets = (AssetsTotalInfo.Assets) getIntent().getSerializableExtra("asset");
 //        bindRoot.setData(mAssets);
 //        bindRoot.setCurrencyId(mCurrencyId);
@@ -62,16 +58,16 @@ public class CurrencyRechargeRecordActivity extends BaseTitleActivity<ActivityCu
 //                        showRecordList(null);
 //                    }
 //                });
-    }
+//    }
 
-    private void showRecordList(List<CurrencyRecord> records) {
-        bindRoot.repeatView.onClick(this);
-
-        if (CollectionUtils.isEmpty(records))
-            bindRoot.repeatView.layoutAdapterManager().showEmptyView();
-        else
-            bindRoot.repeatView.viewManager().bind(records);
-    }
+//    private void showRecordList(List<CurrencyRecord> records) {
+//        bindRoot.repeatView.onClick(this);
+//
+//        if (CollectionUtils.isEmpty(records))
+//            bindRoot.repeatView.layoutAdapterManager().showEmptyView();
+//        else
+//            bindRoot.repeatView.viewManager().bind(records);
+//    }
 
     @Override
     public void onHolderClick(WalletAdapter walletAdapter) {
@@ -97,6 +93,6 @@ public class CurrencyRechargeRecordActivity extends BaseTitleActivity<ActivityCu
 
     @Override
     protected void onRightTitleClick() {
-        ViewUtil.gotoCustomerService(this);
+        ViewUtil.gotoActivity(this, CurrencyRechargeRecordActivity.class);
     }
 }

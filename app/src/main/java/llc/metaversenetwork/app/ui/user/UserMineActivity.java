@@ -1,6 +1,7 @@
 package llc.metaversenetwork.app.ui.user;
 
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 
 import com.alaer.lib.api.ApiUtil;
@@ -13,10 +14,12 @@ import com.alaer.lib.api.bean.UserData;
 import com.alaer.lib.api.bean.UserLevelList;
 import com.alaer.lib.data.UserDataUtil;
 
+import likly.dialogger.Dialogger;
 import likly.dollar.$;
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseTitleActivity;
 import llc.metaversenetwork.app.databinding.ActivityUserMineBinding;
+import llc.metaversenetwork.app.ui.dialog.DialogNotAuth;
 import llc.metaversenetwork.app.ui.setting.AboutActivity;
 import llc.metaversenetwork.app.ui.setting.SecurityCenterActivity;
 import llc.metaversenetwork.app.ui.setting.SettingActivity;
@@ -177,7 +180,7 @@ public class UserMineActivity extends BaseTitleActivity<ActivityUserMineBinding>
             case R.id.exchangeScore:
                 // 是否实名认证
                 if (!UserDataUtil.instance().isAuthed()) {
-                    ViewUtil.gotoAuthPage(getContext());
+                    showNotAuthDialog();
                 } else {
                     if (mBalance != null) {
                         Bundle data = new Bundle();
@@ -224,6 +227,20 @@ public class UserMineActivity extends BaseTitleActivity<ActivityUserMineBinding>
                 ViewUtil.gotoActivity(this, WalletActivity.class);
                 break;
         }
+    }
+
+    // 未实名认证提示
+    private void showNotAuthDialog() {
+        DialogNotAuth dialogNotAuth = new DialogNotAuth();
+        dialogNotAuth.setListener(new DialogNotAuth.OnConfirmListener() {
+            @Override
+            public void onConfirmClick() {
+                ViewUtil.gotoAuthPage(getContext());
+            }
+        });
+        Dialogger.newDialog(getContext()).holder(dialogNotAuth)
+                .gravity(Gravity.CENTER)
+                .show();
     }
 
 }

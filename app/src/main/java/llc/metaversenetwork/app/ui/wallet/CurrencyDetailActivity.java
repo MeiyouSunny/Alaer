@@ -1,5 +1,7 @@
 package llc.metaversenetwork.app.ui.wallet;
 
+import android.view.View;
+
 import com.alaer.lib.api.ApiUtil;
 import com.alaer.lib.api.Callback;
 import com.alaer.lib.api.bean.AssetsTotalInfo;
@@ -14,6 +16,7 @@ import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseTitleActivity;
 import llc.metaversenetwork.app.databinding.ActivityWalletDetailBinding;
 import llc.metaversenetwork.app.util.CollectionUtils;
+import llc.metaversenetwork.app.util.ViewUtil;
 
 /**
  * 我的钱包
@@ -74,6 +77,18 @@ public class CurrencyDetailActivity extends BaseTitleActivity<ActivityWalletDeta
 
     @Override
     public void onHolderClick(WalletAdapter walletAdapter) {
+    }
+
+    @Override
+    public void click(View view) {
+        switch (view.getId()) {
+            case R.id.recharge:
+                ViewUtil.gotoActivity(this, RechargeActivity.class);
+                break;
+            case R.id.withdrawal:
+                ViewUtil.gotoActivity(this, WithdrawalActivity.class);
+                break;
+        }
     }
 
 }

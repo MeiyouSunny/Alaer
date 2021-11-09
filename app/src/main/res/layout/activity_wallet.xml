@@ -73,7 +73,7 @@
                     android:textSize="@dimen/font_14" />
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/submit"
+                    android:id="@+id/withdrawal"
                     android:layout_width="wrap_content"
                     android:layout_height="28dp"
                     android:layout_alignParentRight="true"
