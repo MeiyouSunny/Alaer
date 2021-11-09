@@ -55,6 +55,9 @@ public class AboutActivity extends BaseTitleActivity<ActivityAboutBinding> {
             case R.id.userAgreement:
                 WebPageActivity.start(this, getString(R.string.user_rule_url), R.string.user_agreement);
                 break;
+            case R.id.mncAgreement:
+                WebPageActivity.start(this, getString(R.string.mnc_service_disclaimer_url), R.string.mnc_service_disclaimer);
+                break;
             case R.id.update:
                 checkUpdate();
                 break;

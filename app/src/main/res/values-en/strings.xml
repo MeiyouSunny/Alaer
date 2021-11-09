@@ -241,7 +241,7 @@
     <string name="renewal_success">Renewal succeeded!</string>
     <string name="pls_get_verify_code_first">Please get the verification code first!</string>
     <string name="check_update">Check for updates</string>
-    <string name="user_agreement">User agreement and privacy policy</string>
+    <string name="user_agreement">MNC User agreement and privacy policy</string>
     <string name="fingerprint">fingerprint</string>
     <string name="phone">mobile phone</string>
     <string name="system_settings">System settings</string>
@@ -402,10 +402,12 @@
     <string name="immediate_receipt">Immediate receipt</string>
     <string name="person_level_is">Personal level: LV%d</string>
     <string name="burn">Burn</string>
-    <string name="user_rule_url">http://bqd.linker.world/articles/en_US/agreement-zh_US.html</string>
+    <string name="user_rule_url">https://metaverse-3.gitbook.io/mnw-guide-tw/metaverse-network-llc-user-agreement</string>
     <string name="daily_task">Daily task</string>
     <string name="task_hint">Complete the metauniverse daily task to obtain more rewards</string>
     <string name="exploring_metauniverse">Exploring the Metauniverse</string>
     <string name="welcome_join_metauniverse">Welcome to join the Metauniverse</string>
+    <string name="mnc_service_disclaimer">MNC service disclaimer</string>
+    <string name="mnc_service_disclaimer_url">https://metaverse-3.gitbook.io/mnw-guide-tw/disclaimer-of-liability</string>
 
 </resources>

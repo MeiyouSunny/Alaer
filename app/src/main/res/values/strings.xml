@@ -241,7 +241,7 @@
     <string name="renewal_success">續期成功！</string>
     <string name="pls_get_verify_code_first">請先獲取驗證碼！</string>
     <string name="check_update">檢查更新</string>
-    <string name="user_agreement">使用者協定及隱私政策</string>
+    <string name="user_agreement">MNC用戶協議及隱私政策</string>
     <string name="fingerprint">指紋</string>
     <string name="phone">手機</string>
     <string name="system_settings">系統設置</string>
@@ -403,7 +403,7 @@
     <string name="immediate_receipt">即時到賬</string>
     <string name="person_level_is">個人等級：LV%d</string>
     <string name="burn">燒傷</string>
-    <string name="user_rule_url">http://bqd.linker.world/articles/zh_TW/agreement-zh_TW.html</string>
+    <string name="user_rule_url">https://metaverse-3.gitbook.io/mnw-guide-tw/metaverse-network-llc-yong-hu-fu-wu-xie-yi</string>
     <string name="activity_desc_url">https://metaverse-3.gitbook.io/mnw-guide-tw/mnc-huo-yue-du-shu-zhi-shui-ming</string>
     <string name="contribution_desc_url">https://metaverse-3.gitbook.io/mnw-guide-tw/mnc-gong-xian-zhi-shui-ming</string>
     <string name="honor_desc_url">https://metaverse-3.gitbook.io/mnw-guide-tw/mnc-rong-yu-zhi-shui-ming</string>
@@ -417,6 +417,8 @@
     <string name="exploring_metauniverse">探索元宇宙</string>
     <string name="welcome_join_metauniverse">歡迎您加入元宇宙</string>
     <string name="welcome_desc">歡迎進入元宇宙數字生態，你的願望將是我們的責任，在此預祝閣下旅途愉快并實現你一切的夢想。</string>
+    <string name="mnc_service_disclaimer">MNC服務免責聲明</string>
+    <string name="mnc_service_disclaimer_url">https://metaverse-3.gitbook.io/mnw-guide-tw/mnc-fu-wu-mian-ze-sheng-ming</string>
 
 
 </resources>
