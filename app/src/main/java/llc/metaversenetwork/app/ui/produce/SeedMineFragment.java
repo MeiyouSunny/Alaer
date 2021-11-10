@@ -10,14 +10,6 @@ import com.alaer.lib.api.Callback;
 import com.alaer.lib.api.bean.SeedMine;
 import com.alaer.lib.api.bean.UserData;
 import com.alaer.lib.data.UserDataUtil;
-import llc.metaversenetwork.app.R;
-import llc.metaversenetwork.app.base.BaseBindFragment;
-import llc.metaversenetwork.app.databinding.FragmentSeedMineListBinding;
-import llc.metaversenetwork.app.ui.dialog.DialogInputSecondPwd;
-import llc.metaversenetwork.app.util.CollectionUtils;
-import llc.metaversenetwork.app.util.NeteaseCaptcha;
-import llc.metaversenetwork.app.util.StringUtil;
-import llc.metaversenetwork.app.view.GradViewItemDecoration;
 import com.meiyou.mvp.MvpBinder;
 
 import org.json.JSONException;
@@ -29,6 +21,14 @@ import likly.dialogger.Dialogger;
 import likly.dollar.$;
 import likly.view.repeat.OnHolderClickListener;
 import likly.view.repeat.RepeatView;
+import llc.metaversenetwork.app.R;
+import llc.metaversenetwork.app.base.BaseBindFragment;
+import llc.metaversenetwork.app.databinding.FragmentSeedMineListBinding;
+import llc.metaversenetwork.app.ui.dialog.DialogInputSecondPwd;
+import llc.metaversenetwork.app.util.CollectionUtils;
+import llc.metaversenetwork.app.util.NeteaseCaptcha;
+import llc.metaversenetwork.app.util.StringUtil;
+import llc.metaversenetwork.app.view.GradViewItemDecoration;
 
 /**
  * 种子商店:我的树苗
@@ -81,11 +81,15 @@ public class SeedMineFragment extends BaseBindFragment<FragmentSeedMineListBindi
                 });
     }
 
+    boolean isFirstShow = true;
+
     private void showData(List<SeedMine> data) {
-//        bindRoot.repeatView.getRecyclerView().setPaddingRelative(0, 32, 0, 0);
-        bindRoot.repeatView.getRecyclerView().setClipToPadding(false);
-        bindRoot.repeatView.getRecyclerView().addItemDecoration(new GradViewItemDecoration(getContext(), 6));
-        bindRoot.repeatView.onClick(this);
+        if (isFirstShow) {
+            isFirstShow = false;
+            bindRoot.repeatView.getRecyclerView().setClipToPadding(false);
+            bindRoot.repeatView.getRecyclerView().addItemDecoration(new GradViewItemDecoration(getContext(), 6));
+            bindRoot.repeatView.onClick(this);
+        }
 
         if (!CollectionUtils.isEmpty(data)) {
             bindRoot.repeatView.viewManager().bind(data);

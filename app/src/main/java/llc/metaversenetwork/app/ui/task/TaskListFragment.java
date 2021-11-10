@@ -17,10 +17,6 @@ import com.alaer.lib.api.bean.AdTask;
 import com.alaer.lib.api.bean.AdVideo;
 import com.alaer.lib.api.bean.UserData;
 import com.alaer.lib.data.UserDataUtil;
-import llc.metaversenetwork.app.R;
-import llc.metaversenetwork.app.databinding.TaskListFragmentBinding;
-import llc.metaversenetwork.app.ui.video.VideoActivity;
-import llc.metaversenetwork.app.util.CollectionUtils;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
 import java.util.List;
@@ -32,6 +28,10 @@ import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import likly.dollar.$;
+import llc.metaversenetwork.app.R;
+import llc.metaversenetwork.app.databinding.TaskListFragmentBinding;
+import llc.metaversenetwork.app.ui.video.VideoActivity;
+import llc.metaversenetwork.app.util.CollectionUtils;
 
 public class TaskListFragment extends BottomSheetDialogFragment {
 
@@ -170,7 +170,7 @@ public class TaskListFragment extends BottomSheetDialogFragment {
             // 播放完成,完成任务
             completeTask(mAdTask.id);
         } else {
-            $.toast().text("任务未完成!").show();
+            $.toast().text("任務未完成!").show();
         }
     }
 

@@ -130,13 +130,17 @@ public class ExchangeBuildScoreActivity extends BaseTitleActivity<ActivityExchan
             return;
         }
 
-        float inputValue = 0F;
-        if (input.contains("."))
-            inputValue = Float.parseFloat(input);
-        else
-            inputValue = (float) Integer.parseInt(input);
+        try{
+            float inputValue = 0F;
+            if (input.contains("."))
+                inputValue = Float.parseFloat(input);
+            else
+                inputValue = (float) Integer.parseInt(input);
 
-        calculateAndShow(inputValue);
+            calculateAndShow(inputValue);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private void calculateAndShow(float inputValue) {

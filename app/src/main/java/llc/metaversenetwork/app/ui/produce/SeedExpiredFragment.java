@@ -6,14 +6,15 @@ import com.alaer.lib.api.Callback;
 import com.alaer.lib.api.bean.SeedMine;
 import com.alaer.lib.api.bean.UserData;
 import com.alaer.lib.data.UserDataUtil;
+import com.meiyou.mvp.MvpBinder;
+
+import java.util.List;
+
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseBindFragment;
 import llc.metaversenetwork.app.databinding.FragmentSeedExpiredListBinding;
 import llc.metaversenetwork.app.util.CollectionUtils;
 import llc.metaversenetwork.app.view.GradViewItemDecoration;
-import com.meiyou.mvp.MvpBinder;
-
-import java.util.List;
 
 /**
  * 种子商店:过期失效
@@ -53,10 +54,14 @@ public class SeedExpiredFragment extends BaseBindFragment<FragmentSeedExpiredLis
                 });
     }
 
+    boolean isFirstShow = true;
+
     private void showData(List<SeedMine> data) {
-//        bindRoot.repeatView.getRecyclerView().setPaddingRelative(0, 32, 0, 0);
-        bindRoot.repeatView.getRecyclerView().setClipToPadding(false);
-        bindRoot.repeatView.getRecyclerView().addItemDecoration(new GradViewItemDecoration(getContext(), 6));
+        if (isFirstShow) {
+            isFirstShow = false;
+            bindRoot.repeatView.getRecyclerView().setClipToPadding(false);
+            bindRoot.repeatView.getRecyclerView().addItemDecoration(new GradViewItemDecoration(getContext(), 6));
+        }
 
         if (!CollectionUtils.isEmpty(data))
             bindRoot.repeatView.viewManager().bind(data);

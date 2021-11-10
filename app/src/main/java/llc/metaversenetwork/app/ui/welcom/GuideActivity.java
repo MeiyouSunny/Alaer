@@ -1,17 +1,9 @@
 package llc.metaversenetwork.app.ui.welcom;
 
-import android.os.Handler;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-import llc.metaversenetwork.app.R;
-import llc.metaversenetwork.app.base.BaseViewBindActivity;
-import llc.metaversenetwork.app.databinding.ActivityGuideBinding;
-import llc.metaversenetwork.app.ui.dialog.DialogUserAgreement;
-import llc.metaversenetwork.app.ui.home.HomeActivity;
-import llc.metaversenetwork.app.util.ViewUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +12,12 @@ import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 import likly.dialogger.Dialogger;
 import likly.dollar.$;
+import llc.metaversenetwork.app.R;
+import llc.metaversenetwork.app.base.BaseViewBindActivity;
+import llc.metaversenetwork.app.databinding.ActivityGuideBinding;
+import llc.metaversenetwork.app.ui.dialog.DialogUserAgreement;
+import llc.metaversenetwork.app.ui.home.HomeActivity;
+import llc.metaversenetwork.app.util.ViewUtil;
 
 public class GuideActivity extends BaseViewBindActivity<ActivityGuideBinding> implements ViewPager.OnPageChangeListener, View.OnClickListener {
 
@@ -59,6 +57,9 @@ public class GuideActivity extends BaseViewBindActivity<ActivityGuideBinding> im
 
     @Override
     public void onClick(View view) {
+        boolean showGuide = $.config().getBoolean("showGuide", true);
+        if(showGuide)
+            return;
         ViewUtil.gotoActivity(this, HomeActivity.class);
         finish();
     }
@@ -101,13 +102,13 @@ public class GuideActivity extends BaseViewBindActivity<ActivityGuideBinding> im
     public void onPageSelected(int position) {
         bindRoot.setIndicatorIndex(position);
         if (position == 2) {
-            new Handler().postDelayed(new Runnable() {
-                @Override
-                public void run() {
+//            new Handler().postDelayed(new Runnable() {
+//                @Override
+//                public void run() {
                     Dialogger.newDialog(getContext()).holder(new DialogUserAgreement())
                             .gravity(Gravity.CENTER).cancelable(false).show();
-                }
-            }, 500);
+//                }
+//            }, 500);
         }
     }
 

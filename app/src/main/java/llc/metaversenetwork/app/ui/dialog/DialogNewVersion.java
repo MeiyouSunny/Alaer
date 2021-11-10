@@ -16,7 +16,7 @@ public class DialogNewVersion extends BaseDialogHolder<DialogNewVersionBinding> 
     public DialogNewVersion(UpdateInfo updateInfo, boolean forceUpdate) {
         super(R.layout.dialog_new_version);
         this.updateInfo = updateInfo;
-        this.forceUpdate = false;
+        this.forceUpdate = forceUpdate;
     }
 
     @Override

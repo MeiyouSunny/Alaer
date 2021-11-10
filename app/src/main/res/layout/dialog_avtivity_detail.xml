@@ -46,23 +46,22 @@
                 android:id="@+id/imgTop"
                 android:layout_width="match_parent"
                 android:layout_height="78dp"
-                android:background="@drawable/img_buy_seed_success_header" />
+                android:background="@drawable/bg_dialog_userin_top" />
 
             <TextView
                 android:id="@+id/title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="20dp"
-                android:text="用户操作记录"
-                android:textColor="@color/font_41"
+                android:layout_marginTop="24dp"
+                android:text="用戶操作記錄"
+                android:textColor="@color/white"
                 android:textSize="@dimen/font_18" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="98dp"
-                android:layout_toLeftOf="@+id/title"
                 android:gravity="right"
                 android:text="UID："
                 android:textColor="@color/font_7E"
@@ -79,12 +78,11 @@
                 android:textSize="@dimen/font_16" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="129dp"
-                android:layout_toLeftOf="@+id/title"
                 android:gravity="right"
-                android:text="手机号："
+                android:text="手機號："
                 android:textColor="@color/font_7E"
                 android:textSize="@dimen/font_16" />
 
@@ -100,12 +98,11 @@
                 android:textSize="@dimen/font_16" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="162dp"
-                android:layout_toLeftOf="@+id/title"
                 android:gravity="right"
-                android:text="说明："
+                android:text="說明："
                 android:textColor="@color/font_7E"
                 android:textSize="@dimen/font_16" />
 
@@ -115,17 +112,18 @@
                 android:layout_marginLeft="128dp"
                 android:layout_marginTop="162dp"
                 android:gravity="left"
+                android:ellipsize="end"
+                android:singleLine="true"
                 android:text="@{StringUtil.getNullStringDefault(data.note)}"
                 android:textColor="@color/font_41"
                 android:textSize="@dimen/font_16" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="194dp"
-                android:layout_toLeftOf="@+id/title"
                 android:gravity="right"
-                android:text="树苗活跃度："
+                android:text="探測器活躍度："
                 android:textColor="@color/font_7E"
                 android:textSize="@dimen/font_16" />
 
@@ -140,32 +138,33 @@
                 android:textSize="@dimen/font_16" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="227dp"
-                android:layout_toLeftOf="@+id/title"
                 android:gravity="right"
-                android:text="账号位置："
+                android:text="位置："
                 android:textColor="@color/font_7E"
                 android:textSize="@dimen/font_16" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="128dp"
                 android:layout_marginTop="227dp"
+                android:layout_marginRight="12dp"
+                android:ellipsize="end"
                 android:gravity="left"
+                android:singleLine="true"
                 android:text="@{StringUtil.getNullStringDefault(data.cityName)}"
                 android:textColor="@color/font_41"
                 android:textSize="@dimen/font_16" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="260dp"
-                android:layout_toLeftOf="@+id/title"
                 android:gravity="right"
-                android:text="时间："
+                android:text="時間："
                 android:textColor="@color/font_7E"
                 android:textSize="@dimen/font_16" />
 

@@ -113,7 +113,7 @@
     <string name="compulsory_education">compulsory education</string>
     <string name="online_education">Metaverse Online Data</string>
     <string name="education_video">Metauniverse video</string>
-    <string name="career_traning">Metauniverse record</string>
+    <string name="career_traning">Metauniverse ecological integration</string>
     <string name="people_hospital">Parallel universe</string>
     <string name="appointment">have an appointment with a doctor</string>
     <string name="appointment_without_queuing">Online reservation without queuing</string>
@@ -318,7 +318,7 @@
     <string name="set_invitation_code_desc">Set a personalized invitation code to invite friends</string>
     <string name="set_nick_desc">Set a Personal Nickname</string>
     <string name="set_wechat_price">It costs 1 metamines to set up Telegram ID</string>
-    <string name="set_invitation_code_price">It costs 1 metamine  to set up the invitation code</string>
+    <string name="set_invitation_code_price">It costs 10 metamine  to set up the invitation code</string>
     <string name="set_nick_price">It costs 1 metamines to set up a nickname, and it’s free for the first time</string>
     <string name="no_verify_yes">No real name authentication</string>
     <string name="citizen_level1">First class metaverse citizen</string>
@@ -413,5 +413,6 @@
     <string name="record">Record</string>
     <string name="reward_honor_value_is">Reward honor value:%d</string>
     <string name="vip_centre">Member center</string>
+    <string name="burn_active_is">Burn activity: %s</string>
 
 </resources>

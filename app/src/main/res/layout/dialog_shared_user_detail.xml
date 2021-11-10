@@ -384,7 +384,7 @@
                     android:layout_toLeftOf="@+id/title"
                     android:layout_weight="1"
                     android:gravity="center_vertical|right"
-                    android:text="社區活躍度："
+                    android:text="小區活躍度："
                     android:textColor="@color/font_7E"
                     android:textSize="@dimen/font_16" />
 

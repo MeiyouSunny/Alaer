@@ -31,4 +31,5 @@ public class ActiveBill {
     public String note;
     public int status;
     public String createTime;
+    public int changeType;
 }

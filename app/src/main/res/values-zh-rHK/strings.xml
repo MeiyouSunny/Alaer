@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">MNC</string>
     <string name="new_version">新版本</string>
-    <string name="my_city">我的元宇宙</string>
+    <string name="my_city">元宇星球</string>
     <string name="nike_name">昵稱：</string>
     <string name="good_cityer">元宇積分：</string>
     <string name="farm">元宇宙</string>
@@ -81,14 +81,14 @@
     <string name="exchanged_full">兌換完</string>
     <string name="get_for_free">免費領取</string>
     <string name="renewal">續期</string>
-    <string name="get_by_start_user">星级元宇宙星民赠送</string>
+    <string name="get_by_start_user">星級團隊贈送</string>
     <string name="get_by_activity">活動贈送</string>
     <string name="has_get_try_seed">抱歉，您已領取過新手探測器！</string>
     <string name="seed_sold_out_all">抱歉，已被兌換完！</string>
     <string name="look_my_seeds">查看我的探測器</string>
     <string name="cancel">取消</string>
     <string name="seed_buyed_is">您已兌換一臺探測器：%s</string>
-    <string name="seed_buy_success">兌換元宇礦石成功</string>
+    <string name="seed_buy_success">兌換探測器成功</string>
     <string name="seed_get_success">領取探測器成功</string>
     <string name="not_auth_yes">您尚未實名，請先進行實名認證！</string>
     <string name="goto_auth">前往認證</string>
@@ -113,7 +113,7 @@
     <string name="compulsory_education">義務教育</string>
     <string name="online_education">元宇宙線上資料</string>
     <string name="education_video">元宇宙視頻</string>
-    <string name="career_traning">元宇宙記錄</string>
+    <string name="career_traning">元宇宙生態整合</string>
     <string name="people_hospital">平行宇宙</string>
     <string name="appointment">預約掛號</string>
     <string name="appointment_without_queuing">線上預約不排隊</string>
@@ -206,7 +206,7 @@
     <string name="task_done">已完成</string>
     <string name="task_done_info">每日獎勵上限%1$d次，已完成%2$d/%3$d</string>
     <string name="is_which_one">我是第%d位</string>
-    <string name="alaer_digital_person">元宇宙数字生态会员</string>
+    <string name="alaer_digital_person">元宇宙數字生態會員</string>
     <string name="invitate_code_is">邀請碼：%s</string>
     <string name="balance_is">餘額：%s</string>
     <string name="activity_is">活跃度：%s</string>
@@ -318,15 +318,15 @@
     <string name="set_invitation_code_desc">設定個性化邀請碼，方便邀請好友</string>
     <string name="set_nick_desc">設定個性昵稱</string>
     <string name="set_wechat_price">設置Telegram號需要花費1元宇礦</string>
-    <string name="set_invitation_code_price">設置邀請碼需要花費1元宇礦</string>
+    <string name="set_invitation_code_price">設置邀請碼需要花費10元宇礦</string>
     <string name="set_nick_price">設置暱稱需要花費1元宇礦，首次免費</string>
     <string name="no_verify_yes">未實名認證</string>
     <string name="citizen_level1">一級市民</string>
     <string name="citizen_level2">二級市民</string>
     <string name="citizen_level3">三級市民</string>
     <string name="get_detector_for_free">免費領取探測器</string>
-    <string name="regional_activity">大區活動度</string>
-    <string name="community_activity">小區活動度</string>
+    <string name="regional_activity">大區活躍度</string>
+    <string name="community_activity">小區活躍度</string>
     <string name="auth_success_return">返回MNC元宇宙</string>
 
     <string name="saturn">土星</string>
@@ -423,6 +423,7 @@
     <string name="record">記錄</string>
     <string name="reward_honor_value_is">獎勵榮譽值：%d</string>
     <string name="vip_centre">會員中心</string>
+    <string name="burn_active_is">燒傷活躍度：%s</string>
 
 
 </resources>

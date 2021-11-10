@@ -1,15 +1,20 @@
 package llc.metaversenetwork.app.ui.produce;
 
+import android.os.Handler;
+import android.os.Looper;
+
+import com.meiyou.mvp.MvpBinder;
+
+import androidx.viewpager.widget.ViewPager;
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseTitleActivity;
 import llc.metaversenetwork.app.databinding.ActivitySeedStoreBinding;
-import com.meiyou.mvp.MvpBinder;
 
 /**
  * 种子商店
  */
 @MvpBinder()
-public class SeedStoreActivity extends BaseTitleActivity<ActivitySeedStoreBinding> {
+public class SeedStoreActivity extends BaseTitleActivity<ActivitySeedStoreBinding> implements ViewPager.OnPageChangeListener {
 
     TabPagerAdapter mTabAdapter;
 
@@ -35,6 +40,7 @@ public class SeedStoreActivity extends BaseTitleActivity<ActivitySeedStoreBindin
         bindRoot.viewPager.setOffscreenPageLimit(3);
         bindRoot.viewPager.setAdapter(mTabAdapter);
         bindRoot.tabs.setupWithViewPager(bindRoot.viewPager);
+        bindRoot.viewPager.setOnPageChangeListener(this);
 
         if (index != 0)
             bindRoot.viewPager.setCurrentItem(index);
@@ -49,4 +55,20 @@ public class SeedStoreActivity extends BaseTitleActivity<ActivitySeedStoreBindin
         bindRoot.viewPager.setCurrentItem(index);
     }
 
+    @Override
+    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+        if (position == 0) {
+            new Handler(Looper.getMainLooper()).postAtTime(() -> refreshMySeeds(), 800);
+        }
+    }
+
+    @Override
+    public void onPageSelected(int position) {
+
+    }
+
+    @Override
+    public void onPageScrollStateChanged(int state) {
+
+    }
 }

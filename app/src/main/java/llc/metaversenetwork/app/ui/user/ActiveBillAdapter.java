@@ -20,7 +20,7 @@ public class ActiveBillAdapter extends BaseViewHolder<ItemActiveBillBinding, Act
     protected void onViewCreated(View view) {
         super.onViewCreated(view);
         if (billUtil == null)
-            billUtil = new BillUtil();
+            billUtil = new BillUtil(getContext());
     }
 
     @Override

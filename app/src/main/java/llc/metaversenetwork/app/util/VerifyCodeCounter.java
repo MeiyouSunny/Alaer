@@ -69,10 +69,10 @@ public class VerifyCodeCounter {
     private void countOver() {
         count = COUNT_MAX;
         removeMsg();
-//        if (countView != null) {
-//            countView.setText("发送");
-//            countView.setEnabled(true);
-//        }
+        if (countView != null) {
+            countView.setText("發送");
+            countView.setEnabled(true);
+        }
     }
 
     public void destory() {

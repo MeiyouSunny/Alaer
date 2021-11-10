@@ -12,7 +12,7 @@ import android.os.Looper;
 import android.os.Message;
 import android.os.Process;
 import android.provider.Settings;
-import android.util.Log;
+import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.View;
 
@@ -37,7 +37,6 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-import cn.jzvd.JzvdStd;
 import de.greenrobot.event.EventBus;
 import de.greenrobot.event.Subscribe;
 import de.greenrobot.event.ThreadMode;
@@ -50,6 +49,7 @@ import llc.metaversenetwork.app.ui.dialog.DialogWelcome;
 import llc.metaversenetwork.app.ui.discover.DiscoverActivity;
 import llc.metaversenetwork.app.ui.education.EducationHallActivity;
 import llc.metaversenetwork.app.ui.government.GovernmentHallActivity;
+import llc.metaversenetwork.app.ui.government.RealNameAuthActivity;
 import llc.metaversenetwork.app.ui.notice.NoticeDetailActivity;
 import llc.metaversenetwork.app.ui.notice.NoticeListActivity;
 import llc.metaversenetwork.app.ui.produce.ProductionHallActivity;
@@ -58,6 +58,7 @@ import llc.metaversenetwork.app.ui.task.TaskListFragment;
 import llc.metaversenetwork.app.ui.travel.TravelHallActivity;
 import llc.metaversenetwork.app.ui.user.LoginActivity;
 import llc.metaversenetwork.app.ui.user.UserMineActivity;
+import llc.metaversenetwork.app.ui.video.VideoActivity;
 import llc.metaversenetwork.app.util.CollectionUtils;
 import llc.metaversenetwork.app.util.NumberUtils;
 import llc.metaversenetwork.app.util.ViewUtil;
@@ -114,7 +115,7 @@ public class HomeActivity extends BaseViewBindActivity<ActivityHomeBinding> impl
 
     private Class<? extends Activity>[] mPageClasses = new Class[]{
             ProductionHallActivity.class, null, DiscoverActivity.class, GovernmentHallActivity.class,
-            GovernmentHallActivity.class, TravelHallActivity.class, EducationHallActivity.class};
+            RealNameAuthActivity.class, TravelHallActivity.class, EducationHallActivity.class};
 
     private void initMapView() {
         bindRoot.map.getMapView().setImageResource(R.drawable.bg_map);
@@ -206,9 +207,9 @@ public class HomeActivity extends BaseViewBindActivity<ActivityHomeBinding> impl
     private Handler mHandler = new Handler(Looper.getMainLooper()) {
         @Override
         public void handleMessage(@NonNull Message msg) {
-            Log.e("XXX", "===");
             mNoticeNew = mNotices.get(noticeIndex);
-            bindRoot.notice.setText(mNoticeNew.title);
+            if (!TextUtils.isEmpty(mNoticeNew.title))
+                bindRoot.notice.setText(mNoticeNew.title);
 
             if (noticeIndex == mNotices.size() - 1 || noticeIndex == 2)
                 noticeIndex = 0;
@@ -236,7 +237,7 @@ public class HomeActivity extends BaseViewBindActivity<ActivityHomeBinding> impl
 
     private void showWelcomeDialog() {
         boolean showWelcome = $.config().getBoolean("showWelcome", true);
-        if(showWelcome) {
+        if (showWelcome) {
             Dialogger.newDialog(getContext()).holder(new DialogWelcome())
                     .gravity(Gravity.CENTER)
                     .cancelable(false)
@@ -247,14 +248,15 @@ public class HomeActivity extends BaseViewBindActivity<ActivityHomeBinding> impl
 
     @Override
     public void onClick(View view, int position) {
-        if (position == 0 || position == 1 || position == 3 || position == 5) {
+        if (position == 0 || position == 1 || position == 3 || position == 4 || position == 5) {
             if (!judgeLogined())
                 return;
         }
 
         if (position == 1) {
             // 走进阿拉尔,播放视频
-            JzvdStd.startFullscreenDirectly(this, JzvdStd.class, AppConfig.GO_INTO_ALAER_VIDEO, getString(R.string.go_into_alaer));
+//            JzvdStd.startFullscreenDirectly(this, JzvdStd.class, AppConfig.GO_INTO_ALAER_VIDEO, getString(R.string.go_into_alaer));
+            VideoActivity.startPlayFroResult(this, null, 1);
         } else if (position == 5) {
             ViewUtil.gotoAuthPage(this);
         } else {

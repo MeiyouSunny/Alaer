@@ -56,12 +56,12 @@ public class VideoActivity extends BaseViewBindActivity<ActivityVideoBinding> im
         JZUtils.clearSavedProgress(getContext(), null);
 
         mAdVideo = (AdVideo) getIntent().getSerializableExtra("adVideo");
-        if (mAdVideo == null)
-            return;
+//        if (mAdVideo == null)
+//            return;
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        if (mAdVideo.orientation == 1)
+        if (mAdVideo != null && mAdVideo.orientation == 1)
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
         ViewUtil.showImage(getApplicationContext(), bindRoot.player.posterImageView, AppConfig.TRAVEL_VIDEO_PIC2);
@@ -79,8 +79,15 @@ public class VideoActivity extends BaseViewBindActivity<ActivityVideoBinding> im
         });
 
 //        bindRoot.player.setUp(mAdVideo.image, mAdVideo.title);
-        bindRoot.player.setUp(getVideoName(), mAdVideo.title, JzvdStd.SCREEN_NORMAL, JZMediaSystemAssertFolder.class);
-
+        String title = "";
+        String video = "welcom.mp4";
+        if (mAdVideo != null) {
+            title = mAdVideo.title;
+            video = getVideoName();
+        } else {
+            bindRoot.time.setVisibility(View.GONE);
+        }
+        bindRoot.player.setUp(video, title, JzvdStd.SCREEN_NORMAL, JZMediaSystemAssertFolder.class);
 
         bindRoot.player.setScreenFullscreen();
         bindRoot.player.setOnCompleteListener(new VideoPlayer.OnCompleteListener() {

@@ -8,6 +8,7 @@ import likly.dollar.$;
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseTitleActivity;
 import llc.metaversenetwork.app.databinding.ActivityAuthFailedBinding;
+import llc.metaversenetwork.app.ui.government.RealNameAuthActivity;
 import llc.metaversenetwork.app.util.ViewUtil;
 
 /**
@@ -32,7 +33,7 @@ public class AuthFailedActivity extends BaseTitleActivity<ActivityAuthFailedBind
                 $.toast().text(R.string.will_open_soon).show();
                 break;
             case R.id.reTry:
-                ViewUtil.gotoActivity(this, AuthActivity.class);
+                ViewUtil.gotoActivity(this, RealNameAuthActivity.class);
                 finish();
                 break;
         }

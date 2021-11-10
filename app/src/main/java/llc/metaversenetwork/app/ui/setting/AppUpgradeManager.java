@@ -8,6 +8,8 @@ import android.os.Environment;
 import android.text.TextUtils;
 import android.view.Gravity;
 
+import com.alaer.lib.api.ApiUtil;
+import com.alaer.lib.api.Callback;
 import com.alaer.lib.api.bean.UpdateInfo;
 import com.alaer.lib.event.Event;
 import com.alaer.lib.event.EventUtil;
@@ -26,6 +28,7 @@ import likly.dollar.$;
 import llc.metaversenetwork.app.BuildConfig;
 import llc.metaversenetwork.app.ui.dialog.DialogDownloadApk;
 import llc.metaversenetwork.app.ui.dialog.DialogNewVersion;
+import llc.metaversenetwork.app.util.SettingUtil;
 
 public class AppUpgradeManager {
 
@@ -48,31 +51,31 @@ public class AppUpgradeManager {
     }
 
     public void checkUpdate(boolean isNewestToast) {
-//        this.isNewestToast = isNewestToast;
-//        ApiUtil.apiService().checkUpdate(1100,
-//                new Callback<UpdateInfo>() {
-//                    @Override
-//                    public void onResponse(UpdateInfo updateInfo) {
-//                        super.onResponse(updateInfo);
-//                        if (updateInfo != null) {
-//                            final String oldVersion = SettingUtil.getVersionName(mContext.getApplicationContext());
-//                            if (hasNewVersion(updateInfo.nowVersion, oldVersion)) {
-//                                final String ignoreVersion = $.config().getString("ignoreVersion");
-//                                if (!TextUtils.equals(ignoreVersion, updateInfo.nowVersion) || isNewestToast) {
-//                                    showNewVersionDialog(updateInfo);
-//                                }
-//                            } else {
-//                                if (isNewestToast)
-//                                    $.toast().text("已经是最新版本!").show();
-//                            }
-//                        }
-//                    }
-//
-//                    @Override
-//                    public void onError(int code, String msg) {
-//                        $.toast().text(msg).show();
-//                    }
-//                });
+        this.isNewestToast = isNewestToast;
+        ApiUtil.apiService().checkUpdate(1100,
+                new Callback<UpdateInfo>() {
+                    @Override
+                    public void onResponse(UpdateInfo updateInfo) {
+                        super.onResponse(updateInfo);
+                        if (updateInfo != null) {
+                            final String oldVersion = SettingUtil.getVersionName(mContext.getApplicationContext());
+                            if (hasNewVersion(updateInfo.nowVersion, oldVersion)) {
+                                final String ignoreVersion = $.config().getString("ignoreVersion");
+                                if (!TextUtils.equals(ignoreVersion, updateInfo.nowVersion) || isNewestToast) {
+                                    showNewVersionDialog(updateInfo);
+                                }
+                            } else {
+                                if (isNewestToast)
+                                    $.toast().text("已经是最新版本!").show();
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onError(int code, String msg) {
+                        $.toast().text(msg).show();
+                    }
+                });
     }
 
     private boolean hasNewVersion(String newVersion, String oldVersion) {

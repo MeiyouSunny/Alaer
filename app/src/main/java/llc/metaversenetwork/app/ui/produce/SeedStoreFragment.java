@@ -73,10 +73,14 @@ public class SeedStoreFragment extends BaseBindFragment<FragmentSeedStoreListBin
                 });
     }
 
+    boolean isFirstShow = true;
+
     private void showData(List<SeedStore> data) {
-//        bindRoot.repeatView.getRecyclerView().setPaddingRelative(0, 32, 0, 0);
-        bindRoot.repeatView.getRecyclerView().setClipToPadding(false);
-        bindRoot.repeatView.getRecyclerView().addItemDecoration(new GradViewItemDecoration(getContext(), 6));
+        if (isFirstShow) {
+            isFirstShow = false;
+            bindRoot.repeatView.getRecyclerView().setClipToPadding(false);
+            bindRoot.repeatView.getRecyclerView().addItemDecoration(new GradViewItemDecoration(getContext(), 6));
+        }
 
         if (!CollectionUtils.isEmpty(data))
             bindRoot.repeatView.viewManager().bind(data);
@@ -88,6 +92,10 @@ public class SeedStoreFragment extends BaseBindFragment<FragmentSeedStoreListBin
 
     // 领取种子
     private void buySeed(SeedStore seed) {
+        if (!UserDataUtil.instance().isAuthed()) {
+            showNotAuthDialog();
+            return;
+        }
         // 已领取试种树苗
         if (claimNewbieMiner && seed.price == 0) {
             $.toast().text(R.string.has_get_try_seed).show();
@@ -110,20 +118,22 @@ public class SeedStoreFragment extends BaseBindFragment<FragmentSeedStoreListBin
                         // 刷新
                         seed.buyNum++;
                         bindRoot.repeatView.getAdapter().notifyDataSetChanged();
-//                        adapter.notifyDataSetChanged();
+                        if (seed.price == 0)
+                            UserDataUtil.instance().setClaimNewbieMiner(true);
+                        initData();
 
                         showSuccessDialog(seed);
 
-                        mUIHandler.postAtTime(() -> ((SeedStoreActivity) getActivity()).refreshMySeeds(), 800);
+//                        mUIHandler.postAtTime(() -> ((SeedStoreActivity) getActivity()).refreshMySeeds(), 800);
                     }
 
                     @Override
                     public void onError(int code, String msg) {
-                        if (code == 403) {
-                            showNotAuthDialog();
-                        } else {
-                            $.toast().text(msg).show();
-                        }
+//                        if (code == 403) {
+//                            showNotAuthDialog();
+//                        } else {
+                        $.toast().text(msg).show();
+//                        }
                     }
                 });
     }
@@ -144,9 +154,8 @@ public class SeedStoreFragment extends BaseBindFragment<FragmentSeedStoreListBin
 
     private void showSuccessDialog(SeedStore seed) {
         final SeedDataUtil util = new SeedDataUtil(getResources());
-        final String seedName = getString(util.getSeedName(seed.type));
         final String getType = getString(util.getBuySuccessTitle(seed.type));
-        DialogBuySeedSuccess dialog = new DialogBuySeedSuccess(getType, seedName);
+        DialogBuySeedSuccess dialog = new DialogBuySeedSuccess(getType, seed.name);
         dialog.setListener(() -> lookMySeeds());
         Dialogger.newDialog(getActivity()).holder(dialog)
                 .gravity(Gravity.CENTER).cancelable(false).show();

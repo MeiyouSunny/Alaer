@@ -16,13 +16,6 @@ import com.amap.api.location.AMapLocationClient;
 import com.amap.api.location.AMapLocationClientOption;
 import com.amap.api.location.AMapLocationListener;
 import com.amap.api.maps.model.LatLng;
-import llc.metaversenetwork.app.R;
-import llc.metaversenetwork.app.base.BaseBindFragment;
-import llc.metaversenetwork.app.data.CityDataUtil;
-import llc.metaversenetwork.app.databinding.FragmentMyCityBinding;
-import llc.metaversenetwork.app.ui.App;
-import llc.metaversenetwork.app.ui.dialog.DialogNotCityMaster;
-import llc.metaversenetwork.app.util.ViewUtil;
 import com.meiyou.mvp.MvpBinder;
 
 import java.util.UUID;
@@ -31,6 +24,13 @@ import cn.udesk.UdeskSDKManager;
 import cn.udesk.config.UdeskConfig;
 import likly.dialogger.Dialogger;
 import likly.dollar.$;
+import llc.metaversenetwork.app.R;
+import llc.metaversenetwork.app.base.BaseBindFragment;
+import llc.metaversenetwork.app.data.CityDataUtil;
+import llc.metaversenetwork.app.databinding.FragmentMyCityBinding;
+import llc.metaversenetwork.app.ui.App;
+import llc.metaversenetwork.app.ui.dialog.DialogNotCityMaster;
+import llc.metaversenetwork.app.util.ViewUtil;
 
 @MvpBinder(
 )
@@ -80,7 +80,11 @@ public class MyCityFragment extends BaseBindFragment<FragmentMyCityBinding> impl
     public void onViewCreated() {
         super.onViewCreated();
 
-        activate();
+        try {
+            activate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         TeamDetail teamDetail = UserDataUtil.instance().getTeamDetail();
         if (teamDetail != null) {
             ViewUtil.showImage(App.mAppContext, bindRoot.icHead, teamDetail.avatar);
@@ -140,7 +144,7 @@ public class MyCityFragment extends BaseBindFragment<FragmentMyCityBinding> impl
     private AMapLocationClient mlocationClient;
     private AMapLocationClientOption mLocationOption;
 
-    public void activate() {
+    public void activate() throws Exception {
         if (mlocationClient == null) {
             mlocationClient = new AMapLocationClient(getContext());
             mLocationOption = new AMapLocationClientOption();

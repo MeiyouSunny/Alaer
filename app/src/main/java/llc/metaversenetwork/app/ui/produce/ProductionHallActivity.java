@@ -167,7 +167,7 @@ public class ProductionHallActivity extends BaseTitleActivity<ActivityProduction
                     finishProduce(mVlidate);
             }
         } else {
-            $.toast().text("任务未完成!").show();
+            $.toast().text("任務未完成!").show();
         }
     }
 
