@@ -113,7 +113,7 @@ public class HomeActivity extends BaseViewBindActivity<ActivityHomeBinding> impl
     }
 
     private Class<? extends Activity>[] mPageClasses = new Class[]{
-            ProductionHallActivity.class, null, DiscoverActivity.class, UserMineActivity.class,
+            ProductionHallActivity.class, null, DiscoverActivity.class, GovernmentHallActivity.class,
             GovernmentHallActivity.class, TravelHallActivity.class, EducationHallActivity.class};
 
     private void initMapView() {

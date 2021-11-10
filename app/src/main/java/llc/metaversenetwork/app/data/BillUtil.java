@@ -30,9 +30,9 @@ public class BillUtil {
     // 贡献值
     // 1.邀请好友；2.分享; 3.任务奖励
     public int parseContributionTypeIcon(int billType) {
-        if (billType == 2)
+        if (billType == 1 || billType == 2)
             return R.drawable.ic_type_share;
-        if (billType == 1 || billType == 3)
+        if (billType == 3)
             return R.drawable.ic_type_gift;
 
         return R.drawable.ic_type_gift;
@@ -64,7 +64,7 @@ public class BillUtil {
             return R.drawable.ic_type_expire;
         if (billType == 11 || billType == 6)
             return R.drawable.ic_type_fire;
-        if (billType == 13 ||  billType == 12 )
+        if (billType == 13 || billType == 12)
             return R.drawable.ic_type_statistics;
 
         return R.drawable.ic_type_statistics;

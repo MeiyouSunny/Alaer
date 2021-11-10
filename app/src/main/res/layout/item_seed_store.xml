@@ -7,6 +7,8 @@
 
         <import type="android.view.View" />
 
+        <import type="llc.metaversenetwork.app.R" />
+
         <variable
             name="claimNewbieMiner"
             type="boolean" />
@@ -29,7 +31,7 @@
         <RelativeLayout
             android:id="@+id/imgSeed"
             android:layout_width="176dp"
-            android:layout_height="242dp" >
+            android:layout_height="242dp">
 
             <ImageView
                 android:layout_width="176dp"
@@ -37,10 +39,10 @@
                 android:layout_alignParentBottom="true"
                 app:drawableRes="@{util.getSeedImage(seed.type)}" />
 
-            <View
+            <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="34dp"
-                android:background="@drawable/bg_seed_store_item_top" />
+                app:drawableRes="@{seed.type == 0 ? R.drawable.bg_seed_store_item_top_try : R.drawable.bg_seed_store_item_top}" />
 
             <TextView
                 android:layout_width="wrap_content"

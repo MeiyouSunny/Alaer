@@ -24,7 +24,6 @@ import llc.metaversenetwork.app.ui.setting.AboutActivity;
 import llc.metaversenetwork.app.ui.setting.SecurityCenterActivity;
 import llc.metaversenetwork.app.ui.setting.SettingActivity;
 import llc.metaversenetwork.app.ui.share.ShareActivity;
-import llc.metaversenetwork.app.ui.wallet.WalletActivity;
 import llc.metaversenetwork.app.util.CollectionUtils;
 import llc.metaversenetwork.app.util.NumberUtils;
 import llc.metaversenetwork.app.util.ViewUtil;
@@ -224,7 +223,8 @@ public class UserMineActivity extends BaseTitleActivity<ActivityUserMineBinding>
                 ViewUtil.gotoActivity(this, LoginActivity.class);
                 break;
             case R.id.myWallet:
-                ViewUtil.gotoActivity(this, WalletActivity.class);
+                $.toast().text(R.string.will_open_soon).show();
+//                ViewUtil.gotoActivity(this, WalletActivity.class);
                 break;
         }
     }

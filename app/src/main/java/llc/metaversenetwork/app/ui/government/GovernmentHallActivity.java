@@ -15,7 +15,7 @@ public class GovernmentHallActivity extends BaseTitleActivity<ActivityGovernment
 
     @Override
     protected int titleResId() {
-        return R.string.government_hall;
+        return R.string.vip_centre;
     }
 
     @Override

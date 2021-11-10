@@ -16,7 +16,7 @@ public class RealNameAuthActivity extends BaseTitleActivity<ActivityLoginBinding
 
     @Override
     protected int titleResId() {
-        return R.string.real_name_auth;
+        return R.string.government_hall;
     }
 
     @Override

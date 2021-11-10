@@ -123,12 +123,12 @@
     <string name="online_well_goods">線上優質商品上架</string>
     <string name="go_exchange_goods">前往兑换</string>
     <string name="goods_exchange">商品兌換</string>
-    <string name="government_hall">市民中心</string>
+    <string name="government_hall">數字會員申請</string>
     <string name="real_name_auth">實名認證</string>
     <string name="make_sure_security_warning">為保證您的賬號安全，提升服務品質，請前往認證</string>
     <string name="auth_success">恭喜你完成身份認證！</string>
     <string name="share_now">立即分享</string>
-    <string name="travel_hall">旅遊中心</string>
+    <string name="travel_hall">元宇宙中心</string>
     <string name="alaer_travel_video">元宇宙旅遊宣傳片</string>
     <string name="travel_ticket">旅遊景點購票</string>
     <string name="alipay_auth">支付寶認證</string>
@@ -422,6 +422,7 @@
     <string name="honor_value_desc">榮譽值說明</string>
     <string name="record">記錄</string>
     <string name="reward_honor_value_is">獎勵榮譽值：%d</string>
+    <string name="vip_centre">會員中心</string>
 
 
 </resources>

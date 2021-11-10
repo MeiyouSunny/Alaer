@@ -123,12 +123,12 @@
     <string name="online_well_goods">Online high-quality goods on the shelves</string>
     <string name="go_exchange_goods">Go to exchange</string>
     <string name="goods_exchange">Commodity exchange</string>
-    <string name="government_hall">Citizen Center</string>
+    <string name="government_hall">Digital membership application</string>
     <string name="real_name_auth">Verified</string>
     <string name="make_sure_security_warning">To ensure your account security and improve service quality, please go to authentication</string>
     <string name="auth_success">Congratulations on completing your identity authentication!</string>
     <string name="share_now">Share now</string>
-    <string name="travel_hall">Tourist center</string>
+    <string name="travel_hall">Metauniverse center</string>
     <string name="alaer_travel_video">Yuan universe tourism promotional film</string>
     <string name="travel_ticket">Ticket purchase for tourist attractions</string>
     <string name="alipay_auth">Alipay certification</string>
@@ -412,5 +412,6 @@
     <string name="honor_value_desc">Honor value description</string>
     <string name="record">Record</string>
     <string name="reward_honor_value_is">Reward honor value:%d</string>
+    <string name="vip_centre">Member center</string>
 
 </resources>
