@@ -63,9 +63,11 @@ public class BillUtil {
     // 荣誉值
     // 1.矿机；100.推广；101.分享；102.任务；200.钻石；201.买入钻石;202.卖出钻石; 300充值
     public int parseHonorValueTypeIcon(int billType) {
+        if (billType == 1)
+            return R.drawable.ic_type_add;
         if (billType == 101)
             return R.drawable.ic_type_share;
-        if (billType == 1 || billType == 102)
+        if (billType == 102)
             return R.drawable.ic_type_gift;
         if (billType == 201 || billType == 300)
             return R.drawable.ic_type_recharge;

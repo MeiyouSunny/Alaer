@@ -115,8 +115,8 @@ public class ExchangeBuildScoreActivity extends BaseTitleActivity<ActivityExchan
         mAmountInput = mIsWMNC ? mBalance.diamond.amount : mBalance.money.amount;
         mAmountGet = mIsWMNC ? mBalance.money.amount : mBalance.diamond.amount;
 
-        bindRoot.balance1.setText(getString(R.string.balance_is, NumberUtils.instance().parseNumber(mAmountInput)));
-        bindRoot.balance2.setText(getString(R.string.balance_is, NumberUtils.instance().parseNumber(mAmountGet)));
+        bindRoot.balance1.setText(getString(R.string.balance_is, NumberUtils.instance().parseNumber_(mAmountInput)));
+        bindRoot.balance2.setText(getString(R.string.balance_is, NumberUtils.instance().parseNumber_(mAmountGet)));
 
         onInputChanged();
     }
@@ -164,7 +164,7 @@ public class ExchangeBuildScoreActivity extends BaseTitleActivity<ActivityExchan
     public void click(View view) {
         switch (view.getId()) {
             case R.id.exchangeAll:
-                bindRoot.etAmount.setText(NumberUtils.instance().parseNumber(mAmountInput));
+                bindRoot.etAmount.setText(NumberUtils.instance().parseNumber_(mAmountInput));
                 bindRoot.etAmount.setSelection(ViewUtil.getText(bindRoot.etAmount).length());
                 break;
             case R.id.confirm:

@@ -257,6 +257,8 @@ public class HomeActivity extends BaseViewBindActivity<ActivityHomeBinding> impl
             // 走进阿拉尔,播放视频
 //            JzvdStd.startFullscreenDirectly(this, JzvdStd.class, AppConfig.GO_INTO_ALAER_VIDEO, getString(R.string.go_into_alaer));
             VideoActivity.startPlayFroResult(this, null, 1);
+        } else if (position == 4) {
+            ViewUtil.gotoAuthPage(this);
         } else if (position == 5) {
             ViewUtil.gotoAuthPage(this);
         } else {

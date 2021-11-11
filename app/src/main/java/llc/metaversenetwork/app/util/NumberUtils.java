@@ -37,4 +37,14 @@ public class NumberUtils {
         return String.valueOf(newValue);
     }
 
+    public String parseNumber_(float value) {
+        String result = String.valueOf(value);
+        if (!result.contains("."))
+            return result + ".00";
+        int indexEnd = result.indexOf(".") + 3;
+        if (indexEnd <= result.length())
+            result = result.substring(0, indexEnd);
+        return result;
+    }
+
 }

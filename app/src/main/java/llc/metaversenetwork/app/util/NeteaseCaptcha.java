@@ -33,6 +33,7 @@ public class NeteaseCaptcha {
     private void verifyCode(Context context, @STEP int step, OnCaptchaListener listener) {
         final CaptchaConfiguration configuration = new CaptchaConfiguration.Builder()
                 .captchaId(AppConfig.VERIFY_ID)
+                .languageType(CaptchaConfiguration.LangType.LANG_ZH_TW)
                 .listener(new CaptchaListener() {
                     @Override
                     public void onReady() {
