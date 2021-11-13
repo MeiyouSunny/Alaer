@@ -12,6 +12,7 @@
         <item name="colorControlActivated">#357EEE</item>
 
         <item name="android:typeface">serif</item>
+        <item name="android:windowDisablePreview">true</item>
     </style>
 
 

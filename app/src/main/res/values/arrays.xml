@@ -88,4 +88,7 @@
         <item>@string/build_integral</item>
     </string-array>
 
+    <string name="language_zh_hk" translatable="false">繁體中文(默認）</string>
+    <string name="language_english" translatable="false">English</string>
+
 </resources>

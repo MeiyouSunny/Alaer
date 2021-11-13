@@ -22,7 +22,7 @@
             android:layout_marginLeft="32dp"
             android:ellipsize="end"
             android:text="@{region.zh}"
-            android:textColor="@color/font_36"
+            android:textColor="@color/white"
             android:textSize="@dimen/font_16"
             tools:text="中国" />
 
@@ -33,7 +33,7 @@
             android:layout_centerVertical="true"
             android:layout_marginRight="32dp"
             android:text="@{String.valueOf(region.code)}"
-            android:textColor="@color/font_7E"
+            android:textColor="@color/white"
             android:textSize="@dimen/font_16"
             tools:text="86" />
 

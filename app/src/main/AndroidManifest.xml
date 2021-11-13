@@ -65,6 +65,7 @@
         </activity>
         <activity
             android:name=".ui.welcom.WelcomActivity"
+            android:configChanges="locale|layoutDirection"
             android:screenOrientation="portrait"></activity>
         <activity
             android:name=".ui.produce.ProductionHallActivity"
@@ -89,7 +90,6 @@
             android:screenOrientation="portrait"></activity>
         <activity
             android:name=".ui.home.HomeActivity"
-            android:configChanges="orientation|screenSize|keyboardHidden"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"></activity>
         <activity
@@ -259,12 +259,10 @@
             android:screenOrientation="portrait"></activity>
         <activity
             android:name=".ui.wallet.RechargeActivity"
-            android:screenOrientation="portrait">
-        </activity>
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".ui.wallet.WithdrawalActivity"
-            android:screenOrientation="portrait">
-        </activity>
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".ui.wallet.CurrencyWithdrawalRecordActivity"
             android:screenOrientation="portrait"></activity>

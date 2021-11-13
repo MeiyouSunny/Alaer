@@ -40,7 +40,7 @@ def writeOneLanguageString(sheet, language, col):
         if node:
             sheet.write(row, col + 1, node.data)
 
-languages = ["values-zh-rHK", "values-en"]
+languages = ["values-zh-rTW", "values-en"]
 
 DOMTree = xml.dom.minidom.parse("src/main/res/values-zh-rHK/strings.xml")
 collection = DOMTree.documentElement

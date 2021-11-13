@@ -17,8 +17,10 @@ public class RegionUtil {
 
     public List<Region> parseRegions(Context context) {
         try {
+            boolean isDefault = $.config().getBoolean("defaultLanguage", true);
+            String regionFile = isDefault ? "region_zh-rHK.json" : "region_en.json";
             AssetManager assetManager = context.getAssets();
-            InputStreamReader inputStreamReader = new InputStreamReader(assetManager.open("region.json"), "UTF-8");
+            InputStreamReader inputStreamReader = new InputStreamReader(assetManager.open(regionFile), "UTF-8");
             BufferedReader br = new BufferedReader(inputStreamReader);
             String line;
             StringBuilder builder = new StringBuilder();

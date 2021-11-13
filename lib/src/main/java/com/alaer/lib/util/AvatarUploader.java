@@ -119,7 +119,7 @@ public class AvatarUploader {
         params.put("commlocale", "zh_CN");
         params.put("commmodel", "android-model");
         params.put("commos", "android");
-        params.put("User-Agent", "Alaer/1.0 Android 9 Okhttp");
+        params.put("User-Agent", "MNC/1.0 Android 9 Okhttp");
         params.put("Content-Type", "application/x-www-form-urlencoded");
 
         if (UserDataUtil.instance().getUserData() != null) {

@@ -60,6 +60,7 @@ import llc.metaversenetwork.app.ui.user.LoginActivity;
 import llc.metaversenetwork.app.ui.user.UserMineActivity;
 import llc.metaversenetwork.app.ui.video.VideoActivity;
 import llc.metaversenetwork.app.util.CollectionUtils;
+import llc.metaversenetwork.app.util.LocaleUtil;
 import llc.metaversenetwork.app.util.NumberUtils;
 import llc.metaversenetwork.app.util.ViewUtil;
 import llc.metaversenetwork.app.view.mapview.MapContainer;
@@ -87,10 +88,16 @@ public class HomeActivity extends BaseViewBindActivity<ActivityHomeBinding> impl
         initData();
     }
 
+    private static boolean isFirstOpen = true;
+
     @Override
     public void onResume() {
         super.onResume();
         refreshProfile();
+        if (isFirstOpen) {
+            LocaleUtil.restoreLanguage(HomeActivity.this);
+            isFirstOpen = false;
+        }
     }
 
     private void refreshProfile() {
@@ -167,12 +174,35 @@ public class HomeActivity extends BaseViewBindActivity<ActivityHomeBinding> impl
                     ViewUtil.gotoActivity(this, NoticeDetailActivity.class, bundle);
                 }
                 break;
+            case R.id.language:
+                bindRoot.setShowLanguage(true);
+                break;
+            case R.id.languageZhHK:
+                boolean isDefault1 = $.config().getBoolean("defaultLanguage", true);
+                if (!isDefault1) {
+                    $.config().putBoolean("defaultLanguage", true);
+                    bindRoot.setDefaultLanguage(true);
+                    LocaleUtil.changeLanguage(this, true, true);
+                }
+                bindRoot.setShowLanguage(false);
+                break;
+            case R.id.languageEnglish:
+                boolean isDefault2 = $.config().getBoolean("defaultLanguage", true);
+                if (isDefault2) {
+                    $.config().putBoolean("defaultLanguage", false);
+                    bindRoot.setDefaultLanguage(false);
+                    LocaleUtil.changeLanguage(this, false, true);
+                }
+                bindRoot.setShowLanguage(false);
+                break;
         }
     }
 
     Notice mNoticeNew;
 
     private void initData() {
+        bindRoot.setDefaultLanguage($.config().getBoolean("defaultLanguage", true));
+
         UserData userData = UserDataUtil.instance().getUserData();
         if (userData == null) {
             bindRoot.setHasLogin(false);

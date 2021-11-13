@@ -1,0 +1,1220 @@
+[
+  {
+    'en': 'China',
+    'zh': 'China',
+    'locale': 'CN',
+    'code': 86
+  },
+  {
+    'en': 'Hongkong',
+    'zh': 'Hongkong',
+    'locale': 'HK',
+    'code': 852
+  },
+  {
+    'en': 'Macao',
+    'zh': 'Macao',
+    'locale': 'MO',
+    'code': 853
+  },
+  {
+    'en': 'Taiwan',
+    'zh': 'Taiwan',
+    'locale': 'TW',
+    'code': 886
+  },
+  {
+    'en': 'Canada',
+    'zh': 'Canada',
+    'locale': 'CA',
+    'code': 1
+  },
+  {
+    'en': 'Philippines',
+    'zh': 'Philippines',
+    'locale': 'PH',
+    'code': 63
+  },
+  {
+    'en': 'Malaysia',
+    'zh': 'Malaysia',
+    'locale': 'MY',
+    'code': 60
+  },
+  {
+    'en': 'Russia',
+    'zh': 'Russia',
+    'locale': 'RU',
+    'code': 7
+  },
+  {
+    'en': 'Singapore',
+    'zh': 'Singapore',
+    'locale': 'SG',
+    'code': 65
+  },
+  {
+    'en': 'United States of America',
+    'zh': 'United States of America',
+    'locale': 'US',
+    'code': 1
+  },
+  {
+    'en': 'Vietnam',
+    'zh': 'Vietnam',
+    'locale': 'VN',
+    'code': 84
+  },
+  {
+    'en': 'Angola',
+    'zh': 'Angola',
+    'locale': 'AO',
+    'code': 244
+  },
+  {
+    'en': 'Afghanistan',
+    'zh': 'Afghanistan',
+    'locale': 'AF',
+    'code': 93
+  },
+  {
+    'en': 'Albania',
+    'zh': 'Albania',
+    'locale': 'AL',
+    'code': 355
+  },
+  {
+    'en': 'Algeria',
+    'zh': 'Algeria',
+    'locale': 'DZ',
+    'code': 213
+  },
+  {
+    'en': 'Andorra',
+    'zh': 'Andorra',
+    'locale': 'AD',
+    'code': 376
+  },
+  {
+    'en': 'Anguilla',
+    'zh': 'Anguilla',
+    'locale': 'AI',
+    'code': 1264
+  },
+  {
+    'en': 'Antigua and Barbuda',
+    'zh': 'Antigua and Barbuda',
+    'locale': 'AG',
+    'code': 1268
+  },
+  {
+    'en': 'Argentina',
+    'zh': 'Argentina',
+    'locale': 'AR',
+    'code': 54
+  },
+  {
+    'en': 'Armenia',
+    'zh': 'Armenia',
+    'locale': 'AM',
+    'code': 374
+  },
+  {
+    'en': 'Ascension',
+    'zh': 'Ascension',
+    'locale': ' ',
+    'code': 247
+  },
+  {
+    'en': 'Australia',
+    'zh': 'Australia',
+    'locale': 'AU',
+    'code': 61
+  },
+  {
+    'en': 'Austria',
+    'zh': 'Austria',
+    'locale': 'AT',
+    'code': 43
+  },
+  {
+    'en': 'Azerbaijan',
+    'zh': 'Azerbaijan',
+    'locale': 'AZ',
+    'code': 994
+  },
+  {
+    'en': 'Bahamas',
+    'zh': 'Bahamas',
+    'locale': 'BS',
+    'code': 1242
+  },
+  {
+    'en': 'Bahrain',
+    'zh': 'Bahrain',
+    'locale': 'BH',
+    'code': 973
+  },
+  {
+    'en': 'Bangladesh',
+    'zh': 'Bangladesh',
+    'locale': 'BD',
+    'code': 880
+  },
+  {
+    'en': 'Barbados',
+    'zh': 'Barbados',
+    'locale': 'BB',
+    'code': 1246
+  },
+  {
+    'en': 'Belarus',
+    'zh': '白Russia',
+    'locale': 'BY',
+    'code': 375
+  },
+  {
+    'en': 'Belgium',
+    'zh': 'Belgium',
+    'locale': 'BE',
+    'code': 32
+  },
+  {
+    'en': 'Belize',
+    'zh': 'Belize',
+    'locale': 'BZ',
+    'code': 501
+  },
+  {
+    'en': 'Benin',
+    'zh': 'Benin',
+    'locale': 'BJ',
+    'code': 229
+  },
+  {
+    'en': 'Bermuda Is.',
+    'zh': 'Bermuda Is.',
+    'locale': 'BM',
+    'code': 1441
+  },
+  {
+    'en': 'Bolivia',
+    'zh': 'Bolivia',
+    'locale': 'BO',
+    'code': 591
+  },
+  {
+    'en': 'Botswana',
+    'zh': 'Botswana',
+    'locale': 'BW',
+    'code': 267
+  },
+  {
+    'en': 'Brazil',
+    'zh': 'Brazil',
+    'locale': 'BR',
+    'code': 55
+  },
+  {
+    'en': 'Brunei',
+    'zh': 'Brunei',
+    'locale': 'BN',
+    'code': 673
+  },
+  {
+    'en': 'Bulgaria',
+    'zh': 'Bulgaria',
+    'locale': 'BG',
+    'code': 359
+  },
+  {
+    'en': 'Burkina-faso',
+    'zh': 'Burkina-faso',
+    'locale': 'BF',
+    'code': 226
+  },
+  {
+    'en': 'Burma',
+    'zh': 'Burma',
+    'locale': 'MM',
+    'code': 95
+  },
+  {
+    'en': 'Burundi',
+    'zh': 'Burundi',
+    'locale': 'BI',
+    'code': 257
+  },
+  {
+    'en': 'Cameroon',
+    'zh': 'Cameroon',
+    'locale': 'CM',
+    'code': 237
+  },
+  {
+    'en': 'Canada',
+    'zh': 'Canada',
+    'locale': 'CA',
+    'code': 1
+  },
+  {
+    'en': 'Cayman Is.',
+    'zh': 'Cayman Is.',
+    'locale': ' ',
+    'code': 1345
+  },
+  {
+    'en': 'Central African Republic',
+    'zh': 'Central African Republic',
+    'locale': 'CF',
+    'code': 236
+  },
+  {
+    'en': 'Chad',
+    'zh': 'Chad',
+    'locale': 'TD',
+    'code': 235
+  },
+  {
+    'en': 'Chile',
+    'zh': 'Chile',
+    'locale': 'CL',
+    'code': 56
+  },
+  {
+    'en': 'China',
+    'zh': 'China',
+    'locale': 'CN',
+    'code': 86
+  },
+  {
+    'en': 'Colombia',
+    'zh': 'Colombia',
+    'locale': 'CO',
+    'code': 57
+  },
+  {
+    'en': 'Congo',
+    'zh': 'Congo',
+    'locale': 'CG',
+    'code': 242
+  },
+  {
+    'en': 'Cook Is.',
+    'zh': 'Cook Is.',
+    'locale': 'CK',
+    'code': 682
+  },
+  {
+    'en': 'Costa Rica',
+    'zh': 'Costa Rica',
+    'locale': 'CR',
+    'code': 506
+  },
+  {
+    'en': 'Cuba',
+    'zh': 'Cuba',
+    'locale': 'CU',
+    'code': 53
+  },
+  {
+    'en': 'Cyprus',
+    'zh': 'Cyprus',
+    'locale': 'CY',
+    'code': 357
+  },
+  {
+    'en': 'Czech Republic',
+    'zh': 'Czech Republic',
+    'locale': 'CZ',
+    'code': 420
+  },
+  {
+    'en': 'Denmark',
+    'zh': 'Denmark',
+    'locale': 'DK',
+    'code': 45
+  },
+  {
+    'en': 'Djibouti',
+    'zh': 'Djibouti',
+    'locale': 'DJ',
+    'code': 253
+  },
+  {
+    'en': 'Dominica Rep.',
+    'zh': 'Dominica Rep.',
+    'locale': 'DO',
+    'code': 1890
+  },
+  {
+    'en': 'Ecuador',
+    'zh': 'Ecuador',
+    'locale': 'EC',
+    'code': 593
+  },
+  {
+    'en': 'Egypt',
+    'zh': 'Egypt',
+    'locale': 'EG',
+    'code': 20
+  },
+  {
+    'en': 'EI Salvador',
+    'zh': 'EI Salvador',
+    'locale': 'SV',
+    'code': 503
+  },
+  {
+    'en': 'Estonia',
+    'zh': 'Estonia',
+    'locale': 'EE',
+    'code': 372
+  },
+  {
+    'en': 'Ethiopia',
+    'zh': 'Ethiopia',
+    'locale': 'ET',
+    'code': 251
+  },
+  {
+    'en': 'Fiji',
+    'zh': 'Fiji',
+    'locale': 'FJ',
+    'code': 679
+  },
+  {
+    'en': 'Finland',
+    'zh': 'Finland',
+    'locale': 'FI',
+    'code': 358
+  },
+  {
+    'en': 'France',
+    'zh': 'France',
+    'locale': 'FR',
+    'code': 33
+  },
+  {
+    'en': 'French Guiana',
+    'zh': 'French Guiana',
+    'locale': 'GF',
+    'code': 594
+  },
+  {
+    'en': 'Gabon',
+    'zh': 'Gabon',
+    'locale': 'GA',
+    'code': 241
+  },
+  {
+    'en': 'Gambia',
+    'zh': 'Gambia',
+    'locale': 'GM',
+    'code': 220
+  },
+  {
+    'en': 'Georgia',
+    'zh': 'Georgia',
+    'locale': 'GE',
+    'code': 995
+  },
+  {
+    'en': 'Germany',
+    'zh': 'Germany',
+    'locale': 'DE',
+    'code': 49
+  },
+  {
+    'en': 'Ghana',
+    'zh': 'Ghana',
+    'locale': 'GH',
+    'code': 233
+  },
+  {
+    'en': 'Gibraltar',
+    'zh': 'Gibraltar',
+    'locale': 'GI',
+    'code': 350
+  },
+  {
+    'en': 'Greece',
+    'zh': 'Greece',
+    'locale': 'GR',
+    'code': 30
+  },
+  {
+    'en': 'Grenada',
+    'zh': 'Grenada',
+    'locale': 'GD',
+    'code': 1809
+  },
+  {
+    'en': 'Guam',
+    'zh': 'Guam',
+    'locale': 'GU',
+    'code': 1671
+  },
+  {
+    'en': 'Guatemala',
+    'zh': 'Guatemala',
+    'locale': 'GT',
+    'code': 502
+  },
+  {
+    'en': 'Guinea',
+    'zh': 'Guinea',
+    'locale': 'GN',
+    'code': 224
+  },
+  {
+    'en': 'Guyana',
+    'zh': 'Guyana',
+    'locale': 'GY',
+    'code': 592
+  },
+  {
+    'en': 'Haiti',
+    'zh': 'Haiti',
+    'locale': 'HT',
+    'code': 509
+  },
+  {
+    'en': 'Honduras',
+    'zh': 'Honduras',
+    'locale': 'HN',
+    'code': 504
+  },
+  {
+    'en': 'Hongkong',
+    'zh': 'Hongkong',
+    'locale': 'HK',
+    'code': 852
+  },
+  {
+    'en': 'Hungary',
+    'zh': 'Hungary',
+    'locale': 'HU',
+    'code': 36
+  },
+  {
+    'en': 'Iceland',
+    'zh': 'Iceland',
+    'locale': 'IS',
+    'code': 354
+  },
+  {
+    'en': 'India',
+    'zh': 'India',
+    'locale': 'IN',
+    'code': 91
+  },
+  {
+    'en': 'Indonesia',
+    'zh': 'India尼西亚',
+    'locale': 'ID',
+    'code': 62
+  },
+  {
+    'en': 'Iran',
+    'zh': 'Iran',
+    'locale': 'IR',
+    'code': 98
+  },
+  {
+    'en': 'Iraq',
+    'zh': 'Iraq',
+    'locale': 'IQ',
+    'code': 964
+  },
+  {
+    'en': 'Ireland',
+    'zh': 'Ireland',
+    'locale': 'IE',
+    'code': 353
+  },
+  {
+    'en': 'Israel',
+    'zh': 'Israel',
+    'locale': 'IL',
+    'code': 972
+  },
+  {
+    'en': 'Italy',
+    'zh': 'Italy',
+    'locale': 'IT',
+    'code': 39
+  },
+  {
+    'en': 'Ivory Coast',
+    'zh': 'Ivory Coast',
+    'locale': ' ',
+    'code': 225
+  },
+  {
+    'en': 'Jamaica',
+    'zh': 'Jamaica',
+    'locale': 'JM',
+    'code': 1876
+  },
+  {
+    'en': 'Japan',
+    'zh': 'Japan',
+    'locale': 'JP',
+    'code': 81
+  },
+  {
+    'en': 'Jordan',
+    'zh': 'Jordan',
+    'locale': 'JO',
+    'code': 962
+  },
+  {
+    'en': 'Kampuchea (Cambodia )',
+    'zh': 'Kampuchea (Cambodia )',
+    'locale': 'KH',
+    'code': 855
+  },
+  {
+    'en': 'Kazakstan',
+    'zh': 'Kazakstan',
+    'locale': 'KZ',
+    'code': 327
+  },
+  {
+    'en': 'Kenya',
+    'zh': 'Kenya',
+    'locale': 'KE',
+    'code': 254
+  },
+  {
+    'en': 'Korea',
+    'zh': 'Korea',
+    'locale': 'KR',
+    'code': 82
+  },
+  {
+    'en': 'Kuwait',
+    'zh': 'Kuwait',
+    'locale': 'KW',
+    'code': 965
+  },
+  {
+    'en': 'Kyrgyzstan',
+    'zh': 'Kyrgyzstan',
+    'locale': 'KG',
+    'code': 331
+  },
+  {
+    'en': 'Laos',
+    'zh': 'Laos',
+    'locale': 'LA',
+    'code': 856
+  },
+  {
+    'en': 'Latvia',
+    'zh': 'Latvia',
+    'locale': 'LV',
+    'code': 371
+  },
+  {
+    'en': 'Lebanon',
+    'zh': 'Lebanon',
+    'locale': 'LB',
+    'code': 961
+  },
+  {
+    'en': 'Lesotho',
+    'zh': 'Lesotho',
+    'locale': 'LS',
+    'code': 266
+  },
+  {
+    'en': 'Liberia',
+    'zh': 'Liberia',
+    'locale': 'LR',
+    'code': 231
+  },
+  {
+    'en': 'Libya',
+    'zh': 'Libya',
+    'locale': 'LY',
+    'code': 218
+  },
+  {
+    'en': 'Liechtenstein',
+    'zh': 'Liechtenstein',
+    'locale': 'LI',
+    'code': 423
+  },
+  {
+    'en': 'Lithuania',
+    'zh': 'Lithuania',
+    'locale': 'LT',
+    'code': 370
+  },
+  {
+    'en': 'Luxembourg',
+    'zh': 'Luxembourg',
+    'locale': 'LU',
+    'code': 352
+  },
+  {
+    'en': 'Macao',
+    'zh': 'Macao',
+    'locale': 'MO',
+    'code': 853
+  },
+  {
+    'en': 'Madagascar',
+    'zh': 'Madagascar',
+    'locale': 'MG',
+    'code': 261
+  },
+  {
+    'en': 'Malawi',
+    'zh': 'Malawi',
+    'locale': 'MW',
+    'code': 265
+  },
+  {
+    'en': 'Malaysia',
+    'zh': 'Malaysia',
+    'locale': 'MY',
+    'code': 60
+  },
+  {
+    'en': 'Maldives',
+    'zh': 'Maldives',
+    'locale': 'MV',
+    'code': 960
+  },
+  {
+    'en': 'Mali',
+    'zh': 'Mali',
+    'locale': 'ML',
+    'code': 223
+  },
+  {
+    'en': 'Malta',
+    'zh': 'Malta',
+    'locale': 'MT',
+    'code': 356
+  },
+  {
+    'en': 'Mariana Is',
+    'zh': 'Mali亚那群岛',
+    'locale': ' ',
+    'code': 1670
+  },
+  {
+    'en': 'Martinique',
+    'zh': 'Martinique',
+    'locale': ' ',
+    'code': 596
+  },
+  {
+    'en': 'Mauritius',
+    'zh': 'Mauritius',
+    'locale': 'MU',
+    'code': 230
+  },
+  {
+    'en': 'Mexico',
+    'zh': 'Mexico',
+    'locale': 'MX',
+    'code': 52
+  },
+  {
+    'en': 'Moldova, Republic of',
+    'zh': 'Moldova, Republic of',
+    'locale': 'MD',
+    'code': 373
+  },
+  {
+    'en': 'Monaco',
+    'zh': 'Monaco',
+    'locale': 'MC',
+    'code': 377
+  },
+  {
+    'en': 'Mongolia',
+    'zh': 'Mongolia',
+    'locale': 'MN',
+    'code': 976
+  },
+  {
+    'en': 'Montserrat Is',
+    'zh': 'Montserrat Is',
+    'locale': 'MS',
+    'code': 1664
+  },
+  {
+    'en': 'Morocco',
+    'zh': 'Morocco',
+    'locale': 'MA',
+    'code': 212
+  },
+  {
+    'en': 'Mozambique',
+    'zh': 'Mozambique',
+    'locale': 'MZ',
+    'code': 258
+  },
+  {
+    'en': 'Namibia',
+    'zh': 'Namibia',
+    'locale': 'NA',
+    'code': 264
+  },
+  {
+    'en': 'Nauru',
+    'zh': 'Nauru',
+    'locale': 'NR',
+    'code': 674
+  },
+  {
+    'en': 'Nepal',
+    'zh': 'Nepal',
+    'locale': 'NP',
+    'code': 977
+  },
+  {
+    'en': 'Netheriands Antilles',
+    'zh': 'Netheriands Antilles',
+    'locale': ' ',
+    'code': 599
+  },
+  {
+    'en': 'Netherlands',
+    'zh': 'Netherlands',
+    'locale': 'NL',
+    'code': 31
+  },
+  {
+    'en': 'New Zealand',
+    'zh': 'New Zealand',
+    'locale': 'NZ',
+    'code': 64
+  },
+  {
+    'en': 'Nicaragua',
+    'zh': 'Nicaragua',
+    'locale': 'NI',
+    'code': 505
+  },
+  {
+    'en': 'Niger',
+    'zh': 'Niger',
+    'locale': 'NE',
+    'code': 227
+  },
+  {
+    'en': 'Nigeria',
+    'zh': 'Nigeria',
+    'locale': 'NG',
+    'code': 234
+  },
+  {
+    'en': 'North Korea',
+    'zh': 'North Korea',
+    'locale': 'KP',
+    'code': 850
+  },
+  {
+    'en': 'Norway',
+    'zh': 'Norway',
+    'locale': 'NO',
+    'code': 47
+  },
+  {
+    'en': 'Oman',
+    'zh': 'Oman',
+    'locale': 'OM',
+    'code': 968
+  },
+  {
+    'en': 'Pakistan',
+    'zh': 'Pakistan',
+    'locale': 'PK',
+    'code': 92
+  },
+  {
+    'en': 'Panama',
+    'zh': 'Panama',
+    'locale': 'PA',
+    'code': 507
+  },
+  {
+    'en': 'Papua New Cuinea',
+    'zh': '巴布亚新Guinea',
+    'locale': 'PG',
+    'code': 675
+  },
+  {
+    'en': 'Paraguay',
+    'zh': 'Paraguay',
+    'locale': 'PY',
+    'code': 595
+  },
+  {
+    'en': 'Peru',
+    'zh': 'Peru',
+    'locale': 'PE',
+    'code': 51
+  },
+  {
+    'en': 'Philippines',
+    'zh': 'Philippines',
+    'locale': 'PH',
+    'code': 63
+  },
+  {
+    'en': 'Poland',
+    'zh': 'Poland',
+    'locale': 'PL',
+    'code': 48
+  },
+  {
+    'en': 'French Polynesia',
+    'zh': 'French Polynesia',
+    'locale': 'PF',
+    'code': 689
+  },
+  {
+    'en': 'Portugal',
+    'zh': 'Portugal',
+    'locale': 'PT',
+    'code': 351
+  },
+  {
+    'en': 'Puerto Rico',
+    'zh': 'Puerto Rico',
+    'locale': 'PR',
+    'code': 1787
+  },
+  {
+    'en': 'Qatar',
+    'zh': 'Qatar',
+    'locale': 'QA',
+    'code': 974
+  },
+  {
+    'en': 'Reunion',
+    'zh': 'Reunion',
+    'locale': ' ',
+    'code': 262
+  },
+  {
+    'en': 'Romania',
+    'zh': 'Romania',
+    'locale': 'RO',
+    'code': 40
+  },
+  {
+    'en': 'Russia',
+    'zh': 'Russia',
+    'locale': 'RU',
+    'code': 7
+  },
+  {
+    'en': 'Saint Lueia',
+    'zh': 'Saint Lueia',
+    'locale': 'LC',
+    'code': 1758
+  },
+  {
+    'en': 'Saint Vincent',
+    'zh': 'Saint Vincent',
+    'locale': 'VC',
+    'code': 1784
+  },
+  {
+    'en': 'Samoa Eastern',
+    'zh': 'Samoa Eastern',
+    'locale': ' ',
+    'code': 684
+  },
+  {
+    'en': 'Samoa Western',
+    'zh': 'Samoa Western',
+    'locale': ' ',
+    'code': 685
+  },
+  {
+    'en': 'San Marino',
+    'zh': 'San Marino',
+    'locale': 'SM',
+    'code': 378
+  },
+  {
+    'en': 'Sao Tome and Principe',
+    'zh': 'Sao Tome and Principe',
+    'locale': 'ST',
+    'code': 239
+  },
+  {
+    'en': 'Saudi Arabia',
+    'zh': 'Saudi Arabia',
+    'locale': 'SA',
+    'code': 966
+  },
+  {
+    'en': 'Senegal',
+    'zh': 'Senegal',
+    'locale': 'SN',
+    'code': 221
+  },
+  {
+    'en': 'Seychelles',
+    'zh': 'Seychelles',
+    'locale': 'SC',
+    'code': 248
+  },
+  {
+    'en': 'Sierra Leone',
+    'zh': 'Sierra Leone',
+    'locale': 'SL',
+    'code': 232
+  },
+  {
+    'en': 'Singapore',
+    'zh': 'Singapore',
+    'locale': 'SG',
+    'code': 65
+  },
+  {
+    'en': 'Slovakia',
+    'zh': 'Slovakia',
+    'locale': 'SK',
+    'code': 421
+  },
+  {
+    'en': 'Slovenia',
+    'zh': 'Slovenia',
+    'locale': 'SI',
+    'code': 386
+  },
+  {
+    'en': 'Solomon Is',
+    'zh': 'Solomon Is',
+    'locale': 'SB',
+    'code': 677
+  },
+  {
+    'en': 'Somali',
+    'zh': '索Mali',
+    'locale': 'SO',
+    'code': 252
+  },
+  {
+    'en': 'South Africa',
+    'zh': 'South Africa',
+    'locale': 'ZA',
+    'code': 27
+  },
+  {
+    'en': 'Spain',
+    'zh': 'Spain',
+    'locale': 'ES',
+    'code': 34
+  },
+  {
+    'en': 'Sri Lanka',
+    'zh': 'Sri Lanka',
+    'locale': 'LK',
+    'code': 94
+  },
+  {
+    'en': 'St.Lucia',
+    'zh': 'Saint Lueia',
+    'locale': 'LC',
+    'code': 1758
+  },
+  {
+    'en': 'St.Vincent',
+    'zh': 'St.Vincent',
+    'locale': 'VC',
+    'code': 1784
+  },
+  {
+    'en': 'Sudan',
+    'zh': 'Sudan',
+    'locale': 'SD',
+    'code': 249
+  },
+  {
+    'en': 'Suriname',
+    'zh': 'Suriname',
+    'locale': 'SR',
+    'code': 597
+  },
+  {
+    'en': 'Swaziland',
+    'zh': 'Swaziland',
+    'locale': 'SZ',
+    'code': 268
+  },
+  {
+    'en': 'Sweden',
+    'zh': 'Sweden',
+    'locale': 'SE',
+    'code': 46
+  },
+  {
+    'en': 'Switzerland',
+    'zh': 'Switzerland',
+    'locale': 'CH',
+    'code': 41
+  },
+  {
+    'en': 'Syria',
+    'zh': 'Syria',
+    'locale': 'SY',
+    'code': 963
+  },
+  {
+    'en': 'Taiwan',
+    'zh': 'Taiwan',
+    'locale': 'TW',
+    'code': 886
+  },
+  {
+    'en': 'Tajikstan',
+    'zh': 'Tajikstan',
+    'locale': 'TJ',
+    'code': 992
+  },
+  {
+    'en': 'Tanzania',
+    'zh': 'Tanzania',
+    'locale': 'TZ',
+    'code': 255
+  },
+  {
+    'en': 'Thailand',
+    'zh': 'Thailand',
+    'locale': 'TH',
+    'code': 66
+  },
+  {
+    'en': 'Togo',
+    'zh': 'Togo',
+    'locale': 'TG',
+    'code': 228
+  },
+  {
+    'en': 'Tonga',
+    'zh': 'Tonga',
+    'locale': 'TO',
+    'code': 676
+  },
+  {
+    'en': 'Trinidad and Tobago',
+    'zh': 'Trinidad and Tobago',
+    'locale': 'TT',
+    'code': 1809
+  },
+  {
+    'en': 'Tunisia',
+    'zh': 'Tunisia',
+    'locale': 'TN',
+    'code': 216
+  },
+  {
+    'en': 'Turkey',
+    'zh': 'Turkey',
+    'locale': 'TR',
+    'code': 90
+  },
+  {
+    'en': 'Turkmenistan',
+    'zh': 'Turkmenistan',
+    'locale': 'TM',
+    'code': 993
+  },
+  {
+    'en': 'Uganda',
+    'zh': 'Uganda',
+    'locale': 'UG',
+    'code': 256
+  },
+  {
+    'en': 'Ukraine',
+    'zh': 'Ukraine',
+    'locale': 'UA',
+    'code': 380
+  },
+  {
+    'en': 'United Arab Emirates',
+    'zh': 'United Arab Emirates',
+    'locale': 'AE',
+    'code': 971
+  },
+  {
+    'en': 'United Kiongdom',
+    'zh': 'United Kiongdom',
+    'locale': 'GB',
+    'code': 44
+  },
+  {
+    'en': 'United States of America',
+    'zh': 'United States of America',
+    'locale': 'US',
+    'code': 1
+  },
+  {
+    'en': 'Uruguay',
+    'zh': 'Uruguay',
+    'locale': 'UY',
+    'code': 598
+  },
+  {
+    'en': 'Uzbekistan',
+    'zh': 'Uzbekistan',
+    'locale': 'UZ',
+    'code': 233
+  },
+  {
+    'en': 'Venezuela',
+    'zh': 'Venezuela',
+    'locale': 'VE',
+    'code': 58
+  },
+  {
+    'en': 'Vietnam',
+    'zh': 'Vietnam',
+    'locale': 'VN',
+    'code': 84
+  },
+  {
+    'en': 'Yemen',
+    'zh': 'Yemen',
+    'locale': 'YE',
+    'code': 967
+  },
+  {
+    'en': 'Yugoslavia',
+    'zh': 'Yugoslavia',
+    'locale': 'YU',
+    'code': 381
+  },
+  {
+    'en': 'Zimbabwe',
+    'zh': 'Zimbabwe',
+    'locale': 'ZW',
+    'code': 263
+  },
+  {
+    'en': 'Zaire',
+    'zh': 'Zaire',
+    'locale': 'ZR',
+    'code': 243
+  },
+  {
+    'en': 'Zambia',
+    'zh': 'Zambia',
+    'locale': 'ZM',
+    'code': 260
+  }
+]
