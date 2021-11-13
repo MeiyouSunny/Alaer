@@ -21,6 +21,8 @@ public class TeamLevelAdapter extends RecyclerView.Adapter<TeamLevelAdapter.View
     List<TeamLevel> data;
     TeamLevelUtil teamLevelUtil;
     Resources resources;
+    int[] bgLevels = new int[]{R.drawable.bg_team_level1, R.drawable.bg_team_level2, R.drawable.bg_team_level3, R.drawable.bg_team_level4};
+    String[] levelLables;
 
     public TeamLevelAdapter(List<TeamLevel> data) {
         this.data = data;
@@ -36,6 +38,7 @@ public class TeamLevelAdapter extends RecyclerView.Adapter<TeamLevelAdapter.View
         resources = parent.getResources();
         if (teamLevelUtil == null)
             teamLevelUtil = new TeamLevelUtil(parent.getResources());
+        levelLables = resources.getStringArray(R.array.team_level);
 
         return new ViewHolder(binding);
     }
@@ -43,12 +46,15 @@ public class TeamLevelAdapter extends RecyclerView.Adapter<TeamLevelAdapter.View
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         TeamLevel teamLevel = data.get(position);
+        holder.binding.setBgLevels(bgLevels);
+        holder.binding.setLevelLables(levelLables);
         holder.binding.setTeamLevel(data.get(position));
         holder.binding.setLevelUtil(teamLevelUtil);
 
         holder.binding.label1.setText(resources.getString(R.string.auth_person_num, teamLevel.refAuthNum));
         holder.binding.label2.setText(resources.getString(R.string.team_activity_is, teamLevel.teamActiveness));
         holder.binding.label3.setText(resources.getString(R.string.area_little_activity, teamLevel.minorActiveness));
+        holder.binding.levelReward.setText(teamLevelUtil.parseLevelReward(teamLevel));
         final int level = MyTeamActivity.mTeamLevel;
         boolean isCurrent = false;
         if (level > 0 && (level - 1) == position)

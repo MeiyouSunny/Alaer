@@ -26,6 +26,13 @@
         <item>@string/regist_time</item>
     </string-array>
 
+    <string-array name="team_level">
+        <item>@string/team_level1</item>
+        <item>@string/team_level2</item>
+        <item>@string/team_level3</item>
+        <item>@string/team_level4</item>
+    </string-array>
+
     <string-array name="person_level">
         <item>@string/no_verify_yes</item>
         <item>@string/citizen_level1</item>

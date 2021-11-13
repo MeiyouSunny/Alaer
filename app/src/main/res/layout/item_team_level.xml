@@ -10,6 +10,14 @@
             type="com.alaer.lib.api.bean.TeamLevel" />
 
         <variable
+            name="bgLevels"
+            type="int[]" />
+
+        <variable
+            name="levelLables"
+            type="String[]" />
+
+        <variable
             name="levelUtil"
             type="llc.metaversenetwork.app.data.TeamLevelUtil" />
     </data>
@@ -35,12 +43,28 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
+            android:layout_marginRight="12dp"
             android:background="@drawable/bg_team_level_current"
             android:gravity="center"
             android:paddingLeft="4dp"
             android:text="@string/level_current"
             android:textColor="@color/font_red"
             android:textSize="@dimen/font_12" />
+
+        <TextView
+            android:id="@+id/levelLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_below="@+id/labelCurrent"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="6dp"
+            android:gravity="center"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:text="@{levelLables[teamLevel.level-1]}"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_14"
+            app:drawableRes="@{bgLevels[teamLevel.level-1]}" />
 
         <TextView
             android:id="@+id/label1"
@@ -74,13 +98,13 @@
             tools:text="2222" />
 
         <TextView
+            android:id="@+id/levelReward"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_marginLeft="4dp"
             android:layout_marginBottom="20dp"
             android:singleLine="true"
-            android:text="@{levelUtil.parseLevelReward(teamLevel)}"
             android:textColor="@color/white"
             android:textSize="@dimen/font_12" />
 

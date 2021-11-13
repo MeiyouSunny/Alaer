@@ -1,8 +1,13 @@
 package llc.metaversenetwork.app.data;
 
 import android.content.res.Resources;
+import android.graphics.Color;
+import android.text.Spannable;
+import android.text.SpannableStringBuilder;
+import android.text.style.ForegroundColorSpan;
 
 import com.alaer.lib.api.bean.TeamLevel;
+
 import llc.metaversenetwork.app.R;
 
 public class TeamLevelUtil {
@@ -22,11 +27,20 @@ public class TeamLevelUtil {
         return teamLevel.name;
     }
 
-    public String parseLevelReward(TeamLevel teamLevel) {
+    public SpannableStringBuilder parseLevelReward(TeamLevel teamLevel) {
         if (teamLevel == null)
-            return "";
+            return null;
         final String seedTypeName = mRes.getString(seedDataUtil.getSeedName(teamLevel.minerType));
-        return mRes.getString(R.string.team_level_reward_is, seedTypeName, teamLevel.bonusRate);
+        String result = mRes.getString(R.string.team_level_reward_is, seedTypeName, teamLevel.bonusRate);
+        SpannableStringBuilder spannableString = new SpannableStringBuilder(result);
+        spannableString.setSpan(new ForegroundColorSpan(Color.parseColor("#FF7171")),
+                result.indexOf(seedTypeName), result.indexOf(seedTypeName) + seedTypeName.length(),
+                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        spannableString.setSpan(new ForegroundColorSpan(Color.parseColor("#FF7171")),
+                result.indexOf(String.valueOf(teamLevel.bonusRate)), result.indexOf(String.valueOf(teamLevel.bonusRate)) + String.valueOf(teamLevel.bonusRate).length() + 1,
+                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+        return spannableString;
     }
 
     public int parseLevelImg(TeamLevel teamLevel) {

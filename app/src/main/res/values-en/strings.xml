@@ -191,7 +191,7 @@
     <string name="regist_time">Registration time</string>
     <string name="notice_detail">Notice</string>
     <string name="notice_list">Announcement list</string>
-    <string name="team_level_reward_is">Reward 1 %1$s + Metaverse citizen star co construction service charge %2$d%% reward</string>
+    <string name="team_level_reward_is">Reward 1 <font color='#FF7171'>%1$s</font> + Metaverse citizen star co construction service charge %2$d%% reward</string>
     <string name="no_team_level">No star</string>
     <string name="team_level_desc_is">1. Share real name %1$D people \n2. Partner activity %2$D points</string>
     <string name="regist_time_is">Registration time:</string>
@@ -414,5 +414,11 @@
     <string name="reward_honor_value_is">Reward honor value:%d</string>
     <string name="vip_centre">Member center</string>
     <string name="burn_active_is">Burn activity: %s</string>
+    <string name="team_level_rule">Team level rules</string>
+    <string name="user_level_rule">User level rules</string>
+    <string name="team_level1">Team level 1</string>
+    <string name="team_level2">Team level 2</string>
+    <string name="team_level3">Team level 3</string>
+    <string name="team_level4">Team level 4</string>
 
 </resources>

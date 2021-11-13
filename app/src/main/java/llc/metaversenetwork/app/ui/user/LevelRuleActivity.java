@@ -21,7 +21,7 @@ public class LevelRuleActivity extends BaseTitleActivity<ActivityLevelRuleBindin
 
     @Override
     protected int titleResId() {
-        return R.string.level_rule;
+        return R.string.team_level_rule;
     }
 
     @Override

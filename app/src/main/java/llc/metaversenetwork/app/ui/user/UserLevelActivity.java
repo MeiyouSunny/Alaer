@@ -26,7 +26,7 @@ public class UserLevelActivity extends BaseTitleActivity<ActivityUserLevelBindin
 
     @Override
     protected int titleResId() {
-        return R.string.level_rule;
+        return R.string.user_level_rule;
     }
 
     @Override

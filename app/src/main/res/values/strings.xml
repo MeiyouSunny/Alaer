@@ -191,7 +191,7 @@
     <string name="regist_time">註冊時間</string>
     <string name="notice_detail">公告</string>
     <string name="notice_list">公告列表</string>
-    <string name="team_level_reward_is">獎勵1臺%1$s探測器+元宇宙數字生態會員手續費%2$d%%獎勵</string>
+    <string name="team_level_reward_is">獎勵1臺<font color='#FF7171'>%1$s</font>探測器+元宇宙數字生態會員手續費%2$d%%獎勵</string>
     <string name="no_team_level">暫無星級</string>
     <string name="team_level_desc_is">1.分享實名%1$d人\\n2.團隊活躍度%2$d點</string>
     <string name="regist_time_is">註冊時間：</string>
@@ -424,6 +424,12 @@
     <string name="reward_honor_value_is">獎勵榮譽值：%d</string>
     <string name="vip_centre">會員中心</string>
     <string name="burn_active_is">燒傷活躍度：%s</string>
+    <string name="team_level_rule">團隊等級規則</string>
+    <string name="user_level_rule">會員等級規則</string>
+    <string name="team_level1">一星團隊</string>
+    <string name="team_level2">二星團隊</string>
+    <string name="team_level3">三星團隊</string>
+    <string name="team_level4">四星團隊</string>
 
 
 </resources>
