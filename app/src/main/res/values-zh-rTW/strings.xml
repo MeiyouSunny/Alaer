@@ -320,6 +320,7 @@
     <string name="set_wechat_price">設置Telegram號需要花費1元宇礦</string>
     <string name="set_invitation_code_price">設置邀請碼需要花費10元宇礦</string>
     <string name="set_nick_price">設置暱稱需要花費1元宇礦，首次免費</string>
+    <string name="set_avatar_price">設置頭像需要花費1元宇礦，首次免費</string>
     <string name="no_verify_yes">未實名認證</string>
     <string name="citizen_level1">一級市民</string>
     <string name="citizen_level2">二級市民</string>
@@ -430,6 +431,9 @@
     <string name="team_level2">二星團隊</string>
     <string name="team_level3">三星團隊</string>
     <string name="team_level4">四星團隊</string>
+    <string name="set_avatar">頭像設定</string>
+    <string name="click_to_upload_avatar">點擊上傳頭像</string>
+    <string name="set_personalized_avatar">設定個性化頭像</string>
 
 
 </resources>

@@ -320,6 +320,7 @@
     <string name="set_wechat_price">It costs 1 metamines to set up Telegram ID</string>
     <string name="set_invitation_code_price">It costs 10 metamine  to set up the invitation code</string>
     <string name="set_nick_price">It costs 1 metamines to set up a nickname, and it’s free for the first time</string>
+    <string name="set_avatar_price">It costs 1 metamines to set avatar, and it’s free for the first time</string>
     <string name="no_verify_yes">No real name authentication</string>
     <string name="citizen_level1">First class metaverse citizen</string>
     <string name="citizen_level2">Secondary metaverse citizen</string>
@@ -420,5 +421,8 @@
     <string name="team_level2">Team level 2</string>
     <string name="team_level3">Team level 3</string>
     <string name="team_level4">Team level 4</string>
+    <string name="set_avatar">Avatar settings</string>
+    <string name="click_to_upload_avatar">Click to upload avatar</string>
+    <string name="set_personalized_avatar">Set a personalized avatar</string>
 
 </resources>

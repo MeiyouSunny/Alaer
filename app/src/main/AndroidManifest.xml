@@ -191,6 +191,10 @@
             android:screenOrientation="portrait"></activity>
 
         <activity
+            android:name=".ui.user.SetAvatarActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
             android:name=".ui.user.ActiveBillActivity"
             android:screenOrientation="portrait"></activity>
 

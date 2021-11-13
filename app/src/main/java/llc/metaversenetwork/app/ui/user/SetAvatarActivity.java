@@ -3,7 +3,6 @@ package llc.metaversenetwork.app.ui.user;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
-import android.os.Bundle;
 import android.provider.MediaStore;
 import android.text.TextUtils;
 import android.view.Gravity;
@@ -25,91 +24,50 @@ import likly.dialogger.Dialogger;
 import likly.dollar.$;
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseTitleActivity;
-import llc.metaversenetwork.app.databinding.ActivityUserInfoBinding;
+import llc.metaversenetwork.app.databinding.ActivitySetAvatarBinding;
 import llc.metaversenetwork.app.ui.dialog.DialogInputSecondPwd;
 import llc.metaversenetwork.app.util.NeteaseCaptcha;
 import llc.metaversenetwork.app.util.StringUtil;
-import llc.metaversenetwork.app.util.ViewUtil;
 
 /**
- * 用户信息
+ * 头像设定
  */
-public class UserInfoActivity extends BaseTitleActivity<ActivityUserInfoBinding> implements AvatarUploader.OnUploadListener {
+public class SetAvatarActivity extends BaseTitleActivity<ActivitySetAvatarBinding> implements AvatarUploader.OnUploadListener {
     private final int REQUEST_SELECT_PIC = 2;
 
-    private TeamDetail mInviterInfo;
-    private UserData userData;
-    private String mTradePhraseCode, mPicUrl;
+    UserData userData;
+    String mTradePhraseCode;
+    String mPicUrl, imagePath;
 
     @Override
     protected int titleResId() {
-        return R.string.user_info;
+        return R.string.set_avatar;
     }
 
     @Override
     protected int layoutId() {
-        return R.layout.activity_user_info;
+        return R.layout.activity_set_avatar;
     }
 
     @Override
     public void onViewCreated() {
         super.onViewCreated();
-    }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        getData();
-    }
-
-    private void getData() {
         userData = UserDataUtil.instance().getUserData();
-        if (userData == null)
-            return;
-
-        TeamDetail teamDetail = UserDataUtil.instance().getTeamDetail();
-        if (teamDetail != null) {
-            bindRoot.setUser(teamDetail);
-            showUserAvatar(teamDetail.avatar);
-        }
-
-        ApiUtil.apiService().getFollowInfo(userData.uuid, String.valueOf(userData.uid), userData.token, AppConfig.DIAMOND_CURRENCY,
-                new Callback<TeamDetail>() {
-                    @Override
-                    public void onResponse(TeamDetail response) {
-                        mInviterInfo = response;
-                        bindRoot.setFollow(response);
-                    }
-                });
-    }
-
-    private void showUserAvatar(String avatarUrl) {
-        if (!TextUtils.isEmpty(avatarUrl)) {
-            ViewUtil.showImage(getApplicationContext(), bindRoot.icHead, avatarUrl);
-        }
     }
 
     @Override
     public void click(View view) {
         switch (view.getId()) {
-            case R.id.setWechat:
-                SetProfileActivity.start(this, SetProfileActivity.WECHAT);
+            case R.id.selectPhoto:
+                selectPic();
                 break;
-            case R.id.setInvitateCode:
-                if (UserDataUtil.instance().isFrom3DAccount())
-                    $.toast().text(R.string.will_open_soon).show();
-                else
-                    SetProfileActivity.start(this, SetProfileActivity.INVITATE_CODE);
-                break;
-            case R.id.setNikeName:
-                SetProfileActivity.start(this, SetProfileActivity.NIKE_NAME);
-                break;
-            case R.id.inviterInfo:
-                goToInviterInfo();
-                break;
-            case R.id.selectPic:
-                ViewUtil.gotoActivity(this, SetAvatarActivity.class);
-//                selectPic();
+            case R.id.submit:
+                if (!TextUtils.isEmpty(mPicUrl)) {
+                    showSecondPwdDialog();
+                } else {
+                    uploadPic(imagePath);
+                }
                 break;
         }
     }
@@ -120,34 +78,28 @@ public class UserInfoActivity extends BaseTitleActivity<ActivityUserInfoBinding>
         startActivityForResult(intent, REQUEST_SELECT_PIC);
     }
 
-    private void goToInviterInfo() {
-        if (mInviterInfo == null)
-            return;
-        Bundle data = new Bundle();
-        data.putSerializable("inviter", mInviterInfo);
-        ViewUtil.gotoActivity(getContext(), InviterInfoActivity.class, data);
-    }
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK) {
-            if (requestCode == SetProfileActivity.REQUST_CODE) {
-                getData();
-            } else if (requestCode == REQUEST_SELECT_PIC && data != null) {
+            if (requestCode == REQUEST_SELECT_PIC && data != null) {
                 Uri selectedImage = data.getData();
                 String[] filePathColumns = {MediaStore.Images.Media.DATA};
                 Cursor cursor = getContentResolver().query(selectedImage, filePathColumns, null, null, null);
                 cursor.moveToFirst();
                 int columnIndex = cursor.getColumnIndex(filePathColumns[0]);
-                String imagePath = cursor.getString(columnIndex);
+                imagePath = cursor.getString(columnIndex);
                 cursor.close();
+                bindRoot.ivAvatar.setVisibility(View.VISIBLE);
+                bindRoot.ivAvatar.setImageURI(selectedImage);
+                bindRoot.submit.setEnabled(true);
                 uploadPic(imagePath);
             }
         }
     }
 
     private void uploadPic(String imagePath) {
+        mPicUrl = "";
         AvatarUploader uploader = new AvatarUploader(this);
         uploader.setmListener(this);
         uploader.upload(imagePath);
@@ -239,8 +191,6 @@ public class UserInfoActivity extends BaseTitleActivity<ActivityUserInfoBinding>
                     @Override
                     public void onResponse(TeamDetail teamDetail) {
                         UserDataUtil.instance().saveTeamDetailInfo(teamDetail);
-                        bindRoot.setUser(teamDetail);
-                        showUserAvatar(teamDetail.avatar);
                     }
                 });
     }
