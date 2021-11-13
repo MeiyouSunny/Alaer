@@ -40,8 +40,8 @@ public class MapView extends AppCompatImageView implements ViewTreeObserver.OnGl
         super(context, attrs, defStyleAttr);
         setScaleType(ScaleType.MATRIX);
         mScaleMatrix = new Matrix();
-        mScaleGestureDetector = new ScaleGestureDetector(context, this);
-        mGestureDetector = initGestureDetector(context);
+//        mScaleGestureDetector = new ScaleGestureDetector(context, this);
+//        mGestureDetector = initGestureDetector(context);
         mTouchSlop = ViewConfiguration.get(context).getScaledTouchSlop();
     }
 
@@ -286,12 +286,12 @@ public class MapView extends AppCompatImageView implements ViewTreeObserver.OnGl
     @Override
     public boolean onTouchEvent(MotionEvent event) {
 
-        if (mScaleGestureDetector != null) {
-            mScaleGestureDetector.onTouchEvent(event);
-        }
-        if (mGestureDetector != null) {
-            mGestureDetector.onTouchEvent(event);
-        }
+//        if (mScaleGestureDetector != null) {
+//            mScaleGestureDetector.onTouchEvent(event);
+//        }
+//        if (mGestureDetector != null) {
+//            mGestureDetector.onTouchEvent(event);
+//        }
         if (!isAutoScaling) {
             moveByTouchEvent(event);
         }
