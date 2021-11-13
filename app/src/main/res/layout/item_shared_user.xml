@@ -19,6 +19,8 @@
         android:layout_width="match_parent"
         android:layout_height="189dp"
         android:layout_marginBottom="10dp"
+        android:clickable="true"
+        android:onClick="@{(View)->handler.clickUser(data)}"
         app:cardBackgroundColor="@color/card_bg_trans"
         app:cardCornerRadius="8dp"
         app:cardElevation="0dp">
@@ -31,13 +33,12 @@
                 android:id="@+id/icHead"
                 android:layout_width="46dp"
                 android:layout_height="46dp"
-                android:src="@drawable/ic_app_icon"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
-                android:clickable="true"
-                android:onClick="@{(View)->handler.clickUser(data)}" />
+                android:src="@drawable/ic_app_icon" />
 
             <TextView
+                android:id="@+id/name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="76dp"
@@ -48,11 +49,20 @@
                 android:textStyle="bold"
                 tools:text="11****20" />
 
+            <LinearLayout
+                android:id="@+id/layoutStar"
+                android:layout_width="wrap_content"
+                android:layout_height="28dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_toRightOf="@+id/name"
+                android:orientation="horizontal" />
+
             <TextView
                 android:layout_width="43dp"
                 android:layout_height="19dp"
-                android:layout_marginLeft="163dp"
                 android:layout_marginTop="23dp"
+                android:layout_toLeftOf="@+id/authed"
                 android:background="@{data.active==0 ? @drawable/bg_gradient_gray : @drawable/bg_gradient_blue}"
                 android:gravity="center"
                 android:text="@string/activity"
@@ -60,10 +70,13 @@
                 android:textSize="@dimen/font_12" />
 
             <TextView
+                android:id="@+id/authed"
                 android:layout_width="43dp"
                 android:layout_height="19dp"
-                android:layout_marginLeft="212dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="6dp"
                 android:layout_marginTop="23dp"
+                android:layout_marginRight="20dp"
                 android:background="@{data.isAuthSenior > 1 &amp;&amp; data.isAuthVideo > 0 ? @drawable/bg_gradient_yellow : @drawable/bg_gradient_gray}"
                 android:gravity="center"
                 android:text="@string/real_name"
@@ -94,9 +107,9 @@
                 android:layout_width="36dp"
                 android:layout_height="31dp"
                 android:layout_marginLeft="52dp"
-                android:visibility="gone"
                 android:layout_marginTop="92dp"
-                android:background="@drawable/ic_share_friend" />
+                android:background="@drawable/ic_share_friend"
+                android:visibility="gone" />
 
             <TextView
                 android:id="@+id/labelNum1"
@@ -194,15 +207,6 @@
                 android:text="@{data.cityName}"
                 android:textColor="@color/white"
                 android:textSize="@dimen/font_13" />
-
-            <LinearLayout
-                android:id="@+id/layoutStar"
-                android:layout_width="wrap_content"
-                android:layout_height="28dp"
-                android:layout_toRightOf="@+id/city"
-                android:layout_marginLeft="18dp"
-                android:layout_marginTop="136dp"
-                android:orientation="horizontal" />
 
             <TextView
                 android:id="@+id/labelTime"

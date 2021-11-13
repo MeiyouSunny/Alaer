@@ -10,6 +10,10 @@ import com.alaer.lib.api.ApiUtil;
 import com.alaer.lib.api.AppConfig;
 import com.alaer.lib.api.Callback;
 import com.alaer.lib.api.bean.Region;
+import com.meiyou.mvp.MvpBinder;
+
+import androidx.annotation.Nullable;
+import likly.dollar.$;
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseBindFragment;
 import llc.metaversenetwork.app.databinding.FragmentResetPwdBinding;
@@ -18,10 +22,6 @@ import llc.metaversenetwork.app.util.SimpleTextWatcher;
 import llc.metaversenetwork.app.util.StringUtil;
 import llc.metaversenetwork.app.util.VerifyCodeCounter;
 import llc.metaversenetwork.app.util.ViewUtil;
-import com.meiyou.mvp.MvpBinder;
-
-import androidx.annotation.Nullable;
-import likly.dollar.$;
 
 import static llc.metaversenetwork.app.util.NeteaseCaptcha.STEP1;
 import static llc.metaversenetwork.app.util.NeteaseCaptcha.STEP2;
@@ -38,7 +38,6 @@ public class RestPwdFragment extends BaseBindFragment<FragmentResetPwdBinding> {
     @Override
     public void onResume() {
         super.onResume();
-        setTopLeftIcon(R.drawable.ic_back_black);
         setTitleText(R.string.reset_pwd);
         bindRoot.region.setText("+" + AppConfig.DIALLING_CODE);
 

@@ -3,7 +3,7 @@
     <string name="app_name">MNC</string>
     <string name="new_version">New Version</string>
     <string name="my_city">My Metaverse</string>
-    <string name="nike_name">Nick name:</string>
+    <string name="nike_name">Nickname:</string>
     <string name="good_cityer">Metaverse  integral:</string>
     <string name="farm">Metaverse</string>
     <string name="task">Mission</string>
@@ -67,7 +67,7 @@
     <string name="seed_jujube">Jujube tree</string>
     <string name="grow_days_is">Growth days:%d days</string>
     <string name="yield_is">Output:%d metamine</string>
-    <string name="start_time_is">Start time:% s</string>
+    <string name="start_time_is">Start time:%s</string>
     <string name="end_time_is">End time:%s</string>
     <string name="remaing_days_is">Days remaining:%d days</string>
     <string name="expired">Expired</string>
@@ -155,7 +155,7 @@
     <string name="invitate_friend">Invite friends</string>
     <string name="build_guide">Explore guide</string>
     <string name="promotion_guide">Promotion Guide</string>
-    <string name="invitees">Invitee</string>
+    <string name="invitees">Inviter</string>
     <string name="operation_guide">Operation guide</string>
     <string name="common_problem">Common problem</string>
     <string name="level_rule">Level rules</string>
@@ -227,7 +227,7 @@
     <string name="score_number_is_about">About %s power points</string>
     <string name="fruit_number_is_about">About %s MetaMine stones</string>
     <string name="fund_is">Contribution service charge:</string>
-    <string name="inviter_info">Invitee information</string>
+    <string name="inviter_info">Inviter information</string>
     <string name="second_pwd">Exchange password</string>
     <string name="second_pwd_set">Exchange password settings</string>
     <string name="pls_make_not_same_with_pwd">Please do not match the login password</string>
@@ -314,7 +314,7 @@
     <string name="pls_intpu_invatation_code">Please input invitation code</string>
     <string name="pls_input_nike">Please input nike name</string>
     <string name="invatation_code_set">Invitation code setting</string>
-    <string name="nike_name_set">Nick name setting</string>
+    <string name="nike_name_set">Nickname setting</string>
     <string name="set_invitation_code_desc">Set a personalized invitation code to invite friends</string>
     <string name="set_nick_desc">Set a Personal Nickname</string>
     <string name="set_wechat_price">It costs 1 metamines to set up Telegram ID</string>
