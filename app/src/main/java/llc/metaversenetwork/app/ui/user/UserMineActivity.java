@@ -106,7 +106,9 @@ public class UserMineActivity extends BaseTitleActivity<ActivityUserMineBinding>
         ViewUtil.showImage(getApplicationContext(), bindRoot.icHead, userData.avatar);
     }
 
+    public static int level;
     private void showBalanceInfo(Balance balance) {
+        level = mBalance.level;
         mBalance = balance;
         ViewUtil.setText(bindRoot.scoreFruit, NumberUtils.instance().parseNumber(balance.diamond.amount));
         ViewUtil.setText(bindRoot.scoreBuild, NumberUtils.instance().parseNumber(balance.money.amount));

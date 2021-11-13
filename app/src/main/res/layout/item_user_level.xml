@@ -53,10 +53,10 @@
             android:textSize="@dimen/font_17" />
 
         <TextView
-            android:id="@+id/lebel1"
+            android:id="@+id/lable1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/label2"
+            android:layout_above="@+id/lable3"
             android:layout_centerHorizontal="true"
             android:layout_toRightOf="@+id/levelValue"
             android:text="1、"
@@ -64,18 +64,19 @@
             android:textSize="@dimen/font_12" />
 
         <TextView
+            android:id="@+id/lable2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/label2"
+            android:layout_above="@+id/lable3"
             android:layout_centerHorizontal="true"
-            android:layout_toRightOf="@+id/lebel1"
+            android:layout_toRightOf="@+id/lable1"
             android:singleLine="true"
             android:text="@{level.description}"
             android:textColor="@color/white"
             android:textSize="@dimen/font_12" />
 
         <TextView
-            android:id="@+id/label2"
+            android:id="@+id/lable3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
