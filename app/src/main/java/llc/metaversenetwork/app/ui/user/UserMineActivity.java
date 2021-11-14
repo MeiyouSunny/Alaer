@@ -109,8 +109,8 @@ public class UserMineActivity extends BaseTitleActivity<ActivityUserMineBinding>
 
     public static int level;
     private void showBalanceInfo(Balance balance) {
-        level = mBalance.level;
         mBalance = balance;
+        level = mBalance.level;
         ViewUtil.setText(bindRoot.scoreFruit, NumberUtils.instance().parseNumber(balance.diamond.amount));
         ViewUtil.setText(bindRoot.scoreBuild, NumberUtils.instance().parseNumber(balance.money.amount));
         queryLevels(mBalance.level);

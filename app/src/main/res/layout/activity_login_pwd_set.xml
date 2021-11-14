@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="handler"
+            type="llc.metaversenetwork.app.base.BindClickListener" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_settings"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical"
+        tools:context=".ui.user.UserInfoActivity">
+
+        <include layout="@layout/layout_title_bar_white" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="36dp"
+                android:layout_height="31dp"
+                android:layout_marginLeft="39dp"
+                android:layout_marginTop="34dp"
+                android:background="@drawable/ic_second_pwd" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="87dp"
+                android:layout_marginTop="28dp"
+                android:text="@string/set_login_pwd"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_17" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="87dp"
+                android:layout_marginTop="54dp"
+                android:text="@string/pls_make_not_same_with_pwd"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_12" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginLeft="28dp"
+                android:layout_marginTop="93dp"
+                android:layout_marginRight="28dp"
+                app:cardBackgroundColor="@color/card_bg_trans"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="0dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="24dp"
+                    android:paddingRight="29dp">
+
+                    <EditText
+                        android:id="@+id/etPwd"
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="48dp"
+                        android:layout_toLeftOf="@+id/icClear"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:hint="@string/pwd_invalid"
+                        android:inputType="textPassword"
+                        android:maxLength="22"
+                        android:singleLine="true"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"
+                        android:textSize="@dimen/font_17" />
+
+                    <ImageView
+                        android:id="@+id/icClear"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:clickable="true"
+                        android:onClick="@{handler.click}"
+                        android:src="@drawable/ic_input_clear" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginLeft="28dp"
+                android:layout_marginTop="159dp"
+                android:layout_marginRight="28dp"
+                app:cardBackgroundColor="@color/card_bg_trans"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="0dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="24dp"
+                    android:paddingRight="29dp">
+
+                    <EditText
+                        android:id="@+id/etPwdConfirm"
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="48dp"
+                        android:layout_toLeftOf="@+id/icClear2"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:hint="@string/pls_input_pwd_again"
+                        android:inputType="textPassword"
+                        android:maxLength="22"
+                        android:singleLine="true"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"
+                        android:textSize="@dimen/font_17" />
+
+                    <ImageView
+                        android:id="@+id/icClear2"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:clickable="true"
+                        android:onClick="@{handler.click}"
+                        android:src="@drawable/ic_input_clear" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="235dp"
+                android:layout_marginRight="28dp"
+                app:cardBackgroundColor="@color/card_bg_trans"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="0dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="24dp"
+                    android:paddingRight="24dp">
+
+                    <EditText
+                        android:id="@+id/etVerifyCode"
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="4dp"
+                        android:layout_toLeftOf="@+id/send"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:hint="@string/pls_input_phone_verify_code"
+                        android:inputType="number"
+                        android:maxLength="6"
+                        android:singleLine="true"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"
+                        android:textSize="@dimen/font_17" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_input_clear" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/send"
+                        android:layout_width="61dp"
+                        android:layout_height="26dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/btn_green"
+                        android:gravity="center"
+                        android:onClick="@{handler.click}"
+                        android:text="@string/send"
+                        android:textColor="#F9F9F9"
+                        android:textSize="@dimen/font_12" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/submit"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="18dp"
+                android:text="@string/pls_not_same_with_second_pwd"
+                android:textColor="@color/font_red" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/submit"
+                style="@style/BtnGreen"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="86dp"
+                android:enabled="false"
+                android:onClick="@{handler.click}"
+                android:text="@string/submit" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</layout>

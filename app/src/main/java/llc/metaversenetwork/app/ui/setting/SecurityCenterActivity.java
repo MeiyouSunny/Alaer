@@ -7,6 +7,7 @@ import com.alaer.lib.data.UserDataUtil;
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseTitleActivity;
 import llc.metaversenetwork.app.databinding.ActivitySecurityCenterBinding;
+import llc.metaversenetwork.app.ui.user.LoginPwdSetActivity;
 import llc.metaversenetwork.app.ui.user.SecondPwdSetActivity;
 import llc.metaversenetwork.app.util.ViewUtil;
 
@@ -39,6 +40,9 @@ public class SecurityCenterActivity extends BaseTitleActivity<ActivitySecurityCe
         switch (view.getId()) {
             case R.id.secondPwd:
                 ViewUtil.gotoActivity(getContext(), SecondPwdSetActivity.class);
+                break;
+            case R.id.loginPwd:
+                ViewUtil.gotoActivity(getContext(), LoginPwdSetActivity.class);
                 break;
         }
     }

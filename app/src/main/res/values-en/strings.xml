@@ -440,5 +440,8 @@
     <string name="withdraw_dialog_confirm_hint">I promise that the withdrawal address for this transaction application is completely correct. If the address is wrong, I will bear the consequences.</string>
     <string name="withdraw_address">Withdrawal address</string>
     <string name="withdraw_success">The withdrawal is successful!</string>
+    <string name="login_pwd">Login password</string>
+    <string name="set_login_pwd">Login password setting</string>
+    <string name="pls_not_same_with_second_pwd">Please do not match the redemption password</string>
 
 </resources>

@@ -43,7 +43,7 @@
     </fragment>
     <fragment
         android:id="@+id/restPwdFragment"
-        android:name="llc.metaversenetwork.app.ui.user.RestPwdFragment"
+        android:name="llc.metaversenetwork.app.ui.user.ResetPwdFragment"
         android:label="RestPwdFragment" >
         <action
             android:id="@+id/action_to_login"

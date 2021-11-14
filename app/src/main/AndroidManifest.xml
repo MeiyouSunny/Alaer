@@ -109,6 +109,10 @@
             android:screenOrientation="portrait"></activity>
 
         <activity
+            android:name=".ui.user.LoginPwdSetActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
             android:name=".ui.share.ShareActivity"
             android:screenOrientation="portrait"></activity>
 

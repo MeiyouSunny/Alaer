@@ -28,7 +28,7 @@ import static llc.metaversenetwork.app.util.NeteaseCaptcha.STEP2;
 
 @MvpBinder(
 )
-public class RestPwdFragment extends BaseBindFragment<FragmentResetPwdBinding> {
+public class ResetPwdFragment extends BaseBindFragment<FragmentResetPwdBinding> {
 
     @Override
     public int initLayoutResId() {
