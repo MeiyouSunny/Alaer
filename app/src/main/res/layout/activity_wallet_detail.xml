@@ -73,7 +73,6 @@
                     android:id="@+id/recharge"
                     android:layout_width="wrap_content"
                     android:layout_height="28dp"
-                    android:layout_marginRight="13dp"
                     android:layout_toLeftOf="@+id/withdrawal"
                     android:background="@drawable/btn_green"
                     android:enabled="@{enable}"

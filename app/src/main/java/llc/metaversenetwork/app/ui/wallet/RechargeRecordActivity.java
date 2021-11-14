@@ -12,7 +12,6 @@ import com.alaer.lib.data.UserDataUtil;
 
 import java.util.List;
 
-import likly.view.repeat.OnHolderClickListener;
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseTitleActivity;
 import llc.metaversenetwork.app.databinding.ActivityCurrencyRechargeRecordBinding;
@@ -22,7 +21,7 @@ import llc.metaversenetwork.app.util.ViewUtil;
 /**
  * 币种充值记录
  */
-public class RechargeRecordActivity extends BaseTitleActivity<ActivityCurrencyRechargeRecordBinding> implements OnHolderClickListener<WalletAdapter> {
+public class RechargeRecordActivity extends BaseTitleActivity<ActivityCurrencyRechargeRecordBinding> {
     // USDT:4
     // MNC:173
     AssetsTotalInfo.Assets mAssets;
@@ -75,10 +74,6 @@ public class RechargeRecordActivity extends BaseTitleActivity<ActivityCurrencyRe
             bindRoot.repeatView.layoutAdapterManager().showEmptyView();
         else
             bindRoot.repeatView.viewManager().bind(records);
-    }
-
-    @Override
-    public void onHolderClick(WalletAdapter walletAdapter) {
     }
 
     @Override

@@ -13,7 +13,6 @@ import com.alaer.lib.data.UserDataUtil;
 
 import java.util.List;
 
-import likly.view.repeat.OnHolderClickListener;
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseTitleActivity;
 import llc.metaversenetwork.app.databinding.ActivityCurrencyWithdrawalRecordBinding;
@@ -23,7 +22,7 @@ import llc.metaversenetwork.app.util.ViewUtil;
 /**
  * 币种提现记录
  */
-public class WithdrawalRecordActivity extends BaseTitleActivity<ActivityCurrencyWithdrawalRecordBinding> implements OnHolderClickListener<WalletAdapter> {
+public class WithdrawalRecordActivity extends BaseTitleActivity<ActivityCurrencyWithdrawalRecordBinding> {
     // USDT:4
     // MNC:173
     AssetsTotalInfo.Assets mAssets;
@@ -48,10 +47,6 @@ public class WithdrawalRecordActivity extends BaseTitleActivity<ActivityCurrency
     }
 
     private void getData() {
-//        mAssets = (AssetsTotalInfo.Assets) getIntent().getSerializableExtra("asset");
-//        bindRoot.setData(mAssets);
-//        bindRoot.setCurrencyId(mCurrencyId);
-
         UserData userData = UserDataUtil.instance().getUserData();
         if (userData == null)
             return;
@@ -77,10 +72,6 @@ public class WithdrawalRecordActivity extends BaseTitleActivity<ActivityCurrency
             bindRoot.repeatView.layoutAdapterManager().showEmptyView();
         else
             bindRoot.repeatView.viewManager().bind(records);
-    }
-
-    @Override
-    public void onHolderClick(WalletAdapter walletAdapter) {
     }
 
     @Override

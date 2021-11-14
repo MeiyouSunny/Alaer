@@ -25,7 +25,7 @@ public class WithdrawalAdapter extends BaseViewHolder<ItemWithdrawalRecordBindin
         bindRoot.setNumber(NumberUtils.instance());
         bindRoot.setRecord(record);
         bindRoot.contractType.setText(getContext().getString(R.string.coin_contract_type_is, parseContractType(record)));
-        // 0. 待充值 1. 充值中 2. 充值成功 3. 充值失败
+        // 0. 未审核 1.已审核 2.已提币 3.提币失败 4.财务审核失败 5. 风控审核失败 6. 提币中(未转币) 7. 提币中(已转币)
         String[] statusArray = getContext().getResources().getStringArray(R.array.recharge_status);
         if (record.status < statusArray.length) {
             bindRoot.status.setText(statusArray[record.status]);

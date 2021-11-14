@@ -194,7 +194,6 @@
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
                         android:singleLine="true"
-                        android:text="0xC3dc65ed9D11622EBC93C139823310305cc2E17D"
                         android:textColor="@color/white"
                         android:textColorHint="@color/font_gray"
                         android:textSize="@dimen/font_12" />
