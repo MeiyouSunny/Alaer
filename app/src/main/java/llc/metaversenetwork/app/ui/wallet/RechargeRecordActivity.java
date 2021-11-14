@@ -3,9 +3,10 @@ package llc.metaversenetwork.app.ui.wallet;
 import android.view.View;
 
 import com.alaer.lib.api.ApiUtil;
+import com.alaer.lib.api.AppConfig;
 import com.alaer.lib.api.Callback;
 import com.alaer.lib.api.bean.AssetsTotalInfo;
-import com.alaer.lib.api.bean.CurrencyRecord;
+import com.alaer.lib.api.bean.RechargeData;
 import com.alaer.lib.api.bean.UserData;
 import com.alaer.lib.data.UserDataUtil;
 
@@ -19,9 +20,9 @@ import llc.metaversenetwork.app.util.CollectionUtils;
 import llc.metaversenetwork.app.util.ViewUtil;
 
 /**
- * 币种提现记录
+ * 币种充值记录
  */
-public class CurrencyWithdrawalRecordActivity extends BaseTitleActivity<ActivityCurrencyRechargeRecordBinding> implements OnHolderClickListener<WalletAdapter> {
+public class RechargeRecordActivity extends BaseTitleActivity<ActivityCurrencyRechargeRecordBinding> implements OnHolderClickListener<WalletAdapter> {
     // USDT:4
     // MNC:173
     AssetsTotalInfo.Assets mAssets;
@@ -29,12 +30,12 @@ public class CurrencyWithdrawalRecordActivity extends BaseTitleActivity<Activity
 
     @Override
     protected int titleResId() {
-        return R.string.withdrawal_record;
+        return R.string.recharge_record;
     }
 
     @Override
     protected int layoutId() {
-        return R.layout.activity_currency_withdrawal_record;
+        return R.layout.activity_currency_recharge_record;
     }
 
     @Override
@@ -42,7 +43,7 @@ public class CurrencyWithdrawalRecordActivity extends BaseTitleActivity<Activity
         super.onViewCreated();
 
         setRightTitleText(R.string.call_customer_service);
-//        getData();
+        getData();
     }
 
     private void getData() {
@@ -53,12 +54,13 @@ public class CurrencyWithdrawalRecordActivity extends BaseTitleActivity<Activity
         UserData userData = UserDataUtil.instance().getUserData();
         if (userData == null)
             return;
-        ApiUtil.apiService().queryCurrencyRechargeRecords(userData.uuid, String.valueOf(userData.uid), userData.token, String.valueOf(mAssets.currencyId),
-                1, 100, 173, "", "", "",
-                new Callback<String>() {
+        ApiUtil.apiService().queryCurrencyRechargeRecords(userData.uuid, String.valueOf(userData.uid), userData.token, AppConfig.DIAMOND_CURRENCY,
+                1, 100, 4, "", "", "0",
+                new Callback<RechargeData>() {
                     @Override
-                    public void onResponse(String records) {
-                        showRecordList(null);
+                    public void onResponse(RechargeData rechargeData) {
+                        if (rechargeData != null)
+                            showRecordList(rechargeData.points);
                     }
 
                     @Override
@@ -68,9 +70,7 @@ public class CurrencyWithdrawalRecordActivity extends BaseTitleActivity<Activity
                 });
     }
 
-    private void showRecordList(List<CurrencyRecord> records) {
-        bindRoot.repeatView.onClick(this);
-
+    private void showRecordList(List<RechargeData.RechargeRecord> records) {
         if (CollectionUtils.isEmpty(records))
             bindRoot.repeatView.layoutAdapterManager().showEmptyView();
         else

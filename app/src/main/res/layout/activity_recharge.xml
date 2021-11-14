@@ -105,35 +105,42 @@
                         android:textColor="@color/white"
                         android:textSize="@dimen/font_15" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="12dp"
-                        android:background="@drawable/btn_blue"
-                        android:clickable="true"
-                        android:onClick="@{handler.click}"
-                        android:paddingLeft="8dp"
-                        android:paddingTop="4dp"
-                        android:paddingRight="8dp"
-                        android:paddingBottom="4dp"
-                        android:text="BSC"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/font_14" />
 
-                    <TextView
+                    <LinearLayout
+                        android:id="@+id/layoutContract"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:background="@drawable/btn_gray_trans"
-                        android:clickable="true"
-                        android:onClick="@{handler.click}"
-                        android:paddingLeft="8dp"
-                        android:paddingTop="4dp"
-                        android:paddingRight="8dp"
-                        android:paddingBottom="4dp"
-                        android:text="HEOC"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/font_14" />
+                        android:orientation="horizontal" />
+
+                    <!--                    <TextView-->
+                    <!--                        android:layout_width="wrap_content"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:layout_marginLeft="12dp"-->
+                    <!--                        android:background="@drawable/btn_blue"-->
+                    <!--                        android:clickable="true"-->
+                    <!--                        android:onClick="@{handler.click}"-->
+                    <!--                        android:paddingLeft="8dp"-->
+                    <!--                        android:paddingTop="4dp"-->
+                    <!--                        android:paddingRight="8dp"-->
+                    <!--                        android:paddingBottom="4dp"-->
+                    <!--                        android:text="BSC"-->
+                    <!--                        android:textColor="@color/white"-->
+                    <!--                        android:textSize="@dimen/font_14" />-->
+
+                    <!--                    <TextView-->
+                    <!--                        android:layout_width="wrap_content"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:layout_marginLeft="10dp"-->
+                    <!--                        android:background="@drawable/btn_gray_trans"-->
+                    <!--                        android:clickable="true"-->
+                    <!--                        android:onClick="@{handler.click}"-->
+                    <!--                        android:paddingLeft="8dp"-->
+                    <!--                        android:paddingTop="4dp"-->
+                    <!--                        android:paddingRight="8dp"-->
+                    <!--                        android:paddingBottom="4dp"-->
+                    <!--                        android:text="HEOC"-->
+                    <!--                        android:textColor="@color/white"-->
+                    <!--                        android:textSize="@dimen/font_14" />-->
 
 
                 </LinearLayout>
@@ -162,20 +169,21 @@
                 </LinearLayout>
 
                 <ImageView
+                    android:id="@+id/qrAddress"
                     android:layout_width="130dp"
                     android:layout_height="130dp"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="10dp"
-                    android:src="@drawable/img_qr" />
+                    android:layout_marginTop="10dp" />
 
                 <TextView
+                    android:id="@+id/coinAddress"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="16dp"
-                    android:text="1KLIjl84IP8lkdsall09"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/font_15" />
+                    android:textSize="@dimen/font_12"
+                    tools:text="1KLIjl84IP8lkdsall09" />
 
 
                 <androidx.appcompat.widget.AppCompatButton

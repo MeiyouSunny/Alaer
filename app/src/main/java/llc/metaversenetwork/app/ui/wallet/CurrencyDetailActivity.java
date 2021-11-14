@@ -16,6 +16,7 @@ import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseTitleActivity;
 import llc.metaversenetwork.app.databinding.ActivityWalletDetailBinding;
 import llc.metaversenetwork.app.util.CollectionUtils;
+import llc.metaversenetwork.app.util.NumberUtils;
 import llc.metaversenetwork.app.util.ViewUtil;
 
 /**
@@ -47,6 +48,8 @@ public class CurrencyDetailActivity extends BaseTitleActivity<ActivityWalletDeta
         mAssets = (AssetsTotalInfo.Assets) getIntent().getSerializableExtra("asset");
         setTitleText(getString(R.string.what_assets_detail, mAssets.currencyNameEn));
         bindRoot.setData(mAssets);
+        bindRoot.setEnable(mAssets.currencyId == 4);
+        bindRoot.setNumber(NumberUtils.instance());
 
         UserData userData = UserDataUtil.instance().getUserData();
         if (userData == null)
@@ -67,8 +70,6 @@ public class CurrencyDetailActivity extends BaseTitleActivity<ActivityWalletDeta
     }
 
     private void showRecordList(List<CurrencyRecord> records) {
-        bindRoot.repeatView.onClick(this);
-
         if (CollectionUtils.isEmpty(records))
             bindRoot.repeatView.layoutAdapterManager().showEmptyView();
         else

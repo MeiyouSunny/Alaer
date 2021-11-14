@@ -9,6 +9,10 @@
             name="assets"
             type="com.alaer.lib.api.bean.AssetsTotalInfo.Assets" />
 
+        <variable
+            name="number"
+            type="llc.metaversenetwork.app.util.NumberUtils" />
+
     </data>
 
     <androidx.cardview.widget.CardView
@@ -60,7 +64,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="26dp"
                 android:layout_toRightOf="@+id/type"
-                android:text="@{String.valueOf(assets.amount)}"
+                android:text="@{number.parseNumber(assets.amount)}"
                 android:textColor="@color/white"
                 android:textSize="@dimen/font_14"
                 tools:text="0.0" />

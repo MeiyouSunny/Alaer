@@ -21,7 +21,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="6dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="12dp"
             android:text="@{record.note}"
             android:textColor="@color/white"
             android:textSize="@dimen/font_15" />
@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_marginLeft="6dp"
-            android:layout_marginBottom="6dp"
+            android:layout_marginBottom="8dp"
             android:text="@{record.createTime}"
             android:textColor="@color/white"
             android:textSize="@dimen/font_12" />
@@ -41,7 +41,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="12dp"
             android:text="@{record.flag==1 ? @string/amount_add(number.parseNumber(record.changeAmount)) : @string/amount_reduce(number.parseNumber(record.changeAmount))}"
             android:textColor="@{record.flag==1 ? @color/blue : @color/font_red}"
             android:textSize="@dimen/font_17" />
@@ -51,7 +51,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="6dp"
+            android:layout_marginBottom="8dp"
             android:text="@{@string/balance_is(number.parseNumber(record.afterAmount))}"
             android:textColor="@color/white"
             android:textSize="@dimen/font_12" />

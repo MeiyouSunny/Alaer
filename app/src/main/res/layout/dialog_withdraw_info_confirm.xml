@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="confirmInfo"
+            type="com.alaer.lib.api.bean.WithdrawConfirmInfo" />
+
+        <variable
+            name="handler"
+            type="llc.metaversenetwork.app.base.BindClickListener" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="40dp"
+        android:background="#33405E"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="18dp"
+            android:text="@string/withdraw_info_confirm"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="6dp"
+                    android:gravity="right"
+                    android:text="@string/assets_select"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_16" />
+
+                <TextView
+                    android:id="@+id/cardType"
+                    android:layout_width="0dp"
+                    android:layout_height="42dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_weight="1"
+                    android:background="@color/card_bg_trans"
+                    android:gravity="center_vertical|left"
+                    android:paddingLeft="12dp"
+                    android:singleLine="true"
+                    android:text="@{confirmInfo.currency}"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_14" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="6dp"
+                    android:gravity="right"
+                    android:text="@string/coin_contract_type"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_16" />
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:layout_marginLeft="4dp"
+                    android:background="@color/card_bg_trans"
+                    android:gravity="center_vertical|left"
+                    android:paddingLeft="12dp"
+                    android:singleLine="true"
+                    android:text="@{confirmInfo.contract}"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textSize="@dimen/font_14" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="6dp"
+                    android:gravity="right"
+                    android:text="@string/withdraw_quanlity"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_16" />
+
+                <TextView
+                    android:id="@+id/cardNo"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:layout_marginLeft="4dp"
+                    android:background="@color/card_bg_trans"
+                    android:gravity="center_vertical|left"
+                    android:paddingLeft="12dp"
+                    android:singleLine="true"
+                    android:text="@{confirmInfo.amount}"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textSize="@dimen/font_14" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="6dp"
+                    android:gravity="right"
+                    android:text="@string/withdraw_fee"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_16" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:layout_marginLeft="4dp"
+                    android:background="@color/card_bg_trans"
+                    android:gravity="center_vertical|left"
+                    android:paddingLeft="12dp"
+                    android:singleLine="true"
+                    android:text="@{confirmInfo.fee}"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textSize="@dimen/font_14" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="6dp"
+                    android:gravity="right"
+                    android:text="@string/withdraw_address"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_16" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:layout_marginLeft="4dp"
+                    android:background="@color/card_bg_trans"
+                    android:gravity="center_vertical|left"
+                    android:lines="2"
+                    android:paddingLeft="12dp"
+                    android:text="@{confirmInfo.coinAddress}"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textSize="@dimen/font_14" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="45dp"
+            android:layout_marginBottom="18dp"
+            android:gravity="left"
+            android:text="@string/withdraw_dialog_confirm_hint"
+            android:textColor="@color/font_red"
+            android:textSize="@dimen/font_13" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/submit"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginLeft="22dp"
+            android:layout_marginRight="22dp"
+            android:layout_marginBottom="22dp"
+            android:background="@drawable/btn_green"
+            android:onClick="@{handler.click}"
+            android:text="@string/confirm_submit"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+</layout>

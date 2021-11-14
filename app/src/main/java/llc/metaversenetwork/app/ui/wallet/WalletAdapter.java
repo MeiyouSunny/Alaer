@@ -5,6 +5,7 @@ import com.alaer.lib.api.bean.AssetsTotalInfo;
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.repeatview.BaseViewHolder;
 import llc.metaversenetwork.app.databinding.ItemWalletBinding;
+import llc.metaversenetwork.app.util.NumberUtils;
 
 /**
  * 钱包Adapter
@@ -13,6 +14,7 @@ public class WalletAdapter extends BaseViewHolder<ItemWalletBinding, AssetsTotal
 
     @Override
     protected void onBindData(AssetsTotalInfo.Assets assets) {
+        bindRoot.setNumber(NumberUtils.instance());
         bindRoot.setAssets(assets);
         bindRoot.icon.setImageResource(assets.iconResId);
         bindRoot.executePendingBindings();

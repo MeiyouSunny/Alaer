@@ -12,15 +12,19 @@ import com.alaer.lib.api.bean.CityChartData;
 import com.alaer.lib.api.bean.CityMaster;
 import com.alaer.lib.api.bean.CityMasterDetail;
 import com.alaer.lib.api.bean.CityStatistic;
+import com.alaer.lib.api.bean.CoinAddress;
+import com.alaer.lib.api.bean.CoinContract;
 import com.alaer.lib.api.bean.CommonQuestionList;
 import com.alaer.lib.api.bean.CurrencyRecord;
 import com.alaer.lib.api.bean.FruitBill;
 import com.alaer.lib.api.bean.Notice;
 import com.alaer.lib.api.bean.OrderInfo;
+import com.alaer.lib.api.bean.RechargeData;
 import com.alaer.lib.api.bean.SeedMine;
 import com.alaer.lib.api.bean.SeedStoreList;
 import com.alaer.lib.api.bean.SharedUserDetail;
 import com.alaer.lib.api.bean.SharedUserList;
+import com.alaer.lib.api.bean.TakeCoinInfo;
 import com.alaer.lib.api.bean.TeamDetail;
 import com.alaer.lib.api.bean.TeamInfo;
 import com.alaer.lib.api.bean.TeamLevel;
@@ -28,6 +32,7 @@ import com.alaer.lib.api.bean.TeamProfile;
 import com.alaer.lib.api.bean.UpdateInfo;
 import com.alaer.lib.api.bean.UserData;
 import com.alaer.lib.api.bean.UserLevelList;
+import com.alaer.lib.api.bean.WithdrawalData;
 
 import java.util.List;
 
@@ -340,9 +345,9 @@ public interface ApiService {
      */
     @GET("/mining/profile/reputation/query")
     Call<ActiveBillList> honorRecord(@Query("uuid") String uuid, @Query("uid") String uid,
-                                            @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
-                                            @Query("pageIndex") int pageIndex, @Query("pageSize") int pageSize,
-                                            Callback<ActiveBillList> callback);
+                                     @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
+                                     @Query("pageIndex") int pageIndex, @Query("pageSize") int pageSize,
+                                     Callback<ActiveBillList> callback);
 
     /**
      * 实名认证:创建支付订单
@@ -565,12 +570,24 @@ public interface ApiService {
      */
     @FormBody
     @POST("/coin/selectListByUuid")
-    Call<String> queryCurrencyRechargeRecords(@Part("uuid") String uuid, @Part("uid") String uid,
-                                              @Part("token") String token, @Part("diamondCurrency") String diamondCurrency,
-                                              @Part("start") int start, @Part("size") int size,
-                                              @Part("currencyId") int currencyId, @Part("beginTime") String beginTime, @Part("endTime") String endTime,
-                                              @Part("status") String status,
-                                              Callback<String> callback);
+    Call<RechargeData> queryCurrencyRechargeRecords(@Part("uuid") String uuid, @Part("uid") String uid,
+                                                    @Part("token") String token, @Part("diamondCurrency") String diamondCurrency,
+                                                    @Part("start") int start, @Part("size") int size,
+                                                    @Part("currencyId") int currencyId, @Part("beginTime") String beginTime, @Part("endTime") String endTime,
+                                                    @Part("status") String status,
+                                                    Callback<RechargeData> callback);
+
+    /**
+     * 币种提现记录
+     */
+    @FormBody
+    @POST("/coin/selectTakeList")
+    Call<WithdrawalData> queryCurrencyWithdrawalRecords(@Part("uuid") String uuid, @Part("uid") String uid,
+                                                        @Part("token") String token, @Part("diamondCurrency") String diamondCurrency,
+                                                        @Part("start") int start, @Part("size") int size,
+                                                        @Part("currencyId") int currencyId, @Part("beginTime") String beginTime, @Part("endTime") String endTime,
+                                                        @Part("status") String status,
+                                                        Callback<WithdrawalData> callback);
 
     /**
      * 资产兑换
@@ -578,8 +595,54 @@ public interface ApiService {
     @FormBody
     @POST("/mining/diamond/exchange")
     Call<String> exchangeAssets(@Part("uuid") String uuid, @Part("uid") String uid, @Part("token") String token,
-                               @Part("validate") String validate, @Part("captchaId") String captchaId, @Part("tradePhraseCode") String tradePhraseCode,
-                               @Part("amount") String amount, @Part("tradeCurrencyId") String tradeCurrencyId, @Part("diamondCurrencyId") String diamondCurrencyId,
+                                @Part("validate") String validate, @Part("captchaId") String captchaId, @Part("tradePhraseCode") String tradePhraseCode,
+                                @Part("amount") String amount, @Part("tradeCurrencyId") String tradeCurrencyId, @Part("diamondCurrencyId") String diamondCurrencyId,
+                                Callback<String> callback);
+
+    /**
+     * 获取币支持的链信息
+     */
+    @GET("/coin/contract")
+    Call<List<CoinContract>> coinContract(@Query("uuid") String uuid, @Query("uid") String uid,
+                                          @Query("token") String token, @Query("currencyId") String currencyId,
+                                          Callback<List<CoinContract>> callback);
+
+    /**
+     * 查询用户钱包地址
+     */
+    @FormBody
+    @POST("/coin/selectUserAddress")
+    Call<CoinAddress> coinAddress(@Part("uuid") String uuid, @Part("uid") String uid, @Part("token") String token, @Part("diamondCurrency") String diamondCurrency,
+                                  @Part("walletType") String walletType, @Part("currencyId") String currencyId, @Part("contractId") String contractId,
+                                  Callback<CoinAddress> callback);
+
+    /**
+     * 提币前查询信息
+     */
+    @FormBody
+    @POST("/coin/selectTakeCoin")
+    Call<TakeCoinInfo> selectTakeCoin(@Part("uuid") String uuid, @Part("uid") String uid, @Part("token") String token, @
+            Part("diamondCurrency") String diamondCurrency, @Part("currencyId") String currencyId, @Part("contractId") String contractId,
+                                      Callback<TakeCoinInfo> callback);
+
+    /**
+     * 提币发送短信验证码
+     */
+    @GET("/user/vcode/withdraw")
+    Call<String> withdrawVcode(@Query("uuid") String uuid, @Query("uid") String uid, @Query("token") String token, @Query("currencyId") String currencyId,
+                               @Query("captchaId") String captchaId, @Query("validate") String validate, @Query("type") String type,
                                Callback<String> callback);
+
+    /**
+     * 提币
+     */
+    @FormBody
+    @POST("/wallet/withdraw/v2")
+    Call<String> withdraw(@Part("uuid") String uuid, @Part("uid") String uid, @Part("token") String token, @Part("diamondCurrency") String diamondCurrency,
+                          @Part("currencyId") String currencyId, @Part("fdPwd") String fdPwd, @Part("note") String note,
+                          @Part("address") String address, @Part("amount") String amount, @Part("captchaId") String captchaId,
+                          @Part("actionId") String actionId, @Part("validate") String validate, @Part("msgCode") String msgCode,
+                          @Part("phoneCode") String phoneCode, @Part("contractId") String contractId,
+                          Callback<String> callback);
 
 }

@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
         <variable
-            name="data"
-            type="com.alaer.lib.api.bean.AssetsTotalInfo.Assets" />
+            name="takeCoinInfo"
+            type="com.alaer.lib.api.bean.TakeCoinInfo" />
+
+        <variable
+            name="number"
+            type="llc.metaversenetwork.app.util.NumberUtils" />
 
         <variable
             name="currencyId"
@@ -18,7 +23,7 @@
             type="llc.metaversenetwork.app.base.BindClickListener" />
     </data>
 
-    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/bg_wallet"
@@ -52,7 +57,7 @@
                         android:layout_width="62dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
-                        android:text="資產選擇"
+                        android:text="@string/assets_select"
                         android:textColor="@color/white"
                         android:textSize="@dimen/font_15" />
 
@@ -78,7 +83,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:background="@drawable/btn_gray_trans"
-                        android:clickable="true"
+                        android:clickable="false"
                         android:onClick="@{handler.click}"
                         android:paddingLeft="8dp"
                         android:paddingTop="4dp"
@@ -105,35 +110,41 @@
                         android:textColor="@color/white"
                         android:textSize="@dimen/font_15" />
 
-                    <TextView
+                    <LinearLayout
+                        android:id="@+id/layoutContract"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="12dp"
-                        android:background="@drawable/btn_blue"
-                        android:clickable="true"
-                        android:onClick="@{handler.click}"
-                        android:paddingLeft="8dp"
-                        android:paddingTop="4dp"
-                        android:paddingRight="8dp"
-                        android:paddingBottom="4dp"
-                        android:text="BSC"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/font_14" />
+                        android:orientation="horizontal" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:background="@drawable/btn_gray_trans"
-                        android:clickable="true"
-                        android:onClick="@{handler.click}"
-                        android:paddingLeft="8dp"
-                        android:paddingTop="4dp"
-                        android:paddingRight="8dp"
-                        android:paddingBottom="4dp"
-                        android:text="HEOC"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/font_14" />
+                    <!--                    <TextView-->
+                    <!--                        android:layout_width="wrap_content"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:layout_marginLeft="12dp"-->
+                    <!--                        android:background="@drawable/btn_blue"-->
+                    <!--                        android:clickable="true"-->
+                    <!--                        android:onClick="@{handler.click}"-->
+                    <!--                        android:paddingLeft="8dp"-->
+                    <!--                        android:paddingTop="4dp"-->
+                    <!--                        android:paddingRight="8dp"-->
+                    <!--                        android:paddingBottom="4dp"-->
+                    <!--                        android:text="BSC"-->
+                    <!--                        android:textColor="@color/white"-->
+                    <!--                        android:textSize="@dimen/font_14" />-->
+
+                    <!--                    <TextView-->
+                    <!--                        android:layout_width="wrap_content"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:layout_marginLeft="10dp"-->
+                    <!--                        android:background="@drawable/btn_gray_trans"-->
+                    <!--                        android:clickable="true"-->
+                    <!--                        android:onClick="@{handler.click}"-->
+                    <!--                        android:paddingLeft="8dp"-->
+                    <!--                        android:paddingTop="4dp"-->
+                    <!--                        android:paddingRight="8dp"-->
+                    <!--                        android:paddingBottom="4dp"-->
+                    <!--                        android:text="HEOC"-->
+                    <!--                        android:textColor="@color/white"-->
+                    <!--                        android:textSize="@dimen/font_14" />-->
 
 
                 </LinearLayout>
@@ -155,7 +166,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
                         android:layout_toRightOf="@+id/line"
-                        android:text="充值地址"
+                        android:text="提现地址"
                         android:textColor="@color/white"
                         android:textSize="@dimen/font_15" />
 
@@ -173,6 +184,7 @@
                     app:cardElevation="0dp">
 
                     <EditText
+                        android:id="@+id/coinAddress"
                         android:layout_width="match_parent"
                         android:layout_height="42dp"
                         android:layout_centerVertical="true"
@@ -182,9 +194,10 @@
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
                         android:singleLine="true"
-                        android:textColor="@color/font_gray"
+                        android:text="0xC3dc65ed9D11622EBC93C139823310305cc2E17D"
+                        android:textColor="@color/white"
                         android:textColorHint="@color/font_gray"
-                        android:textSize="@dimen/font_14" />
+                        android:textSize="@dimen/font_12" />
 
                 </androidx.cardview.widget.CardView>
 
@@ -222,7 +235,7 @@
                         android:layout_centerVertical="true"
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="4dp"
-                        android:layout_toLeftOf="@+id/btn1"
+                        android:layout_toLeftOf="@+id/withdrawalAll"
                         app:cardBackgroundColor="@color/card_bg_trans"
                         app:cardCornerRadius="8dp"
                         app:cardElevation="0dp">
@@ -233,19 +246,19 @@
                             android:layout_height="42dp"
                             android:layout_centerVertical="true"
                             android:background="@null"
-                            android:hint="最小提幣數量0.001"
+                            android:hint="@{@string/amount_low_limit_is(number.parseNumber(takeCoinInfo.detail.amountLowLimit))}"
                             android:inputType="numberDecimal"
                             android:paddingLeft="8dp"
                             android:paddingRight="8dp"
                             android:singleLine="true"
-                            android:textColor="@color/gray"
+                            android:textColor="@color/white"
                             android:textColorHint="@color/gray"
                             android:textSize="@dimen/font_14" />
 
                     </androidx.cardview.widget.CardView>
 
-                    <TextView
-                        android:id="@+id/btn1"
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/withdrawalAll"
                         android:layout_width="96dp"
                         android:layout_height="40dp"
                         android:layout_alignParentRight="true"
@@ -253,6 +266,7 @@
                         android:layout_marginLeft="12dp"
                         android:layout_marginRight="8dp"
                         android:background="@drawable/btn_blue"
+                        android:clickable="true"
                         android:gravity="center"
                         android:onClick="@{handler.click}"
                         android:paddingLeft="12dp"
@@ -273,62 +287,13 @@
                         android:layout_centerVertical="true"
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="4dp"
-                        android:layout_toLeftOf="@+id/btn2"
-                        app:cardBackgroundColor="@color/card_bg_trans"
-                        app:cardCornerRadius="8dp"
-                        app:cardElevation="0dp">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="42dp"
-                            android:layout_centerVertical="true"
-                            android:background="@null"
-                            android:gravity="center_vertical"
-                            android:paddingLeft="8dp"
-                            android:paddingRight="8dp"
-                            android:singleLine="true"
-                            android:text="可用餘額："
-                            android:textColor="@color/gray"
-                            android:textColorHint="@color/gray"
-                            android:textSize="@dimen/font_14" />
-
-                    </androidx.cardview.widget.CardView>
-
-                    <TextView
-                        android:id="@+id/btn2"
-                        android:layout_width="96dp"
-                        android:layout_height="40dp"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginRight="8dp"
-                        android:gravity="center"
-                        android:onClick="@{handler.click}"
-                        android:paddingLeft="12dp"
-                        android:paddingRight="12dp"
-                        android:text="手續費 0.007"
-                        android:textColor="@color/gray"
-                        android:textSize="@dimen/font_12" />
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp">
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_centerVertical="true"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginRight="4dp"
-                        android:layout_toLeftOf="@+id/btn3"
+                        android:layout_toLeftOf="@+id/sendVerifyCode"
                         app:cardBackgroundColor="@color/card_bg_trans"
                         app:cardCornerRadius="8dp"
                         app:cardElevation="0dp">
 
                         <EditText
+                            android:id="@+id/etVerifyCode"
                             android:layout_width="match_parent"
                             android:layout_height="42dp"
                             android:layout_centerVertical="true"
@@ -338,14 +303,14 @@
                             android:paddingLeft="8dp"
                             android:paddingRight="8dp"
                             android:singleLine="true"
-                            android:textColor="@color/gray"
+                            android:textColor="@color/white"
                             android:textColorHint="@color/gray"
                             android:textSize="@dimen/font_14" />
 
                     </androidx.cardview.widget.CardView>
 
-                    <TextView
-                        android:id="@+id/btn3"
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/sendVerifyCode"
                         android:layout_width="96dp"
                         android:layout_height="40dp"
                         android:layout_alignParentRight="true"
@@ -359,6 +324,41 @@
                         android:paddingRight="12dp"
                         android:text="獲取驗證碼"
                         android:textColor="@color/white" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp"
+                        android:singleLine="true"
+                        android:text="@{@string/available_alance_is(number.parseNumber(takeCoinInfo.resp.cashAmount))}"
+                        android:textColor="@color/gray"
+                        android:textColorHint="@color/gray"
+                        android:textSize="@dimen/font_14" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginRight="8dp"
+                        android:gravity="center"
+                        android:paddingLeft="12dp"
+                        android:paddingRight="12dp"
+                        android:text="@{@string/fee_is(takeCoinInfo.resp.fee)}"
+                        android:textColor="@color/gray"
+                        android:textSize="@dimen/font_14" />
 
                 </RelativeLayout>
 
@@ -376,11 +376,12 @@
                     android:textSize="@dimen/font_13" />
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/copyAddress"
+                    android:id="@+id/submit"
                     style="@style/BtnGreen"
                     android:layout_marginLeft="0dp"
                     android:layout_marginRight="0dp"
                     android:layout_marginBottom="32dp"
+                    android:enabled="false"
                     android:onClick="@{handler.click}"
                     android:text="@string/confirm" />
 

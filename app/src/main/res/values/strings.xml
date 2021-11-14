@@ -434,6 +434,22 @@
     <string name="set_avatar">頭像設定</string>
     <string name="click_to_upload_avatar">點擊上傳頭像</string>
     <string name="set_personalized_avatar">設定個性化頭像</string>
+    <string name="coin_contract_type_is">鏈類型：%s</string>
+    <string name="coin_contract_type">鏈類型</string>
+    <string name="coin_type_is">幣種：%s</string>
+    <string name="fee_is">手續費：%s</string>
+    <string name="recharge_wait">待充值</string>
+    <string name="recharging">充值中</string>
+    <string name="recharge_success">成功</string>
+    <string name="recharge_failed">失敗</string>
+    <string name="available_alance_is">可用餘額：%s</string>
+    <string name="amount_low_limit_is">最小提幣數量%s</string>
+    <string name="withdraw_info_confirm">提現資訊二次確認</string>
+    <string name="withdraw_quanlity">提現數量</string>
+    <string name="withdraw_fee">提現手續費</string>
+    <string name="withdraw_dialog_confirm_hint">我承諾本次交易申請的提幣地址完全正確，如果地址有誤後果本人承擔</string>
+    <string name="withdraw_address">提現地址</string>
+    <string name="withdraw_success">提現成功！</string>
 
 
 </resources>

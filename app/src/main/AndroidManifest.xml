@@ -259,7 +259,7 @@
             android:screenOrientation="portrait"></activity>
 
         <activity
-            android:name=".ui.wallet.CurrencyRechargeRecordActivity"
+            android:name=".ui.wallet.RechargeRecordActivity"
             android:screenOrientation="portrait"></activity>
         <activity
             android:name=".ui.wallet.RechargeActivity"
@@ -268,7 +268,7 @@
             android:name=".ui.wallet.WithdrawalActivity"
             android:screenOrientation="portrait"></activity>
         <activity
-            android:name=".ui.wallet.CurrencyWithdrawalRecordActivity"
+            android:name=".ui.wallet.WithdrawalRecordActivity"
             android:screenOrientation="portrait"></activity>
         <activity
             android:name=".ui.user.HonorRecordActivity"

@@ -16,6 +16,7 @@ import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseTitleActivity;
 import llc.metaversenetwork.app.databinding.ActivityWalletBinding;
 import llc.metaversenetwork.app.util.CollectionUtils;
+import llc.metaversenetwork.app.util.NumberUtils;
 import llc.metaversenetwork.app.util.ViewUtil;
 import llc.metaversenetwork.app.util.WalletDataUtil;
 
@@ -48,12 +49,12 @@ public class WalletActivity extends BaseTitleActivity<ActivityWalletBinding> imp
         if (userData == null)
             return;
         ApiUtil.apiService().queryTotalAssets(userData.uuid, String.valueOf(userData.uid), userData.token, AppConfig.DIAMOND_CURRENCY,
-                1, 100, "CNY", "174",
+                1, 100, "CNY", AppConfig.DIAMOND_CURRENCY,
                 new Callback<AssetsTotalInfo>() {
                     @Override
                     public void onResponse(AssetsTotalInfo assetsTotalInfo) {
                         if (assetsTotalInfo != null) {
-                            bindRoot.total.setText(String.valueOf(assetsTotalInfo.total));
+                            bindRoot.total.setText(NumberUtils.instance().parseNumber(assetsTotalInfo.total));
                             List<AssetsTotalInfo.Assets> list = WalletDataUtil.parseAssetsList(assetsTotalInfo.assets);
                             showWalletList(list);
                         }

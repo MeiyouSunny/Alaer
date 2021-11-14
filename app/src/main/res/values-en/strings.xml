@@ -424,5 +424,21 @@
     <string name="set_avatar">Avatar settings</string>
     <string name="click_to_upload_avatar">Click to upload avatar</string>
     <string name="set_personalized_avatar">Set a personalized avatar</string>
+    <string name="coin_contract_type_is">Chain type: %s</string>
+    <string name="coin_contract_type">Chain type</string>
+    <string name="coin_type_is">Currency: %s</string>
+    <string name="fee_is">Handling fee: %s</string>
+    <string name="recharge_wait">To be recharged</string>
+    <string name="recharging">Recharging</string>
+    <string name="recharge_success">Success</string>
+    <string name="recharge_failed">Failed</string>
+    <string name="available_alance_is">Available Balance:%s</string>
+    <string name="amount_low_limit_is">Minimum withdrawal amount %s</string>
+    <string name="withdraw_info_confirm">Withdrawal information confirm</string>
+    <string name="withdraw_quanlity">Withdrawal quantity</string>
+    <string name="withdraw_fee">Withdrawal fee</string>
+    <string name="withdraw_dialog_confirm_hint">I promise that the withdrawal address for this transaction application is completely correct. If the address is wrong, I will bear the consequences.</string>
+    <string name="withdraw_address">Withdrawal address</string>
+    <string name="withdraw_success">The withdrawal is successful!</string>
 
 </resources>

@@ -10,7 +10,7 @@ import java.util.List;
  */
 public class AssetsTotalInfo {
 
-    public Double total;
+    public float total;
     public List<Assets> assets;
     public double totalUsdt;
     public String baseCurrency;
@@ -23,25 +23,25 @@ public class AssetsTotalInfo {
         public String currencyNameEn;
         public String icoUrl;
         public int iconResId;
-        public double point_num;
-        public double point_price;
+        public float point_num;
+        public float point_price;
         public int status;
-        public double price;
-        public double priceUsdt;
-        public double initPrice;
+        public float price;
+        public float priceUsdt;
+        public float initPrice;
         public String actions;
         public String actionStatus;
-        public double recharge;
-        public double withdraw;
-        public double trade;
-        public double transfer;
-        public double amount;
-        public double cashAmount;
-        public double freezeCashAmount;
-        public double prepareSubAmount;
-        public double freezeAmount;
-        public double valuations;
-        public double valuationsUsdt;
+        public float recharge;
+        public float withdraw;
+        public float trade;
+        public float transfer;
+        public float amount;
+        public float cashAmount;
+        public float freezeCashAmount;
+        public float prepareSubAmount;
+        public float freezeAmount;
+        public float valuations;
+        public float valuationsUsdt;
         public boolean selected;
     }
 

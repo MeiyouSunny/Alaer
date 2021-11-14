@@ -1,20 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
+        <variable
+            name="handler"
+            type="llc.metaversenetwork.app.base.BindClickListener" />
 
         <variable
             name="data"
             type="com.alaer.lib.api.bean.AssetsTotalInfo.Assets" />
 
         <variable
-            name="handler"
-            type="llc.metaversenetwork.app.base.BindClickListener" />
+            name="number"
+            type="llc.metaversenetwork.app.util.NumberUtils" />
+
+        <variable
+            name="enable"
+            type="boolean" />
     </data>
 
-    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/bg_wallet"
@@ -36,7 +45,6 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="140dp"
-                android:layout_marginBottom="24dp"
                 android:background="@drawable/bg_wallet_top"
                 android:paddingLeft="18dp"
                 android:paddingTop="18dp"
@@ -65,8 +73,10 @@
                     android:id="@+id/recharge"
                     android:layout_width="wrap_content"
                     android:layout_height="28dp"
+                    android:layout_marginRight="13dp"
                     android:layout_toLeftOf="@+id/withdrawal"
                     android:background="@drawable/btn_green"
+                    android:enabled="@{enable}"
                     android:onClick="@{handler.click}"
                     android:text="@string/recharge"
                     android:textColor="@color/white"
@@ -79,6 +89,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_marginLeft="12dp"
                     android:background="@drawable/btn_green"
+                    android:enabled="@{enable}"
                     android:onClick="@{handler.click}"
                     android:text="@string/withdrawal"
                     android:textColor="@color/white"
@@ -101,7 +112,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
                     android:layout_marginLeft="8dp"
-                    android:text="@{String.valueOf(data.cashAmount)}"
+                    android:text="@{number.parseNumber(data.cashAmount)}"
                     android:textColor="@color/white"
                     android:textSize="@dimen/font_18"
                     tools:text="100.01" />
@@ -125,7 +136,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_alignParentBottom="true"
                     android:layout_marginRight="12dp"
-                    android:text="@{String.valueOf(data.freezeAmount)}"
+                    android:text="@{number.parseNumber(data.freezeAmount)}"
                     android:textColor="@color/white"
                     android:textSize="@dimen/font_18"
                     tools:text="100.01" />
@@ -138,6 +149,8 @@
                 style="@style/RepeatView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:paddingTop="12dp"
                 app:emptyView="@layout/layout_no_data"
                 app:viewHolderClass="llc.metaversenetwork.app.ui.wallet.CurrencyAdapter"
                 app:viewHolderLayout="@layout/item_transaction_record" />
