@@ -453,6 +453,7 @@
     <string name="login_pwd">登入密碼</string>
     <string name="set_login_pwd">登入密碼設置</string>
     <string name="pls_not_same_with_second_pwd">請不要和兌換密碼一致</string>
+    <string name="wallet_address_copy_success">錢包地址複製成功！</string>
 
 
 </resources>

@@ -62,7 +62,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@{@string/quantity_is(number.parseNumber(record.coinNum))}"
+                android:text="@{@string/quantity_is(String.valueOf(record.amount))}"
                 android:textColor="@color/white"
                 android:textSize="@dimen/font_14" />
 

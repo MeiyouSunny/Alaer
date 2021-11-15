@@ -1,5 +1,8 @@
 package llc.metaversenetwork.app.ui.wallet;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -16,6 +19,7 @@ import com.alaer.lib.data.UserDataUtil;
 
 import java.util.List;
 
+import likly.dollar.$;
 import likly.view.repeat.OnHolderClickListener;
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseTitleActivity;
@@ -36,6 +40,7 @@ public class RechargeActivity extends BaseTitleActivity<ActivityRechargeBinding>
     public static List<CoinContract> mCoinContracts;
     UserData userData;
     CoinContract mCoinContract;
+    String mCoinAddress;
 
     @Override
     protected int titleResId() {
@@ -125,6 +130,7 @@ public class RechargeActivity extends BaseTitleActivity<ActivityRechargeBinding>
     }
 
     private void showCoinAddress(CoinAddress coinAddress) {
+        mCoinAddress = coinAddress.address;
         Bitmap qrCode = QRCodeEncoder.createQRCode(coinAddress.address, 130);
         bindRoot.qrAddress.setImageBitmap(qrCode);
         bindRoot.coinAddress.setText(coinAddress.address);
@@ -148,6 +154,13 @@ public class RechargeActivity extends BaseTitleActivity<ActivityRechargeBinding>
                     mCurrencyId = 13;
                     bindRoot.setCurrencyId(mCurrencyId);
                 }
+                break;
+            case R.id.copyAddress:
+                ClipboardManager cmb = (ClipboardManager) getContext().getSystemService(Context.CLIPBOARD_SERVICE);
+                cmb.setText(mCoinAddress);
+                ClipData clipData = ClipData.newPlainText(null, mCoinAddress);
+                cmb.setPrimaryClip(clipData);
+                $.toast().text(R.string.wallet_address_copy_success).show();
                 break;
         }
     }

@@ -22,10 +22,10 @@ public class WithdrawalData {
         public String rechargeId;
         public String currencyName;
         public String createTime;
-        public float coinNum;
         public String confirms;
         public int currencyId;
         public int status;
         public int contractId;
+        public float amount;
     }
 }
