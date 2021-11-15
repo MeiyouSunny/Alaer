@@ -14,11 +14,11 @@ import llc.metaversenetwork.app.R;
  */
 public class WalletDataUtil {
 
-    public static List<AssetsTotalInfo.Assets> parseAssetsList(List<AssetsTotalInfo.Assets> assets) {
-        if (CollectionUtils.isEmpty(assets))
+    public static List<AssetsTotalInfo.Assets> parseAssetsList(AssetsTotalInfo assetsTotalInfo) {
+        if (CollectionUtils.isEmpty(assetsTotalInfo.assets))
             return null;
         List<AssetsTotalInfo.Assets> result = new ArrayList<>();
-        for (AssetsTotalInfo.Assets asset : assets) {
+        for (AssetsTotalInfo.Assets asset : assetsTotalInfo.assets) {
             if (asset.currencyId == 4 || asset.currencyId == 173) {
                 if (asset.currencyId == 173) {
                     asset.currencyName = "MNC";
@@ -28,6 +28,9 @@ public class WalletDataUtil {
                     asset.iconResId = R.drawable.ic_usdt;
                 }
                 result.add(asset);
+            }
+            if (asset.currencyId == 4) {
+                asset.amount = assetsTotalInfo.totalUsdt;
             }
         }
 

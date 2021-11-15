@@ -26,7 +26,6 @@ import de.greenrobot.event.ThreadMode;
 import likly.dialogger.Dialogger;
 import likly.dollar.$;
 import llc.metaversenetwork.app.BuildConfig;
-import llc.metaversenetwork.app.ui.dialog.DialogDownloadApk;
 import llc.metaversenetwork.app.ui.dialog.DialogNewVersion;
 import llc.metaversenetwork.app.util.SettingUtil;
 
@@ -111,7 +110,8 @@ public class AppUpgradeManager {
             }
         });
         Dialogger.newDialog(mContext).holder(dialog)
-                .gravity(Gravity.CENTER).cancelable(false).show();
+                .gravity(Gravity.CENTER).cancelable(!force).show();
+        setDownloadProgressListener(dialog);
     }
 
     private void startDownload(UpdateInfo updateInfo) {
@@ -126,11 +126,11 @@ public class AppUpgradeManager {
             return;
         }
 
-        DialogDownloadApk dialogDownloadApk = new DialogDownloadApk();
-        Dialogger.newDialog(mContext).holder(dialogDownloadApk)
-                .gravity(Gravity.CENTER).cancelable(false).show();
+//        DialogDownloadApk dialogDownloadApk = new DialogDownloadApk();
+//        Dialogger.newDialog(mContext).holder(dialogDownloadApk)
+//                .gravity(Gravity.CENTER).cancelable(false).show();
 
-        setDownloadProgressListener(dialogDownloadApk);
+//        setDownloadProgressListener(dialogDownloadApk);
         startDownloadApk(url, savePath);
     }
 

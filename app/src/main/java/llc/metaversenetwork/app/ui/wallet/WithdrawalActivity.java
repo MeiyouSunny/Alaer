@@ -1,7 +1,11 @@
 package llc.metaversenetwork.app.ui.wallet;
 
+import android.graphics.Color;
 import android.text.Editable;
+import android.text.Spannable;
+import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
+import android.text.style.ForegroundColorSpan;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -165,6 +169,13 @@ public class WithdrawalActivity extends BaseTitleActivity<ActivityWithdrawalBind
     private void showTakeCoinInfo(TakeCoinInfo takeCoinInfo) {
         mTakeCoinInfo = takeCoinInfo;
         bindRoot.setTakeCoinInfo(mTakeCoinInfo);
+
+        String result = getString(R.string.withdraw_desc, "USDT", String.valueOf(mTakeCoinInfo.detail.amountLowLimit));
+        SpannableStringBuilder spannableString = new SpannableStringBuilder(result);
+        spannableString.setSpan(new ForegroundColorSpan(Color.parseColor("#FF7171")),
+                0, result.indexOf(String.valueOf(mTakeCoinInfo.detail.amountLowLimit)) + String.valueOf(mTakeCoinInfo.detail.amountLowLimit).length(),
+                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        bindRoot.withdrawDesc.setText(spannableString);
     }
 
     @Override
@@ -198,11 +209,32 @@ public class WithdrawalActivity extends BaseTitleActivity<ActivityWithdrawalBind
     }
 
     private void showInfoConfirmDialog() {
+        if (mTakeCoinInfo == null)
+            return;
+
+        String amountInput = ViewUtil.getText(bindRoot.etAmount);
+        float amount = 0F;
+        if (amountInput.contains(".")) {
+            amount = Float.parseFloat(amountInput);
+        } else {
+            amount = Integer.parseInt(amountInput);
+        }
+
+        if (amount < mTakeCoinInfo.detail.amountLowLimit) {
+            $.toast().text(R.string.not_reached_minimum_limit).show();
+            return;
+        }
+
+        if (amount > mTakeCoinInfo.resp.cashAmount) {
+            $.toast().text(R.string.exceeds_maximum_limit).show();
+            return;
+        }
+
         WithdrawConfirmInfo confirmInfo = new WithdrawConfirmInfo();
         String coinAddress = ViewUtil.getText(bindRoot.coinAddress);
-        String amount = ViewUtil.getText(bindRoot.etAmount);
+
         confirmInfo.coinAddress = coinAddress;
-        confirmInfo.amount = amount;
+        confirmInfo.amount = amountInput;
         confirmInfo.contract = mCoinContract.contract;
         confirmInfo.currency = "USDT";
         confirmInfo.fee = mTakeCoinInfo.resp.fee;

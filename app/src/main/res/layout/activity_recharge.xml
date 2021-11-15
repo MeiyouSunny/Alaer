@@ -49,7 +49,7 @@
 
                     <TextView
                         android:id="@+id/amoutAvalible"
-                        android:layout_width="62dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
                         android:text="資產選擇"
@@ -98,7 +98,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="62dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
                         android:text="鏈類型"
@@ -219,17 +219,22 @@
                 </LinearLayout>
 
                 <TextView
+                    android:id="@+id/rechargeDesc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
+                    android:layout_toRightOf="@+id/line"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_13" />
+
+                <TextView
+                    android:id="@+id/rechargeDesc_"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginBottom="32dp"
                     android:layout_toRightOf="@+id/line"
-                    android:text="1.請勿向上述地址充值任何非USDT（BSC)資產，否則資產將不可找回。 \n
-2.您充值至上述地址後，需要整個網絡節點的確認，10次網絡確認後到賬，20次網絡確認後可提幣。 \n
-3.最好充值金額：1USDT（BSC），小於最小金額的充值將不會上漲且無法退回。 \n
-4.您的充值地址不會經常改變，可以重複充值；如有更改，我們會通過網站公告或短信通知您。 \n
-*您在充值前務必確認地址，充值地址錯誤或未按上述要求操作，最後用戶自行承擔。"
-                    android:textColor="@color/white"
+                    android:text="@string/recharge_desc_"
+                    android:textColor="@color/font_red"
                     android:textSize="@dimen/font_13" />
 
             </LinearLayout>

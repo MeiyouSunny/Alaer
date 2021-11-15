@@ -12,7 +12,7 @@ public class AssetsTotalInfo {
 
     public float total;
     public List<Assets> assets;
-    public double totalUsdt;
+    public float totalUsdt;
     public String baseCurrency;
     public String base;
 

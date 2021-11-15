@@ -14,7 +14,7 @@ import com.alaer.lib.data.UserDataUtil;
 import likly.dollar.$;
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseTitleActivity;
-import llc.metaversenetwork.app.databinding.ActivitySecondPwdSetBinding;
+import llc.metaversenetwork.app.databinding.ActivityLoginPwdSetBinding;
 import llc.metaversenetwork.app.util.NeteaseCaptcha;
 import llc.metaversenetwork.app.util.SimpleTextWatcher;
 import llc.metaversenetwork.app.util.StringUtil;
@@ -27,7 +27,7 @@ import static llc.metaversenetwork.app.util.NeteaseCaptcha.STEP2;
 /**
  * 设置登录密码
  */
-public class LoginPwdSetActivity extends BaseTitleActivity<ActivitySecondPwdSetBinding> {
+public class LoginPwdSetActivity extends BaseTitleActivity<ActivityLoginPwdSetBinding> {
 
     UserData userData;
     boolean haveSendCode;

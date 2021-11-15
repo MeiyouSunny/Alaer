@@ -258,11 +258,12 @@ public class HomeActivity extends BaseViewBindActivity<ActivityHomeBinding> impl
         initData();
         queryNotices();
         requestPermission();
-        // 版本更新
-        new AppUpgradeManager(this).checkUpdate(false);
         bindRoot.notice.requestFocus();
 
-        showWelcomeDialog();
+        if (isFirstOpen) {
+            new AppUpgradeManager(this).checkUpdate(false);
+            showWelcomeDialog();
+        }
     }
 
     private void showWelcomeDialog() {

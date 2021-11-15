@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <resources>
     <string name="app_name">MNC</string>
-    <string name="new_version">New Version</string>
+    <string name="new_version">Latest version %s</string>
     <string name="my_city">My Metaverse</string>
     <string name="nike_name">Nickname:</string>
     <string name="good_cityer">Metaverse  integral:</string>
@@ -403,13 +403,13 @@
     <string name="immediate_receipt">Immediate receipt</string>
     <string name="person_level_is">Member level: LV%d</string>
     <string name="burn">Burn</string>
-    <string name="user_rule_url">https://files.metaversenetwork.ai/html/DISCLAIMER OF LIABILITY.html</string>
+    <string name="user_rule_url">https://files.metaversenetwork.ai/html_en/MNC_Metaverse_Network_LLC_User_Agreement-ENG.html</string>
     <string name="daily_task">Daily task</string>
     <string name="task_hint">Complete the metauniverse daily task to obtain more rewards</string>
     <string name="exploring_metauniverse">Exploring the Metauniverse</string>
     <string name="welcome_join_metauniverse">Welcome to join the Metauniverse</string>
     <string name="mnc_service_disclaimer">MNC service disclaimer</string>
-    <string name="mnc_service_disclaimer_url">https://metaverse-3.gitbook.io/mnw-guide-tw/disclaimer-of-liability</string>
+    <string name="mnc_service_disclaimer_url">https://files.metaversenetwork.ai/html_en/MNC_DISCLAIMER_OF_LIABILITY-ENG.html</string>
     <string name="honor_value_desc">Honor value description</string>
     <string name="record">Record</string>
     <string name="reward_honor_value_is">Reward honor value:%d</string>
@@ -444,5 +444,35 @@
     <string name="set_login_pwd">Login password setting</string>
     <string name="pls_not_same_with_second_pwd">Please do not match the redemption password</string>
     <string name="wallet_address_copy_success">The wallet address is copied successfully!</string>
+    <string name="not_reached_minimum_limit">Your withdrawal amount has not reached the minimum currency limit, please modify your withdrawal amount</string>
+    <string name="exceeds_maximum_limit">Your withdrawal amount exceeds the maximum currency limit, please modify your withdrawal amount</string>
+    <string name="withdraw_status_0">Unreviewed</string>
+    <string name="withdraw_status_1">Reviewed</string>
+    <string name="withdraw_status_4">Financial review failed</string>
+    <string name="withdraw_status_2">Withdrawn</string>
+    <string name="withdraw_status_3">Withdrawal failed</string>
+    <string name="withdraw_status_5">Risk control review failed</string>
+    <string name="withdraw_status_6">Withdrawal (not transferred)</string>
+    <string name="withdraw_status_7">Withdrawal (transferred)</string>
+    <string name="withdraw_desc">
+        1. %1$s Minimum Withdrawal Quantity: %2$s.\n
+2. A certain handling fee will be deducted for the withdrawal operation.\n
+3. Please make sure that the withdrawal address and chain type are correct. If an error occurs, the withdrawal will fail.
+    </string>
+    <string name="withdraw_desc_">
+● In order to ensure that your funds are in accordance with, if your login password or redemption password is changed, it will take 24 hours to withdraw money.
+    </string>
+    <string name="recharge_desc">
+1. Do not recharge any non- %1$s(%2$s) assets to the above address, otherwise the assets will not be retrieved.\n
+2. After you recharge to the above address, you need the confirmation of the entire network node. After 10 network confirmations, it will be credited. After 20 network confirmations, you can withdraw coins.\n
+3. Minimum recharge amount: %3$s %4$s(%5$s), recharge less than the minimum amount will not be credited to the account and cannot be returned.\n
+4. Your recharge address will not change frequently, you can recharge; if there is any change, we will try our best to notify you via website announcement or SMS.
+    </string>
+    <string name="recharge_desc_">
+● Please confirm the address before recharging. If the recharging address is wrong or fails to operate according to the above requirements, the user shall bear the consequences.
+    </string>
+    <string name="update_content">What\'s updated:</string>
+    <string name="update_now">Update now</string>
+    <string name="mnc_operations_team">MNC Operations Team</string>
 
 </resources>

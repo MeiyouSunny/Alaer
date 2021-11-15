@@ -14,6 +14,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
+import likly.dollar.$;
 import likly.reverse.HttpMethod;
 import likly.reverse.OnServiceInvokeListener;
 import likly.reverse.RequestHolder;
@@ -57,6 +58,11 @@ public class OnApiServiceRequestListener implements OnServiceInvokeListener {
         if (params == null)
             params = new HashMap<>();
         // 通用参数
+        boolean defaultLanguage = $.config().getBoolean("defaultLanguage", true);
+        if (defaultLanguage)
+            params.put("local", "zh_TW");
+        else
+            params.put("local", "en_US");
         params.put("commapp", "1100");
         params.put("commappversion", "1.0.0");
         params.put("commdiamond", "174");

@@ -105,4 +105,15 @@
         <item>@string/recharge_failed</item>
     </string-array>
 
+    <string-array name="withdraw_status">
+        <item>@string/withdraw_status_0</item>
+        <item>@string/withdraw_status_1</item>
+        <item>@string/withdraw_status_2</item>
+        <item>@string/withdraw_status_3</item>
+        <item>@string/withdraw_status_4</item>
+        <item>@string/withdraw_status_5</item>
+        <item>@string/withdraw_status_6</item>
+        <item>@string/withdraw_status_7</item>
+    </string-array>
+
 </resources>

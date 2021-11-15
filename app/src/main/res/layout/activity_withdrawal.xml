@@ -54,7 +54,7 @@
 
                     <TextView
                         android:id="@+id/amoutAvalible"
-                        android:layout_width="62dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
                         android:text="@string/assets_select"
@@ -103,7 +103,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="62dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
                         android:text="鏈類型"
@@ -190,7 +190,7 @@
                         android:layout_centerVertical="true"
                         android:background="@null"
                         android:hint="請輸入提現地址"
-                        android:inputType="numberDecimal"
+                        android:inputType="text"
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
                         android:singleLine="true"
@@ -245,7 +245,7 @@
                             android:layout_height="42dp"
                             android:layout_centerVertical="true"
                             android:background="@null"
-                            android:hint="@{@string/amount_low_limit_is(number.parseNumber(takeCoinInfo.detail.amountLowLimit))}"
+                            android:hint="@{@string/amount_low_limit_is(String.valueOf(takeCoinInfo.detail.amountLowLimit))}"
                             android:inputType="numberDecimal"
                             android:paddingLeft="8dp"
                             android:paddingRight="8dp"
@@ -258,7 +258,7 @@
 
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/withdrawalAll"
-                        android:layout_width="96dp"
+                        android:layout_width="106dp"
                         android:layout_height="40dp"
                         android:layout_alignParentRight="true"
                         android:layout_centerVertical="true"
@@ -268,8 +268,8 @@
                         android:clickable="true"
                         android:gravity="center"
                         android:onClick="@{handler.click}"
-                        android:paddingLeft="12dp"
-                        android:paddingRight="12dp"
+                        android:paddingLeft="6dp"
+                        android:paddingRight="6dp"
                         android:text="全部提現"
                         android:textColor="@color/white" />
 
@@ -310,7 +310,7 @@
 
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/sendVerifyCode"
-                        android:layout_width="96dp"
+                        android:layout_width="106dp"
                         android:layout_height="40dp"
                         android:layout_alignParentRight="true"
                         android:layout_centerVertical="true"
@@ -319,8 +319,8 @@
                         android:background="@drawable/btn_blue"
                         android:gravity="center"
                         android:onClick="@{handler.click}"
-                        android:paddingLeft="12dp"
-                        android:paddingRight="12dp"
+                        android:paddingLeft="6dp"
+                        android:paddingRight="6dp"
                         android:text="獲取驗證碼"
                         android:textColor="@color/white" />
 
@@ -362,16 +362,22 @@
                 </RelativeLayout>
 
                 <TextView
+                    android:id="@+id/withdrawDesc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="18dp"
+                    android:layout_toRightOf="@+id/line"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_13" />
+
+                <TextView
+                    android:id="@+id/withdrawDesc_"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginBottom="24dp"
                     android:layout_toRightOf="@+id/line"
-                    android:text="1.USDT最小提幣數量：0.1\n
-2.提現操作將扣除一定的手續費\n
-3.請務必確認提幣地址及鏈接型正確，若發生錯誤將導致提幣失敗\n
-*為確保你難得資金安全，若您的登入密碼/資金密碼發生修改，將需要在24h後才可進行提幣操作。"
-                    android:textColor="@color/white"
+                    android:text="@string/withdraw_desc_"
+                    android:textColor="@color/font_red"
                     android:textSize="@dimen/font_13" />
 
                 <androidx.appcompat.widget.AppCompatButton

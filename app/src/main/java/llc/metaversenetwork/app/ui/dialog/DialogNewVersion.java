@@ -3,11 +3,13 @@ package llc.metaversenetwork.app.ui.dialog;
 import android.view.View;
 
 import com.alaer.lib.api.bean.UpdateInfo;
+
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseDialogHolder;
 import llc.metaversenetwork.app.databinding.DialogNewVersionBinding;
+import llc.metaversenetwork.app.ui.setting.AppUpgradeManager;
 
-public class DialogNewVersion extends BaseDialogHolder<DialogNewVersionBinding> {
+public class DialogNewVersion extends BaseDialogHolder<DialogNewVersionBinding> implements AppUpgradeManager.DownloadProgressListener {
 
     UpdateInfo updateInfo;
     boolean forceUpdate;
@@ -22,13 +24,16 @@ public class DialogNewVersion extends BaseDialogHolder<DialogNewVersionBinding> 
     @Override
     public void onViewCreated(View view) {
         super.onViewCreated(view);
-        final String content = updateInfo.nowVersion + "\n" + updateInfo.msgContent;
-        bindRoot.content.setText(content);
 
-        if (forceUpdate) {
-            bindRoot.cancel.setVisibility(View.GONE);
-            bindRoot.divider.setVisibility(View.GONE);
-        }
+        bindRoot.setInfo(updateInfo);
+        bindRoot.executePendingBindings();
+        bindRoot.title.setText(getContext().getString(R.string.new_version, updateInfo.nowVersion));
+        bindRoot.content.setText(updateInfo.msgContent);
+
+//        if (forceUpdate) {
+//            bindRoot.cancel.setVisibility(View.GONE);
+//            bindRoot.divider.setVisibility(View.GONE);
+//        }
     }
 
     public void setListener(OnConfirmListener listener) {
@@ -38,21 +43,30 @@ public class DialogNewVersion extends BaseDialogHolder<DialogNewVersionBinding> 
     @Override
     public void click(View view) {
         switch (view.getId()) {
-            case R.id.cancel:
-                if (listener != null)
-                    listener.onCancelClick();
-                dismiss();
-                break;
             case R.id.confirm:
                 if (listener != null)
                     listener.onConfirmClick();
-                dismiss();
+                bindRoot.confirm.setVisibility(View.GONE);
+                bindRoot.progress.setVisibility(View.VISIBLE);
+                bindRoot.progressBar.setVisibility(View.VISIBLE);
                 break;
         }
     }
 
+    @Override
+    public void downloadProgress(int progress, int totalSize) {
+        bindRoot.progress.setText(progress + "%");
+        bindRoot.progressBar.setProgress(progress);
+    }
+
+    @Override
+    public void downloadSuccess() {
+        dismiss();
+    }
+
     public interface OnConfirmListener {
         void onCancelClick();
+
         void onConfirmClick();
     }
 

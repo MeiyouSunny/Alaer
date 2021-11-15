@@ -1,5 +1,6 @@
 package llc.metaversenetwork.app.ui.wallet;
 
+import android.view.Gravity;
 import android.view.View;
 
 import com.alaer.lib.api.ApiUtil;
@@ -11,10 +12,12 @@ import com.alaer.lib.data.UserDataUtil;
 
 import java.util.List;
 
+import likly.dialogger.Dialogger;
 import likly.view.repeat.OnHolderClickListener;
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseTitleActivity;
 import llc.metaversenetwork.app.databinding.ActivityWalletBinding;
+import llc.metaversenetwork.app.ui.dialog.DialogNotAuth;
 import llc.metaversenetwork.app.util.CollectionUtils;
 import llc.metaversenetwork.app.util.NumberUtils;
 import llc.metaversenetwork.app.util.ViewUtil;
@@ -40,7 +43,11 @@ public class WalletActivity extends BaseTitleActivity<ActivityWalletBinding> imp
     @Override
     public void onViewCreated() {
         super.onViewCreated();
+    }
 
+    @Override
+    public void onResume() {
+        super.onResume();
         getData();
     }
 
@@ -54,8 +61,8 @@ public class WalletActivity extends BaseTitleActivity<ActivityWalletBinding> imp
                     @Override
                     public void onResponse(AssetsTotalInfo assetsTotalInfo) {
                         if (assetsTotalInfo != null) {
-                            bindRoot.total.setText(NumberUtils.instance().parseNumber(assetsTotalInfo.total));
-                            List<AssetsTotalInfo.Assets> list = WalletDataUtil.parseAssetsList(assetsTotalInfo.assets);
+                            bindRoot.total.setText(NumberUtils.instance().parseNumber(assetsTotalInfo.totalUsdt));
+                            List<AssetsTotalInfo.Assets> list = WalletDataUtil.parseAssetsList(assetsTotalInfo);
                             showWalletList(list);
                         }
                     }
@@ -81,12 +88,34 @@ public class WalletActivity extends BaseTitleActivity<ActivityWalletBinding> imp
     public void click(View view) {
         switch (view.getId()) {
             case R.id.recharge:
-                ViewUtil.gotoActivity(this, RechargeActivity.class);
+                if (!UserDataUtil.instance().isAuthed()) {
+                    showNotAuthDialog();
+                } else {
+                    ViewUtil.gotoActivity(this, RechargeActivity.class);
+                }
                 break;
             case R.id.withdrawal:
-                ViewUtil.gotoActivity(this, WithdrawalActivity.class);
+                if (!UserDataUtil.instance().isAuthed()) {
+                    showNotAuthDialog();
+                } else {
+                    ViewUtil.gotoActivity(this, WithdrawalActivity.class);
+                }
                 break;
         }
+    }
+
+    // 未实名认证提示
+    private void showNotAuthDialog() {
+        DialogNotAuth dialogNotAuth = new DialogNotAuth();
+        dialogNotAuth.setListener(new DialogNotAuth.OnConfirmListener() {
+            @Override
+            public void onConfirmClick() {
+                ViewUtil.gotoAuthPage(getContext());
+            }
+        });
+        Dialogger.newDialog(getContext()).holder(dialogNotAuth)
+                .gravity(Gravity.CENTER)
+                .show();
     }
 
 }

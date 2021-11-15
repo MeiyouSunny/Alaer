@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <resources>
     <string name="app_name">MNC</string>
-    <string name="new_version">新版本</string>
+    <string name="new_version">最新版本%s</string>
     <string name="my_city">元宇星球</string>
     <string name="nike_name">昵稱：</string>
     <string name="good_cityer">元宇積分：</string>
@@ -404,7 +404,7 @@
     <string name="immediate_receipt">即時到賬</string>
     <string name="person_level_is">會員等級：LV%d</string>
     <string name="burn">燒傷</string>
-    <string name="user_rule_url">https://files.metaversenetwork.ai/html/MNC_Metaverse Network LLC User Agreement.html</string>
+    <string name="user_rule_url">https://files.metaversenetwork.ai/html/MNC_Metaverse_Network_LLC_User_Agreement.html</string>
     <string name="activity_desc_url">https://files.metaversenetwork.ai/html/MNC_AboutActivity.html</string>
     <string name="contribution_desc_url">https://files.metaversenetwork.ai/html/MNC_AboutContribution.html</string>
     <string name="honor_desc_url">https://files.metaversenetwork.ai/html/MNC_AboutHonor.html</string>
@@ -419,7 +419,7 @@
     <string name="welcome_join_metauniverse">歡迎您加入元宇宙</string>
     <string name="welcome_desc">歡迎進入元宇宙數字生態，你的願望將是我們的責任，在此預祝閣下旅途愉快并實現你一切的夢想。</string>
     <string name="mnc_service_disclaimer">MNC服務免責聲明</string>
-    <string name="mnc_service_disclaimer_url">https://files.metaversenetwork.ai/html/MNC_DISCLAIMER OF LIABILITY.html</string>
+    <string name="mnc_service_disclaimer_url">https://files.metaversenetwork.ai/html/MNC_DISCLAIMER_OF_LIABILITY.html</string>
     <string name="honor_value_desc">榮譽值說明</string>
     <string name="record">記錄</string>
     <string name="reward_honor_value_is">獎勵榮譽值：%d</string>
@@ -454,6 +454,34 @@
     <string name="set_login_pwd">登入密碼設置</string>
     <string name="pls_not_same_with_second_pwd">請不要和兌換密碼一致</string>
     <string name="wallet_address_copy_success">錢包地址複製成功！</string>
-
+    <string name="not_reached_minimum_limit">您的提幣數量未達到幣種的最小限額，請修改您的提幣數量</string>
+    <string name="exceeds_maximum_limit">您的提幣數量超過幣種的最大限額，請修改您的提幣數量</string>
+    <string name="withdraw_status_0">未審核</string>
+    <string name="withdraw_status_1">已審核</string>
+    <string name="withdraw_status_4">財務審核失敗</string>
+    <string name="withdraw_status_2">已提幣</string>
+    <string name="withdraw_status_3">提幣失敗</string>
+    <string name="withdraw_status_5">風控審核失敗</string>
+    <string name="withdraw_status_6">提幣中(未轉幣)</string>
+    <string name="withdraw_status_7">提幣中(已轉幣)</string>
+    <string name="withdraw_desc">1. %1$s最小提現數量: %2$s。\n
+2. 提現操作將扣除一定的手續費。\n
+3. 請務必確認提現地址以及鏈類型正確，若發生錯誤將導致提現失敗。
+    </string>
+    <string name="withdraw_desc_">
+● 為確保您的資金按照，若您的登入密碼或者兌換密碼發生修改，將需要在24h後才可進行提現操作。
+    </string>
+    <string name="recharge_desc">
+        1. 請勿向上述地址充值任何非 %1$s（%2$s） 資產，否則資產將不可找回。\n
+2. 您充值至上述地址後，需要整個網絡節點的確認，10次網絡確認後到賬，20次網絡確認後可提幣。\n
+3. 最小充值金額∶ %3$s %4$s（%5$s），小於最小金額的充值將不會上賬且無法退回。\n
+4. 您的充值地址不會經常改變，可以重複充值;如有更改，我們會盡量通過網站公告或短信通知您。
+    </string>
+    <string name="recharge_desc_">
+● 請您充值前務必確認地址,充值地址錯誤或未按上述要求操作，後果由用戶自行承擔。
+    </string>
+    <string name="update_content">更新內容：</string>
+    <string name="update_now">立即更新</string>
+    <string name="mnc_operations_team">MNC運營團隊</string>
 
 </resources>

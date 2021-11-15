@@ -26,13 +26,13 @@ public class WithdrawalAdapter extends BaseViewHolder<ItemWithdrawalRecordBindin
         bindRoot.setRecord(record);
         bindRoot.contractType.setText(getContext().getString(R.string.coin_contract_type_is, parseContractType(record)));
         // 0. 未审核 1.已审核 2.已提币 3.提币失败 4.财务审核失败 5. 风控审核失败 6. 提币中(未转币) 7. 提币中(已转币)
-        String[] statusArray = getContext().getResources().getStringArray(R.array.recharge_status);
+        String[] statusArray = getContext().getResources().getStringArray(R.array.withdraw_status);
         if (record.status < statusArray.length) {
             bindRoot.status.setText(statusArray[record.status]);
-            int color = getContext().getColor(R.color.green2);
-            if (record.status == 0 || record.status == 1)
-                color = getContext().getColor(R.color.font_orange);
-            if (record.status == 3)
+            int color = getContext().getColor(R.color.font_orange);
+            if (record.status == 2)
+                color = getContext().getColor(R.color.green2);
+            if (record.status == 3 || record.status == 4 || record.status == 5)
                 color = getContext().getColor(R.color.font_red);
             bindRoot.status.setTextColor(color);
         }

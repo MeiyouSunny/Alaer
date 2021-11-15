@@ -4,6 +4,10 @@ import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.Color;
+import android.text.Spannable;
+import android.text.SpannableStringBuilder;
+import android.text.style.ForegroundColorSpan;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -14,6 +18,7 @@ import com.alaer.lib.api.Callback;
 import com.alaer.lib.api.bean.AssetsTotalInfo;
 import com.alaer.lib.api.bean.CoinAddress;
 import com.alaer.lib.api.bean.CoinContract;
+import com.alaer.lib.api.bean.TakeCoinInfo;
 import com.alaer.lib.api.bean.UserData;
 import com.alaer.lib.data.UserDataUtil;
 
@@ -127,6 +132,37 @@ public class RechargeActivity extends BaseTitleActivity<ActivityRechargeBinding>
                         super.onError(code, msg);
                     }
                 });
+
+        ApiUtil.apiService().selectTakeCoin(userData.uuid, String.valueOf(userData.uid), userData.token, AppConfig.DIAMOND_CURRENCY,
+                "4", String.valueOf(mCoinContract.contractId),
+                new Callback<TakeCoinInfo>() {
+                    @Override
+                    public void onResponse(TakeCoinInfo takeCoinInfo) {
+                        showTakeCoinInfo(takeCoinInfo);
+                    }
+
+                    @Override
+                    public void onError(int code, String msg) {
+                        super.onError(code, msg);
+                    }
+                });
+    }
+
+    private void showTakeCoinInfo(TakeCoinInfo takeCoinInfo) {
+        if (takeCoinInfo == null)
+            return;
+
+        String result = getString(R.string.recharge_desc, "USDT", mCoinContract.contract,
+                String.valueOf(takeCoinInfo.detail.amountLowLimit), "USDT", mCoinContract.contract);
+        int tagLength = String.valueOf("USDT" + mCoinContract.contract).length() + 2;
+        SpannableStringBuilder spannableString = new SpannableStringBuilder(result);
+        spannableString.setSpan(new ForegroundColorSpan(Color.parseColor("#357EEE")),
+                result.indexOf("USDT"), result.indexOf("USDT") + tagLength,
+                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        spannableString.setSpan(new ForegroundColorSpan(Color.parseColor("#FF7171")),
+                result.indexOf("3") + 2, result.lastIndexOf("USDT") + tagLength,
+                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        bindRoot.rechargeDesc.setText(spannableString);
     }
 
     private void showCoinAddress(CoinAddress coinAddress) {

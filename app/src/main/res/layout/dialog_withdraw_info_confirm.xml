@@ -212,17 +212,36 @@
             android:textColor="@color/font_red"
             android:textSize="@dimen/font_13" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/submit"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="42dp"
             android:layout_marginLeft="22dp"
             android:layout_marginRight="22dp"
             android:layout_marginBottom="22dp"
-            android:background="@drawable/btn_green"
-            android:onClick="@{handler.click}"
-            android:text="@string/confirm_submit"
-            android:textColor="@color/white" />
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/cancel"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="22dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_gray"
+                android:onClick="@{handler.click}"
+                android:text="@string/cancel"
+                android:textColor="@color/black" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/submit"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/btn_green"
+                android:onClick="@{handler.click}"
+                android:text="@string/confirm_submit"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
 
     </LinearLayout>
 

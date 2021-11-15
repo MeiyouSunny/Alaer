@@ -14,5 +14,6 @@ public class UpdateInfo {
     public String appUrl;
     public int status;
     public int codePush;
+    public String createTime;
 
 }
