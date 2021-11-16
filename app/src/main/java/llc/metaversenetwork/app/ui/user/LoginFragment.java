@@ -12,6 +12,10 @@ import com.alaer.lib.api.bean.Region;
 import com.alaer.lib.api.bean.TeamDetail;
 import com.alaer.lib.api.bean.UserData;
 import com.alaer.lib.data.UserDataUtil;
+import com.meiyou.mvp.MvpBinder;
+
+import androidx.annotation.Nullable;
+import likly.dollar.$;
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseBindFragment;
 import llc.metaversenetwork.app.databinding.FragmentLoginBinding;
@@ -20,10 +24,6 @@ import llc.metaversenetwork.app.util.NeteaseCaptcha;
 import llc.metaversenetwork.app.util.SimpleTextWatcher;
 import llc.metaversenetwork.app.util.StringUtil;
 import llc.metaversenetwork.app.util.ViewUtil;
-import com.meiyou.mvp.MvpBinder;
-
-import androidx.annotation.Nullable;
-import likly.dollar.$;
 
 @MvpBinder(
 )
@@ -125,6 +125,7 @@ public class LoginFragment extends BaseBindFragment<FragmentLoginBinding> {
                 new Callback<UserData>() {
                     @Override
                     public void onResponse(UserData userData) {
+                        $.config().putString("phone", mPhone);
                         UserDataUtil.instance().saveUserDataInfo(userData);
 
                         ApiUtil.apiService().getTeamDetailInfo(userData.uuid, String.valueOf(userData.uid), userData.token, AppConfig.DIAMOND_CURRENCY,

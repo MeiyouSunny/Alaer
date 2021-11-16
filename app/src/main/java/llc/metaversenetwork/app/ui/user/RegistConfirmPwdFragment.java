@@ -93,6 +93,7 @@ public class RegistConfirmPwdFragment extends BaseBindFragment<FragmentRegistCon
                     @Override
                     public void onResponse(UserData userInfo) {
                         $.toast().text(R.string.regist_success).show();
+                        $.config().putString("phone", mPhone);
                         UserDataUtil.instance().setUserData(userInfo);
 
                         ApiUtil.apiService().getTeamDetailInfo(userInfo.uuid, String.valueOf(userInfo.uid), userInfo.token, AppConfig.DIAMOND_CURRENCY,

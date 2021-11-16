@@ -140,7 +140,8 @@ public class LoginPwdSetActivity extends BaseTitleActivity<ActivityLoginPwdSetBi
     }
 
     private void resetPwd(String validate) {
-        ApiUtil.apiService().resetPwd(userData.phone, ViewUtil.getText(bindRoot.etVerifyCode), ViewUtil.getText(bindRoot.etPwd),
+        final String phone = $.config().getString("phone");
+        ApiUtil.apiService().resetPwd(phone, ViewUtil.getText(bindRoot.etVerifyCode), ViewUtil.getText(bindRoot.etPwd),
                 validate, AppConfig.VERIFY_ID, AppConfig.DIALLING_CODE,
                 new Callback<String>() {
                     @Override
