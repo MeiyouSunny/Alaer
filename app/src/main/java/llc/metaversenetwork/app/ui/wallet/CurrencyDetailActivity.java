@@ -91,11 +91,7 @@ public class CurrencyDetailActivity extends BaseTitleActivity<ActivityWalletDeta
     public void click(View view) {
         switch (view.getId()) {
             case R.id.recharge:
-                if (!UserDataUtil.instance().isAuthed()) {
-                    showNotAuthDialog();
-                } else {
-                    ViewUtil.gotoActivity(this, RechargeActivity.class);
-                }
+                ViewUtil.gotoActivity(this, RechargeActivity.class);
                 break;
             case R.id.withdrawal:
                 if (!UserDataUtil.instance().isAuthed()) {

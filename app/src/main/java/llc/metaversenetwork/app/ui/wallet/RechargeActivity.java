@@ -17,6 +17,7 @@ import com.alaer.lib.api.AppConfig;
 import com.alaer.lib.api.Callback;
 import com.alaer.lib.api.bean.AssetsTotalInfo;
 import com.alaer.lib.api.bean.CoinAddress;
+import com.alaer.lib.api.bean.CoinAuthConfig;
 import com.alaer.lib.api.bean.CoinContract;
 import com.alaer.lib.api.bean.TakeCoinInfo;
 import com.alaer.lib.api.bean.UserData;
@@ -46,6 +47,9 @@ public class RechargeActivity extends BaseTitleActivity<ActivityRechargeBinding>
     UserData userData;
     CoinContract mCoinContract;
     String mCoinAddress;
+    CoinAddress mCoinAddressInfo;
+    TakeCoinInfo mTakeCoinInfo;
+    CoinAuthConfig mCoinAuthConfig;
 
     @Override
     protected int titleResId() {
@@ -132,13 +136,40 @@ public class RechargeActivity extends BaseTitleActivity<ActivityRechargeBinding>
                         super.onError(code, msg);
                     }
                 });
+    }
+
+    private void showTakeCoinInfo() {
+        if (mTakeCoinInfo == null || mCoinAuthConfig == null)
+            return;
+
+        String result = getString(R.string.recharge_desc, "USDT", mCoinContract.contract,
+                mCoinAddressInfo.confirmNum, mCoinAddressInfo.confirmNum,
+                String.valueOf(mCoinAuthConfig.amountLowLimit), "USDT", mCoinContract.contract);
+        int tagLength = String.valueOf("USDT" + mCoinContract.contract).length() + 2;
+        SpannableStringBuilder spannableString = new SpannableStringBuilder(result);
+        spannableString.setSpan(new ForegroundColorSpan(Color.parseColor("#357EEE")),
+                result.indexOf("USDT"), result.indexOf("USDT") + tagLength,
+                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        spannableString.setSpan(new ForegroundColorSpan(Color.parseColor("#FF7171")),
+                result.indexOf("3.") + 2, result.lastIndexOf("USDT") + tagLength,
+                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        bindRoot.rechargeDesc.setText(spannableString);
+    }
+
+    private void showCoinAddress(CoinAddress coinAddress) {
+        mCoinAddressInfo = coinAddress;
+        mCoinAddress = coinAddress.address;
+        Bitmap qrCode = QRCodeEncoder.createQRCode(coinAddress.address, 130);
+        bindRoot.qrAddress.setImageBitmap(qrCode);
+        bindRoot.coinAddress.setText(coinAddress.address);
 
         ApiUtil.apiService().selectTakeCoin(userData.uuid, String.valueOf(userData.uid), userData.token, AppConfig.DIAMOND_CURRENCY,
                 "4", String.valueOf(mCoinContract.contractId),
                 new Callback<TakeCoinInfo>() {
                     @Override
                     public void onResponse(TakeCoinInfo takeCoinInfo) {
-                        showTakeCoinInfo(takeCoinInfo);
+                        mTakeCoinInfo = takeCoinInfo;
+                        queryCoinAuthConfig();
                     }
 
                     @Override
@@ -148,28 +179,15 @@ public class RechargeActivity extends BaseTitleActivity<ActivityRechargeBinding>
                 });
     }
 
-    private void showTakeCoinInfo(TakeCoinInfo takeCoinInfo) {
-        if (takeCoinInfo == null)
-            return;
-
-        String result = getString(R.string.recharge_desc, "USDT", mCoinContract.contract,
-                String.valueOf(takeCoinInfo.detail.amountLowLimit), "USDT", mCoinContract.contract);
-        int tagLength = String.valueOf("USDT" + mCoinContract.contract).length() + 2;
-        SpannableStringBuilder spannableString = new SpannableStringBuilder(result);
-        spannableString.setSpan(new ForegroundColorSpan(Color.parseColor("#357EEE")),
-                result.indexOf("USDT"), result.indexOf("USDT") + tagLength,
-                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-        spannableString.setSpan(new ForegroundColorSpan(Color.parseColor("#FF7171")),
-                result.indexOf("3") + 2, result.lastIndexOf("USDT") + tagLength,
-                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-        bindRoot.rechargeDesc.setText(spannableString);
-    }
-
-    private void showCoinAddress(CoinAddress coinAddress) {
-        mCoinAddress = coinAddress.address;
-        Bitmap qrCode = QRCodeEncoder.createQRCode(coinAddress.address, 130);
-        bindRoot.qrAddress.setImageBitmap(qrCode);
-        bindRoot.coinAddress.setText(coinAddress.address);
+    private void queryCoinAuthConfig() {
+        ApiUtil.apiService().coinAuthConfig(userData.uuid, String.valueOf(userData.uid), userData.token, "4","3",
+                new Callback<CoinAuthConfig>() {
+                    @Override
+                    public void onResponse(CoinAuthConfig coinAuthConfig) {
+                        mCoinAuthConfig = coinAuthConfig;
+                        showTakeCoinInfo();
+                    }
+                });
     }
 
     @Override

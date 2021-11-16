@@ -106,7 +106,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
-                        android:text="鏈類型"
+                        android:text="@string/coin_contract_type"
                         android:textColor="@color/white"
                         android:textSize="@dimen/font_15" />
 
@@ -166,7 +166,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
                         android:layout_toRightOf="@+id/line"
-                        android:text="提现地址"
+                        android:text="@string/withdraw_address"
                         android:textColor="@color/white"
                         android:textSize="@dimen/font_15" />
 
@@ -189,7 +189,7 @@
                         android:layout_height="42dp"
                         android:layout_centerVertical="true"
                         android:background="@null"
-                        android:hint="請輸入提現地址"
+                        android:hint="@string/pls_input_withdrawal_address"
                         android:inputType="text"
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
@@ -217,7 +217,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
                         android:layout_toRightOf="@+id/line"
-                        android:text="提現金額"
+                        android:text="@string/withdrawal_amount"
                         android:textColor="@color/white"
                         android:textSize="@dimen/font_15" />
 
@@ -270,7 +270,7 @@
                         android:onClick="@{handler.click}"
                         android:paddingLeft="6dp"
                         android:paddingRight="6dp"
-                        android:text="全部提現"
+                        android:text="@string/withdrawal_all"
                         android:textColor="@color/white" />
 
                 </RelativeLayout>
@@ -297,7 +297,7 @@
                             android:layout_height="42dp"
                             android:layout_centerVertical="true"
                             android:background="@null"
-                            android:hint="簡訊驗證碼"
+                            android:hint="@string/sms_code"
                             android:inputType="numberDecimal"
                             android:paddingLeft="8dp"
                             android:paddingRight="8dp"
@@ -321,7 +321,7 @@
                         android:onClick="@{handler.click}"
                         android:paddingLeft="6dp"
                         android:paddingRight="6dp"
-                        android:text="獲取驗證碼"
+                        android:text="@string/get_sms_code"
                         android:textColor="@color/white" />
 
                 </RelativeLayout>
@@ -363,18 +363,20 @@
 
                 <TextView
                     android:id="@+id/withdrawDesc"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="18dp"
+                    android:gravity="left"
                     android:layout_toRightOf="@+id/line"
                     android:textColor="@color/white"
                     android:textSize="@dimen/font_13" />
 
                 <TextView
                     android:id="@+id/withdrawDesc_"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="24dp"
+                    android:gravity="left"
                     android:layout_toRightOf="@+id/line"
                     android:text="@string/withdraw_desc_"
                     android:textColor="@color/font_red"

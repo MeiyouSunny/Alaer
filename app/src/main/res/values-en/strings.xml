@@ -408,7 +408,7 @@
     <string name="task_hint">Complete the metauniverse daily task to obtain more rewards</string>
     <string name="exploring_metauniverse">Exploring the Metauniverse</string>
     <string name="welcome_join_metauniverse">Welcome to join the Metauniverse</string>
-    <string name="mnc_service_disclaimer">MNC service disclaimer</string>
+    <string name="mnc_service_disclaimer">MNC service disclaimer of liability</string>
     <string name="mnc_service_disclaimer_url">https://files.metaversenetwork.ai/html_en/MNC_DISCLAIMER_OF_LIABILITY-ENG.html</string>
     <string name="honor_value_desc">Honor value description</string>
     <string name="record">Record</string>
@@ -446,6 +446,7 @@
     <string name="wallet_address_copy_success">The wallet address is copied successfully!</string>
     <string name="not_reached_minimum_limit">Your withdrawal amount has not reached the minimum currency limit, please modify your withdrawal amount</string>
     <string name="exceeds_maximum_limit">Your withdrawal amount exceeds the maximum currency limit, please modify your withdrawal amount</string>
+    <string name="exceeds_balance_amount">Your withdrawal amount exceeds the current balance, please modify your withdrawal amount</string>
     <string name="withdraw_status_0">Unreviewed</string>
     <string name="withdraw_status_1">Reviewed</string>
     <string name="withdraw_status_4">Financial review failed</string>
@@ -455,18 +456,18 @@
     <string name="withdraw_status_6">Withdrawal (not transferred)</string>
     <string name="withdraw_status_7">Withdrawal (transferred)</string>
     <string name="withdraw_desc">
-        1. %1$s Minimum Withdrawal Quantity: %2$s.\n
-2. A certain handling fee will be deducted for the withdrawal operation.\n
-3. Please make sure that the withdrawal address and chain type are correct. If an error occurs, the withdrawal will fail.
+1. %1$s Minimum Withdrawal Quantity: %2$s.
+\n2. A certain handling fee will be deducted for the withdrawal operation.
+\n3. Please make sure that the withdrawal address and chain type are correct. If an error occurs, the withdrawal will fail.
     </string>
     <string name="withdraw_desc_">
 ● In order to ensure that your funds are in accordance with, if your login password or redemption password is changed, it will take 24 hours to withdraw money.
     </string>
     <string name="recharge_desc">
-1. Do not recharge any non- %1$s(%2$s) assets to the above address, otherwise the assets will not be retrieved.\n
-2. After you recharge to the above address, you need the confirmation of the entire network node. After 10 network confirmations, it will be credited. After 20 network confirmations, you can withdraw coins.\n
-3. Minimum recharge amount: %3$s %4$s(%5$s), recharge less than the minimum amount will not be credited to the account and cannot be returned.\n
-4. Your recharge address will not change frequently, you can recharge; if there is any change, we will try our best to notify you via website announcement or SMS.
+1. Do not recharge any non- %1$s(%2$s) assets to the above address, otherwise the assets will not be retrieved.
+\n2. After you recharge to the above address, you need the confirmation of the entire network node. After %3$d network confirmations, it will be credited. After %4$d network confirmations, you can withdraw coins.
+\n3. Minimum recharge amount: %5$s %6$s(%7$s), recharge less than the minimum amount will not be credited to the account and cannot be returned.
+\n4. Your recharge address will not change frequently, you can recharge; if there is any change, we will try our best to notify you via website announcement or SMS.
     </string>
     <string name="recharge_desc_">
 ● Please confirm the address before recharging. If the recharging address is wrong or fails to operate according to the above requirements, the user shall bear the consequences.
@@ -474,5 +475,13 @@
     <string name="update_content">What\'s updated:</string>
     <string name="update_now">Update now</string>
     <string name="mnc_operations_team">MNC Operations Team</string>
+    <string name="recharge_address">Recharge address</string>
+    <string name="copy_address">Copy address</string>
+    <string name="recharge_reminder">Recharge reminder</string>
+    <string name="pls_input_withdrawal_address">Please enter the withdrawal address</string>
+    <string name="withdrawal_amount">Withdrawal Amount</string>
+    <string name="withdrawal_all">All</string>
+    <string name="sms_code">Input SMS verification code</string>
+    <string name="get_sms_code">Send SMS</string>
 
 </resources>

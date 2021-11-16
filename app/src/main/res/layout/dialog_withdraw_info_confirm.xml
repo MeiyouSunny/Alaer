@@ -44,13 +44,13 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="80dp"
+                    android:layout_width="92dp"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="6dp"
                     android:gravity="right"
                     android:text="@string/assets_select"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/font_16" />
+                    android:textSize="@dimen/font_14" />
 
                 <TextView
                     android:id="@+id/cardType"
@@ -77,13 +77,13 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="80dp"
+                    android:layout_width="92dp"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="6dp"
                     android:gravity="right"
                     android:text="@string/coin_contract_type"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/font_16" />
+                    android:textSize="@dimen/font_14" />
 
                 <TextView
                     android:id="@+id/name"
@@ -110,13 +110,13 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="80dp"
+                    android:layout_width="92dp"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="6dp"
                     android:gravity="right"
                     android:text="@string/withdraw_quanlity"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/font_16" />
+                    android:textSize="@dimen/font_14" />
 
                 <TextView
                     android:id="@+id/cardNo"
@@ -143,13 +143,13 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="80dp"
+                    android:layout_width="92dp"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="6dp"
                     android:gravity="right"
                     android:text="@string/withdraw_fee"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/font_16" />
+                    android:textSize="@dimen/font_14" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -175,13 +175,13 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="80dp"
+                    android:layout_width="92dp"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="6dp"
                     android:gravity="right"
                     android:text="@string/withdraw_address"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/font_16" />
+                    android:textSize="@dimen/font_14" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -189,12 +189,12 @@
                     android:layout_marginLeft="4dp"
                     android:background="@color/card_bg_trans"
                     android:gravity="center_vertical|left"
-                    android:lines="2"
+                    android:lines="3"
                     android:paddingLeft="12dp"
                     android:text="@{confirmInfo.coinAddress}"
                     android:textColor="@color/white"
                     android:textColorHint="@color/white"
-                    android:textSize="@dimen/font_14" />
+                    android:textSize="@dimen/font_13" />
 
             </LinearLayout>
 
@@ -205,7 +205,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="18dp"
             android:layout_marginTop="16dp"
-            android:layout_marginRight="45dp"
+            android:layout_marginRight="18dp"
             android:layout_marginBottom="18dp"
             android:gravity="left"
             android:text="@string/withdraw_dialog_confirm_hint"

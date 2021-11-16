@@ -122,6 +122,9 @@ public class AppUpgradeManager {
         // 是否已经下载过
         mApkFile = new File(savePath);
         if (mApkFile.exists()) {
+            if (mDownloadProgressListener != null) {
+                mDownloadProgressListener.downloadSuccess();
+            }
             startInstallApk(mApkFile);
             return;
         }

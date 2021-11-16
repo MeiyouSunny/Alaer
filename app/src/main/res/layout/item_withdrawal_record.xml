@@ -27,7 +27,7 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
+                android:layout_weight="3"
                 android:text="@{@string/time_is(record.createTime)}"
                 android:textColor="@color/white"
                 android:textSize="@dimen/font_14" />
@@ -36,9 +36,9 @@
                 android:id="@+id/contractType"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:textColor="@color/white"
-                android:textSize="@dimen/font_14" />
+                android:textSize="@dimen/font_13" />
 
         </LinearLayout>
 
@@ -53,7 +53,7 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
+                android:layout_weight="3"
                 android:text="@{@string/coin_type_is(record.currencyNameEn)}"
                 android:textColor="@color/white"
                 android:textSize="@dimen/font_14" />
@@ -61,7 +61,7 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:text="@{@string/quantity_is(String.valueOf(record.amount))}"
                 android:textColor="@color/white"
                 android:textSize="@dimen/font_14" />
@@ -78,7 +78,7 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
+                android:layout_weight="3"
                 android:text="@{@string/fee_is(record.fee)}"
                 android:textColor="@color/white"
                 android:textSize="@dimen/font_14" />
@@ -86,7 +86,7 @@
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:orientation="horizontal">
 
                 <TextView
@@ -100,8 +100,10 @@
                     android:id="@+id/status"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:singleLine="true"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/font_14" />
+                    android:textSize="@dimen/font_13" />
 
             </LinearLayout>
 

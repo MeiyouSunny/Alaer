@@ -226,7 +226,7 @@ public class WithdrawalActivity extends BaseTitleActivity<ActivityWithdrawalBind
         }
 
         if (amount > mTakeCoinInfo.resp.cashAmount) {
-            $.toast().text(R.string.exceeds_maximum_limit).show();
+            $.toast().text(R.string.exceeds_balance_amount).show();
             return;
         }
 

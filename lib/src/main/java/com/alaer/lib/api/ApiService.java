@@ -13,6 +13,7 @@ import com.alaer.lib.api.bean.CityMaster;
 import com.alaer.lib.api.bean.CityMasterDetail;
 import com.alaer.lib.api.bean.CityStatistic;
 import com.alaer.lib.api.bean.CoinAddress;
+import com.alaer.lib.api.bean.CoinAuthConfig;
 import com.alaer.lib.api.bean.CoinContract;
 import com.alaer.lib.api.bean.CommonQuestionList;
 import com.alaer.lib.api.bean.CurrencyRecord;
@@ -644,5 +645,13 @@ public interface ApiService {
                           @Part("actionId") String actionId, @Part("validate") String validate, @Part("msgCode") String msgCode,
                           @Part("phoneCode") String phoneCode, @Part("contractId") String contractId,
                           Callback<String> callback);
+
+    /**
+     * 获取手续费和限额
+     */
+    @GET("/coin/authConfig")
+    Call<CoinAuthConfig> coinAuthConfig(@Query("uuid") String uuid, @Query("uid") String uid,
+                                        @Query("token") String token, @Query("currencyId") String currencyId, @Query("actionId") String actionId,
+                                        Callback<CoinAuthConfig> callback);
 
 }

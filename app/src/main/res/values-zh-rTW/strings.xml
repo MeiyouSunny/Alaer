@@ -443,7 +443,7 @@
     <string name="recharge_success">成功</string>
     <string name="recharge_failed">失敗</string>
     <string name="available_alance_is">可用餘額：%s</string>
-    <string name="amount_low_limit_is">最小提幣數量%s</string>
+    <string name="amount_low_limit_is">最小提現數量%s</string>
     <string name="withdraw_info_confirm">提現資訊二次確認</string>
     <string name="withdraw_quanlity">提現數量</string>
     <string name="withdraw_fee">提現手續費</string>
@@ -456,6 +456,7 @@
     <string name="wallet_address_copy_success">錢包地址複製成功！</string>
     <string name="not_reached_minimum_limit">您的提幣數量未達到幣種的最小限額，請修改您的提幣數量</string>
     <string name="exceeds_maximum_limit">您的提幣數量超過幣種的最大限額，請修改您的提幣數量</string>
+    <string name="exceeds_balance_amount">您的提幣數量超過當前餘額，請修改您的提幣數量</string>
     <string name="withdraw_status_0">未審核</string>
     <string name="withdraw_status_1">已審核</string>
     <string name="withdraw_status_4">財務審核失敗</string>
@@ -464,18 +465,19 @@
     <string name="withdraw_status_5">風控審核失敗</string>
     <string name="withdraw_status_6">提幣中(未轉幣)</string>
     <string name="withdraw_status_7">提幣中(已轉幣)</string>
-    <string name="withdraw_desc">1. %1$s最小提現數量: %2$s。\n
-2. 提現操作將扣除一定的手續費。\n
-3. 請務必確認提現地址以及鏈類型正確，若發生錯誤將導致提現失敗。
+    <string name="withdraw_desc">
+1. %1$s最小提現數量: %2$s。
+\n2. 提現操作將扣除一定的手續費。
+\n3. 請務必確認提現地址以及鏈類型正確，若發生錯誤將導致提現失敗。
     </string>
     <string name="withdraw_desc_">
 ● 為確保您的資金按照，若您的登入密碼或者兌換密碼發生修改，將需要在24h後才可進行提現操作。
     </string>
     <string name="recharge_desc">
-        1. 請勿向上述地址充值任何非 %1$s（%2$s） 資產，否則資產將不可找回。\n
-2. 您充值至上述地址後，需要整個網絡節點的確認，10次網絡確認後到賬，20次網絡確認後可提幣。\n
-3. 最小充值金額∶ %3$s %4$s（%5$s），小於最小金額的充值將不會上賬且無法退回。\n
-4. 您的充值地址不會經常改變，可以重複充值;如有更改，我們會盡量通過網站公告或短信通知您。
+1. 請勿向上述地址充值任何非 %1$s（%2$s） 資產，否則資產將不可找回。
+\n2. 您充值至上述地址後，需要整個網絡節點的確認，%3$d次網絡確認後到賬，%4$d次網絡確認後可提幣。
+\n3. 最小充值金額∶ %5$s %6$s（%7$s），小於最小金額的充值將不會上賬且無法退回。
+\n4. 您的充值地址不會經常改變，可以重複充值;如有更改，我們會盡量通過網站公告或短信通知您。
     </string>
     <string name="recharge_desc_">
 ● 請您充值前務必確認地址,充值地址錯誤或未按上述要求操作，後果由用戶自行承擔。
@@ -483,5 +485,13 @@
     <string name="update_content">更新內容：</string>
     <string name="update_now">立即更新</string>
     <string name="mnc_operations_team">MNC運營團隊</string>
+    <string name="recharge_address">充值地址</string>
+    <string name="copy_address">複製地址</string>
+    <string name="recharge_reminder">充值提醒</string>
+    <string name="pls_input_withdrawal_address">請輸入提現地址</string>
+    <string name="withdrawal_amount">提現金額</string>
+    <string name="withdrawal_all">全部提現</string>
+    <string name="sms_code">短信驗證碼</string>
+    <string name="get_sms_code">獲取驗證碼</string>
 
 </resources>
