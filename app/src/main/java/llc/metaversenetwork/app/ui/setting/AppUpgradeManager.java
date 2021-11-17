@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
+import android.os.Handler;
+import android.os.Looper;
 import android.text.TextUtils;
 import android.view.Gravity;
 
@@ -13,9 +15,6 @@ import com.alaer.lib.api.Callback;
 import com.alaer.lib.api.bean.UpdateInfo;
 import com.alaer.lib.event.Event;
 import com.alaer.lib.event.EventUtil;
-import com.liulishuo.filedownloader.BaseDownloadTask;
-import com.liulishuo.filedownloader.FileDownloadListener;
-import com.liulishuo.filedownloader.FileDownloader;
 
 import java.io.File;
 
@@ -38,7 +37,7 @@ public class AppUpgradeManager {
 
     public AppUpgradeManager(Context context) {
         this.mContext = context;
-        FileDownloader.setup(context);
+//        FileDownloader.setup(context);
         EventBus.getDefault().register(this);
     }
 
@@ -118,16 +117,19 @@ public class AppUpgradeManager {
         String url = updateInfo.appUrl;
         if (TextUtils.isEmpty(url)) return;
         String saveName = url.substring(url.lastIndexOf('/') + 1);
-        String savePath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getAbsolutePath() + File.separator + saveName;
+        String savePath = mContext.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS).getAbsolutePath() + File.separator + saveName;
         // 是否已经下载过
         mApkFile = new File(savePath);
-        if (mApkFile.exists()) {
-            if (mDownloadProgressListener != null) {
-                mDownloadProgressListener.downloadSuccess();
-            }
-            startInstallApk(mApkFile);
-            return;
-        }
+        if (mApkFile.exists())
+            mApkFile.delete();
+//        if (mApkFile.exists()) {
+//            if (mDownloadProgressListener != null) {
+//                mDownloadProgressListener.downloadSuccess();
+//            }
+//            startInstallApk(mApkFile);
+//            return;
+//        }
+        mApkFile.getParentFile().mkdirs();
 
 //        DialogDownloadApk dialogDownloadApk = new DialogDownloadApk();
 //        Dialogger.newDialog(mContext).holder(dialogDownloadApk)
@@ -137,47 +139,41 @@ public class AppUpgradeManager {
         startDownloadApk(url, savePath);
     }
 
+    private Handler mHandler = new Handler(Looper.getMainLooper());
+
     public void startDownloadApk(String apkUrl, String apkSavePath) {
-        FileDownloader.getImpl().create(apkUrl).setPath(apkSavePath)
-                .setListener(new FileDownloadListener() {
+        DownloadUtil.get().download(apkUrl, apkSavePath,
+                new DownloadUtil.OnDownloadListener() {
                     @Override
-                    protected void pending(BaseDownloadTask task, int soFarBytes, int totalBytes) {
-
+                    public void onDownloadSuccess() {
+                        mHandler.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                if (mDownloadProgressListener != null) {
+                                    mDownloadProgressListener.downloadSuccess();
+                                }
+                                mApkFile = new File(apkSavePath);
+                                startInstallApk(mApkFile);
+                            }
+                        });
                     }
 
                     @Override
-                    protected void progress(BaseDownloadTask task, int soFarBytes, int totalBytes) {
-                        if (mDownloadProgressListener != null) {
-                            int progress = (int) (((float) soFarBytes / totalBytes) * 100);
-                            mDownloadProgressListener.downloadProgress(progress, totalBytes);
-                        }
+                    public void onDownloading(int progress) {
+                        mHandler.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                if (mDownloadProgressListener != null) {
+                                    mDownloadProgressListener.downloadProgress(progress, 100);
+                                }
+                            }
+                        });
                     }
 
                     @Override
-                    protected void completed(BaseDownloadTask task) {
-                        if (mDownloadProgressListener != null) {
-                            mDownloadProgressListener.downloadSuccess();
-                        }
-                        mApkFile = new File(task.getPath());
-                        startInstallApk(mApkFile);
+                    public void onDownloadFailed() {
                     }
-
-                    @Override
-                    protected void paused(BaseDownloadTask task, int soFarBytes, int totalBytes) {
-
-                    }
-
-                    @Override
-                    protected void error(BaseDownloadTask task, Throwable e) {
-
-                    }
-
-                    @Override
-                    protected void warn(BaseDownloadTask task) {
-
-                    }
-                }).start();
-
+                });
     }
 
     private void deleteApkIfExist(String apkPath) {
