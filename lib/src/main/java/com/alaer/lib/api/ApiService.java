@@ -419,6 +419,15 @@ public interface ApiService {
                               Callback<String> callback);
 
     /**
+     * 获取验证码
+     * 操作类型：0.注册；1.重置密码
+     */
+    @GET("/user/vcode")
+    Call<String> getPhoneCode2(@Query("uuid") String uuid, @Query("uid") String uid, @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
+                              @Query("validate") String validate, @Query("captchaId") String captchaId, @Query("type") int type,@Query("email") String email,
+                              Callback<String> callback);
+
+    /**
      * 修改交易密码
      */
     @FormBody

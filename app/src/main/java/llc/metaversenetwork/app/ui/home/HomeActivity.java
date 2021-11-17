@@ -359,7 +359,7 @@ public class HomeActivity extends BaseViewBindActivity<ActivityHomeBinding> impl
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Subscribe(threadMode = ThreadMode.MainThread)
     public void onEvent(Event event) {
-        if (EventUtil.isInstallRequestPermission(event) && event.data == this) {
+        if (EventUtil.isInstallRequestPermission(event)) {
             requestInstallApkPermission();
         } else if (EventUtil.isTokenInvalid(event)) {
             UserDataUtil.instance().clearUserDatas();

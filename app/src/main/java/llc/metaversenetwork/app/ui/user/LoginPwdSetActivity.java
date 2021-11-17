@@ -104,8 +104,9 @@ public class LoginPwdSetActivity extends BaseTitleActivity<ActivityLoginPwdSetBi
     }
 
     private void sendPhoneCode(String validate) {
-        ApiUtil.apiService().getPhoneCode(userData.uuid, String.valueOf(userData.uid), userData.token, AppConfig.DIAMOND_CURRENCY,
-                validate, AppConfig.VERIFY_ID, 2,
+        final String phone = $.config().getString("phone");
+        ApiUtil.apiService().getPhoneCode2(userData.uuid, String.valueOf(userData.uid), userData.token, AppConfig.DIAMOND_CURRENCY,
+                validate, AppConfig.VERIFY_ID, 1, phone,
                 new Callback<String>() {
                     @Override
                     public void onResponse(String response) {

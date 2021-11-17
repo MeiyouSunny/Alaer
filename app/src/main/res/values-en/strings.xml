@@ -136,8 +136,8 @@
     <string name="mine">Mine</string>
     <string name="contribution_value">Contribution value:%s</string>
     <string name="total_assets">Total assets: (¥)</string>
-    <string name="fruit">MetaMine stones</string>
-    <string name="build_integral">Metaverse integral</string>
+    <string name="fruit">WMNC</string>
+    <string name="build_integral">MNC</string>
     <string name="mnc_unit">Metaverse integral</string>
     <string name="build_integral_detail">Metaverse integral MNC details</string>
     <string name="sapling_activity">Detector activity</string>

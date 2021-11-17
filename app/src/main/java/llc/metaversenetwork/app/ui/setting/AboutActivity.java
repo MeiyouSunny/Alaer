@@ -71,7 +71,7 @@ public class AboutActivity extends BaseTitleActivity<ActivityAboutBinding> {
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Subscribe(threadMode = ThreadMode.MainThread)
     public void onEvent(Event event) {
-        if (EventUtil.isInstallRequestPermission(event) && event.data == this) {
+        if (EventUtil.isInstallRequestPermission(event)) {
             requestInstallApkPermission();
         } else if (EventUtil.isTokenInvalid(event)) {
             UserDataUtil.instance().clearUserDatas();
