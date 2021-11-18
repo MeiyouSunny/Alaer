@@ -48,7 +48,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="6dp"
                     android:gravity="right"
-                    android:text="@string/assets_select"
+                    android:text="@string/currency_select"
                     android:textColor="@color/white"
                     android:textSize="@dimen/font_14" />
 
@@ -171,6 +171,7 @@
                 android:layout_height="60dp"
                 android:layout_marginLeft="12dp"
                 android:layout_marginRight="12dp"
+                android:layout_marginTop="8dp"
                 android:gravity="center"
                 android:orientation="horizontal">
 
@@ -185,7 +186,7 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="42dp"
+                    android:layout_height="60dp"
                     android:layout_marginLeft="4dp"
                     android:background="@color/card_bg_trans"
                     android:gravity="center_vertical|left"

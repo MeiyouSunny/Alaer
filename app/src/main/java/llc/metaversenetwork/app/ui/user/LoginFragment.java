@@ -133,6 +133,7 @@ public class LoginFragment extends BaseBindFragment<FragmentLoginBinding> {
                                     @Override
                                     public void onResponse(TeamDetail teamDetail) {
                                         UserDataUtil.instance().saveTeamDetailInfo(teamDetail);
+                                        HomeActivity.isFirstOpen = true;
                                         ViewUtil.gotoActivity(getContext(), HomeActivity.class);
                                         getActivity().finish();
                                     }

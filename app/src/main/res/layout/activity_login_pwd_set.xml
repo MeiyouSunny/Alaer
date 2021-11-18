@@ -46,7 +46,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="87dp"
                 android:layout_marginTop="54dp"
-                android:text="@string/pls_make_not_same_with_pwd"
+                android:text="@string/pls_make_not_same_with_second_pwd"
                 android:textColor="@color/white"
                 android:textSize="@dimen/font_12" />
 
@@ -75,7 +75,7 @@
                         android:layout_toLeftOf="@+id/icClear"
                         android:background="@null"
                         android:gravity="center_vertical"
-                        android:hint="@string/pwd_invalid"
+                        android:hint="@string/pls_input_login_pwd"
                         android:inputType="textPassword"
                         android:maxLength="22"
                         android:singleLine="true"

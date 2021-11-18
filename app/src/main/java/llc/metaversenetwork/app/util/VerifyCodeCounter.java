@@ -6,6 +6,7 @@ import android.os.Message;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatButton;
+import llc.metaversenetwork.app.R;
 
 /**
  * 验证码倒计时
@@ -70,7 +71,7 @@ public class VerifyCodeCounter {
         count = COUNT_MAX;
         removeMsg();
         if (countView != null) {
-            countView.setText("發送");
+            countView.setText(R.string.send);
             countView.setEnabled(true);
         }
     }

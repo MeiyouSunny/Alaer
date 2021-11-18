@@ -66,6 +66,7 @@ public class SetAvatarActivity extends BaseTitleActivity<ActivitySetAvatarBindin
                 if (!TextUtils.isEmpty(mPicUrl)) {
                     showSecondPwdDialog();
                 } else {
+                    autoShowPwdDialog = true;
                     uploadPic(imagePath);
                 }
                 break;
@@ -93,6 +94,7 @@ public class SetAvatarActivity extends BaseTitleActivity<ActivitySetAvatarBindin
                 bindRoot.ivAvatar.setVisibility(View.VISIBLE);
                 bindRoot.ivAvatar.setImageURI(selectedImage);
                 bindRoot.submit.setEnabled(true);
+                autoShowPwdDialog = false;
                 uploadPic(imagePath);
             }
         }
@@ -105,6 +107,8 @@ public class SetAvatarActivity extends BaseTitleActivity<ActivitySetAvatarBindin
         uploader.upload(imagePath);
     }
 
+    boolean autoShowPwdDialog;
+
     @Override
     public void onUploadResult(boolean success, String picUrl) {
         if (!success) {
@@ -113,7 +117,8 @@ public class SetAvatarActivity extends BaseTitleActivity<ActivitySetAvatarBindin
         }
         if (!TextUtils.isEmpty(picUrl)) {
             mPicUrl = picUrl;
-            showSecondPwdDialog();
+            if (autoShowPwdDialog)
+                showSecondPwdDialog();
         }
     }
 

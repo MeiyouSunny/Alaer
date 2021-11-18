@@ -15,11 +15,11 @@
     <string name="welcome_to_digital_alaer">歡迎來到元宇宙</string>
     <string name="account_3D_login_directly">3D視界用戶可直接帳號登入</string>
     <string name="phone_no">手機號碼</string>
-    <string name="pls_input_phone">請輸入手機號</string>
+    <string name="pls_input_phone">請輸入手機號碼</string>
     <string name="pls_input_valid_phone">請輸入正確的手機號</string>
     <string name="password">密碼</string>
     <string name="pls_input_pwd_short">請輸入密碼</string>
-    <string name="pls_input_pwd">請輸入8-16比特數位加字母密碼</string>
+    <string name="pls_input_pwd">密碼至少由字母+數字組成，長度8-16位</string>
     <string name="regist_account">申請</string>
     <string name="forget_pwd">忘記密碼</string>
     <string name="apply">申請</string>
@@ -30,7 +30,8 @@
     <string name="login_now">立即進入</string>
     <string name="input_pwd">輸入密碼</string>
     <string name="confirm_pwd">確認密碼</string>
-    <string name="pls_input_pwd_again">請再次輸入密碼</string>
+    <string name="pls_input_login_pwd">請輸入登入密碼</string>
+    <string name="pls_input_pwd_again">請再次輸入登入密碼</string>
     <string name="pls_input_invitate_code">請輸入邀請碼</string>
     <string name="reset_pwd">重置密碼</string>
     <string name="mail">郵箱</string>
@@ -40,12 +41,12 @@
     <string name="confirm">確定</string>
     <string name="vierify_code">驗證碼</string>
     <string name="pwd_not_same">兩次輸入的密碼不一致！</string>
-    <string name="verify_code_send_ok">驗證碼已發送！</string>
+    <string name="verify_code_send_ok">驗證碼發送成功</string>
     <string name="regist_success">恭喜您，註冊成功！</string>
     <string name="reset_pwd_success">密碼修改成功！</string>
     <string name="use_mean_agree">登入/申請即代表您同意</string>
     <string name="alaer_agreement">元宇宙使用者協定、隱私政策</string>
-    <string name="pwd_invalid">請輸入8-16位字母+數字密碼</string>
+    <string name="pwd_invalid">密碼至少由字母+數字組成，長度8-16位</string>
     <string name="produce_base">生產基地</string>
     <string name="produce_hall">我的元宇宙</string>
     <string name="produce_base_with_arrow">生產基地&gt;</string>
@@ -230,6 +231,7 @@
     <string name="inviter_info">邀請人資訊</string>
     <string name="second_pwd">兌換密碼</string>
     <string name="second_pwd_set">兌換密碼設定</string>
+    <string name="pls_make_not_same_with_second_pwd">請不要和兌換密碼一致</string>
     <string name="pls_make_not_same_with_pwd">請不要和登入密碼一致</string>
     <string name="pls_input_second_pwd">請輸入兌換密碼</string>
     <string name="pls_input_second_pwd_again">請再次輸入兌換密碼</string>
@@ -257,7 +259,7 @@
     <string name="contribution">貢獻值</string>
     <string name="contribution_is">活躍度：%s</string>
     <string name="contribution_detail">貢獻值明細</string>
-    <string name="user_level_free_rate_is">2、繳納手續費占比%d%%</string>
+    <string name="user_level_free_rate_is">2、兌換手續費%d%%</string>
     <string name="contribution_info_is">貢獻值：%d</string>
     <string name="exchange_explain">兌換說明</string>
     <string name="contribution_explain">貢獻值說明</string>
@@ -395,7 +397,6 @@
     <string name="failed">失敗</string>
     <string name="withdrawal_record">提現記錄</string>
     <string name="assets_exchange">資產兌換</string>
-    <string name="assets_select">資產選擇</string>
     <string name="input_exchange_amount">請輸入兌換數量</string>
     <string name="convert_assets">轉換資產</string>
     <string name="exchange_type">兌換類型：</string>
@@ -444,10 +445,10 @@
     <string name="recharge_failed">失敗</string>
     <string name="available_alance_is">可用餘額：%s</string>
     <string name="amount_low_limit_is">最小提現數量%s</string>
-    <string name="withdraw_info_confirm">提現資訊二次確認</string>
+    <string name="withdraw_info_confirm">提現信息二次確認</string>
     <string name="withdraw_quanlity">提現數量</string>
     <string name="withdraw_fee">提現手續費</string>
-    <string name="withdraw_dialog_confirm_hint">我承諾本次交易申請的提幣地址完全正確，如果地址有誤後果本人承擔</string>
+    <string name="withdraw_dialog_confirm_hint">我承諾本次交易申請的提現地址完全正確，若地址有誤，後果由本人自行承擔與平台無關。</string>
     <string name="withdraw_address">提現地址</string>
     <string name="withdraw_success">提現成功！</string>
     <string name="login_pwd">登入密碼</string>

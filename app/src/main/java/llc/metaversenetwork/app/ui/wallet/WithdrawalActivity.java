@@ -173,7 +173,7 @@ public class WithdrawalActivity extends BaseTitleActivity<ActivityWithdrawalBind
         String result = getString(R.string.withdraw_desc, "USDT", String.valueOf(mTakeCoinInfo.detail.amountLowLimit));
         SpannableStringBuilder spannableString = new SpannableStringBuilder(result);
         spannableString.setSpan(new ForegroundColorSpan(Color.parseColor("#FF7171")),
-                0, result.indexOf(String.valueOf(mTakeCoinInfo.detail.amountLowLimit)) + String.valueOf(mTakeCoinInfo.detail.amountLowLimit).length(),
+                0, result.indexOf(String.valueOf(mTakeCoinInfo.detail.amountLowLimit)) + String.valueOf(mTakeCoinInfo.detail.amountLowLimit).length() + 1,
                 Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         bindRoot.withdrawDesc.setText(spannableString);
     }

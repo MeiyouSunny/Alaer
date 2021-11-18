@@ -52,7 +52,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
-                        android:text="@string/assets_select"
+                        android:text="@string/currency_select"
                         android:textColor="@color/white"
                         android:textSize="@dimen/font_15" />
 

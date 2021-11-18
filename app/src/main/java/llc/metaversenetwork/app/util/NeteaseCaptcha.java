@@ -9,6 +9,7 @@ import com.netease.nis.captcha.CaptchaConfiguration;
 import com.netease.nis.captcha.CaptchaListener;
 
 import androidx.annotation.IntDef;
+import likly.dollar.$;
 
 /**
  * 网页行为验证
@@ -31,9 +32,10 @@ public class NeteaseCaptcha {
     }
 
     private void verifyCode(Context context, @STEP int step, OnCaptchaListener listener) {
+        boolean isDefault = $.config().getBoolean("defaultLanguage", true);
         final CaptchaConfiguration configuration = new CaptchaConfiguration.Builder()
                 .captchaId(AppConfig.VERIFY_ID)
-                .languageType(CaptchaConfiguration.LangType.LANG_ZH_TW)
+                .languageType(isDefault ? CaptchaConfiguration.LangType.LANG_ZH_TW : CaptchaConfiguration.LangType.LANG_EN)
                 .listener(new CaptchaListener() {
                     @Override
                     public void onReady() {

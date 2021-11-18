@@ -88,7 +88,7 @@ public class HomeActivity extends BaseViewBindActivity<ActivityHomeBinding> impl
         initData();
     }
 
-    private static boolean isFirstOpen = true;
+    public static boolean isFirstOpen = true;
 
     @Override
     public void onResume() {
@@ -289,8 +289,6 @@ public class HomeActivity extends BaseViewBindActivity<ActivityHomeBinding> impl
 //            JzvdStd.startFullscreenDirectly(this, JzvdStd.class, AppConfig.GO_INTO_ALAER_VIDEO, getString(R.string.go_into_alaer));
             VideoActivity.startPlayFroResult(this, null, 1);
         } else if (position == 4) {
-            ViewUtil.gotoAuthPage(this);
-        } else if (position == 5) {
             ViewUtil.gotoAuthPage(this);
         } else {
             ViewUtil.gotoActivity(this, mPageClasses[position]);
