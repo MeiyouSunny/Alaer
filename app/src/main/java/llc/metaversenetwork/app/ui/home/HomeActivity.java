@@ -64,12 +64,13 @@ import llc.metaversenetwork.app.util.LocaleUtil;
 import llc.metaversenetwork.app.util.NumberUtils;
 import llc.metaversenetwork.app.util.ViewUtil;
 import llc.metaversenetwork.app.view.mapview.MapContainer;
+import llc.metaversenetwork.app.view.mapview.MapView;
 import llc.metaversenetwork.app.view.mapview.Marker;
 
 @MvpBinder(
         presenter = HomePresenterImpl.class
 )
-public class HomeActivity extends BaseViewBindActivity<ActivityHomeBinding> implements HomeView, MapContainer.OnMarkerClickListner {
+public class HomeActivity extends BaseViewBindActivity<ActivityHomeBinding> implements HomeView, MapContainer.OnMarkerClickListner, MapView.OnAutoMoveListener {
 
     @Override
     protected int layoutId() {
@@ -95,8 +96,14 @@ public class HomeActivity extends BaseViewBindActivity<ActivityHomeBinding> impl
         super.onResume();
         refreshProfile();
         if (isFirstOpen) {
-            LocaleUtil.restoreLanguage(HomeActivity.this);
             isFirstOpen = false;
+            boolean firstUse = $.config().getBoolean("firstUse", true);
+            if (firstUse) {
+                $.config().putBoolean("firstUse", false);
+                return;
+            }
+            new AppUpgradeManager(this).checkUpdate(false);
+            LocaleUtil.restoreLanguage(HomeActivity.this);
         }
     }
 
@@ -257,13 +264,16 @@ public class HomeActivity extends BaseViewBindActivity<ActivityHomeBinding> impl
         getSaveData();
         initData();
         queryNotices();
-        requestPermission();
         bindRoot.notice.requestFocus();
 
-        if (isFirstOpen) {
-            new AppUpgradeManager(this).checkUpdate(false);
-            showWelcomeDialog();
-        }
+        bindRoot.map.getMapView().setAutoMoveListener(this);
+    }
+
+    @Override
+    public void autoMoveComplete() {
+        new AppUpgradeManager(this).checkUpdate(false);
+        showWelcomeDialog();
+        requestPermission();
     }
 
     private void showWelcomeDialog() {

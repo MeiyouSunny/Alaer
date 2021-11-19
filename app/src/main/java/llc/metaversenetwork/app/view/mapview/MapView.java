@@ -5,6 +5,9 @@ import android.graphics.Matrix;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
 import android.util.AttributeSet;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
@@ -12,8 +15,10 @@ import android.view.ScaleGestureDetector;
 import android.view.ViewConfiguration;
 import android.view.ViewTreeObserver;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.widget.AppCompatImageView;
+import likly.dollar.$;
 
 public class MapView extends AppCompatImageView implements ViewTreeObserver.OnGlobalLayoutListener, ScaleGestureDetector.OnScaleGestureListener {
 
@@ -43,7 +48,49 @@ public class MapView extends AppCompatImageView implements ViewTreeObserver.OnGl
 //        mScaleGestureDetector = new ScaleGestureDetector(context, this);
 //        mGestureDetector = initGestureDetector(context);
         mTouchSlop = ViewConfiguration.get(context).getScaledTouchSlop();
+
+        autoMove();
     }
+
+    public interface OnAutoMoveListener {
+        void autoMoveComplete();
+    }
+
+    private OnAutoMoveListener mMoveListener;
+
+    public void setAutoMoveListener(OnAutoMoveListener listener) {
+        mMoveListener = listener;
+    }
+
+    private void autoMove() {
+        boolean autoMove = $.config().getBoolean("autoMove", true);
+        if (autoMove) {
+            mHandler.sendEmptyMessageDelayed(0, 50);
+            $.config().putBoolean("autoMove", false);
+        }
+    }
+
+    Handler mHandler = new Handler(Looper.getMainLooper()) {
+        @Override
+        public void handleMessage(@NonNull Message msg) {
+            int dx = 0;
+            if (mMoveType == 1) {
+                dx = -10;
+            } else if (mMoveType == 2) {
+                dx = 10;
+            } else {
+                mHandler.removeMessages(0);
+                if (mMoveListener != null)
+                    mMoveListener.autoMoveComplete();
+                return;
+            }
+            checkBoderAndCenter();
+            mScaleMatrix.postTranslate(dx, 0);
+            setImageMatrix(mScaleMatrix);
+            mHandler.sendEmptyMessageDelayed(0, 20);
+            onChangedListner.onChanged(getMatrixRect());
+        }
+    };
 
     private GestureDetector initGestureDetector(Context context) {
         GestureDetector.SimpleOnGestureListener listner = new GestureDetector.SimpleOnGestureListener() {
@@ -92,7 +139,8 @@ public class MapView extends AppCompatImageView implements ViewTreeObserver.OnGl
                 SCALE_ADAPTIVE = Math.max(width * 1f / iWidth, height * 1f / iHeight);
             }
 
-            mScaleMatrix.postTranslate((width - iWidth) * 1f / 2, (height - iHeight) * 1f / 2);
+            mScaleMatrix.postTranslate(0, (height - iHeight) * 1f / 2);
+//            mScaleMatrix.postTranslate((width - iWidth) * 1f / 2, (height - iHeight) * 1f / 2);
             mScaleMatrix.postScale(SCALE_ADAPTIVE, SCALE_ADAPTIVE, width * 1f / 2, height * 1f / 2);
             setImageMatrix(mScaleMatrix);
             onChangedListner.onChanged(getMatrixRect());
@@ -232,8 +280,21 @@ public class MapView extends AppCompatImageView implements ViewTreeObserver.OnGl
     int mLastY;
     int mLastPointCount;
 
+    int mMoveType = 1;
+    float lastRight = 0;
+
     private void checkBoderAndCenter() {
         RectF rect = getMatrixRect();
+        if (lastRight == rect.right) {
+            mMoveType++;
+            return;
+        } else {
+            lastRight = rect.right;
+        }
+//        if (mMoveType == 2) {
+//            return false;
+//        }
+
         int width = getWidth();
         int height = getHeight();
 
