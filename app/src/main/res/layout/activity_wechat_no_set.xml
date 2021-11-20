@@ -5,9 +5,15 @@
 
     <data>
 
+        <import type="android.view.View" />
+
         <variable
             name="handler"
             type="llc.metaversenetwork.app.base.BindClickListener" />
+
+        <variable
+            name="inputValid"
+            type="boolean" />
     </data>
 
     <LinearLayout xmlns:tools="http://schemas.android.com/tools"
@@ -54,6 +60,7 @@
                 tools:text="@string/wechat_no_set_warning" />
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/layoutInput"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:layout_marginLeft="28dp"
@@ -95,6 +102,18 @@
                 </RelativeLayout>
 
             </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/invalid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layoutInput"
+                android:layout_marginLeft="28dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="18dp"
+                android:textColor="@color/font_red"
+                android:visibility="@{inputValid ?  View.GONE :View.VISIBLE}"
+                tools:text="@string/wechat_no_modify_warning" />
 
             <TextView
                 android:id="@+id/profileConsume"

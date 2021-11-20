@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">MNC</string>
     <string name="new_version">Latest version %s</string>
-    <string name="my_city">My Metaverse</string>
+    <string name="my_city">MNC Planets</string>
     <string name="nike_name">Nickname:</string>
     <string name="good_cityer">Metaverse  integral:</string>
     <string name="farm">Metaverse</string>
@@ -57,7 +57,7 @@
     <string name="disinsection">Found metaMine</string>
     <string name="reap">Harvest metaMine</string>
     <string name="speed_up">Accelerate</string>
-    <string name="seed_store">Metaverse Store</string>
+    <string name="seed_store">Metaverse shop</string>
     <string name="time_remain">%s Remains</string>
     <string name="pls_produce_tomorrow">Please continue tomorrow</string>
     <string name="seed_try">Novice detector</string>
@@ -79,13 +79,13 @@
     <string name="cultivation_time_is">Exploration time:%s</string>
     <string name="cultivation_days_is">Exploration days:%d days</string>
     <string name="has_exchanged_is">Redeemed:%d /%d</string>
-    <string name="exchanged_full">Exchange finished</string>
+    <string name="exchanged_full">Redeemed</string>
     <string name="get_for_free">Free collection</string>
     <string name="renewal">Renewal</string>
     <string name="get_by_start_user">Star digital citizen gift</string>
     <string name="get_by_activity">Activity gift</string>
-    <string name="has_get_try_seed">Sorry, I have picked up the Novice detector!</string>
-    <string name="seed_sold_out_all">Sorry, it has been redeemed!</string>
+    <string name="has_get_try_seed">Sorry, you have already received the novice detector</string>
+    <string name="seed_sold_out_all">Sorry, it has been redeemed</string>
     <string name="look_my_seeds">Check my detectors</string>
     <string name="cancel">Cancel</string>
     <string name="seed_buyed_is">You have exchanged a detecor:%s</string>
@@ -125,7 +125,7 @@
     <string name="go_exchange_goods">Go to exchange</string>
     <string name="goods_exchange">Commodity exchange</string>
     <string name="government_hall">Digital membership application</string>
-    <string name="real_name_auth">Verified</string>
+    <string name="real_name_auth">Authentication</string>
     <string name="make_sure_security_warning">To ensure your account security and improve service quality, please go to authentication</string>
     <string name="auth_success">Congratulations on completing your identity authentication!</string>
     <string name="share_now">Share now</string>
@@ -249,11 +249,11 @@
     <string name="system_settings">System settings</string>
     <string name="access_point">Access point</string>
     <string name="exit">Exit</string>
-    <string name="account_heve_exit">Account has exited</string>
+    <string name="account_heve_exit">Account has been signed out</string>
     <string name="press_twice_exit">Press again to exit the Metaverse!</string>
     <string name="agree_and_continur">Agree and continue</string>
     <string name="not_agreement">disagree</string>
-    <string name="modify_success">Modification succeeded!</string>
+    <string name="modify_success">Successfully modified!</string>
     <string name="region_number">Area number</string>
     <string name="downloaded_size">Downloaded %d</string>
     <string name="contribution">Contribution</string>
@@ -269,7 +269,7 @@
     <string name="user_level_explain">User level description</string>
     <string name="will_open_soon">Features coming soon</string>
     <string name="no_tasks">No mission!</string>
-    <string name="function_not_open">This function is not open yet</string>
+    <string name="function_not_open">Features coming soon</string>
     <string name="city_note_apply">Metaverse node apply</string>
     <string name="city_population">Urban population</string>
     <string name="update_date_is">Updated on:%s</string>
@@ -341,7 +341,7 @@
     <string name="neptune">Neptune</string>
 
     <string name="my_seed">My detectors</string>
-    <string name="select_seed">Select detector</string>
+    <string name="select_seed">Detector purchase</string>
 
     <string name="system">System</string>
     <string name="my_wallet">Wallet</string>
@@ -414,7 +414,7 @@
     <string name="mnc_service_disclaimer_url">https://files.metaversenetwork.ai/html_en/MNC_DISCLAIMER_OF_LIABILITY-ENG.html</string>
     <string name="honor_value_desc">Honor value description</string>
     <string name="record">Record</string>
-    <string name="reward_honor_value_is">Reward honor value:%d</string>
+    <string name="reward_honor_value_is">Reward honor points:%d</string>
     <string name="vip_centre">Member center</string>
     <string name="burn_active_is">Burned Activity: %s</string>
     <string name="team_level_rule">Team level rules</string>
@@ -494,5 +494,8 @@
     <string name="welcome_to_mnc_digital_center">Welcome to Metaverse Digital Ecology</string>
     <string name="task_do_failed">Task not completed!</string>
     <string name="task_complete">Task completed!</string>
+    <string name="nick_length_limit">The length of the nickname is limited to 4-12 characters, letters, numbers or underscores.</string>
+    <string name="invate_code_length_limit">The length of the invitation code is limited to 4-12 digits, letters, numbers or underscores.</string>
+    <string name="telegram_length_limit">Telegram usernames are limited to 6-22 characters, letters, numbers or underscores.</string>
 
 </resources>

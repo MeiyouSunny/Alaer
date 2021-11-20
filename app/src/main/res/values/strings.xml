@@ -504,5 +504,8 @@
     <string name="welcome_to_mnc_digital_center">歡迎來到元宇宙數字生態</string>
     <string name="task_do_failed">任務未完成！</string>
     <string name="task_complete">任務已完成！</string>
+    <string name="nick_length_limit">暱稱長度限制4-12位，字母、數字或下劃線。</string>
+    <string name="invate_code_length_limit">邀請碼長度限制4-12位，字母、數字或下劃線。</string>
+    <string name="telegram_length_limit">Telegram用戶名限制6-22位，字母、數字或下劃線</string>
 
 </resources>

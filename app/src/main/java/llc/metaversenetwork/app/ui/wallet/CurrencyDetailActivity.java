@@ -20,6 +20,7 @@ import llc.metaversenetwork.app.databinding.ActivityWalletDetailBinding;
 import llc.metaversenetwork.app.ui.dialog.DialogNotAuth;
 import llc.metaversenetwork.app.util.CollectionUtils;
 import llc.metaversenetwork.app.util.NumberUtils;
+import llc.metaversenetwork.app.util.ToastUtil;
 import llc.metaversenetwork.app.util.ViewUtil;
 
 /**
@@ -91,9 +92,17 @@ public class CurrencyDetailActivity extends BaseTitleActivity<ActivityWalletDeta
     public void click(View view) {
         switch (view.getId()) {
             case R.id.recharge:
-                ViewUtil.gotoActivity(this, RechargeActivity.class);
+                if (bindRoot.getEnable()) {
+                    ViewUtil.gotoActivity(this, RechargeActivity.class);
+                } else {
+                    ToastUtil.text(R.string.function_not_open).show();
+                }
                 break;
             case R.id.withdrawal:
+                if (!bindRoot.getEnable()) {
+                    ToastUtil.text(R.string.function_not_open).show();
+                    break;
+                }
                 if (!UserDataUtil.instance().isAuthed()) {
                     showNotAuthDialog();
                 } else {

@@ -78,7 +78,7 @@
                     android:layout_height="28dp"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentBottom="true"
-                    android:background="@drawable/btn_wallet_recharge"
+                    android:background="@drawable/btn_wallet_withdrawal"
                     android:onClick="@{handler.click}"
                     android:text="@string/withdrawal"
                     android:textColor="@color/white"

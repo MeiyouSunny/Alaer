@@ -94,11 +94,13 @@ public class SetProfileActivity extends BaseTitleActivity<ActivityWechatNoSetBin
         bindRoot.input.setHint(intputHint);
         bindRoot.profileConsume.setText(profileConsume);
         bindRoot.icon.setImageResource(iconResId);
+        bindRoot.invalid.setText(resources.getStringArray(R.array.set_profile_length_limit)[type]);
+        bindRoot.setInputValid(true);
 
         bindRoot.input.addTextChangedListener(new SimpleTextWatcher() {
             @Override
             public void afterTextChanged(Editable editable) {
-                bindRoot.submit.setEnabled(!TextUtils.isEmpty(ViewUtil.getText(bindRoot.input)));
+                onInputChanged();
             }
         });
 
@@ -121,6 +123,19 @@ public class SetProfileActivity extends BaseTitleActivity<ActivityWechatNoSetBin
             bindRoot.input.setText(inputContent);
             bindRoot.input.setSelection(inputContent.length());
         }
+    }
+
+    private void onInputChanged() {
+        String input = ViewUtil.getText(bindRoot.input);
+        boolean valid = false;
+        if (type == WECHAT) {
+            valid = StringUtil.isValid6To22(input);
+        } else if (type == NIKE_NAME || type == INVITATE_CODE) {
+            valid = StringUtil.isValid4To12(input);
+        }
+        bindRoot.setInputValid(valid);
+
+        bindRoot.submit.setEnabled(valid);
     }
 
     @Override

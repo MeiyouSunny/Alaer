@@ -405,8 +405,7 @@ public interface ApiService {
     @FormBody
     @PUT("/mining/user/miner/renew")
     Call<String> seedRenewal(@Query("uuid") String uuid, @Query("uid") String uid, @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
-                             @Query("validate") String validate, @Query("captchaId") String captchaId, @Query("tradePhraseCode") String tradePhraseCode,
-                             @Query("userMinerId") int userMinerId,
+                             @Query("validate") String validate, @Query("captchaId") String captchaId, @Query("userMinerId") int userMinerId,
                              Callback<String> callback);
 
     /**

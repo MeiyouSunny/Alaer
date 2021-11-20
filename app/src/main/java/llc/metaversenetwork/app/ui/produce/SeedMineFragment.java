@@ -116,7 +116,8 @@ public class SeedMineFragment extends BaseBindFragment<FragmentSeedMineListBindi
         if (mSeed == null || mSeed.remainNum > 3)
             return;
         // 续期
-        showSecondPwdDialog();
+//        showSecondPwdDialog();
+        verifyCode();
     }
 
     private void showSecondPwdDialog() {
@@ -171,7 +172,7 @@ public class SeedMineFragment extends BaseBindFragment<FragmentSeedMineListBindi
 
     private void seedRenewal(String validate, String tradePhraseCode) {
         ApiUtil.apiService().seedRenewal(userData.uuid, String.valueOf(userData.uid), userData.token, AppConfig.DIAMOND_CURRENCY,
-                validate, AppConfig.VERIFY_ID, tradePhraseCode, mSeed.id,
+                validate, AppConfig.VERIFY_ID, mSeed.id,
                 new Callback<String>() {
                     @Override
                     public void onResponse(String response) {

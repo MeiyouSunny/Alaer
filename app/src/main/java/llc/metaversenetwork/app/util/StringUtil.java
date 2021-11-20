@@ -65,4 +65,16 @@ public class StringUtil {
         return text;
     }
 
+    public static boolean isValid4To12(String content) {
+        return !TextUtils.isEmpty(content)
+                && content.length() >= 4
+                && content.length() <= 12;
+    }
+
+    public static boolean isValid6To22(String content) {
+        return !TextUtils.isEmpty(content)
+                && content.length() >= 6
+                && content.length() <= 22;
+    }
+
 }

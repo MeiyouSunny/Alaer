@@ -46,6 +46,12 @@
         <item>@string/nike_name_set</item>
     </string-array>
 
+    <string-array name="set_profile_length_limit">
+        <item>@string/telegram_length_limit</item>
+        <item>@string/invate_code_length_limit</item>
+        <item>@string/nick_length_limit</item>
+    </string-array>
+
     <string-array name="set_profile_desc">
         <item>@string/wechat_no_set_warning</item>
         <item>@string/set_invitation_code_desc</item>
