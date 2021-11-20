@@ -21,7 +21,6 @@ import com.meiyou.mvp.MvpBinder;
 import java.util.List;
 
 import androidx.annotation.Nullable;
-import likly.dollar.$;
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseTitleActivity;
 import llc.metaversenetwork.app.databinding.ActivityProductionHallBinding;
@@ -29,6 +28,7 @@ import llc.metaversenetwork.app.ui.video.VideoActivity;
 import llc.metaversenetwork.app.util.CollectionUtils;
 import llc.metaversenetwork.app.util.NeteaseCaptcha;
 import llc.metaversenetwork.app.util.TimeUtil;
+import llc.metaversenetwork.app.util.ToastUtil;
 import llc.metaversenetwork.app.util.ViewUtil;
 import llc.metaversenetwork.app.view.TextProgressBar;
 
@@ -93,7 +93,7 @@ public class ProductionHallActivity extends BaseTitleActivity<ActivityProduction
 
                     @Override
                     public void onError(int code, String msg) {
-                        $.toast().text(msg).show();
+                        ToastUtil.text(msg).show();
                     }
                 });
 
@@ -105,13 +105,13 @@ public class ProductionHallActivity extends BaseTitleActivity<ActivityProduction
                 new Callback<String>() {
                     @Override
                     public void onResponse(String response) {
-                        $.toast().text("加速完成!").show();
+                        ToastUtil.text("加速完成!").show();
                         queryCurrentInfos();
                     }
 
                     @Override
                     public void onError(int code, String msg) {
-                        $.toast().text(msg).show();
+                        ToastUtil.text(msg).show();
                     }
                 });
     }
@@ -126,7 +126,7 @@ public class ProductionHallActivity extends BaseTitleActivity<ActivityProduction
 
                     @Override
                     public void onError(int code, String msg) {
-                        $.toast().text(msg).show();
+                        ToastUtil.text(msg).show();
                     }
                 });
     }
@@ -144,7 +144,7 @@ public class ProductionHallActivity extends BaseTitleActivity<ActivityProduction
 
                     @Override
                     public void onError(int code, String msg) {
-                        $.toast().text(msg).show();
+                        ToastUtil.text(msg).show();
                     }
                 });
     }
@@ -167,7 +167,7 @@ public class ProductionHallActivity extends BaseTitleActivity<ActivityProduction
                     finishProduce(mVlidate);
             }
         } else {
-            $.toast().text("任務未完成!").show();
+            ToastUtil.text("任務未完成!").show();
         }
     }
 
@@ -184,7 +184,7 @@ public class ProductionHallActivity extends BaseTitleActivity<ActivityProduction
             }
 
             if (mTeamInfo.virtualMiner.todayStatus == 2) {
-                $.toast().text(R.string.pls_produce_tomorrow).show();
+                ToastUtil.text(R.string.pls_produce_tomorrow).show();
                 return;
             }
             if (mTeamInfo.virtualMiner.todayStatus == 0) {
@@ -213,7 +213,7 @@ public class ProductionHallActivity extends BaseTitleActivity<ActivityProduction
 
                     @Override
                     public void onError(int code, String msg) {
-                        $.toast().text(msg).show();
+                        ToastUtil.text(msg).show();
                     }
                 });
     }
@@ -237,7 +237,7 @@ public class ProductionHallActivity extends BaseTitleActivity<ActivityProduction
                 break;
             case R.id.speedUp:
                 if (mTeamInfo != null && mTeamInfo.virtualMiner.todayStatus == 2) {
-                    $.toast().text(R.string.pls_produce_tomorrow).show();
+                    ToastUtil.text(R.string.pls_produce_tomorrow).show();
                     return;
                 }
                 getAdTasks();
@@ -272,7 +272,7 @@ public class ProductionHallActivity extends BaseTitleActivity<ActivityProduction
 
                     @Override
                     public void onError(int code, String msg) {
-                        $.toast().text(msg).show();
+                        ToastUtil.text(msg).show();
                     }
                 });
     }
@@ -291,7 +291,7 @@ public class ProductionHallActivity extends BaseTitleActivity<ActivityProduction
 
                     @Override
                     public void onError(int code, String msg) {
-                        $.toast().text(msg).show();
+                        ToastUtil.text(msg).show();
                     }
                 });
     }
@@ -309,7 +309,7 @@ public class ProductionHallActivity extends BaseTitleActivity<ActivityProduction
 
             @Override
             public void onCaptchaError(String msg) {
-                $.toast().text(msg).show();
+                ToastUtil.text(msg).show();
             }
         });
     }
@@ -340,7 +340,7 @@ public class ProductionHallActivity extends BaseTitleActivity<ActivityProduction
 
                     @Override
                     public void onError(int code, String msg) {
-                        $.toast().text(msg).show();
+                        ToastUtil.text(msg).show();
                     }
                 });
     }

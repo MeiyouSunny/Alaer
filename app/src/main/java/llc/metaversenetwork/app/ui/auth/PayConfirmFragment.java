@@ -10,12 +10,12 @@ import com.alaer.lib.api.Callback;
 import com.alaer.lib.api.bean.OrderInfo;
 import com.alaer.lib.api.bean.UserData;
 import com.alaer.lib.data.UserDataUtil;
+import com.meiyou.mvp.MvpBinder;
+
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseBindFragment;
 import llc.metaversenetwork.app.databinding.FragmentAuthPayConfirmBinding;
-import com.meiyou.mvp.MvpBinder;
-
-import likly.dollar.$;
+import llc.metaversenetwork.app.util.ToastUtil;
 
 @MvpBinder(
 )
@@ -82,7 +82,7 @@ public class PayConfirmFragment extends BaseBindFragment<FragmentAuthPayConfirmB
 
                     @Override
                     public void onError(int code, String msg) {
-                        $.toast().text(msg).show();
+                        ToastUtil.text(msg).show();
                     }
                 });
     }

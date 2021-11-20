@@ -4,10 +4,10 @@ import android.view.View;
 
 import cn.jzvd.Jzvd;
 import cn.jzvd.JzvdStd;
-import likly.dollar.$;
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseTitleActivity;
 import llc.metaversenetwork.app.databinding.ActivityTravelBinding;
+import llc.metaversenetwork.app.util.ToastUtil;
 import llc.metaversenetwork.app.util.ViewUtil;
 import llc.metaversenetwork.app.view.JZMediaSystemAssertFolder;
 
@@ -50,7 +50,7 @@ public class TravelHallActivity extends BaseTitleActivity<ActivityTravelBinding>
     public void click(View view) {
         switch (view.getId()) {
             case R.id.buy_tickets:
-                $.toast().text(R.string.will_open_soon).show();
+                ToastUtil.text(R.string.will_open_soon).show();
                 break;
         }
     }

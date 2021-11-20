@@ -21,6 +21,7 @@ import llc.metaversenetwork.app.ui.webpage.WebPageActivity;
 import llc.metaversenetwork.app.util.NeteaseCaptcha;
 import llc.metaversenetwork.app.util.SimpleTextWatcher;
 import llc.metaversenetwork.app.util.StringUtil;
+import llc.metaversenetwork.app.util.ToastUtil;
 import llc.metaversenetwork.app.util.ViewUtil;
 
 @MvpBinder(
@@ -72,7 +73,7 @@ public class RegistConfirmPwdFragment extends BaseBindFragment<FragmentRegistCon
         switch (view.getId()) {
             case R.id.next:
                 if (!TextUtils.equals(ViewUtil.getText(bindRoot.etPwd), ViewUtil.getText(bindRoot.etPwdConfirm))) {
-                    $.toast().text(R.string.pwd_not_same).show();
+                    ToastUtil.text(R.string.pwd_not_same).show();
                     return;
                 }
                 verifyCode();
@@ -92,7 +93,7 @@ public class RegistConfirmPwdFragment extends BaseBindFragment<FragmentRegistCon
                 new Callback<UserData>() {
                     @Override
                     public void onResponse(UserData userInfo) {
-                        $.toast().text(R.string.regist_success).show();
+                        ToastUtil.text(R.string.regist_success).show();
                         $.config().putString("phone", mPhone);
                         UserDataUtil.instance().setUserData(userInfo);
 
@@ -108,7 +109,7 @@ public class RegistConfirmPwdFragment extends BaseBindFragment<FragmentRegistCon
 
                     @Override
                     public void onError(int code, String msg) {
-                        $.toast().text(msg).show();
+                        ToastUtil.text(msg).show();
                     }
                 });
     }
@@ -122,7 +123,7 @@ public class RegistConfirmPwdFragment extends BaseBindFragment<FragmentRegistCon
 
             @Override
             public void onCaptchaError(String msg) {
-                $.toast().text(msg).show();
+                ToastUtil.text(msg).show();
             }
         });
     }

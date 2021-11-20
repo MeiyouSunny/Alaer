@@ -9,13 +9,13 @@ import com.alaer.lib.api.bean.ApplyCityNodeParam;
 import com.alaer.lib.api.bean.UserData;
 import com.alaer.lib.data.UserDataUtil;
 import com.amap.api.maps.model.LatLng;
-import llc.metaversenetwork.app.R;
-import llc.metaversenetwork.app.base.BaseTitleActivity;
-import llc.metaversenetwork.app.databinding.ActivityAuthBinding;
 import com.meiyou.mvp.MvpBinder;
 
 import androidx.annotation.Nullable;
-import likly.dollar.$;
+import llc.metaversenetwork.app.R;
+import llc.metaversenetwork.app.base.BaseTitleActivity;
+import llc.metaversenetwork.app.databinding.ActivityAuthBinding;
+import llc.metaversenetwork.app.util.ToastUtil;
 
 /**
  * 城市节点申请页面
@@ -65,13 +65,13 @@ public class CityNodeApplyActivity extends BaseTitleActivity<ActivityAuthBinding
                 new Callback<String>() {
                     @Override
                     public void onResponse(String response) {
-                        $.toast().text("提交成功！").show();
+                        ToastUtil.text("提交成功！").show();
                         finish();
                     }
 
                     @Override
                     public void onError(int code, String msg) {
-                        $.toast().text(msg).show();
+                        ToastUtil.text(msg).show();
                     }
                 });
     }

@@ -28,7 +28,7 @@ public class AuthSuccessActivity extends BaseTitleActivity<ActivityLoginBinding>
         switch (view.getId()) {
             case R.id.share:
 //                if (UserDataUtil.instance().isFrom3DAccount())
-//                    $.toast().text(R.string.will_open_soon).show();
+//                    ToastUtil.text(R.string.will_open_soon).show();
 //                else
                 ViewUtil.gotoActivity(this, ShareActivity.class);
                 break;

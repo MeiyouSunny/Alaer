@@ -24,7 +24,6 @@ import com.alaer.lib.data.UserDataUtil;
 import java.util.List;
 
 import likly.dialogger.Dialogger;
-import likly.dollar.$;
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseTitleActivity;
 import llc.metaversenetwork.app.databinding.ActivityWithdrawalBinding;
@@ -35,6 +34,7 @@ import llc.metaversenetwork.app.util.NeteaseCaptcha;
 import llc.metaversenetwork.app.util.NumberUtils;
 import llc.metaversenetwork.app.util.SimpleTextWatcher;
 import llc.metaversenetwork.app.util.StringUtil;
+import llc.metaversenetwork.app.util.ToastUtil;
 import llc.metaversenetwork.app.util.VerifyCodeCounter;
 import llc.metaversenetwork.app.util.ViewUtil;
 
@@ -221,12 +221,12 @@ public class WithdrawalActivity extends BaseTitleActivity<ActivityWithdrawalBind
         }
 
         if (amount < mTakeCoinInfo.detail.amountLowLimit) {
-            $.toast().text(R.string.not_reached_minimum_limit).show();
+            ToastUtil.text(R.string.not_reached_minimum_limit).show();
             return;
         }
 
         if (amount > mTakeCoinInfo.resp.cashAmount) {
-            $.toast().text(R.string.exceeds_balance_amount).show();
+            ToastUtil.text(R.string.exceeds_balance_amount).show();
             return;
         }
 
@@ -264,7 +264,7 @@ public class WithdrawalActivity extends BaseTitleActivity<ActivityWithdrawalBind
 
             @Override
             public void onCaptchaError(String msg) {
-                $.toast().text(msg).show();
+                ToastUtil.text(msg).show();
             }
         });
     }
@@ -275,13 +275,13 @@ public class WithdrawalActivity extends BaseTitleActivity<ActivityWithdrawalBind
                 new Callback<String>() {
                     @Override
                     public void onResponse(String result) {
-                        $.toast().text(R.string.verify_code_send_ok).show();
+                        ToastUtil.text(R.string.verify_code_send_ok).show();
                         VerifyCodeCounter.getInstance().startCounter(bindRoot.sendVerifyCode);
                     }
 
                     @Override
                     public void onError(int code, String msg) {
-                        $.toast().text(msg).show();
+                        ToastUtil.text(msg).show();
                     }
                 });
     }
@@ -312,13 +312,13 @@ public class WithdrawalActivity extends BaseTitleActivity<ActivityWithdrawalBind
                 new Callback<String>() {
                     @Override
                     public void onResponse(String result) {
-                        $.toast().text(R.string.withdraw_success).show();
+                        ToastUtil.text(R.string.withdraw_success).show();
                         finish();
                     }
 
                     @Override
                     public void onError(int code, String msg) {
-                        $.toast().text(msg).show();
+                        ToastUtil.text(msg).show();
                     }
                 });
     }

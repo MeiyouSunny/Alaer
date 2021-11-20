@@ -23,13 +23,13 @@ import java.util.UUID;
 import cn.udesk.UdeskSDKManager;
 import cn.udesk.config.UdeskConfig;
 import likly.dialogger.Dialogger;
-import likly.dollar.$;
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseBindFragment;
 import llc.metaversenetwork.app.data.CityDataUtil;
 import llc.metaversenetwork.app.databinding.FragmentMyCityBinding;
 import llc.metaversenetwork.app.ui.App;
 import llc.metaversenetwork.app.ui.dialog.DialogNotCityMaster;
+import llc.metaversenetwork.app.util.ToastUtil;
 import llc.metaversenetwork.app.util.ViewUtil;
 
 @MvpBinder(
@@ -68,7 +68,7 @@ public class MyCityFragment extends BaseBindFragment<FragmentMyCityBinding> impl
 
     private void applyCityNode() {
         if (mLocation == null) {
-            $.toast().text("获取定位失败！").show();
+            ToastUtil.text("获取定位失败！").show();
             return;
         }
         Intent intent = new Intent(getContext(), CityNodeApplyActivity.class);

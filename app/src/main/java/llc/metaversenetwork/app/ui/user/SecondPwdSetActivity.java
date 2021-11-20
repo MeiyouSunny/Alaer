@@ -10,16 +10,16 @@ import com.alaer.lib.api.AppConfig;
 import com.alaer.lib.api.Callback;
 import com.alaer.lib.api.bean.UserData;
 import com.alaer.lib.data.UserDataUtil;
+
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseTitleActivity;
 import llc.metaversenetwork.app.databinding.ActivitySecondPwdSetBinding;
 import llc.metaversenetwork.app.util.NeteaseCaptcha;
 import llc.metaversenetwork.app.util.SimpleTextWatcher;
 import llc.metaversenetwork.app.util.StringUtil;
+import llc.metaversenetwork.app.util.ToastUtil;
 import llc.metaversenetwork.app.util.VerifyCodeCounter;
 import llc.metaversenetwork.app.util.ViewUtil;
-
-import likly.dollar.$;
 
 import static llc.metaversenetwork.app.util.NeteaseCaptcha.STEP1;
 import static llc.metaversenetwork.app.util.NeteaseCaptcha.STEP2;
@@ -89,15 +89,15 @@ public class SecondPwdSetActivity extends BaseTitleActivity<ActivitySecondPwdSet
 
     private void submit() {
         if (!TextUtils.equals(ViewUtil.getText(bindRoot.etPwd), ViewUtil.getText(bindRoot.etPwdConfirm))) {
-            $.toast().text(R.string.pwd_not_same).show();
+            ToastUtil.text(R.string.pwd_not_same).show();
             return;
         }
         if (!StringUtil.pwdIsValid(ViewUtil.getText(bindRoot.etPwd))) {
-            $.toast().text(R.string.pwd_invalid).show();
+            ToastUtil.text(R.string.pwd_invalid).show();
             return;
         }
         if (!haveSendCode) {
-            $.toast().text(R.string.pls_get_verify_code_first).show();
+            ToastUtil.text(R.string.pls_get_verify_code_first).show();
             return;
         }
         verifyCode(STEP2);
@@ -110,13 +110,13 @@ public class SecondPwdSetActivity extends BaseTitleActivity<ActivitySecondPwdSet
                     @Override
                     public void onResponse(String response) {
                         haveSendCode = true;
-                        $.toast().text(R.string.verify_code_send_ok).show();
+                        ToastUtil.text(R.string.verify_code_send_ok).show();
                         VerifyCodeCounter.getInstance().startCounter(bindRoot.send);
                     }
 
                     @Override
                     public void onError(int code, String msg) {
-                        $.toast().text(msg).show();
+                        ToastUtil.text(msg).show();
                     }
                 });
     }
@@ -134,7 +134,7 @@ public class SecondPwdSetActivity extends BaseTitleActivity<ActivitySecondPwdSet
 
             @Override
             public void onCaptchaError(String msg) {
-                $.toast().text(msg).show();
+                ToastUtil.text(msg).show();
             }
         });
     }
@@ -145,13 +145,13 @@ public class SecondPwdSetActivity extends BaseTitleActivity<ActivitySecondPwdSet
                 new Callback<String>() {
                     @Override
                     public void onResponse(String response) {
-                        $.toast().text(R.string.reset_pwd_success).show();
+                        ToastUtil.text(R.string.reset_pwd_success).show();
                         finish();
                     }
 
                     @Override
                     public void onError(int code, String msg) {
-                        $.toast().text(msg).show();
+                        ToastUtil.text(msg).show();
                     }
                 });
     }

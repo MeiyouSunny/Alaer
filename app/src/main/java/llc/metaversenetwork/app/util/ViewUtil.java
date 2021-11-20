@@ -54,7 +54,7 @@ public class ViewUtil {
 //                AppConfig.UDESK_APP_SECRETKEY, AppConfig.UDESK_APP_ID);
 //        final String sdkToken = UUID.randomUUID().toString();
 //        UdeskSDKManager.getInstance().entryChat(context.getApplicationContext(), UdeskConfig.createDefualt(), sdkToken);
-        $.toast().text(R.string.will_open_soon).show();
+        ToastUtil.text(R.string.will_open_soon).show();
     }
 
     public static String getText(TextView textView) {

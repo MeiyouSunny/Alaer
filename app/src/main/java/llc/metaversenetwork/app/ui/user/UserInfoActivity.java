@@ -22,13 +22,13 @@ import org.json.JSONObject;
 
 import androidx.annotation.Nullable;
 import likly.dialogger.Dialogger;
-import likly.dollar.$;
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseTitleActivity;
 import llc.metaversenetwork.app.databinding.ActivityUserInfoBinding;
 import llc.metaversenetwork.app.ui.dialog.DialogInputSecondPwd;
 import llc.metaversenetwork.app.util.NeteaseCaptcha;
 import llc.metaversenetwork.app.util.StringUtil;
+import llc.metaversenetwork.app.util.ToastUtil;
 import llc.metaversenetwork.app.util.ViewUtil;
 
 /**
@@ -97,7 +97,7 @@ public class UserInfoActivity extends BaseTitleActivity<ActivityUserInfoBinding>
                 break;
             case R.id.setInvitateCode:
                 if (UserDataUtil.instance().isFrom3DAccount())
-                    $.toast().text(R.string.will_open_soon).show();
+                    ToastUtil.text(R.string.will_open_soon).show();
                 else
                     SetProfileActivity.start(this, SetProfileActivity.INVITATE_CODE);
                 break;
@@ -156,7 +156,7 @@ public class UserInfoActivity extends BaseTitleActivity<ActivityUserInfoBinding>
     @Override
     public void onUploadResult(boolean success, String picUrl) {
         if (!success) {
-            $.toast().text(R.string.upload_failed).show();
+            ToastUtil.text(R.string.upload_failed).show();
             return;
         }
         if (!TextUtils.isEmpty(picUrl)) {
@@ -196,7 +196,7 @@ public class UserInfoActivity extends BaseTitleActivity<ActivityUserInfoBinding>
 
                     @Override
                     public void onError(int code, String msg) {
-                        $.toast().text(msg).show();
+                        ToastUtil.text(msg).show();
                     }
                 });
     }
@@ -210,7 +210,7 @@ public class UserInfoActivity extends BaseTitleActivity<ActivityUserInfoBinding>
 
             @Override
             public void onCaptchaError(String msg) {
-                $.toast().text(msg).show();
+                ToastUtil.text(msg).show();
             }
         });
     }
@@ -222,13 +222,13 @@ public class UserInfoActivity extends BaseTitleActivity<ActivityUserInfoBinding>
                 new Callback<String>() {
                     @Override
                     public void onResponse(String response) {
-                        $.toast().text(R.string.modify_success).show();
+                        ToastUtil.text(R.string.modify_success).show();
                         refreshProfile();
                     }
 
                     @Override
                     public void onError(int code, String msg) {
-                        $.toast().text(msg).show();
+                        ToastUtil.text(msg).show();
                     }
                 });
     }

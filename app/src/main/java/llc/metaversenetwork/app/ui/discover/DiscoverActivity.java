@@ -17,7 +17,6 @@ import com.zhy.magicviewpager.transformer.ScaleInTransformer;
 
 import java.util.List;
 
-import likly.dollar.$;
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseTitleActivity;
 import llc.metaversenetwork.app.databinding.ActivityDiscoverBinding;
@@ -117,7 +116,7 @@ public class DiscoverActivity extends BaseTitleActivity<ActivityDiscoverBinding>
                 break;
             case R.id.share:
                 if (UserDataUtil.instance().isFrom3DAccount())
-                    $.toast().text(R.string.will_open_soon).show();
+                    ToastUtil.text(R.string.will_open_soon).show();
                 else
                     ViewUtil.gotoActivity(this, ShareActivity.class);
                 break;
@@ -126,7 +125,6 @@ public class DiscoverActivity extends BaseTitleActivity<ActivityDiscoverBinding>
                 break;
             case R.id.myCity:
                 ToastUtil.text(R.string.will_open_soon).show();
-//                $.toast().text(R.string.will_open_soon).show();
 //                if (UserDataUtil.instance().isAuthed())
 //                    ViewUtil.gotoActivity(this, MyCityActivity.class);
 //                else

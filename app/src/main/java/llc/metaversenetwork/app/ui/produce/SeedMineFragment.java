@@ -18,7 +18,6 @@ import org.json.JSONObject;
 import java.util.List;
 
 import likly.dialogger.Dialogger;
-import likly.dollar.$;
 import likly.view.repeat.OnHolderClickListener;
 import likly.view.repeat.RepeatView;
 import llc.metaversenetwork.app.R;
@@ -28,6 +27,7 @@ import llc.metaversenetwork.app.ui.dialog.DialogInputSecondPwd;
 import llc.metaversenetwork.app.util.CollectionUtils;
 import llc.metaversenetwork.app.util.NeteaseCaptcha;
 import llc.metaversenetwork.app.util.StringUtil;
+import llc.metaversenetwork.app.util.ToastUtil;
 import llc.metaversenetwork.app.view.GradViewItemDecoration;
 
 /**
@@ -150,7 +150,7 @@ public class SeedMineFragment extends BaseBindFragment<FragmentSeedMineListBindi
 
                     @Override
                     public void onError(int code, String msg) {
-                        $.toast().text(msg).show();
+                        ToastUtil.text(msg).show();
                     }
                 });
     }
@@ -164,7 +164,7 @@ public class SeedMineFragment extends BaseBindFragment<FragmentSeedMineListBindi
 
             @Override
             public void onCaptchaError(String msg) {
-                $.toast().text(msg).show();
+                ToastUtil.text(msg).show();
             }
         });
     }
@@ -175,13 +175,13 @@ public class SeedMineFragment extends BaseBindFragment<FragmentSeedMineListBindi
                 new Callback<String>() {
                     @Override
                     public void onResponse(String response) {
-                        $.toast().text(R.string.renewal_success).show();
+                        ToastUtil.text(R.string.renewal_success).show();
                         initData();
                     }
 
                     @Override
                     public void onError(int code, String msg) {
-                        $.toast().text(msg).show();
+                        ToastUtil.text(msg).show();
                     }
                 });
     }

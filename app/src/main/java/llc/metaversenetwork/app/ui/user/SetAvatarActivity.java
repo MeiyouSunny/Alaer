@@ -21,13 +21,13 @@ import org.json.JSONObject;
 
 import androidx.annotation.Nullable;
 import likly.dialogger.Dialogger;
-import likly.dollar.$;
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseTitleActivity;
 import llc.metaversenetwork.app.databinding.ActivitySetAvatarBinding;
 import llc.metaversenetwork.app.ui.dialog.DialogInputSecondPwd;
 import llc.metaversenetwork.app.util.NeteaseCaptcha;
 import llc.metaversenetwork.app.util.StringUtil;
+import llc.metaversenetwork.app.util.ToastUtil;
 
 /**
  * 头像设定
@@ -112,7 +112,7 @@ public class SetAvatarActivity extends BaseTitleActivity<ActivitySetAvatarBindin
     @Override
     public void onUploadResult(boolean success, String picUrl) {
         if (!success) {
-            $.toast().text(R.string.upload_failed).show();
+            ToastUtil.text(R.string.upload_failed).show();
             return;
         }
         if (!TextUtils.isEmpty(picUrl)) {
@@ -153,7 +153,7 @@ public class SetAvatarActivity extends BaseTitleActivity<ActivitySetAvatarBindin
 
                     @Override
                     public void onError(int code, String msg) {
-                        $.toast().text(msg).show();
+                        ToastUtil.text(msg).show();
                     }
                 });
     }
@@ -167,7 +167,7 @@ public class SetAvatarActivity extends BaseTitleActivity<ActivitySetAvatarBindin
 
             @Override
             public void onCaptchaError(String msg) {
-                $.toast().text(msg).show();
+                ToastUtil.text(msg).show();
             }
         });
     }
@@ -179,13 +179,13 @@ public class SetAvatarActivity extends BaseTitleActivity<ActivitySetAvatarBindin
                 new Callback<String>() {
                     @Override
                     public void onResponse(String response) {
-                        $.toast().text(R.string.modify_success).show();
+                        ToastUtil.text(R.string.modify_success).show();
                         refreshProfile();
                     }
 
                     @Override
                     public void onError(int code, String msg) {
-                        $.toast().text(msg).show();
+                        ToastUtil.text(msg).show();
                     }
                 });
     }

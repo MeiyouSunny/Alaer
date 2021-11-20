@@ -9,11 +9,11 @@ import com.alaer.lib.api.bean.AccessPointInfo;
 import com.alaer.lib.api.bean.UserData;
 import com.alaer.lib.data.UserDataUtil;
 
-import likly.dollar.$;
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseTitleActivity;
 import llc.metaversenetwork.app.databinding.ActivitySettngsBinding;
 import llc.metaversenetwork.app.ui.home.HomeActivity;
+import llc.metaversenetwork.app.util.ToastUtil;
 import llc.metaversenetwork.app.util.ViewUtil;
 
 /**
@@ -68,14 +68,14 @@ public class SettingActivity extends BaseTitleActivity<ActivitySettngsBinding> {
                 new Callback<String>() {
                     @Override
                     public void onResponse(String response) {
-                        $.toast().text(R.string.account_heve_exit).show();
+                        ToastUtil.text(R.string.account_heve_exit).show();
                         UserDataUtil.instance().clearUserDatas();
                         ViewUtil.gotoActivity(getContext(), HomeActivity.class);
                     }
 
                     @Override
                     public void onError(int code, String msg) {
-                        $.toast().text(msg).show();
+                        ToastUtil.text(msg).show();
                     }
                 });
     }

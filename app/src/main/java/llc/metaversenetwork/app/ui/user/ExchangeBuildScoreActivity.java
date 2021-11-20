@@ -17,7 +17,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import likly.dialogger.Dialogger;
-import likly.dollar.$;
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseTitleActivity;
 import llc.metaversenetwork.app.databinding.ActivityExchangeScoreBinding;
@@ -27,6 +26,7 @@ import llc.metaversenetwork.app.util.NeteaseCaptcha;
 import llc.metaversenetwork.app.util.NumberUtils;
 import llc.metaversenetwork.app.util.SimpleTextWatcher;
 import llc.metaversenetwork.app.util.StringUtil;
+import llc.metaversenetwork.app.util.ToastUtil;
 import llc.metaversenetwork.app.util.ViewUtil;
 
 /**
@@ -211,7 +211,7 @@ public class ExchangeBuildScoreActivity extends BaseTitleActivity<ActivityExchan
 
                     @Override
                     public void onError(int code, String msg) {
-                        $.toast().text(msg).show();
+                        ToastUtil.text(msg).show();
                     }
                 });
     }
@@ -225,7 +225,7 @@ public class ExchangeBuildScoreActivity extends BaseTitleActivity<ActivityExchan
 
             @Override
             public void onCaptchaError(String msg) {
-                $.toast().text(msg).show();
+                ToastUtil.text(msg).show();
             }
         });
     }
@@ -237,13 +237,13 @@ public class ExchangeBuildScoreActivity extends BaseTitleActivity<ActivityExchan
                     new Callback<String>() {
                         @Override
                         public void onResponse(String response) {
-                            $.toast().text(R.string.exchange_success).show();
+                            ToastUtil.text(R.string.exchange_success).show();
                             finish();
                         }
 
                         @Override
                         public void onError(int code, String msg) {
-                            $.toast().text(msg).show();
+                            ToastUtil.text(msg).show();
                         }
                     });
         } else {
@@ -252,13 +252,13 @@ public class ExchangeBuildScoreActivity extends BaseTitleActivity<ActivityExchan
                     new Callback<String>() {
                         @Override
                         public void onResponse(String response) {
-                            $.toast().text(R.string.exchange_success).show();
+                            ToastUtil.text(R.string.exchange_success).show();
                             finish();
                         }
 
                         @Override
                         public void onError(int code, String msg) {
-                            $.toast().text(msg).show();
+                            ToastUtil.text(msg).show();
                         }
                     });
         }

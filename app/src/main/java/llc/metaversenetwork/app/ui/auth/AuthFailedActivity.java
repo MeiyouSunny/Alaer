@@ -4,11 +4,11 @@ import android.view.View;
 
 import com.alaer.lib.data.UserDataUtil;
 
-import likly.dollar.$;
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseTitleActivity;
 import llc.metaversenetwork.app.databinding.ActivityAuthFailedBinding;
 import llc.metaversenetwork.app.ui.government.RealNameAuthActivity;
+import llc.metaversenetwork.app.util.ToastUtil;
 import llc.metaversenetwork.app.util.ViewUtil;
 
 /**
@@ -30,7 +30,7 @@ public class AuthFailedActivity extends BaseTitleActivity<ActivityAuthFailedBind
     public void click(View view) {
         switch (view.getId()) {
             case R.id.customerService:
-                $.toast().text(R.string.will_open_soon).show();
+                ToastUtil.text(R.string.will_open_soon).show();
                 break;
             case R.id.reTry:
                 ViewUtil.gotoActivity(this, RealNameAuthActivity.class);

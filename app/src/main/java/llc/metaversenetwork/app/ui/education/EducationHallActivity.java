@@ -5,8 +5,7 @@ import android.view.View;
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseTitleActivity;
 import llc.metaversenetwork.app.databinding.ActivityLoginBinding;
-
-import likly.dollar.$;
+import llc.metaversenetwork.app.util.ToastUtil;
 
 /**
  * 教育大厅
@@ -29,7 +28,7 @@ public class EducationHallActivity extends BaseTitleActivity<ActivityLoginBindin
             case R.id.shortVideo:
             case R.id.film:
             case R.id.novel:
-                $.toast().text(R.string.will_open_soon).show();
+                ToastUtil.text(R.string.will_open_soon).show();
                 break;
         }
     }

@@ -15,13 +15,13 @@ import androidx.annotation.RequiresApi;
 import de.greenrobot.event.EventBus;
 import de.greenrobot.event.Subscribe;
 import de.greenrobot.event.ThreadMode;
-import likly.dollar.$;
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseTitleActivity;
 import llc.metaversenetwork.app.databinding.ActivityAboutBinding;
 import llc.metaversenetwork.app.ui.home.HomeActivity;
 import llc.metaversenetwork.app.ui.webpage.WebPageActivity;
 import llc.metaversenetwork.app.util.SettingUtil;
+import llc.metaversenetwork.app.util.ToastUtil;
 
 /**
  * 关于
@@ -101,7 +101,7 @@ public class AboutActivity extends BaseTitleActivity<ActivityAboutBinding> {
             if (resultCode == RESULT_OK)
                 EventUtil.sendInstallApk();
             else
-                $.toast().text("授权失败!").show();
+                ToastUtil.text("授权失败!").show();
         }
     }
 

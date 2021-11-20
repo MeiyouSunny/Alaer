@@ -27,11 +27,11 @@ import androidx.annotation.RequiresApi;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import likly.dollar.$;
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.databinding.TaskListFragmentBinding;
 import llc.metaversenetwork.app.ui.video.VideoActivity;
 import llc.metaversenetwork.app.util.CollectionUtils;
+import llc.metaversenetwork.app.util.ToastUtil;
 
 public class TaskListFragment extends BottomSheetDialogFragment {
 
@@ -96,7 +96,7 @@ public class TaskListFragment extends BottomSheetDialogFragment {
 
     private void showTaskList(List<AdTask> tasks) {
         if (CollectionUtils.isEmpty(tasks)) {
-            $.toast().text(R.string.no_tasks).show();
+            ToastUtil.text(R.string.no_tasks).show();
             return;
         }
         if (adapter == null) {
@@ -137,7 +137,7 @@ public class TaskListFragment extends BottomSheetDialogFragment {
 
                     @Override
                     public void onError(int code, String msg) {
-                        $.toast().text(msg).show();
+                        ToastUtil.text(msg).show();
                     }
                 });
     }
@@ -154,13 +154,13 @@ public class TaskListFragment extends BottomSheetDialogFragment {
                 new Callback<String>() {
                     @Override
                     public void onResponse(String response) {
-                        $.toast().text(R.string.task_complete).show();
+                        ToastUtil.text(R.string.task_complete).show();
                         getTaskList();
                     }
 
                     @Override
                     public void onError(int code, String msg) {
-                        $.toast().text(msg).show();
+                        ToastUtil.text(msg).show();
                     }
                 });
     }
@@ -170,7 +170,7 @@ public class TaskListFragment extends BottomSheetDialogFragment {
             // 播放完成,完成任务
             completeTask(mAdTask.id);
         } else {
-            $.toast().text(R.string.task_do_failed).show();
+            ToastUtil.text(R.string.task_do_failed).show();
         }
     }
 

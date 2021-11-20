@@ -11,14 +11,14 @@ import android.text.TextUtils;
 import android.view.View;
 
 import com.alaer.lib.data.UserDataUtil;
+
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseBindFragment;
 import llc.metaversenetwork.app.databinding.FragmentShareListBinding;
 import llc.metaversenetwork.app.util.QRCodeEncoder;
 import llc.metaversenetwork.app.util.ThreadUtil;
+import llc.metaversenetwork.app.util.ToastUtil;
 import llc.metaversenetwork.app.view.GradViewItemDecoration;
-
-import likly.dollar.$;
 
 /**
  * 邀请,分享列表
@@ -82,7 +82,7 @@ public class ShareListFragment extends BaseBindFragment<FragmentShareListBinding
             cmb.setText(content.trim());
             ClipData clipData = ClipData.newPlainText(null, content);
             cmb.setPrimaryClip(clipData);
-            $.toast().text(R.string.copyed).show();
+            ToastUtil.text(R.string.copyed).show();
         }
     }
 

@@ -2,11 +2,11 @@ package llc.metaversenetwork.app.ui.government;
 
 import android.view.View;
 
-import likly.dollar.$;
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseTitleActivity;
 import llc.metaversenetwork.app.databinding.ActivityLoginBinding;
 import llc.metaversenetwork.app.ui.auth.AuthActivity;
+import llc.metaversenetwork.app.util.ToastUtil;
 import llc.metaversenetwork.app.util.ViewUtil;
 
 /**
@@ -32,7 +32,7 @@ public class RealNameAuthActivity extends BaseTitleActivity<ActivityLoginBinding
                 break;
             case R.id.authPayPal:
             case R.id.authVisa:
-                $.toast().text(R.string.will_open_soon).show();
+                ToastUtil.text(R.string.will_open_soon).show();
                 break;
         }
     }

@@ -15,7 +15,6 @@ import com.alaer.lib.api.bean.UserLevelList;
 import com.alaer.lib.data.UserDataUtil;
 
 import likly.dialogger.Dialogger;
-import likly.dollar.$;
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseTitleActivity;
 import llc.metaversenetwork.app.databinding.ActivityUserMineBinding;
@@ -27,6 +26,7 @@ import llc.metaversenetwork.app.ui.share.ShareActivity;
 import llc.metaversenetwork.app.ui.wallet.WalletActivity;
 import llc.metaversenetwork.app.util.CollectionUtils;
 import llc.metaversenetwork.app.util.NumberUtils;
+import llc.metaversenetwork.app.util.ToastUtil;
 import llc.metaversenetwork.app.util.ViewUtil;
 
 /**
@@ -150,7 +150,7 @@ public class UserMineActivity extends BaseTitleActivity<ActivityUserMineBinding>
                 break;
             case R.id.invitationCode:
                 if (UserDataUtil.instance().isFrom3DAccount())
-                    $.toast().text(R.string.will_open_soon).show();
+                    ToastUtil.text(R.string.will_open_soon).show();
                 else
                     ViewUtil.gotoActivity(this, ShareActivity.class);
                 break;
@@ -226,7 +226,7 @@ public class UserMineActivity extends BaseTitleActivity<ActivityUserMineBinding>
                 ViewUtil.gotoActivity(this, LoginActivity.class);
                 break;
             case R.id.myWallet:
-//                $.toast().text(R.string.will_open_soon).show();
+//                ToastUtil.text(R.string.will_open_soon).show();
                 ViewUtil.gotoActivity(this, WalletActivity.class);
                 break;
         }

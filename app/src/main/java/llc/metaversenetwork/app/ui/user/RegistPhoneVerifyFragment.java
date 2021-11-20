@@ -15,7 +15,6 @@ import com.alaer.lib.api.bean.Region;
 import com.meiyou.mvp.MvpBinder;
 
 import androidx.annotation.Nullable;
-import likly.dollar.$;
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseBindFragment;
 import llc.metaversenetwork.app.databinding.FragmentRegistPhoneVerifyBinding;
@@ -23,6 +22,7 @@ import llc.metaversenetwork.app.ui.webpage.WebPageActivity;
 import llc.metaversenetwork.app.util.NeteaseCaptcha;
 import llc.metaversenetwork.app.util.SimpleTextWatcher;
 import llc.metaversenetwork.app.util.StringUtil;
+import llc.metaversenetwork.app.util.ToastUtil;
 import llc.metaversenetwork.app.util.VerifyCodeCounter;
 import llc.metaversenetwork.app.util.ViewUtil;
 
@@ -87,7 +87,7 @@ public class RegistPhoneVerifyFragment extends BaseBindFragment<FragmentRegistPh
 
     private void verifyCode() {
         if (!StringUtil.phoneIsValid(ViewUtil.getText(bindRoot.etPhone))) {
-            $.toast().text(R.string.pls_input_valid_phone).show();
+            ToastUtil.text(R.string.pls_input_valid_phone).show();
             return;
         }
         NeteaseCaptcha.start(getContext(), new NeteaseCaptcha.OnCaptchaListener() {
@@ -98,7 +98,7 @@ public class RegistPhoneVerifyFragment extends BaseBindFragment<FragmentRegistPh
 
             @Override
             public void onCaptchaError(String msg) {
-                $.toast().text(msg).show();
+                ToastUtil.text(msg).show();
             }
         });
     }
@@ -109,13 +109,13 @@ public class RegistPhoneVerifyFragment extends BaseBindFragment<FragmentRegistPh
                 new Callback<String>() {
                     @Override
                     public void onResponse(String response) {
-                        $.toast().text(R.string.verify_code_send_ok).show();
+                        ToastUtil.text(R.string.verify_code_send_ok).show();
                         VerifyCodeCounter.getInstance().startCounter(bindRoot.btnSend);
                     }
 
                     @Override
                     public void onError(int code, String msg) {
-                        $.toast().text(msg).show();
+                        ToastUtil.text(msg).show();
                     }
                 });
     }

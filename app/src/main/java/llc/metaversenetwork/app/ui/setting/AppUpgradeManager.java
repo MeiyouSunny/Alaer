@@ -27,6 +27,7 @@ import likly.dollar.$;
 import llc.metaversenetwork.app.BuildConfig;
 import llc.metaversenetwork.app.ui.dialog.DialogNewVersion;
 import llc.metaversenetwork.app.util.SettingUtil;
+import llc.metaversenetwork.app.util.ToastUtil;
 
 public class AppUpgradeManager {
 
@@ -64,14 +65,14 @@ public class AppUpgradeManager {
                                 }
                             } else {
                                 if (isNewestToast)
-                                    $.toast().text("已经是最新版本!").show();
+                                    ToastUtil.text("已经是最新版本!").show();
                             }
                         }
                     }
 
                     @Override
                     public void onError(int code, String msg) {
-                        $.toast().text(msg).show();
+                        ToastUtil.text(msg).show();
                     }
                 });
     }

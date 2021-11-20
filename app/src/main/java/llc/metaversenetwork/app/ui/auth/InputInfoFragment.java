@@ -21,12 +21,12 @@ import com.meiyou.mvp.MvpBinder;
 
 import androidx.annotation.Nullable;
 import likly.dialogger.Dialogger;
-import likly.dollar.$;
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseBindFragment;
 import llc.metaversenetwork.app.databinding.FragmentAuthInputInfoBinding;
 import llc.metaversenetwork.app.ui.dialog.DialogAuthInfoConfirm;
 import llc.metaversenetwork.app.util.SimpleTextWatcher;
+import llc.metaversenetwork.app.util.ToastUtil;
 import llc.metaversenetwork.app.util.ViewUtil;
 
 import static android.app.Activity.RESULT_OK;
@@ -105,7 +105,7 @@ public class InputInfoFragment extends BaseBindFragment<FragmentAuthInputInfoBin
         AvatarUploader uploader = new AvatarUploader(getContext());
         uploader.setmListener(this);
         uploader.upload(mPhotoPath);
-        $.toast().text(R.string.uploading).show();
+        ToastUtil.text(R.string.uploading).show();
     }
 
     @Override
@@ -114,7 +114,7 @@ public class InputInfoFragment extends BaseBindFragment<FragmentAuthInputInfoBin
             mPhotoUrl = picUrl;
             submitAuthInfo();
         } else {
-            $.toast().text(R.string.upload_failed).show();
+            ToastUtil.text(R.string.upload_failed).show();
         }
     }
 

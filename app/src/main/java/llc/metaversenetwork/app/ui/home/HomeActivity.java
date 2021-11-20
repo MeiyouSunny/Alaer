@@ -330,7 +330,7 @@ public class HomeActivity extends BaseViewBindActivity<ActivityHomeBinding> impl
     private void backToExit() {
         // 再次点击返回键退出程序
         if ((System.currentTimeMillis() - exitTime) > 2000) {
-            $.toast().text(R.string.press_twice_exit).show();
+            ToastUtil.text(R.string.press_twice_exit).show();
             exitTime = System.currentTimeMillis();
         } else {
             Process.killProcess(Process.myPid());
@@ -388,7 +388,7 @@ public class HomeActivity extends BaseViewBindActivity<ActivityHomeBinding> impl
             if (resultCode == RESULT_OK)
                 EventUtil.sendInstallApk();
             else
-                $.toast().text("授权失败!").show();
+                ToastUtil.text("授权失败!").show();
         }
 
     }

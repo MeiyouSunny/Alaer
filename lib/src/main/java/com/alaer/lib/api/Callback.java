@@ -3,11 +3,8 @@ package com.alaer.lib.api;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.alaer.lib.R;
 import com.alaer.lib.event.EventUtil;
 import com.alaer.lib.util.NetworkUtil;
-
-import likly.dollar.$;
 
 public abstract class Callback<T> implements likly.reverse.Callback<T> {
 
@@ -49,7 +46,7 @@ public abstract class Callback<T> implements likly.reverse.Callback<T> {
             final ServiceError exception = (ServiceError) error;
             if (exception.code == ServiceError.ERROR_TOKEN_INVALID) {
                 // Token失效
-                $.toast().text(exception.msg).show();
+//                ToastUtil.text(exception.msg).show();
                 EventUtil.sendTokenInvalid();
                 return;
             }
@@ -65,7 +62,7 @@ public abstract class Callback<T> implements likly.reverse.Callback<T> {
         // 网络判断
         boolean available = NetworkUtil.isNetworkAvailable();
         if (!available) {
-            $.toast().text(R.string.network_not_available).show();
+//            ToastUtil.text(R.string.network_not_available).show();
         }
 
         return available;

@@ -23,6 +23,7 @@ import llc.metaversenetwork.app.ui.home.HomeActivity;
 import llc.metaversenetwork.app.util.NeteaseCaptcha;
 import llc.metaversenetwork.app.util.SimpleTextWatcher;
 import llc.metaversenetwork.app.util.StringUtil;
+import llc.metaversenetwork.app.util.ToastUtil;
 import llc.metaversenetwork.app.util.ViewUtil;
 
 @MvpBinder(
@@ -106,7 +107,7 @@ public class LoginFragment extends BaseBindFragment<FragmentLoginBinding> {
 
             @Override
             public void onCaptchaError(String msg) {
-                $.toast().text(msg).show();
+                ToastUtil.text(msg).show();
             }
         });
     }
@@ -116,7 +117,7 @@ public class LoginFragment extends BaseBindFragment<FragmentLoginBinding> {
         mPwd = ViewUtil.getText(bindRoot.etPwd);
 
         if (!StringUtil.phoneIsValid(mPhone)) {
-            $.toast().text(R.string.pls_input_valid_phone).show();
+            ToastUtil.text(R.string.pls_input_valid_phone).show();
             return;
         }
 
@@ -142,7 +143,7 @@ public class LoginFragment extends BaseBindFragment<FragmentLoginBinding> {
 
                     @Override
                     public void onError(int code, String msg) {
-                        $.toast().text(msg).show();
+                        ToastUtil.text(msg).show();
                     }
                 });
     }

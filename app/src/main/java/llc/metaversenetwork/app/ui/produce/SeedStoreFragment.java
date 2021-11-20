@@ -16,7 +16,6 @@ import com.meiyou.mvp.MvpBinder;
 import java.util.List;
 
 import likly.dialogger.Dialogger;
-import likly.dollar.$;
 import likly.view.repeat.OnHolderClickListener;
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseBindFragment;
@@ -25,6 +24,7 @@ import llc.metaversenetwork.app.databinding.FragmentSeedStoreListBinding;
 import llc.metaversenetwork.app.ui.dialog.DialogBuySeedSuccess;
 import llc.metaversenetwork.app.ui.dialog.DialogNotAuth;
 import llc.metaversenetwork.app.util.CollectionUtils;
+import llc.metaversenetwork.app.util.ToastUtil;
 import llc.metaversenetwork.app.util.ViewUtil;
 import llc.metaversenetwork.app.view.GradViewItemDecoration;
 
@@ -98,11 +98,11 @@ public class SeedStoreFragment extends BaseBindFragment<FragmentSeedStoreListBin
         }
         // 已领取试种树苗
         if (claimNewbieMiner && seed.price == 0) {
-            $.toast().text(R.string.has_get_try_seed).show();
+            ToastUtil.text(R.string.has_get_try_seed).show();
             return;
         }
         if (seed.buyNum == seed.buyMax) {
-            $.toast().text(R.string.seed_sold_out_all).show();
+            ToastUtil.text(R.string.seed_sold_out_all).show();
             return;
         }
 
@@ -132,7 +132,7 @@ public class SeedStoreFragment extends BaseBindFragment<FragmentSeedStoreListBin
 //                        if (code == 403) {
 //                            showNotAuthDialog();
 //                        } else {
-                        $.toast().text(msg).show();
+                        ToastUtil.text(msg).show();
 //                        }
                     }
                 });

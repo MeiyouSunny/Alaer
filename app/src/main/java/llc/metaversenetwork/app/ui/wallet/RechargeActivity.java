@@ -25,13 +25,13 @@ import com.alaer.lib.data.UserDataUtil;
 
 import java.util.List;
 
-import likly.dollar.$;
 import likly.view.repeat.OnHolderClickListener;
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseTitleActivity;
 import llc.metaversenetwork.app.databinding.ActivityRechargeBinding;
 import llc.metaversenetwork.app.util.CollectionUtils;
 import llc.metaversenetwork.app.util.QRCodeEncoder;
+import llc.metaversenetwork.app.util.ToastUtil;
 import llc.metaversenetwork.app.util.ViewUtil;
 
 /**
@@ -214,7 +214,7 @@ public class RechargeActivity extends BaseTitleActivity<ActivityRechargeBinding>
                 cmb.setText(mCoinAddress);
                 ClipData clipData = ClipData.newPlainText(null, mCoinAddress);
                 cmb.setPrimaryClip(clipData);
-                $.toast().text(R.string.wallet_address_copy_success).show();
+                ToastUtil.text(R.string.wallet_address_copy_success).show();
                 break;
         }
     }
