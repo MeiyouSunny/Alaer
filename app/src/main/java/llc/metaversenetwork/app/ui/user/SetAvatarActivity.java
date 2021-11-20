@@ -196,6 +196,7 @@ public class SetAvatarActivity extends BaseTitleActivity<ActivitySetAvatarBindin
                     @Override
                     public void onResponse(TeamDetail teamDetail) {
                         UserDataUtil.instance().saveTeamDetailInfo(teamDetail);
+                        finish();
                     }
                 });
     }

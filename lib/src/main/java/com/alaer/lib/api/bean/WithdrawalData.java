@@ -27,5 +27,6 @@ public class WithdrawalData {
         public int status;
         public int contractId;
         public float amount;
+        public float initAmount;
     }
 }

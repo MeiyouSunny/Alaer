@@ -6,6 +6,7 @@ public class AdTask implements Serializable {
 
     public int id;
     public String name;
+    public String nameEn;
     public int status;
     public int completeStatus;
     public int times;

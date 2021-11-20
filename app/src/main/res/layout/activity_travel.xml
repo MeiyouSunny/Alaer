@@ -38,7 +38,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="28dp"
                     android:text="@string/alaer_travel_video"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/font_19" />
 
                 <TextView
@@ -46,8 +46,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="28dp"
                     android:layout_marginTop="6dp"
-                    android:text="@string/alaer_travel_video"
-                    android:textColor="@color/font_7E"
+                    android:text="@string/welcome_to_mnc_digital_center"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/font_12" />
 
 <!--                <cn.jzvd.JzvdStd-->

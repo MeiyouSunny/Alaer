@@ -417,7 +417,7 @@
                             android:drawablePadding="0dp"
                             android:gravity="center"
                             android:paddingRight="6dp"
-                            android:text="團隊活躍度"
+                            android:text="@string/patner_active"
                             android:textColor="@color/white"
                             android:textSize="@dimen/font_13"
                             android:textStyle="bold" />
@@ -430,7 +430,7 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:paddingRight="6dp"
-                            android:text="團隊人數"
+                            android:text="@string/partner_persons"
                             android:textColor="@color/white"
                             android:textSize="@dimen/font_13"
                             android:textStyle="bold" />
@@ -443,7 +443,7 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:paddingRight="6dp"
-                            android:text="團隊星級"
+                            android:text="@string/team_start_level"
                             android:textColor="@color/white"
                             android:textSize="@dimen/font_13"
                             android:textStyle="bold" />
@@ -456,7 +456,7 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:paddingRight="6dp"
-                            android:text="註冊時間"
+                            android:text="@string/regist_time"
                             android:textColor="@color/white"
                             android:textSize="@dimen/font_13"
                             android:textStyle="bold" />

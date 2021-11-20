@@ -24,6 +24,7 @@ import llc.metaversenetwork.app.databinding.ActivityDiscoverBinding;
 import llc.metaversenetwork.app.ui.share.ShareActivity;
 import llc.metaversenetwork.app.ui.user.MyTeamActivity;
 import llc.metaversenetwork.app.util.CollectionUtils;
+import llc.metaversenetwork.app.util.ToastUtil;
 import llc.metaversenetwork.app.util.ViewUtil;
 
 /**
@@ -124,7 +125,8 @@ public class DiscoverActivity extends BaseTitleActivity<ActivityDiscoverBinding>
                 ViewUtil.gotoAuthPage(this);
                 break;
             case R.id.myCity:
-                $.toast().text(R.string.will_open_soon).show();
+                ToastUtil.text(R.string.will_open_soon).show();
+//                $.toast().text(R.string.will_open_soon).show();
 //                if (UserDataUtil.instance().isAuthed())
 //                    ViewUtil.gotoActivity(this, MyCityActivity.class);
 //                else

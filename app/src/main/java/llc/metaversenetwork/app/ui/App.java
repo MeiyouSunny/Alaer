@@ -13,11 +13,13 @@ import llc.metaversenetwork.app.util.LocaleUtil;
 public class App extends Application {
 
     public static Context mAppContext;
+    public static App mApp;
 
     @Override
     public void onCreate() {
         super.onCreate();
         mAppContext = getApplicationContext();
+        mApp = this;
 
         $.initialize(this);
         HttpManager.initHttp(getApplicationContext());

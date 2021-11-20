@@ -55,7 +55,7 @@
     <string name="amount_add">+%s</string>
     <string name="amount_reduce">-%s</string>
     <string name="disinsection">發現礦石</string>
-    <string name="reap">收藏鑽石</string>
+    <string name="reap">收穫礦石</string>
     <string name="speed_up">加速</string>
     <string name="seed_store">元宇宙商店</string>
     <string name="time_remain">剩餘%s</string>
@@ -130,8 +130,8 @@
     <string name="auth_success">恭喜你完成身份認證！</string>
     <string name="share_now">立即分享</string>
     <string name="travel_hall">元宇宙中心</string>
-    <string name="alaer_travel_video">元宇宙旅遊宣傳片</string>
-    <string name="travel_ticket">旅遊景點購票</string>
+    <string name="alaer_travel_video">元宇宙數字生態宣傳片</string>
+    <string name="travel_ticket">進入元宇宙數字生態</string>
     <string name="alipay_auth">支付寶認證</string>
     <string name="card_auth">卡認證</string>
     <string name="mine">我的</string>
@@ -245,7 +245,7 @@
     <string name="check_update">檢查更新</string>
     <string name="user_agreement">MNC用戶協議及隱私政策</string>
     <string name="fingerprint">指紋</string>
-    <string name="phone">手機</string>
+    <string name="phone">手機號碼</string>
     <string name="system_settings">系統設置</string>
     <string name="access_point">接入點</string>
     <string name="exit">退出</string>
@@ -344,7 +344,7 @@
     <string name="select_seed">探測器選購</string>
 
     <string name="system">系統</string>
-    <string name="my_wallet">我的錢包</string>
+    <string name="my_wallet">錢包</string>
     <string name="honor_value">榮譽值</string>
     <string name="honor_value_record">榮譽值明細</string>
 
@@ -404,6 +404,7 @@
     <string name="get_quantity">可得數量：</string>
     <string name="immediate_receipt">即時到賬</string>
     <string name="person_level_is">會員等級：LV%d</string>
+    <string name="user_level">會員等級：</string>
     <string name="burn">燒傷</string>
     <string name="user_rule_url">https://files.metaversenetwork.ai/html/MNC_Metaverse_Network_LLC_User_Agreement.html</string>
     <string name="activity_desc_url">https://files.metaversenetwork.ai/html/MNC_AboutActivity.html</string>
@@ -494,5 +495,14 @@
     <string name="withdrawal_all">全部提現</string>
     <string name="sms_code">短信驗證碼</string>
     <string name="get_sms_code">獲取驗證碼</string>
+    <string name="team_start_level">團隊星級</string>
+    <string name="team_level_desc_bottom">注:各元宇宙星級團隊用戶必須保證有相應的活躍實名和相應的團隊活躍度，兩者缺一不可。所謂活躍實名是指直接推薦並且實名認證通過，且必須有正在運行中的探測器。若因為推廣會員的探測器失效，導致\"活躍實名\"會員數量不足20人的，或者團隊中的會員探測器失效，導致夥團隊活躍度降低至對應團隊星級標準以下，就會出現等級滑落現象。</string>
+    <string name="phone_number">手機號：</string>
+    <string name="team_level">團隊等級：</string>
+    <string name="location_is">位置：</string>
+    <string name="telegram">Telegram號：</string>
+    <string name="welcome_to_mnc_digital_center">歡迎來到元宇宙數字生態</string>
+    <string name="task_do_failed">任務未完成！</string>
+    <string name="task_complete">任務已完成！</string>
 
 </resources>

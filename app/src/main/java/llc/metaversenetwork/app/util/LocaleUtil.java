@@ -10,6 +10,7 @@ import android.util.DisplayMetrics;
 import java.util.Locale;
 
 import likly.dollar.$;
+import llc.metaversenetwork.app.ui.App;
 
 /**
  * Created by HuangJW on 2021/10/28 20:19.
@@ -52,6 +53,7 @@ public class LocaleUtil {
 //        }
 
         context = context.createConfigurationContext(config);
+        $.initialize(App.mApp);
 
         return context;
     }

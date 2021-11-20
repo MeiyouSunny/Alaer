@@ -115,8 +115,8 @@ public class ExchangeBuildScoreActivity extends BaseTitleActivity<ActivityExchan
         mAmountInput = mIsWMNC ? mBalance.diamond.amount : mBalance.money.amount;
         mAmountGet = mIsWMNC ? mBalance.money.amount : mBalance.diamond.amount;
 
-        bindRoot.balance1.setText(getString(R.string.balance_is, NumberUtils.instance().parseNumber_(mAmountInput)));
-        bindRoot.balance2.setText(getString(R.string.balance_is, NumberUtils.instance().parseNumber_(mAmountGet)));
+        bindRoot.balance1.setText(getString(R.string.balance_is, NumberUtils.instance().parseNumber(mAmountInput)));
+        bindRoot.balance2.setText(getString(R.string.balance_is, NumberUtils.instance().parseNumber(mAmountGet)));
 
         onInputChanged();
     }
@@ -155,16 +155,16 @@ public class ExchangeBuildScoreActivity extends BaseTitleActivity<ActivityExchan
         String unitGet = mIsWMNC ? getString(R.string.mnc_unit) : getString(R.string.sapling);
 
         bindRoot.amountGet.setText(NumberUtils.instance().parseNumber(amountGet));
-        bindRoot.detailLabel22.setText(inputValue + " " + unitInput);
-        bindRoot.detailLabel32.setText(feeAmount + " " + unitInput);
-        bindRoot.detailLabel42.setText(amountGet + " " + unitGet);
+        bindRoot.detailLabel22.setText(NumberUtils.instance().parseNumber(inputValue) + " " + unitInput);
+        bindRoot.detailLabel32.setText(NumberUtils.instance().parseNumber(feeAmount) + " " + unitInput);
+        bindRoot.detailLabel42.setText(NumberUtils.instance().parseNumber(amountGet) + " " + unitGet);
     }
 
     @Override
     public void click(View view) {
         switch (view.getId()) {
             case R.id.exchangeAll:
-                bindRoot.etAmount.setText(NumberUtils.instance().parseNumber_(mAmountInput));
+                bindRoot.etAmount.setText(NumberUtils.instance().parseNumber(mAmountInput));
                 bindRoot.etAmount.setSelection(ViewUtil.getText(bindRoot.etAmount).length());
                 break;
             case R.id.confirm:

@@ -154,7 +154,7 @@ public class TaskListFragment extends BottomSheetDialogFragment {
                 new Callback<String>() {
                     @Override
                     public void onResponse(String response) {
-                        $.toast().text("任务已完成!").show();
+                        $.toast().text(R.string.task_complete).show();
                         getTaskList();
                     }
 
@@ -170,7 +170,7 @@ public class TaskListFragment extends BottomSheetDialogFragment {
             // 播放完成,完成任务
             completeTask(mAdTask.id);
         } else {
-            $.toast().text("任務未完成!").show();
+            $.toast().text(R.string.task_do_failed).show();
         }
     }
 

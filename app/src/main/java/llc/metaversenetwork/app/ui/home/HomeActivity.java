@@ -62,6 +62,7 @@ import llc.metaversenetwork.app.ui.video.VideoActivity;
 import llc.metaversenetwork.app.util.CollectionUtils;
 import llc.metaversenetwork.app.util.LocaleUtil;
 import llc.metaversenetwork.app.util.NumberUtils;
+import llc.metaversenetwork.app.util.ToastUtil;
 import llc.metaversenetwork.app.util.ViewUtil;
 import llc.metaversenetwork.app.view.mapview.MapContainer;
 import llc.metaversenetwork.app.view.mapview.MapView;
@@ -105,6 +106,7 @@ public class HomeActivity extends BaseViewBindActivity<ActivityHomeBinding> impl
             new AppUpgradeManager(this).checkUpdate(false);
             LocaleUtil.restoreLanguage(HomeActivity.this);
         }
+        ToastUtil.refreshContext(this);
     }
 
     private void refreshProfile() {

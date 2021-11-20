@@ -8,6 +8,7 @@ import likly.dollar.$;
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseTitleActivity;
 import llc.metaversenetwork.app.databinding.ActivityTravelBinding;
+import llc.metaversenetwork.app.util.ViewUtil;
 import llc.metaversenetwork.app.view.JZMediaSystemAssertFolder;
 
 /**
@@ -37,9 +38,11 @@ public class TravelHallActivity extends BaseTitleActivity<ActivityTravelBinding>
 //        ViewUtil.showImage(getApplicationContext(), bindRoot.player2.posterImageView, AppConfig.TRAVEL_VIDEO_PIC2);
 //        bindRoot.player2.setUp(AppConfig.TRAVEL_VIDEO2, "");
 
-        bindRoot.player1.posterImageView.setImageResource(R.drawable.img_travel_1);
+//        bindRoot.player1.posterImageView.setImageResource(R.drawable.img_travel_1);
+        ViewUtil.showImage(getApplicationContext(), bindRoot.player1.posterImageView, "https://t-app.linker.world/meta/image/welcome.jpg");
         bindRoot.player1.setUp("welcom.mp4", "", JzvdStd.SCREEN_NORMAL, JZMediaSystemAssertFolder.class);
         bindRoot.player2.posterImageView.setImageResource(R.drawable.img_travel_2);
+        ViewUtil.showImage(getApplicationContext(), bindRoot.player2.posterImageView, "https://t-app.linker.world/meta/image/mnc.jpg");
         bindRoot.player2.setUp("task-2.mp4", "", JzvdStd.SCREEN_NORMAL, JZMediaSystemAssertFolder.class);
     }
 

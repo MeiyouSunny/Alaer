@@ -5,14 +5,15 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import com.alaer.lib.api.bean.AdTask;
-import llc.metaversenetwork.app.R;
-import llc.metaversenetwork.app.databinding.ItemTaskBinding;
 
 import java.util.List;
 
 import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
+import likly.dollar.$;
+import llc.metaversenetwork.app.R;
+import llc.metaversenetwork.app.databinding.ItemTaskBinding;
 
 /**
  * 任务Adapter
@@ -43,6 +44,8 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        boolean isDefaultLanguage = $.config().getBoolean("defaultLanguage", true);
+        holder.binding.setIsDefaultLanguage(isDefaultLanguage);
         holder.binding.setData(data.get(position));
         holder.binding.setHandler(handler);
         holder.binding.executePendingBindings();

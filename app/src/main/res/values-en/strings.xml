@@ -51,14 +51,14 @@
     <string name="produce_hall">My Metauniverse</string>
     <string name="produce_base_with_arrow">Production base&gt;</string>
     <string name="fertilize">Start detection</string>
-    <string name="water">Activate laser</string>
+    <string name="water">Input laser</string>
     <string name="amount_add">+%s</string>
     <string name="amount_reduce">-%s</string>
-    <string name="disinsection">Find diamonds</string>
-    <string name="reap">Collect diamonds</string>
+    <string name="disinsection">Found metaMine</string>
+    <string name="reap">Harvest metaMine</string>
     <string name="speed_up">Accelerate</string>
     <string name="seed_store">Metaverse Store</string>
-    <string name="time_remain">%s remaining</string>
+    <string name="time_remain">%s Remains</string>
     <string name="pls_produce_tomorrow">Please continue tomorrow</string>
     <string name="seed_try">Novice detector</string>
     <string name="seed_ginkgo">Apricot tree</string>
@@ -130,12 +130,12 @@
     <string name="auth_success">Congratulations on completing your identity authentication!</string>
     <string name="share_now">Share now</string>
     <string name="travel_hall">Metauniverse center</string>
-    <string name="alaer_travel_video">Yuan universe tourism promotional film</string>
-    <string name="travel_ticket">Ticket purchase for tourist attractions</string>
+    <string name="alaer_travel_video">Metaverse Digital Ecology Promo</string>
+    <string name="travel_ticket">Enter the Metaverse Digital Ecology</string>
     <string name="alipay_auth">Alipay certification</string>
     <string name="card_auth">Card authentication</string>
     <string name="mine">Mine</string>
-    <string name="contribution_value">Contribution value:%s</string>
+    <string name="contribution_value">Contribution:%s</string>
     <string name="total_assets">Total assets: (¥)</string>
     <string name="fruit">WMNC</string>
     <string name="build_integral">MNC</string>
@@ -179,7 +179,7 @@
     <string name="sapling_activity_is">Detector activity:%s</string>
     <string name="share_activity_is">Share activity:%s</string>
     <string name="fruit_bill">MetaMine stones WMNC details</string>
-    <string name="total">total</string>
+    <string name="total">Total</string>
     <string name="available">Available</string>
     <string name="income">income</string>
     <string name="outcome">expenditure</string>
@@ -187,12 +187,12 @@
     <string name="share_persons">Number of sharing</string>
     <string name="active_real_auth">Active real name</string>
     <string name="partner_persons">Number of team</string>
-    <string name="patner_active">Partner activity</string>
+    <string name="patner_active">Team activity</string>
     <string name="star_team">Metaverse citizen level</string>
     <string name="regist_time">Registration time</string>
     <string name="notice_detail">Notice</string>
     <string name="notice_list">Announcement list</string>
-    <string name="team_level_reward_is">Reward 1 <font color='#FF7171'>%1$s</font> + Metaverse citizen star co construction service charge %2$d%% reward</string>
+    <string name="team_level_reward_is">Reward for <font color='#FF7171'>%1$s</font> detectors + Global MNC membership exchange handling fee %2$d%% rewards</string>
     <string name="no_team_level">No star</string>
     <string name="team_level_desc_is">1. Share real name %1$D people \n2. Partner activity %2$D points</string>
     <string name="regist_time_is">Registration time:</string>
@@ -200,7 +200,7 @@
     <string name="share_persons_is">Number of sharing:</string>
     <string name="active_real_auth_is">Active real name:</string>
     <string name="partner_persons_is">Number of team:</string>
-    <string name="patner_active_is">Partner activity:</string>
+    <string name="patner_active_is">Team activity:</string>
     <string name="activity">Active</string>
     <string name="real_name">Verified</string>
     <string name="do_task">To finish</string>
@@ -229,7 +229,7 @@
     <string name="fruit_number_is_about">About %s MetaMine stones</string>
     <string name="fund_is">Contribution service charge:</string>
     <string name="inviter_info">Inviter information</string>
-    <string name="second_pwd">Exchange password</string>
+    <string name="second_pwd">Redeem password</string>
     <string name="second_pwd_set">Exchange password settings</string>
     <string name="pls_make_not_same_with_second_pwd">Please do not match the exchange password</string>
     <string name="pls_make_not_same_with_pwd">Please do not match the login password</string>
@@ -245,7 +245,7 @@
     <string name="check_update">Check for updates</string>
     <string name="user_agreement">MNC User agreement and privacy policy</string>
     <string name="fingerprint">fingerprint</string>
-    <string name="phone">mobile phone</string>
+    <string name="phone">phone phone</string>
     <string name="system_settings">System settings</string>
     <string name="access_point">Access point</string>
     <string name="exit">Exit</string>
@@ -256,18 +256,18 @@
     <string name="modify_success">Modification succeeded!</string>
     <string name="region_number">Area number</string>
     <string name="downloaded_size">Downloaded %d</string>
-    <string name="contribution">Contribution value</string>
+    <string name="contribution">Contribution</string>
     <string name="contribution_is">Activity: %s</string>
-    <string name="contribution_detail">Contribution value details</string>
+    <string name="contribution_detail">Contribution details</string>
     <string name="user_level_free_rate_is">2. Proportion of paid service charge %d%%</string>
-    <string name="contribution_info_is">contribution value:%d</string>
+    <string name="contribution_info_is">Contribution:%d</string>
     <string name="exchange_explain">Exchange instructions</string>
-    <string name="contribution_explain">Contribution value description</string>
+    <string name="contribution_explain">Contribution description</string>
     <string name="fruit_explain">MetaMine stones description</string>
     <string name="build_score_explain">Description of Metaverse integral</string>
     <string name="activity_explain">Activity description</string>
     <string name="user_level_explain">User level description</string>
-    <string name="will_open_soon">It will open soon. Please look forward to it</string>
+    <string name="will_open_soon">Features coming soon</string>
     <string name="no_tasks">No mission!</string>
     <string name="function_not_open">This function is not open yet</string>
     <string name="city_note_apply">Metaverse node apply</string>
@@ -329,7 +329,7 @@
     <string name="citizen_level3">Third class metaverse citizen</string>
     <string name="get_detector_for_free">Get detector for free</string>
     <string name="regional_activity">Regional activity</string>
-    <string name="community_activity">Community activity</string>
+    <string name="community_activity"> Cell activity</string>
     <string name="auth_success_return">Return MNC Metaverse</string>
 
     <string name="saturn">Saturn</string>
@@ -344,7 +344,7 @@
     <string name="select_seed">Select detector</string>
 
     <string name="system">System</string>
-    <string name="my_wallet">My purse</string>
+    <string name="my_wallet">Wallet</string>
     <string name="honor_value">Honor value</string>
     <string name="honor_value_record">Honor value detail</string>
 
@@ -402,20 +402,21 @@
     <string name="exchange_fee">Exchange fee:</string>
     <string name="get_quantity">Get quantity:</string>
     <string name="immediate_receipt">Immediate receipt</string>
-    <string name="person_level_is">Member level: LV%d</string>
-    <string name="burn">Burn</string>
+    <string name="person_level_is">Membership level: LV%d</string>
+    <string name="user_level">Membership level:</string>
+    <string name="burn">Burned</string>
     <string name="user_rule_url">https://files.metaversenetwork.ai/html_en/MNC_Metaverse_Network_LLC_User_Agreement-ENG.html</string>
     <string name="daily_task">Daily task</string>
     <string name="task_hint">Complete the metauniverse daily task to obtain more rewards</string>
     <string name="exploring_metauniverse">Exploring the Metauniverse</string>
     <string name="welcome_join_metauniverse">Welcome to join the Metauniverse</string>
-    <string name="mnc_service_disclaimer">MNC service disclaimer of liability</string>
+    <string name="mnc_service_disclaimer">MNC Service Disclaimer</string>
     <string name="mnc_service_disclaimer_url">https://files.metaversenetwork.ai/html_en/MNC_DISCLAIMER_OF_LIABILITY-ENG.html</string>
     <string name="honor_value_desc">Honor value description</string>
     <string name="record">Record</string>
     <string name="reward_honor_value_is">Reward honor value:%d</string>
     <string name="vip_centre">Member center</string>
-    <string name="burn_active_is">Burn activity: %s</string>
+    <string name="burn_active_is">Burned Activity: %s</string>
     <string name="team_level_rule">Team level rules</string>
     <string name="user_level_rule">User level rules</string>
     <string name="team_level1">Team level 1</string>
@@ -484,5 +485,14 @@
     <string name="withdrawal_all">All</string>
     <string name="sms_code">Input SMS verification code</string>
     <string name="get_sms_code">Send SMS</string>
+    <string name="team_start_level">Team star</string>
+    <string name="team_level_desc_bottom">Note: The users of each metaverse star team must ensure that they have the corresponding active real name and the corresponding team activity, both of which are indispensable. The so-called active real-name refers to direct recommendation and real-name authentication, and there must be a running detector. If the number of \"active real-name\" members is less than 20 due to the failure of the promotion member\'s detector, or the failure of the member detector in the team, which causes the team\'s activity to drop below the corresponding team\'s star rating, a level drop will occur.</string>
+    <string name="phone_number">Phone number</string>
+    <string name="team_level">Team level:</string>
+    <string name="location_is">Location:</string>
+    <string name="telegram">Telegram:</string>
+    <string name="welcome_to_mnc_digital_center">Welcome to Metaverse Digital Ecology</string>
+    <string name="task_do_failed">Task not completed!</string>
+    <string name="task_complete">Task completed!</string>
 
 </resources>
