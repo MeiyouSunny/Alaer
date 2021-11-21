@@ -424,6 +424,7 @@ public interface ApiService {
     @GET("/user/vcode")
     Call<String> getPhoneCode2(@Query("uuid") String uuid, @Query("uid") String uid, @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
                               @Query("validate") String validate, @Query("captchaId") String captchaId, @Query("type") int type,@Query("email") String email,
+                               @Query("diallingCode") String diallingCode,
                               Callback<String> callback);
 
     /**

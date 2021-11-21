@@ -8,6 +8,7 @@ import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseDialogHolder;
 import llc.metaversenetwork.app.databinding.DialogNewVersionBinding;
 import llc.metaversenetwork.app.ui.setting.AppUpgradeManager;
+import llc.metaversenetwork.app.util.LocaleUtil;
 
 public class DialogNewVersion extends BaseDialogHolder<DialogNewVersionBinding> implements AppUpgradeManager.DownloadProgressListener {
 
@@ -28,7 +29,7 @@ public class DialogNewVersion extends BaseDialogHolder<DialogNewVersionBinding> 
         bindRoot.setInfo(updateInfo);
         bindRoot.executePendingBindings();
         bindRoot.title.setText(getContext().getString(R.string.new_version, updateInfo.nowVersion));
-        bindRoot.content.setText(updateInfo.msgContent);
+        bindRoot.content.setText(LocaleUtil.isDefaultLanguage() ? updateInfo.msgContent : updateInfo.msgContentEn);
 
 //        if (forceUpdate) {
 //            bindRoot.cancel.setVisibility(View.GONE);

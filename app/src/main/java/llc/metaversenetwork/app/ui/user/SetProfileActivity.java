@@ -116,7 +116,7 @@ public class SetProfileActivity extends BaseTitleActivity<ActivityWechatNoSetBin
                 inputContent = userData.code;
                 break;
             case NIKE_NAME:
-                inputContent = userData.name;
+                inputContent = userData.uname;
                 break;
         }
         if (!TextUtils.isEmpty(inputContent)) {

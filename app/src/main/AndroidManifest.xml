@@ -92,6 +92,7 @@
             android:screenOrientation="portrait"></activity>
         <activity
             android:name=".ui.home.HomeActivity"
+            android:configChanges="locale|layoutDirection"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"></activity>
         <activity

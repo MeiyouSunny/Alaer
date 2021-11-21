@@ -164,19 +164,19 @@
 
             <RelativeLayout
                 android:id="@+id/selectPhoto"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="160dp"
-                android:layout_marginLeft="36dp"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginTop="18dp"
-                android:layout_marginRight="36dp"
                 android:background="@color/card_bg_trans"
                 android:clickable="true"
                 android:onClick="@{handler.click}">
 
                 <ImageView
                     android:id="@+id/photo"
-                    android:layout_width="match_parent"
+                    android:layout_width="280dp"
                     android:layout_height="match_parent"
+                    android:scaleType="fitXY"
                     android:src="@drawable/ic_card_photo" />
 
             </RelativeLayout>
@@ -216,12 +216,12 @@
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/next"
                     android:layout_width="0dp"
-                    android:enabled="false"
                     android:layout_height="match_parent"
                     android:layout_alignParentBottom="true"
                     android:layout_marginLeft="18dp"
                     android:layout_weight="1"
                     android:background="@drawable/btn_green"
+                    android:enabled="false"
                     android:onClick="@{handler.click}"
                     android:text="@string/confirm"
                     android:textColor="@color/white" />

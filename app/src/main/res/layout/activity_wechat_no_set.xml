@@ -85,6 +85,7 @@
                         android:layout_toLeftOf="@+id/icClear"
                         android:background="@null"
                         android:singleLine="true"
+                        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890_"
                         android:textColor="@color/white"
                         android:textColorHint="@color/white"
                         android:textSize="@dimen/font_17"

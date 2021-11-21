@@ -166,7 +166,7 @@
                             android:ellipsize="end"
                             android:gravity="right"
                             android:singleLine="true"
-                            android:text="@{user.name}"
+                            android:text="@{user.uname}"
                             android:textColor="@color/white"
                             android:textSize="@dimen/font_15"
                             tools:text="11*283" />

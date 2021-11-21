@@ -58,4 +58,8 @@ public class LocaleUtil {
         return context;
     }
 
+    public static boolean isDefaultLanguage() {
+        return $.config().getBoolean("defaultLanguage", true);
+    }
+
 }

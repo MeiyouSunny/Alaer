@@ -11,6 +11,7 @@ import android.os.Message;
 import android.text.TextPaint;
 import android.text.TextUtils;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.widget.ProgressBar;
 
 import llc.metaversenetwork.app.R;
@@ -19,6 +20,9 @@ import llc.metaversenetwork.app.util.TimeUtil;
 import androidx.annotation.NonNull;
 
 public class TextProgressBar extends ProgressBar {
+    // 30分钟
+    private final long MINUTES_30 = 30 * 60 * 1000;
+
     private String mTextShow;
     private int mTextColor = Color.WHITE;
     private float mTextSize = 12;
@@ -101,8 +105,14 @@ public class TextProgressBar extends ProgressBar {
         String timeText = getResources().getString(R.string.time_remain, TimeUtil.parseMillesToTimeString(timeRemain));
         setTextShow(timeText);
 
-        int progress = (int) (((timeNow - timeStart) / (float) (timeEnd - timeStart)) * 100);
+        long speedTime = (timeStart + MINUTES_30) - timeEnd;
+        long passTime = (timeNow - timeStart) + speedTime;
+        long totalTime = timeEnd - timeStart + speedTime;
+
+        int progress = (int) ((passTime / (float) totalTime) * 100);
         setProgress(progress);
+
+        Log.e("ProgressData", timeRemain + " | " + (timeEnd - timeStart) + " | " + progress);
 
         invalidate();
         // 倒计时

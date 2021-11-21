@@ -8,6 +8,7 @@ public class UpdateInfo {
     public Object base64AndroidUrl;
     public String nowVersion;
     public String msgContent;
+    public String msgContentEn;
     public int updateForce;
     public String devicetype;
     public String channelNameId;

@@ -6,6 +6,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.widget.ImageView;
 
 import com.alaer.lib.api.ApiUtil;
@@ -21,6 +22,7 @@ import com.meiyou.mvp.MvpBinder;
 import java.util.List;
 
 import androidx.annotation.Nullable;
+import likly.dollar.$;
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseTitleActivity;
 import llc.metaversenetwork.app.databinding.ActivityProductionHallBinding;
@@ -68,6 +70,9 @@ public class ProductionHallActivity extends BaseTitleActivity<ActivityProduction
         bindRoot.setStep(0);
         bindRoot.setStepHandler(mProduceStepHandler);
         bindRoot.progress.setProgressListener(this);
+
+        boolean isDefaultLanguage = $.config().getBoolean("defaultLanguage", true);
+        bindRoot.setImgGetMinter(isDefaultLanguage ? R.drawable.img_produce_step_get_miner : R.drawable.img_produce_step_get_miner_en);
 
         mUserData = UserDataUtil.instance().getUserData();
         queryCurrentInfos();
@@ -326,6 +331,9 @@ public class ProductionHallActivity extends BaseTitleActivity<ActivityProduction
         bindRoot.progress.setTimes(TimeUtil.parseTimeToMillies(mTeamInfo.virtualMiner.stepStartTime),
                 TimeUtil.parseTimeToMillies(mTeamInfo.virtualMiner.stepEndTime),
                 TimeUtil.parseTimeToMillies(mTeamInfo.stime));
+        Log.e("ProgressData", mTeamInfo.virtualMiner.stepStartTime + " | " +
+                mTeamInfo.virtualMiner.stepEndTime + " | " +
+                mTeamInfo.stime);
     }
 
     private void updateProduceStep() {

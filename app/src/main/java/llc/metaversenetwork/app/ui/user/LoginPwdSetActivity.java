@@ -15,6 +15,7 @@ import likly.dollar.$;
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.base.BaseTitleActivity;
 import llc.metaversenetwork.app.databinding.ActivityLoginPwdSetBinding;
+import llc.metaversenetwork.app.ui.home.HomeActivity;
 import llc.metaversenetwork.app.util.NeteaseCaptcha;
 import llc.metaversenetwork.app.util.SimpleTextWatcher;
 import llc.metaversenetwork.app.util.StringUtil;
@@ -107,7 +108,7 @@ public class LoginPwdSetActivity extends BaseTitleActivity<ActivityLoginPwdSetBi
     private void sendPhoneCode(String validate) {
         final String phone = $.config().getString("phone");
         ApiUtil.apiService().getPhoneCode2(userData.uuid, String.valueOf(userData.uid), userData.token, AppConfig.DIAMOND_CURRENCY,
-                validate, AppConfig.VERIFY_ID, 1, phone,
+                validate, AppConfig.VERIFY_ID, 1, phone, AppConfig.DIALLING_CODE,
                 new Callback<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -149,6 +150,7 @@ public class LoginPwdSetActivity extends BaseTitleActivity<ActivityLoginPwdSetBi
                     @Override
                     public void onResponse(String response) {
                         ToastUtil.text(R.string.reset_pwd_success).show();
+                        ViewUtil.gotoActivity(getContext(), HomeActivity.class);
                         finish();
                     }
 

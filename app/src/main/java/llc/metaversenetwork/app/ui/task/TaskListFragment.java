@@ -31,6 +31,7 @@ import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.databinding.TaskListFragmentBinding;
 import llc.metaversenetwork.app.ui.video.VideoActivity;
 import llc.metaversenetwork.app.util.CollectionUtils;
+import llc.metaversenetwork.app.util.LocaleUtil;
 import llc.metaversenetwork.app.util.ToastUtil;
 
 public class TaskListFragment extends BottomSheetDialogFragment {
@@ -172,6 +173,7 @@ public class TaskListFragment extends BottomSheetDialogFragment {
         } else {
             ToastUtil.text(R.string.task_do_failed).show();
         }
+        LocaleUtil.restoreLanguage(getActivity());
     }
 
     private void filterAdTask(List<AdTask> tasks) {

@@ -25,6 +25,10 @@
             type="int[]" />
 
         <variable
+            name="imgGetMinter"
+            type="int" />
+
+        <variable
             name="progressComplete"
             type="boolean" />
 
@@ -53,7 +57,7 @@
                 android:layout_height="match_parent"
                 android:clickable="@{step==-1? true: false}"
                 android:onClick="@{() -> stepHandler.onStep(-1)}"
-                app:drawableRes="@{step == -1 ? R.drawable.img_produce_step_get_miner : bgPics[step]}" />
+                app:drawableRes="@{step == -1 ? imgGetMinter : bgPics[step]}" />
 
             <LinearLayout
                 android:id="@+id/layoutProgress"
@@ -74,6 +78,7 @@
                     android:layout_width="0dp"
                     android:layout_height="16dp"
                     android:layout_weight="1"
+                    android:max="100"
                     android:progress="0"
                     android:progressDrawable="@drawable/bg_progress"
                     app:textColor="@color/white"
