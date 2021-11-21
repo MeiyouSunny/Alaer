@@ -103,8 +103,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_marginLeft="4dp"
-            android:layout_marginBottom="20dp"
-            android:singleLine="true"
+            android:layout_marginBottom="10dp"
+            android:lines="2"
             android:textColor="@color/white"
             android:textSize="@dimen/font_12" />
 

@@ -185,7 +185,6 @@
                         android:src="@drawable/ic_input_clear" />
 
                     <androidx.appcompat.widget.AppCompatButton
-                android:textAllCaps="false"
                         android:id="@+id/send"
                         android:layout_width="61dp"
                         android:layout_height="26dp"
@@ -195,6 +194,7 @@
                         android:gravity="center"
                         android:onClick="@{handler.click}"
                         android:text="@string/send"
+                        android:textAllCaps="false"
                         android:textColor="#F9F9F9"
                         android:textSize="@dimen/font_12" />
 

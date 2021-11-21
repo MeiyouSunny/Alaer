@@ -20,6 +20,7 @@ import llc.metaversenetwork.app.databinding.ActivityBeginnerGuideBinding;
 import llc.metaversenetwork.app.ui.user.InviterInfoActivity;
 import llc.metaversenetwork.app.ui.webpage.WebPageActivity;
 import llc.metaversenetwork.app.util.CollectionUtils;
+import llc.metaversenetwork.app.util.DataUtil;
 import llc.metaversenetwork.app.util.ViewUtil;
 
 /**
@@ -45,6 +46,7 @@ public class BeginnerGuideActivity extends BaseTitleActivity<ActivityBeginnerGui
                 new Callback<CommonQuestionList>() {
                     @Override
                     public void onResponse(CommonQuestionList questionList) {
+                        questionList = DataUtil.parseCommonQuestion(questionList);
                         if (questionList != null && !CollectionUtils.isEmpty(questionList.list)) {
                             showQuestionList(questionList.list);
                         }
@@ -53,7 +55,7 @@ public class BeginnerGuideActivity extends BaseTitleActivity<ActivityBeginnerGui
     }
 
     private void showQuestionList(List<CommonQuestion> list) {
-        CommQuestionAdapter adapter = new CommQuestionAdapter(getApplicationContext(), list);
+        CommQuestionAdapter adapter = new CommQuestionAdapter(this, list);
         bindRoot.list.setAdapter(adapter);
     }
 
@@ -70,7 +72,6 @@ public class BeginnerGuideActivity extends BaseTitleActivity<ActivityBeginnerGui
                 UserData userData = UserDataUtil.instance().getUserData();
                 if (userData == null)
                     return;
-
 
                 ApiUtil.apiService().getFollowInfo(userData.uuid, String.valueOf(userData.uid), userData.token, AppConfig.DIAMOND_CURRENCY,
                         new Callback<TeamDetail>() {

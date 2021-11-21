@@ -40,13 +40,13 @@
     <string name="pls_input_mail_verify_code">請輸入郵箱驗證碼</string>
     <string name="confirm">確定</string>
     <string name="vierify_code">驗證碼</string>
-    <string name="pwd_not_same">兩次輸入的密碼不一致！</string>
+    <string name="pwd_not_same">兩次輸入的密碼不同，請正確輸入！</string>
     <string name="verify_code_send_ok">驗證碼發送成功</string>
     <string name="regist_success">恭喜您，註冊成功！</string>
     <string name="reset_pwd_success">密碼修改成功！</string>
     <string name="use_mean_agree">登入/申請即代表您同意</string>
     <string name="alaer_agreement">元宇宙使用者協定、隱私政策</string>
-    <string name="pwd_invalid">密碼至少由字母+數字組成，長度8-16位</string>
+    <string name="pwd_invalid">密碼至少由字母+數字組成，8-16位</string>
     <string name="produce_base">生產基地</string>
     <string name="produce_hall">我的元宇宙</string>
     <string name="produce_base_with_arrow">生產基地&gt;</string>
@@ -165,9 +165,9 @@
     <string name="nike">昵稱</string>
     <string name="wechat_no">Telegram號</string>
     <string name="not_bind">未綁定</string>
-    <string name="wechat_no_set">Telegram號設定</string>
-    <string name="wechat_no_set_warning">Telegram號設定後，將公開給分享和邀請人查看</string>
-    <string name="pls_input_wechat_no">請輸入Telegram號</string>
+    <string name="wechat_no_set">Telegram用戶名設置</string>
+    <string name="wechat_no_set_warning">Telegram用戶名設置後，您的邀請人可查看。</string>
+    <string name="pls_input_wechat_no">請輸入Telegram用戶名</string>
     <string name="wechat_no_modify_warning">修改Telegram號將消耗1元宇礦石，請謹慎設定</string>
     <string name="submit">提交</string>
     <string name="active_detail">活躍度明細</string>
@@ -235,7 +235,7 @@
     <string name="pls_make_not_same_with_pwd">請不要和登入密碼一致</string>
     <string name="pls_input_second_pwd">請輸入兌換密碼</string>
     <string name="pls_input_second_pwd_again">請再次輸入兌換密碼</string>
-    <string name="pls_input_phone_verify_code">請輸入手機驗證碼</string>
+    <string name="pls_input_phone_verify_code">手機驗證碼</string>
     <string name="pls_make_not_same_with_pwd_long">兌換密碼請不要和登入密碼一致</string>
     <string name="order_id_is">訂單號：%s</string>
     <string name="sure">確認</string>
@@ -506,6 +506,6 @@
     <string name="task_complete">任務已完成！</string>
     <string name="nick_length_limit">暱稱長度限制4-12位，字母、數字或下劃線。</string>
     <string name="invate_code_length_limit">邀請碼長度限制4-12位，字母、數字或下劃線。</string>
-    <string name="telegram_length_limit">Telegram用戶名限制6-22位，字母、數字或下劃線</string>
+    <string name="telegram_length_limit">Telegram用戶名限制6-22位，字母、數字或下劃線。</string>
 
 </resources>

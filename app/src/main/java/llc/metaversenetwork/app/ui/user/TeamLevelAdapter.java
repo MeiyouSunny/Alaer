@@ -5,7 +5,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.alaer.lib.api.ApiUtil;
+import com.alaer.lib.api.AppConfig;
+import com.alaer.lib.api.Callback;
 import com.alaer.lib.api.bean.TeamLevel;
+import com.alaer.lib.api.bean.UserData;
+import com.alaer.lib.data.UserDataUtil;
 
 import java.util.List;
 
@@ -15,6 +20,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import llc.metaversenetwork.app.R;
 import llc.metaversenetwork.app.data.TeamLevelUtil;
 import llc.metaversenetwork.app.databinding.ItemTeamLevelBinding;
+import llc.metaversenetwork.app.util.CollectionUtils;
 
 public class TeamLevelAdapter extends RecyclerView.Adapter<TeamLevelAdapter.ViewHolder> {
 
@@ -40,7 +46,28 @@ public class TeamLevelAdapter extends RecyclerView.Adapter<TeamLevelAdapter.View
             teamLevelUtil = new TeamLevelUtil(parent.getResources());
         levelLables = resources.getStringArray(R.array.team_level);
 
+        UserData userData = UserDataUtil.instance().getUserData();
+        ;
+        ApiUtil.apiService().teamStarLevel(userData.uuid, String.valueOf(userData.uid), userData.token,
+                AppConfig.DIAMOND_CURRENCY,
+                new Callback<List<TeamLevel>>() {
+                    @Override
+                    public void onResponse(List<TeamLevel> levels) {
+                        parserLevelLabels(binding, levels);
+                    }
+                });
+
         return new ViewHolder(binding);
+    }
+
+    private void parserLevelLabels(ItemTeamLevelBinding binding, List<TeamLevel> levels) {
+        if (!CollectionUtils.isEmpty(levels)) {
+            levelLables = new String[levels.size()];
+            for (int i = 0; i < levels.size(); i++) {
+                levelLables[i] = levels.get(i).name;
+            }
+            binding.setLevelLables(levelLables);
+        }
     }
 
     @Override

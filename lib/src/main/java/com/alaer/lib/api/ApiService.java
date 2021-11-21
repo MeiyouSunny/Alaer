@@ -283,7 +283,7 @@ public interface ApiService {
      * 类型。1100：轮播图；1101：新手指南
      */
     @GET("/open/slide/query")
-    Call<BannerList> banners(@Query("type") int type, @Query("pageIndex") int pageIndex, @Query("pageSize") int pageSize,
+    Call<String> banners(@Query("type") int type, @Query("pageIndex") int pageIndex, @Query("pageSize") int pageSize,
                              Callback<BannerList> callback);
 
     /**
