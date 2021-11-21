@@ -5,6 +5,7 @@
     android:layout_height="match_parent">
 
     <androidx.appcompat.widget.AppCompatButton
+                android:textAllCaps="false"
         android:id="@+id/retryId"
         style="@style/BtnGreen"
         android:layout_width="150dp"

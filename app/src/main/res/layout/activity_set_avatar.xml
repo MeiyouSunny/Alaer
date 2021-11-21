@@ -105,6 +105,7 @@
                 android:textColor="@color/font_red" />
 
             <androidx.appcompat.widget.AppCompatButton
+                android:textAllCaps="false"
                 android:id="@+id/submit"
                 style="@style/BtnGreen"
                 android:layout_alignParentBottom="true"

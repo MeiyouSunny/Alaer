@@ -99,6 +99,7 @@
                         android:inputType="number" />
 
                     <androidx.appcompat.widget.AppCompatButton
+                android:textAllCaps="false"
                         android:id="@+id/btnSend"
                         style="@style/BtnGreen"
                         android:layout_width="61dp"
@@ -165,6 +166,7 @@
                         android:hint="@string/pls_input_mail_verify_code" />
 
                     <androidx.appcompat.widget.AppCompatButton
+                android:textAllCaps="false"
                         style="@style/BtnGreen"
                         android:layout_width="61dp"
                         android:layout_height="match_parent"
@@ -232,6 +234,7 @@
                     android:layout_marginRight="47dp" />
 
                 <androidx.appcompat.widget.AppCompatButton
+                android:textAllCaps="false"
                     android:id="@+id/confirm"
                     style="@style/BtnGreen"
                     android:layout_marginLeft="38dp"

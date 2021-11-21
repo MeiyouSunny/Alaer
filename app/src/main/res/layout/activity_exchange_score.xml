@@ -375,6 +375,7 @@
 
 
                 <androidx.appcompat.widget.AppCompatButton
+                android:textAllCaps="false"
                     android:id="@+id/confirm"
                     style="@style/BtnGreen"
                     android:layout_alignParentBottom="true"

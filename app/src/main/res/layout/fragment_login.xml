@@ -112,6 +112,7 @@
             android:layout_marginRight="47dp" />
 
         <androidx.appcompat.widget.AppCompatButton
+                android:textAllCaps="false"
             android:id="@+id/btnLogin"
             style="@style/BtnGreen"
             android:layout_marginLeft="38dp"

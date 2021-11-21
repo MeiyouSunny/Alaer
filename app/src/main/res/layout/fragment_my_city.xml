@@ -184,6 +184,7 @@
                         android:textStyle="bold" />
 
                     <androidx.appcompat.widget.AppCompatButton
+                android:textAllCaps="false"
                         android:id="@+id/apply"
                         android:layout_width="62dp"
                         android:layout_height="26dp"
@@ -197,6 +198,7 @@
                         android:visibility="@{isApplyed ? View.GONE : View.VISIBLE}" />
 
                     <androidx.appcompat.widget.AppCompatButton
+                android:textAllCaps="false"
                         android:layout_width="62dp"
                         android:layout_height="26dp"
                         android:layout_alignParentRight="true"

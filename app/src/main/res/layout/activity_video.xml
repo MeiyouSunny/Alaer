@@ -64,6 +64,7 @@
                 android:textSize="22sp" />
 
             <androidx.appcompat.widget.AppCompatButton
+                android:textAllCaps="false"
                 android:id="@+id/close"
                 style="@style/BtnGreen"
                 android:layout_centerHorizontal="true"

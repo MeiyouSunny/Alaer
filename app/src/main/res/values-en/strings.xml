@@ -319,7 +319,7 @@
     <string name="nike_name_set">Nickname setting</string>
     <string name="set_invitation_code_desc">Set a personalized invitation code to invite friends</string>
     <string name="set_nick_desc">Set a Personal Nickname</string>
-    <string name="set_wechat_price">It costs 1 metamines to set up Telegram ID</string>
+    <string name="set_wechat_price">It costs 1 metamine to set up a Telegram username, please set it carefully, it’s free for the first time</string>
     <string name="set_invitation_code_price">It costs 10 metamine  to set up the invitation code</string>
     <string name="set_nick_price">It costs 1 metamines to set up a nickname, and it’s free for the first time</string>
     <string name="set_avatar_price">It costs 1 metamines to set avatar, and it’s free for the first time</string>

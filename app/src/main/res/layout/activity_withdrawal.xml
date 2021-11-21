@@ -257,6 +257,7 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.appcompat.widget.AppCompatButton
+                android:textAllCaps="false"
                         android:id="@+id/withdrawalAll"
                         android:layout_width="106dp"
                         android:layout_height="40dp"
@@ -309,6 +310,7 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.appcompat.widget.AppCompatButton
+                android:textAllCaps="false"
                         android:id="@+id/sendVerifyCode"
                         android:layout_width="106dp"
                         android:layout_height="40dp"
@@ -383,6 +385,7 @@
                     android:textSize="@dimen/font_13" />
 
                 <androidx.appcompat.widget.AppCompatButton
+                android:textAllCaps="false"
                     android:id="@+id/submit"
                     style="@style/BtnGreen"
                     android:layout_marginLeft="0dp"

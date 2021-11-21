@@ -369,6 +369,7 @@
 
 
             <androidx.appcompat.widget.AppCompatButton
+                android:textAllCaps="false"
                 android:id="@+id/submit"
                 style="@style/BtnGreen"
                 android:layout_below="@+id/select6"

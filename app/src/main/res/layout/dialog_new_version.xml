@@ -121,6 +121,7 @@
             android:visibility="gone" />
 
         <androidx.appcompat.widget.AppCompatButton
+                android:textAllCaps="false"
             android:id="@+id/confirm"
             style="@style/BtnGreen"
             android:layout_height="40dp"

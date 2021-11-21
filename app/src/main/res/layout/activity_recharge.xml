@@ -187,6 +187,7 @@
 
 
                 <androidx.appcompat.widget.AppCompatButton
+                android:textAllCaps="false"
                     android:id="@+id/copyAddress"
                     style="@style/BtnGreen"
                     android:layout_marginLeft="0dp"

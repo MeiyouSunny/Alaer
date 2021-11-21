@@ -100,6 +100,7 @@
                 android:layout_marginRight="47dp" />
 
             <androidx.appcompat.widget.AppCompatButton
+                android:textAllCaps="false"
                 android:id="@+id/next"
                 style="@style/BtnGreen"
                 android:layout_marginLeft="38dp"

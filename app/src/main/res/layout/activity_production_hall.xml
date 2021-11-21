@@ -85,6 +85,7 @@
                     app:textSize="11sp" />
 
                 <androidx.appcompat.widget.AppCompatButton
+                android:textAllCaps="false"
                     android:id="@+id/speedUp"
                     android:layout_width="72dp"
                     android:layout_height="26dp"

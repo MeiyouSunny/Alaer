@@ -32,6 +32,7 @@
 
 
         <androidx.appcompat.widget.AppCompatButton
+                android:textAllCaps="false"
             android:id="@+id/ok"
             style="@style/BtnGreen"
             android:layout_alignParentBottom="true"

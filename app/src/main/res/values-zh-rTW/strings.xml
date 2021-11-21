@@ -319,7 +319,7 @@
     <string name="nike_name_set">昵稱設定</string>
     <string name="set_invitation_code_desc">設定個性化邀請碼，方便邀請好友</string>
     <string name="set_nick_desc">設定個性昵稱</string>
-    <string name="set_wechat_price">設置Telegram號需要花費1元宇礦</string>
+    <string name="set_wechat_price">設置Telegram用戶名需要花費1元宇礦，首次免費</string>
     <string name="set_invitation_code_price">設置邀請碼需要花費10元宇礦</string>
     <string name="set_nick_price">設置暱稱需要花費1元宇礦，首次免費</string>
     <string name="set_avatar_price">設置頭像需要花費1元宇礦，首次免費</string>

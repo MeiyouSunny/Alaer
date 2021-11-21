@@ -102,6 +102,7 @@
                     android:inputType="number" />
 
                 <androidx.appcompat.widget.AppCompatButton
+                android:textAllCaps="false"
                     android:id="@+id/btnSend"
                     style="@style/BtnGreen"
                     android:layout_width="61dp"
@@ -121,6 +122,7 @@
                 android:layout_marginRight="47dp" />
 
             <androidx.appcompat.widget.AppCompatButton
+                android:textAllCaps="false"
                 android:id="@+id/next"
                 style="@style/BtnGreen"
                 android:layout_marginLeft="38dp"

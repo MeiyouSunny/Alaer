@@ -57,6 +57,7 @@
 
 
                 <androidx.appcompat.widget.AppCompatButton
+                android:textAllCaps="false"
                     android:id="@+id/customerService"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -70,6 +71,7 @@
 
 
                 <androidx.appcompat.widget.AppCompatButton
+                android:textAllCaps="false"
                     android:id="@+id/reTry"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"

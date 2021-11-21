@@ -292,6 +292,7 @@
 
 
             <androidx.appcompat.widget.AppCompatButton
+                android:textAllCaps="false"
                 android:id="@+id/next"
                 style="@style/BtnGreen"
                 android:layout_marginLeft="20dp"

@@ -70,6 +70,7 @@
                     tools:text="USDT" />
 
                 <androidx.appcompat.widget.AppCompatButton
+                android:textAllCaps="false"
                     android:id="@+id/recharge"
                     android:layout_width="wrap_content"
                     android:layout_height="28dp"
@@ -81,6 +82,7 @@
                     android:textSize="@dimen/font_14" />
 
                 <androidx.appcompat.widget.AppCompatButton
+                android:textAllCaps="false"
                     android:id="@+id/withdrawal"
                     android:layout_width="wrap_content"
                     android:layout_height="28dp"
