@@ -15,7 +15,7 @@ public class AuthSuccessActivity extends BaseTitleActivity<ActivityLoginBinding>
 
     @Override
     protected int titleResId() {
-        return R.string.real_name_auth;
+        return R.string.auth_status;
     }
 
     @Override

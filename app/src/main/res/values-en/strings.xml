@@ -19,7 +19,7 @@
     <string name="pls_input_valid_phone">Please enter the correct mobile phone number</string>
     <string name="password">Password</string>
     <string name="pls_input_pwd_short">Please enter the password</string>
-    <string name="pls_input_pwd">The password consists of at least letters + numbers, and the length is 8-16 digits</string>
+    <string name="pls_input_pwd">The password consists of at least letters + numbers,8-16 digits</string>
     <string name="regist_account">Application</string>
     <string name="forget_pwd">Forget the password</string>
     <string name="apply">Application</string>
@@ -30,8 +30,8 @@
     <string name="login_now">Enter now</string>
     <string name="input_pwd">Input password</string>
     <string name="confirm_pwd">Confirm password</string>
-    <string name="pls_input_login_pwd">Please enter login password</string>
-    <string name="pls_input_pwd_again">Enter the login password again</string>
+    <string name="pls_input_login_pwd">Enter login password</string>
+    <string name="pls_input_pwd_again">Enter the password again</string>
     <string name="pls_input_invitate_code">Please enter the invitation code</string>
     <string name="reset_pwd">Reset password</string>
     <string name="mail">Email</string>
@@ -88,7 +88,7 @@
     <string name="seed_sold_out_all">Sorry, it has been redeemed</string>
     <string name="look_my_seeds">View my detectors</string>
     <string name="cancel">Cancel</string>
-    <string name="seed_buyed_is">You have exchanged a detecor:%s</string>
+    <string name="seed_buyed_is">You have redeemed a detector:%s</string>
     <string name="seed_buy_success">Exchange detector successfully</string>
     <string name="seed_get_success">Receive the detector successfully</string>
     <string name="not_auth_yes">You are not yet real-named, please perform real-name authentication first.</string>
@@ -127,7 +127,7 @@
     <string name="government_hall">Digital membership application</string>
     <string name="real_name_auth">Status Verified</string>
     <string name="make_sure_security_warning">To ensure your account security and improve service quality, please go to authentication</string>
-    <string name="auth_success">Congratulations on completing your identity authentication!</string>
+    <string name="auth_success">congratulations! The real-name authentication has been completed!</string>
     <string name="share_now">Share now</string>
     <string name="travel_hall">Metauniverse center</string>
     <string name="alaer_travel_video">Metaverse Digital Ecology Promo</string>
@@ -167,7 +167,7 @@
     <string name="not_bind">Unbound</string>
     <string name="wechat_no_set">Telegram username settings</string>
     <string name="wechat_no_set_warning">After the Telegram username is set, your inviter can view it.</string>
-    <string name="pls_input_wechat_no">Please enter your Telegram username</string>
+    <string name="pls_input_wechat_no">Telegram username</string>
     <string name="wechat_no_modify_warning">Modifying Telegram number will consume 1 yuan of MetaMine stones, please set it carefully</string>
     <string name="submit">Submit</string>
     <string name="active_detail">Activity breakdown</string>
@@ -230,13 +230,13 @@
     <string name="fund_is">Contribution service charge:</string>
     <string name="inviter_info">Inviter information</string>
     <string name="second_pwd">Redeem password</string>
-    <string name="second_pwd_set">Exchange password settings</string>
+    <string name="second_pwd_set">Redeem password setting</string>
     <string name="pls_make_not_same_with_second_pwd">Please do not match the redemption password</string>
     <string name="pls_make_not_same_with_pwd">Please do not match the login password</string>
-    <string name="pls_input_second_pwd">Please enter the exchange password</string>
-    <string name="pls_input_second_pwd_again">Please enter the exchange password again</string>
-    <string name="pls_input_phone_verify_code">Verification code</string>
-    <string name="pls_make_not_same_with_pwd_long">The exchange password should not be the same as the login password</string>
+    <string name="pls_input_second_pwd">Enter the password</string>
+    <string name="pls_input_second_pwd_again">Input redeem password again</string>
+    <string name="pls_input_phone_verify_code">Phone verification code</string>
+    <string name="pls_make_not_same_with_pwd_long">Should not be the same as the login password!</string>
     <string name="order_id_is">Order number: %s</string>
     <string name="sure">Confirm</string>
     <string name="exchange_success">Exchange succeeded!</string>
@@ -313,12 +313,12 @@
     <string name="verify_to_get_detector">The real-name authentication will be confirmed through the Alipay payment function, and a novice detector will be obtained after the payment is successful</string>
     <string name="main_access_point">Main access point</string>
     <string name="default_access_point">Default primary access point</string>
-    <string name="pls_intpu_invatation_code">Please input invitation code</string>
-    <string name="pls_input_nike">Please input nike name</string>
+    <string name="pls_intpu_invatation_code">Enter the invitation code</string>
+    <string name="pls_input_nike">Please enter a nickname</string>
     <string name="invatation_code_set">Invitation code setting</string>
     <string name="nike_name_set">Nickname setting</string>
-    <string name="set_invitation_code_desc">Set a personalized invitation code to invite friends</string>
-    <string name="set_nick_desc">Set a Personal Nickname</string>
+    <string name="set_invitation_code_desc">Set a personalized invitation code to facilitate inviting friends</string>
+    <string name="set_nick_desc">Set personal nickname</string>
     <string name="set_wechat_price">It costs 1 metamine to set up a Telegram username, please set it carefully, it’s free for the first time</string>
     <string name="set_invitation_code_price">It costs 10 metamine  to set up the invitation code</string>
     <string name="set_nick_price">It costs 1 metamines to set up a nickname, and it’s free for the first time</string>
@@ -352,22 +352,22 @@
     <string name="auth_card">User certificate authentication</string>
     <string name="auth_credit">Credit card authentication</string>
 
-    <string name="card_type">Card type</string>
+    <string name="card_type">Type of certificate</string>
     <string name="card_name">ID name</string>
-    <string name="card_id">Certificate No</string>
-    <string name="card_photo">Certificate picture</string>
-    <string name="card_photo_desc">Certificate image certificate image supports JPG / PNG format, and the size does not exceed 8M</string>
+    <string name="card_id">License number</string>
+    <string name="card_photo">ID picture</string>
+    <string name="card_photo_desc">The certificate image supports JPG / PNG format, and the size does not exceed 8M</string>
     <string name="card_passport">Passport</string>
     <string name="driving_license">Driver\'s ID</string>
     <string name="taiwan_certificate">TWN entry pass</string>
     <string name="kongkong_pass">HKG/MO entry pass</string>
-    <string name="auth_state_waitting">It\'ll be completed within 24 hours. Please wait patiently.</string>
+    <string name="auth_state_waitting">The audit is expected to be completed within 24 hours. Please wait patiently</string>
     <string name="auth_state_fail">Real name authentication failed!Reason:%s</string>
     <string name="call_customer_service">Customer service</string>
     <string name="resubmit">Resubmit</string>
     <string name="auth_info_confirm">User info verification</string>
     <string name="auth_info_confir_warning">Please confirm the real name information again to avoid the failure of real name authentication due to errors</string>
-    <string name="confirm_submit">Confirm submit</string>
+    <string name="confirm_submit">Confirm submission</string>
     <string name="upload_failed">Upload failed!</string>
     <string name="uploading">Uploading</string>
     <string name="level_is">LV%d</string>
@@ -497,5 +497,6 @@
     <string name="nick_length_limit">The length of the nickname is limited to 4-12 characters, letters, numbers or underscores.</string>
     <string name="invate_code_length_limit">The length of the invitation code is limited to 4-12 digits, letters, numbers or underscores.</string>
     <string name="telegram_length_limit">Telegram usernames are limited to 6-22 characters, letters, numbers or underscores.</string>
+    <string name="auth_status">Real-name authentication status</string>
 
 </resources>

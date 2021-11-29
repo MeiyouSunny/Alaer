@@ -18,7 +18,7 @@ public class AuthFailedActivity extends BaseTitleActivity<ActivityAuthFailedBind
 
     @Override
     protected int titleResId() {
-        return R.string.real_name_auth;
+        return R.string.auth_status;
     }
 
     @Override

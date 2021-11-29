@@ -19,7 +19,7 @@
     <string name="pls_input_valid_phone">請輸入正確的手機號</string>
     <string name="password">密碼</string>
     <string name="pls_input_pwd_short">請輸入密碼</string>
-    <string name="pls_input_pwd">密碼至少由字母+數字組成，長度8-16位</string>
+    <string name="pls_input_pwd">至少由字母+數字組成，長度8-16位</string>
     <string name="regist_account">申請</string>
     <string name="forget_pwd">忘記密碼</string>
     <string name="apply">申請</string>
@@ -31,7 +31,7 @@
     <string name="input_pwd">輸入密碼</string>
     <string name="confirm_pwd">確認密碼</string>
     <string name="pls_input_login_pwd">請輸入登入密碼</string>
-    <string name="pls_input_pwd_again">請再次輸入登入密碼</string>
+    <string name="pls_input_pwd_again">請再次輸入密碼</string>
     <string name="pls_input_invitate_code">請輸入邀請碼</string>
     <string name="reset_pwd">重置密碼</string>
     <string name="mail">郵箱</string>
@@ -127,7 +127,7 @@
     <string name="government_hall">數字會員申請</string>
     <string name="real_name_auth">實名認證</string>
     <string name="make_sure_security_warning">為保證您的賬號安全，提升服務品質，請前往認證</string>
-    <string name="auth_success">恭喜你完成身份認證！</string>
+    <string name="auth_success">恭喜您，實名認證已完成</string>
     <string name="share_now">立即分享</string>
     <string name="travel_hall">元宇宙中心</string>
     <string name="alaer_travel_video">元宇宙數字生態宣傳片</string>
@@ -236,7 +236,7 @@
     <string name="pls_input_second_pwd">請輸入兌換密碼</string>
     <string name="pls_input_second_pwd_again">請再次輸入兌換密碼</string>
     <string name="pls_input_phone_verify_code">手機驗證碼</string>
-    <string name="pls_make_not_same_with_pwd_long">兌換密碼請不要和登入密碼一致</string>
+    <string name="pls_make_not_same_with_pwd_long">请不要和登錄密碼一致!</string>
     <string name="order_id_is">訂單號：%s</string>
     <string name="sure">確認</string>
     <string name="exchange_success">兌換成功！</string>
@@ -314,10 +314,10 @@
     <string name="main_access_point">主接入點</string>
     <string name="default_access_point">默認主要接入點</string>
     <string name="pls_intpu_invatation_code">請輸入邀請碼</string>
-    <string name="pls_input_nike">請輸入昵稱</string>
+    <string name="pls_input_nike">請輸入暱稱</string>
     <string name="invatation_code_set">邀請碼設定</string>
     <string name="nike_name_set">昵稱設定</string>
-    <string name="set_invitation_code_desc">設定個性化邀請碼，方便邀請好友</string>
+    <string name="set_invitation_code_desc">設置個性化邀請碼，方便邀請好友</string>
     <string name="set_nick_desc">設定個性昵稱</string>
     <string name="set_wechat_price">設置Telegram用戶名需要花費1元宇礦，首次免費</string>
     <string name="set_invitation_code_price">設置邀請碼需要花費10元宇礦</string>
@@ -355,7 +355,7 @@
     <string name="card_name">證件姓名</string>
     <string name="card_id">證件號</string>
     <string name="card_photo">證件圖片</string>
-    <string name="card_photo_desc">證件圖片證件圖片支持JPG/PNG格式，大小不超過8M</string>
+    <string name="card_photo_desc">證件圖片支持jpg/png格式，大小不超過8M</string>
     <string name="card_passport">護照</string>
     <string name="driving_license">駕照</string>
     <string name="taiwan_certificate">臺胞證</string>
@@ -507,5 +507,6 @@
     <string name="nick_length_limit">暱稱長度限制4-12位，字母、數字或下劃線。</string>
     <string name="invate_code_length_limit">邀請碼長度限制4-12位，字母、數字或下劃線。</string>
     <string name="telegram_length_limit">Telegram用戶名限制6-22位，字母、數字或下劃線。</string>
+    <string name="auth_status">實名認證狀態</string>
 
 </resources>

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.os.MessageQueue;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -155,7 +156,12 @@ public class TaskListFragment extends BottomSheetDialogFragment {
                 new Callback<String>() {
                     @Override
                     public void onResponse(String response) {
-                        ToastUtil.text(R.string.task_complete).show();
+                        new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                ToastUtil.text(R.string.task_complete).show();
+                            }
+                        },1000);
                         getTaskList();
                     }
 
@@ -171,7 +177,12 @@ public class TaskListFragment extends BottomSheetDialogFragment {
             // 播放完成,完成任务
             completeTask(mAdTask.id);
         } else {
-            ToastUtil.text(R.string.task_do_failed).show();
+            new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    ToastUtil.text(R.string.task_do_failed).show();
+                }
+            },1000);
         }
         LocaleUtil.restoreLanguage(getActivity());
     }

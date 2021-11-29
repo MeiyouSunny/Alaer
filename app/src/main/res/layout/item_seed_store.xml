@@ -157,7 +157,10 @@
                 android:textSize="@dimen/font_12" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
+                android:paddingRight="4dp"
+                android:singleLine="true"
+                android:ellipsize="end"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="81dp"
                 android:text="@{util.parseCultivationDays(seed.cycle)}"

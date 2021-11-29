@@ -66,8 +66,9 @@
                     android:layout_width="72dp"
                     android:layout_height="wrap_content"
                     android:text="@string/card_type"
+                    android:gravity="left"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/font_16" />
+                    android:textSize="@dimen/font_14" />
 
                 <RelativeLayout
                     android:layout_width="0dp"
@@ -85,7 +86,7 @@
                         android:entries="@array/card_types"
                         android:popupBackground="#CC000000"
                         android:spinnerMode="dropdown"
-                        android:textSize="@dimen/font_16"
+                        android:textSize="@dimen/font_14"
                         android:theme="@style/Spinner" />
 
                 </RelativeLayout>
@@ -104,8 +105,9 @@
                     android:layout_width="72dp"
                     android:layout_height="wrap_content"
                     android:text="@string/card_name"
+                    android:gravity="left"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/font_16" />
+                    android:textSize="@dimen/font_14" />
 
                 <EditText
                     android:id="@+id/etName"
@@ -133,10 +135,10 @@
                 <TextView
                     android:layout_width="72dp"
                     android:layout_height="wrap_content"
-                    android:gravity="right"
+                    android:gravity="left"
                     android:text="@string/card_id"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/font_16" />
+                    android:textSize="@dimen/font_14" />
 
                 <EditText
                     android:id="@+id/etCard"
