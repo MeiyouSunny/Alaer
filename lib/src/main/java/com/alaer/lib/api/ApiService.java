@@ -283,7 +283,7 @@ public interface ApiService {
      * 类型。1100：轮播图；1101：新手指南
      */
     @GET("/open/slide/query")
-    Call<String> banners(@Query("type") int type, @Query("pageIndex") int pageIndex, @Query("pageSize") int pageSize,
+    Call<BannerList> banners(@Query("type") int type, @Query("pageIndex") int pageIndex, @Query("pageSize") int pageSize,
                              Callback<BannerList> callback);
 
     /**
@@ -329,7 +329,7 @@ public interface ApiService {
     @GET("/mining/team/activityinfo")
     Call<ActiveDetail> activityDetail(@Query("uuid") String uuid, @Query("uid") String uid,
                                       @Query("token") String token, @Query("diamondCurrency") String diamondCurrency,
-                                      @Query("minerId") String minerId,
+                                      @Query("minerId") String minerId, @Query("activitynessId") int activitynessId,
                                       Callback<ActiveDetail> callback);
 
     /**

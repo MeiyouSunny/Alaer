@@ -190,7 +190,7 @@
     <string name="patner_active">團隊活躍度</string>
     <string name="star_team">元宇宙星民星級</string>
     <string name="regist_time">註冊時間</string>
-    <string name="notice_detail">公告</string>
+    <string name="notice_detail">公告詳情</string>
     <string name="notice_list">公告列表</string>
     <string name="team_level_reward_is">獎勵1臺<font color='#FF7171'>%1$s</font>探測器+元宇宙數字生態會員手續費%2$d%%獎勵</string>
     <string name="no_team_level">暫無星級</string>

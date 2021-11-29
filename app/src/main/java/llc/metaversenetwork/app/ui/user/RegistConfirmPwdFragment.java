@@ -81,6 +81,9 @@ public class RegistConfirmPwdFragment extends BaseBindFragment<FragmentRegistCon
             case R.id.agreement:
                 WebPageActivity.start(getActivity(), getString(R.string.user_rule_url), R.string.user_agreement);
                 break;
+            case R.id.toLogin:
+                navigate(R.id.action_to_login);
+                break;
         }
     }
 

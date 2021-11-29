@@ -26,12 +26,12 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:visibility="invisible"
             android:layout_marginLeft="47dp"
             android:layout_marginTop="78dp"
             android:text="@string/account_3D_login_directly"
             android:textColor="@color/font_7E"
-            android:textSize="@dimen/font_12" />
+            android:textSize="@dimen/font_12"
+            android:visibility="invisible" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -112,7 +112,6 @@
             android:layout_marginRight="47dp" />
 
         <androidx.appcompat.widget.AppCompatButton
-                android:textAllCaps="false"
             android:id="@+id/btnLogin"
             style="@style/BtnGreen"
             android:layout_marginLeft="38dp"
@@ -120,25 +119,31 @@
             android:layout_marginRight="38dp"
             android:enabled="false"
             android:onClick="@{handler.click}"
-            android:text="@string/enter" />
+            android:text="@string/enter"
+            android:textAllCaps="false" />
 
-        <TextView
-            android:id="@+id/toRegist"
-            style="@style/AccountGreenText"
-            android:layout_marginLeft="87dp"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="388dp"
-            android:clickable="true"
-            android:onClick="@{handler.click}"
-            android:text="@string/regist_account" />
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/forgetPwd"
-            style="@style/AccountGreenText"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="388dp"
-            android:layout_marginRight="87dp"
-            android:onClick="@{handler.click}"
-            android:text="@string/forget_pwd" />
+            <TextView
+                android:id="@+id/toRegist"
+                style="@style/AccountGreenText"
+                android:layout_marginRight="48dp"
+                android:clickable="true"
+                android:onClick="@{handler.click}"
+                android:text="@string/regist_account" />
+
+            <TextView
+                android:id="@+id/forgetPwd"
+                style="@style/AccountGreenText"
+                android:onClick="@{handler.click}"
+                android:text="@string/forget_pwd" />
+
+        </LinearLayout>
 
     </RelativeLayout>
 

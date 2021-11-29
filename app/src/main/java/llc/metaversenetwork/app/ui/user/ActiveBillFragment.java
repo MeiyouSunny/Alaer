@@ -12,16 +12,16 @@ import com.alaer.lib.api.bean.ActiveBillList;
 import com.alaer.lib.api.bean.ActiveDetail;
 import com.alaer.lib.api.bean.UserData;
 import com.alaer.lib.data.UserDataUtil;
-import llc.metaversenetwork.app.R;
-import llc.metaversenetwork.app.base.BaseBindFragment;
-import llc.metaversenetwork.app.databinding.FragmentActiveDetailBinding;
-import llc.metaversenetwork.app.ui.dialog.DialogActiveDetail;
-import llc.metaversenetwork.app.util.CollectionUtils;
 
 import java.util.List;
 
 import likly.dialogger.Dialogger;
 import likly.view.repeat.OnHolderClickListener;
+import llc.metaversenetwork.app.R;
+import llc.metaversenetwork.app.base.BaseBindFragment;
+import llc.metaversenetwork.app.databinding.FragmentActiveDetailBinding;
+import llc.metaversenetwork.app.ui.dialog.DialogActiveDetail;
+import llc.metaversenetwork.app.util.CollectionUtils;
 
 /**
  * 活跃度明细列表Fragment
@@ -95,7 +95,8 @@ public class ActiveBillFragment extends BaseBindFragment<FragmentActiveDetailBin
         ActiveBill bill = activeBillAdapter.getData();
         if (!hasDetail(bill.type))
             return;
-        ApiUtil.apiService().activityDetail(userData.uuid, String.valueOf(userData.uid), userData.token, AppConfig.DIAMOND_CURRENCY, bill.refId,
+        ApiUtil.apiService().activityDetail(userData.uuid, String.valueOf(userData.uid), userData.token, AppConfig.DIAMOND_CURRENCY,
+                bill.refId, bill.id,
                 new Callback<ActiveDetail>() {
                     @Override
                     public void onResponse(ActiveDetail detail) {

@@ -56,7 +56,6 @@ public class TimeUtil {
 
     /**
      * 时间字符串转毫秒值
-     *
      * @param dateStr 时间字符串
      */
     public static long parseDateStrToMilles(String dateStr) {
@@ -84,9 +83,15 @@ public class TimeUtil {
     public static String parseSecondssToTimeString(long time) {
         time *= 1000;
         Date date = new Date(time);
-        String format = "H小时m分";
-        if (time % (60 * 60) == 0)
+        String format = "H小時m分";
+        if (!LocaleUtil.isDefaultLanguage())
+            format = "Hhoursmmniutes";
+        if (time % (60 * 60) == 0) {
             format = "H小时";
+            if (!LocaleUtil.isDefaultLanguage())
+                format = "Hhours";
+        }
+
         SimpleDateFormat formater = new SimpleDateFormat(format);
         formater.setTimeZone(TimeZone.getTimeZone("GMT+00"));
         return formater.format(date);
@@ -143,7 +148,6 @@ public class TimeUtil {
 
     /**
      * 当年多少天
-     *
      * @param year
      * @return
      */

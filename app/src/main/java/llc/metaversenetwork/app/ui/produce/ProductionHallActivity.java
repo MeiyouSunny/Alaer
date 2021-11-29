@@ -72,7 +72,7 @@ public class ProductionHallActivity extends BaseTitleActivity<ActivityProduction
         bindRoot.progress.setProgressListener(this);
 
         boolean isDefaultLanguage = $.config().getBoolean("defaultLanguage", true);
-        bindRoot.setImgGetMinter(isDefaultLanguage ? R.drawable.img_produce_step_get_miner : R.drawable.img_produce_step_get_miner_en);
+        bindRoot.setImgGetMinter(isDefaultLanguage ? R.drawable.img_step_get_miner : R.drawable.img_step_get_miner_en);
 
         mUserData = UserDataUtil.instance().getUserData();
         queryCurrentInfos();
