@@ -21,15 +21,17 @@ buildscript {
 
 allprojects {
     repositories {
+        jcenter()
+        mavenCentral()
         maven {
             url 'https://maven.aliyun.com/repository/google'
         }
         maven {
             url 'https://maven.aliyun.com/repository/public'
         }
-        maven {
-            url 'https://dl.bintray.com/meiyousunny/hmcx'
-        }
+//        maven {
+//            url 'https://dl.bintray.com/meiyousunny/hmcx'
+//        }
         maven {
             url 'https://www.jitpack.io'
         }
